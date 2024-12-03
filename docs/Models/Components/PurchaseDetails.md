@@ -1,0 +1,11 @@
+# PurchaseDetails
+
+
+## Fields
+
+| Field                                                                 | Type                                                                  | Required                                                              | Description                                                           | Example                                                               |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `taxRate`                                                             | [?Components\LinkedTaxRate](../../Models/Components/LinkedTaxRate.md) | :heavy_minus_sign:                                                    | N/A                                                                   |                                                                       |
+| `unitPrice`                                                           | *?float*                                                              | :heavy_minus_sign:                                                    | N/A                                                                   | 27500.5                                                               |
+| `unitOfMeasure`                                                       | *?string*                                                             | :heavy_minus_sign:                                                    | Description of the unit type the item is sold as, ie: kg, hour.       | pc.                                                                   |
+| `taxInclusive`                                                        | *?bool*                                                               | :heavy_minus_sign:                                                    | Amounts are including tax                                             | true                                                                  |

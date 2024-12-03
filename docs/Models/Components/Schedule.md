@@ -1,0 +1,11 @@
+# Schedule
+
+
+## Fields
+
+| Field                                                            | Type                                                             | Required                                                         | Description                                                      | Example                                                          |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `id`                                                             | *string*                                                         | :heavy_check_mark:                                               | A unique identifier for an object.                               | 12345                                                            |
+| `startDate`                                                      | *string*                                                         | :heavy_check_mark:                                               | The start date, inclusive, of the schedule period.               | 2022-04-08                                                       |
+| `endDate`                                                        | *string*                                                         | :heavy_check_mark:                                               | The end date, inclusive, of the schedule period.                 | 2022-04-21                                                       |
+| `workPattern`                                                    | [Components\WorkPattern](../../Models/Components/WorkPattern.md) | :heavy_check_mark:                                               | N/A                                                              |                                                                  |

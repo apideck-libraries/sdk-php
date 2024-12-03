@@ -1,0 +1,15 @@
+# GetEcommerceOrderResponse
+
+Orders
+
+
+## Fields
+
+| Field                                                                  | Type                                                                   | Required                                                               | Description                                                            | Example                                                                |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `statusCode`                                                           | *int*                                                                  | :heavy_check_mark:                                                     | HTTP Response Status Code                                              | 200                                                                    |
+| `status`                                                               | *string*                                                               | :heavy_check_mark:                                                     | HTTP Response Status                                                   | OK                                                                     |
+| `service`                                                              | *string*                                                               | :heavy_check_mark:                                                     | Apideck ID of service provider                                         | shopify                                                                |
+| `resource`                                                             | *string*                                                               | :heavy_check_mark:                                                     | Unified API resource name                                              | orders                                                                 |
+| `operation`                                                            | *string*                                                               | :heavy_check_mark:                                                     | Operation performed                                                    | one                                                                    |
+| `data`                                                                 | [Components\EcommerceOrder](../../Models/Components/EcommerceOrder.md) | :heavy_check_mark:                                                     | N/A                                                                    |                                                                        |

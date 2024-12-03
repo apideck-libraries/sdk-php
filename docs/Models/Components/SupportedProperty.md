@@ -1,0 +1,9 @@
+# SupportedProperty
+
+
+## Fields
+
+| Field                                                                               | Type                                                                                | Required                                                                            | Description                                                                         | Example                                                                             |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `unifiedProperty`                                                                   | *?string*                                                                           | :heavy_minus_sign:                                                                  | Name of the property in our Unified API.                                            | owner_id                                                                            |
+| `childProperties`                                                                   | array<[Components\SupportedProperty](../../Models/Components/SupportedProperty.md)> | :heavy_minus_sign:                                                                  | List of child properties of the unified property.                                   |                                                                                     |

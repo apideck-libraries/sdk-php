@@ -1,0 +1,644 @@
+# CreditNotes
+(*accounting->creditNotes*)
+
+## Overview
+
+### Available Operations
+
+* [list](#list) - List Credit Notes
+* [create](#create) - Create Credit Note
+* [get](#get) - Get Credit Note
+* [update](#update) - Update Credit Note
+* [delete](#delete) - Delete Credit Note
+
+## list
+
+List Credit Notes
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Components;
+use Apideck\Unify\Models\Operations;
+use Apideck\Unify\Utils;
+
+$security = '<YOUR_API_KEY_HERE>';
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity($security)->build();
+
+$request = new Operations\AccountingCreditNotesAllRequest(
+    serviceId: 'salesforce',
+    filter: new Components\CreditNotesFilter(
+        updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
+    ),
+    sort: new Components\CreditNotesSort(
+        by: Components\CreditNotesSortBy::UpdatedAt,
+        direction: Components\SortDirection::Desc,
+    ),
+    passThrough: [
+        'search' => 'San Francisco',
+    ],
+    fields: 'id,updated_at',
+);
+
+$response = $sdk->accounting->creditNotes->list(
+    request: $request
+);
+
+if ($response->getCreditNotesResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                               | [Operations\AccountingCreditNotesAllRequest](../../Models/Operations/AccountingCreditNotesAllRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+
+### Response
+
+**[?Operations\AccountingCreditNotesAllResponse](../../Models/Operations/AccountingCreditNotesAllResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## create
+
+Create Credit Note
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Components;
+use Apideck\Unify\Models\Operations;
+use Apideck\Unify\Utils;
+
+$security = '<YOUR_API_KEY_HERE>';
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity($security)->build();
+
+$request = new Operations\AccountingCreditNotesAddRequest(
+    creditNote: new Components\CreditNoteInput(
+        totalAmount: 49.99,
+        status: Components\CreditNoteStatus::Authorised,
+        dateIssued: Utils\Utils::parseDateTime('2021-05-01T12:00:00.000Z'),
+        type: Components\CreditNoteType::AccountsReceivableCredit,
+        lineItems: [
+            new Components\InvoiceLineItemInput(
+                rowId: '12345',
+                item: new Components\LinkedInvoiceItem(
+                    id: '12344',
+                    code: '120-C',
+                    name: 'Model Y',
+                ),
+                taxRate: new Components\LinkedTaxRateInput(
+                    id: '123456',
+                    rate: 10,
+                ),
+                customFields: [
+                    new Components\CustomField(
+                        id: '2389328923893298',
+                        name: 'employee_level',
+                        description: 'Employee Level',
+                        value: true,
+                    ),
+                ],
+                id: '12345',
+                code: '120-C',
+                lineNumber: 1,
+                description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+                type: Components\InvoiceLineItemType::SalesItem,
+                taxAmount: 27500,
+                totalAmount: 27500,
+                quantity: 1,
+                unitPrice: 27500.5,
+                unitOfMeasure: 'pc.',
+                discountPercentage: 0.01,
+                discountAmount: 19.99,
+                locationId: '1234',
+                departmentId: '1234',
+                trackingCategories: [
+                    new Components\LinkedTrackingCategory(
+                        id: '123456',
+                        name: 'New York',
+                    ),
+                ],
+                ledgerAccount: new Components\LinkedLedgerAccountInput(
+                    id: '123456',
+                    nominalCode: 'N091',
+                    code: '453',
+                ),
+                rowVersion: '1-12345',
+            ),
+        ],
+        allocations: [
+            new Components\AllocationInput(
+                id: '123456',
+                allocationId: '123456',
+                amount: 49.99,
+            ),
+        ],
+        billingAddress: new Components\Address(
+            id: '123',
+            type: Components\Type::Primary,
+            string: '25 Spring Street, Blackburn, VIC 3130',
+            name: 'HQ US',
+            line1: 'Main street',
+            line2: 'apt #',
+            line3: 'Suite #',
+            line4: 'delivery instructions',
+            streetNumber: '25',
+            city: 'San Francisco',
+            state: 'CA',
+            postalCode: '94104',
+            country: 'US',
+            latitude: '40.759211',
+            longitude: '-73.984638',
+            county: 'Santa Clara',
+            contactName: 'Elon Musk',
+            salutation: 'Mr',
+            phoneNumber: '111-111-1111',
+            fax: '122-111-1111',
+            email: 'elon@musk.com',
+            website: 'https://elonmusk.com',
+            notes: 'Address notes or delivery instructions.',
+            rowVersion: '1-12345',
+        ),
+        shippingAddress: new Components\Address(
+            id: '123',
+            type: Components\Type::Primary,
+            string: '25 Spring Street, Blackburn, VIC 3130',
+            name: 'HQ US',
+            line1: 'Main street',
+            line2: 'apt #',
+            line3: 'Suite #',
+            line4: 'delivery instructions',
+            streetNumber: '25',
+            city: 'San Francisco',
+            state: 'CA',
+            postalCode: '94104',
+            country: 'US',
+            latitude: '40.759211',
+            longitude: '-73.984638',
+            county: 'Santa Clara',
+            contactName: 'Elon Musk',
+            salutation: 'Mr',
+            phoneNumber: '111-111-1111',
+            fax: '122-111-1111',
+            email: 'elon@musk.com',
+            website: 'https://elonmusk.com',
+            notes: 'Address notes or delivery instructions.',
+            rowVersion: '1-12345',
+        ),
+        customFields: [
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: new Components\Four(),
+            ),
+        ],
+        passThrough: [
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+        ],
+        number: 'OIT00546',
+        customer: new Components\LinkedCustomerInput(
+            id: '12345',
+            email: 'boring@boring.com',
+            displayName: 'Windsurf Shop',
+        ),
+        companyId: '12345',
+        currency: Components\Currency::Usd,
+        currencyRate: 0.69,
+        taxInclusive: true,
+        subTotal: 27500,
+        totalTax: 2500,
+        taxCode: '1234',
+        balance: 27500,
+        remainingCredit: 27500,
+        reference: '123456',
+        datePaid: Utils\Utils::parseDateTime('2021-05-01T12:00:00.000Z'),
+        account: new Components\LinkedLedgerAccountInput(
+            id: '123456',
+            nominalCode: 'N091',
+            code: '453',
+        ),
+        note: 'Some notes about this credit note',
+        terms: 'Some terms about this credit note',
+        trackingCategories: [
+            new Components\LinkedTrackingCategory(
+                id: '123456',
+                name: 'New York',
+            ),
+        ],
+        rowVersion: '1-12345',
+    ),
+    serviceId: 'salesforce',
+);
+
+$response = $sdk->accounting->creditNotes->create(
+    request: $request
+);
+
+if ($response->createCreditNoteResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                               | [Operations\AccountingCreditNotesAddRequest](../../Models/Operations/AccountingCreditNotesAddRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+
+### Response
+
+**[?Operations\AccountingCreditNotesAddResponse](../../Models/Operations/AccountingCreditNotesAddResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## get
+
+Get Credit Note
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Operations;
+
+$security = '<YOUR_API_KEY_HERE>';
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity($security)->build();
+
+$request = new Operations\AccountingCreditNotesOneRequest(
+    id: '<id>',
+    serviceId: 'salesforce',
+    fields: 'id,updated_at',
+);
+
+$response = $sdk->accounting->creditNotes->get(
+    request: $request
+);
+
+if ($response->getCreditNoteResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                               | [Operations\AccountingCreditNotesOneRequest](../../Models/Operations/AccountingCreditNotesOneRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+
+### Response
+
+**[?Operations\AccountingCreditNotesOneResponse](../../Models/Operations/AccountingCreditNotesOneResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## update
+
+Update Credit Note
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Components;
+use Apideck\Unify\Models\Operations;
+use Apideck\Unify\Utils;
+
+$security = '<YOUR_API_KEY_HERE>';
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity($security)->build();
+
+$request = new Operations\AccountingCreditNotesUpdateRequest(
+    id: '<id>',
+    creditNote: new Components\CreditNoteInput(
+        totalAmount: 49.99,
+        status: Components\CreditNoteStatus::Authorised,
+        dateIssued: Utils\Utils::parseDateTime('2021-05-01T12:00:00.000Z'),
+        type: Components\CreditNoteType::AccountsReceivableCredit,
+        lineItems: [
+            new Components\InvoiceLineItemInput(
+                rowId: '12345',
+                item: new Components\LinkedInvoiceItem(
+                    id: '12344',
+                    code: '120-C',
+                    name: 'Model Y',
+                ),
+                taxRate: new Components\LinkedTaxRateInput(
+                    id: '123456',
+                    rate: 10,
+                ),
+                customFields: [
+                    new Components\CustomField(
+                        id: '2389328923893298',
+                        name: 'employee_level',
+                        description: 'Employee Level',
+                        value: [
+                            new Components\Six(),
+                        ],
+                    ),
+                ],
+                id: '12345',
+                code: '120-C',
+                lineNumber: 1,
+                description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+                type: Components\InvoiceLineItemType::SalesItem,
+                taxAmount: 27500,
+                totalAmount: 27500,
+                quantity: 1,
+                unitPrice: 27500.5,
+                unitOfMeasure: 'pc.',
+                discountPercentage: 0.01,
+                discountAmount: 19.99,
+                locationId: '1234',
+                departmentId: '1234',
+                trackingCategories: [
+                    new Components\LinkedTrackingCategory(
+                        id: '123456',
+                        name: 'New York',
+                    ),
+                ],
+                ledgerAccount: new Components\LinkedLedgerAccountInput(
+                    id: '123456',
+                    nominalCode: 'N091',
+                    code: '453',
+                ),
+                rowVersion: '1-12345',
+            ),
+        ],
+        allocations: [
+            new Components\AllocationInput(
+                id: '123456',
+                allocationId: '123456',
+                amount: 49.99,
+            ),
+        ],
+        billingAddress: new Components\Address(
+            id: '123',
+            type: Components\Type::Primary,
+            string: '25 Spring Street, Blackburn, VIC 3130',
+            name: 'HQ US',
+            line1: 'Main street',
+            line2: 'apt #',
+            line3: 'Suite #',
+            line4: 'delivery instructions',
+            streetNumber: '25',
+            city: 'San Francisco',
+            state: 'CA',
+            postalCode: '94104',
+            country: 'US',
+            latitude: '40.759211',
+            longitude: '-73.984638',
+            county: 'Santa Clara',
+            contactName: 'Elon Musk',
+            salutation: 'Mr',
+            phoneNumber: '111-111-1111',
+            fax: '122-111-1111',
+            email: 'elon@musk.com',
+            website: 'https://elonmusk.com',
+            notes: 'Address notes or delivery instructions.',
+            rowVersion: '1-12345',
+        ),
+        shippingAddress: new Components\Address(
+            id: '123',
+            type: Components\Type::Primary,
+            string: '25 Spring Street, Blackburn, VIC 3130',
+            name: 'HQ US',
+            line1: 'Main street',
+            line2: 'apt #',
+            line3: 'Suite #',
+            line4: 'delivery instructions',
+            streetNumber: '25',
+            city: 'San Francisco',
+            state: 'CA',
+            postalCode: '94104',
+            country: 'US',
+            latitude: '40.759211',
+            longitude: '-73.984638',
+            county: 'Santa Clara',
+            contactName: 'Elon Musk',
+            salutation: 'Mr',
+            phoneNumber: '111-111-1111',
+            fax: '122-111-1111',
+            email: 'elon@musk.com',
+            website: 'https://elonmusk.com',
+            notes: 'Address notes or delivery instructions.',
+            rowVersion: '1-12345',
+        ),
+        customFields: [
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: new Components\Four(),
+            ),
+        ],
+        passThrough: [
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+        ],
+        number: 'OIT00546',
+        customer: new Components\LinkedCustomerInput(
+            id: '12345',
+            email: 'boring@boring.com',
+            displayName: 'Windsurf Shop',
+        ),
+        companyId: '12345',
+        currency: Components\Currency::Usd,
+        currencyRate: 0.69,
+        taxInclusive: true,
+        subTotal: 27500,
+        totalTax: 2500,
+        taxCode: '1234',
+        balance: 27500,
+        remainingCredit: 27500,
+        reference: '123456',
+        datePaid: Utils\Utils::parseDateTime('2021-05-01T12:00:00.000Z'),
+        account: new Components\LinkedLedgerAccountInput(
+            id: '123456',
+            nominalCode: 'N091',
+            code: '453',
+        ),
+        note: 'Some notes about this credit note',
+        terms: 'Some terms about this credit note',
+        trackingCategories: [
+            new Components\LinkedTrackingCategory(
+                id: '123456',
+                name: 'New York',
+            ),
+        ],
+        rowVersion: '1-12345',
+    ),
+    serviceId: 'salesforce',
+);
+
+$response = $sdk->accounting->creditNotes->update(
+    request: $request
+);
+
+if ($response->updateCreditNoteResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                     | [Operations\AccountingCreditNotesUpdateRequest](../../Models/Operations/AccountingCreditNotesUpdateRequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
+
+### Response
+
+**[?Operations\AccountingCreditNotesUpdateResponse](../../Models/Operations/AccountingCreditNotesUpdateResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## delete
+
+Delete Credit Note
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Operations;
+
+$security = '<YOUR_API_KEY_HERE>';
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity($security)->build();
+
+$request = new Operations\AccountingCreditNotesDeleteRequest(
+    id: '<id>',
+    serviceId: 'salesforce',
+);
+
+$response = $sdk->accounting->creditNotes->delete(
+    request: $request
+);
+
+if ($response->deleteCreditNoteResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                     | [Operations\AccountingCreditNotesDeleteRequest](../../Models/Operations/AccountingCreditNotesDeleteRequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
+
+### Response
+
+**[?Operations\AccountingCreditNotesDeleteResponse](../../Models/Operations/AccountingCreditNotesDeleteResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |

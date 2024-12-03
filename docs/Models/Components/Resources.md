@@ -1,0 +1,11 @@
+# Resources
+
+
+## Fields
+
+| Field                                                                    | Type                                                                     | Required                                                                 | Description                                                              | Example                                                                  |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `id`                                                                     | *?string*                                                                | :heavy_minus_sign:                                                       | ID of the resource, typically a lowercased version of its name.          | companies                                                                |
+| `name`                                                                   | *?string*                                                                | :heavy_minus_sign:                                                       | Name of the resource (plural)                                            | Companies                                                                |
+| `status`                                                                 | [?Components\ResourceStatus](../../Models/Components/ResourceStatus.md)  | :heavy_minus_sign:                                                       | Status of the resource. Resources with status live or beta are callable. |                                                                          |
+| `excludedFromCoverage`                                                   | *?bool*                                                                  | :heavy_minus_sign:                                                       | Exclude from mapping coverage                                            | false                                                                    |

@@ -1,0 +1,14 @@
+# PersonInput
+
+
+## Fields
+
+| Field                                                         | Type                                                          | Required                                                      | Description                                                   | Example                                                       |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `firstName`                                                   | *?string*                                                     | :heavy_minus_sign:                                            | The first name of the person.                                 | Elon                                                          |
+| `lastName`                                                    | *?string*                                                     | :heavy_minus_sign:                                            | The last name of the person.                                  | Musk                                                          |
+| `middleName`                                                  | *?string*                                                     | :heavy_minus_sign:                                            | Middle name of the person.                                    | D.                                                            |
+| `gender`                                                      | [?Components\Gender](../../Models/Components/Gender.md)       | :heavy_minus_sign:                                            | The gender represents the gender identity of a person.        | male                                                          |
+| `initials`                                                    | *?string*                                                     | :heavy_minus_sign:                                            | Initials of the person                                        | EM                                                            |
+| `birthday`                                                    | [\DateTime](https://www.php.net/manual/en/class.datetime.php) | :heavy_minus_sign:                                            | Date of birth                                                 | 2000-08-12                                                    |
+| `deceasedOn`                                                  | [\DateTime](https://www.php.net/manual/en/class.datetime.php) | :heavy_minus_sign:                                            | Date of death                                                 | 2000-08-12                                                    |

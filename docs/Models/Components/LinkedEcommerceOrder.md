@@ -1,0 +1,12 @@
+# LinkedEcommerceOrder
+
+The order this entity is linked to.
+
+
+## Fields
+
+| Field                                                                               | Type                                                                                | Required                                                                            | Description                                                                         | Example                                                                             |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `id`                                                                                | *?string*                                                                           | :heavy_minus_sign:                                                                  | A unique identifier for an object.                                                  | 12345                                                                               |
+| `total`                                                                             | *?string*                                                                           | :heavy_minus_sign:                                                                  | The total amount of the order.                                                      | 199.99                                                                              |
+| `status`                                                                            | [?Components\EcommerceOrderStatus](../../Models/Components/EcommerceOrderStatus.md) | :heavy_minus_sign:                                                                  | Current status of the order.                                                        | active                                                                              |
