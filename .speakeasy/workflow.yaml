@@ -10,6 +10,10 @@ targets:
     apideck:
         target: php
         source: Apideck
+        publish:
+            packagist:
+                username: Apideck
+                token: $packagist_token
         codeSamples:
             registry:
                 location: registry.speakeasyapi.dev/apideck-k2o/apideck/apideck-php-code-samples
