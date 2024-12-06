@@ -42,26 +42,9 @@ For more information about the API: [Apideck Developer Docs](https://developers.
 
 The SDK relies on [Composer](https://getcomposer.org/) to manage its dependencies.
 
-To install the SDK first add the below to your `composer.json` file:
-
-```json
-{
-    "repositories": [
-        {
-            "type": "github",
-            "url": "<UNSET>.git"
-        }
-    ],
-    "require": {
-        "apideck-libraries/sdk-php": "*"
-    }
-}
-```
-
-Then run the following command:
-
+To install the SDK and add it as a dependency to an existing `composer.json` file:
 ```bash
-composer update
+composer require "apideck-libraries/sdk-php"
 ```
 <!-- End SDK Installation [installation] -->
 
@@ -79,7 +62,7 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
-$security = '<YOUR_API_KEY_HERE>';
+$security = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = Unify\Apideck::builder()
     ->setConsumerId('test-consumer')
@@ -670,7 +653,7 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
-$security = '<YOUR_API_KEY_HERE>';
+$security = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = Unify\Apideck::builder()
     ->setConsumerId('test-consumer')
@@ -737,7 +720,7 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
-$security = '<YOUR_API_KEY_HERE>';
+$security = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = Unify\Apideck::builder()
     ->setServerURL('https://unify.apideck.com')
@@ -781,7 +764,7 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
-$security = '<YOUR_API_KEY_HERE>';
+$security = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = Unify\Apideck::builder()
     ->setConsumerId('test-consumer')

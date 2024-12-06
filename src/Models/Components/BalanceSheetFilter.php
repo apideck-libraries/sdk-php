@@ -12,7 +12,7 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class BalanceSheetFilter
 {
     /**
-     * The start date of the period to include in the resource.
+     * Filter by start date. If start date is given, end date is required.
      *
      * @var ?string $startDate
      */
@@ -20,7 +20,7 @@ class BalanceSheetFilter
     public ?string $startDate = null;
 
     /**
-     * The end date of the period to include in the resource.
+     * Filter by end date. If end date is given, start date is required.
      *
      * @var ?string $endDate
      */
@@ -28,32 +28,12 @@ class BalanceSheetFilter
     public ?string $endDate = null;
 
     /**
-     * The number of periods to include in the resource.
-     *
-     * @var ?int $periodCount
-     */
-    #[SpeakeasyMetadata('queryParam:name=period_count')]
-    public ?int $periodCount = null;
-
-    /**
-     * The type of period to include in the resource: month, quarter, year.
-     *
-     * @var ?PeriodType $periodType
-     */
-    #[SpeakeasyMetadata('queryParam:name=period_type')]
-    public ?PeriodType $periodType = null;
-
-    /**
      * @param  ?string  $startDate
      * @param  ?string  $endDate
-     * @param  ?int  $periodCount
-     * @param  ?PeriodType  $periodType
      */
-    public function __construct(?string $startDate = null, ?string $endDate = null, ?int $periodCount = null, ?PeriodType $periodType = null)
+    public function __construct(?string $startDate = null, ?string $endDate = null)
     {
         $this->startDate = $startDate;
         $this->endDate = $endDate;
-        $this->periodCount = $periodCount;
-        $this->periodType = $periodType;
     }
 }

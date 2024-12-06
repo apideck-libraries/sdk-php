@@ -15,7 +15,7 @@ class Security
      *
      * @var string $apiKey
      */
-    #[SpeakeasyMetadata('security:scheme=true,type=apiKey,subtype=header,name=Authorization')]
+    #[SpeakeasyMetadata('security:scheme=true,type=http,subtype=bearer,name=Authorization')]
     public string $apiKey;
 
     /**

@@ -1,9 +1,9 @@
-speakeasyVersion: 1.449.0
+speakeasyVersion: 1.453.0
 sources:
     Apideck:
         sourceNamespace: apideck
-        sourceRevisionDigest: sha256:f2467042d8f1c25aa5a878109a8c6a1cd30b46ef9f5b1711c883c31ea8c34788
-        sourceBlobDigest: sha256:4b80a2c2395b135e9bca4bd96d2937997844d28e01fc0696474a068db8b5371d
+        sourceRevisionDigest: sha256:fa0799358f2c0a80c78698039cda0586cf8c876582e3edcac3c6b48a089897dc
+        sourceBlobDigest: sha256:39c96f8d4a5fbecf9ab7034eea61ed5d4c8230f961e142764bc3cf69306b06a7
         tags:
             - latest
             - 10.8.1
@@ -11,23 +11,27 @@ targets:
     apideck:
         source: Apideck
         sourceNamespace: apideck
-        sourceRevisionDigest: sha256:f2467042d8f1c25aa5a878109a8c6a1cd30b46ef9f5b1711c883c31ea8c34788
-        sourceBlobDigest: sha256:4b80a2c2395b135e9bca4bd96d2937997844d28e01fc0696474a068db8b5371d
+        sourceRevisionDigest: sha256:fa0799358f2c0a80c78698039cda0586cf8c876582e3edcac3c6b48a089897dc
+        sourceBlobDigest: sha256:39c96f8d4a5fbecf9ab7034eea61ed5d4c8230f961e142764bc3cf69306b06a7
         codeSamplesNamespace: apideck-php-code-samples
-        codeSamplesRevisionDigest: sha256:35d8a3464931d043c5714a5d3d96fb11dadce36b3e05feb9cbf815900cb50f82
+        codeSamplesRevisionDigest: sha256:171a65c2a9c561323ef948937ca4f88b197938e815585ec19715109b36239f0c
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
     sources:
         Apideck:
             inputs:
-                - location: https://ci-spec-unify.s3.eu-central-1.amazonaws.com/speakeasy-spec.yml
+                - location: ../unify/speakeasy-spec.yml
             registry:
                 location: registry.speakeasyapi.dev/apideck-k2o/apideck/apideck
     targets:
         apideck:
             target: php
             source: Apideck
+            publish:
+                packagist:
+                    username: Apideck
+                    token: $packagist_token
             codeSamples:
                 registry:
                     location: registry.speakeasyapi.dev/apideck-k2o/apideck/apideck-php-code-samples

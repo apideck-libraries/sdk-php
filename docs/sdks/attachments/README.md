@@ -25,7 +25,7 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
-$security = '<YOUR_API_KEY_HERE>';
+$security = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = Unify\Apideck::builder()
     ->setConsumerId('test-consumer')
@@ -84,7 +84,7 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
-$security = '<YOUR_API_KEY_HERE>';
+$security = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = Unify\Apideck::builder()
     ->setConsumerId('test-consumer')
@@ -144,7 +144,7 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
-$security = '<YOUR_API_KEY_HERE>';
+$security = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = Unify\Apideck::builder()
     ->setConsumerId('test-consumer')
@@ -203,7 +203,7 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
-$security = '<YOUR_API_KEY_HERE>';
+$security = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = Unify\Apideck::builder()
     ->setConsumerId('test-consumer')

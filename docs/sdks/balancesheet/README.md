@@ -22,7 +22,7 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
-$security = '<YOUR_API_KEY_HERE>';
+$security = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = Unify\Apideck::builder()
     ->setConsumerId('test-consumer')
@@ -37,8 +37,6 @@ $request = new Operations\AccountingBalanceSheetOneRequest(
     filter: new Components\BalanceSheetFilter(
         startDate: '2021-01-01',
         endDate: '2021-12-31',
-        periodCount: 3,
-        periodType: Components\PeriodType::Month,
     ),
 );
 
