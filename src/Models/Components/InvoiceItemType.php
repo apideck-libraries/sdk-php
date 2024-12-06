@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 
-/** Item type */
+/** The type of invoice item, indicating whether it is an inventory item, a service, or another type. */
 enum InvoiceItemType: string
 {
     case Inventory = 'inventory';

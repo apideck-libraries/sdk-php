@@ -82,6 +82,16 @@ class Expense
     public ?string $departmentId = null;
 
     /**
+     * The type of payment for the expense.
+     *
+     * @var ?ExpensePaymentType $paymentType
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('payment_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ExpensePaymentType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ExpensePaymentType $paymentType = null;
+
+    /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
      * @var ?Currency $currency
@@ -216,6 +226,7 @@ class Expense
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $number
      * @param  ?string  $companyId
+     * @param  ?ExpensePaymentType  $paymentType
      * @param  ?Currency  $currency
      * @param  ?float  $currencyRate
      * @param  ?ExpenseType  $type
@@ -226,7 +237,7 @@ class Expense
      * @param  ?\DateTime  $createdAt
      * @param  ?string  $rowVersion
      */
-    public function __construct(string $accountId, array $lineItems, ?string $id = null, ?\DateTime $transactionDate = null, ?string $customerId = null, ?string $supplierId = null, ?string $departmentId = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?string $companyId = null, ?Currency $currency = null, ?float $currencyRate = null, ?ExpenseType $type = null, ?string $memo = null, ?float $totalAmount = null, ?CustomMappings $customMappings = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null)
+    public function __construct(string $accountId, array $lineItems, ?string $id = null, ?\DateTime $transactionDate = null, ?string $customerId = null, ?string $supplierId = null, ?string $departmentId = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?string $companyId = null, ?ExpensePaymentType $paymentType = null, ?Currency $currency = null, ?float $currencyRate = null, ?ExpenseType $type = null, ?string $memo = null, ?float $totalAmount = null, ?CustomMappings $customMappings = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null)
     {
         $this->accountId = $accountId;
         $this->lineItems = $lineItems;
@@ -240,6 +251,7 @@ class Expense
         $this->passThrough = $passThrough;
         $this->number = $number;
         $this->companyId = $companyId;
+        $this->paymentType = $paymentType;
         $this->currency = $currency;
         $this->currencyRate = $currencyRate;
         $this->type = $type;

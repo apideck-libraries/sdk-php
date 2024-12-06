@@ -72,5 +72,7 @@ class Apideck
         $this->connector = new Connector($this->sdkConfiguration);
         $this->vault = new Vault($this->sdkConfiguration);
         $this->webhook = new Webhook($this->sdkConfiguration);
+        $this->sdkConfiguration->client = $this->sdkConfiguration->initHooks($this->sdkConfiguration->client);
+
     }
 }

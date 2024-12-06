@@ -37,6 +37,7 @@ $request = new Operations\AccountingInvoiceItemsAllRequest(
     serviceId: 'salesforce',
     filter: new Components\InvoiceItemsFilter(
         name: 'Widgets Large',
+        type: Components\InvoiceItemType::Service,
     ),
     passThrough: [
         'search' => 'San Francisco',
@@ -140,7 +141,7 @@ $request = new Operations\AccountingInvoiceItemsAddRequest(
         tracked: true,
         taxable: true,
         inventoryDate: LocalDate::parse('2020-10-30'),
-        type: Components\InvoiceItemType::Inventory,
+        type: Components\InvoiceItemTypeType::Inventory,
         quantity: 1,
         unitPrice: 27500.5,
         assetAccount: new Components\LinkedLedgerAccountInput(
@@ -212,6 +213,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Apideck\Unify;
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $security = '<YOUR_API_KEY_HERE>';
@@ -224,6 +226,9 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingInvoiceItemsOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    filter: new Components\InvoiceItemFilter(
+        type: Components\InvoiceItemFilterInvoiceItemType::Service,
+    ),
     fields: 'id,updated_at',
 );
 
@@ -324,7 +329,7 @@ $request = new Operations\AccountingInvoiceItemsUpdateRequest(
         tracked: true,
         taxable: true,
         inventoryDate: LocalDate::parse('2020-10-30'),
-        type: Components\InvoiceItemType::Inventory,
+        type: Components\InvoiceItemTypeType::Inventory,
         quantity: 1,
         unitPrice: 27500.5,
         assetAccount: new Components\LinkedLedgerAccountInput(

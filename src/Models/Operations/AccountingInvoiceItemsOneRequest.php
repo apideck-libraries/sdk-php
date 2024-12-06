@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace Apideck\Unify\Models\Operations;
 
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Utils\SpeakeasyMetadata;
 class AccountingInvoiceItemsOneRequest
 {
@@ -60,20 +61,30 @@ class AccountingInvoiceItemsOneRequest
     public ?string $fields = null;
 
     /**
+     * Apply filters
+     *
+     * @var ?Components\InvoiceItemFilter $filter
+     */
+    #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
+    public ?Components\InvoiceItemFilter $filter = null;
+
+    /**
      * @param  string  $id
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?bool  $raw
+     * @param  ?Components\InvoiceItemFilter  $filter
      * @param  ?string  $fields
      */
-    public function __construct(string $id, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $fields = null, ?bool $raw = false)
+    public function __construct(string $id, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?Components\InvoiceItemFilter $filter = null, ?string $fields = null, ?bool $raw = false)
     {
         $this->id = $id;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
         $this->raw = $raw;
+        $this->filter = $filter;
         $this->fields = $fields;
     }
 }
