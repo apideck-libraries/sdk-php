@@ -1,12 +1,14 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: fb276a6004d52b717539d57facc08235
-  docVersion: 10.8.1
+  docChecksum: 5a3c61710af05ae5c21380b118217322
+  docVersion: 10.8.3
   speakeasyVersion: 1.453.0
   generationVersion: 2.472.1
-  releaseVersion: 0.0.2
-  configChecksum: 874eb4c570fcfb98b9d1f2fbd049e13a
+  releaseVersion: 0.0.3
+  configChecksum: dac14721849799a0fe7ba3949bcc1164
+  repoURL: https://github.com/apideck-libraries/sdk-php.git
+  installationURL: https://github.com/apideck-libraries/sdk-php
   published: true
 features:
   php:
@@ -337,6 +339,7 @@ generatedFiles:
   - docs/Models/Components/ExpenseInput.md
   - docs/Models/Components/ExpenseLineItem.md
   - docs/Models/Components/ExpenseLineItemInput.md
+  - docs/Models/Components/ExpensePaymentType.md
   - docs/Models/Components/ExpenseType.md
   - docs/Models/Components/Expenses.md
   - docs/Models/Components/ExtendPaths.md
@@ -484,10 +487,13 @@ generatedFiles:
   - docs/Models/Components/Invoice.md
   - docs/Models/Components/InvoiceInput.md
   - docs/Models/Components/InvoiceItem.md
+  - docs/Models/Components/InvoiceItemFilter.md
+  - docs/Models/Components/InvoiceItemFilterInvoiceItemType.md
   - docs/Models/Components/InvoiceItemInput.md
   - docs/Models/Components/InvoiceItemPurchaseDetails.md
   - docs/Models/Components/InvoiceItemSalesDetails.md
   - docs/Models/Components/InvoiceItemType.md
+  - docs/Models/Components/InvoiceItemTypeType.md
   - docs/Models/Components/InvoiceItemsFilter.md
   - docs/Models/Components/InvoiceLineItem.md
   - docs/Models/Components/InvoiceLineItemInput.md
@@ -519,6 +525,7 @@ generatedFiles:
   - docs/Models/Components/LeavingReason.md
   - docs/Models/Components/LedgerAccount.md
   - docs/Models/Components/LedgerAccountInput.md
+  - docs/Models/Components/LedgerAccountSubsidiaries.md
   - docs/Models/Components/LedgerAccountType.md
   - docs/Models/Components/LedgerAccountsFilter.md
   - docs/Models/Components/LedgerAccountsSort.md
@@ -586,6 +593,7 @@ generatedFiles:
   - docs/Models/Components/Payroll.md
   - docs/Models/Components/PayrollTotals.md
   - docs/Models/Components/PayrollsFilter.md
+  - docs/Models/Components/PeriodType.md
   - docs/Models/Components/Permissions.md
   - docs/Models/Components/Person.md
   - docs/Models/Components/PersonInput.md
@@ -674,6 +682,7 @@ generatedFiles:
   - docs/Models/Components/TrackingCategory.md
   - docs/Models/Components/TrackingCategoryInput.md
   - docs/Models/Components/TrackingCategoryStatus.md
+  - docs/Models/Components/TrackingCategorySubsidiaries.md
   - docs/Models/Components/TrackingItem.md
   - docs/Models/Components/Type.md
   - docs/Models/Components/UnexpectedErrorResponse.md
@@ -1749,6 +1758,7 @@ generatedFiles:
   - src/Models/Components/ExpenseInput.php
   - src/Models/Components/ExpenseLineItem.php
   - src/Models/Components/ExpenseLineItemInput.php
+  - src/Models/Components/ExpensePaymentType.php
   - src/Models/Components/ExpenseType.php
   - src/Models/Components/Expenses.php
   - src/Models/Components/ExtendPaths.php
@@ -1894,10 +1904,13 @@ generatedFiles:
   - src/Models/Components/Invoice.php
   - src/Models/Components/InvoiceInput.php
   - src/Models/Components/InvoiceItem.php
+  - src/Models/Components/InvoiceItemFilter.php
+  - src/Models/Components/InvoiceItemFilterInvoiceItemType.php
   - src/Models/Components/InvoiceItemInput.php
   - src/Models/Components/InvoiceItemPurchaseDetails.php
   - src/Models/Components/InvoiceItemSalesDetails.php
   - src/Models/Components/InvoiceItemType.php
+  - src/Models/Components/InvoiceItemTypeType.php
   - src/Models/Components/InvoiceItemsFilter.php
   - src/Models/Components/InvoiceLineItem.php
   - src/Models/Components/InvoiceLineItemInput.php
@@ -1929,6 +1942,7 @@ generatedFiles:
   - src/Models/Components/LeavingReason.php
   - src/Models/Components/LedgerAccount.php
   - src/Models/Components/LedgerAccountInput.php
+  - src/Models/Components/LedgerAccountSubsidiaries.php
   - src/Models/Components/LedgerAccountType.php
   - src/Models/Components/LedgerAccountsFilter.php
   - src/Models/Components/LedgerAccountsSort.php
@@ -1996,6 +2010,7 @@ generatedFiles:
   - src/Models/Components/Payroll.php
   - src/Models/Components/PayrollTotals.php
   - src/Models/Components/PayrollsFilter.php
+  - src/Models/Components/PeriodType.php
   - src/Models/Components/Permissions.php
   - src/Models/Components/Person.php
   - src/Models/Components/PersonInput.php
@@ -2083,6 +2098,7 @@ generatedFiles:
   - src/Models/Components/TrackingCategory.php
   - src/Models/Components/TrackingCategoryInput.php
   - src/Models/Components/TrackingCategoryStatus.php
+  - src/Models/Components/TrackingCategorySubsidiaries.php
   - src/Models/Components/TrackingItem.php
   - src/Models/Components/Type.php
   - src/Models/Components/UnexpectedErrorResponse.php
@@ -2791,7 +2807,7 @@ examples:
         "402":
           application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
         "404":
-          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
@@ -2873,7 +2889,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   accounting.billsAll:
     "":
       parameters:
@@ -2921,7 +2937,7 @@ examples:
         "402":
           application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
         "404":
-          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
@@ -3003,7 +3019,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   accounting.invoicesAll:
     "":
       parameters:
@@ -3133,7 +3149,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   accounting.ledgerAccountsAll:
     "":
       parameters:
@@ -3185,7 +3201,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   accounting.ledgerAccountsOne:
     "":
       parameters:
@@ -3263,12 +3279,12 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   accounting.invoiceItemsAll:
     "":
       parameters:
         query:
-          filter: {"name": "Widgets Large"}
+          filter: {"name": "Widgets Large", "type": "service"}
           pass_through: {"search": "San Francisco"}
           fields: "id,updated_at"
         header:
@@ -3310,7 +3326,7 @@ examples:
         "402":
           application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
         "404":
-          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
@@ -3322,6 +3338,7 @@ examples:
           id: "<id>"
         query:
           fields: "id,updated_at"
+          filter: {"type": "service"}
         header:
           x-apideck-consumer-id: "test-consumer"
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
@@ -3392,7 +3409,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   accounting.creditNotesAll:
     "":
       parameters:
@@ -3522,7 +3539,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   accounting.customersAll:
     "":
       parameters:
@@ -3570,7 +3587,7 @@ examples:
         "402":
           application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
         "404":
-          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
@@ -3652,7 +3669,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   accounting.suppliersAll:
     "":
       parameters:
@@ -3700,7 +3717,7 @@ examples:
         "402":
           application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
         "404":
-          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
@@ -3782,7 +3799,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   accounting.paymentsAll:
     "":
       parameters:
@@ -3826,7 +3843,7 @@ examples:
         "400":
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
         "401":
-          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": {"statusCode": 401, "error": "Unauthorized", "message": "Missing authentication"}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
         "402":
           application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
         "404":
@@ -3912,7 +3929,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   accounting.companyInfoOne:
     "":
       parameters:
@@ -3942,7 +3959,7 @@ examples:
       parameters:
         query:
           pass_through: {"search": "San Francisco"}
-          filter: {"start_date": "2021-01-01", "end_date": "2021-12-31"}
+          filter: {"start_date": "2021-01-01", "end_date": "2021-12-31", "period_count": 3, "period_type": "month"}
         header:
           x-apideck-consumer-id: "test-consumer"
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
@@ -4035,7 +4052,7 @@ examples:
         "402":
           application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
         "404":
-          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
@@ -4117,7 +4134,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   accounting.purchaseOrdersAll:
     "":
       parameters:
@@ -4164,7 +4181,7 @@ examples:
         "402":
           application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
         "404":
-          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
@@ -4245,7 +4262,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   accounting.subsidiariesAll:
     "":
       parameters:
@@ -4294,7 +4311,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   accounting.subsidiariesOne:
     "":
       parameters:
@@ -4372,7 +4389,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   accounting.locationsAll:
     "":
       parameters:
@@ -4418,7 +4435,7 @@ examples:
         "402":
           application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
         "404":
-          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
@@ -4500,7 +4517,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   accounting.departmentsAll:
     "":
       parameters:
@@ -4546,7 +4563,7 @@ examples:
         "402":
           application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
         "404":
-          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
@@ -4628,7 +4645,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   accounting.attachmentsAll:
     "":
       parameters:
@@ -4710,7 +4727,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   accounting.attachmentsDownload:
     "":
       parameters:
@@ -4738,7 +4755,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   accounting.trackingCategoriesAll:
     "":
       parameters:
@@ -4788,7 +4805,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   accounting.trackingCategoriesOne:
     "":
       parameters:
@@ -4866,7 +4883,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   accounting.billPaymentsAll:
     "":
       parameters:
@@ -4910,7 +4927,7 @@ examples:
         "400":
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
         "401":
-          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": {"statusCode": 401, "error": "Unauthorized", "message": "Missing authentication"}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
         "402":
           application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
         "404":
@@ -4996,7 +5013,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   accounting.expensesAll:
     "":
       parameters:
@@ -5036,7 +5053,7 @@ examples:
         "400":
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
         "401":
-          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": {"statusCode": 401, "error": "Unauthorized", "message": "Missing authentication"}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
         "402":
           application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
         "404":
@@ -5121,7 +5138,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   ats.jobsAll:
     "":
       parameters:
@@ -5219,7 +5236,7 @@ examples:
         "402":
           application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
         "404":
-          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
@@ -5301,7 +5318,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   ats.applicationsAll:
     "":
       parameters:
@@ -5350,7 +5367,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   ats.applicationsOne:
     "":
       parameters:
@@ -5427,7 +5444,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   crm.companiesAll:
     "":
       parameters:
@@ -5557,7 +5574,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   crm.contactsAll:
     "":
       parameters:
@@ -5688,7 +5705,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   crm.opportunitiesAll:
     "":
       parameters:
@@ -5736,7 +5753,7 @@ examples:
         "402":
           application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
         "404":
-          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
@@ -5818,7 +5835,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   crm.leadsAll:
     "":
       parameters:
@@ -5948,7 +5965,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   crm.pipelinesAll:
     "":
       parameters:
@@ -5994,7 +6011,7 @@ examples:
         "402":
           application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
         "404":
-          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
@@ -6076,7 +6093,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   crm.notesAll:
     "":
       parameters:
@@ -6126,7 +6143,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   crm.notesOne:
     "":
       parameters:
@@ -6204,7 +6221,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   crm.usersAll:
     "":
       parameters:
@@ -6250,7 +6267,7 @@ examples:
         "402":
           application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
         "404":
-          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
@@ -6332,7 +6349,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   crm.activitiesAll:
     "":
       parameters:
@@ -6380,7 +6397,7 @@ examples:
         "402":
           application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
         "404":
-          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
@@ -6462,7 +6479,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   ecommerce.ordersAll:
     "":
       parameters:
@@ -6775,7 +6792,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   fileStorage.filesDownload:
     "":
       parameters:
@@ -6801,7 +6818,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   fileStorage.filesExport:
     "":
       parameters:
@@ -6854,7 +6871,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   fileStorage.foldersOne:
     "":
       parameters:
@@ -6932,7 +6949,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   fileStorage.foldersCopy:
     "":
       parameters:
@@ -7010,7 +7027,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   fileStorage.sharedLinksOne:
     "":
       parameters:
@@ -7088,7 +7105,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   fileStorage.uploadSessionsAdd:
     "":
       parameters:
@@ -7113,7 +7130,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   fileStorage.uploadSessionsOne:
     "":
       parameters:
@@ -7164,7 +7181,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   fileStorage.uploadSessionsFinish:
     "":
       parameters:
@@ -7240,7 +7257,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   fileStorage.drivesOne:
     "":
       parameters:
@@ -7318,7 +7335,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   fileStorage.driveGroupsAll:
     "":
       parameters:
@@ -7369,7 +7386,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   fileStorage.driveGroupsOne:
     "":
       parameters:
@@ -7447,7 +7464,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   hris.employeesAll:
     "":
       parameters:
@@ -7497,7 +7514,7 @@ examples:
         "404":
           application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
         "422":
-          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": {"error": "Unprocessable", "message": "Unprocessable request, please verify your request headers and body."}, "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   hris.employeesOne:
@@ -7579,7 +7596,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   hris.companiesAll:
     "":
       parameters:
@@ -7621,7 +7638,7 @@ examples:
         "400":
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
         "401":
-          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": {"statusCode": 401, "error": "Unauthorized", "message": "Missing authentication"}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
         "402":
           application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
         "404":
@@ -7707,7 +7724,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   hris.departmentsAll:
     "":
       parameters:
@@ -7757,7 +7774,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   hris.departmentsOne:
     "":
       parameters:
@@ -7835,7 +7852,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   hris.payrollsAll:
     "":
       parameters:
@@ -8020,7 +8037,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   hris.timeOffRequestsOne:
     "":
       parameters:
@@ -8101,7 +8118,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   sms.messagesAll:
     "":
       parameters:
@@ -8150,7 +8167,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   sms.messagesOne:
     "":
       parameters:
@@ -8228,7 +8245,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   issueTracking.collectionsAll:
     "":
       parameters:
@@ -8332,7 +8349,7 @@ examples:
         "402":
           application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
         "404":
-          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
@@ -8417,7 +8434,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   issueTracking.collectionTicketCommentsAll:
     "":
       parameters:
@@ -8474,7 +8491,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   issueTracking.collectionTicketCommentsOne:
     "":
       parameters:
@@ -8558,7 +8575,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   issueTracking.collectionUsersAll:
     "":
       parameters:
@@ -8811,7 +8828,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   vault.consumersAll:
     "":
       parameters:
@@ -8900,7 +8917,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   vault.consumerRequestCountsAll:
     "":
       parameters:
@@ -9021,7 +9038,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   vault.connectionsImport:
     "":
       parameters:
@@ -9069,7 +9086,7 @@ examples:
         "404":
           application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
         "422":
-          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": {"error": "Unprocessable", "message": "Unprocessable request, please verify your request headers and body."}, "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   vault.validateConnectionState:
@@ -9091,7 +9108,7 @@ examples:
         "402":
           application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
         "404":
-          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": {"error": "Unprocessable", "message": "Unprocessable request, please verify your request headers and body."}, "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
@@ -9117,7 +9134,7 @@ examples:
         "402":
           application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
         "404":
-          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": {"error": "Unprocessable", "message": "Unprocessable request, please verify your request headers and body."}, "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
@@ -9386,7 +9403,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   webhook.webhooksDelete:
     "":
       parameters:
@@ -9408,5 +9425,5 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 generatedTests: {}

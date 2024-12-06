@@ -150,8 +150,19 @@ class TaxRateInput
     public ?array $passThrough = null;
 
     /**
+     * The subsidiaries this belongs to.
+     *
+     * @var ?array<Subsidiaries> $subsidiaries
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiaries')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Subsidiaries>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $subsidiaries = null;
+
+    /**
      * @param  ?string  $name
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<Subsidiaries>  $subsidiaries
      * @param  ?string  $id
      * @param  ?string  $code
      * @param  ?string  $description
@@ -166,10 +177,11 @@ class TaxRateInput
      * @param  ?TaxRateStatus  $status
      * @param  ?string  $rowVersion
      */
-    public function __construct(?string $name = null, ?array $passThrough = null, ?string $id = null, ?string $code = null, ?string $description = null, ?float $effectiveTaxRate = null, ?float $totalTaxRate = null, ?string $taxPayableAccountId = null, ?string $taxRemittedAccountId = null, ?array $components = null, ?string $type = null, ?string $reportTaxType = null, ?string $originalTaxRateId = null, ?TaxRateStatus $status = null, ?string $rowVersion = null)
+    public function __construct(?string $name = null, ?array $passThrough = null, ?array $subsidiaries = null, ?string $id = null, ?string $code = null, ?string $description = null, ?float $effectiveTaxRate = null, ?float $totalTaxRate = null, ?string $taxPayableAccountId = null, ?string $taxRemittedAccountId = null, ?array $components = null, ?string $type = null, ?string $reportTaxType = null, ?string $originalTaxRateId = null, ?TaxRateStatus $status = null, ?string $rowVersion = null)
     {
         $this->name = $name;
         $this->passThrough = $passThrough;
+        $this->subsidiaries = $subsidiaries;
         $this->id = $id;
         $this->code = $code;
         $this->description = $description;

@@ -245,10 +245,10 @@ class LedgerAccount
     /**
      * The subsidiaries the account belongs to.
      *
-     * @var ?array<Subsidiaries> $subsidiaries
+     * @var ?array<LedgerAccountSubsidiaries> $subsidiaries
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiaries')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Subsidiaries>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LedgerAccountSubsidiaries>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $subsidiaries = null;
 
@@ -326,7 +326,7 @@ class LedgerAccount
      * @param  ?array<Categories>  $categories
      * @param  ?ParentAccount  $parentAccount
      * @param  ?array<SubAccounts>  $subAccounts
-     * @param  ?array<Subsidiaries>  $subsidiaries
+     * @param  ?array<LedgerAccountSubsidiaries>  $subsidiaries
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $nominalCode
      * @param  ?string  $code

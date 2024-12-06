@@ -68,18 +68,30 @@ class TrackingCategoryInput
     public ?array $passThrough = null;
 
     /**
+     * The subsidiaries the account belongs to.
+     *
+     * @var ?array<TrackingCategorySubsidiaries> $subsidiaries
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiaries')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\TrackingCategorySubsidiaries>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $subsidiaries = null;
+
+    /**
      * @param  ?string  $name
      * @param  ?TrackingCategoryStatus  $status
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<TrackingCategorySubsidiaries>  $subsidiaries
      * @param  ?string  $parentId
      * @param  ?string  $code
      * @param  ?string  $rowVersion
      */
-    public function __construct(?string $name = null, ?TrackingCategoryStatus $status = null, ?array $passThrough = null, ?string $parentId = null, ?string $code = null, ?string $rowVersion = null)
+    public function __construct(?string $name = null, ?TrackingCategoryStatus $status = null, ?array $passThrough = null, ?array $subsidiaries = null, ?string $parentId = null, ?string $code = null, ?string $rowVersion = null)
     {
         $this->name = $name;
         $this->status = $status;
         $this->passThrough = $passThrough;
+        $this->subsidiaries = $subsidiaries;
         $this->parentId = $parentId;
         $this->code = $code;
         $this->rowVersion = $rowVersion;

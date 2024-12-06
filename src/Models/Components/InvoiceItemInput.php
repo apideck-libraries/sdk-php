@@ -86,12 +86,12 @@ class InvoiceItemInput
     /**
      * Item type
      *
-     * @var ?InvoiceItemType $type
+     * @var ?InvoiceItemTypeType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\InvoiceItemType|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\InvoiceItemTypeType|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?InvoiceItemType $type = null;
+    public ?InvoiceItemTypeType $type = null;
 
     /**
      *
@@ -213,7 +213,7 @@ class InvoiceItemInput
      * @param  ?bool  $tracked
      * @param  ?bool  $taxable
      * @param  ?LocalDate  $inventoryDate
-     * @param  ?InvoiceItemType  $type
+     * @param  ?InvoiceItemTypeType  $type
      * @param  ?float  $quantity
      * @param  ?float  $unitPrice
      * @param  ?LinkedLedgerAccountInput  $assetAccount
@@ -224,7 +224,7 @@ class InvoiceItemInput
      * @param  ?bool  $active
      * @param  ?string  $rowVersion
      */
-    public function __construct(?InvoiceItemSalesDetails $salesDetails = null, ?InvoiceItemPurchaseDetails $purchaseDetails = null, ?array $passThrough = null, ?string $name = null, ?string $description = null, ?string $code = null, ?bool $sold = null, ?bool $purchased = null, ?bool $tracked = null, ?bool $taxable = null, ?LocalDate $inventoryDate = null, ?InvoiceItemType $type = null, ?float $quantity = null, ?float $unitPrice = null, ?LinkedLedgerAccountInput $assetAccount = null, ?LinkedLedgerAccountInput $incomeAccount = null, ?LinkedLedgerAccountInput $expenseAccount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?bool $active = null, ?string $rowVersion = null)
+    public function __construct(?InvoiceItemSalesDetails $salesDetails = null, ?InvoiceItemPurchaseDetails $purchaseDetails = null, ?array $passThrough = null, ?string $name = null, ?string $description = null, ?string $code = null, ?bool $sold = null, ?bool $purchased = null, ?bool $tracked = null, ?bool $taxable = null, ?LocalDate $inventoryDate = null, ?InvoiceItemTypeType $type = null, ?float $quantity = null, ?float $unitPrice = null, ?LinkedLedgerAccountInput $assetAccount = null, ?LinkedLedgerAccountInput $incomeAccount = null, ?LinkedLedgerAccountInput $expenseAccount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?bool $active = null, ?string $rowVersion = null)
     {
         $this->salesDetails = $salesDetails;
         $this->purchaseDetails = $purchaseDetails;

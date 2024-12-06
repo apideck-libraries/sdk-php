@@ -37,6 +37,8 @@ $request = new Operations\AccountingBalanceSheetOneRequest(
     filter: new Components\BalanceSheetFilter(
         startDate: '2021-01-01',
         endDate: '2021-12-31',
+        periodCount: 3,
+        periodType: Components\PeriodType::Month,
     ),
 );
 
