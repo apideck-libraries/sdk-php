@@ -20,10 +20,20 @@ class InvoiceItemsFilter
     public ?string $name = null;
 
     /**
-     * @param  ?string  $name
+     * The type of invoice item, indicating whether it is an inventory item, a service, or another type.
+     *
+     * @var ?InvoiceItemType $type
      */
-    public function __construct(?string $name = null)
+    #[SpeakeasyMetadata('queryParam:name=type')]
+    public ?InvoiceItemType $type = null;
+
+    /**
+     * @param  ?string  $name
+     * @param  ?InvoiceItemType  $type
+     */
+    public function __construct(?string $name = null, ?InvoiceItemType $type = null)
     {
         $this->name = $name;
+        $this->type = $type;
     }
 }

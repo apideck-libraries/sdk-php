@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Errors;
 
 
-use Apideck\Unify\Utils;
+
 /** UnauthorizedResponse - Unauthorized */
 class UnauthorizedResponse
 {
@@ -88,8 +88,11 @@ class UnauthorizedResponse
 
     public function toException(): UnauthorizedResponseThrowable
     {
-        $serializer = Utils\JSON::createSerializer();
-        $message = $serializer->serialize($this, 'json');
+        if ($this->message !== null) {
+            $message = $this->message;
+        } else {
+            $message = 'unknown error';
+        }
         $code = -1;
 
         return new UnauthorizedResponseThrowable($message, (int) $code, $this);

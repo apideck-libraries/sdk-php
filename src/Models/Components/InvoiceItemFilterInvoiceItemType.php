@@ -10,7 +10,7 @@ namespace Apideck\Unify\Models\Components;
 
 
 /** The type of invoice item, indicating whether it is an inventory item, a service, or another type. */
-enum InvoiceItemType: string
+enum InvoiceItemFilterInvoiceItemType: string
 {
     case Inventory = 'inventory';
     case Service = 'service';

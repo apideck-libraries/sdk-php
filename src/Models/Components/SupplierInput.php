@@ -243,6 +243,15 @@ class SupplierInput
     public ?array $passThrough = null;
 
     /**
+     * The subsidiary the supplier belongs to.
+     *
+     * @var ?string $subsidiaryId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiary_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $subsidiaryId = null;
+
+    /**
      * @param  ?array<Address>  $addresses
      * @param  ?array<PhoneNumber>  $phoneNumbers
      * @param  ?array<Email>  $emails
@@ -250,6 +259,7 @@ class SupplierInput
      * @param  ?array<BankAccount>  $bankAccounts
      * @param  ?LinkedTaxRateInput  $taxRate
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?string  $subsidiaryId
      * @param  ?string  $displayId
      * @param  ?string  $displayName
      * @param  ?string  $companyName
@@ -269,7 +279,7 @@ class SupplierInput
      * @param  ?string  $channel
      * @param  ?string  $rowVersion
      */
-    public function __construct(?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRateInput $taxRate = null, ?array $passThrough = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?string $notes = null, ?string $taxNumber = null, ?Currency $currency = null, ?LinkedLedgerAccountInput $account = null, ?SupplierStatus $status = null, ?string $paymentMethod = null, ?string $channel = null, ?string $rowVersion = null)
+    public function __construct(?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRateInput $taxRate = null, ?array $passThrough = null, ?string $subsidiaryId = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?string $notes = null, ?string $taxNumber = null, ?Currency $currency = null, ?LinkedLedgerAccountInput $account = null, ?SupplierStatus $status = null, ?string $paymentMethod = null, ?string $channel = null, ?string $rowVersion = null)
     {
         $this->addresses = $addresses;
         $this->phoneNumbers = $phoneNumbers;
@@ -278,6 +288,7 @@ class SupplierInput
         $this->bankAccounts = $bankAccounts;
         $this->taxRate = $taxRate;
         $this->passThrough = $passThrough;
+        $this->subsidiaryId = $subsidiaryId;
         $this->displayId = $displayId;
         $this->displayName = $displayName;
         $this->companyName = $companyName;

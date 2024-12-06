@@ -216,10 +216,10 @@ class LedgerAccountInput
     /**
      * The subsidiaries the account belongs to.
      *
-     * @var ?array<Subsidiaries> $subsidiaries
+     * @var ?array<LedgerAccountSubsidiaries> $subsidiaries
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiaries')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Subsidiaries>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LedgerAccountSubsidiaries>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $subsidiaries = null;
 
@@ -248,7 +248,7 @@ class LedgerAccountInput
      * @param  ?LinkedTaxRateInput  $taxRate
      * @param  ?BankAccount  $bankAccount
      * @param  ?ParentAccount  $parentAccount
-     * @param  ?array<Subsidiaries>  $subsidiaries
+     * @param  ?array<LedgerAccountSubsidiaries>  $subsidiaries
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $nominalCode
      * @param  ?string  $code

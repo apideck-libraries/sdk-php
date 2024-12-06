@@ -123,10 +123,21 @@ class TrackingCategory
     public ?array $passThrough = null;
 
     /**
+     * The subsidiaries the account belongs to.
+     *
+     * @var ?array<TrackingCategorySubsidiaries> $subsidiaries
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiaries')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\TrackingCategorySubsidiaries>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $subsidiaries = null;
+
+    /**
      * @param  ?string  $id
      * @param  ?string  $name
      * @param  ?TrackingCategoryStatus  $status
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<TrackingCategorySubsidiaries>  $subsidiaries
      * @param  ?string  $parentId
      * @param  ?string  $code
      * @param  ?CustomMappings  $customMappings
@@ -136,12 +147,13 @@ class TrackingCategory
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
      */
-    public function __construct(?string $id = null, ?string $name = null, ?TrackingCategoryStatus $status = null, ?array $passThrough = null, ?string $parentId = null, ?string $code = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?string $name = null, ?TrackingCategoryStatus $status = null, ?array $passThrough = null, ?array $subsidiaries = null, ?string $parentId = null, ?string $code = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->name = $name;
         $this->status = $status;
         $this->passThrough = $passThrough;
+        $this->subsidiaries = $subsidiaries;
         $this->parentId = $parentId;
         $this->code = $code;
         $this->customMappings = $customMappings;

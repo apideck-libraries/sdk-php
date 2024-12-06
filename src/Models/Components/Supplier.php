@@ -306,6 +306,15 @@ class Supplier
     public ?array $passThrough = null;
 
     /**
+     * The subsidiary the supplier belongs to.
+     *
+     * @var ?string $subsidiaryId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiary_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $subsidiaryId = null;
+
+    /**
      * @param  string  $id
      * @param  ?array<Address>  $addresses
      * @param  ?array<PhoneNumber>  $phoneNumbers
@@ -314,6 +323,7 @@ class Supplier
      * @param  ?array<BankAccount>  $bankAccounts
      * @param  ?LinkedTaxRate  $taxRate
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?string  $subsidiaryId
      * @param  ?string  $downstreamId
      * @param  ?string  $displayId
      * @param  ?string  $displayName
@@ -339,7 +349,7 @@ class Supplier
      * @param  ?\DateTime  $createdAt
      * @param  ?string  $rowVersion
      */
-    public function __construct(string $id, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRate $taxRate = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?string $notes = null, ?string $taxNumber = null, ?Currency $currency = null, ?LinkedLedgerAccount $account = null, ?SupplierStatus $status = null, ?string $paymentMethod = null, ?string $channel = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null)
+    public function __construct(string $id, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRate $taxRate = null, ?array $passThrough = null, ?string $subsidiaryId = null, ?string $downstreamId = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?string $notes = null, ?string $taxNumber = null, ?Currency $currency = null, ?LinkedLedgerAccount $account = null, ?SupplierStatus $status = null, ?string $paymentMethod = null, ?string $channel = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null)
     {
         $this->id = $id;
         $this->addresses = $addresses;
@@ -349,6 +359,7 @@ class Supplier
         $this->bankAccounts = $bankAccounts;
         $this->taxRate = $taxRate;
         $this->passThrough = $passThrough;
+        $this->subsidiaryId = $subsidiaryId;
         $this->downstreamId = $downstreamId;
         $this->displayId = $displayId;
         $this->displayName = $displayName;
