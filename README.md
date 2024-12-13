@@ -103,6 +103,14 @@ if ($response->getTaxRatesResponse !== null) {
 ### [accounting](docs/sdks/accounting/README.md)
 
 
+#### [accounting->agedCreditors](docs/sdks/agedcreditors/README.md)
+
+* [get](docs/sdks/agedcreditors/README.md#get) - Get Aged Creditors
+
+#### [accounting->agedDebtors](docs/sdks/ageddebtors/README.md)
+
+* [get](docs/sdks/ageddebtors/README.md#get) - Get Aged Debtors
+
 #### [accounting->attachments](docs/sdks/attachments/README.md)
 
 * [list](docs/sdks/attachments/README.md#list) - List Attachments
