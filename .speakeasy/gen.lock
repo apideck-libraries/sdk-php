@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 6385e11ae594d46afc1910ffab8d003a
-  docVersion: 10.8.3
-  speakeasyVersion: 1.454.0
-  generationVersion: 2.477.0
-  releaseVersion: 0.0.4
-  configChecksum: c3a2f196fe8dd693b6d6914e96dab69a
+  docChecksum: 7ac99bda5530d96a93dea69622cbc790
+  docVersion: 10.9.0
+  speakeasyVersion: 1.454.2
+  generationVersion: 2.477.4
+  releaseVersion: 0.1.0
+  configChecksum: f591e4dc1c5be424bad5706db52f1b38
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php
   published: true
@@ -54,6 +54,9 @@ generatedFiles:
   - docs/Models/Components/ActivityType.md
   - docs/Models/Components/Address.md
   - docs/Models/Components/Addresses.md
+  - docs/Models/Components/AgedCreditors.md
+  - docs/Models/Components/AgedDebtors.md
+  - docs/Models/Components/AgedReportFilter.md
   - docs/Models/Components/Allocation.md
   - docs/Models/Components/AllocationInput.md
   - docs/Models/Components/AllocationType.md
@@ -79,6 +82,8 @@ generatedFiles:
   - docs/Models/Components/AttachmentReferenceType.md
   - docs/Models/Components/Audience.md
   - docs/Models/Components/AuthType.md
+  - docs/Models/Components/BalanceByPeriod.md
+  - docs/Models/Components/BalanceByTransaction.md
   - docs/Models/Components/BalanceSheet.md
   - docs/Models/Components/BalanceSheetAssetsAccount.md
   - docs/Models/Components/BalanceSheetEquityAccount.md
@@ -365,6 +370,8 @@ generatedFiles:
   - docs/Models/Components/GetAccountingLocationsResponse.md
   - docs/Models/Components/GetActivitiesResponse.md
   - docs/Models/Components/GetActivityResponse.md
+  - docs/Models/Components/GetAgedCreditorsResponse.md
+  - docs/Models/Components/GetAgedDebtorsResponse.md
   - docs/Models/Components/GetApiResourceCoverageResponse.md
   - docs/Models/Components/GetApiResourceResponse.md
   - docs/Models/Components/GetApiResponse.md
@@ -576,6 +583,8 @@ generatedFiles:
   - docs/Models/Components/Options.md
   - docs/Models/Components/OrdersSort.md
   - docs/Models/Components/OrdersSortBy.md
+  - docs/Models/Components/OutstandingBalance.md
+  - docs/Models/Components/OutstandingBalanceByCurrency.md
   - docs/Models/Components/Owner.md
   - docs/Models/Components/PaginationCoverage.md
   - docs/Models/Components/PaginationCoverageMode.md
@@ -684,6 +693,7 @@ generatedFiles:
   - docs/Models/Components/TrackingCategoryStatus.md
   - docs/Models/Components/TrackingCategorySubsidiaries.md
   - docs/Models/Components/TrackingItem.md
+  - docs/Models/Components/TransactionType.md
   - docs/Models/Components/Type.md
   - docs/Models/Components/UnexpectedErrorResponse.md
   - docs/Models/Components/UnifiedApi.md
@@ -767,6 +777,10 @@ generatedFiles:
   - docs/Models/Errors/UnauthorizedResponseDetail.md
   - docs/Models/Errors/UnprocessableResponse.md
   - docs/Models/Errors/UnprocessableResponseDetail.md
+  - docs/Models/Operations/AccountingAgedCreditorsOneRequest.md
+  - docs/Models/Operations/AccountingAgedCreditorsOneResponse.md
+  - docs/Models/Operations/AccountingAgedDebtorsOneRequest.md
+  - docs/Models/Operations/AccountingAgedDebtorsOneResponse.md
   - docs/Models/Operations/AccountingAttachmentsAllRequest.md
   - docs/Models/Operations/AccountingAttachmentsAllResponse.md
   - docs/Models/Operations/AccountingAttachmentsDeleteRequest.md
@@ -1294,6 +1308,8 @@ generatedFiles:
   - docs/Models/Operations/WebhookWebhooksUpdateResponse.md
   - docs/sdks/accounting/README.md
   - docs/sdks/activities/README.md
+  - docs/sdks/agedcreditors/README.md
+  - docs/sdks/ageddebtors/README.md
   - docs/sdks/apideck/README.md
   - docs/sdks/apideckcompanies/README.md
   - docs/sdks/apideckcustomers/README.md
@@ -1383,6 +1399,8 @@ generatedFiles:
   - rector.php
   - src/Accounting.php
   - src/Activities.php
+  - src/AgedCreditors.php
+  - src/AgedDebtors.php
   - src/ApiResourceCoverage.php
   - src/ApiResources.php
   - src/Apideck.php
@@ -1478,6 +1496,9 @@ generatedFiles:
   - src/Models/Components/ActivityType.php
   - src/Models/Components/Address.php
   - src/Models/Components/Addresses.php
+  - src/Models/Components/AgedCreditors.php
+  - src/Models/Components/AgedDebtors.php
+  - src/Models/Components/AgedReportFilter.php
   - src/Models/Components/Allocation.php
   - src/Models/Components/AllocationInput.php
   - src/Models/Components/AllocationType.php
@@ -1503,6 +1524,8 @@ generatedFiles:
   - src/Models/Components/AttachmentReferenceType.php
   - src/Models/Components/Audience.php
   - src/Models/Components/AuthType.php
+  - src/Models/Components/BalanceByPeriod.php
+  - src/Models/Components/BalanceByTransaction.php
   - src/Models/Components/BalanceSheet.php
   - src/Models/Components/BalanceSheetAssetsAccount.php
   - src/Models/Components/BalanceSheetEquityAccount.php
@@ -1785,6 +1808,8 @@ generatedFiles:
   - src/Models/Components/GetAccountingLocationsResponse.php
   - src/Models/Components/GetActivitiesResponse.php
   - src/Models/Components/GetActivityResponse.php
+  - src/Models/Components/GetAgedCreditorsResponse.php
+  - src/Models/Components/GetAgedDebtorsResponse.php
   - src/Models/Components/GetApiResourceCoverageResponse.php
   - src/Models/Components/GetApiResourceResponse.php
   - src/Models/Components/GetApiResponse.php
@@ -1996,6 +2021,8 @@ generatedFiles:
   - src/Models/Components/Options.php
   - src/Models/Components/OrdersSort.php
   - src/Models/Components/OrdersSortBy.php
+  - src/Models/Components/OutstandingBalance.php
+  - src/Models/Components/OutstandingBalanceByCurrency.php
   - src/Models/Components/Owner.php
   - src/Models/Components/PaginationCoverage.php
   - src/Models/Components/PaginationCoverageMode.php
@@ -2103,6 +2130,7 @@ generatedFiles:
   - src/Models/Components/TrackingCategoryStatus.php
   - src/Models/Components/TrackingCategorySubsidiaries.php
   - src/Models/Components/TrackingItem.php
+  - src/Models/Components/TransactionType.php
   - src/Models/Components/Type.php
   - src/Models/Components/UnexpectedErrorResponse.php
   - src/Models/Components/UnifiedApi.php
@@ -2186,6 +2214,10 @@ generatedFiles:
   - src/Models/Errors/UnauthorizedResponseThrowable.php
   - src/Models/Errors/UnprocessableResponse.php
   - src/Models/Errors/UnprocessableResponseThrowable.php
+  - src/Models/Operations/AccountingAgedCreditorsOneRequest.php
+  - src/Models/Operations/AccountingAgedCreditorsOneResponse.php
+  - src/Models/Operations/AccountingAgedDebtorsOneRequest.php
+  - src/Models/Operations/AccountingAgedDebtorsOneResponse.php
   - src/Models/Operations/AccountingAttachmentsAllRequest.php
   - src/Models/Operations/AccountingAttachmentsAllResponse.php
   - src/Models/Operations/AccountingAttachmentsDeleteRequest.php
@@ -9115,7 +9147,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   vault.createCallbackState:
     "":
       parameters:
@@ -9141,7 +9173,7 @@ examples:
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
-          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
   vault.connectionSettingsAll:
     "":
       parameters:
@@ -9425,6 +9457,58 @@ examples:
           application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
         "404":
           application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  accounting.agedCreditorsOne:
+    "":
+      parameters:
+        query:
+          filter: {"customer_id": "123abc", "report_as_of_date": "2024-01-01", "period_count": 3, "period_length": 30}
+          pass_through: {"search": "San Francisco"}
+          fields: "id,updated_at"
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+      responses:
+        "200":
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "AgedCreditors", "operation": "one", "data": {"report_generated_at": "2024-11-14T12:00:00.000Z", "report_as_of_date": "2024-11-13", "period_count": 4, "period_length": 30, "outstanding_balances": [{"customer_id": "123", "customer_name": "Super Store", "outstanding_balances_by_currency": [{"currency": "USD", "balances_by_period": [{"start_date": "2024-01-01", "end_date": "2024-01-30", "total_amount": 1500, "balances_by_transaction": [{"transaction_id": "INV-1001", "transaction_date": "2024-01-15", "transaction_type": "invoice", "due_date": "2024-02-15", "original_amount": 1000, "outstanding_balance": 800}, {"transaction_id": "INV-1001", "transaction_date": "2024-01-15", "transaction_type": "invoice", "due_date": "2024-02-15", "original_amount": 1000, "outstanding_balance": 800}]}, {"start_date": "2024-01-01", "end_date": "2024-01-30", "total_amount": 1500, "balances_by_transaction": [{"transaction_id": "INV-1001", "transaction_date": "2024-01-15", "transaction_type": "invoice", "due_date": "2024-02-15", "original_amount": 1000, "outstanding_balance": 800}, {"transaction_id": "INV-1001", "transaction_date": "2024-01-15", "transaction_type": "invoice", "due_date": "2024-02-15", "original_amount": 1000, "outstanding_balance": 800}, {"transaction_id": "INV-1001", "transaction_date": "2024-01-15", "transaction_type": "invoice", "due_date": "2024-02-15", "original_amount": 1000, "outstanding_balance": 800}]}]}, {"currency": "USD", "balances_by_period": [{"start_date": "2024-01-01", "end_date": "2024-01-30", "total_amount": 1500, "balances_by_transaction": [{"transaction_id": "INV-1001", "transaction_date": "2024-01-15", "transaction_type": "invoice", "due_date": "2024-02-15", "original_amount": 1000, "outstanding_balance": 800}]}]}]}, {"customer_id": "123", "customer_name": "Super Store", "outstanding_balances_by_currency": [{"currency": "USD", "balances_by_period": []}]}]}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": {"missing": [{"foobar": "required"}]}, "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  accounting.agedDebtorsOne:
+    "":
+      parameters:
+        query:
+          filter: {"customer_id": "123abc", "report_as_of_date": "2024-01-01", "period_count": 3, "period_length": 30}
+          pass_through: {"search": "San Francisco"}
+          fields: "id,updated_at"
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+      responses:
+        "200":
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "AgedDebtors", "operation": "one", "data": {"report_generated_at": "2024-11-14T12:00:00.000Z", "report_as_of_date": "2024-11-13", "period_count": 4, "period_length": 30, "outstanding_balances": [{"customer_id": "123", "customer_name": "Super Store", "outstanding_balances_by_currency": [{"currency": "USD", "balances_by_period": [{"start_date": "2024-01-01", "end_date": "2024-01-30", "total_amount": 1500, "balances_by_transaction": [{"transaction_id": "INV-1001", "transaction_date": "2024-01-15", "transaction_type": "invoice", "due_date": "2024-02-15", "original_amount": 1000, "outstanding_balance": 800}, {"transaction_id": "INV-1001", "transaction_date": "2024-01-15", "transaction_type": "invoice", "due_date": "2024-02-15", "original_amount": 1000, "outstanding_balance": 800}]}, {"start_date": "2024-01-01", "end_date": "2024-01-30", "total_amount": 1500, "balances_by_transaction": [{"transaction_id": "INV-1001", "transaction_date": "2024-01-15", "transaction_type": "invoice", "due_date": "2024-02-15", "original_amount": 1000, "outstanding_balance": 800}, {"transaction_id": "INV-1001", "transaction_date": "2024-01-15", "transaction_type": "invoice", "due_date": "2024-02-15", "original_amount": 1000, "outstanding_balance": 800}, {"transaction_id": "INV-1001", "transaction_date": "2024-01-15", "transaction_type": "invoice", "due_date": "2024-02-15", "original_amount": 1000, "outstanding_balance": 800}]}]}, {"currency": "USD", "balances_by_period": [{"start_date": "2024-01-01", "end_date": "2024-01-30", "total_amount": 1500, "balances_by_transaction": [{"transaction_id": "INV-1001", "transaction_date": "2024-01-15", "transaction_type": "invoice", "due_date": "2024-02-15", "original_amount": 1000, "outstanding_balance": 800}]}]}]}, {"customer_id": "123", "customer_name": "Super Store", "outstanding_balances_by_currency": [{"currency": "USD", "balances_by_period": []}]}]}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": {"missing": [{"foobar": "required"}]}, "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
         "422":
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
