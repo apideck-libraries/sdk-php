@@ -13,12 +13,27 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class IssueTrackingCollectionTicketCommentsAddRequest
 {
     /**
-     * Include raw response. Mostly used for debugging purposes
+     * The collection ID
      *
-     * @var ?bool $raw
+     * @var string $collectionId
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
+    #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=collection_id')]
+    public string $collectionId;
+
+    /**
+     * ID of the ticket you are acting upon.
+     *
+     * @var string $ticketId
+     */
+    #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=ticket_id')]
+    public string $ticketId;
+
+    /**
+     *
+     * @var Components\CollectionTicketCommentInput $collectionTicketComment
+     */
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\CollectionTicketCommentInput $collectionTicketComment;
 
     /**
      * ID of the consumer which you want to get or push data from
@@ -45,27 +60,12 @@ class IssueTrackingCollectionTicketCommentsAddRequest
     public ?string $serviceId = null;
 
     /**
-     * The collection ID
+     * Include raw response. Mostly used for debugging purposes
      *
-     * @var string $collectionId
+     * @var ?bool $raw
      */
-    #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=collection_id')]
-    public string $collectionId;
-
-    /**
-     * ID of the ticket you are acting upon.
-     *
-     * @var string $ticketId
-     */
-    #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=ticket_id')]
-    public string $ticketId;
-
-    /**
-     *
-     * @var Components\CollectionTicketCommentInput $collectionTicketComment
-     */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\CollectionTicketCommentInput $collectionTicketComment;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
 
     /**
      * @param  string  $collectionId
@@ -81,9 +81,9 @@ class IssueTrackingCollectionTicketCommentsAddRequest
         $this->collectionId = $collectionId;
         $this->ticketId = $ticketId;
         $this->collectionTicketComment = $collectionTicketComment;
-        $this->raw = $raw;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
+        $this->raw = $raw;
     }
 }

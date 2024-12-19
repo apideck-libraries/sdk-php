@@ -12,6 +12,14 @@ namespace Apideck\Unify\Models\Components;
 class PhoneNumber
 {
     /**
+     * The phone number
+     *
+     * @var string $number
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('number')]
+    public string $number;
+
+    /**
      * Unique identifier of the phone number
      *
      * @var ?string $id
@@ -37,14 +45,6 @@ class PhoneNumber
     #[\Speakeasy\Serializer\Annotation\SerializedName('area_code')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $areaCode = null;
-
-    /**
-     * The phone number
-     *
-     * @var string $number
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('number')]
-    public string $number;
 
     /**
      * The extension of the phone number

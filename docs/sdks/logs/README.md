@@ -38,12 +38,15 @@ $request = new Operations\VaultLogsAllRequest(
     ),
 );
 
-$response = $sdk->vault->logs->list(
+$responses = $sdk->vault->logs->list(
     request: $request
 );
 
-if ($response->getLogsResponse !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 

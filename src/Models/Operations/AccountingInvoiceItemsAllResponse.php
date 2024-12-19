@@ -47,6 +47,10 @@ class AccountingInvoiceItemsAllResponse
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
+     * @var \Closure(string): ?AccountingInvoiceItemsAllResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
@@ -60,5 +64,18 @@ class AccountingInvoiceItemsAllResponse
         $this->rawResponse = $rawResponse;
         $this->getInvoiceItemsResponse = $getInvoiceItemsResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?AccountingInvoiceItemsAllResponse
+     */
+    public function __call($name, $args): ?AccountingInvoiceItemsAllResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

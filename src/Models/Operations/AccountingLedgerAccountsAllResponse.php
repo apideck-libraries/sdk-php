@@ -47,6 +47,10 @@ class AccountingLedgerAccountsAllResponse
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
+     * @var \Closure(string): ?AccountingLedgerAccountsAllResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
@@ -60,5 +64,18 @@ class AccountingLedgerAccountsAllResponse
         $this->rawResponse = $rawResponse;
         $this->getLedgerAccountsResponse = $getLedgerAccountsResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?AccountingLedgerAccountsAllResponse
+     */
+    public function __call($name, $args): ?AccountingLedgerAccountsAllResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

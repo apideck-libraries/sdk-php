@@ -21,6 +21,35 @@ class JournalEntry
     public ?string $id = null;
 
     /**
+     * Requires a minimum of 2 line items that sum to 0
+     *
+     * @var ?array<JournalEntryLineItem> $lineItems
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\JournalEntryLineItem>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $lineItems = null;
+
+    /**
+     * This is the date on which the journal entry was added. This can be different from the creation date and can also be backdated.
+     *
+     * @var ?\DateTime $postedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('posted_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?\DateTime $postedAt = null;
+
+    /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
+
+    /**
      * Journal entry title
      *
      * @var ?string $title
@@ -58,16 +87,6 @@ class JournalEntry
     public ?string $companyId = null;
 
     /**
-     * Requires a minimum of 2 line items that sum to 0
-     *
-     * @var ?array<JournalEntryLineItem> $lineItems
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\JournalEntryLineItem>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $lineItems = null;
-
-    /**
      * Reference for the journal entry.
      *
      * @var ?string $memo
@@ -75,15 +94,6 @@ class JournalEntry
     #[\Speakeasy\Serializer\Annotation\SerializedName('memo')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $memo = null;
-
-    /**
-     * This is the date on which the journal entry was added. This can be different from the creation date and can also be backdated.
-     *
-     * @var ?\DateTime $postedAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('posted_at')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?\DateTime $postedAt = null;
 
     /**
      * Journal symbol of the entry. For example IND for indirect costs
@@ -194,16 +204,6 @@ class JournalEntry
     #[\Speakeasy\Serializer\Annotation\SerializedName('row_version')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $rowVersion = null;
-
-    /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
 
     /**
      * @param  ?string  $id

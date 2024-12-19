@@ -47,6 +47,10 @@ class ConnectorConnectorsAllResponse
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
+     * @var \Closure(string): ?ConnectorConnectorsAllResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
@@ -60,5 +64,18 @@ class ConnectorConnectorsAllResponse
         $this->rawResponse = $rawResponse;
         $this->getConnectorsResponse = $getConnectorsResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?ConnectorConnectorsAllResponse
+     */
+    public function __call($name, $args): ?ConnectorConnectorsAllResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

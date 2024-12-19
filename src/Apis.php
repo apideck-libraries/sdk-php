@@ -56,7 +56,7 @@ class Apis
      * @return Operations\ConnectorApisAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
-    public function list(?string $appId = null, ?string $cursor = null, ?int $limit = null, ?Components\ApisFilter $filter = null): Operations\ConnectorApisAllResponse
+    private function listIndividual(?string $appId = null, ?string $cursor = null, ?int $limit = null, ?Components\ApisFilter $filter = null): Operations\ConnectorApisAllResponse
     {
         $request = new Operations\ConnectorApisAllRequest(
             appId: $appId,
@@ -111,6 +111,25 @@ class Apis
                     contentType: $contentType,
                     rawResponse: $httpResponse,
                     getApisResponse: $obj);
+                $sdk = $this;
+
+                $response->next = function () use ($sdk, $responseData, $appId, $limit, $filter): ?Operations\ConnectorApisAllResponse {
+                    $jsonObject = new \JsonPath\JsonObject($responseData);
+                    $nextCursor = $jsonObject->get('$.meta.cursors.next');
+                    if ($nextCursor == null) {
+                        return null;
+                    } else {
+                        $nextCursor = $nextCursor[0];
+                    }
+
+                    return $sdk->listIndividual(
+                        appId: $appId,
+                        cursor: $nextCursor,
+                        limit: $limit,
+                        filter: $filter,
+                    );
+                };
+
 
                 return $response;
             } else {
@@ -163,11 +182,50 @@ class Apis
                     contentType: $contentType,
                     rawResponse: $httpResponse,
                     unexpectedErrorResponse: $obj);
+                $sdk = $this;
+
+                $response->next = function () use ($sdk, $responseData, $appId, $limit, $filter): ?Operations\ConnectorApisAllResponse {
+                    $jsonObject = new \JsonPath\JsonObject($responseData);
+                    $nextCursor = $jsonObject->get('$.meta.cursors.next');
+                    if ($nextCursor == null) {
+                        return null;
+                    } else {
+                        $nextCursor = $nextCursor[0];
+                    }
+
+                    return $sdk->listIndividual(
+                        appId: $appId,
+                        cursor: $nextCursor,
+                        limit: $limit,
+                        filter: $filter,
+                    );
+                };
+
 
                 return $response;
             } else {
                 throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
+        }
+    }
+    /**
+     * List APIs
+     *
+     * List APIs
+     *
+     * @param  ?string  $appId
+     * @param  ?string  $cursor
+     * @param  ?int  $limit
+     * @param  ?Components\ApisFilter  $filter
+     * @return \Generator<Operations\ConnectorApisAllResponse>
+     * @throws \Apideck\Unify\Models\Errors\APIException
+     */
+    public function list(?string $appId = null, ?string $cursor = null, ?int $limit = null, ?Components\ApisFilter $filter = null): \Generator
+    {
+        $res = $this->listIndividual($appId, $cursor, $limit, $filter);
+        while ($res !== null) {
+            yield $res;
+            $res = $res->next($res);
         }
     }
 

@@ -12,6 +12,14 @@ use Brick\DateTime\LocalDate;
 class Opportunity
 {
     /**
+     * The title or name of the opportunity.
+     *
+     * @var string $title
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('title')]
+    public string $title;
+
+    /**
      * A unique identifier for the opportunity.
      *
      * @var ?string $id
@@ -21,20 +29,51 @@ class Opportunity
     public ?string $id = null;
 
     /**
-     * The title or name of the opportunity.
-     *
-     * @var string $title
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('title')]
-    public string $title;
-
-    /**
      * The unique identifier of the primary contact associated with the opportunity.
      *
      * @var ?string $primaryContactId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('primary_contact_id')]
     public ?string $primaryContactId;
+
+    /**
+     * An array of unique identifiers of all contacts associated with the opportunity.
+     *
+     * @var ?array<string> $contactIds
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('contact_ids')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $contactIds = null;
+
+    /**
+     * $customFields
+     *
+     * @var ?array<CustomField> $customFields
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $customFields = null;
+
+    /**
+     * Indicates whether the opportunity has been deleted.
+     *
+     * @var ?bool $deleted
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('deleted')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $deleted = null;
+
+    /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
 
     /**
      * A description of the opportunity.
@@ -191,16 +230,6 @@ class Opportunity
     public ?string $contactId = null;
 
     /**
-     * An array of unique identifiers of all contacts associated with the opportunity.
-     *
-     * @var ?array<string> $contactIds
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('contact_ids')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $contactIds = null;
-
-    /**
      * The unique identifier of the company associated with the opportunity.
      *
      * @var ?string $companyId
@@ -274,16 +303,6 @@ class Opportunity
     public ?float $interactionCount = null;
 
     /**
-     * $customFields
-     *
-     * @var ?array<CustomField> $customFields
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $customFields = null;
-
-    /**
      * The date and time when the stage of the opportunity was last changed.
      *
      * @var ?\DateTime $stageLastChangedAt
@@ -300,15 +319,6 @@ class Opportunity
     #[\Speakeasy\Serializer\Annotation\SerializedName('last_activity_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $lastActivityAt = null;
-
-    /**
-     * Indicates whether the opportunity has been deleted.
-     *
-     * @var ?bool $deleted
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('deleted')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $deleted = null;
 
     /**
      * The date and time when the stage of the opportunity was last changed.
@@ -382,16 +392,6 @@ class Opportunity
     #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
-
-    /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
 
     /**
      * @param  string  $title

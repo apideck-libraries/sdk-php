@@ -5,77 +5,11 @@
 
 ### Available Operations
 
-* [list](#list) - List Comments
 * [create](#create) - Create Comment
+* [list](#list) - List Comments
+* [delete](#delete) - Delete Comment
 * [get](#get) - Get Comment
 * [update](#update) - Update Comment
-* [delete](#delete) - Delete Comment
-
-## list
-
-List Comments
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Components;
-use Apideck\Unify\Models\Operations;
-
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
-$sdk = Unify\Apideck::builder()
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
-
-$request = new Operations\IssueTrackingCollectionTicketCommentsAllRequest(
-    collectionId: 'apideck-io',
-    ticketId: '<id>',
-    serviceId: 'salesforce',
-    sort: new Components\CommentsSort(
-        by: Components\CommentsSortBy::CreatedAt,
-        direction: Components\SortDirection::Desc,
-    ),
-    passThrough: [
-        'search' => 'San Francisco',
-    ],
-    fields: 'id,updated_at',
-);
-
-$response = $sdk->issueTracking->collectionTicketComments->list(
-    request: $request
-);
-
-if ($response->getCommentsResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                                               | [Operations\IssueTrackingCollectionTicketCommentsAllRequest](../../Models/Operations/IssueTrackingCollectionTicketCommentsAllRequest.md) | :heavy_check_mark:                                                                                                                       | The request object to use for the request.                                                                                               |
-
-### Response
-
-**[?Operations\IssueTrackingCollectionTicketCommentsAllResponse](../../Models/Operations/IssueTrackingCollectionTicketCommentsAllResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
 
 ## create
 
@@ -153,6 +87,133 @@ if ($response->createCommentResponse !== null) {
 | Errors\UnprocessableResponse   | 422                            | application/json               |
 | Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
 
+## list
+
+List Comments
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Components;
+use Apideck\Unify\Models\Operations;
+
+$security = '<YOUR_BEARER_TOKEN_HERE>';
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity($security)->build();
+
+$request = new Operations\IssueTrackingCollectionTicketCommentsAllRequest(
+    collectionId: 'apideck-io',
+    ticketId: '<id>',
+    serviceId: 'salesforce',
+    sort: new Components\CommentsSort(
+        by: Components\CommentsSortBy::CreatedAt,
+        direction: Components\SortDirection::Desc,
+    ),
+    passThrough: [
+        'search' => 'San Francisco',
+    ],
+    fields: 'id,updated_at',
+);
+
+$responses = $sdk->issueTracking->collectionTicketComments->list(
+    request: $request
+);
+
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                                               | [Operations\IssueTrackingCollectionTicketCommentsAllRequest](../../Models/Operations/IssueTrackingCollectionTicketCommentsAllRequest.md) | :heavy_check_mark:                                                                                                                       | The request object to use for the request.                                                                                               |
+
+### Response
+
+**[?Operations\IssueTrackingCollectionTicketCommentsAllResponse](../../Models/Operations/IssueTrackingCollectionTicketCommentsAllResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## delete
+
+Delete Comment
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Operations;
+
+$security = '<YOUR_BEARER_TOKEN_HERE>';
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity($security)->build();
+
+$request = new Operations\IssueTrackingCollectionTicketCommentsDeleteRequest(
+    id: '<id>',
+    collectionId: 'apideck-io',
+    ticketId: '<id>',
+    serviceId: 'salesforce',
+);
+
+$response = $sdk->issueTracking->collectionTicketComments->delete(
+    request: $request
+);
+
+if ($response->deleteCommentResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                      | Type                                                                                                                                           | Required                                                                                                                                       | Description                                                                                                                                    |
+| ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                                                     | [Operations\IssueTrackingCollectionTicketCommentsDeleteRequest](../../Models/Operations/IssueTrackingCollectionTicketCommentsDeleteRequest.md) | :heavy_check_mark:                                                                                                                             | The request object to use for the request.                                                                                                     |
+
+### Response
+
+**[?Operations\IssueTrackingCollectionTicketCommentsDeleteResponse](../../Models/Operations/IssueTrackingCollectionTicketCommentsDeleteResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
 ## get
 
 Get Comment
@@ -182,12 +243,15 @@ $request = new Operations\IssueTrackingCollectionTicketCommentsOneRequest(
     fields: 'id,updated_at',
 );
 
-$response = $sdk->issueTracking->collectionTicketComments->get(
+$responses = $sdk->issueTracking->collectionTicketComments->get(
     request: $request
 );
 
-if ($response->getCommentResponse !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -277,64 +341,6 @@ if ($response->updateCommentResponse !== null) {
 ### Response
 
 **[?Operations\IssueTrackingCollectionTicketCommentsUpdateResponse](../../Models/Operations/IssueTrackingCollectionTicketCommentsUpdateResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
-
-## delete
-
-Delete Comment
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Operations;
-
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
-$sdk = Unify\Apideck::builder()
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
-
-$request = new Operations\IssueTrackingCollectionTicketCommentsDeleteRequest(
-    id: '<id>',
-    collectionId: 'apideck-io',
-    ticketId: '<id>',
-    serviceId: 'salesforce',
-);
-
-$response = $sdk->issueTracking->collectionTicketComments->delete(
-    request: $request
-);
-
-if ($response->deleteCommentResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                                                      | Type                                                                                                                                           | Required                                                                                                                                       | Description                                                                                                                                    |
-| ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                                                     | [Operations\IssueTrackingCollectionTicketCommentsDeleteRequest](../../Models/Operations/IssueTrackingCollectionTicketCommentsDeleteRequest.md) | :heavy_check_mark:                                                                                                                             | The request object to use for the request.                                                                                                     |
-
-### Response
-
-**[?Operations\IssueTrackingCollectionTicketCommentsDeleteResponse](../../Models/Operations/IssueTrackingCollectionTicketCommentsDeleteResponse.md)**
 
 ### Errors
 

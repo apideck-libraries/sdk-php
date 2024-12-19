@@ -12,15 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class CreateWebhookRequest
 {
     /**
-     * A description of the object.
-     *
-     * @var ?string $description
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $description = null;
-
-    /**
      * Name of Apideck Unified API
      *
      * @var UnifiedApiId $unifiedApi
@@ -54,6 +45,15 @@ class CreateWebhookRequest
     #[\Speakeasy\Serializer\Annotation\SerializedName('events')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\WebhookEventType>')]
     public array $events;
+
+    /**
+     * A description of the object.
+     *
+     * @var ?string $description
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $description = null;
 
     /**
      * @param  UnifiedApiId  $unifiedApi

@@ -12,6 +12,34 @@ use Brick\DateTime\LocalDate;
 class InvoiceItemInput
 {
     /**
+     *
+     * @var ?InvoiceItemSalesDetails $salesDetails
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('sales_details')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\InvoiceItemSalesDetails|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?InvoiceItemSalesDetails $salesDetails = null;
+
+    /**
+     *
+     * @var ?InvoiceItemPurchaseDetails $purchaseDetails
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('purchase_details')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\InvoiceItemPurchaseDetails|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?InvoiceItemPurchaseDetails $purchaseDetails = null;
+
+    /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
+
+    /**
      * Item name
      *
      * @var ?string $name
@@ -95,24 +123,6 @@ class InvoiceItemInput
 
     /**
      *
-     * @var ?InvoiceItemSalesDetails $salesDetails
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('sales_details')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\InvoiceItemSalesDetails|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?InvoiceItemSalesDetails $salesDetails = null;
-
-    /**
-     *
-     * @var ?InvoiceItemPurchaseDetails $purchaseDetails
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('purchase_details')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\InvoiceItemPurchaseDetails|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?InvoiceItemPurchaseDetails $purchaseDetails = null;
-
-    /**
-     *
      * @var ?float $quantity
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('quantity')]
@@ -190,16 +200,6 @@ class InvoiceItemInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('row_version')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $rowVersion = null;
-
-    /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
 
     /**
      * @param  ?InvoiceItemSalesDetails  $salesDetails

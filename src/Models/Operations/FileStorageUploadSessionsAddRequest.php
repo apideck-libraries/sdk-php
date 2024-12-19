@@ -13,12 +13,11 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class FileStorageUploadSessionsAddRequest
 {
     /**
-     * Include raw response. Mostly used for debugging purposes
      *
-     * @var ?bool $raw
+     * @var Components\CreateUploadSessionRequest $createUploadSessionRequest
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\CreateUploadSessionRequest $createUploadSessionRequest;
 
     /**
      * ID of the consumer which you want to get or push data from
@@ -45,11 +44,12 @@ class FileStorageUploadSessionsAddRequest
     public ?string $serviceId = null;
 
     /**
+     * Include raw response. Mostly used for debugging purposes
      *
-     * @var Components\CreateUploadSessionRequest $createUploadSessionRequest
+     * @var ?bool $raw
      */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\CreateUploadSessionRequest $createUploadSessionRequest;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
 
     /**
      * @param  Components\CreateUploadSessionRequest  $createUploadSessionRequest
@@ -61,9 +61,9 @@ class FileStorageUploadSessionsAddRequest
     public function __construct(Components\CreateUploadSessionRequest $createUploadSessionRequest, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?bool $raw = false)
     {
         $this->createUploadSessionRequest = $createUploadSessionRequest;
-        $this->raw = $raw;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
+        $this->raw = $raw;
     }
 }

@@ -21,6 +21,13 @@ class AccountingInvoiceItemsUpdateRequest
     public string $id;
 
     /**
+     *
+     * @var Components\InvoiceItemInput $invoiceItem
+     */
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\InvoiceItemInput $invoiceItem;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -51,13 +58,6 @@ class AccountingInvoiceItemsUpdateRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
     public ?bool $raw = null;
-
-    /**
-     *
-     * @var Components\InvoiceItemInput $invoiceItem
-     */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\InvoiceItemInput $invoiceItem;
 
     /**
      * @param  string  $id

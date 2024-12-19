@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Apideck\Unify;
 
 use Apideck\Unify\Hooks\HookContext;
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 use Speakeasy\Serializer\DeserializationContext;
 
@@ -52,7 +53,7 @@ class ApideckCustomers
      * @return Operations\EcommerceCustomersAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
-    public function list(?Operations\EcommerceCustomersAllRequest $request = null): Operations\EcommerceCustomersAllResponse
+    private function listIndividual(?Operations\EcommerceCustomersAllRequest $request = null): Operations\EcommerceCustomersAllResponse
     {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/ecommerce/customers');
@@ -101,6 +102,36 @@ class ApideckCustomers
                     contentType: $contentType,
                     rawResponse: $httpResponse,
                     getEcommerceCustomersResponse: $obj);
+                $sdk = $this;
+
+                $response->next = function () use ($sdk, $responseData, $request): ?Operations\EcommerceCustomersAllResponse {
+                    $jsonObject = new \JsonPath\JsonObject($responseData);
+                    $nextCursor = $jsonObject->get('$.meta.cursors.next');
+                    if ($nextCursor == null) {
+                        return null;
+                    } else {
+                        $nextCursor = $nextCursor[0];
+                    }
+                    $filter = new Components\EcommerceCustomersFilter(
+                        email: $request != null ? $request->filter->email : null,
+                        phoneNumber: $request != null ? $request->filter->phoneNumber : null,
+                    );
+
+                    return $sdk->listIndividual(
+                        request: new Operations\EcommerceCustomersAllRequest(
+                            raw: $request != null ? $request->raw : null,
+                            consumerId: $request != null ? $request->consumerId : null,
+                            appId: $request != null ? $request->appId : null,
+                            serviceId: $request != null ? $request->serviceId : null,
+                            cursor: $nextCursor,
+                            limit: $request != null ? $request->limit : null,
+                            filter: $filter,
+                            passThrough: $request != null ? $request->passThrough : null,
+                            fields: $request != null ? $request->fields : null,
+                        ),
+                    );
+                };
+
 
                 return $response;
             } else {
@@ -175,11 +206,58 @@ class ApideckCustomers
                     contentType: $contentType,
                     rawResponse: $httpResponse,
                     unexpectedErrorResponse: $obj);
+                $sdk = $this;
+
+                $response->next = function () use ($sdk, $responseData, $request): ?Operations\EcommerceCustomersAllResponse {
+                    $jsonObject = new \JsonPath\JsonObject($responseData);
+                    $nextCursor = $jsonObject->get('$.meta.cursors.next');
+                    if ($nextCursor == null) {
+                        return null;
+                    } else {
+                        $nextCursor = $nextCursor[0];
+                    }
+                    $filter = new Components\EcommerceCustomersFilter(
+                        email: $request != null ? $request->filter->email : null,
+                        phoneNumber: $request != null ? $request->filter->phoneNumber : null,
+                    );
+
+                    return $sdk->listIndividual(
+                        request: new Operations\EcommerceCustomersAllRequest(
+                            raw: $request != null ? $request->raw : null,
+                            consumerId: $request != null ? $request->consumerId : null,
+                            appId: $request != null ? $request->appId : null,
+                            serviceId: $request != null ? $request->serviceId : null,
+                            cursor: $nextCursor,
+                            limit: $request != null ? $request->limit : null,
+                            filter: $filter,
+                            passThrough: $request != null ? $request->passThrough : null,
+                            fields: $request != null ? $request->fields : null,
+                        ),
+                    );
+                };
+
 
                 return $response;
             } else {
                 throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
+        }
+    }
+    /**
+     * List Customers
+     *
+     * List Customers
+     *
+     * @param  ?Operations\EcommerceCustomersAllRequest  $request
+     * @return \Generator<Operations\EcommerceCustomersAllResponse>
+     * @throws \Apideck\Unify\Models\Errors\APIException
+     */
+    public function list(?Operations\EcommerceCustomersAllRequest $request = null): \Generator
+    {
+        $res = $this->listIndividual($request);
+        while ($res !== null) {
+            yield $res;
+            $res = $res->next($res);
         }
     }
 
