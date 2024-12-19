@@ -21,66 +21,12 @@ class ApplicantInput
     public ?string $name = null;
 
     /**
-     * The first name of the person.
-     *
-     * @var ?string $firstName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('first_name')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $firstName = null;
-
-    /**
-     * The last name of the person.
-     *
-     * @var ?string $lastName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('last_name')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $lastName = null;
-
-    /**
-     * Middle name of the person.
-     *
-     * @var ?string $middleName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('middle_name')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $middleName = null;
-
-    /**
-     * The initials of the person, usually derived from their first, middle, and last names.
-     *
-     * @var ?string $initials
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('initials')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $initials = null;
-
-    /**
-     * The date of birth of the person.
-     *
-     * @var ?LocalDate $birthday
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('birthday')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LocalDate $birthday = null;
-
-    /**
      *
      * @var ?string $coverLetter
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('cover_letter')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $coverLetter = null;
-
-    /**
-     * The URL of the photo of a person.
-     *
-     * @var ?string $photoUrl
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('photo_url')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $photoUrl = null;
 
     /**
      * Typically a list of previous companies where the contact has worked or schools that the contact has attended
@@ -90,15 +36,6 @@ class ApplicantInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('headline')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $headline = null;
-
-    /**
-     * The job title of the person.
-     *
-     * @var ?string $title
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('title')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $title = null;
 
     /**
      * $emails
@@ -185,6 +122,95 @@ class ApplicantInput
     public ?string $coordinatorId = null;
 
     /**
+     *
+     * @var ?bool $confidential
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('confidential')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $confidential = null;
+
+    /**
+     *
+     * @var ?bool $anonymized
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('anonymized')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $anonymized = null;
+
+    /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
+
+    /**
+     * The first name of the person.
+     *
+     * @var ?string $firstName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('first_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $firstName = null;
+
+    /**
+     * The last name of the person.
+     *
+     * @var ?string $lastName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('last_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $lastName = null;
+
+    /**
+     * Middle name of the person.
+     *
+     * @var ?string $middleName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('middle_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $middleName = null;
+
+    /**
+     * The initials of the person, usually derived from their first, middle, and last names.
+     *
+     * @var ?string $initials
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('initials')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $initials = null;
+
+    /**
+     * The date of birth of the person.
+     *
+     * @var ?LocalDate $birthday
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('birthday')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LocalDate $birthday = null;
+
+    /**
+     * The URL of the photo of a person.
+     *
+     * @var ?string $photoUrl
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('photo_url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $photoUrl = null;
+
+    /**
+     * The job title of the person.
+     *
+     * @var ?string $title
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('title')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $title = null;
+
+    /**
      * $applicationIds
      *
      * @var ?array<string> $applicationIds
@@ -223,22 +249,6 @@ class ApplicantInput
     #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $sources = null;
-
-    /**
-     *
-     * @var ?bool $confidential
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('confidential')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $confidential = null;
-
-    /**
-     *
-     * @var ?bool $anonymized
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('anonymized')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $anonymized = null;
 
     /**
      * $tags
@@ -282,16 +292,6 @@ class ApplicantInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('deleted')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $deleted = null;
-
-    /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
 
     /**
      * @param  ?string  $name

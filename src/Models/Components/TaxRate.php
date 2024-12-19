@@ -12,15 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class TaxRate
 {
     /**
-     * ID assigned to identify this tax rate.
-     *
-     * @var ?string $id
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $id = null;
-
-    /**
      * Name assigned to identify this tax rate.
      *
      * @var ?string $name
@@ -28,6 +19,35 @@ class TaxRate
     #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $name = null;
+
+    /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
+
+    /**
+     * The subsidiaries this belongs to.
+     *
+     * @var ?array<Subsidiaries> $subsidiaries
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiaries')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Subsidiaries>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $subsidiaries = null;
+
+    /**
+     * ID assigned to identify this tax rate.
+     *
+     * @var ?string $id
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
 
     /**
      * Tax code assigned to identify this tax rate.
@@ -184,26 +204,6 @@ class TaxRate
     #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
-
-    /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
-
-    /**
-     * The subsidiaries this belongs to.
-     *
-     * @var ?array<Subsidiaries> $subsidiaries
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiaries')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Subsidiaries>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $subsidiaries = null;
 
     /**
      * @param  ?string  $name

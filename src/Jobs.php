@@ -52,7 +52,7 @@ class Jobs
      * @return Operations\AtsJobsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
-    public function list(?Operations\AtsJobsAllRequest $request = null): Operations\AtsJobsAllResponse
+    private function listIndividual(?Operations\AtsJobsAllRequest $request = null): Operations\AtsJobsAllResponse
     {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/ats/jobs');
@@ -101,6 +101,31 @@ class Jobs
                     contentType: $contentType,
                     rawResponse: $httpResponse,
                     getJobsResponse: $obj);
+                $sdk = $this;
+
+                $response->next = function () use ($sdk, $responseData, $request): ?Operations\AtsJobsAllResponse {
+                    $jsonObject = new \JsonPath\JsonObject($responseData);
+                    $nextCursor = $jsonObject->get('$.meta.cursors.next');
+                    if ($nextCursor == null) {
+                        return null;
+                    } else {
+                        $nextCursor = $nextCursor[0];
+                    }
+
+                    return $sdk->listIndividual(
+                        request: new Operations\AtsJobsAllRequest(
+                            raw: $request != null ? $request->raw : null,
+                            consumerId: $request != null ? $request->consumerId : null,
+                            appId: $request != null ? $request->appId : null,
+                            serviceId: $request != null ? $request->serviceId : null,
+                            cursor: $nextCursor,
+                            limit: $request != null ? $request->limit : null,
+                            passThrough: $request != null ? $request->passThrough : null,
+                            fields: $request != null ? $request->fields : null,
+                        ),
+                    );
+                };
+
 
                 return $response;
             } else {
@@ -175,11 +200,53 @@ class Jobs
                     contentType: $contentType,
                     rawResponse: $httpResponse,
                     unexpectedErrorResponse: $obj);
+                $sdk = $this;
+
+                $response->next = function () use ($sdk, $responseData, $request): ?Operations\AtsJobsAllResponse {
+                    $jsonObject = new \JsonPath\JsonObject($responseData);
+                    $nextCursor = $jsonObject->get('$.meta.cursors.next');
+                    if ($nextCursor == null) {
+                        return null;
+                    } else {
+                        $nextCursor = $nextCursor[0];
+                    }
+
+                    return $sdk->listIndividual(
+                        request: new Operations\AtsJobsAllRequest(
+                            raw: $request != null ? $request->raw : null,
+                            consumerId: $request != null ? $request->consumerId : null,
+                            appId: $request != null ? $request->appId : null,
+                            serviceId: $request != null ? $request->serviceId : null,
+                            cursor: $nextCursor,
+                            limit: $request != null ? $request->limit : null,
+                            passThrough: $request != null ? $request->passThrough : null,
+                            fields: $request != null ? $request->fields : null,
+                        ),
+                    );
+                };
+
 
                 return $response;
             } else {
                 throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
+        }
+    }
+    /**
+     * List Jobs
+     *
+     * List Jobs
+     *
+     * @param  ?Operations\AtsJobsAllRequest  $request
+     * @return \Generator<Operations\AtsJobsAllResponse>
+     * @throws \Apideck\Unify\Models\Errors\APIException
+     */
+    public function list(?Operations\AtsJobsAllRequest $request = null): \Generator
+    {
+        $res = $this->listIndividual($request);
+        while ($res !== null) {
+            yield $res;
+            $res = $res->next($res);
         }
     }
 

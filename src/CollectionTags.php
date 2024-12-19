@@ -52,7 +52,7 @@ class CollectionTags
      * @return Operations\IssueTrackingCollectionTagsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
-    public function list(Operations\IssueTrackingCollectionTagsAllRequest $request): Operations\IssueTrackingCollectionTagsAllResponse
+    private function listIndividual(Operations\IssueTrackingCollectionTagsAllRequest $request): Operations\IssueTrackingCollectionTagsAllResponse
     {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/issue-tracking/collections/{collection_id}/tags', Operations\IssueTrackingCollectionTagsAllRequest::class, $request, $this->sdkConfiguration->globals);
@@ -101,6 +101,32 @@ class CollectionTags
                     contentType: $contentType,
                     rawResponse: $httpResponse,
                     getCollectionTagsResponse: $obj);
+                $sdk = $this;
+
+                $response->next = function () use ($sdk, $responseData, $request): ?Operations\IssueTrackingCollectionTagsAllResponse {
+                    $jsonObject = new \JsonPath\JsonObject($responseData);
+                    $nextCursor = $jsonObject->get('$.meta.cursors.next');
+                    if ($nextCursor == null) {
+                        return null;
+                    } else {
+                        $nextCursor = $nextCursor[0];
+                    }
+
+                    return $sdk->listIndividual(
+                        request: new Operations\IssueTrackingCollectionTagsAllRequest(
+                            collectionId: $request != null ? $request->collectionId : '',
+                            raw: $request != null ? $request->raw : null,
+                            consumerId: $request != null ? $request->consumerId : null,
+                            appId: $request != null ? $request->appId : null,
+                            serviceId: $request != null ? $request->serviceId : null,
+                            cursor: $nextCursor,
+                            limit: $request != null ? $request->limit : null,
+                            passThrough: $request != null ? $request->passThrough : null,
+                            fields: $request != null ? $request->fields : null,
+                        ),
+                    );
+                };
+
 
                 return $response;
             } else {
@@ -175,11 +201,54 @@ class CollectionTags
                     contentType: $contentType,
                     rawResponse: $httpResponse,
                     unexpectedErrorResponse: $obj);
+                $sdk = $this;
+
+                $response->next = function () use ($sdk, $responseData, $request): ?Operations\IssueTrackingCollectionTagsAllResponse {
+                    $jsonObject = new \JsonPath\JsonObject($responseData);
+                    $nextCursor = $jsonObject->get('$.meta.cursors.next');
+                    if ($nextCursor == null) {
+                        return null;
+                    } else {
+                        $nextCursor = $nextCursor[0];
+                    }
+
+                    return $sdk->listIndividual(
+                        request: new Operations\IssueTrackingCollectionTagsAllRequest(
+                            collectionId: $request != null ? $request->collectionId : '',
+                            raw: $request != null ? $request->raw : null,
+                            consumerId: $request != null ? $request->consumerId : null,
+                            appId: $request != null ? $request->appId : null,
+                            serviceId: $request != null ? $request->serviceId : null,
+                            cursor: $nextCursor,
+                            limit: $request != null ? $request->limit : null,
+                            passThrough: $request != null ? $request->passThrough : null,
+                            fields: $request != null ? $request->fields : null,
+                        ),
+                    );
+                };
+
 
                 return $response;
             } else {
                 throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
+        }
+    }
+    /**
+     * List Tags
+     *
+     * List Tags
+     *
+     * @param  Operations\IssueTrackingCollectionTagsAllRequest  $request
+     * @return \Generator<Operations\IssueTrackingCollectionTagsAllResponse>
+     * @throws \Apideck\Unify\Models\Errors\APIException
+     */
+    public function list(Operations\IssueTrackingCollectionTagsAllRequest $request): \Generator
+    {
+        $res = $this->listIndividual($request);
+        while ($res !== null) {
+            yield $res;
+            $res = $res->next($res);
         }
     }
 

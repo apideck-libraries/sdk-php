@@ -21,15 +21,6 @@ class TrackingCategory
     public ?string $id = null;
 
     /**
-     * A unique identifier for an object.
-     *
-     * @var ?string $parentId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $parentId = null;
-
-    /**
      * The name of the tracking category.
      *
      * @var ?string $name
@@ -37,15 +28,6 @@ class TrackingCategory
     #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $name = null;
-
-    /**
-     * The code of the tracking category.
-     *
-     * @var ?string $code
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('code')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $code = null;
 
     /**
      * Based on the status some functionality is enabled or disabled.
@@ -56,6 +38,44 @@ class TrackingCategory
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\TrackingCategoryStatus|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?TrackingCategoryStatus $status = null;
+
+    /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
+
+    /**
+     * The subsidiaries the account belongs to.
+     *
+     * @var ?array<TrackingCategorySubsidiaries> $subsidiaries
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiaries')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\TrackingCategorySubsidiaries>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $subsidiaries = null;
+
+    /**
+     * A unique identifier for an object.
+     *
+     * @var ?string $parentId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $parentId = null;
+
+    /**
+     * The code of the tracking category.
+     *
+     * @var ?string $code
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('code')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $code = null;
 
     /**
      * When custom mappings are configured on the resource, the result is included here.
@@ -111,26 +131,6 @@ class TrackingCategory
     #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
-
-    /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
-
-    /**
-     * The subsidiaries the account belongs to.
-     *
-     * @var ?array<TrackingCategorySubsidiaries> $subsidiaries
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiaries')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\TrackingCategorySubsidiaries>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $subsidiaries = null;
 
     /**
      * @param  ?string  $id

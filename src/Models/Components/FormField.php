@@ -30,24 +30,6 @@ class FormField
     public ?string $label = null;
 
     /**
-     * The placeholder for the form field
-     *
-     * @var ?string $placeholder
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('placeholder')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $placeholder = null;
-
-    /**
-     * The description of the form field
-     *
-     * @var ?string $description
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $description = null;
-
-    /**
      *
      * @var ?FormFieldType $type
      */
@@ -74,13 +56,32 @@ class FormField
     public ?bool $customField = null;
 
     /**
-     * Only applicable to select fields. Allow the user to add a custom value though the option select if the desired value is not in the option select list.
+     * $options
      *
-     * @var ?bool $allowCustomValues
+     * @var ?array<mixed> $options
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('allow_custom_values')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $allowCustomValues = null;
+    public ?array $options = null;
+
+    /**
+     * The placeholder for the form field
+     *
+     * @var ?string $placeholder
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('placeholder')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $placeholder = null;
+
+    /**
+     * The description of the form field
+     *
+     * @var ?string $description
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $description = null;
 
     /**
      * Indicates if the form field is displayed in a “read-only” mode.
@@ -137,14 +138,13 @@ class FormField
     public ?string $suffix = null;
 
     /**
-     * $options
+     * Only applicable to select fields. Allow the user to add a custom value though the option select if the desired value is not in the option select list.
      *
-     * @var ?array<mixed> $options
+     * @var ?bool $allowCustomValues
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('allow_custom_values')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $options = null;
+    public ?bool $allowCustomValues = null;
 
     /**
      * @param  ?string  $id
@@ -170,7 +170,6 @@ class FormField
         $this->type = $type;
         $this->required = $required;
         $this->customField = $customField;
-        $this->allowCustomValues = $allowCustomValues;
         $this->options = $options;
         $this->placeholder = $placeholder;
         $this->description = $description;
@@ -180,5 +179,6 @@ class FormField
         $this->sensitive = $sensitive;
         $this->prefix = $prefix;
         $this->suffix = $suffix;
+        $this->allowCustomValues = $allowCustomValues;
     }
 }

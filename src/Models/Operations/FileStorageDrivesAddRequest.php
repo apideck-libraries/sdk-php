@@ -13,12 +13,11 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class FileStorageDrivesAddRequest
 {
     /**
-     * Include raw response. Mostly used for debugging purposes
      *
-     * @var ?bool $raw
+     * @var Components\DriveInput $drive
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\DriveInput $drive;
 
     /**
      * ID of the consumer which you want to get or push data from
@@ -45,11 +44,12 @@ class FileStorageDrivesAddRequest
     public ?string $serviceId = null;
 
     /**
+     * Include raw response. Mostly used for debugging purposes
      *
-     * @var Components\DriveInput $drive
+     * @var ?bool $raw
      */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\DriveInput $drive;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
 
     /**
      * @param  Components\DriveInput  $drive
@@ -61,9 +61,9 @@ class FileStorageDrivesAddRequest
     public function __construct(Components\DriveInput $drive, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?bool $raw = false)
     {
         $this->drive = $drive;
-        $this->raw = $raw;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
+        $this->raw = $raw;
     }
 }

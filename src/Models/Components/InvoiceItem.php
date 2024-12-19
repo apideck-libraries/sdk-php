@@ -21,6 +21,34 @@ class InvoiceItem
     public ?string $id = null;
 
     /**
+     *
+     * @var ?SalesDetails $salesDetails
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('sales_details')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\SalesDetails|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?SalesDetails $salesDetails = null;
+
+    /**
+     *
+     * @var ?PurchaseDetails $purchaseDetails
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('purchase_details')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\PurchaseDetails|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?PurchaseDetails $purchaseDetails = null;
+
+    /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
+
+    /**
      * Item name
      *
      * @var ?string $name
@@ -101,24 +129,6 @@ class InvoiceItem
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\InvoiceItemTypeType|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?InvoiceItemTypeType $type = null;
-
-    /**
-     *
-     * @var ?SalesDetails $salesDetails
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('sales_details')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\SalesDetails|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?SalesDetails $salesDetails = null;
-
-    /**
-     *
-     * @var ?PurchaseDetails $purchaseDetails
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('purchase_details')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\PurchaseDetails|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?PurchaseDetails $purchaseDetails = null;
 
     /**
      *
@@ -245,16 +255,6 @@ class InvoiceItem
     #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
-
-    /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
 
     /**
      * @param  ?string  $id

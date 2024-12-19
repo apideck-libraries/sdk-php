@@ -13,14 +13,6 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class EcommerceCustomersAllRequest
 {
     /**
-     * Include raw response. Mostly used for debugging purposes
-     *
-     * @var ?bool $raw
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
-
-    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -45,22 +37,6 @@ class EcommerceCustomersAllRequest
     public ?string $serviceId = null;
 
     /**
-     * Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
-     *
-     * @var ?string $cursor
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=cursor')]
-    public ?string $cursor = null;
-
-    /**
-     * Number of results to return. Minimum 1, Maximum 200, Default 20
-     *
-     * @var ?int $limit
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=limit')]
-    public ?int $limit = null;
-
-    /**
      * Apply filters
      *
      * @var ?Components\EcommerceCustomersFilter $filter
@@ -77,12 +53,36 @@ class EcommerceCustomersAllRequest
     public ?array $passThrough = null;
 
     /**
+     * Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
+     *
+     * @var ?string $cursor
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=cursor')]
+    public ?string $cursor = null;
+
+    /**
      * The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
      *
      * @var ?string $fields
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=fields')]
     public ?string $fields = null;
+
+    /**
+     * Include raw response. Mostly used for debugging purposes
+     *
+     * @var ?bool $raw
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
+
+    /**
+     * Number of results to return. Minimum 1, Maximum 200, Default 20
+     *
+     * @var ?int $limit
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=limit')]
+    public ?int $limit = null;
 
     /**
      * @param  ?bool  $raw
@@ -97,14 +97,14 @@ class EcommerceCustomersAllRequest
      */
     public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?Components\EcommerceCustomersFilter $filter = null, ?array $passThrough = null, ?string $cursor = null, ?string $fields = null, ?bool $raw = false, ?int $limit = 20)
     {
-        $this->raw = $raw;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
-        $this->limit = $limit;
         $this->filter = $filter;
         $this->passThrough = $passThrough;
         $this->cursor = $cursor;
         $this->fields = $fields;
+        $this->raw = $raw;
+        $this->limit = $limit;
     }
 }

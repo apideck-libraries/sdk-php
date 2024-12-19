@@ -12,15 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class Allocations
 {
     /**
-     * A unique identifier for an object.
-     *
-     * @var ?string $id
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $id = null;
-
-    /**
      * Type of entity this payment should be attributed to.
      *
      * @var ?BillPaymentAllocationType $type
@@ -39,15 +30,6 @@ class Allocations
     public ?string $code = null;
 
     /**
-     * Amount of payment that should be attributed to this allocation. If null, the total_amount will be used.
-     *
-     * @var ?float $amount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('amount')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?float $amount = null;
-
-    /**
      * Unique identifier of the allocation
      *
      * @var ?string $allocationId
@@ -55,6 +37,24 @@ class Allocations
     #[\Speakeasy\Serializer\Annotation\SerializedName('allocation_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $allocationId = null;
+
+    /**
+     * A unique identifier for an object.
+     *
+     * @var ?string $id
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
+
+    /**
+     * Amount of payment that should be attributed to this allocation. If null, the total_amount will be used.
+     *
+     * @var ?float $amount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('amount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $amount = null;
 
     /**
      * @param  ?BillPaymentAllocationType  $type

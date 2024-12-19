@@ -21,6 +21,13 @@ class AccountingDepartmentsUpdateRequest
     public string $id;
 
     /**
+     *
+     * @var Components\AccountingDepartmentInput $accountingDepartment
+     */
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\AccountingDepartmentInput $accountingDepartment;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -51,13 +58,6 @@ class AccountingDepartmentsUpdateRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
     public ?bool $raw = null;
-
-    /**
-     *
-     * @var Components\AccountingDepartmentInput $accountingDepartment
-     */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\AccountingDepartmentInput $accountingDepartment;
 
     /**
      * @param  string  $id

@@ -142,44 +142,6 @@ class Connection
     public ?string $logo = null;
 
     /**
-     * The OAuth redirect URI. Redirect your users to this URI to let them authorize your app in the connector's UI. Before you can use this URI, you must add `redirect_uri` as a query parameter to the `authorize_url`. Be sure to URL encode the `redirect_uri` part. Your users will be redirected to this `redirect_uri` after they granted access to your app in the connector's UI.
-     *
-     * @var ?string $authorizeUrl
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('authorize_url')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $authorizeUrl = null;
-
-    /**
-     * The OAuth revoke URI. Redirect your users to this URI to revoke this connection. Before you can use this URI, you must add `redirect_uri` as a query parameter. Your users will be redirected to this `redirect_uri` after they granted access to your app in the connector's UI.
-     *
-     * @var ?string $revokeUrl
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('revoke_url')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $revokeUrl = null;
-
-    /**
-     * Connection settings. Values will persist to `form_fields` with corresponding id
-     *
-     * @var ?array<string, mixed> $settings
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('settings')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $settings = null;
-
-    /**
-     * Attach your own consumer specific metadata
-     *
-     * @var ?array<string, mixed> $metadata
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $metadata = null;
-
-    /**
      * The settings that are wanted to create a connection.
      *
      * @var ?array<FormField> $formFields
@@ -291,6 +253,44 @@ class Connection
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomMapping>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customMappings = null;
+
+    /**
+     * The OAuth redirect URI. Redirect your users to this URI to let them authorize your app in the connector's UI. Before you can use this URI, you must add `redirect_uri` as a query parameter to the `authorize_url`. Be sure to URL encode the `redirect_uri` part. Your users will be redirected to this `redirect_uri` after they granted access to your app in the connector's UI.
+     *
+     * @var ?string $authorizeUrl
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('authorize_url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $authorizeUrl = null;
+
+    /**
+     * The OAuth revoke URI. Redirect your users to this URI to revoke this connection. Before you can use this URI, you must add `redirect_uri` as a query parameter. Your users will be redirected to this `redirect_uri` after they granted access to your app in the connector's UI.
+     *
+     * @var ?string $revokeUrl
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('revoke_url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $revokeUrl = null;
+
+    /**
+     * Connection settings. Values will persist to `form_fields` with corresponding id
+     *
+     * @var ?array<string, mixed> $settings
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('settings')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $settings = null;
+
+    /**
+     * Attach your own consumer specific metadata
+     *
+     * @var ?array<string, mixed> $metadata
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $metadata = null;
 
     /**
      *

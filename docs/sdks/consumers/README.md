@@ -7,9 +7,9 @@
 
 * [create](#create) - Create consumer
 * [list](#list) - Get all consumers
+* [delete](#delete) - Delete consumer
 * [get](#get) - Get consumer
 * [update](#update) - Update consumer
-* [delete](#delete) - Delete consumer
 
 ## create
 
@@ -98,15 +98,18 @@ $sdk = Unify\Apideck::builder()
 
 
 
-$response = $sdk->vault->consumers->list(
+$responses = $sdk->vault->consumers->list(
     appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     limit: 20,
     cursor: '<value>'
 
 );
 
-if ($response->getConsumersResponse !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -121,6 +124,61 @@ if ($response->getConsumersResponse !== null) {
 ### Response
 
 **[?Operations\VaultConsumersAllResponse](../../Models/Operations/VaultConsumersAllResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## delete
+
+Delete consumer and all their connections, including credentials.
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+
+$security = '<YOUR_BEARER_TOKEN_HERE>';
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity($security)->build();
+
+
+
+$response = $sdk->vault->consumers->delete(
+    consumerId: 'test_user_id',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX'
+
+);
+
+if ($response->deleteConsumerResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                               | Type                                    | Required                                | Description                             | Example                                 |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| `consumerId`                            | *string*                                | :heavy_check_mark:                      | ID of the consumer to return            | test_user_id                            |
+| `appId`                                 | *?string*                               | :heavy_minus_sign:                      | The ID of your Unify application        | dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX |
+
+### Response
+
+**[?Operations\VaultConsumersDeleteResponse](../../Models/Operations/VaultConsumersDeleteResponse.md)**
 
 ### Errors
 
@@ -242,61 +300,6 @@ if ($response->updateConsumerResponse !== null) {
 ### Response
 
 **[?Operations\VaultConsumersUpdateResponse](../../Models/Operations/VaultConsumersUpdateResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
-
-## delete
-
-Delete consumer and all their connections, including credentials.
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
-$sdk = Unify\Apideck::builder()
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
-
-
-
-$response = $sdk->vault->consumers->delete(
-    consumerId: 'test_user_id',
-    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX'
-
-);
-
-if ($response->deleteConsumerResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                               | Type                                    | Required                                | Description                             | Example                                 |
-| --------------------------------------- | --------------------------------------- | --------------------------------------- | --------------------------------------- | --------------------------------------- |
-| `consumerId`                            | *string*                                | :heavy_check_mark:                      | ID of the consumer to return            | test_user_id                            |
-| `appId`                                 | *?string*                               | :heavy_minus_sign:                      | The ID of your Unify application        | dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX |
-
-### Response
-
-**[?Operations\VaultConsumersDeleteResponse](../../Models/Operations/VaultConsumersDeleteResponse.md)**
 
 ### Errors
 

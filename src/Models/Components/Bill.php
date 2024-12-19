@@ -21,6 +21,53 @@ class Bill
     public ?string $id = null;
 
     /**
+     * Date bill was issued - YYYY-MM-DD.
+     *
+     * @var ?LocalDate $billDate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('bill_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LocalDate $billDate = null;
+
+    /**
+     * The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.
+     *
+     * @var ?LocalDate $dueDate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('due_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LocalDate $dueDate = null;
+
+    /**
+     * $lineItems
+     *
+     * @var ?array<BillLineItem> $lineItems
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\BillLineItem>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $lineItems = null;
+
+    /**
+     *
+     * @var ?BankAccount $bankAccount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('bank_account')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BankAccount|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?BankAccount $bankAccount = null;
+
+    /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
+
+    /**
      * The third-party API ID of original entity
      *
      * @var ?string $downstreamId
@@ -86,24 +133,6 @@ class Bill
     public ?bool $taxInclusive = null;
 
     /**
-     * Date bill was issued - YYYY-MM-DD.
-     *
-     * @var ?LocalDate $billDate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('bill_date')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LocalDate $billDate = null;
-
-    /**
-     * The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.
-     *
-     * @var ?LocalDate $dueDate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('due_date')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LocalDate $dueDate = null;
-
-    /**
      * The paid date is the date on which a payment was sent to the supplier - YYYY-MM-DD.
      *
      * @var ?LocalDate $paidDate
@@ -129,16 +158,6 @@ class Bill
     #[\Speakeasy\Serializer\Annotation\SerializedName('reference')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $reference = null;
-
-    /**
-     * $lineItems
-     *
-     * @var ?array<BillLineItem> $lineItems
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\BillLineItem>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $lineItems = null;
 
     /**
      * Terms of payment.
@@ -267,15 +286,6 @@ class Bill
     public ?bool $accountingByRow = null;
 
     /**
-     *
-     * @var ?BankAccount $bankAccount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('bank_account')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BankAccount|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?BankAccount $bankAccount = null;
-
-    /**
      * Discount percentage applied to this transaction.
      *
      * @var ?float $discountPercentage
@@ -348,16 +358,6 @@ class Bill
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?CustomMappings $customMappings = null;
-
-    /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
 
     /**
      * Accounting period

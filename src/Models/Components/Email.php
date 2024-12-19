@@ -12,6 +12,14 @@ namespace Apideck\Unify\Models\Components;
 class Email
 {
     /**
+     * Email address
+     *
+     * @var ?string $email
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
+    public ?string $email;
+
+    /**
      * Unique identifier for the email address
      *
      * @var ?string $id
@@ -19,14 +27,6 @@ class Email
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
-
-    /**
-     * Email address
-     *
-     * @var ?string $email
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
-    public ?string $email;
 
     /**
      * Email type

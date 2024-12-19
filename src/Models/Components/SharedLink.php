@@ -12,6 +12,25 @@ namespace Apideck\Unify\Models\Components;
 class SharedLink
 {
     /**
+     *
+     * @var ?SharedLinkTarget $target
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('target')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\SharedLinkTarget|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?SharedLinkTarget $target = null;
+
+    /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
+
+    /**
      * The URL that can be used to view the file.
      *
      * @var ?string $url
@@ -28,15 +47,6 @@ class SharedLink
     #[\Speakeasy\Serializer\Annotation\SerializedName('download_url')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $downloadUrl = null;
-
-    /**
-     *
-     * @var ?SharedLinkTarget $target
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('target')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\SharedLinkTarget|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?SharedLinkTarget $target = null;
 
     /**
      * The scope of the shared link.
@@ -82,16 +92,6 @@ class SharedLink
     #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
-
-    /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
 
     /**
      * @param  ?SharedLinkTarget  $target

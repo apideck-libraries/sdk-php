@@ -47,6 +47,10 @@ class HrisCompaniesAllResponse
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
+     * @var \Closure(string): ?HrisCompaniesAllResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
@@ -60,5 +64,18 @@ class HrisCompaniesAllResponse
         $this->rawResponse = $rawResponse;
         $this->getHrisCompaniesResponse = $getHrisCompaniesResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?HrisCompaniesAllResponse
+     */
+    public function __call($name, $args): ?HrisCompaniesAllResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

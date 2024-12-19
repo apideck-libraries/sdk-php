@@ -12,6 +12,15 @@ use Brick\DateTime\LocalDate;
 class EmployeeJobInput
 {
     /**
+     *
+     * @var ?Address $location
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('location')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Address $location = null;
+
+    /**
      * The job title of the person.
      *
      * @var ?string $title
@@ -112,15 +121,6 @@ class EmployeeJobInput
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EmployeeJobStatus|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?EmployeeJobStatus $status = null;
-
-    /**
-     *
-     * @var ?Address $location
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('location')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Address $location = null;
 
     /**
      * @param  ?Address  $location

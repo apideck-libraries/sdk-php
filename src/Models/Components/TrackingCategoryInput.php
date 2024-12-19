@@ -12,15 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class TrackingCategoryInput
 {
     /**
-     * A unique identifier for an object.
-     *
-     * @var ?string $parentId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $parentId = null;
-
-    /**
      * The name of the tracking category.
      *
      * @var ?string $name
@@ -28,15 +19,6 @@ class TrackingCategoryInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $name = null;
-
-    /**
-     * The code of the tracking category.
-     *
-     * @var ?string $code
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('code')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $code = null;
 
     /**
      * Based on the status some functionality is enabled or disabled.
@@ -47,15 +29,6 @@ class TrackingCategoryInput
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\TrackingCategoryStatus|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?TrackingCategoryStatus $status = null;
-
-    /**
-     * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
-     *
-     * @var ?string $rowVersion
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('row_version')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $rowVersion = null;
 
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
@@ -76,6 +49,33 @@ class TrackingCategoryInput
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\TrackingCategorySubsidiaries>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $subsidiaries = null;
+
+    /**
+     * A unique identifier for an object.
+     *
+     * @var ?string $parentId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $parentId = null;
+
+    /**
+     * The code of the tracking category.
+     *
+     * @var ?string $code
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('code')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $code = null;
+
+    /**
+     * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
+     *
+     * @var ?string $rowVersion
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('row_version')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $rowVersion = null;
 
     /**
      * @param  ?string  $name
