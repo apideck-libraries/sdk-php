@@ -21,6 +21,13 @@ class HrisCompaniesUpdateRequest
     public string $id;
 
     /**
+     *
+     * @var Components\HrisCompanyInput $hrisCompany
+     */
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\HrisCompanyInput $hrisCompany;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -51,13 +58,6 @@ class HrisCompaniesUpdateRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
     public ?bool $raw = null;
-
-    /**
-     *
-     * @var Components\HrisCompanyInput $hrisCompany
-     */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\HrisCompanyInput $hrisCompany;
 
     /**
      * @param  string  $id

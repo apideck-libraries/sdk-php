@@ -21,6 +21,13 @@ class AtsApplicantsUpdateRequest
     public string $id;
 
     /**
+     *
+     * @var Components\ApplicantInput $applicant
+     */
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\ApplicantInput $applicant;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -51,13 +58,6 @@ class AtsApplicantsUpdateRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
     public ?bool $raw = null;
-
-    /**
-     *
-     * @var Components\ApplicantInput $applicant
-     */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\ApplicantInput $applicant;
 
     /**
      * @param  string  $id

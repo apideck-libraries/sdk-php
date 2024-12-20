@@ -21,6 +21,14 @@ class ConnectorConnectorsAllRequest
     public ?string $appId = null;
 
     /**
+     * Apply filters
+     *
+     * @var ?Components\ConnectorsFilter $filter
+     */
+    #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
+    public ?Components\ConnectorsFilter $filter = null;
+
+    /**
      * Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
      *
      * @var ?string $cursor
@@ -37,14 +45,6 @@ class ConnectorConnectorsAllRequest
     public ?int $limit = null;
 
     /**
-     * Apply filters
-     *
-     * @var ?Components\ConnectorsFilter $filter
-     */
-    #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
-    public ?Components\ConnectorsFilter $filter = null;
-
-    /**
      * @param  ?string  $appId
      * @param  ?int  $limit
      * @param  ?Components\ConnectorsFilter  $filter
@@ -53,8 +53,8 @@ class ConnectorConnectorsAllRequest
     public function __construct(?string $appId = null, ?Components\ConnectorsFilter $filter = null, ?string $cursor = null, ?int $limit = 20)
     {
         $this->appId = $appId;
-        $this->limit = $limit;
         $this->filter = $filter;
         $this->cursor = $cursor;
+        $this->limit = $limit;
     }
 }

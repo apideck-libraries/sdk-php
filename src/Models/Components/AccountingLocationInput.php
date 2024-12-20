@@ -12,33 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class AccountingLocationInput
 {
     /**
-     * A unique identifier for an object.
-     *
-     * @var ?string $parentId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $parentId = null;
-
-    /**
-     * The name of the company.
-     *
-     * @var ?string $companyName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('company_name')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $companyName = null;
-
-    /**
-     * The display name of the location.
-     *
-     * @var ?string $displayName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('display_name')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $displayName = null;
-
-    /**
      * Based on the status some functionality is enabled or disabled.
      *
      * @var ?LocationStatus $status
@@ -69,15 +42,6 @@ class AccountingLocationInput
     public ?array $subsidiaries = null;
 
     /**
-     * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
-     *
-     * @var ?string $rowVersion
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('row_version')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $rowVersion = null;
-
-    /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
      * @var ?array<PassThroughBody> $passThrough
@@ -86,6 +50,42 @@ class AccountingLocationInput
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * A unique identifier for an object.
+     *
+     * @var ?string $parentId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $parentId = null;
+
+    /**
+     * The name of the company.
+     *
+     * @var ?string $companyName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('company_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $companyName = null;
+
+    /**
+     * The display name of the location.
+     *
+     * @var ?string $displayName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('display_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $displayName = null;
+
+    /**
+     * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
+     *
+     * @var ?string $rowVersion
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('row_version')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $rowVersion = null;
 
     /**
      * @param  ?LocationStatus  $status

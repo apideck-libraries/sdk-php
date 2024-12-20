@@ -37,12 +37,15 @@ $request = new Operations\IssueTrackingCollectionTagsAllRequest(
     fields: 'id,updated_at',
 );
 
-$response = $sdk->issueTracking->collectionTags->list(
+$responses = $sdk->issueTracking->collectionTags->list(
     request: $request
 );
 
-if ($response->getCollectionTagsResponse !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 

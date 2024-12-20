@@ -12,23 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class Webhook
 {
     /**
-     *
-     * @var ?string $id
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $id = null;
-
-    /**
-     * A description of the object.
-     *
-     * @var ?string $description
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $description = null;
-
-    /**
      * Name of Apideck Unified API
      *
      * @var UnifiedApiId $unifiedApi
@@ -45,16 +28,6 @@ class Webhook
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Status')]
     public Status $status;
-
-    /**
-     * Indicates if the webhook has has been disabled as it reached its retry limit or if account is over the usage allocated by it's plan.
-     *
-     * @var ?DisabledReason $disabledReason
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('disabled_reason')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\DisabledReason|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?DisabledReason $disabledReason = null;
 
     /**
      * The delivery url of the webhook endpoint.
@@ -80,6 +53,33 @@ class Webhook
     #[\Speakeasy\Serializer\Annotation\SerializedName('events')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\WebhookEventType>')]
     public array $events;
+
+    /**
+     *
+     * @var ?string $id
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
+
+    /**
+     * Indicates if the webhook has has been disabled as it reached its retry limit or if account is over the usage allocated by it's plan.
+     *
+     * @var ?DisabledReason $disabledReason
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('disabled_reason')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\DisabledReason|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?DisabledReason $disabledReason = null;
+
+    /**
+     * A description of the object.
+     *
+     * @var ?string $description
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $description = null;
 
     /**
      * The date and time when the object was last updated.

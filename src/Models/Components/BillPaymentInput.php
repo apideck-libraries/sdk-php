@@ -12,6 +12,72 @@ namespace Apideck\Unify\Models\Components;
 class BillPaymentInput
 {
     /**
+     * The total amount of the transaction
+     *
+     * @var ?float $totalAmount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('total_amount')]
+    public ?float $totalAmount;
+
+    /**
+     * The date of the transaction - YYYY:MM::DDThh:mm:ss.sTZD
+     *
+     * @var ?\DateTime $transactionDate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('transaction_date')]
+    public ?\DateTime $transactionDate;
+
+    /**
+     * Status of payment
+     *
+     * @var ?PaymentStatus $status
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\PaymentStatus|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?PaymentStatus $status = null;
+
+    /**
+     * Type of payment
+     *
+     * @var ?BillPaymentType $type
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BillPaymentType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?BillPaymentType $type = null;
+
+    /**
+     * $allocations
+     *
+     * @var ?array<BillPaymentAllocations> $allocations
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('allocations')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\BillPaymentAllocations>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $allocations = null;
+
+    /**
+     * $customFields
+     *
+     * @var ?array<CustomField> $customFields
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $customFields = null;
+
+    /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
+
+    /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
      * @var ?Currency $currency
@@ -29,14 +95,6 @@ class BillPaymentInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency_rate')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $currencyRate = null;
-
-    /**
-     * The total amount of the transaction
-     *
-     * @var ?float $totalAmount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('total_amount')]
-    public ?float $totalAmount;
 
     /**
      * Optional transaction reference message ie: Debit remittance detail.
@@ -84,14 +142,6 @@ class BillPaymentInput
     public ?LinkedLedgerAccountInput $account = null;
 
     /**
-     * The date of the transaction - YYYY:MM::DDThh:mm:ss.sTZD
-     *
-     * @var ?\DateTime $transactionDate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('transaction_date')]
-    public ?\DateTime $transactionDate;
-
-    /**
      * The supplier this entity is linked to.
      *
      * @var ?LinkedSupplierInput $supplier
@@ -118,36 +168,6 @@ class BillPaymentInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('reconciled')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $reconciled = null;
-
-    /**
-     * Status of payment
-     *
-     * @var ?PaymentStatus $status
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\PaymentStatus|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?PaymentStatus $status = null;
-
-    /**
-     * Type of payment
-     *
-     * @var ?BillPaymentType $type
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BillPaymentType|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?BillPaymentType $type = null;
-
-    /**
-     * $allocations
-     *
-     * @var ?array<BillPaymentAllocations> $allocations
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('allocations')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\BillPaymentAllocations>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $allocations = null;
 
     /**
      * Note associated with the transaction
@@ -178,16 +198,6 @@ class BillPaymentInput
     public ?array $trackingCategories = null;
 
     /**
-     * $customFields
-     *
-     * @var ?array<CustomField> $customFields
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $customFields = null;
-
-    /**
      * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
      *
      * @var ?string $rowVersion
@@ -204,16 +214,6 @@ class BillPaymentInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('display_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $displayId = null;
-
-    /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
 
     /**
      * @param  ?float  $totalAmount

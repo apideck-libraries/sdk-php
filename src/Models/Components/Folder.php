@@ -12,6 +12,23 @@ namespace Apideck\Unify\Models\Components;
 class Folder
 {
     /**
+     * The name of the folder
+     *
+     * @var string $name
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    public string $name;
+
+    /**
+     * The parent folders of the file, starting from the root
+     *
+     * @var array<LinkedFolder> $parentFolders
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_folders')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedFolder>')]
+    public array $parentFolders;
+
+    /**
      * A unique identifier for an object.
      *
      * @var ?string $id
@@ -21,12 +38,22 @@ class Folder
     public ?string $id = null;
 
     /**
-     * The name of the folder
      *
-     * @var string $name
+     * @var ?Owner $owner
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    public string $name;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('owner')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Owner|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Owner $owner = null;
+
+    /**
+     * Whether the list of parent folder is complete. Some connectors only return the direct parent of a folder
+     *
+     * @var ?bool $parentFoldersComplete
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_folders_complete')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $parentFoldersComplete = null;
 
     /**
      * Optional description of the folder
@@ -54,33 +81,6 @@ class Folder
     #[\Speakeasy\Serializer\Annotation\SerializedName('size')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?int $size = null;
-
-    /**
-     *
-     * @var ?Owner $owner
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('owner')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Owner|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Owner $owner = null;
-
-    /**
-     * The parent folders of the file, starting from the root
-     *
-     * @var array<LinkedFolder> $parentFolders
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_folders')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedFolder>')]
-    public array $parentFolders;
-
-    /**
-     * Whether the list of parent folder is complete. Some connectors only return the direct parent of a folder
-     *
-     * @var ?bool $parentFoldersComplete
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_folders_complete')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $parentFoldersComplete = null;
 
     /**
      * When custom mappings are configured on the resource, the result is included here.

@@ -21,6 +21,13 @@ class AccountingExpensesUpdateRequest
     public string $id;
 
     /**
+     *
+     * @var Components\ExpenseInput $expense
+     */
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\ExpenseInput $expense;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -51,13 +58,6 @@ class AccountingExpensesUpdateRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
     public ?bool $raw = null;
-
-    /**
-     *
-     * @var Components\ExpenseInput $expense
-     */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\ExpenseInput $expense;
 
     /**
      * @param  string  $id

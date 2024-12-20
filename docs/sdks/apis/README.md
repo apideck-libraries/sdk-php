@@ -33,7 +33,7 @@ $filter = new Components\ApisFilter(
     status: Components\ApiStatus::Beta,
 );
 
-$response = $sdk->connector->apis->list(
+$responses = $sdk->connector->apis->list(
     appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     limit: 20,
     filter: $filter,
@@ -41,8 +41,11 @@ $response = $sdk->connector->apis->list(
 
 );
 
-if ($response->getApisResponse !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 

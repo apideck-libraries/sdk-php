@@ -21,6 +21,13 @@ class FileStorageDriveGroupsUpdateRequest
     public string $id;
 
     /**
+     *
+     * @var Components\DriveGroupInput $driveGroup
+     */
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\DriveGroupInput $driveGroup;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -51,13 +58,6 @@ class FileStorageDriveGroupsUpdateRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
     public ?bool $raw = null;
-
-    /**
-     *
-     * @var Components\DriveGroupInput $driveGroup
-     */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\DriveGroupInput $driveGroup;
 
     /**
      * @param  string  $id

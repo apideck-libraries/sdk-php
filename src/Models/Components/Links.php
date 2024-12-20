@@ -13,15 +13,6 @@ namespace Apideck\Unify\Models\Components;
 class Links
 {
     /**
-     * Link to navigate to the previous page through the API
-     *
-     * @var ?string $previous
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('previous')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $previous = null;
-
-    /**
      * Link to navigate to the current page through the API
      *
      * @var ?string $current
@@ -29,6 +20,15 @@ class Links
     #[\Speakeasy\Serializer\Annotation\SerializedName('current')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $current = null;
+
+    /**
+     * Link to navigate to the previous page through the API
+     *
+     * @var ?string $previous
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('previous')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $previous = null;
 
     /**
      * Link to navigate to the previous page through the API

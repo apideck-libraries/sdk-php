@@ -12,15 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class UpdateWebhookRequest
 {
     /**
-     * A description of the object.
-     *
-     * @var ?string $description
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $description = null;
-
-    /**
      * The status of the webhook.
      *
      * @var ?Status $status
@@ -48,6 +39,15 @@ class UpdateWebhookRequest
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\WebhookEventType>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $events = null;
+
+    /**
+     * A description of the object.
+     *
+     * @var ?string $description
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $description = null;
 
     /**
      * @param  ?Status  $status

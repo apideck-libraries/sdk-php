@@ -6,11 +6,11 @@
 ### Available Operations
 
 * [list](#list) - Get all connections
-* [get](#get) - Get connection
-* [update](#update) - Update connection
 * [delete](#delete) - Deletes a connection
 * [imports](#imports) - Import connection
+* [get](#get) - Get connection
 * [token](#token) - Authorize Access Token
+* [update](#update) - Update connection
 
 ## list
 
@@ -62,164 +62,6 @@ if ($response->getConnectionsResponse !== null) {
 ### Response
 
 **[?Operations\VaultConnectionsAllResponse](../../Models/Operations/VaultConnectionsAllResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
-
-## get
-
-Get a connection
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
-$sdk = Unify\Apideck::builder()
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
-
-
-
-$response = $sdk->vault->connections->get(
-    serviceId: 'pipedrive',
-    unifiedApi: 'crm',
-    consumerId: 'test-consumer',
-    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX'
-
-);
-
-if ($response->getConnectionResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                  | Type                                                       | Required                                                   | Description                                                | Example                                                    |
-| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| `serviceId`                                                | *string*                                                   | :heavy_check_mark:                                         | Service ID of the resource to return                       | pipedrive                                                  |
-| `unifiedApi`                                               | *string*                                                   | :heavy_check_mark:                                         | Unified API                                                | crm                                                        |
-| `consumerId`                                               | *?string*                                                  | :heavy_minus_sign:                                         | ID of the consumer which you want to get or push data from | test-consumer                                              |
-| `appId`                                                    | *?string*                                                  | :heavy_minus_sign:                                         | The ID of your Unify application                           | dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX                    |
-
-### Response
-
-**[?Operations\VaultConnectionsOneResponse](../../Models/Operations/VaultConnectionsOneResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
-
-## update
-
-Update a connection
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Components;
-use Apideck\Unify\Models\Operations;
-
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
-$sdk = Unify\Apideck::builder()
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
-
-$request = new Operations\VaultConnectionsUpdateRequest(
-    serviceId: 'pipedrive',
-    unifiedApi: 'crm',
-    connection: new Components\ConnectionInput(
-        enabled: true,
-        configuration: [
-            new Components\ConnectionConfiguration(
-                resource: 'leads',
-                defaults: [
-                    new Components\ConnectionDefaults(
-                        id: 'ProductInterest',
-                        options: [
-                            new Components\FormFieldOptionGroup(
-                                id: '1234',
-                                label: 'General Channel',
-                                options: [
-                                    new Components\SimpleFormFieldOption(
-                                        label: 'General Channel',
-                                        value: 12.5,
-                                    ),
-                                ],
-                            ),
-                        ],
-                        value: 10,
-                    ),
-                ],
-            ),
-        ],
-        customMappings: [
-            new Components\CustomMappingInput(
-                value: '$.root.training.first_aid',
-            ),
-        ],
-        settings: [
-            'instance_url' => 'https://eu28.salesforce.com',
-            'api_key' => '12345xxxxxx',
-        ],
-        metadata: [
-            'account' => [
-                'name' => 'My Company',
-                'id' => 'c01458a5-7276-41ce-bc19-639906b0450a',
-            ],
-            'plan' => 'enterprise',
-        ],
-    ),
-);
-
-$response = $sdk->vault->connections->update(
-    request: $request
-);
-
-if ($response->updateConnectionResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                           | [Operations\VaultConnectionsUpdateRequest](../../Models/Operations/VaultConnectionsUpdateRequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-
-### Response
-
-**[?Operations\VaultConnectionsUpdateResponse](../../Models/Operations/VaultConnectionsUpdateResponse.md)**
 
 ### Errors
 
@@ -363,6 +205,65 @@ if ($response->createConnectionResponse !== null) {
 | Errors\UnprocessableResponse   | 422                            | application/json               |
 | Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
 
+## get
+
+Get a connection
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+
+$security = '<YOUR_BEARER_TOKEN_HERE>';
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity($security)->build();
+
+
+
+$response = $sdk->vault->connections->get(
+    serviceId: 'pipedrive',
+    unifiedApi: 'crm',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX'
+
+);
+
+if ($response->getConnectionResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                  | Type                                                       | Required                                                   | Description                                                | Example                                                    |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| `serviceId`                                                | *string*                                                   | :heavy_check_mark:                                         | Service ID of the resource to return                       | pipedrive                                                  |
+| `unifiedApi`                                               | *string*                                                   | :heavy_check_mark:                                         | Unified API                                                | crm                                                        |
+| `consumerId`                                               | *?string*                                                  | :heavy_minus_sign:                                         | ID of the consumer which you want to get or push data from | test-consumer                                              |
+| `appId`                                                    | *?string*                                                  | :heavy_minus_sign:                                         | The ID of your Unify application                           | dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX                    |
+
+### Response
+
+**[?Operations\VaultConnectionsOneResponse](../../Models/Operations/VaultConnectionsOneResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
 ## token
 
 Triggers exchanging persisted connection credentials for an access token and store it in Vault. Currently supported for connections with the `client_credentials` or `password` OAuth grant type.
@@ -413,6 +314,105 @@ if ($response->getConnectionResponse !== null) {
 ### Response
 
 **[?Operations\VaultConnectionsTokenResponse](../../Models/Operations/VaultConnectionsTokenResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## update
+
+Update a connection
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Components;
+use Apideck\Unify\Models\Operations;
+
+$security = '<YOUR_BEARER_TOKEN_HERE>';
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity($security)->build();
+
+$request = new Operations\VaultConnectionsUpdateRequest(
+    serviceId: 'pipedrive',
+    unifiedApi: 'crm',
+    connection: new Components\ConnectionInput(
+        enabled: true,
+        configuration: [
+            new Components\ConnectionConfiguration(
+                resource: 'leads',
+                defaults: [
+                    new Components\ConnectionDefaults(
+                        id: 'ProductInterest',
+                        options: [
+                            new Components\FormFieldOptionGroup(
+                                id: '1234',
+                                label: 'General Channel',
+                                options: [
+                                    new Components\SimpleFormFieldOption(
+                                        label: 'General Channel',
+                                        value: 12.5,
+                                    ),
+                                ],
+                            ),
+                        ],
+                        value: 10,
+                    ),
+                ],
+            ),
+        ],
+        customMappings: [
+            new Components\CustomMappingInput(
+                value: '$.root.training.first_aid',
+            ),
+        ],
+        settings: [
+            'instance_url' => 'https://eu28.salesforce.com',
+            'api_key' => '12345xxxxxx',
+        ],
+        metadata: [
+            'account' => [
+                'name' => 'My Company',
+                'id' => 'c01458a5-7276-41ce-bc19-639906b0450a',
+            ],
+            'plan' => 'enterprise',
+        ],
+    ),
+);
+
+$response = $sdk->vault->connections->update(
+    request: $request
+);
+
+if ($response->updateConnectionResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                           | [Operations\VaultConnectionsUpdateRequest](../../Models/Operations/VaultConnectionsUpdateRequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+
+### Response
+
+**[?Operations\VaultConnectionsUpdateResponse](../../Models/Operations/VaultConnectionsUpdateResponse.md)**
 
 ### Errors
 

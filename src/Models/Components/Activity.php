@@ -21,6 +21,63 @@ class Activity
     public ?string $id = null;
 
     /**
+     * The type of the activity
+     *
+     * @var ?ActivityType $type
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ActivityType|null')]
+    public ?ActivityType $type;
+
+    /**
+     *
+     * @var ?Address $locationAddress
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('location_address')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Address $locationAddress = null;
+
+    /**
+     * Whether the activity is recurrent or not
+     *
+     * @var ?bool $recurrent
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('recurrent')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $recurrent = null;
+
+    /**
+     * Custom fields of the activity
+     *
+     * @var ?array<CustomField> $customFields
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $customFields = null;
+
+    /**
+     * $attendees
+     *
+     * @var ?array<ActivityAttendee> $attendees
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('attendees')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ActivityAttendee>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $attendees = null;
+
+    /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
+
+    /**
      * The third-party API ID of original entity
      *
      * @var ?string $downstreamId
@@ -174,15 +231,6 @@ class Activity
     public ?string $customObjectId = null;
 
     /**
-     * The type of the activity
-     *
-     * @var ?ActivityType $type
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ActivityType|null')]
-    public ?ActivityType $type;
-
-    /**
      * The title of the activity
      *
      * @var ?string $title
@@ -217,15 +265,6 @@ class Activity
     #[\Speakeasy\Serializer\Annotation\SerializedName('location')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $location = null;
-
-    /**
-     *
-     * @var ?Address $locationAddress
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('location_address')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Address $locationAddress = null;
 
     /**
      * Whether the Activity is an all day event or not
@@ -363,15 +402,6 @@ class Activity
     public ?string $endDate = null;
 
     /**
-     * Whether the activity is recurrent or not
-     *
-     * @var ?bool $recurrent
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('recurrent')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $recurrent = null;
-
-    /**
      * The date and time of the reminder
      *
      * @var ?string $reminderDatetime
@@ -406,26 +436,6 @@ class Activity
     #[\Speakeasy\Serializer\Annotation\SerializedName('video_conference_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $videoConferenceId = null;
-
-    /**
-     * Custom fields of the activity
-     *
-     * @var ?array<CustomField> $customFields
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $customFields = null;
-
-    /**
-     * $attendees
-     *
-     * @var ?array<ActivityAttendee> $attendees
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('attendees')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ActivityAttendee>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $attendees = null;
 
     /**
      * When custom mappings are configured on the resource, the result is included here.
@@ -472,16 +482,6 @@ class Activity
     #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $createdAt = null;
-
-    /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
 
     /**
      * @param  ?string  $id

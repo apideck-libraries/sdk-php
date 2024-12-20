@@ -12,6 +12,24 @@ namespace Apideck\Unify\Models\Components;
 class SharedLinkInput
 {
     /**
+     * The ID of the file or folder to link.
+     *
+     * @var ?string $targetId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('target_id')]
+    public ?string $targetId;
+
+    /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
+
+    /**
      * The URL that can be used to download the file.
      *
      * @var ?string $downloadUrl
@@ -19,14 +37,6 @@ class SharedLinkInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('download_url')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $downloadUrl = null;
-
-    /**
-     * The ID of the file or folder to link.
-     *
-     * @var ?string $targetId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('target_id')]
-    public ?string $targetId;
 
     /**
      * The scope of the shared link.
@@ -46,16 +56,6 @@ class SharedLinkInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('password')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $password = null;
-
-    /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
 
     /**
      * @param  ?string  $targetId

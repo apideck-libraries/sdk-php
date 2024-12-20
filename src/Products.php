@@ -52,7 +52,7 @@ class Products
      * @return Operations\EcommerceProductsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
-    public function list(?Operations\EcommerceProductsAllRequest $request = null): Operations\EcommerceProductsAllResponse
+    private function listIndividual(?Operations\EcommerceProductsAllRequest $request = null): Operations\EcommerceProductsAllResponse
     {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/ecommerce/products');
@@ -101,6 +101,31 @@ class Products
                     contentType: $contentType,
                     rawResponse: $httpResponse,
                     getProductsResponse: $obj);
+                $sdk = $this;
+
+                $response->next = function () use ($sdk, $responseData, $request): ?Operations\EcommerceProductsAllResponse {
+                    $jsonObject = new \JsonPath\JsonObject($responseData);
+                    $nextCursor = $jsonObject->get('$.meta.cursors.next');
+                    if ($nextCursor == null) {
+                        return null;
+                    } else {
+                        $nextCursor = $nextCursor[0];
+                    }
+
+                    return $sdk->listIndividual(
+                        request: new Operations\EcommerceProductsAllRequest(
+                            raw: $request != null ? $request->raw : null,
+                            consumerId: $request != null ? $request->consumerId : null,
+                            appId: $request != null ? $request->appId : null,
+                            serviceId: $request != null ? $request->serviceId : null,
+                            cursor: $nextCursor,
+                            limit: $request != null ? $request->limit : null,
+                            passThrough: $request != null ? $request->passThrough : null,
+                            fields: $request != null ? $request->fields : null,
+                        ),
+                    );
+                };
+
 
                 return $response;
             } else {
@@ -175,11 +200,53 @@ class Products
                     contentType: $contentType,
                     rawResponse: $httpResponse,
                     unexpectedErrorResponse: $obj);
+                $sdk = $this;
+
+                $response->next = function () use ($sdk, $responseData, $request): ?Operations\EcommerceProductsAllResponse {
+                    $jsonObject = new \JsonPath\JsonObject($responseData);
+                    $nextCursor = $jsonObject->get('$.meta.cursors.next');
+                    if ($nextCursor == null) {
+                        return null;
+                    } else {
+                        $nextCursor = $nextCursor[0];
+                    }
+
+                    return $sdk->listIndividual(
+                        request: new Operations\EcommerceProductsAllRequest(
+                            raw: $request != null ? $request->raw : null,
+                            consumerId: $request != null ? $request->consumerId : null,
+                            appId: $request != null ? $request->appId : null,
+                            serviceId: $request != null ? $request->serviceId : null,
+                            cursor: $nextCursor,
+                            limit: $request != null ? $request->limit : null,
+                            passThrough: $request != null ? $request->passThrough : null,
+                            fields: $request != null ? $request->fields : null,
+                        ),
+                    );
+                };
+
 
                 return $response;
             } else {
                 throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
+        }
+    }
+    /**
+     * List Products
+     *
+     * List Products
+     *
+     * @param  ?Operations\EcommerceProductsAllRequest  $request
+     * @return \Generator<Operations\EcommerceProductsAllResponse>
+     * @throws \Apideck\Unify\Models\Errors\APIException
+     */
+    public function list(?Operations\EcommerceProductsAllRequest $request = null): \Generator
+    {
+        $res = $this->listIndividual($request);
+        while ($res !== null) {
+            yield $res;
+            $res = $res->next($res);
         }
     }
 

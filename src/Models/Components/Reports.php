@@ -12,49 +12,12 @@ namespace Apideck\Unify\Models\Components;
 class Reports
 {
     /**
-     * A unique identifier for an object.
-     *
-     * @var ?string $id
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $id = null;
-
-    /**
-     * The name of the report
-     *
-     * @var ?string $reportName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('report_name')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $reportName = null;
-
-    /**
-     * The start date of the report
-     *
-     * @var ?string $startDate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('start_date')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $startDate = null;
-
-    /**
      * The start date of the report
      *
      * @var string $endDate
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('end_date')]
     public string $endDate;
-
-    /**
-     * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
-     *
-     * @var ?Currency $currency
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Currency $currency = null;
 
     /**
      * A balance sheet assets account represents the financial position of a company at a specific point in time.
@@ -84,6 +47,33 @@ class Reports
     public BalanceSheetEquityAccount $equity;
 
     /**
+     * A unique identifier for an object.
+     *
+     * @var ?string $id
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
+
+    /**
+     * The name of the report
+     *
+     * @var ?string $reportName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('report_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $reportName = null;
+
+    /**
+     * The start date of the report
+     *
+     * @var ?string $startDate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('start_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $startDate = null;
+
+    /**
      * The net assets of the balance sheet
      *
      * @var ?float $netAssets
@@ -91,6 +81,26 @@ class Reports
     #[\Speakeasy\Serializer\Annotation\SerializedName('net_assets')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $netAssets = null;
+
+    /**
+     * A balance sheet uncategorized items account represents the financial position of a company at a specific point in time.
+     *
+     * @var ?BalanceSheetUncategorizedItemsAccount $uncategorizedItems
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('uncategorized_items')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BalanceSheetUncategorizedItemsAccount|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?BalanceSheetUncategorizedItemsAccount $uncategorizedItems = null;
+
+    /**
+     * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
+     *
+     * @var ?Currency $currency
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Currency $currency = null;
 
     /**
      * When custom mappings are configured on the resource, the result is included here.
@@ -137,16 +147,6 @@ class Reports
     #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
-
-    /**
-     * A balance sheet uncategorized items account represents the financial position of a company at a specific point in time.
-     *
-     * @var ?BalanceSheetUncategorizedItemsAccount $uncategorizedItems
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('uncategorized_items')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BalanceSheetUncategorizedItemsAccount|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?BalanceSheetUncategorizedItemsAccount $uncategorizedItems = null;
 
     /**
      * @param  string  $endDate
