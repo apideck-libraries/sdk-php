@@ -47,6 +47,10 @@ class AtsApplicantsAllResponse
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
+     * @var \Closure(string): ?AtsApplicantsAllResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
@@ -60,5 +64,18 @@ class AtsApplicantsAllResponse
         $this->rawResponse = $rawResponse;
         $this->getApplicantsResponse = $getApplicantsResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?AtsApplicantsAllResponse
+     */
+    public function __call($name, $args): ?AtsApplicantsAllResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

@@ -38,12 +38,15 @@ $request = new Operations\IssueTrackingCollectionUsersAllRequest(
     fields: 'id,updated_at',
 );
 
-$response = $sdk->issueTracking->collectionUsers->list(
+$responses = $sdk->issueTracking->collectionUsers->list(
     request: $request
 );
 
-if ($response->getCollectionUsersResponse !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 

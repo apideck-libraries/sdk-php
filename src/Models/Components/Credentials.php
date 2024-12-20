@@ -12,15 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class Credentials
 {
     /**
-     * The refresh token can be used to obtain a new access token.
-     *
-     * @var ?string $refreshToken
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('refresh_token')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $refreshToken = null;
-
-    /**
      * Access token
      *
      * @var ?string $accessToken
@@ -28,6 +19,15 @@ class Credentials
     #[\Speakeasy\Serializer\Annotation\SerializedName('access_token')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $accessToken = null;
+
+    /**
+     * The refresh token can be used to obtain a new access token.
+     *
+     * @var ?string $refreshToken
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('refresh_token')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $refreshToken = null;
 
     /**
      * The datetime at which the token was issued. If omitted the token will be queued for refresh.

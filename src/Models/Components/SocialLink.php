@@ -12,6 +12,14 @@ namespace Apideck\Unify\Models\Components;
 class SocialLink
 {
     /**
+     * URL of the social link, e.g. https://www.twitter.com/apideck
+     *
+     * @var string $url
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('url')]
+    public string $url;
+
+    /**
      * Unique identifier of the social link
      *
      * @var ?string $id
@@ -19,14 +27,6 @@ class SocialLink
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
-
-    /**
-     * URL of the social link, e.g. https://www.twitter.com/apideck
-     *
-     * @var string $url
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('url')]
-    public string $url;
 
     /**
      * Type of the social link, e.g. twitter

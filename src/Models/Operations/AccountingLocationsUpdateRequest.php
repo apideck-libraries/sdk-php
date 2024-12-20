@@ -21,6 +21,13 @@ class AccountingLocationsUpdateRequest
     public string $id;
 
     /**
+     *
+     * @var Components\AccountingLocationInput $accountingLocation
+     */
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\AccountingLocationInput $accountingLocation;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -51,13 +58,6 @@ class AccountingLocationsUpdateRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
     public ?bool $raw = null;
-
-    /**
-     *
-     * @var Components\AccountingLocationInput $accountingLocation
-     */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\AccountingLocationInput $accountingLocation;
 
     /**
      * @param  string  $id

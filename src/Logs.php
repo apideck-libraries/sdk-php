@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Apideck\Unify;
 
 use Apideck\Unify\Hooks\HookContext;
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 use Speakeasy\Serializer\DeserializationContext;
 
@@ -53,7 +54,7 @@ class Logs
      * @return Operations\VaultLogsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
-    public function list(?Operations\VaultLogsAllRequest $request = null): Operations\VaultLogsAllResponse
+    private function listIndividual(?Operations\VaultLogsAllRequest $request = null): Operations\VaultLogsAllResponse
     {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/vault/logs');
@@ -102,6 +103,33 @@ class Logs
                     contentType: $contentType,
                     rawResponse: $httpResponse,
                     getLogsResponse: $obj);
+                $sdk = $this;
+
+                $response->next = function () use ($sdk, $responseData, $request): ?Operations\VaultLogsAllResponse {
+                    $jsonObject = new \JsonPath\JsonObject($responseData);
+                    $nextCursor = $jsonObject->get('$.meta.cursors.next');
+                    if ($nextCursor == null) {
+                        return null;
+                    } else {
+                        $nextCursor = $nextCursor[0];
+                    }
+                    $filter = new Components\LogsFilter(
+                        connectorId: $request != null ? $request->filter->connectorId : null,
+                        statusCode: $request != null ? $request->filter->statusCode : null,
+                        excludeUnifiedApis: $request != null ? $request->filter->excludeUnifiedApis : null,
+                    );
+
+                    return $sdk->listIndividual(
+                        request: new Operations\VaultLogsAllRequest(
+                            appId: $request != null ? $request->appId : null,
+                            consumerId: $request != null ? $request->consumerId : null,
+                            filter: $filter,
+                            cursor: $nextCursor,
+                            limit: $request != null ? $request->limit : null,
+                        ),
+                    );
+                };
+
 
                 return $response;
             } else {
@@ -176,11 +204,56 @@ class Logs
                     contentType: $contentType,
                     rawResponse: $httpResponse,
                     unexpectedErrorResponse: $obj);
+                $sdk = $this;
+
+                $response->next = function () use ($sdk, $responseData, $request): ?Operations\VaultLogsAllResponse {
+                    $jsonObject = new \JsonPath\JsonObject($responseData);
+                    $nextCursor = $jsonObject->get('$.meta.cursors.next');
+                    if ($nextCursor == null) {
+                        return null;
+                    } else {
+                        $nextCursor = $nextCursor[0];
+                    }
+                    $filter = new Components\LogsFilter(
+                        connectorId: $request != null ? $request->filter->connectorId : null,
+                        statusCode: $request != null ? $request->filter->statusCode : null,
+                        excludeUnifiedApis: $request != null ? $request->filter->excludeUnifiedApis : null,
+                    );
+
+                    return $sdk->listIndividual(
+                        request: new Operations\VaultLogsAllRequest(
+                            appId: $request != null ? $request->appId : null,
+                            consumerId: $request != null ? $request->consumerId : null,
+                            filter: $filter,
+                            cursor: $nextCursor,
+                            limit: $request != null ? $request->limit : null,
+                        ),
+                    );
+                };
+
 
                 return $response;
             } else {
                 throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
+        }
+    }
+    /**
+     * Get all consumer request logs
+     *
+     * This endpoint includes all consumer request logs.
+     *
+     *
+     * @param  ?Operations\VaultLogsAllRequest  $request
+     * @return \Generator<Operations\VaultLogsAllResponse>
+     * @throws \Apideck\Unify\Models\Errors\APIException
+     */
+    public function list(?Operations\VaultLogsAllRequest $request = null): \Generator
+    {
+        $res = $this->listIndividual($request);
+        while ($res !== null) {
+            yield $res;
+            $res = $res->next($res);
         }
     }
 

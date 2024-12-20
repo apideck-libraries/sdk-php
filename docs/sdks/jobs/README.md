@@ -37,12 +37,15 @@ $request = new Operations\AtsJobsAllRequest(
     fields: 'id,updated_at',
 );
 
-$response = $sdk->ats->jobs->list(
+$responses = $sdk->ats->jobs->list(
     request: $request
 );
 
-if ($response->getJobsResponse !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 

@@ -5,69 +5,11 @@
 
 ### Available Operations
 
-* [list](#list) - List Applications
 * [create](#create) - Create Application
+* [list](#list) - List Applications
+* [delete](#delete) - Delete Application
 * [get](#get) - Get Application
 * [update](#update) - Update Application
-* [delete](#delete) - Delete Application
-
-## list
-
-List Applications
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Operations;
-
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
-$sdk = Unify\Apideck::builder()
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
-
-$request = new Operations\AtsApplicationsAllRequest(
-    serviceId: 'salesforce',
-    passThrough: [
-        'search' => 'San Francisco',
-    ],
-);
-
-$response = $sdk->ats->applications->list(
-    request: $request
-);
-
-if ($response->getApplicationsResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `$request`                                                                                   | [Operations\AtsApplicationsAllRequest](../../Models/Operations/AtsApplicationsAllRequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-
-### Response
-
-**[?Operations\AtsApplicationsAllResponse](../../Models/Operations/AtsApplicationsAllResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
 
 ## create
 
@@ -137,6 +79,123 @@ if ($response->createApplicationResponse !== null) {
 ### Response
 
 **[?Operations\AtsApplicationsAddResponse](../../Models/Operations/AtsApplicationsAddResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## list
+
+List Applications
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Operations;
+
+$security = '<YOUR_BEARER_TOKEN_HERE>';
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity($security)->build();
+
+$request = new Operations\AtsApplicationsAllRequest(
+    serviceId: 'salesforce',
+    passThrough: [
+        'search' => 'San Francisco',
+    ],
+);
+
+$responses = $sdk->ats->applications->list(
+    request: $request
+);
+
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `$request`                                                                                   | [Operations\AtsApplicationsAllRequest](../../Models/Operations/AtsApplicationsAllRequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+
+### Response
+
+**[?Operations\AtsApplicationsAllResponse](../../Models/Operations/AtsApplicationsAllResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## delete
+
+Delete Application
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Operations;
+
+$security = '<YOUR_BEARER_TOKEN_HERE>';
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity($security)->build();
+
+$request = new Operations\AtsApplicationsDeleteRequest(
+    id: '<id>',
+    serviceId: 'salesforce',
+);
+
+$response = $sdk->ats->applications->delete(
+    request: $request
+);
+
+if ($response->deleteApplicationResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                         | [Operations\AtsApplicationsDeleteRequest](../../Models/Operations/AtsApplicationsDeleteRequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+
+### Response
+
+**[?Operations\AtsApplicationsDeleteResponse](../../Models/Operations/AtsApplicationsDeleteResponse.md)**
 
 ### Errors
 
@@ -274,62 +333,6 @@ if ($response->updateApplicationResponse !== null) {
 ### Response
 
 **[?Operations\AtsApplicationsUpdateResponse](../../Models/Operations/AtsApplicationsUpdateResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
-
-## delete
-
-Delete Application
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Operations;
-
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
-$sdk = Unify\Apideck::builder()
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
-
-$request = new Operations\AtsApplicationsDeleteRequest(
-    id: '<id>',
-    serviceId: 'salesforce',
-);
-
-$response = $sdk->ats->applications->delete(
-    request: $request
-);
-
-if ($response->deleteApplicationResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                         | [Operations\AtsApplicationsDeleteRequest](../../Models/Operations/AtsApplicationsDeleteRequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-
-### Response
-
-**[?Operations\AtsApplicationsDeleteResponse](../../Models/Operations/AtsApplicationsDeleteResponse.md)**
 
 ### Errors
 

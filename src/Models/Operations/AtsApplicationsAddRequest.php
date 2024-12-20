@@ -13,12 +13,11 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class AtsApplicationsAddRequest
 {
     /**
-     * Include raw response. Mostly used for debugging purposes
      *
-     * @var ?bool $raw
+     * @var Components\ApplicationInput $application
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\ApplicationInput $application;
 
     /**
      * ID of the consumer which you want to get or push data from
@@ -45,11 +44,12 @@ class AtsApplicationsAddRequest
     public ?string $serviceId = null;
 
     /**
+     * Include raw response. Mostly used for debugging purposes
      *
-     * @var Components\ApplicationInput $application
+     * @var ?bool $raw
      */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\ApplicationInput $application;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
 
     /**
      * @param  Components\ApplicationInput  $application
@@ -61,9 +61,9 @@ class AtsApplicationsAddRequest
     public function __construct(Components\ApplicationInput $application, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?bool $raw = false)
     {
         $this->application = $application;
-        $this->raw = $raw;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
+        $this->raw = $raw;
     }
 }

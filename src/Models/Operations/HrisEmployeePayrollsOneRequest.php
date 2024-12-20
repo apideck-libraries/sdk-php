@@ -28,14 +28,6 @@ class HrisEmployeePayrollsOneRequest
     public string $employeeId;
 
     /**
-     * Include raw response. Mostly used for debugging purposes
-     *
-     * @var ?bool $raw
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
-
-    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -68,6 +60,14 @@ class HrisEmployeePayrollsOneRequest
     public ?string $fields = null;
 
     /**
+     * Include raw response. Mostly used for debugging purposes
+     *
+     * @var ?bool $raw
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
+
+    /**
      * @param  string  $payrollId
      * @param  string  $employeeId
      * @param  ?bool  $raw
@@ -80,10 +80,10 @@ class HrisEmployeePayrollsOneRequest
     {
         $this->payrollId = $payrollId;
         $this->employeeId = $employeeId;
-        $this->raw = $raw;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
         $this->fields = $fields;
+        $this->raw = $raw;
     }
 }

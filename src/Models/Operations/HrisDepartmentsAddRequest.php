@@ -13,12 +13,11 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class HrisDepartmentsAddRequest
 {
     /**
-     * Include raw response. Mostly used for debugging purposes
      *
-     * @var ?bool $raw
+     * @var Components\DepartmentInput $department
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\DepartmentInput $department;
 
     /**
      * ID of the consumer which you want to get or push data from
@@ -45,11 +44,12 @@ class HrisDepartmentsAddRequest
     public ?string $serviceId = null;
 
     /**
+     * Include raw response. Mostly used for debugging purposes
      *
-     * @var Components\DepartmentInput $department
+     * @var ?bool $raw
      */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\DepartmentInput $department;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
 
     /**
      * @param  Components\DepartmentInput  $department
@@ -61,9 +61,9 @@ class HrisDepartmentsAddRequest
     public function __construct(Components\DepartmentInput $department, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?bool $raw = false)
     {
         $this->department = $department;
-        $this->raw = $raw;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
+        $this->raw = $raw;
     }
 }

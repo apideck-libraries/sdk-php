@@ -21,14 +21,6 @@ class HrisEmployeePayrollsAllRequest
     public string $employeeId;
 
     /**
-     * Include raw response. Mostly used for debugging purposes
-     *
-     * @var ?bool $raw
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
-
-    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -77,6 +69,14 @@ class HrisEmployeePayrollsAllRequest
     public ?string $fields = null;
 
     /**
+     * Include raw response. Mostly used for debugging purposes
+     *
+     * @var ?bool $raw
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
+
+    /**
      * @param  string  $employeeId
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
@@ -89,12 +89,12 @@ class HrisEmployeePayrollsAllRequest
     public function __construct(string $employeeId, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?Components\PayrollsFilter $filter = null, ?array $passThrough = null, ?string $fields = null, ?bool $raw = false)
     {
         $this->employeeId = $employeeId;
-        $this->raw = $raw;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
         $this->filter = $filter;
         $this->passThrough = $passThrough;
         $this->fields = $fields;
+        $this->raw = $raw;
     }
 }

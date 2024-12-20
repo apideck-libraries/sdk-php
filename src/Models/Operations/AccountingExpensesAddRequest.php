@@ -13,12 +13,11 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class AccountingExpensesAddRequest
 {
     /**
-     * Include raw response. Mostly used for debugging purposes
      *
-     * @var ?bool $raw
+     * @var Components\ExpenseInput $expense
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\ExpenseInput $expense;
 
     /**
      * ID of the consumer which you want to get or push data from
@@ -45,11 +44,12 @@ class AccountingExpensesAddRequest
     public ?string $serviceId = null;
 
     /**
+     * Include raw response. Mostly used for debugging purposes
      *
-     * @var Components\ExpenseInput $expense
+     * @var ?bool $raw
      */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\ExpenseInput $expense;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
 
     /**
      * @param  Components\ExpenseInput  $expense
@@ -61,9 +61,9 @@ class AccountingExpensesAddRequest
     public function __construct(Components\ExpenseInput $expense, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?bool $raw = false)
     {
         $this->expense = $expense;
-        $this->raw = $raw;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
+        $this->raw = $raw;
     }
 }

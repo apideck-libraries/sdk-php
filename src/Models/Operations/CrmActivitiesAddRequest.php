@@ -13,12 +13,11 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class CrmActivitiesAddRequest
 {
     /**
-     * Include raw response. Mostly used for debugging purposes
      *
-     * @var ?bool $raw
+     * @var Components\ActivityInput $activity
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\ActivityInput $activity;
 
     /**
      * ID of the consumer which you want to get or push data from
@@ -45,11 +44,12 @@ class CrmActivitiesAddRequest
     public ?string $serviceId = null;
 
     /**
+     * Include raw response. Mostly used for debugging purposes
      *
-     * @var Components\ActivityInput $activity
+     * @var ?bool $raw
      */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\ActivityInput $activity;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
 
     /**
      * @param  Components\ActivityInput  $activity
@@ -61,9 +61,9 @@ class CrmActivitiesAddRequest
     public function __construct(Components\ActivityInput $activity, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?bool $raw = false)
     {
         $this->activity = $activity;
-        $this->raw = $raw;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
+        $this->raw = $raw;
     }
 }

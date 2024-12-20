@@ -21,6 +21,72 @@ class Invoice
     public ?string $id = null;
 
     /**
+     * Invoice sent to contact/customer.
+     *
+     * @var ?bool $invoiceSent
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('invoice_sent')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $invoiceSent = null;
+
+    /**
+     * $lineItems
+     *
+     * @var ?array<InvoiceLineItem> $lineItems
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\InvoiceLineItem>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $lineItems = null;
+
+    /**
+     *
+     * @var ?Address $billingAddress
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('billing_address')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Address $billingAddress = null;
+
+    /**
+     *
+     * @var ?Address $shippingAddress
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('shipping_address')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Address $shippingAddress = null;
+
+    /**
+     *
+     * @var ?BankAccount $bankAccount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('bank_account')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BankAccount|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?BankAccount $bankAccount = null;
+
+    /**
+     * $customFields
+     *
+     * @var ?array<CustomField> $customFields
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $customFields = null;
+
+    /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
+
+    /**
      * The third-party API ID of original entity
      *
      * @var ?string $downstreamId
@@ -121,15 +187,6 @@ class Invoice
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\InvoiceStatus|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?InvoiceStatus $status = null;
-
-    /**
-     * Invoice sent to contact/customer.
-     *
-     * @var ?bool $invoiceSent
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('invoice_sent')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $invoiceSent = null;
 
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
@@ -261,34 +318,6 @@ class Invoice
     public ?array $trackingCategories = null;
 
     /**
-     * $lineItems
-     *
-     * @var ?array<InvoiceLineItem> $lineItems
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\InvoiceLineItem>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $lineItems = null;
-
-    /**
-     *
-     * @var ?Address $billingAddress
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('billing_address')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Address $billingAddress = null;
-
-    /**
-     *
-     * @var ?Address $shippingAddress
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('shipping_address')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Address $shippingAddress = null;
-
-    /**
      * Optional invoice template
      *
      * @var ?string $templateId
@@ -344,15 +373,6 @@ class Invoice
 
     /**
      *
-     * @var ?BankAccount $bankAccount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('bank_account')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BankAccount|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?BankAccount $bankAccount = null;
-
-    /**
-     *
      * @var ?LinkedLedgerAccount $ledgerAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('ledger_account')]
@@ -369,16 +389,6 @@ class Invoice
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?CustomMappings $customMappings = null;
-
-    /**
-     * $customFields
-     *
-     * @var ?array<CustomField> $customFields
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $customFields = null;
 
     /**
      * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
@@ -424,16 +434,6 @@ class Invoice
     #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
-
-    /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
 
     /**
      * @param  ?string  $id

@@ -52,15 +52,6 @@ class Log
     public float $duration;
 
     /**
-     * If error occurred, this is brief explanation
-     *
-     * @var ?string $errorMessage
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('error_message')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $errorMessage = null;
-
-    /**
      * The entire execution time in milliseconds it took to make the request.
      *
      * @var int $execution
@@ -110,14 +101,6 @@ class Log
     public Operation $operation;
 
     /**
-     * When request is a child request, this UUID indicates it's parent request.
-     *
-     * @var ?string $parentId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_id')]
-    public ?string $parentId;
-
-    /**
      * The path component of the URI the request was made to.
      *
      * @var string $path
@@ -141,15 +124,6 @@ class Log
     #[\Speakeasy\Serializer\Annotation\SerializedName('service')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Service')]
     public Service $service;
-
-    /**
-     * The IP address of the source of the request.
-     *
-     * @var ?string $sourceIp
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('source_ip')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $sourceIp = null;
 
     /**
      * HTTP Status code that was returned.
@@ -183,6 +157,32 @@ class Log
     #[\Speakeasy\Serializer\Annotation\SerializedName('unified_api')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\UnifiedApi')]
     public UnifiedApi $unifiedApi;
+
+    /**
+     * When request is a child request, this UUID indicates it's parent request.
+     *
+     * @var ?string $parentId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_id')]
+    public ?string $parentId;
+
+    /**
+     * If error occurred, this is brief explanation
+     *
+     * @var ?string $errorMessage
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('error_message')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $errorMessage = null;
+
+    /**
+     * The IP address of the source of the request.
+     *
+     * @var ?string $sourceIp
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source_ip')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $sourceIp = null;
 
     /**
      * @param  string  $apiStyle

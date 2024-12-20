@@ -21,6 +21,13 @@ class AccountingTaxRatesUpdateRequest
     public string $id;
 
     /**
+     *
+     * @var Components\TaxRateInput $taxRate
+     */
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\TaxRateInput $taxRate;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -51,13 +58,6 @@ class AccountingTaxRatesUpdateRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
     public ?bool $raw = null;
-
-    /**
-     *
-     * @var Components\TaxRateInput $taxRate
-     */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\TaxRateInput $taxRate;
 
     /**
      * @param  string  $id

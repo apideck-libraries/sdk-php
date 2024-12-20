@@ -12,15 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class Message
 {
     /**
-     * A unique identifier for an object.
-     *
-     * @var ?string $id
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $id = null;
-
-    /**
      * The phone number that initiated the message.
      *
      * @var string $from
@@ -37,20 +28,29 @@ class Message
     public string $to;
 
     /**
-     *
-     * @var ?string $subject
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('subject')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $subject = null;
-
-    /**
      * The message text.
      *
      * @var string $body
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('body')]
     public string $body;
+
+    /**
+     * A unique identifier for an object.
+     *
+     * @var ?string $id
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
+
+    /**
+     *
+     * @var ?string $subject
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subject')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $subject = null;
 
     /**
      * Set to sms for SMS messages and mms for MMS messages.
@@ -166,6 +166,16 @@ class Message
     public ?string $messagingServiceId = null;
 
     /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
+
+    /**
      * When custom mappings are configured on the resource, the result is included here.
      *
      * @var ?CustomMappings $customMappings
@@ -210,16 +220,6 @@ class Message
     #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
-
-    /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
 
     /**
      * @param  string  $from

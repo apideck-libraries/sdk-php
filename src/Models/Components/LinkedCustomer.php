@@ -22,6 +22,25 @@ class LinkedCustomer
     public ?string $id = null;
 
     /**
+     * The name of the customer. Deprecated, use display_name instead.
+     *
+     * @var ?string $name
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $name = null;
+
+    /**
+     * The email address of the customer.
+     *
+     * @var ?string $email
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $email = null;
+
+    /**
      * The display ID of the customer.
      *
      * @var ?string $displayId
@@ -40,16 +59,6 @@ class LinkedCustomer
     public ?string $displayName = null;
 
     /**
-     * The name of the customer. Deprecated, use display_name instead.
-     *
-     * @var ?string $name
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $name = null;
-
-    /**
      * The company name of the customer.
      *
      * @var ?string $companyName
@@ -57,15 +66,6 @@ class LinkedCustomer
     #[\Speakeasy\Serializer\Annotation\SerializedName('company_name')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $companyName = null;
-
-    /**
-     * The email address of the customer.
-     *
-     * @var ?string $email
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $email = null;
 
     /**
      * @param  ?string  $id

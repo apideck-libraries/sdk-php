@@ -12,6 +12,84 @@ namespace Apideck\Unify\Models\Components;
 class SupplierInput
 {
     /**
+     * $addresses
+     *
+     * @var ?array<Address> $addresses
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('addresses')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Address>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $addresses = null;
+
+    /**
+     * $phoneNumbers
+     *
+     * @var ?array<PhoneNumber> $phoneNumbers
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('phone_numbers')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PhoneNumber>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $phoneNumbers = null;
+
+    /**
+     * $emails
+     *
+     * @var ?array<Email> $emails
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('emails')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Email>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $emails = null;
+
+    /**
+     * $websites
+     *
+     * @var ?array<Website> $websites
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('websites')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Website>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $websites = null;
+
+    /**
+     * $bankAccounts
+     *
+     * @var ?array<BankAccount> $bankAccounts
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('bank_accounts')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\BankAccount>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $bankAccounts = null;
+
+    /**
+     *
+     * @var ?LinkedTaxRateInput $taxRate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRateInput|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedTaxRateInput $taxRate = null;
+
+    /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
+
+    /**
+     * The subsidiary the supplier belongs to.
+     *
+     * @var ?string $subsidiaryId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiary_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $subsidiaryId = null;
+
+    /**
      * Display ID
      *
      * @var ?string $displayId
@@ -101,56 +179,6 @@ class SupplierInput
     public ?bool $individual = null;
 
     /**
-     * $addresses
-     *
-     * @var ?array<Address> $addresses
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('addresses')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Address>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $addresses = null;
-
-    /**
-     * $phoneNumbers
-     *
-     * @var ?array<PhoneNumber> $phoneNumbers
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('phone_numbers')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PhoneNumber>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $phoneNumbers = null;
-
-    /**
-     * $emails
-     *
-     * @var ?array<Email> $emails
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('emails')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Email>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $emails = null;
-
-    /**
-     * $websites
-     *
-     * @var ?array<Website> $websites
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('websites')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Website>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $websites = null;
-
-    /**
-     * $bankAccounts
-     *
-     * @var ?array<BankAccount> $bankAccounts
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('bank_accounts')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\BankAccount>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $bankAccounts = null;
-
-    /**
      * Some notes about this supplier
      *
      * @var ?string $notes
@@ -158,15 +186,6 @@ class SupplierInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('notes')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $notes = null;
-
-    /**
-     *
-     * @var ?LinkedTaxRateInput $taxRate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRateInput|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LinkedTaxRateInput $taxRate = null;
 
     /**
      *
@@ -231,25 +250,6 @@ class SupplierInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('row_version')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $rowVersion = null;
-
-    /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
-
-    /**
-     * The subsidiary the supplier belongs to.
-     *
-     * @var ?string $subsidiaryId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiary_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $subsidiaryId = null;
 
     /**
      * @param  ?array<Address>  $addresses

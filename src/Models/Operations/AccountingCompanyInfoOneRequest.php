@@ -12,14 +12,6 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class AccountingCompanyInfoOneRequest
 {
     /**
-     * Include raw response. Mostly used for debugging purposes
-     *
-     * @var ?bool $raw
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
-
-    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -52,6 +44,14 @@ class AccountingCompanyInfoOneRequest
     public ?string $fields = null;
 
     /**
+     * Include raw response. Mostly used for debugging purposes
+     *
+     * @var ?bool $raw
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
+
+    /**
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId
@@ -60,10 +60,10 @@ class AccountingCompanyInfoOneRequest
      */
     public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $fields = null, ?bool $raw = false)
     {
-        $this->raw = $raw;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
         $this->fields = $fields;
+        $this->raw = $raw;
     }
 }
