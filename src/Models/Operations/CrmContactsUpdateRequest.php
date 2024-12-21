@@ -21,6 +21,13 @@ class CrmContactsUpdateRequest
     public string $id;
 
     /**
+     *
+     * @var Components\ContactInput $contact
+     */
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\ContactInput $contact;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -51,13 +58,6 @@ class CrmContactsUpdateRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
     public ?bool $raw = null;
-
-    /**
-     *
-     * @var Components\ContactInput $contact
-     */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\ContactInput $contact;
 
     /**
      * @param  string  $id

@@ -12,22 +12,6 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class VaultConnectionCustomMappingsAllRequest
 {
     /**
-     * ID of the consumer which you want to get or push data from
-     *
-     * @var ?string $consumerId
-     */
-    #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-apideck-consumer-id')]
-    public ?string $consumerId = null;
-
-    /**
-     * The ID of your Unify application
-     *
-     * @var ?string $appId
-     */
-    #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-apideck-app-id')]
-    public ?string $appId = null;
-
-    /**
      * Unified API
      *
      * @var string $unifiedApi
@@ -50,6 +34,22 @@ class VaultConnectionCustomMappingsAllRequest
      */
     #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=resource')]
     public string $resource;
+
+    /**
+     * ID of the consumer which you want to get or push data from
+     *
+     * @var ?string $consumerId
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-apideck-consumer-id')]
+    public ?string $consumerId = null;
+
+    /**
+     * The ID of your Unify application
+     *
+     * @var ?string $appId
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-apideck-app-id')]
+    public ?string $appId = null;
 
     /**
      * This is the id of the resource you want to fetch when listing custom fields. For example, if you want to fetch custom fields for a specific contact, you would use the contact id.

@@ -30,6 +30,16 @@ class AgedDebtors
     public ?LocalDate $reportAsOfDate = null;
 
     /**
+     * $outstandingBalances
+     *
+     * @var ?array<OutstandingBalance> $outstandingBalances
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('outstanding_balances')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\OutstandingBalance>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $outstandingBalances = null;
+
+    /**
      * Number of aging periods shown in the report.
      *
      * @var ?int $periodCount
@@ -48,16 +58,6 @@ class AgedDebtors
     public ?int $periodLength = null;
 
     /**
-     * $outstandingBalances
-     *
-     * @var ?array<OutstandingBalance> $outstandingBalances
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('outstanding_balances')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\OutstandingBalance>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $outstandingBalances = null;
-
-    /**
      * @param  ?\DateTime  $reportGeneratedAt
      * @param  ?LocalDate  $reportAsOfDate
      * @param  ?int  $periodCount
@@ -68,8 +68,8 @@ class AgedDebtors
     {
         $this->reportGeneratedAt = $reportGeneratedAt;
         $this->reportAsOfDate = $reportAsOfDate;
+        $this->outstandingBalances = $outstandingBalances;
         $this->periodCount = $periodCount;
         $this->periodLength = $periodLength;
-        $this->outstandingBalances = $outstandingBalances;
     }
 }

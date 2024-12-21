@@ -21,6 +21,13 @@ class CrmOpportunitiesUpdateRequest
     public string $id;
 
     /**
+     *
+     * @var Components\OpportunityInput $opportunity
+     */
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\OpportunityInput $opportunity;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -51,13 +58,6 @@ class CrmOpportunitiesUpdateRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
     public ?bool $raw = null;
-
-    /**
-     *
-     * @var Components\OpportunityInput $opportunity
-     */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\OpportunityInput $opportunity;
 
     /**
      * @param  string  $id

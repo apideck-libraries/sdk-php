@@ -12,13 +12,21 @@ namespace Apideck\Unify\Models\Components;
 class ExpenseInput
 {
     /**
-     * Number.
+     * The unique identifier for the ledger account that this expense should be credited to. 
      *
-     * @var ?string $number
+     * @var string $accountId
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('number')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $number = null;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('account_id')]
+    public string $accountId;
+
+    /**
+     * Expense line items linked to this expense.
+     *
+     * @var array<ExpenseLineItemInput> $lineItems
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ExpenseLineItemInput>')]
+    public array $lineItems;
 
     /**
      * The date of the transaction - YYYY:MM::DDThh:mm:ss.sTZD
@@ -27,14 +35,6 @@ class ExpenseInput
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('transaction_date')]
     public ?\DateTime $transactionDate;
-
-    /**
-     * The unique identifier for the ledger account that this expense should be credited to. 
-     *
-     * @var string $accountId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('account_id')]
-    public string $accountId;
 
     /**
      * The ID of the customer this entity is linked to. Used for expenses that should be marked as billable to customers.
@@ -55,15 +55,6 @@ class ExpenseInput
     public ?string $supplierId = null;
 
     /**
-     * The company or subsidiary id the transaction belongs to
-     *
-     * @var ?string $companyId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('company_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $companyId = null;
-
-    /**
      * The ID of the department this expense is linked to.
      *
      * @var ?string $departmentId
@@ -71,6 +62,53 @@ class ExpenseInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('department_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $departmentId = null;
+
+    /**
+     *
+     * @var ?LinkedTaxRateInput $taxRate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRateInput|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedTaxRateInput $taxRate = null;
+
+    /**
+     * $customFields
+     *
+     * @var ?array<CustomField> $customFields
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $customFields = null;
+
+    /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
+
+    /**
+     * Number.
+     *
+     * @var ?string $number
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('number')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $number = null;
+
+    /**
+     * The company or subsidiary id the transaction belongs to
+     *
+     * @var ?string $companyId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('company_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $companyId = null;
 
     /**
      * The type of payment for the expense.
@@ -121,15 +159,6 @@ class ExpenseInput
     public ?string $memo = null;
 
     /**
-     *
-     * @var ?LinkedTaxRateInput $taxRate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRateInput|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LinkedTaxRateInput $taxRate = null;
-
-    /**
      * The total amount of the expense line item.
      *
      * @var ?float $totalAmount
@@ -139,25 +168,6 @@ class ExpenseInput
     public ?float $totalAmount = null;
 
     /**
-     * Expense line items linked to this expense.
-     *
-     * @var array<ExpenseLineItemInput> $lineItems
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ExpenseLineItemInput>')]
-    public array $lineItems;
-
-    /**
-     * $customFields
-     *
-     * @var ?array<CustomField> $customFields
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $customFields = null;
-
-    /**
      * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
      *
      * @var ?string $rowVersion
@@ -165,16 +175,6 @@ class ExpenseInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('row_version')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $rowVersion = null;
-
-    /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
 
     /**
      * @param  string  $accountId

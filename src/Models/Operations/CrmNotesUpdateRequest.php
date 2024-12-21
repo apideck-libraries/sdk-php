@@ -21,6 +21,13 @@ class CrmNotesUpdateRequest
     public string $id;
 
     /**
+     *
+     * @var Components\NoteInput $note
+     */
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\NoteInput $note;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -51,13 +58,6 @@ class CrmNotesUpdateRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
     public ?bool $raw = null;
-
-    /**
-     *
-     * @var Components\NoteInput $note
-     */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\NoteInput $note;
 
     /**
      * @param  string  $id

@@ -26,6 +26,15 @@ class DeprecatedLinkedSupplier
     public ?string $id = null;
 
     /**
+     *
+     * @var ?Address $address
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('address')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Address $address = null;
+
+    /**
      * The display ID of the supplier.
      *
      * @var ?string $displayId
@@ -51,15 +60,6 @@ class DeprecatedLinkedSupplier
     #[\Speakeasy\Serializer\Annotation\SerializedName('company_name')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $companyName = null;
-
-    /**
-     *
-     * @var ?Address $address
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('address')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Address $address = null;
 
     /**
      * @param  ?string  $id

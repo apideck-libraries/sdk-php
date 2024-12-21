@@ -20,30 +20,12 @@ class Payroll
     public ?string $id;
 
     /**
-     * The unique identifier of the company.
-     *
-     * @var ?string $companyId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('company_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $companyId = null;
-
-    /**
      * Whether or not the payroll has been successfully processed. Note that processed payrolls cannot be updated.
      *
      * @var ?bool $processed
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('processed')]
     public ?bool $processed;
-
-    /**
-     * The date the payroll was processed.
-     *
-     * @var ?string $processedDate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('processed_date')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $processedDate = null;
 
     /**
      * The date on which employees will be paid for the payroll.
@@ -88,6 +70,24 @@ class Payroll
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Compensation>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $compensations = null;
+
+    /**
+     * The unique identifier of the company.
+     *
+     * @var ?string $companyId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('company_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $companyId = null;
+
+    /**
+     * The date the payroll was processed.
+     *
+     * @var ?string $processedDate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('processed_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $processedDate = null;
 
     /**
      * When custom mappings are configured on the resource, the result is included here.

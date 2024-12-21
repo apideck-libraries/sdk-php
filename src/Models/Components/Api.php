@@ -40,15 +40,6 @@ class Api
     public ?string $name = null;
 
     /**
-     * Description of the API.
-     *
-     * @var ?string $description
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $description = null;
-
-    /**
      * Status of the API. APIs with status live or beta are callable.
      *
      * @var ?ApiStatus $status
@@ -75,15 +66,6 @@ class Api
     #[\Speakeasy\Serializer\Annotation\SerializedName('api_reference_url')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $apiReferenceUrl = null;
-
-    /**
-     * ID of the Postman collection of the API.
-     *
-     * @var ?string $postmanCollectionId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('postman_collection_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $postmanCollectionId = null;
 
     /**
      * List of categories the API belongs to.
@@ -114,6 +96,24 @@ class Api
     #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $events = null;
+
+    /**
+     * Description of the API.
+     *
+     * @var ?string $description
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $description = null;
+
+    /**
+     * ID of the Postman collection of the API.
+     *
+     * @var ?string $postmanCollectionId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('postman_collection_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $postmanCollectionId = null;
 
     /**
      * @param  ?string  $id

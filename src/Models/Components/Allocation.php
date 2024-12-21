@@ -39,15 +39,6 @@ class Allocation
     public ?string $code = null;
 
     /**
-     * Amount of payment that should be attributed to this allocation. If null, the total_amount will be used.
-     *
-     * @var ?float $amount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('amount')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?float $amount = null;
-
-    /**
      * Unique identifier of the allocation
      *
      * @var ?string $allocationId
@@ -55,6 +46,15 @@ class Allocation
     #[\Speakeasy\Serializer\Annotation\SerializedName('allocation_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $allocationId = null;
+
+    /**
+     * Amount of payment that should be attributed to this allocation. If null, the total_amount will be used.
+     *
+     * @var ?float $amount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('amount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $amount = null;
 
     /**
      * @param  ?string  $id

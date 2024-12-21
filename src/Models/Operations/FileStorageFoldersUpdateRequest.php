@@ -21,6 +21,13 @@ class FileStorageFoldersUpdateRequest
     public string $id;
 
     /**
+     *
+     * @var Components\UpdateFolderRequest $updateFolderRequest
+     */
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\UpdateFolderRequest $updateFolderRequest;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -51,13 +58,6 @@ class FileStorageFoldersUpdateRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
     public ?bool $raw = null;
-
-    /**
-     *
-     * @var Components\UpdateFolderRequest $updateFolderRequest
-     */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\UpdateFolderRequest $updateFolderRequest;
 
     /**
      * @param  string  $id

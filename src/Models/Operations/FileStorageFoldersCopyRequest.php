@@ -21,6 +21,13 @@ class FileStorageFoldersCopyRequest
     public string $id;
 
     /**
+     *
+     * @var Components\CopyFolderRequest $copyFolderRequest
+     */
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\CopyFolderRequest $copyFolderRequest;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -45,14 +52,6 @@ class FileStorageFoldersCopyRequest
     public ?string $serviceId = null;
 
     /**
-     * Include raw response. Mostly used for debugging purposes
-     *
-     * @var ?bool $raw
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
-
-    /**
      * The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
      *
      * @var ?string $fields
@@ -61,11 +60,12 @@ class FileStorageFoldersCopyRequest
     public ?string $fields = null;
 
     /**
+     * Include raw response. Mostly used for debugging purposes
      *
-     * @var Components\CopyFolderRequest $copyFolderRequest
+     * @var ?bool $raw
      */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\CopyFolderRequest $copyFolderRequest;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
 
     /**
      * @param  string  $id
@@ -83,7 +83,7 @@ class FileStorageFoldersCopyRequest
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
-        $this->raw = $raw;
         $this->fields = $fields;
+        $this->raw = $raw;
     }
 }

@@ -47,6 +47,10 @@ class IssueTrackingCollectionTicketCommentsAllResponse
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
+     * @var \Closure(string): ?IssueTrackingCollectionTicketCommentsAllResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
@@ -60,5 +64,18 @@ class IssueTrackingCollectionTicketCommentsAllResponse
         $this->rawResponse = $rawResponse;
         $this->getCommentsResponse = $getCommentsResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?IssueTrackingCollectionTicketCommentsAllResponse
+     */
+    public function __call($name, $args): ?IssueTrackingCollectionTicketCommentsAllResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }
