@@ -12,14 +12,6 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class AccountingExpensesAllRequest
 {
     /**
-     * Include raw response. Mostly used for debugging purposes
-     *
-     * @var ?bool $raw
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
-
-    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -52,6 +44,14 @@ class AccountingExpensesAllRequest
     public ?string $cursor = null;
 
     /**
+     * Include raw response. Mostly used for debugging purposes
+     *
+     * @var ?bool $raw
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
+
+    /**
      * Number of results to return. Minimum 1, Maximum 200, Default 20
      *
      * @var ?int $limit
@@ -69,11 +69,11 @@ class AccountingExpensesAllRequest
      */
     public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $cursor = null, ?bool $raw = false, ?int $limit = 20)
     {
-        $this->raw = $raw;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
-        $this->limit = $limit;
         $this->cursor = $cursor;
+        $this->raw = $raw;
+        $this->limit = $limit;
     }
 }

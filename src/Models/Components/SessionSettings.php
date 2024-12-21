@@ -23,6 +23,19 @@ class SessionSettings
     public ?array $unifiedApis = null;
 
     /**
+     * Hide actions from your users in [Vault](/apis/vault/reference#section/Get-Started). Actions in `allow_actions` will be shown on a connection in Vault.
+     *
+     * Available actions are: `delete`, `disconnect`, `reauthorize` and `disable`.
+     * Empty array will hide all actions. By default all actions are visible.
+     *
+     * @var ?array<AllowActions> $allowActions
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('allow_actions')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\AllowActions>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $allowActions = null;
+
+    /**
      * A boolean that controls the display of the configurable resources for an integration. When set to true, the resource configuration options will be hidden and not shown to the user. When set to false, the resource configuration options will be displayed to the user.
      *
      * @var ?bool $hideResourceSettings
@@ -104,19 +117,6 @@ class SessionSettings
     public ?bool $hideGuides = null;
 
     /**
-     * Hide actions from your users in [Vault](/apis/vault/reference#section/Get-Started). Actions in `allow_actions` will be shown on a connection in Vault.
-     *
-     * Available actions are: `delete`, `disconnect`, `reauthorize` and `disable`.
-     * Empty array will hide all actions. By default all actions are visible.
-     *
-     * @var ?array<AllowActions> $allowActions
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('allow_actions')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\AllowActions>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $allowActions = null;
-
-    /**
      * @param  ?array<UnifiedApiId>  $unifiedApis
      * @param  ?bool  $hideResourceSettings
      * @param  ?bool  $sandboxMode
@@ -132,6 +132,7 @@ class SessionSettings
     public function __construct(?array $unifiedApis = null, ?array $allowActions = null, ?bool $hideResourceSettings = false, ?bool $sandboxMode = false, ?bool $isolationMode = false, ?string $sessionLength = '1h', ?bool $showLogs = true, ?bool $showSuggestions = false, ?bool $showSidebar = true, ?bool $autoRedirect = false, ?bool $hideGuides = false)
     {
         $this->unifiedApis = $unifiedApis;
+        $this->allowActions = $allowActions;
         $this->hideResourceSettings = $hideResourceSettings;
         $this->sandboxMode = $sandboxMode;
         $this->isolationMode = $isolationMode;
@@ -141,6 +142,5 @@ class SessionSettings
         $this->showSidebar = $showSidebar;
         $this->autoRedirect = $autoRedirect;
         $this->hideGuides = $hideGuides;
-        $this->allowActions = $allowActions;
     }
 }

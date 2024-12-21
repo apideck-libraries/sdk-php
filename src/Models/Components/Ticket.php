@@ -20,6 +20,36 @@ class Ticket
     public string $id;
 
     /**
+     * $assignees
+     *
+     * @var ?array<Assignee> $assignees
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('assignees')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Assignee>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $assignees = null;
+
+    /**
+     * $tags
+     *
+     * @var ?array<CollectionTag> $tags
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tags')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CollectionTag>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $tags = null;
+
+    /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
+
+    /**
      * The ticket's parent ID
      *
      * @var ?string $parentId
@@ -84,16 +114,6 @@ class Ticket
     public ?Priority $priority = null;
 
     /**
-     * $assignees
-     *
-     * @var ?array<Assignee> $assignees
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('assignees')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Assignee>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $assignees = null;
-
-    /**
      * The date and time when the object was last updated.
      *
      * @var ?\DateTime $updatedAt
@@ -139,16 +159,6 @@ class Ticket
     public ?\DateTime $completedAt = null;
 
     /**
-     * $tags
-     *
-     * @var ?array<CollectionTag> $tags
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('tags')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CollectionTag>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $tags = null;
-
-    /**
      * When custom mappings are configured on the resource, the result is included here.
      *
      * @var ?CustomMappings $customMappings
@@ -157,16 +167,6 @@ class Ticket
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?CustomMappings $customMappings = null;
-
-    /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
 
     /**
      * @param  string  $id

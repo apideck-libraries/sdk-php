@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace Apideck\Unify;
 
+use Apideck\Unify\Utils\Retry;
+
 /**
  * ApideckBuilder is used to configure and build an instance of the SDK.
  */
@@ -116,6 +118,13 @@ class ApideckBuilder
         }
 
         $this->sdkConfig->globals['parameters']['header']['appId'] = $appId;
+
+        return $this;
+    }
+
+    public function setRetryConfig(Retry\RetryConfig $config): ApideckBuilder
+    {
+        $this->sdkConfig->retryConfig = $config;
 
         return $this;
     }

@@ -12,6 +12,26 @@ namespace Apideck\Unify\Models\Components;
 class Variants
 {
     /**
+     * $options
+     *
+     * @var ?array<EcommerceProductVariantsOptions> $options
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceProductVariantsOptions>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $options = null;
+
+    /**
+     * $images
+     *
+     * @var ?array<EcommerceProductImages> $images
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('images')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceProductImages>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $images = null;
+
+    /**
      * A unique identifier for the variant of the product.
      *
      * @var ?string $id
@@ -73,26 +93,6 @@ class Variants
     #[\Speakeasy\Serializer\Annotation\SerializedName('weight_unit')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $weightUnit = null;
-
-    /**
-     * $options
-     *
-     * @var ?array<EcommerceProductVariantsOptions> $options
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceProductVariantsOptions>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $options = null;
-
-    /**
-     * $images
-     *
-     * @var ?array<EcommerceProductImages> $images
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('images')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceProductImages>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $images = null;
 
     /**
      * @param  ?array<EcommerceProductVariantsOptions>  $options

@@ -12,15 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class TaxRate
 {
     /**
-     * ID assigned to identify this tax rate.
-     *
-     * @var ?string $id
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $id = null;
-
-    /**
      * Name assigned to identify this tax rate.
      *
      * @var ?string $name
@@ -28,6 +19,45 @@ class TaxRate
     #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $name = null;
+
+    /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
+
+    /**
+     * The subsidiaries this belongs to.
+     *
+     * @var ?array<Subsidiaries> $subsidiaries
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiaries')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Subsidiaries>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $subsidiaries = null;
+
+    /**
+     * $customFields
+     *
+     * @var ?array<CustomField> $customFields
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $customFields = null;
+
+    /**
+     * ID assigned to identify this tax rate.
+     *
+     * @var ?string $id
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
 
     /**
      * Tax code assigned to identify this tax rate.
@@ -186,29 +216,10 @@ class TaxRate
     public ?\DateTime $createdAt = null;
 
     /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
-
-    /**
-     * The subsidiaries this belongs to.
-     *
-     * @var ?array<Subsidiaries> $subsidiaries
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiaries')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Subsidiaries>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $subsidiaries = null;
-
-    /**
      * @param  ?string  $name
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?array<Subsidiaries>  $subsidiaries
+     * @param  ?array<CustomField>  $customFields
      * @param  ?string  $id
      * @param  ?string  $code
      * @param  ?string  $description
@@ -228,11 +239,12 @@ class TaxRate
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
      */
-    public function __construct(?string $name = null, ?array $passThrough = null, ?array $subsidiaries = null, ?string $id = null, ?string $code = null, ?string $description = null, ?float $effectiveTaxRate = null, ?float $totalTaxRate = null, ?string $taxPayableAccountId = null, ?string $taxRemittedAccountId = null, ?array $components = null, ?string $type = null, ?string $reportTaxType = null, ?string $originalTaxRateId = null, ?TaxRateStatus $status = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $name = null, ?array $passThrough = null, ?array $subsidiaries = null, ?array $customFields = null, ?string $id = null, ?string $code = null, ?string $description = null, ?float $effectiveTaxRate = null, ?float $totalTaxRate = null, ?string $taxPayableAccountId = null, ?string $taxRemittedAccountId = null, ?array $components = null, ?string $type = null, ?string $reportTaxType = null, ?string $originalTaxRateId = null, ?TaxRateStatus $status = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->name = $name;
         $this->passThrough = $passThrough;
         $this->subsidiaries = $subsidiaries;
+        $this->customFields = $customFields;
         $this->id = $id;
         $this->code = $code;
         $this->description = $description;

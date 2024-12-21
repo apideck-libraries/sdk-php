@@ -12,6 +12,34 @@ namespace Apideck\Unify\Models\Components;
 class TimeOffRequestInput
 {
     /**
+     *
+     * @var ?Notes $notes
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('notes')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Notes|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Notes $notes = null;
+
+    /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
+
+    /**
+     * The policy type of the time off request
+     *
+     * @var ?string $policyType
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('policy_type')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $policyType = null;
+
+    /**
      * ID of the employee
      *
      * @var ?string $employeeId
@@ -121,34 +149,6 @@ class TimeOffRequestInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('day_part')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $dayPart = null;
-
-    /**
-     *
-     * @var ?Notes $notes
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('notes')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Notes|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Notes $notes = null;
-
-    /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
-
-    /**
-     * The policy type of the time off request
-     *
-     * @var ?string $policyType
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('policy_type')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $policyType = null;
 
     /**
      * @param  ?Notes  $notes

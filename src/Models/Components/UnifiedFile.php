@@ -20,30 +20,12 @@ class UnifiedFile
     public string $id;
 
     /**
-     * The third-party API ID of original entity
-     *
-     * @var ?string $downstreamId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('downstream_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $downstreamId = null;
-
-    /**
      * The name of the file
      *
      * @var ?string $name
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
     public ?string $name;
-
-    /**
-     * Optional description of the file
-     *
-     * @var ?string $description
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $description = null;
 
     /**
      * The type of resource. Could be file, folder or url
@@ -55,24 +37,6 @@ class UnifiedFile
     public ?FileType $type;
 
     /**
-     * The full path of the file or folder (includes the file name)
-     *
-     * @var ?string $path
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('path')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $path = null;
-
-    /**
-     * The MIME type of the file.
-     *
-     * @var ?string $mimeType
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('mime_type')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $mimeType = null;
-
-    /**
      * Whether the current user can download this file
      *
      * @var ?bool $downloadable
@@ -80,15 +44,6 @@ class UnifiedFile
     #[\Speakeasy\Serializer\Annotation\SerializedName('downloadable')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $downloadable = null;
-
-    /**
-     * The size of the file in bytes
-     *
-     * @var ?int $size
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('size')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?int $size = null;
 
     /**
      *
@@ -136,6 +91,51 @@ class UnifiedFile
     #[\Speakeasy\Serializer\Annotation\SerializedName('exportable')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $exportable = null;
+
+    /**
+     * The third-party API ID of original entity
+     *
+     * @var ?string $downstreamId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('downstream_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $downstreamId = null;
+
+    /**
+     * Optional description of the file
+     *
+     * @var ?string $description
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $description = null;
+
+    /**
+     * The full path of the file or folder (includes the file name)
+     *
+     * @var ?string $path
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('path')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $path = null;
+
+    /**
+     * The MIME type of the file.
+     *
+     * @var ?string $mimeType
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('mime_type')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $mimeType = null;
+
+    /**
+     * The size of the file in bytes
+     *
+     * @var ?int $size
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('size')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?int $size = null;
 
     /**
      * The available file formats when exporting this file.

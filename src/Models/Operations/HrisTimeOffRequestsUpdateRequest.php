@@ -21,6 +21,21 @@ class HrisTimeOffRequestsUpdateRequest
     public string $id;
 
     /**
+     * ID of the employee you are acting upon.
+     *
+     * @var string $employeeId
+     */
+    #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=employee_id')]
+    public string $employeeId;
+
+    /**
+     *
+     * @var Components\TimeOffRequestInput $timeOffRequest
+     */
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\TimeOffRequestInput $timeOffRequest;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -51,21 +66,6 @@ class HrisTimeOffRequestsUpdateRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
     public ?bool $raw = null;
-
-    /**
-     * ID of the employee you are acting upon.
-     *
-     * @var string $employeeId
-     */
-    #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=employee_id')]
-    public string $employeeId;
-
-    /**
-     *
-     * @var Components\TimeOffRequestInput $timeOffRequest
-     */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\TimeOffRequestInput $timeOffRequest;
 
     /**
      * @param  string  $id

@@ -12,16 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class OutstandingBalanceByCurrency
 {
     /**
-     * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
-     *
-     * @var ?Currency $currency
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Currency $currency = null;
-
-    /**
      * $balancesByPeriod
      *
      * @var ?array<BalanceByPeriod> $balancesByPeriod
@@ -30,6 +20,16 @@ class OutstandingBalanceByCurrency
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\BalanceByPeriod>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $balancesByPeriod = null;
+
+    /**
+     * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
+     *
+     * @var ?Currency $currency
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Currency $currency = null;
 
     /**
      * @param  ?array<BalanceByPeriod>  $balancesByPeriod

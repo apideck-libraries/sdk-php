@@ -102,6 +102,24 @@ class ConsumerConnection
     public ?bool $enabled = null;
 
     /**
+     *
+     * @var ?string $createdAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $createdAt = null;
+
+    /**
+     * [Connection state flow](#section/Connection-state)
+     *
+     * @var ?ConnectionState $state
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('state')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConnectionState|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ConnectionState $state = null;
+
+    /**
      * Connection settings. Values will persist to `form_fields` with corresponding id
      *
      * @var ?Settings $settings
@@ -123,29 +141,11 @@ class ConsumerConnection
 
     /**
      *
-     * @var ?string $createdAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $createdAt = null;
-
-    /**
-     *
      * @var ?string $updatedAt
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $updatedAt = null;
-
-    /**
-     * [Connection state flow](#section/Connection-state)
-     *
-     * @var ?ConnectionState $state
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('state')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConnectionState|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?ConnectionState $state = null;
 
     /**
      * @param  ?string  $id

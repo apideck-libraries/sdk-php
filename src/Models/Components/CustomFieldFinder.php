@@ -21,24 +21,6 @@ class CustomFieldFinder
     public ?string $id = null;
 
     /**
-     * Custom Field name to use as a label if provided
-     *
-     * @var ?string $name
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $name = null;
-
-    /**
-     * More information about the custom field
-     *
-     * @var ?string $description
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $description = null;
-
-    /**
      * Custom Field value
      *
      * @var mixed $value
@@ -56,6 +38,24 @@ class CustomFieldFinder
     #[\Speakeasy\Serializer\Annotation\SerializedName('finder')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $finder = null;
+
+    /**
+     * Custom Field name to use as a label if provided
+     *
+     * @var ?string $name
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $name = null;
+
+    /**
+     * More information about the custom field
+     *
+     * @var ?string $description
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $description = null;
 
     /**
      * @param  ?string  $id

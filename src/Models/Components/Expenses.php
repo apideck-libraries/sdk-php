@@ -12,20 +12,20 @@ namespace Apideck\Unify\Models\Components;
 class Expenses
 {
     /**
-     * Total expense
-     *
-     * @var ?float $total
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('total')]
-    public ?float $total;
-
-    /**
      *
      * @var mixed $records
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('records')]
     #[\Speakeasy\Serializer\Annotation\Type('mixed')]
     public mixed $records;
+
+    /**
+     * Total expense
+     *
+     * @var ?float $total
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('total')]
+    public ?float $total;
 
     /**
      * @param  mixed  $records

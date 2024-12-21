@@ -47,6 +47,10 @@ class AccountingPurchaseOrdersAllResponse
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
+     * @var \Closure(string): ?AccountingPurchaseOrdersAllResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
@@ -60,5 +64,18 @@ class AccountingPurchaseOrdersAllResponse
         $this->rawResponse = $rawResponse;
         $this->getPurchaseOrdersResponse = $getPurchaseOrdersResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?AccountingPurchaseOrdersAllResponse
+     */
+    public function __call($name, $args): ?AccountingPurchaseOrdersAllResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }
