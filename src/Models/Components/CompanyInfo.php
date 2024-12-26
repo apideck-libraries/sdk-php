@@ -21,15 +21,6 @@ class CompanyInfo
     public ?string $id = null;
 
     /**
-     * The name of the company.
-     *
-     * @var ?string $companyName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('company_name')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $companyName = null;
-
-    /**
      * Based on the status some functionality is enabled or disabled.
      *
      * @var ?CompanyStatus $status
@@ -47,23 +38,6 @@ class CompanyInfo
     #[\Speakeasy\Serializer\Annotation\SerializedName('legal_name')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $legalName = null;
-
-    /**
-     * country code according to ISO 3166-1 alpha-2.
-     *
-     * @var ?string $country
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $country = null;
-
-    /**
-     *
-     * @var ?string $salesTaxNumber
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('sales_tax_number')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $salesTaxNumber = null;
 
     /**
      * Whether sales tax is calculated automatically for the company
@@ -91,25 +65,6 @@ class CompanyInfo
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\TaxRate|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?TaxRate $defaultSalesTax = null;
-
-    /**
-     * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
-     *
-     * @var ?Currency $currency
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Currency $currency = null;
-
-    /**
-     * language code according to ISO 639-1. For the United States - EN
-     *
-     * @var ?string $language
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('language')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $language = null;
 
     /**
      * The start month of fiscal year.
@@ -159,6 +114,51 @@ class CompanyInfo
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Email>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $emails = null;
+
+    /**
+     * The name of the company.
+     *
+     * @var ?string $companyName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('company_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $companyName = null;
+
+    /**
+     * country code according to ISO 3166-1 alpha-2.
+     *
+     * @var ?string $country
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $country = null;
+
+    /**
+     *
+     * @var ?string $salesTaxNumber
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('sales_tax_number')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $salesTaxNumber = null;
+
+    /**
+     * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
+     *
+     * @var ?Currency $currency
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Currency $currency = null;
+
+    /**
+     * language code according to ISO 639-1. For the United States - EN
+     *
+     * @var ?string $language
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('language')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $language = null;
 
     /**
      * When custom mappings are configured on the resource, the result is included here.

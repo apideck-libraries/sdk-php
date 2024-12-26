@@ -21,6 +21,13 @@ class AccountingCreditNotesUpdateRequest
     public string $id;
 
     /**
+     *
+     * @var Components\CreditNoteInput $creditNote
+     */
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\CreditNoteInput $creditNote;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -51,13 +58,6 @@ class AccountingCreditNotesUpdateRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
     public ?bool $raw = null;
-
-    /**
-     *
-     * @var Components\CreditNoteInput $creditNote
-     */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\CreditNoteInput $creditNote;
 
     /**
      * @param  string  $id

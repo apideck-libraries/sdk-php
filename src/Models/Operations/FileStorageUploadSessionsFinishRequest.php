@@ -20,14 +20,6 @@ class FileStorageUploadSessionsFinishRequest
     public string $id;
 
     /**
-     * Include raw response. Mostly used for debugging purposes
-     *
-     * @var ?bool $raw
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
-
-    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -67,6 +59,14 @@ class FileStorageUploadSessionsFinishRequest
     public ?FileStorageUploadSessionsFinishRequestBody $requestBody = null;
 
     /**
+     * Include raw response. Mostly used for debugging purposes
+     *
+     * @var ?bool $raw
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
+
+    /**
      * @param  string  $id
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
@@ -78,11 +78,11 @@ class FileStorageUploadSessionsFinishRequest
     public function __construct(string $id, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $digest = null, ?FileStorageUploadSessionsFinishRequestBody $requestBody = null, ?bool $raw = false)
     {
         $this->id = $id;
-        $this->raw = $raw;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
         $this->digest = $digest;
         $this->requestBody = $requestBody;
+        $this->raw = $raw;
     }
 }

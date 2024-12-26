@@ -5,81 +5,11 @@
 
 ### Available Operations
 
-* [list](#list) - List Tickets
 * [create](#create) - Create Ticket
+* [list](#list) - List Tickets
+* [delete](#delete) - Delete Ticket
 * [get](#get) - Get Ticket
 * [update](#update) - Update Ticket
-* [delete](#delete) - Delete Ticket
-
-## list
-
-List Tickets
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Components;
-use Apideck\Unify\Models\Operations;
-
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
-$sdk = Unify\Apideck::builder()
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
-
-$request = new Operations\IssueTrackingCollectionTicketsAllRequest(
-    collectionId: 'apideck-io',
-    serviceId: 'salesforce',
-    sort: new Components\TicketsSort(
-        by: Components\TicketsSortBy::CreatedAt,
-        direction: Components\SortDirection::Desc,
-    ),
-    filter: new Components\IssuesFilter(
-        status: [
-            'open',
-        ],
-    ),
-    passThrough: [
-        'search' => 'San Francisco',
-    ],
-    fields: 'id,updated_at',
-);
-
-$response = $sdk->issueTracking->collectionTickets->list(
-    request: $request
-);
-
-if ($response->getTicketsResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
-| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                                 | [Operations\IssueTrackingCollectionTicketsAllRequest](../../Models/Operations/IssueTrackingCollectionTicketsAllRequest.md) | :heavy_check_mark:                                                                                                         | The request object to use for the request.                                                                                 |
-
-### Response
-
-**[?Operations\IssueTrackingCollectionTicketsAllResponse](../../Models/Operations/IssueTrackingCollectionTicketsAllResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
 
 ## create
 
@@ -161,6 +91,136 @@ if ($response->createTicketResponse !== null) {
 ### Response
 
 **[?Operations\IssueTrackingCollectionTicketsAddResponse](../../Models/Operations/IssueTrackingCollectionTicketsAddResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## list
+
+List Tickets
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Components;
+use Apideck\Unify\Models\Operations;
+
+$security = '<YOUR_BEARER_TOKEN_HERE>';
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity($security)->build();
+
+$request = new Operations\IssueTrackingCollectionTicketsAllRequest(
+    collectionId: 'apideck-io',
+    serviceId: 'salesforce',
+    sort: new Components\TicketsSort(
+        by: Components\TicketsSortBy::CreatedAt,
+        direction: Components\SortDirection::Desc,
+    ),
+    filter: new Components\IssuesFilter(
+        status: [
+            'open',
+        ],
+    ),
+    passThrough: [
+        'search' => 'San Francisco',
+    ],
+    fields: 'id,updated_at',
+);
+
+$responses = $sdk->issueTracking->collectionTickets->list(
+    request: $request
+);
+
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                                 | [Operations\IssueTrackingCollectionTicketsAllRequest](../../Models/Operations/IssueTrackingCollectionTicketsAllRequest.md) | :heavy_check_mark:                                                                                                         | The request object to use for the request.                                                                                 |
+
+### Response
+
+**[?Operations\IssueTrackingCollectionTicketsAllResponse](../../Models/Operations/IssueTrackingCollectionTicketsAllResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## delete
+
+Delete Ticket
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Operations;
+
+$security = '<YOUR_BEARER_TOKEN_HERE>';
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity($security)->build();
+
+$request = new Operations\IssueTrackingCollectionTicketsDeleteRequest(
+    ticketId: '<id>',
+    collectionId: 'apideck-io',
+    serviceId: 'salesforce',
+);
+
+$response = $sdk->issueTracking->collectionTickets->delete(
+    request: $request
+);
+
+if ($response->deleteTicketResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                                       | [Operations\IssueTrackingCollectionTicketsDeleteRequest](../../Models/Operations/IssueTrackingCollectionTicketsDeleteRequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
+
+### Response
+
+**[?Operations\IssueTrackingCollectionTicketsDeleteResponse](../../Models/Operations/IssueTrackingCollectionTicketsDeleteResponse.md)**
 
 ### Errors
 
@@ -312,63 +372,6 @@ if ($response->updateTicketResponse !== null) {
 ### Response
 
 **[?Operations\IssueTrackingCollectionTicketsUpdateResponse](../../Models/Operations/IssueTrackingCollectionTicketsUpdateResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
-
-## delete
-
-Delete Ticket
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Operations;
-
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
-$sdk = Unify\Apideck::builder()
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
-
-$request = new Operations\IssueTrackingCollectionTicketsDeleteRequest(
-    ticketId: '<id>',
-    collectionId: 'apideck-io',
-    serviceId: 'salesforce',
-);
-
-$response = $sdk->issueTracking->collectionTickets->delete(
-    request: $request
-);
-
-if ($response->deleteTicketResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                                       | [Operations\IssueTrackingCollectionTicketsDeleteRequest](../../Models/Operations/IssueTrackingCollectionTicketsDeleteRequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
-
-### Response
-
-**[?Operations\IssueTrackingCollectionTicketsDeleteResponse](../../Models/Operations/IssueTrackingCollectionTicketsDeleteResponse.md)**
 
 ### Errors
 

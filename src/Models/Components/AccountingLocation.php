@@ -21,33 +21,6 @@ class AccountingLocation
     public ?string $id = null;
 
     /**
-     * A unique identifier for an object.
-     *
-     * @var ?string $parentId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $parentId = null;
-
-    /**
-     * The name of the company.
-     *
-     * @var ?string $companyName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('company_name')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $companyName = null;
-
-    /**
-     * The display name of the location.
-     *
-     * @var ?string $displayName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('display_name')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $displayName = null;
-
-    /**
      * Based on the status some functionality is enabled or disabled.
      *
      * @var ?LocationStatus $status
@@ -76,6 +49,43 @@ class AccountingLocation
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\SubsidiaryReference>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $subsidiaries = null;
+
+    /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
+
+    /**
+     * A unique identifier for an object.
+     *
+     * @var ?string $parentId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $parentId = null;
+
+    /**
+     * The name of the company.
+     *
+     * @var ?string $companyName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('company_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $companyName = null;
+
+    /**
+     * The display name of the location.
+     *
+     * @var ?string $displayName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('display_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $displayName = null;
 
     /**
      * When custom mappings are configured on the resource, the result is included here.
@@ -131,16 +141,6 @@ class AccountingLocation
     #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
-
-    /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
 
     /**
      * @param  ?string  $id

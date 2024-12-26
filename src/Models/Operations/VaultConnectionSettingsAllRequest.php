@@ -12,22 +12,6 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class VaultConnectionSettingsAllRequest
 {
     /**
-     * ID of the consumer which you want to get or push data from
-     *
-     * @var ?string $consumerId
-     */
-    #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-apideck-consumer-id')]
-    public ?string $consumerId = null;
-
-    /**
-     * The ID of your Unify application
-     *
-     * @var ?string $appId
-     */
-    #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-apideck-app-id')]
-    public ?string $appId = null;
-
-    /**
      * Unified API
      *
      * @var string $unifiedApi
@@ -50,6 +34,22 @@ class VaultConnectionSettingsAllRequest
      */
     #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=resource')]
     public string $resource;
+
+    /**
+     * ID of the consumer which you want to get or push data from
+     *
+     * @var ?string $consumerId
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-apideck-consumer-id')]
+    public ?string $consumerId = null;
+
+    /**
+     * The ID of your Unify application
+     *
+     * @var ?string $appId
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-apideck-app-id')]
+    public ?string $appId = null;
 
     /**
      * @param  string  $unifiedApi

@@ -17,15 +17,6 @@ namespace Apideck\Unify\Models\Components;
 class DeprecatedLinkedSupplierInput
 {
     /**
-     * The display name of the supplier.
-     *
-     * @var ?string $displayName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('display_name')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $displayName = null;
-
-    /**
      *
      * @var ?Address $address
      */
@@ -33,6 +24,15 @@ class DeprecatedLinkedSupplierInput
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?Address $address = null;
+
+    /**
+     * The display name of the supplier.
+     *
+     * @var ?string $displayName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('display_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $displayName = null;
 
     /**
      * @param  ?Address  $address

@@ -37,12 +37,15 @@ $request = new Operations\EcommerceProductsAllRequest(
     fields: 'id,updated_at',
 );
 
-$response = $sdk->ecommerce->products->list(
+$responses = $sdk->ecommerce->products->list(
     request: $request
 );
 
-if ($response->getProductsResponse !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 

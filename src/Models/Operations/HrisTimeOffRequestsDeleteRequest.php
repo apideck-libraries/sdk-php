@@ -20,6 +20,14 @@ class HrisTimeOffRequestsDeleteRequest
     public string $id;
 
     /**
+     * ID of the employee you are acting upon.
+     *
+     * @var string $employeeId
+     */
+    #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=employee_id')]
+    public string $employeeId;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -50,14 +58,6 @@ class HrisTimeOffRequestsDeleteRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
     public ?bool $raw = null;
-
-    /**
-     * ID of the employee you are acting upon.
-     *
-     * @var string $employeeId
-     */
-    #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=employee_id')]
-    public string $employeeId;
 
     /**
      * @param  string  $id

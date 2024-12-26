@@ -21,6 +21,13 @@ class AccountingLedgerAccountsUpdateRequest
     public string $id;
 
     /**
+     *
+     * @var Components\LedgerAccountInput $ledgerAccount
+     */
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\LedgerAccountInput $ledgerAccount;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -51,13 +58,6 @@ class AccountingLedgerAccountsUpdateRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
     public ?bool $raw = null;
-
-    /**
-     *
-     * @var Components\LedgerAccountInput $ledgerAccount
-     */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\LedgerAccountInput $ledgerAccount;
 
     /**
      * @param  string  $id

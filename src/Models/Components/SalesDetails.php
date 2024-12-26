@@ -13,6 +13,15 @@ class SalesDetails
 {
     /**
      *
+     * @var ?LinkedTaxRate $taxRate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRate|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedTaxRate $taxRate = null;
+
+    /**
+     *
      * @var ?float $unitPrice
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('unit_price')]
@@ -36,15 +45,6 @@ class SalesDetails
     #[\Speakeasy\Serializer\Annotation\SerializedName('tax_inclusive')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $taxInclusive = null;
-
-    /**
-     *
-     * @var ?LinkedTaxRate $taxRate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRate|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LinkedTaxRate $taxRate = null;
 
     /**
      * @param  ?LinkedTaxRate  $taxRate

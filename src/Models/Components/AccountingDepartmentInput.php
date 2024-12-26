@@ -12,24 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class AccountingDepartmentInput
 {
     /**
-     * A unique identifier for an object.
-     *
-     * @var ?string $parentId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $parentId = null;
-
-    /**
-     * The name of the department.
-     *
-     * @var ?string $name
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $name = null;
-
-    /**
      * Based on the status some functionality is enabled or disabled.
      *
      * @var ?DepartmentStatus $status
@@ -50,15 +32,6 @@ class AccountingDepartmentInput
     public ?array $subsidiaries = null;
 
     /**
-     * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
-     *
-     * @var ?string $rowVersion
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('row_version')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $rowVersion = null;
-
-    /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
      * @var ?array<PassThroughBody> $passThrough
@@ -67,6 +40,33 @@ class AccountingDepartmentInput
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * A unique identifier for an object.
+     *
+     * @var ?string $parentId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $parentId = null;
+
+    /**
+     * The name of the department.
+     *
+     * @var ?string $name
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $name = null;
+
+    /**
+     * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
+     *
+     * @var ?string $rowVersion
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('row_version')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $rowVersion = null;
 
     /**
      * @param  ?DepartmentStatus  $status

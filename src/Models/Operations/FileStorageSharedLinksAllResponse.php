@@ -47,6 +47,10 @@ class FileStorageSharedLinksAllResponse
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
+     * @var \Closure(string): ?FileStorageSharedLinksAllResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
@@ -60,5 +64,18 @@ class FileStorageSharedLinksAllResponse
         $this->rawResponse = $rawResponse;
         $this->getSharedLinksResponse = $getSharedLinksResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?FileStorageSharedLinksAllResponse
+     */
+    public function __call($name, $args): ?FileStorageSharedLinksAllResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

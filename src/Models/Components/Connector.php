@@ -40,15 +40,6 @@ class Connector
     public ?ConnectorStatus $status = null;
 
     /**
-     * A description of the object.
-     *
-     * @var ?string $description
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $description = null;
-
-    /**
      * Link to a small square icon for the connector.
      *
      * @var ?string $iconUrl
@@ -275,6 +266,15 @@ class Connector
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\TlsSupport|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?TlsSupport $tlsSupport = null;
+
+    /**
+     * A description of the object.
+     *
+     * @var ?string $description
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $description = null;
 
     /**
      * @param  ?string  $id

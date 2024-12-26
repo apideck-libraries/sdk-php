@@ -20,6 +20,22 @@ class IssueTrackingCollectionTicketCommentsDeleteRequest
     public string $id;
 
     /**
+     * The collection ID
+     *
+     * @var string $collectionId
+     */
+    #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=collection_id')]
+    public string $collectionId;
+
+    /**
+     * ID of the ticket you are acting upon.
+     *
+     * @var string $ticketId
+     */
+    #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=ticket_id')]
+    public string $ticketId;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -50,22 +66,6 @@ class IssueTrackingCollectionTicketCommentsDeleteRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
     public ?bool $raw = null;
-
-    /**
-     * The collection ID
-     *
-     * @var string $collectionId
-     */
-    #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=collection_id')]
-    public string $collectionId;
-
-    /**
-     * ID of the ticket you are acting upon.
-     *
-     * @var string $ticketId
-     */
-    #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=ticket_id')]
-    public string $ticketId;
 
     /**
      * @param  string  $id

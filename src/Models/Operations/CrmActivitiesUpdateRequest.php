@@ -21,6 +21,13 @@ class CrmActivitiesUpdateRequest
     public string $id;
 
     /**
+     *
+     * @var Components\ActivityInput $activity
+     */
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\ActivityInput $activity;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -51,13 +58,6 @@ class CrmActivitiesUpdateRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
     public ?bool $raw = null;
-
-    /**
-     *
-     * @var Components\ActivityInput $activity
-     */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\ActivityInput $activity;
 
     /**
      * @param  string  $id

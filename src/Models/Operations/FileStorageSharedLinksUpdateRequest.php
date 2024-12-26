@@ -21,6 +21,13 @@ class FileStorageSharedLinksUpdateRequest
     public string $id;
 
     /**
+     *
+     * @var Components\SharedLinkInput $sharedLink
+     */
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\SharedLinkInput $sharedLink;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -51,13 +58,6 @@ class FileStorageSharedLinksUpdateRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
     public ?bool $raw = null;
-
-    /**
-     *
-     * @var Components\SharedLinkInput $sharedLink
-     */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\SharedLinkInput $sharedLink;
 
     /**
      * @param  string  $id

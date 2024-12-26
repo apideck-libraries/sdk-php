@@ -12,14 +12,6 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class AtsApplicationsAllRequest
 {
     /**
-     * Include raw response. Mostly used for debugging purposes
-     *
-     * @var ?bool $raw
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
-
-    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -44,6 +36,14 @@ class AtsApplicationsAllRequest
     public ?string $serviceId = null;
 
     /**
+     * Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
+     *
+     * @var ?array<string, mixed> $passThrough
+     */
+    #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=pass_through')]
+    public ?array $passThrough = null;
+
+    /**
      * Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
      *
      * @var ?string $cursor
@@ -52,12 +52,12 @@ class AtsApplicationsAllRequest
     public ?string $cursor = null;
 
     /**
-     * Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
+     * Include raw response. Mostly used for debugging purposes
      *
-     * @var ?array<string, mixed> $passThrough
+     * @var ?bool $raw
      */
-    #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=pass_through')]
-    public ?array $passThrough = null;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
 
     /**
      * Number of results to return. Minimum 1, Maximum 200, Default 20
@@ -78,12 +78,12 @@ class AtsApplicationsAllRequest
      */
     public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?array $passThrough = null, ?string $cursor = null, ?bool $raw = false, ?int $limit = 20)
     {
-        $this->raw = $raw;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
         $this->passThrough = $passThrough;
-        $this->limit = $limit;
         $this->cursor = $cursor;
+        $this->raw = $raw;
+        $this->limit = $limit;
     }
 }

@@ -47,6 +47,10 @@ class EcommerceCustomersAllResponse
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
+     * @var \Closure(string): ?EcommerceCustomersAllResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
@@ -60,5 +64,18 @@ class EcommerceCustomersAllResponse
         $this->rawResponse = $rawResponse;
         $this->getEcommerceCustomersResponse = $getEcommerceCustomersResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?EcommerceCustomersAllResponse
+     */
+    public function __call($name, $args): ?EcommerceCustomersAllResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

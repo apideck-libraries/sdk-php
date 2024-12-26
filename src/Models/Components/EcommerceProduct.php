@@ -20,6 +20,46 @@ class EcommerceProduct
     public string $id;
 
     /**
+     * An array of options for the product.
+     *
+     * @var ?array<EcommerceProductOptions> $options
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceProductOptions>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $options = null;
+
+    /**
+     * $variants
+     *
+     * @var ?array<Variants> $variants
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('variants')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Variants>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $variants = null;
+
+    /**
+     * An array of tags for the product, used for organization and searching.
+     *
+     * @var ?array<string> $tags
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tags')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $tags = null;
+
+    /**
+     * An array of categories for the product, used for organization and searching.
+     *
+     * @var ?array<EcommerceProductCategories> $categories
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('categories')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceProductCategories>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $categories = null;
+
+    /**
      * The name of the product as it should be displayed to customers.
      *
      * @var ?string $name
@@ -101,46 +141,6 @@ class EcommerceProduct
     #[\Speakeasy\Serializer\Annotation\SerializedName('weight_unit')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $weightUnit = null;
-
-    /**
-     * An array of options for the product.
-     *
-     * @var ?array<EcommerceProductOptions> $options
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceProductOptions>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $options = null;
-
-    /**
-     * $variants
-     *
-     * @var ?array<Variants> $variants
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('variants')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Variants>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $variants = null;
-
-    /**
-     * An array of tags for the product, used for organization and searching.
-     *
-     * @var ?array<string> $tags
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('tags')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $tags = null;
-
-    /**
-     * An array of categories for the product, used for organization and searching.
-     *
-     * @var ?array<EcommerceProductCategories> $categories
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('categories')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceProductCategories>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $categories = null;
 
     /**
      * When custom mappings are configured on the resource, the result is included here.

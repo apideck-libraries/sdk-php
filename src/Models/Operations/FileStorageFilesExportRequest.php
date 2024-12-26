@@ -20,6 +20,14 @@ class FileStorageFilesExportRequest
     public string $id;
 
     /**
+     * File format to export this file to. A list of available file formats for the current file is available as `export_formats` on the File resource.
+     *
+     * @var string $format
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=format')]
+    public string $format;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -50,14 +58,6 @@ class FileStorageFilesExportRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=fields')]
     public ?string $fields = null;
-
-    /**
-     * File format to export this file to. A list of available file formats for the current file is available as `export_formats` on the File resource.
-     *
-     * @var string $format
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=format')]
-    public string $format;
 
     /**
      * @param  string  $id

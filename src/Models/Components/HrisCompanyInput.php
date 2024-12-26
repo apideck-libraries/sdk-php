@@ -20,47 +20,12 @@ class HrisCompanyInput
 
     /**
      *
-     * @var ?string $displayName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('display_name')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $displayName = null;
-
-    /**
-     *
-     * @var ?string $subdomain
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('subdomain')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $subdomain = null;
-
-    /**
-     *
      * @var ?HrisCompanyStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\HrisCompanyStatus|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisCompanyStatus $status = null;
-
-    /**
-     * An Company Number, Company ID or Company Code, is a unique number that has been assigned to each company.
-     *
-     * @var ?string $companyNumber
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('company_number')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $companyNumber = null;
-
-    /**
-     * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
-     *
-     * @var ?Currency $currency
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Currency $currency = null;
 
     /**
      * $addresses
@@ -103,14 +68,6 @@ class HrisCompanyInput
     public ?array $websites = null;
 
     /**
-     *
-     * @var ?string $debtorId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('debtor_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $debtorId = null;
-
-    /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
      * @var ?array<PassThroughBody> $passThrough
@@ -119,6 +76,49 @@ class HrisCompanyInput
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     *
+     * @var ?string $displayName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('display_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $displayName = null;
+
+    /**
+     *
+     * @var ?string $subdomain
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subdomain')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $subdomain = null;
+
+    /**
+     * An Company Number, Company ID or Company Code, is a unique number that has been assigned to each company.
+     *
+     * @var ?string $companyNumber
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('company_number')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $companyNumber = null;
+
+    /**
+     * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
+     *
+     * @var ?Currency $currency
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Currency $currency = null;
+
+    /**
+     *
+     * @var ?string $debtorId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('debtor_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $debtorId = null;
 
     /**
      * @param  ?string  $legalName

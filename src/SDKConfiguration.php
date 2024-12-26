@@ -7,7 +7,7 @@
 declare(strict_types=1);
 
 namespace Apideck\Unify;
-
+use Apideck\Unify\Utils\Retry\RetryConfig;
 
 class SDKConfiguration
 {
@@ -26,15 +26,17 @@ class SDKConfiguration
 
     public string $openapiDocVersion = '10.9.0';
 
-    public string $sdkVersion = '0.1.0';
+    public string $sdkVersion = '0.2.0';
 
-    public string $genVersion = '2.477.4';
+    public string $genVersion = '2.484.0';
 
-    public string $userAgent = 'speakeasy-sdk/php 0.1.0 2.477.4 10.9.0 apideck-libraries/sdk-php';
+    public string $userAgent = 'speakeasy-sdk/php 0.2.0 2.484.0 10.9.0 apideck-libraries/sdk-php';
     /** @var array<string, array<string, array<string, mixed>>> */
     public ?array $globals = [
         'parameters' => [],
     ];
+
+    public ?RetryConfig $retryConfig = null;
 
     public function __construct()
     {

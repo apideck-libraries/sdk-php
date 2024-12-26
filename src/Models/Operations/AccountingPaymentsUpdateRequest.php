@@ -21,6 +21,13 @@ class AccountingPaymentsUpdateRequest
     public string $id;
 
     /**
+     *
+     * @var Components\PaymentInput $payment
+     */
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\PaymentInput $payment;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -51,13 +58,6 @@ class AccountingPaymentsUpdateRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
     public ?bool $raw = null;
-
-    /**
-     *
-     * @var Components\PaymentInput $payment
-     */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\PaymentInput $payment;
 
     /**
      * @param  string  $id

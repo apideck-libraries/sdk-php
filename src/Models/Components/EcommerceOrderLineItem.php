@@ -13,6 +13,50 @@ namespace Apideck\Unify\Models\Components;
 class EcommerceOrderLineItem
 {
     /**
+     * The name of the product or variant associated with the line item.
+     *
+     * @var ?string $name
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    public ?string $name;
+
+    /**
+     * $options
+     *
+     * @var ?array<Options> $options
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Options>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $options = null;
+
+    /**
+     * The quantity of the product or variant associated with the line item.
+     *
+     * @var ?string $quantity
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('quantity')]
+    public ?string $quantity;
+
+    /**
+     * The total amount for the product(s) or variant associated with the line item, including taxes and discounts.
+     *
+     * @var ?string $totalAmount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('total_amount')]
+    public ?string $totalAmount;
+
+    /**
+     * $discounts
+     *
+     * @var ?array<EcommerceDiscount> $discounts
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('discounts')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceDiscount>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $discounts = null;
+
+    /**
      * A unique identifier for an object.
      *
      * @var ?string $id
@@ -49,14 +93,6 @@ class EcommerceOrderLineItem
     public ?string $sku = null;
 
     /**
-     * The name of the product or variant associated with the line item.
-     *
-     * @var ?string $name
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    public ?string $name;
-
-    /**
      * The description of the product or variant associated with the line item.
      *
      * @var ?string $description
@@ -64,24 +100,6 @@ class EcommerceOrderLineItem
     #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $description = null;
-
-    /**
-     * $options
-     *
-     * @var ?array<Options> $options
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Options>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $options = null;
-
-    /**
-     * The quantity of the product or variant associated with the line item.
-     *
-     * @var ?string $quantity
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('quantity')]
-    public ?string $quantity;
 
     /**
      * The unit price of the product or variant associated with the line item.
@@ -145,24 +163,6 @@ class EcommerceOrderLineItem
     #[\Speakeasy\Serializer\Annotation\SerializedName('sub_total')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $subTotal = null;
-
-    /**
-     * The total amount for the product(s) or variant associated with the line item, including taxes and discounts.
-     *
-     * @var ?string $totalAmount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('total_amount')]
-    public ?string $totalAmount;
-
-    /**
-     * $discounts
-     *
-     * @var ?array<EcommerceDiscount> $discounts
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('discounts')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceDiscount>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $discounts = null;
 
     /**
      * @param  ?string  $name

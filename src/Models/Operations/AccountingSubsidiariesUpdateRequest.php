@@ -21,6 +21,13 @@ class AccountingSubsidiariesUpdateRequest
     public string $id;
 
     /**
+     *
+     * @var Components\SubsidiaryInput $subsidiary
+     */
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\SubsidiaryInput $subsidiary;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -51,13 +58,6 @@ class AccountingSubsidiariesUpdateRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
     public ?bool $raw = null;
-
-    /**
-     *
-     * @var Components\SubsidiaryInput $subsidiary
-     */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\SubsidiaryInput $subsidiary;
 
     /**
      * @param  string  $id

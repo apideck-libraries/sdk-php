@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 7ac99bda5530d96a93dea69622cbc790
+  docChecksum: 00527826e00802057f1f1f32cd5fa2ff
   docVersion: 10.9.0
-  speakeasyVersion: 1.454.2
-  generationVersion: 2.477.4
-  releaseVersion: 0.1.0
-  configChecksum: f591e4dc1c5be424bad5706db52f1b38
+  speakeasyVersion: 1.460.2
+  generationVersion: 2.484.0
+  releaseVersion: 0.2.0
+  configChecksum: 236753ff2eaa619d8b8c448b59dee7ea
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php
   published: true
 features:
   php:
     constsAndDefaults: 0.2.0
-    core: 3.7.4
+    core: 3.7.7
     deprecations: 2.81.1
     errors: 0.3.0
     flattening: 2.81.1
@@ -27,7 +27,9 @@ features:
     methodServerURLs: 2.82.1
     nameOverrides: 2.81.2
     nullables: 1.0.0
+    pagination: 0.1.0
     responseFormat: 0.1.0
+    retries: 0.1.0
     typeOverrides: 2.81.1
     unions: 0.1.4
 generatedFiles:
@@ -2778,12 +2780,20 @@ generatedFiles:
   - src/Utils/JSON.php
   - src/Utils/MixedJSONHandler.php
   - src/Utils/MultipartMetadata.php
+  - src/Utils/Options.php
   - src/Utils/ParamsMetadata.php
   - src/Utils/PathParameters.php
   - src/Utils/PhpDocTypeParser.php
   - src/Utils/QueryParameters.php
   - src/Utils/RequestBodies.php
   - src/Utils/RequestMetadata.php
+  - src/Utils/Retry/PermanentError.php
+  - src/Utils/Retry/RetryConfig.php
+  - src/Utils/Retry/RetryConfigBackoff.php
+  - src/Utils/Retry/RetryConfigNone.php
+  - src/Utils/Retry/RetryStrategy.php
+  - src/Utils/Retry/RetryUtils.php
+  - src/Utils/Retry/TemporaryError.php
   - src/Utils/Security.php
   - src/Utils/SecurityClient.php
   - src/Utils/SecurityMetadata.php

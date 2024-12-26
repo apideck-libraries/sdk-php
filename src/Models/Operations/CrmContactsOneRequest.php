@@ -45,12 +45,12 @@ class CrmContactsOneRequest
     public ?string $serviceId = null;
 
     /**
-     * Include raw response. Mostly used for debugging purposes
+     * Apply filters
      *
-     * @var ?bool $raw
+     * @var ?Components\ContactsFilter $filter
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
+    #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
+    public ?Components\ContactsFilter $filter = null;
 
     /**
      * The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
@@ -61,12 +61,12 @@ class CrmContactsOneRequest
     public ?string $fields = null;
 
     /**
-     * Apply filters
+     * Include raw response. Mostly used for debugging purposes
      *
-     * @var ?Components\ContactsFilter $filter
+     * @var ?bool $raw
      */
-    #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
-    public ?Components\ContactsFilter $filter = null;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
 
     /**
      * @param  string  $id
@@ -83,8 +83,8 @@ class CrmContactsOneRequest
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
-        $this->raw = $raw;
         $this->filter = $filter;
         $this->fields = $fields;
+        $this->raw = $raw;
     }
 }

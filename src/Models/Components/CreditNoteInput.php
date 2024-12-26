@@ -12,6 +12,101 @@ namespace Apideck\Unify\Models\Components;
 class CreditNoteInput
 {
     /**
+     * Amount of transaction
+     *
+     * @var float $totalAmount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('total_amount')]
+    public float $totalAmount;
+
+    /**
+     * Status of credit notes
+     *
+     * @var ?CreditNoteStatus $status
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CreditNoteStatus|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?CreditNoteStatus $status = null;
+
+    /**
+     * Date credit note issued - YYYY:MM::DDThh:mm:ss.sTZD
+     *
+     * @var ?\DateTime $dateIssued
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('date_issued')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?\DateTime $dateIssued = null;
+
+    /**
+     * Type of payment
+     *
+     * @var ?CreditNoteType $type
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CreditNoteType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?CreditNoteType $type = null;
+
+    /**
+     * $lineItems
+     *
+     * @var ?array<InvoiceLineItemInput> $lineItems
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\InvoiceLineItemInput>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $lineItems = null;
+
+    /**
+     * $allocations
+     *
+     * @var ?array<AllocationInput> $allocations
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('allocations')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\AllocationInput>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $allocations = null;
+
+    /**
+     *
+     * @var ?Address $billingAddress
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('billing_address')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Address $billingAddress = null;
+
+    /**
+     *
+     * @var ?Address $shippingAddress
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('shipping_address')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Address $shippingAddress = null;
+
+    /**
+     * $customFields
+     *
+     * @var ?array<CustomField> $customFields
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $customFields = null;
+
+    /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
+
+    /**
      * Credit note number.
      *
      * @var ?string $number
@@ -77,14 +172,6 @@ class CreditNoteInput
     public ?float $subTotal = null;
 
     /**
-     * Amount of transaction
-     *
-     * @var float $totalAmount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('total_amount')]
-    public float $totalAmount;
-
-    /**
      * Total tax amount applied to this invoice.
      *
      * @var ?float $totalTax
@@ -121,16 +208,6 @@ class CreditNoteInput
     public ?float $remainingCredit = null;
 
     /**
-     * Status of credit notes
-     *
-     * @var ?CreditNoteStatus $status
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CreditNoteStatus|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CreditNoteStatus $status = null;
-
-    /**
      * Optional reference message ie: Debit remittance detail.
      *
      * @var ?string $reference
@@ -138,15 +215,6 @@ class CreditNoteInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('reference')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $reference = null;
-
-    /**
-     * Date credit note issued - YYYY:MM::DDThh:mm:ss.sTZD
-     *
-     * @var ?\DateTime $dateIssued
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('date_issued')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?\DateTime $dateIssued = null;
 
     /**
      * Date credit note paid - YYYY:MM::DDThh:mm:ss.sTZD
@@ -158,16 +226,6 @@ class CreditNoteInput
     public ?\DateTime $datePaid = null;
 
     /**
-     * Type of payment
-     *
-     * @var ?CreditNoteType $type
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CreditNoteType|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CreditNoteType $type = null;
-
-    /**
      *
      * @var ?LinkedLedgerAccountInput $account
      */
@@ -175,26 +233,6 @@ class CreditNoteInput
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccountInput|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?LinkedLedgerAccountInput $account = null;
-
-    /**
-     * $lineItems
-     *
-     * @var ?array<InvoiceLineItemInput> $lineItems
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\InvoiceLineItemInput>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $lineItems = null;
-
-    /**
-     * $allocations
-     *
-     * @var ?array<AllocationInput> $allocations
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('allocations')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\AllocationInput>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $allocations = null;
 
     /**
      * Optional note to be associated with the credit note.
@@ -215,24 +253,6 @@ class CreditNoteInput
     public ?string $terms = null;
 
     /**
-     *
-     * @var ?Address $billingAddress
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('billing_address')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Address $billingAddress = null;
-
-    /**
-     *
-     * @var ?Address $shippingAddress
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('shipping_address')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Address $shippingAddress = null;
-
-    /**
      * A list of linked tracking categories.
      *
      * @var ?array<LinkedTrackingCategory> $trackingCategories
@@ -243,16 +263,6 @@ class CreditNoteInput
     public ?array $trackingCategories = null;
 
     /**
-     * $customFields
-     *
-     * @var ?array<CustomField> $customFields
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $customFields = null;
-
-    /**
      * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
      *
      * @var ?string $rowVersion
@@ -260,16 +270,6 @@ class CreditNoteInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('row_version')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $rowVersion = null;
-
-    /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
 
     /**
      * @param  float  $totalAmount

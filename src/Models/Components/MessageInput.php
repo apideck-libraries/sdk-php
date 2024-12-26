@@ -28,20 +28,20 @@ class MessageInput
     public string $to;
 
     /**
-     *
-     * @var ?string $subject
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('subject')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $subject = null;
-
-    /**
      * The message text.
      *
      * @var string $body
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('body')]
     public string $body;
+
+    /**
+     *
+     * @var ?string $subject
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subject')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $subject = null;
 
     /**
      * Set to sms for SMS messages and mms for MMS messages.

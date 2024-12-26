@@ -12,15 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class PipelineInput
 {
     /**
-     * The unique identifier of the Pipeline.
-     *
-     * @var ?string $id
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $id = null;
-
-    /**
      * The name of the Pipeline.
      *
      * @var string $name
@@ -29,14 +20,13 @@ class PipelineInput
     public string $name;
 
     /**
-     * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
+     * The unique identifier of the Pipeline.
      *
-     * @var ?Currency $currency
+     * @var ?string $id
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Currency $currency = null;
+    public ?string $id = null;
 
     /**
      * Whether the Pipeline is archived or not.
@@ -55,15 +45,6 @@ class PipelineInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('active')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $active = null;
-
-    /**
-     * The order in which the Pipeline is displayed in the UI.
-     *
-     * @var ?int $displayOrder
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('display_order')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?int $displayOrder = null;
 
     /**
      * Whether the Pipeline has win probability enabled or not.
@@ -93,6 +74,25 @@ class PipelineInput
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
+     *
+     * @var ?Currency $currency
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Currency $currency = null;
+
+    /**
+     * The order in which the Pipeline is displayed in the UI.
+     *
+     * @var ?int $displayOrder
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('display_order')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?int $displayOrder = null;
 
     /**
      * @param  string  $name

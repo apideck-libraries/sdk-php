@@ -21,23 +21,6 @@ class Job
     public ?string $id = null;
 
     /**
-     *
-     * @var ?string $slug
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('slug')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $slug = null;
-
-    /**
-     * The job title of the person.
-     *
-     * @var ?string $title
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('title')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $title = null;
-
-    /**
      * Sequence in relation to other jobs.
      *
      * @var ?int $sequence
@@ -76,24 +59,6 @@ class Job
     public ?string $code = null;
 
     /**
-     * language code according to ISO 639-1. For the United States - EN
-     *
-     * @var ?string $language
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('language')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $language = null;
-
-    /**
-     *
-     * @var ?EmploymentTerms $employmentTerms
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('employment_terms')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EmploymentTerms|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?EmploymentTerms $employmentTerms = null;
-
-    /**
      * Level of experience required for the job role.
      *
      * @var ?string $experience
@@ -101,24 +66,6 @@ class Job
     #[\Speakeasy\Serializer\Annotation\SerializedName('experience')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $experience = null;
-
-    /**
-     * Specifies the location for the job posting.
-     *
-     * @var ?string $location
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('location')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $location = null;
-
-    /**
-     * Specifies whether the posting is for a remote job.
-     *
-     * @var ?bool $remote
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('remote')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $remote = null;
 
     /**
      * A job's Requisition ID (Req ID) allows your organization to identify and track a job based on alphanumeric naming conventions unique to your company's internal processes.
@@ -149,16 +96,6 @@ class Job
     public ?Branch $branch = null;
 
     /**
-     * The recruiter is generally someone who is tasked to help the hiring manager find and screen qualified applicant
-     *
-     * @var ?array<string> $recruiters
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('recruiters')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $recruiters = null;
-
-    /**
      * $hiringManagers
      *
      * @var ?array<string> $hiringManagers
@@ -167,6 +104,135 @@ class Job
     #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $hiringManagers = null;
+
+    /**
+     * $blocks
+     *
+     * @var ?array<Blocks> $blocks
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('blocks')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Blocks>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $blocks = null;
+
+    /**
+     *
+     * @var ?Salary $salary
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('salary')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Salary|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Salary $salary = null;
+
+    /**
+     * $links
+     *
+     * @var ?array<JobLinks> $links
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('links')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\JobLinks>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $links = null;
+
+    /**
+     *
+     * @var ?bool $confidential
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('confidential')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $confidential = null;
+
+    /**
+     * Specifies whether an employee of the organization can apply for the job.
+     *
+     * @var ?bool $availableToEmployees
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('available_to_employees')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $availableToEmployees = null;
+
+    /**
+     * $addresses
+     *
+     * @var ?array<Address> $addresses
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('addresses')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Address>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $addresses = null;
+
+    /**
+     * $customFields
+     *
+     * @var ?array<CustomField> $customFields
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $customFields = null;
+
+    /**
+     *
+     * @var ?string $slug
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('slug')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $slug = null;
+
+    /**
+     * The job title of the person.
+     *
+     * @var ?string $title
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('title')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $title = null;
+
+    /**
+     * language code according to ISO 639-1. For the United States - EN
+     *
+     * @var ?string $language
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('language')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $language = null;
+
+    /**
+     *
+     * @var ?EmploymentTerms $employmentTerms
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('employment_terms')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EmploymentTerms|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?EmploymentTerms $employmentTerms = null;
+
+    /**
+     * Specifies the location for the job posting.
+     *
+     * @var ?string $location
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('location')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $location = null;
+
+    /**
+     * Specifies whether the posting is for a remote job.
+     *
+     * @var ?bool $remote
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $remote = null;
+
+    /**
+     * The recruiter is generally someone who is tasked to help the hiring manager find and screen qualified applicant
+     *
+     * @var ?array<string> $recruiters
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('recruiters')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $recruiters = null;
 
     /**
      * $followers
@@ -197,16 +263,6 @@ class Job
     public ?string $descriptionHtml = null;
 
     /**
-     * $blocks
-     *
-     * @var ?array<Blocks> $blocks
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('blocks')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Blocks>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $blocks = null;
-
-    /**
      *
      * @var ?string $closing
      */
@@ -230,15 +286,6 @@ class Job
     #[\Speakeasy\Serializer\Annotation\SerializedName('closing_date')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?LocalDate $closingDate = null;
-
-    /**
-     *
-     * @var ?Salary $salary
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('salary')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Salary|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Salary $salary = null;
 
     /**
      * URL of the job description
@@ -270,33 +317,6 @@ class Job
     public ?string $recordUrl = null;
 
     /**
-     * $links
-     *
-     * @var ?array<JobLinks> $links
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('links')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\JobLinks>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $links = null;
-
-    /**
-     *
-     * @var ?bool $confidential
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('confidential')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $confidential = null;
-
-    /**
-     * Specifies whether an employee of the organization can apply for the job.
-     *
-     * @var ?bool $availableToEmployees
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('available_to_employees')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $availableToEmployees = null;
-
-    /**
      * $tags
      *
      * @var ?array<string> $tags
@@ -305,26 +325,6 @@ class Job
     #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $tags = null;
-
-    /**
-     * $addresses
-     *
-     * @var ?array<Address> $addresses
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('addresses')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Address>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $addresses = null;
-
-    /**
-     * $customFields
-     *
-     * @var ?array<CustomField> $customFields
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $customFields = null;
 
     /**
      * Flag to indicate if the object is deleted.

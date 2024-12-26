@@ -13,14 +13,6 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class AccountingLocationsAllRequest
 {
     /**
-     * Include raw response. Mostly used for debugging purposes
-     *
-     * @var ?bool $raw
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
-
-    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -45,20 +37,20 @@ class AccountingLocationsAllRequest
     public ?string $serviceId = null;
 
     /**
+     * Apply filters
+     *
+     * @var ?Components\AccountingLocationsFilter $filter
+     */
+    #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
+    public ?Components\AccountingLocationsFilter $filter = null;
+
+    /**
      * Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
      *
      * @var ?string $cursor
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=cursor')]
     public ?string $cursor = null;
-
-    /**
-     * Number of results to return. Minimum 1, Maximum 200, Default 20
-     *
-     * @var ?int $limit
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=limit')]
-    public ?int $limit = null;
 
     /**
      * The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
@@ -69,12 +61,20 @@ class AccountingLocationsAllRequest
     public ?string $fields = null;
 
     /**
-     * Apply filters
+     * Include raw response. Mostly used for debugging purposes
      *
-     * @var ?Components\AccountingLocationsFilter $filter
+     * @var ?bool $raw
      */
-    #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
-    public ?Components\AccountingLocationsFilter $filter = null;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
+
+    /**
+     * Number of results to return. Minimum 1, Maximum 200, Default 20
+     *
+     * @var ?int $limit
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=limit')]
+    public ?int $limit = null;
 
     /**
      * @param  ?bool  $raw
@@ -88,13 +88,13 @@ class AccountingLocationsAllRequest
      */
     public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?Components\AccountingLocationsFilter $filter = null, ?string $cursor = null, ?string $fields = null, ?bool $raw = false, ?int $limit = 20)
     {
-        $this->raw = $raw;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
-        $this->limit = $limit;
         $this->filter = $filter;
         $this->cursor = $cursor;
         $this->fields = $fields;
+        $this->raw = $raw;
+        $this->limit = $limit;
     }
 }
