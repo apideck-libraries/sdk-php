@@ -5,79 +5,11 @@
 
 ### Available Operations
 
-* [list](#list) - List Ledger Accounts
 * [create](#create) - Create Ledger Account
+* [list](#list) - List Ledger Accounts
+* [delete](#delete) - Delete Ledger Account
 * [get](#get) - Get Ledger Account
 * [update](#update) - Update Ledger Account
-* [delete](#delete) - Delete Ledger Account
-
-## list
-
-List Ledger Accounts
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Components;
-use Apideck\Unify\Models\Operations;
-use Apideck\Unify\Utils;
-
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
-$sdk = Unify\Apideck::builder()
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
-
-$request = new Operations\AccountingLedgerAccountsAllRequest(
-    serviceId: 'salesforce',
-    filter: new Components\LedgerAccountsFilter(
-        updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
-    ),
-    sort: new Components\LedgerAccountsSort(
-        by: Components\LedgerAccountsSortBy::UpdatedAt,
-        direction: Components\SortDirection::Desc,
-    ),
-    passThrough: [
-        'search' => 'San Francisco',
-    ],
-    fields: 'id,updated_at',
-);
-
-$response = $sdk->accounting->ledgerAccounts->list(
-    request: $request
-);
-
-if ($response->getLedgerAccountsResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                     | [Operations\AccountingLedgerAccountsAllRequest](../../Models/Operations/AccountingLedgerAccountsAllRequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-
-### Response
-
-**[?Operations\AccountingLedgerAccountsAllResponse](../../Models/Operations/AccountingLedgerAccountsAllResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
 
 ## create
 
@@ -182,6 +114,133 @@ if ($response->createLedgerAccountResponse !== null) {
 ### Response
 
 **[?Operations\AccountingLedgerAccountsAddResponse](../../Models/Operations/AccountingLedgerAccountsAddResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## list
+
+List Ledger Accounts
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Components;
+use Apideck\Unify\Models\Operations;
+use Apideck\Unify\Utils;
+
+$security = '<YOUR_BEARER_TOKEN_HERE>';
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity($security)->build();
+
+$request = new Operations\AccountingLedgerAccountsAllRequest(
+    serviceId: 'salesforce',
+    filter: new Components\LedgerAccountsFilter(
+        updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
+    ),
+    sort: new Components\LedgerAccountsSort(
+        by: Components\LedgerAccountsSortBy::UpdatedAt,
+        direction: Components\SortDirection::Desc,
+    ),
+    passThrough: [
+        'search' => 'San Francisco',
+    ],
+    fields: 'id,updated_at',
+);
+
+$responses = $sdk->accounting->ledgerAccounts->list(
+    request: $request
+);
+
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                     | [Operations\AccountingLedgerAccountsAllRequest](../../Models/Operations/AccountingLedgerAccountsAllRequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
+
+### Response
+
+**[?Operations\AccountingLedgerAccountsAllResponse](../../Models/Operations/AccountingLedgerAccountsAllResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## delete
+
+Delete Ledger Account
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Operations;
+
+$security = '<YOUR_BEARER_TOKEN_HERE>';
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity($security)->build();
+
+$request = new Operations\AccountingLedgerAccountsDeleteRequest(
+    id: '<id>',
+    serviceId: 'salesforce',
+);
+
+$response = $sdk->accounting->ledgerAccounts->delete(
+    request: $request
+);
+
+if ($response->deleteLedgerAccountResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                           | [Operations\AccountingLedgerAccountsDeleteRequest](../../Models/Operations/AccountingLedgerAccountsDeleteRequest.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
+
+### Response
+
+**[?Operations\AccountingLedgerAccountsDeleteResponse](../../Models/Operations/AccountingLedgerAccountsDeleteResponse.md)**
 
 ### Errors
 
@@ -355,62 +414,6 @@ if ($response->updateLedgerAccountResponse !== null) {
 ### Response
 
 **[?Operations\AccountingLedgerAccountsUpdateResponse](../../Models/Operations/AccountingLedgerAccountsUpdateResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
-
-## delete
-
-Delete Ledger Account
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Operations;
-
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
-$sdk = Unify\Apideck::builder()
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
-
-$request = new Operations\AccountingLedgerAccountsDeleteRequest(
-    id: '<id>',
-    serviceId: 'salesforce',
-);
-
-$response = $sdk->accounting->ledgerAccounts->delete(
-    request: $request
-);
-
-if ($response->deleteLedgerAccountResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                           | [Operations\AccountingLedgerAccountsDeleteRequest](../../Models/Operations/AccountingLedgerAccountsDeleteRequest.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
-
-### Response
-
-**[?Operations\AccountingLedgerAccountsDeleteResponse](../../Models/Operations/AccountingLedgerAccountsDeleteResponse.md)**
 
 ### Errors
 

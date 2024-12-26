@@ -13,12 +13,11 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class FileStorageFoldersAddRequest
 {
     /**
-     * Include raw response. Mostly used for debugging purposes
      *
-     * @var ?bool $raw
+     * @var Components\CreateFolderRequest $createFolderRequest
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\CreateFolderRequest $createFolderRequest;
 
     /**
      * ID of the consumer which you want to get or push data from
@@ -53,11 +52,12 @@ class FileStorageFoldersAddRequest
     public ?string $fields = null;
 
     /**
+     * Include raw response. Mostly used for debugging purposes
      *
-     * @var Components\CreateFolderRequest $createFolderRequest
+     * @var ?bool $raw
      */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\CreateFolderRequest $createFolderRequest;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
 
     /**
      * @param  Components\CreateFolderRequest  $createFolderRequest
@@ -70,10 +70,10 @@ class FileStorageFoldersAddRequest
     public function __construct(Components\CreateFolderRequest $createFolderRequest, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $fields = null, ?bool $raw = false)
     {
         $this->createFolderRequest = $createFolderRequest;
-        $this->raw = $raw;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
         $this->fields = $fields;
+        $this->raw = $raw;
     }
 }

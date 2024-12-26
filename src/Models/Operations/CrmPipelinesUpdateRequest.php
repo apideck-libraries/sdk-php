@@ -21,6 +21,13 @@ class CrmPipelinesUpdateRequest
     public string $id;
 
     /**
+     *
+     * @var Components\PipelineInput $pipeline
+     */
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\PipelineInput $pipeline;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -51,13 +58,6 @@ class CrmPipelinesUpdateRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
     public ?bool $raw = null;
-
-    /**
-     *
-     * @var Components\PipelineInput $pipeline
-     */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\PipelineInput $pipeline;
 
     /**
      * @param  string  $id

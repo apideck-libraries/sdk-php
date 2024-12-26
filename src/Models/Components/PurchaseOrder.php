@@ -21,6 +21,53 @@ class PurchaseOrder
     public ?string $id = null;
 
     /**
+     * $lineItems
+     *
+     * @var ?array<InvoiceLineItem> $lineItems
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\InvoiceLineItem>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $lineItems = null;
+
+    /**
+     *
+     * @var ?Address $shippingAddress
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('shipping_address')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Address $shippingAddress = null;
+
+    /**
+     *
+     * @var ?BankAccount $bankAccount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('bank_account')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BankAccount|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?BankAccount $bankAccount = null;
+
+    /**
+     * The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.
+     *
+     * @var ?LocalDate $dueDate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('due_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LocalDate $dueDate = null;
+
+    /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
+
+    /**
      * The third-party API ID of original entity
      *
      * @var ?string $downstreamId
@@ -158,25 +205,6 @@ class PurchaseOrder
     public ?bool $taxInclusive = null;
 
     /**
-     * $lineItems
-     *
-     * @var ?array<InvoiceLineItem> $lineItems
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\InvoiceLineItem>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $lineItems = null;
-
-    /**
-     *
-     * @var ?Address $shippingAddress
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('shipping_address')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Address $shippingAddress = null;
-
-    /**
      *
      * @var ?LinkedLedgerAccount $ledgerAccount
      */
@@ -204,15 +232,6 @@ class PurchaseOrder
     public ?float $discountPercentage = null;
 
     /**
-     *
-     * @var ?BankAccount $bankAccount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('bank_account')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BankAccount|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?BankAccount $bankAccount = null;
-
-    /**
      * Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row.
      *
      * @var ?bool $accountingByRow
@@ -220,15 +239,6 @@ class PurchaseOrder
     #[\Speakeasy\Serializer\Annotation\SerializedName('accounting_by_row')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $accountingByRow = null;
-
-    /**
-     * The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.
-     *
-     * @var ?LocalDate $dueDate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('due_date')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LocalDate $dueDate = null;
 
     /**
      * Payment method used for the transaction, such as cash, credit card, bank transfer, or check
@@ -330,16 +340,6 @@ class PurchaseOrder
     #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
-
-    /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
 
     /**
      * @param  ?string  $id

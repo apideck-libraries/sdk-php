@@ -12,6 +12,32 @@ namespace Apideck\Unify\Models\Components;
 class JournalEntryLineItemInput
 {
     /**
+     * Debit entries are considered positive, and credit entries are considered negative.
+     *
+     * @var JournalEntryLineItemType $type
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\JournalEntryLineItemType')]
+    public JournalEntryLineItemType $type;
+
+    /**
+     *
+     * @var ?LinkedTaxRateInput $taxRate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRateInput|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedTaxRateInput $taxRate = null;
+
+    /**
+     *
+     * @var ?LinkedLedgerAccountInput $ledgerAccount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ledger_account')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccountInput|null')]
+    public ?LinkedLedgerAccountInput $ledgerAccount;
+
+    /**
      * User defined description
      *
      * @var ?string $description
@@ -48,24 +74,6 @@ class JournalEntryLineItemInput
     public ?float $totalAmount = null;
 
     /**
-     * Debit entries are considered positive, and credit entries are considered negative.
-     *
-     * @var JournalEntryLineItemType $type
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\JournalEntryLineItemType')]
-    public JournalEntryLineItemType $type;
-
-    /**
-     *
-     * @var ?LinkedTaxRateInput $taxRate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRateInput|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LinkedTaxRateInput $taxRate = null;
-
-    /**
      *
      * @var ?DeprecatedLinkedTrackingCategory $trackingCategory
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -84,14 +92,6 @@ class JournalEntryLineItemInput
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $trackingCategories = null;
-
-    /**
-     *
-     * @var ?LinkedLedgerAccountInput $ledgerAccount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('ledger_account')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccountInput|null')]
-    public ?LinkedLedgerAccountInput $ledgerAccount;
 
     /**
      * The customer this entity is linked to.

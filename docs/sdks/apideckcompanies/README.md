@@ -5,70 +5,11 @@
 
 ### Available Operations
 
-* [list](#list) - List Companies
 * [create](#create) - Create Company
+* [list](#list) - List Companies
+* [delete](#delete) - Delete Company
 * [get](#get) - Get Company
 * [update](#update) - Update Company
-* [delete](#delete) - Delete Company
-
-## list
-
-List Companies
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Operations;
-
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
-$sdk = Unify\Apideck::builder()
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
-
-$request = new Operations\HrisCompaniesAllRequest(
-    serviceId: 'salesforce',
-    passThrough: [
-        'search' => 'San Francisco',
-    ],
-    fields: 'id,updated_at',
-);
-
-$response = $sdk->hris->companies->list(
-    request: $request
-);
-
-if ($response->getHrisCompaniesResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `$request`                                                                               | [Operations\HrisCompaniesAllRequest](../../Models/Operations/HrisCompaniesAllRequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-
-### Response
-
-**[?Operations\HrisCompaniesAllResponse](../../Models/Operations/HrisCompaniesAllResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
 
 ## create
 
@@ -190,6 +131,124 @@ if ($response->createHrisCompanyResponse !== null) {
 ### Response
 
 **[?Operations\HrisCompaniesAddResponse](../../Models/Operations/HrisCompaniesAddResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## list
+
+List Companies
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Operations;
+
+$security = '<YOUR_BEARER_TOKEN_HERE>';
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity($security)->build();
+
+$request = new Operations\HrisCompaniesAllRequest(
+    serviceId: 'salesforce',
+    passThrough: [
+        'search' => 'San Francisco',
+    ],
+    fields: 'id,updated_at',
+);
+
+$responses = $sdk->hris->companies->list(
+    request: $request
+);
+
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `$request`                                                                               | [Operations\HrisCompaniesAllRequest](../../Models/Operations/HrisCompaniesAllRequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+
+### Response
+
+**[?Operations\HrisCompaniesAllResponse](../../Models/Operations/HrisCompaniesAllResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## delete
+
+Delete Company
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Operations;
+
+$security = '<YOUR_BEARER_TOKEN_HERE>';
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity($security)->build();
+
+$request = new Operations\HrisCompaniesDeleteRequest(
+    id: '<id>',
+    serviceId: 'salesforce',
+);
+
+$response = $sdk->hris->companies->delete(
+    request: $request
+);
+
+if ($response->deleteHrisCompanyResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `$request`                                                                                     | [Operations\HrisCompaniesDeleteRequest](../../Models/Operations/HrisCompaniesDeleteRequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+
+### Response
+
+**[?Operations\HrisCompaniesDeleteResponse](../../Models/Operations/HrisCompaniesDeleteResponse.md)**
 
 ### Errors
 
@@ -380,62 +439,6 @@ if ($response->updateHrisCompanyResponse !== null) {
 ### Response
 
 **[?Operations\HrisCompaniesUpdateResponse](../../Models/Operations/HrisCompaniesUpdateResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
-
-## delete
-
-Delete Company
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Operations;
-
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
-$sdk = Unify\Apideck::builder()
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
-
-$request = new Operations\HrisCompaniesDeleteRequest(
-    id: '<id>',
-    serviceId: 'salesforce',
-);
-
-$response = $sdk->hris->companies->delete(
-    request: $request
-);
-
-if ($response->deleteHrisCompanyResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `$request`                                                                                     | [Operations\HrisCompaniesDeleteRequest](../../Models/Operations/HrisCompaniesDeleteRequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-
-### Response
-
-**[?Operations\HrisCompaniesDeleteResponse](../../Models/Operations/HrisCompaniesDeleteResponse.md)**
 
 ### Errors
 

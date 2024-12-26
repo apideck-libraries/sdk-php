@@ -5,81 +5,11 @@
 
 ### Available Operations
 
-* [list](#list) - List Invoices
 * [create](#create) - Create Invoice
+* [list](#list) - List Invoices
+* [delete](#delete) - Delete Invoice
 * [get](#get) - Get Invoice
 * [update](#update) - Update Invoice
-* [delete](#delete) - Delete Invoice
-
-## list
-
-List Invoices
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Components;
-use Apideck\Unify\Models\Operations;
-use Apideck\Unify\Utils;
-
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
-$sdk = Unify\Apideck::builder()
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
-
-$request = new Operations\AccountingInvoicesAllRequest(
-    serviceId: 'salesforce',
-    filter: new Components\InvoicesFilter(
-        updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
-        createdSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
-        number: 'OIT00546',
-    ),
-    sort: new Components\InvoicesSort(
-        by: Components\InvoicesSortBy::UpdatedAt,
-        direction: Components\SortDirection::Desc,
-    ),
-    passThrough: [
-        'search' => 'San Francisco',
-    ],
-    fields: 'id,updated_at',
-);
-
-$response = $sdk->accounting->invoices->list(
-    request: $request
-);
-
-if ($response->getInvoicesResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                         | [Operations\AccountingInvoicesAllRequest](../../Models/Operations/AccountingInvoicesAllRequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-
-### Response
-
-**[?Operations\AccountingInvoicesAllResponse](../../Models/Operations/AccountingInvoicesAllResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
 
 ## create
 
@@ -309,6 +239,135 @@ if ($response->createInvoiceResponse !== null) {
 ### Response
 
 **[?Operations\AccountingInvoicesAddResponse](../../Models/Operations/AccountingInvoicesAddResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## list
+
+List Invoices
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Components;
+use Apideck\Unify\Models\Operations;
+use Apideck\Unify\Utils;
+
+$security = '<YOUR_BEARER_TOKEN_HERE>';
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity($security)->build();
+
+$request = new Operations\AccountingInvoicesAllRequest(
+    serviceId: 'salesforce',
+    filter: new Components\InvoicesFilter(
+        updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
+        createdSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
+        number: 'OIT00546',
+    ),
+    sort: new Components\InvoicesSort(
+        by: Components\InvoicesSortBy::UpdatedAt,
+        direction: Components\SortDirection::Desc,
+    ),
+    passThrough: [
+        'search' => 'San Francisco',
+    ],
+    fields: 'id,updated_at',
+);
+
+$responses = $sdk->accounting->invoices->list(
+    request: $request
+);
+
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                         | [Operations\AccountingInvoicesAllRequest](../../Models/Operations/AccountingInvoicesAllRequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+
+### Response
+
+**[?Operations\AccountingInvoicesAllResponse](../../Models/Operations/AccountingInvoicesAllResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## delete
+
+Delete Invoice
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Operations;
+
+$security = '<YOUR_BEARER_TOKEN_HERE>';
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity($security)->build();
+
+$request = new Operations\AccountingInvoicesDeleteRequest(
+    id: '<id>',
+    serviceId: 'salesforce',
+);
+
+$response = $sdk->accounting->invoices->delete(
+    request: $request
+);
+
+if ($response->deleteInvoiceResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                               | [Operations\AccountingInvoicesDeleteRequest](../../Models/Operations/AccountingInvoicesDeleteRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+
+### Response
+
+**[?Operations\AccountingInvoicesDeleteResponse](../../Models/Operations/AccountingInvoicesDeleteResponse.md)**
 
 ### Errors
 
@@ -609,62 +668,6 @@ if ($response->updateInvoiceResponse !== null) {
 ### Response
 
 **[?Operations\AccountingInvoicesUpdateResponse](../../Models/Operations/AccountingInvoicesUpdateResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
-
-## delete
-
-Delete Invoice
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Operations;
-
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
-$sdk = Unify\Apideck::builder()
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
-
-$request = new Operations\AccountingInvoicesDeleteRequest(
-    id: '<id>',
-    serviceId: 'salesforce',
-);
-
-$response = $sdk->accounting->invoices->delete(
-    request: $request
-);
-
-if ($response->deleteInvoiceResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                               | [Operations\AccountingInvoicesDeleteRequest](../../Models/Operations/AccountingInvoicesDeleteRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-
-### Response
-
-**[?Operations\AccountingInvoicesDeleteResponse](../../Models/Operations/AccountingInvoicesDeleteResponse.md)**
 
 ### Errors
 

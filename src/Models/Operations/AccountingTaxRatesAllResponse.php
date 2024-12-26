@@ -47,6 +47,10 @@ class AccountingTaxRatesAllResponse
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
+     * @var \Closure(string): ?AccountingTaxRatesAllResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
@@ -60,5 +64,18 @@ class AccountingTaxRatesAllResponse
         $this->rawResponse = $rawResponse;
         $this->getTaxRatesResponse = $getTaxRatesResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?AccountingTaxRatesAllResponse
+     */
+    public function __call($name, $args): ?AccountingTaxRatesAllResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

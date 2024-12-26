@@ -12,6 +12,16 @@ namespace Apideck\Unify\Models\Components;
 class EcommerceProductOptions
 {
     /**
+     * $values
+     *
+     * @var ?array<string> $values
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $values = null;
+
+    /**
      * A unique identifier for the option of the product.
      *
      * @var ?string $id
@@ -28,16 +38,6 @@ class EcommerceProductOptions
     #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $name = null;
-
-    /**
-     * $values
-     *
-     * @var ?array<string> $values
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $values = null;
 
     /**
      * @param  ?array<string>  $values

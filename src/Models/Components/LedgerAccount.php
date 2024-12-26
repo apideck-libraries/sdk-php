@@ -30,6 +30,83 @@ class LedgerAccount
     public ?string $displayId = null;
 
     /**
+     * The type of account.
+     *
+     * @var ?LedgerAccountType $type
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LedgerAccountType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LedgerAccountType $type = null;
+
+    /**
+     *
+     * @var ?LinkedTaxRate $taxRate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRate|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedTaxRate $taxRate = null;
+
+    /**
+     *
+     * @var ?BankAccount $bankAccount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('bank_account')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BankAccount|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?BankAccount $bankAccount = null;
+
+    /**
+     * The categories of the account.
+     *
+     * @var ?array<Categories> $categories
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('categories')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Categories>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $categories = null;
+
+    /**
+     *
+     * @var ?ParentAccount $parentAccount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_account')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ParentAccount|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ParentAccount $parentAccount = null;
+
+    /**
+     * The sub accounts of the account.
+     *
+     * @var ?array<SubAccounts> $subAccounts
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('sub_accounts')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\SubAccounts>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $subAccounts = null;
+
+    /**
+     * The subsidiaries the account belongs to.
+     *
+     * @var ?array<LedgerAccountSubsidiaries> $subsidiaries
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiaries')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LedgerAccountSubsidiaries>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $subsidiaries = null;
+
+    /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
+
+    /**
      * The nominal code of the ledger account.
      *
      * @var ?string $nominalCode
@@ -57,16 +134,6 @@ class LedgerAccount
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Classification|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?Classification $classification = null;
-
-    /**
-     * The type of account.
-     *
-     * @var ?LedgerAccountType $type
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LedgerAccountType|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LedgerAccountType $type = null;
 
     /**
      * The sub type of account.
@@ -143,15 +210,6 @@ class LedgerAccount
 
     /**
      *
-     * @var ?LinkedTaxRate $taxRate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRate|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LinkedTaxRate $taxRate = null;
-
-    /**
-     *
      * @var ?float $level
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('level')]
@@ -187,34 +245,6 @@ class LedgerAccount
     public ?bool $header = null;
 
     /**
-     *
-     * @var ?BankAccount $bankAccount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('bank_account')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BankAccount|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?BankAccount $bankAccount = null;
-
-    /**
-     * The categories of the account.
-     *
-     * @var ?array<Categories> $categories
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('categories')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Categories>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $categories = null;
-
-    /**
-     *
-     * @var ?ParentAccount $parentAccount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_account')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ParentAccount|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?ParentAccount $parentAccount = null;
-
-    /**
      * Whether the account is a sub account or not.
      *
      * @var ?bool $subAccount
@@ -224,16 +254,6 @@ class LedgerAccount
     public ?bool $subAccount = null;
 
     /**
-     * The sub accounts of the account.
-     *
-     * @var ?array<SubAccounts> $subAccounts
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('sub_accounts')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\SubAccounts>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $subAccounts = null;
-
-    /**
      * Reconciliation Date means the last calendar day of each Reconciliation Period.
      *
      * @var ?LocalDate $lastReconciliationDate
@@ -241,16 +261,6 @@ class LedgerAccount
     #[\Speakeasy\Serializer\Annotation\SerializedName('last_reconciliation_date')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?LocalDate $lastReconciliationDate = null;
-
-    /**
-     * The subsidiaries the account belongs to.
-     *
-     * @var ?array<LedgerAccountSubsidiaries> $subsidiaries
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiaries')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LedgerAccountSubsidiaries>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $subsidiaries = null;
 
     /**
      * When custom mappings are configured on the resource, the result is included here.
@@ -306,16 +316,6 @@ class LedgerAccount
     #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
-
-    /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
 
     /**
      * @param  ?string  $id

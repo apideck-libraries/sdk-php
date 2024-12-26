@@ -21,6 +21,26 @@ class LinkedEcommerceCustomer
     public ?string $id;
 
     /**
+     * $phoneNumbers
+     *
+     * @var ?array<PhoneNumber> $phoneNumbers
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('phone_numbers')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PhoneNumber>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $phoneNumbers = null;
+
+    /**
+     * $emails
+     *
+     * @var ?array<Email> $emails
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('emails')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Email>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $emails = null;
+
+    /**
      * Full name of the customer
      *
      * @var ?string $name
@@ -55,26 +75,6 @@ class LinkedEcommerceCustomer
     #[\Speakeasy\Serializer\Annotation\SerializedName('company_name')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $companyName = null;
-
-    /**
-     * $phoneNumbers
-     *
-     * @var ?array<PhoneNumber> $phoneNumbers
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('phone_numbers')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PhoneNumber>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $phoneNumbers = null;
-
-    /**
-     * $emails
-     *
-     * @var ?array<Email> $emails
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('emails')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Email>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $emails = null;
 
     /**
      * @param  ?string  $id

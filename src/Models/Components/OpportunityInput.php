@@ -28,6 +28,36 @@ class OpportunityInput
     public ?string $primaryContactId;
 
     /**
+     * An array of unique identifiers of all contacts associated with the opportunity.
+     *
+     * @var ?array<string> $contactIds
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('contact_ids')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $contactIds = null;
+
+    /**
+     * $customFields
+     *
+     * @var ?array<CustomField> $customFields
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $customFields = null;
+
+    /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
+
+    /**
      * A description of the opportunity.
      *
      * @var ?string $description
@@ -173,16 +203,6 @@ class OpportunityInput
     public ?string $contactId = null;
 
     /**
-     * An array of unique identifiers of all contacts associated with the opportunity.
-     *
-     * @var ?array<string> $contactIds
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('contact_ids')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $contactIds = null;
-
-    /**
      * The unique identifier of the company associated with the opportunity.
      *
      * @var ?string $companyId
@@ -247,16 +267,6 @@ class OpportunityInput
     public ?array $tags = null;
 
     /**
-     * $customFields
-     *
-     * @var ?array<CustomField> $customFields
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $customFields = null;
-
-    /**
      * The date and time when the stage of the opportunity was last changed.
      *
      * @var ?\DateTime $stageLastChangedAt
@@ -264,16 +274,6 @@ class OpportunityInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('stage_last_changed_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $stageLastChangedAt = null;
-
-    /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
 
     /**
      * @param  string  $title

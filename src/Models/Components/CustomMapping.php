@@ -30,15 +30,6 @@ class CustomMapping
     public ?string $label = null;
 
     /**
-     * Target Field description
-     *
-     * @var ?string $description
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $description = null;
-
-    /**
      * Target Field Mapping value
      *
      * @var ?string $value
@@ -73,6 +64,15 @@ class CustomMapping
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_field')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $customField = null;
+
+    /**
+     * Target Field description
+     *
+     * @var ?string $description
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $description = null;
 
     /**
      * Consumer ID

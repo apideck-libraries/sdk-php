@@ -47,6 +47,10 @@ class AccountingSuppliersAllResponse
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
+     * @var \Closure(string): ?AccountingSuppliersAllResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
@@ -60,5 +64,18 @@ class AccountingSuppliersAllResponse
         $this->rawResponse = $rawResponse;
         $this->getSuppliersResponse = $getSuppliersResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?AccountingSuppliersAllResponse
+     */
+    public function __call($name, $args): ?AccountingSuppliersAllResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

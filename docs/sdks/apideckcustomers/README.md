@@ -42,12 +42,15 @@ $request = new Operations\EcommerceCustomersAllRequest(
     fields: 'id,updated_at',
 );
 
-$response = $sdk->ecommerce->customers->list(
+$responses = $sdk->ecommerce->customers->list(
     request: $request
 );
 
-if ($response->getEcommerceCustomersResponse !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 

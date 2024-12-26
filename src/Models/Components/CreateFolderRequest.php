@@ -20,6 +20,14 @@ class CreateFolderRequest
     public string $name;
 
     /**
+     * The parent folder to create the new file within. This can be an ID or a path depending on the downstream folder. Please see the connector section below to see downstream specific gotchas.
+     *
+     * @var string $parentFolderId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_folder_id')]
+    public string $parentFolderId;
+
+    /**
      * Optional description of the folder.
      *
      * @var ?string $description
@@ -27,14 +35,6 @@ class CreateFolderRequest
     #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $description = null;
-
-    /**
-     * The parent folder to create the new file within. This can be an ID or a path depending on the downstream folder. Please see the connector section below to see downstream specific gotchas.
-     *
-     * @var string $parentFolderId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_folder_id')]
-    public string $parentFolderId;
 
     /**
      * ID of the drive to create the folder in.

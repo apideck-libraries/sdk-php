@@ -12,6 +12,14 @@ namespace Apideck\Unify\Models\Components;
 class Website
 {
     /**
+     * The website URL
+     *
+     * @var string $url
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('url')]
+    public string $url;
+
+    /**
      * Unique identifier for the website
      *
      * @var ?string $id
@@ -19,14 +27,6 @@ class Website
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
-
-    /**
-     * The website URL
-     *
-     * @var string $url
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('url')]
-    public string $url;
 
     /**
      * The type of website

@@ -20,6 +20,14 @@ class IssueTrackingCollectionTicketsOneRequest
     public string $ticketId;
 
     /**
+     * The collection ID
+     *
+     * @var string $collectionId
+     */
+    #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=collection_id')]
+    public string $collectionId;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -44,28 +52,20 @@ class IssueTrackingCollectionTicketsOneRequest
     public ?string $serviceId = null;
 
     /**
-     * Include raw response. Mostly used for debugging purposes
-     *
-     * @var ?bool $raw
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
-
-    /**
-     * The collection ID
-     *
-     * @var string $collectionId
-     */
-    #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=collection_id')]
-    public string $collectionId;
-
-    /**
      * The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
      *
      * @var ?string $fields
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=fields')]
     public ?string $fields = null;
+
+    /**
+     * Include raw response. Mostly used for debugging purposes
+     *
+     * @var ?bool $raw
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
 
     /**
      * @param  string  $ticketId
@@ -83,7 +83,7 @@ class IssueTrackingCollectionTicketsOneRequest
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
-        $this->raw = $raw;
         $this->fields = $fields;
+        $this->raw = $raw;
     }
 }

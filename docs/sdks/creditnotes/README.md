@@ -5,79 +5,11 @@
 
 ### Available Operations
 
-* [list](#list) - List Credit Notes
 * [create](#create) - Create Credit Note
+* [list](#list) - List Credit Notes
+* [delete](#delete) - Delete Credit Note
 * [get](#get) - Get Credit Note
 * [update](#update) - Update Credit Note
-* [delete](#delete) - Delete Credit Note
-
-## list
-
-List Credit Notes
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Components;
-use Apideck\Unify\Models\Operations;
-use Apideck\Unify\Utils;
-
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
-$sdk = Unify\Apideck::builder()
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
-
-$request = new Operations\AccountingCreditNotesAllRequest(
-    serviceId: 'salesforce',
-    filter: new Components\CreditNotesFilter(
-        updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
-    ),
-    sort: new Components\CreditNotesSort(
-        by: Components\CreditNotesSortBy::UpdatedAt,
-        direction: Components\SortDirection::Desc,
-    ),
-    passThrough: [
-        'search' => 'San Francisco',
-    ],
-    fields: 'id,updated_at',
-);
-
-$response = $sdk->accounting->creditNotes->list(
-    request: $request
-);
-
-if ($response->getCreditNotesResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                               | [Operations\AccountingCreditNotesAllRequest](../../Models/Operations/AccountingCreditNotesAllRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-
-### Response
-
-**[?Operations\AccountingCreditNotesAllResponse](../../Models/Operations/AccountingCreditNotesAllResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
 
 ## create
 
@@ -291,6 +223,133 @@ if ($response->createCreditNoteResponse !== null) {
 ### Response
 
 **[?Operations\AccountingCreditNotesAddResponse](../../Models/Operations/AccountingCreditNotesAddResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## list
+
+List Credit Notes
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Components;
+use Apideck\Unify\Models\Operations;
+use Apideck\Unify\Utils;
+
+$security = '<YOUR_BEARER_TOKEN_HERE>';
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity($security)->build();
+
+$request = new Operations\AccountingCreditNotesAllRequest(
+    serviceId: 'salesforce',
+    filter: new Components\CreditNotesFilter(
+        updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
+    ),
+    sort: new Components\CreditNotesSort(
+        by: Components\CreditNotesSortBy::UpdatedAt,
+        direction: Components\SortDirection::Desc,
+    ),
+    passThrough: [
+        'search' => 'San Francisco',
+    ],
+    fields: 'id,updated_at',
+);
+
+$responses = $sdk->accounting->creditNotes->list(
+    request: $request
+);
+
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                               | [Operations\AccountingCreditNotesAllRequest](../../Models/Operations/AccountingCreditNotesAllRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+
+### Response
+
+**[?Operations\AccountingCreditNotesAllResponse](../../Models/Operations/AccountingCreditNotesAllResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## delete
+
+Delete Credit Note
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Operations;
+
+$security = '<YOUR_BEARER_TOKEN_HERE>';
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity($security)->build();
+
+$request = new Operations\AccountingCreditNotesDeleteRequest(
+    id: '<id>',
+    serviceId: 'salesforce',
+);
+
+$response = $sdk->accounting->creditNotes->delete(
+    request: $request
+);
+
+if ($response->deleteCreditNoteResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                     | [Operations\AccountingCreditNotesDeleteRequest](../../Models/Operations/AccountingCreditNotesDeleteRequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
+
+### Response
+
+**[?Operations\AccountingCreditNotesDeleteResponse](../../Models/Operations/AccountingCreditNotesDeleteResponse.md)**
 
 ### Errors
 
@@ -575,62 +634,6 @@ if ($response->updateCreditNoteResponse !== null) {
 ### Response
 
 **[?Operations\AccountingCreditNotesUpdateResponse](../../Models/Operations/AccountingCreditNotesUpdateResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
-
-## delete
-
-Delete Credit Note
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Operations;
-
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
-$sdk = Unify\Apideck::builder()
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
-
-$request = new Operations\AccountingCreditNotesDeleteRequest(
-    id: '<id>',
-    serviceId: 'salesforce',
-);
-
-$response = $sdk->accounting->creditNotes->delete(
-    request: $request
-);
-
-if ($response->deleteCreditNoteResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                     | [Operations\AccountingCreditNotesDeleteRequest](../../Models/Operations/AccountingCreditNotesDeleteRequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-
-### Response
-
-**[?Operations\AccountingCreditNotesDeleteResponse](../../Models/Operations/AccountingCreditNotesDeleteResponse.md)**
 
 ### Errors
 

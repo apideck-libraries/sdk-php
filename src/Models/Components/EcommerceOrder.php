@@ -20,6 +20,66 @@ class EcommerceOrder
     public string $id;
 
     /**
+     * $discounts
+     *
+     * @var ?array<EcommerceDiscount> $discounts
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('discounts')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceDiscount>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $discounts = null;
+
+    /**
+     * The customer this entity is linked to.
+     *
+     * @var ?LinkedEcommerceCustomer $customer
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedEcommerceCustomer|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedEcommerceCustomer $customer = null;
+
+    /**
+     * An object representing a shipping or billing address.
+     *
+     * @var ?EcommerceAddress $billingAddress
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('billing_address')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EcommerceAddress|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?EcommerceAddress $billingAddress = null;
+
+    /**
+     * An object representing a shipping or billing address.
+     *
+     * @var ?EcommerceAddress $shippingAddress
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('shipping_address')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EcommerceAddress|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?EcommerceAddress $shippingAddress = null;
+
+    /**
+     * $tracking
+     *
+     * @var ?array<TrackingItem> $tracking
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tracking')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\TrackingItem>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $tracking = null;
+
+    /**
+     * $lineItems
+     *
+     * @var ?array<EcommerceOrderLineItem> $lineItems
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceOrderLineItem>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $lineItems = null;
+
+    /**
      * Order number, if any.
      *
      * @var ?string $orderNumber
@@ -37,16 +97,6 @@ class EcommerceOrder
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?Currency $currency = null;
-
-    /**
-     * $discounts
-     *
-     * @var ?array<EcommerceDiscount> $discounts
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('discounts')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceDiscount>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $discounts = null;
 
     /**
      * Sub-total amount, normally before tax.
@@ -149,56 +199,6 @@ class EcommerceOrder
     #[\Speakeasy\Serializer\Annotation\SerializedName('payment_method')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $paymentMethod = null;
-
-    /**
-     * The customer this entity is linked to.
-     *
-     * @var ?LinkedEcommerceCustomer $customer
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedEcommerceCustomer|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LinkedEcommerceCustomer $customer = null;
-
-    /**
-     * An object representing a shipping or billing address.
-     *
-     * @var ?EcommerceAddress $billingAddress
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('billing_address')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EcommerceAddress|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?EcommerceAddress $billingAddress = null;
-
-    /**
-     * An object representing a shipping or billing address.
-     *
-     * @var ?EcommerceAddress $shippingAddress
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('shipping_address')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EcommerceAddress|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?EcommerceAddress $shippingAddress = null;
-
-    /**
-     * $tracking
-     *
-     * @var ?array<TrackingItem> $tracking
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('tracking')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\TrackingItem>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $tracking = null;
-
-    /**
-     * $lineItems
-     *
-     * @var ?array<EcommerceOrderLineItem> $lineItems
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceOrderLineItem>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $lineItems = null;
 
     /**
      * Note for the order.

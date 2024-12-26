@@ -30,6 +30,24 @@ class BillLineItem
     public ?string $rowId = null;
 
     /**
+     *
+     * @var ?LinkedInvoiceItem $item
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('item')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedInvoiceItem|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedInvoiceItem $item = null;
+
+    /**
+     *
+     * @var ?LinkedTaxRate $taxRate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRate|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedTaxRate $taxRate = null;
+
+    /**
      * User defined item code
      *
      * @var ?string $code
@@ -144,24 +162,6 @@ class BillLineItem
     #[\Speakeasy\Serializer\Annotation\SerializedName('department_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $departmentId = null;
-
-    /**
-     *
-     * @var ?LinkedInvoiceItem $item
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('item')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedInvoiceItem|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LinkedInvoiceItem $item = null;
-
-    /**
-     *
-     * @var ?LinkedTaxRate $taxRate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRate|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LinkedTaxRate $taxRate = null;
 
     /**
      *

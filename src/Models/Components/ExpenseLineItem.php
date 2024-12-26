@@ -21,16 +21,6 @@ class ExpenseLineItem
     public ?string $id = null;
 
     /**
-     * A list of linked tracking categories.
-     *
-     * @var ?array<LinkedTrackingCategory> $trackingCategories
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $trackingCategories = null;
-
-    /**
      * The unique identifier for the ledger account.
      *
      * @var ?string $accountId
@@ -76,15 +66,6 @@ class ExpenseLineItem
     public ?LinkedTaxRate $taxRate = null;
 
     /**
-     * The expense line item description
-     *
-     * @var ?string $description
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $description = null;
-
-    /**
      * The total amount of the expense line item.
      *
      * @var ?float $totalAmount
@@ -100,6 +81,25 @@ class ExpenseLineItem
     #[\Speakeasy\Serializer\Annotation\SerializedName('billable')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $billable = null;
+
+    /**
+     * A list of linked tracking categories.
+     *
+     * @var ?array<LinkedTrackingCategory> $trackingCategories
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $trackingCategories = null;
+
+    /**
+     * The expense line item description
+     *
+     * @var ?string $description
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $description = null;
 
     /**
      * @param  ?string  $id

@@ -47,6 +47,10 @@ class CrmOpportunitiesAllResponse
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
+     * @var \Closure(string): ?CrmOpportunitiesAllResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
@@ -60,5 +64,18 @@ class CrmOpportunitiesAllResponse
         $this->rawResponse = $rawResponse;
         $this->getOpportunitiesResponse = $getOpportunitiesResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?CrmOpportunitiesAllResponse
+     */
+    public function __call($name, $args): ?CrmOpportunitiesAllResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

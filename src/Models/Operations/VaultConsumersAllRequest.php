@@ -43,7 +43,7 @@ class VaultConsumersAllRequest
     public function __construct(?string $appId = null, ?string $cursor = null, ?int $limit = 20)
     {
         $this->appId = $appId;
-        $this->limit = $limit;
         $this->cursor = $cursor;
+        $this->limit = $limit;
     }
 }

@@ -20,6 +20,26 @@ class EcommerceCustomer
     public string $id;
 
     /**
+     * An array of addresses for the customer.
+     *
+     * @var ?array<Addresses> $addresses
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('addresses')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Addresses>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $addresses = null;
+
+    /**
+     * $orders
+     *
+     * @var ?array<LinkedEcommerceOrder> $orders
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('orders')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedEcommerceOrder>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $orders = null;
+
+    /**
      * Full name of the customer
      *
      * @var ?string $name
@@ -94,26 +114,6 @@ class EcommerceCustomer
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PhoneNumber>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $phoneNumbers = null;
-
-    /**
-     * An array of addresses for the customer.
-     *
-     * @var ?array<Addresses> $addresses
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('addresses')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Addresses>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $addresses = null;
-
-    /**
-     * $orders
-     *
-     * @var ?array<LinkedEcommerceOrder> $orders
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('orders')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedEcommerceOrder>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $orders = null;
 
     /**
      * When custom mappings are configured on the resource, the result is included here.

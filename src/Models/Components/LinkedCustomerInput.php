@@ -22,15 +22,6 @@ class LinkedCustomerInput
     public ?string $id = null;
 
     /**
-     * The display name of the customer.
-     *
-     * @var ?string $displayName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('display_name')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $displayName = null;
-
-    /**
      * The name of the customer. Deprecated, use display_name instead.
      *
      * @var ?string $name
@@ -48,6 +39,15 @@ class LinkedCustomerInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $email = null;
+
+    /**
+     * The display name of the customer.
+     *
+     * @var ?string $displayName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('display_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $displayName = null;
 
     /**
      * @param  ?string  $id

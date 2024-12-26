@@ -48,12 +48,15 @@ $request = new Operations\EcommerceOrdersAllRequest(
     fields: 'id,updated_at',
 );
 
-$response = $sdk->ecommerce->orders->list(
+$responses = $sdk->ecommerce->orders->list(
     request: $request
 );
 
-if ($response->getEcommerceOrdersResponse !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 

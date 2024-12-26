@@ -13,14 +13,6 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class AccountingPurchaseOrdersAllRequest
 {
     /**
-     * Include raw response. Mostly used for debugging purposes
-     *
-     * @var ?bool $raw
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
-
-    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -45,28 +37,12 @@ class AccountingPurchaseOrdersAllRequest
     public ?string $serviceId = null;
 
     /**
-     * Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
-     *
-     * @var ?string $cursor
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=cursor')]
-    public ?string $cursor = null;
-
-    /**
      * Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
      *
      * @var ?array<string, mixed> $passThrough
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=pass_through')]
     public ?array $passThrough = null;
-
-    /**
-     * Number of results to return. Minimum 1, Maximum 200, Default 20
-     *
-     * @var ?int $limit
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=limit')]
-    public ?int $limit = null;
 
     /**
      * Apply filters
@@ -85,6 +61,30 @@ class AccountingPurchaseOrdersAllRequest
     public ?Components\PurchaseOrdersSort $sort = null;
 
     /**
+     * Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
+     *
+     * @var ?string $cursor
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=cursor')]
+    public ?string $cursor = null;
+
+    /**
+     * Include raw response. Mostly used for debugging purposes
+     *
+     * @var ?bool $raw
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
+
+    /**
+     * Number of results to return. Minimum 1, Maximum 200, Default 20
+     *
+     * @var ?int $limit
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=limit')]
+    public ?int $limit = null;
+
+    /**
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId
@@ -97,14 +97,14 @@ class AccountingPurchaseOrdersAllRequest
      */
     public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?array $passThrough = null, ?Components\PurchaseOrdersFilter $filter = null, ?Components\PurchaseOrdersSort $sort = null, ?string $cursor = null, ?bool $raw = false, ?int $limit = 20)
     {
-        $this->raw = $raw;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
         $this->passThrough = $passThrough;
-        $this->limit = $limit;
         $this->filter = $filter;
         $this->sort = $sort;
         $this->cursor = $cursor;
+        $this->raw = $raw;
+        $this->limit = $limit;
     }
 }

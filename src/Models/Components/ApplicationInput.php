@@ -27,15 +27,6 @@ class ApplicationInput
 
     /**
      *
-     * @var ?ApplicationStatus $status
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ApplicationStatus|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?ApplicationStatus $status = null;
-
-    /**
-     *
      * @var ?Stage $stage
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('stage')]
@@ -52,6 +43,15 @@ class ApplicationInput
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     *
+     * @var ?ApplicationStatus $status
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ApplicationStatus|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ApplicationStatus $status = null;
 
     /**
      * @param  ?string  $applicantId

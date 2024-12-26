@@ -12,6 +12,132 @@ use Brick\DateTime\LocalDate;
 class Employee
 {
     /**
+     *
+     * @var ?Person $partner
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Person|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Person $partner = null;
+
+    /**
+     *
+     * @var ?EmploymentRole $employmentRole
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('employment_role')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EmploymentRole|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?EmploymentRole $employmentRole = null;
+
+    /**
+     *
+     * @var ?Manager $manager
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('manager')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Manager|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Manager $manager = null;
+
+    /**
+     * $languages
+     *
+     * @var ?array<string> $languages
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('languages')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $languages = null;
+
+    /**
+     * $nationalities
+     *
+     * @var ?array<string> $nationalities
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('nationalities')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $nationalities = null;
+
+    /**
+     * $addresses
+     *
+     * @var ?array<Address> $addresses
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('addresses')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Address>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $addresses = null;
+
+    /**
+     * $phoneNumbers
+     *
+     * @var ?array<PhoneNumber> $phoneNumbers
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('phone_numbers')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PhoneNumber>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $phoneNumbers = null;
+
+    /**
+     * $emails
+     *
+     * @var ?array<Email> $emails
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('emails')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Email>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $emails = null;
+
+    /**
+     * $customFields
+     *
+     * @var ?array<CustomField> $customFields
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $customFields = null;
+
+    /**
+     * $socialLinks
+     *
+     * @var ?array<SocialLink> $socialLinks
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('social_links')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\SocialLink>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $socialLinks = null;
+
+    /**
+     * $bankAccounts
+     *
+     * @var ?array<BankAccount> $bankAccounts
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('bank_accounts')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\BankAccount>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $bankAccounts = null;
+
+    /**
+     *
+     * @var ?ProbationPeriod $probationPeriod
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('probation_period')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ProbationPeriod|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ProbationPeriod $probationPeriod = null;
+
+    /**
+     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
+     *
+     * @var ?array<PassThroughBody> $passThrough
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $passThrough = null;
+
+    /**
      * A unique identifier for an object.
      *
      * @var ?string $id
@@ -100,15 +226,6 @@ class Employee
     #[\Speakeasy\Serializer\Annotation\SerializedName('marital_status')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $maritalStatus = null;
-
-    /**
-     *
-     * @var ?Person $partner
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Person|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Person $partner = null;
 
     /**
      * The division the person is currently in. Usually a collection of departments or teams or regions.
@@ -232,15 +349,6 @@ class Employee
     public ?EmploymentStatus $employmentStatus = null;
 
     /**
-     *
-     * @var ?EmploymentRole $employmentRole
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('employment_role')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EmploymentRole|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?EmploymentRole $employmentRole = null;
-
-    /**
      * The ethnicity of the employee
      *
      * @var ?string $ethnicity
@@ -248,15 +356,6 @@ class Employee
     #[\Speakeasy\Serializer\Annotation\SerializedName('ethnicity')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ethnicity = null;
-
-    /**
-     *
-     * @var ?Manager $manager
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('manager')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Manager|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Manager $manager = null;
 
     /**
      * Direct reports is an array of ids that reflect the individuals in an organizational hierarchy who are directly supervised by this specific employee.
@@ -342,26 +441,6 @@ class Employee
     public ?string $preferredLanguage = null;
 
     /**
-     * $languages
-     *
-     * @var ?array<string> $languages
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('languages')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $languages = null;
-
-    /**
-     * $nationalities
-     *
-     * @var ?array<string> $nationalities
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('nationalities')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $nationalities = null;
-
-    /**
      * The URL of the photo of a person.
      *
      * @var ?string $photoUrl
@@ -435,66 +514,6 @@ class Employee
     public ?bool $worksRemote = null;
 
     /**
-     * $addresses
-     *
-     * @var ?array<Address> $addresses
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('addresses')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Address>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $addresses = null;
-
-    /**
-     * $phoneNumbers
-     *
-     * @var ?array<PhoneNumber> $phoneNumbers
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('phone_numbers')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PhoneNumber>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $phoneNumbers = null;
-
-    /**
-     * $emails
-     *
-     * @var ?array<Email> $emails
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('emails')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Email>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $emails = null;
-
-    /**
-     * $customFields
-     *
-     * @var ?array<CustomField> $customFields
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $customFields = null;
-
-    /**
-     * $socialLinks
-     *
-     * @var ?array<SocialLink> $socialLinks
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('social_links')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\SocialLink>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $socialLinks = null;
-
-    /**
-     * $bankAccounts
-     *
-     * @var ?array<BankAccount> $bankAccounts
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('bank_accounts')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\BankAccount>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $bankAccounts = null;
-
-    /**
      *
      * @var ?string $taxCode
      */
@@ -528,15 +547,6 @@ class Employee
     #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $foodAllergies = null;
-
-    /**
-     *
-     * @var ?ProbationPeriod $probationPeriod
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('probation_period')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ProbationPeriod|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?ProbationPeriod $probationPeriod = null;
 
     /**
      * $tags
@@ -611,16 +621,6 @@ class Employee
     #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
-
-    /**
-     * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
-     *
-     * @var ?array<PassThroughBody> $passThrough
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $passThrough = null;
 
     /**
      * @param  ?Person  $partner

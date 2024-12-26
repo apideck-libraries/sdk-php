@@ -21,6 +21,21 @@ class IssueTrackingCollectionTicketsUpdateRequest
     public string $ticketId;
 
     /**
+     * The collection ID
+     *
+     * @var string $collectionId
+     */
+    #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=collection_id')]
+    public string $collectionId;
+
+    /**
+     *
+     * @var Components\TicketInput $ticket
+     */
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\TicketInput $ticket;
+
+    /**
      * ID of the consumer which you want to get or push data from
      *
      * @var ?string $consumerId
@@ -51,21 +66,6 @@ class IssueTrackingCollectionTicketsUpdateRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
     public ?bool $raw = null;
-
-    /**
-     * The collection ID
-     *
-     * @var string $collectionId
-     */
-    #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=collection_id')]
-    public string $collectionId;
-
-    /**
-     *
-     * @var Components\TicketInput $ticket
-     */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\TicketInput $ticket;
 
     /**
      * @param  string  $ticketId

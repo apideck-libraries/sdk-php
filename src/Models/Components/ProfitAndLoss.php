@@ -12,6 +12,37 @@ namespace Apideck\Unify\Models\Components;
 class ProfitAndLoss
 {
     /**
+     * The name of the report
+     *
+     * @var string $reportName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('report_name')]
+    public string $reportName;
+
+    /**
+     *
+     * @var string $currency
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
+    public string $currency;
+
+    /**
+     *
+     * @var Income $income
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('income')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Income')]
+    public Income $income;
+
+    /**
+     *
+     * @var Expenses $expenses
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('expenses')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Expenses')]
+    public Expenses $expenses;
+
+    /**
      * A unique identifier for an object.
      *
      * @var ?string $id
@@ -19,14 +50,6 @@ class ProfitAndLoss
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
-
-    /**
-     * The name of the report
-     *
-     * @var string $reportName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('report_name')]
-    public string $reportName;
 
     /**
      * The start date of the report
@@ -47,13 +70,6 @@ class ProfitAndLoss
     public ?string $endDate = null;
 
     /**
-     *
-     * @var string $currency
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
-    public string $currency;
-
-    /**
      * Customer id
      *
      * @var ?string $customerId
@@ -61,22 +77,6 @@ class ProfitAndLoss
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $customerId = null;
-
-    /**
-     *
-     * @var Income $income
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('income')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Income')]
-    public Income $income;
-
-    /**
-     *
-     * @var Expenses $expenses
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('expenses')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Expenses')]
-    public Expenses $expenses;
 
     /**
      *

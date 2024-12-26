@@ -47,6 +47,10 @@ class AccountingLocationsAllResponse
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
+     * @var \Closure(string): ?AccountingLocationsAllResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
@@ -60,5 +64,18 @@ class AccountingLocationsAllResponse
         $this->rawResponse = $rawResponse;
         $this->getAccountingLocationsResponse = $getAccountingLocationsResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?AccountingLocationsAllResponse
+     */
+    public function __call($name, $args): ?AccountingLocationsAllResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

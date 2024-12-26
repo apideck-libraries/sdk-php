@@ -21,26 +21,6 @@ class ConnectionInput
     public ?bool $enabled = null;
 
     /**
-     * Connection settings. Values will persist to `form_fields` with corresponding id
-     *
-     * @var ?array<string, mixed> $settings
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('settings')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $settings = null;
-
-    /**
-     * Attach your own consumer specific metadata
-     *
-     * @var ?array<string, mixed> $metadata
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $metadata = null;
-
-    /**
      * $configuration
      *
      * @var ?array<ConnectionConfiguration> $configuration
@@ -59,6 +39,26 @@ class ConnectionInput
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomMappingInput>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customMappings = null;
+
+    /**
+     * Connection settings. Values will persist to `form_fields` with corresponding id
+     *
+     * @var ?array<string, mixed> $settings
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('settings')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $settings = null;
+
+    /**
+     * Attach your own consumer specific metadata
+     *
+     * @var ?array<string, mixed> $metadata
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $metadata = null;
 
     /**
      * @param  ?bool  $enabled

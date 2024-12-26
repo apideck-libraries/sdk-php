@@ -64,7 +64,7 @@ class VaultLogsAllRequest
         $this->appId = $appId;
         $this->consumerId = $consumerId;
         $this->filter = $filter;
-        $this->limit = $limit;
         $this->cursor = $cursor;
+        $this->limit = $limit;
     }
 }

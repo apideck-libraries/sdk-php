@@ -47,6 +47,10 @@ class AccountingDepartmentsAllResponse
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
+     * @var \Closure(string): ?AccountingDepartmentsAllResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
@@ -60,5 +64,18 @@ class AccountingDepartmentsAllResponse
         $this->rawResponse = $rawResponse;
         $this->getAccountingDepartmentsResponse = $getAccountingDepartmentsResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?AccountingDepartmentsAllResponse
+     */
+    public function __call($name, $args): ?AccountingDepartmentsAllResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

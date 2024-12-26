@@ -12,6 +12,14 @@ namespace Apideck\Unify\Models\Components;
 class CopyFolderRequest
 {
     /**
+     * The parent folder to create the new file within. This can be an ID or a path depending on the downstream folder. Please see the connector section below to see downstream specific gotchas.
+     *
+     * @var string $parentFolderId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_folder_id')]
+    public string $parentFolderId;
+
+    /**
      * The name of the folder.
      *
      * @var ?string $name
@@ -19,14 +27,6 @@ class CopyFolderRequest
     #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $name = null;
-
-    /**
-     * The parent folder to create the new file within. This can be an ID or a path depending on the downstream folder. Please see the connector section below to see downstream specific gotchas.
-     *
-     * @var string $parentFolderId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_folder_id')]
-    public string $parentFolderId;
 
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.

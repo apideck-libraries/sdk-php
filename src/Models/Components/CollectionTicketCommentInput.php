@@ -12,15 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class CollectionTicketCommentInput
 {
     /**
-     * Body of the comment
-     *
-     * @var ?string $body
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('body')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $body = null;
-
-    /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
      * @var ?array<PassThroughBody> $passThrough
@@ -29,6 +20,15 @@ class CollectionTicketCommentInput
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * Body of the comment
+     *
+     * @var ?string $body
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('body')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $body = null;
 
     /**
      * @param  ?array<PassThroughBody>  $passThrough

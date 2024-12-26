@@ -33,7 +33,7 @@ $filter = new Components\ConnectorsFilter(
     unifiedApi: Components\UnifiedApiId::FileStorage,
 );
 
-$response = $sdk->connector->connectors->list(
+$responses = $sdk->connector->connectors->list(
     appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     limit: 20,
     filter: $filter,
@@ -41,8 +41,11 @@ $response = $sdk->connector->connectors->list(
 
 );
 
-if ($response->getConnectorsResponse !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 

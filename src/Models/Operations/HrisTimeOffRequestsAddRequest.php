@@ -13,12 +13,11 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class HrisTimeOffRequestsAddRequest
 {
     /**
-     * Include raw response. Mostly used for debugging purposes
      *
-     * @var ?bool $raw
+     * @var Components\TimeOffRequestInput $timeOffRequest
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\TimeOffRequestInput $timeOffRequest;
 
     /**
      * ID of the consumer which you want to get or push data from
@@ -45,11 +44,12 @@ class HrisTimeOffRequestsAddRequest
     public ?string $serviceId = null;
 
     /**
+     * Include raw response. Mostly used for debugging purposes
      *
-     * @var Components\TimeOffRequestInput $timeOffRequest
+     * @var ?bool $raw
      */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\TimeOffRequestInput $timeOffRequest;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
 
     /**
      * @param  Components\TimeOffRequestInput  $timeOffRequest
@@ -61,9 +61,9 @@ class HrisTimeOffRequestsAddRequest
     public function __construct(Components\TimeOffRequestInput $timeOffRequest, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?bool $raw = false)
     {
         $this->timeOffRequest = $timeOffRequest;
-        $this->raw = $raw;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
+        $this->raw = $raw;
     }
 }

@@ -52,19 +52,19 @@ class CustomersFilter
     public ?string $email = null;
 
     /**
+     *
+     * @var ?\DateTime $updatedSince
+     */
+    #[SpeakeasyMetadata('queryParam:name=updated_since,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $updatedSince = null;
+
+    /**
      * Status of customer to filter on
      *
      * @var ?CustomersFilterStatus $status
      */
     #[SpeakeasyMetadata('queryParam:name=status')]
     public ?CustomersFilterStatus $status = null;
-
-    /**
-     *
-     * @var ?\DateTime $updatedSince
-     */
-    #[SpeakeasyMetadata('queryParam:name=updated_since,dateTimeFormat=Y-m-d\TH:i:s.up')]
-    public ?\DateTime $updatedSince = null;
 
     /**
      * @param  ?string  $companyName

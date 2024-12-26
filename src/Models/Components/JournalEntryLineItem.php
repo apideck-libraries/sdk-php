@@ -12,6 +12,15 @@ namespace Apideck\Unify\Models\Components;
 class JournalEntryLineItem
 {
     /**
+     * Debit entries are considered positive, and credit entries are considered negative.
+     *
+     * @var JournalEntryLineItemType $type
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\JournalEntryLineItemType')]
+    public JournalEntryLineItemType $type;
+
+    /**
      * A unique identifier for an object.
      *
      * @var ?string $id
@@ -19,6 +28,41 @@ class JournalEntryLineItem
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
+
+    /**
+     *
+     * @var ?LinkedTaxRate $taxRate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRate|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedTaxRate $taxRate = null;
+
+    /**
+     *
+     * @var ?LinkedLedgerAccount $ledgerAccount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ledger_account')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
+    public ?LinkedLedgerAccount $ledgerAccount;
+
+    /**
+     * A unique identifier for an object.
+     *
+     * @var ?string $departmentId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('department_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $departmentId = null;
+
+    /**
+     * A unique identifier for an object.
+     *
+     * @var ?string $locationId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('location_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $locationId = null;
 
     /**
      * User defined description
@@ -57,24 +101,6 @@ class JournalEntryLineItem
     public ?float $totalAmount = null;
 
     /**
-     * Debit entries are considered positive, and credit entries are considered negative.
-     *
-     * @var JournalEntryLineItemType $type
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\JournalEntryLineItemType')]
-    public JournalEntryLineItemType $type;
-
-    /**
-     *
-     * @var ?LinkedTaxRate $taxRate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRate|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LinkedTaxRate $taxRate = null;
-
-    /**
      *
      * @var ?DeprecatedLinkedTrackingCategory $trackingCategory
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -95,14 +121,6 @@ class JournalEntryLineItem
     public ?array $trackingCategories = null;
 
     /**
-     *
-     * @var ?LinkedLedgerAccount $ledgerAccount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('ledger_account')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
-    public ?LinkedLedgerAccount $ledgerAccount;
-
-    /**
      * The customer this entity is linked to.
      *
      * @var ?LinkedCustomer $customer
@@ -121,24 +139,6 @@ class JournalEntryLineItem
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedSupplier|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?LinkedSupplier $supplier = null;
-
-    /**
-     * A unique identifier for an object.
-     *
-     * @var ?string $departmentId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('department_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $departmentId = null;
-
-    /**
-     * A unique identifier for an object.
-     *
-     * @var ?string $locationId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('location_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $locationId = null;
 
     /**
      * Line number of the resource

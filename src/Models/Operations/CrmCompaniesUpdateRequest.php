@@ -21,12 +21,11 @@ class CrmCompaniesUpdateRequest
     public string $id;
 
     /**
-     * Include raw response. Mostly used for debugging purposes
      *
-     * @var ?bool $raw
+     * @var Components\CompanyInput $company
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public Components\CompanyInput $company;
 
     /**
      * ID of the consumer which you want to get or push data from
@@ -53,11 +52,12 @@ class CrmCompaniesUpdateRequest
     public ?string $serviceId = null;
 
     /**
+     * Include raw response. Mostly used for debugging purposes
      *
-     * @var Components\CompanyInput $company
+     * @var ?bool $raw
      */
-    #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\CompanyInput $company;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
 
     /**
      * @param  string  $id
@@ -71,9 +71,9 @@ class CrmCompaniesUpdateRequest
     {
         $this->id = $id;
         $this->company = $company;
-        $this->raw = $raw;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
+        $this->raw = $raw;
     }
 }
