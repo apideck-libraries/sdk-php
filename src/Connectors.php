@@ -134,10 +134,12 @@ class Connectors
                 $responseData = (string) $httpResponse->getBody();
                 $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\GetConnectorsResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 $response = new Operations\ConnectorConnectorsAllResponse(
-                    statusCode: $statusCode,
-                    contentType: $contentType,
-                    rawResponse: $httpResponse,
-                    getConnectorsResponse: $obj);
+                    httpMeta: new Components\HTTPMetadata(
+                        response: $httpResponse,
+                        request: $httpRequest
+                    ),
+                    getConnectorsResponse: $obj
+                );
                 $sdk = $this;
 
                 $response->next = function () use ($sdk, $responseData, $appId, $limit, $filter): ?Operations\ConnectorConnectorsAllResponse {
@@ -160,7 +162,7 @@ class Connectors
 
                 return $response;
             } else {
-                throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+                throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $httpRequest, $httpResponse);
             }
         } elseif ($statusCode == 400) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
@@ -171,7 +173,7 @@ class Connectors
                 $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Errors\BadRequestResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 throw $obj->toException();
             } else {
-                throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+                throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $httpRequest, $httpResponse);
             }
         } elseif ($statusCode == 401) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
@@ -182,7 +184,7 @@ class Connectors
                 $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Errors\UnauthorizedResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 throw $obj->toException();
             } else {
-                throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+                throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $httpRequest, $httpResponse);
             }
         } elseif ($statusCode == 402) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
@@ -193,10 +195,10 @@ class Connectors
                 $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Errors\PaymentRequiredResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 throw $obj->toException();
             } else {
-                throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+                throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $httpRequest, $httpResponse);
             }
         } elseif ($statusCode >= 400 && $statusCode < 500 || $statusCode >= 500 && $statusCode < 600) {
-            throw new \Apideck\Unify\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            throw new \Apideck\Unify\Models\Errors\APIException('API error occurred', $httpRequest, $httpResponse);
         } else {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
@@ -205,10 +207,12 @@ class Connectors
                 $responseData = (string) $httpResponse->getBody();
                 $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\UnexpectedErrorResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 $response = new Operations\ConnectorConnectorsAllResponse(
-                    statusCode: $statusCode,
-                    contentType: $contentType,
-                    rawResponse: $httpResponse,
-                    unexpectedErrorResponse: $obj);
+                    httpMeta: new Components\HTTPMetadata(
+                        response: $httpResponse,
+                        request: $httpRequest
+                    ),
+                    unexpectedErrorResponse: $obj
+                );
                 $sdk = $this;
 
                 $response->next = function () use ($sdk, $responseData, $appId, $limit, $filter): ?Operations\ConnectorConnectorsAllResponse {
@@ -231,7 +235,7 @@ class Connectors
 
                 return $response;
             } else {
-                throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+                throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $httpRequest, $httpResponse);
             }
         }
     }
@@ -336,14 +340,16 @@ class Connectors
                 $responseData = (string) $httpResponse->getBody();
                 $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\GetConnectorResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 $response = new Operations\ConnectorConnectorsOneResponse(
-                    statusCode: $statusCode,
-                    contentType: $contentType,
-                    rawResponse: $httpResponse,
-                    getConnectorResponse: $obj);
+                    httpMeta: new Components\HTTPMetadata(
+                        response: $httpResponse,
+                        request: $httpRequest
+                    ),
+                    getConnectorResponse: $obj
+                );
 
                 return $response;
             } else {
-                throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+                throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $httpRequest, $httpResponse);
             }
         } elseif ($statusCode == 401) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
@@ -354,7 +360,7 @@ class Connectors
                 $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Errors\UnauthorizedResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 throw $obj->toException();
             } else {
-                throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+                throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $httpRequest, $httpResponse);
             }
         } elseif ($statusCode == 402) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
@@ -365,7 +371,7 @@ class Connectors
                 $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Errors\PaymentRequiredResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 throw $obj->toException();
             } else {
-                throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+                throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $httpRequest, $httpResponse);
             }
         } elseif ($statusCode == 404) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
@@ -376,10 +382,10 @@ class Connectors
                 $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Errors\NotFoundResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 throw $obj->toException();
             } else {
-                throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+                throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $httpRequest, $httpResponse);
             }
         } elseif ($statusCode >= 400 && $statusCode < 500 || $statusCode >= 500 && $statusCode < 600) {
-            throw new \Apideck\Unify\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            throw new \Apideck\Unify\Models\Errors\APIException('API error occurred', $httpRequest, $httpResponse);
         } else {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
@@ -388,14 +394,16 @@ class Connectors
                 $responseData = (string) $httpResponse->getBody();
                 $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\UnexpectedErrorResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 $response = new Operations\ConnectorConnectorsOneResponse(
-                    statusCode: $statusCode,
-                    contentType: $contentType,
-                    rawResponse: $httpResponse,
-                    unexpectedErrorResponse: $obj);
+                    httpMeta: new Components\HTTPMetadata(
+                        response: $httpResponse,
+                        request: $httpRequest
+                    ),
+                    unexpectedErrorResponse: $obj
+                );
 
                 return $response;
             } else {
-                throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+                throw new \Apideck\Unify\Models\Errors\APIException('Unknown content type received', $httpRequest, $httpResponse);
             }
         }
     }

@@ -5,8 +5,8 @@ management:
   docVersion: 10.9.0
   speakeasyVersion: 1.460.3
   generationVersion: 2.484.0
-  releaseVersion: 0.2.1
-  configChecksum: 6f5320d1ee1c87c751c46c07b06b2f27
+  releaseVersion: 0.2.2
+  configChecksum: 758ae0aaed56628188138d11da1e750b
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php
   published: true
@@ -487,6 +487,7 @@ generatedFiles:
   - docs/Models/Components/GetWebhookResponse.md
   - docs/Models/Components/GetWebhooksResponse.md
   - docs/Models/Components/GrossProfit.md
+  - docs/Models/Components/HTTPMetadata.md
   - docs/Models/Components/HrisCompany.md
   - docs/Models/Components/HrisCompanyInput.md
   - docs/Models/Components/HrisCompanyStatus.md
@@ -1926,6 +1927,7 @@ generatedFiles:
   - src/Models/Components/GetWebhookResponse.php
   - src/Models/Components/GetWebhooksResponse.php
   - src/Models/Components/GrossProfit.php
+  - src/Models/Components/HTTPMetadata.php
   - src/Models/Components/HrisCompany.php
   - src/Models/Components/HrisCompanyInput.php
   - src/Models/Components/HrisCompanyStatus.php

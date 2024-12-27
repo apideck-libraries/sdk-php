@@ -12,25 +12,12 @@ use Apideck\Unify\Models\Components;
 class FileStorageFilesExportResponse
 {
     /**
-     * HTTP response content type for this operation
      *
-     * @var string $contentType
+     * @var Components\HTTPMetadata $httpMeta
      */
-    public string $contentType;
+    #[\Speakeasy\Serializer\Annotation\Exclude]
 
-    /**
-     * HTTP response status code for this operation
-     *
-     * @var int $statusCode
-     */
-    public int $statusCode;
-
-    /**
-     * Raw HTTP response; suitable for custom response parsing
-     *
-     * @var \Psr\Http\Message\ResponseInterface $rawResponse
-     */
-    public \Psr\Http\Message\ResponseInterface $rawResponse;
+    public ?Components\HTTPMetadata $httpMeta;
 
     /**
      * File Download
@@ -47,17 +34,13 @@ class FileStorageFilesExportResponse
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  string  $contentType
-     * @param  int  $statusCode
-     * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
+     * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?string  $getFileDownloadResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?string $getFileDownloadResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?string $getFileDownloadResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {
-        $this->contentType = $contentType;
-        $this->statusCode = $statusCode;
-        $this->rawResponse = $rawResponse;
+        $this->httpMeta = $httpMeta;
         $this->getFileDownloadResponse = $getFileDownloadResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

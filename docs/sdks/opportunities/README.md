@@ -169,7 +169,7 @@ $responses = $sdk->crm->opportunities->list(
 
 
 foreach ($responses as $response) {
-    if ($response->statusCode === 200) {
+    if ($response->httpMeta->response->getStatusCode() === 200) {
         // handle response
     }
 }

@@ -92,7 +92,7 @@ $responses = $sdk->accounting->taxRates->list(
 
 
 foreach ($responses as $response) {
-    if ($response->statusCode === 200) {
+    if ($response->httpMeta->response->getStatusCode() === 200) {
         // handle response
     }
 }
@@ -674,7 +674,7 @@ $responses = $sdk->accounting->taxRates->list(
 
 
 foreach ($responses as $response) {
-    if ($response->statusCode === 200) {
+    if ($response->httpMeta->response->getStatusCode() === 200) {
         // handle response
     }
 }
@@ -868,9 +868,8 @@ By default an API error will raise a `Errors\APIException` exception, which has 
 | Property       | Type                                    | Description           |
 |----------------|-----------------------------------------|-----------------------|
 | `$message`     | *string*                                | The error message     |
-| `$statusCode`  | *int*                                   | The HTTP status code  |
-| `$rawResponse` | *?\Psr\Http\Message\ResponseInterface*  | The raw HTTP response |
-| `$body`        | *string*                                | The response content  |
+| `$request`     | *?\Psr\Http\Message\RequestInterface*   | The HTTP request      |
+| `$response`    | *?\Psr\Http\Message\ResponseInterface * | The HTTP response     |
 
 When custom error responses are specified for an operation, the SDK may also throw their associated exception. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `create` method throws the following exceptions:
 

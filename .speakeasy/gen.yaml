@@ -13,7 +13,7 @@ generation:
     oAuth2ClientCredentialsEnabled: true
     oAuth2PasswordEnabled: true
 php:
-  version: 0.2.1
+  version: 0.2.2
   additionalDependencies:
     autoload: {}
     autoload-dev: {}
@@ -38,5 +38,5 @@ php:
   methodArguments: infer-optional-args
   namespace: Apideck\Unify
   outputModelSuffix: output
-  responseFormat: envelope-http
   packageName: apideck-libraries/sdk-php
+  responseFormat: envelope-http

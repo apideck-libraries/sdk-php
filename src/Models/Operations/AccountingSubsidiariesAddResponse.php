@@ -12,25 +12,12 @@ use Apideck\Unify\Models\Components;
 class AccountingSubsidiariesAddResponse
 {
     /**
-     * HTTP response content type for this operation
      *
-     * @var string $contentType
+     * @var Components\HTTPMetadata $httpMeta
      */
-    public string $contentType;
+    #[\Speakeasy\Serializer\Annotation\Exclude]
 
-    /**
-     * HTTP response status code for this operation
-     *
-     * @var int $statusCode
-     */
-    public int $statusCode;
-
-    /**
-     * Raw HTTP response; suitable for custom response parsing
-     *
-     * @var \Psr\Http\Message\ResponseInterface $rawResponse
-     */
-    public \Psr\Http\Message\ResponseInterface $rawResponse;
+    public ?Components\HTTPMetadata $httpMeta;
 
     /**
      * Subsidiaries
@@ -47,17 +34,13 @@ class AccountingSubsidiariesAddResponse
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  string  $contentType
-     * @param  int  $statusCode
-     * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
+     * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\CreateSubsidiaryResponse  $createSubsidiaryResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\CreateSubsidiaryResponse $createSubsidiaryResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateSubsidiaryResponse $createSubsidiaryResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {
-        $this->contentType = $contentType;
-        $this->statusCode = $statusCode;
-        $this->rawResponse = $rawResponse;
+        $this->httpMeta = $httpMeta;
         $this->createSubsidiaryResponse = $createSubsidiaryResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }
