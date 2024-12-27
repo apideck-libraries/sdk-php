@@ -38,5 +38,4 @@ php:
   methodArguments: infer-optional-args
   namespace: Apideck\Unify
   outputModelSuffix: output
-  responseFormat: envelope-http
   packageName: apideck-libraries/sdk-php
