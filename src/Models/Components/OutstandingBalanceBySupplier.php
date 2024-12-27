@@ -9,25 +9,25 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 
-class OutstandingBalance
+class OutstandingBalanceBySupplier
 {
     /**
-     * Unique identifier for the customer or supplier.
+     * Unique identifier for the supplier.
      *
-     * @var ?string $customerId
+     * @var ?string $supplierId
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('customer_id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('supplier_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $customerId = null;
+    public ?string $supplierId = null;
 
     /**
-     * Full name of the customer or supplier.
+     * Full name of the supplier.
      *
-     * @var ?string $customerName
+     * @var ?string $supplierName
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('customer_name')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('supplier_name')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $customerName = null;
+    public ?string $supplierName = null;
 
     /**
      * $outstandingBalancesByCurrency
@@ -40,14 +40,14 @@ class OutstandingBalance
     public ?array $outstandingBalancesByCurrency = null;
 
     /**
-     * @param  ?string  $customerId
-     * @param  ?string  $customerName
+     * @param  ?string  $supplierId
+     * @param  ?string  $supplierName
      * @param  ?array<OutstandingBalanceByCurrency>  $outstandingBalancesByCurrency
      */
-    public function __construct(?string $customerId = null, ?string $customerName = null, ?array $outstandingBalancesByCurrency = null)
+    public function __construct(?string $supplierId = null, ?string $supplierName = null, ?array $outstandingBalancesByCurrency = null)
     {
-        $this->customerId = $customerId;
-        $this->customerName = $customerName;
+        $this->supplierId = $supplierId;
+        $this->supplierName = $supplierName;
         $this->outstandingBalancesByCurrency = $outstandingBalancesByCurrency;
     }
 }

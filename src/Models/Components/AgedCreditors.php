@@ -32,10 +32,10 @@ class AgedCreditors
     /**
      * $outstandingBalances
      *
-     * @var ?array<OutstandingBalance> $outstandingBalances
+     * @var ?array<OutstandingBalanceBySupplier> $outstandingBalances
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('outstanding_balances')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\OutstandingBalance>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\OutstandingBalanceBySupplier>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $outstandingBalances = null;
 
@@ -62,7 +62,7 @@ class AgedCreditors
      * @param  ?LocalDate  $reportAsOfDate
      * @param  ?int  $periodCount
      * @param  ?int  $periodLength
-     * @param  ?array<OutstandingBalance>  $outstandingBalances
+     * @param  ?array<OutstandingBalanceBySupplier>  $outstandingBalances
      */
     public function __construct(?\DateTime $reportGeneratedAt = null, ?LocalDate $reportAsOfDate = null, ?array $outstandingBalances = null, ?int $periodCount = 4, ?int $periodLength = 30)
     {

@@ -12,6 +12,15 @@ namespace Apideck\Unify\Models\Components;
 class OutstandingBalanceByCurrency
 {
     /**
+     * Total amount of the outstanding balance.
+     *
+     * @var ?float $totalAmount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('total_amount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $totalAmount = null;
+
+    /**
      * $balancesByPeriod
      *
      * @var ?array<BalanceByPeriod> $balancesByPeriod
@@ -32,11 +41,13 @@ class OutstandingBalanceByCurrency
     public ?Currency $currency = null;
 
     /**
+     * @param  ?float  $totalAmount
      * @param  ?array<BalanceByPeriod>  $balancesByPeriod
      * @param  ?Currency  $currency
      */
-    public function __construct(?array $balancesByPeriod = null, ?Currency $currency = null)
+    public function __construct(?float $totalAmount = null, ?array $balancesByPeriod = null, ?Currency $currency = null)
     {
+        $this->totalAmount = $totalAmount;
         $this->balancesByPeriod = $balancesByPeriod;
         $this->currency = $currency;
     }

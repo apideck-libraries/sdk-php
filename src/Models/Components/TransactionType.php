@@ -16,5 +16,5 @@ enum TransactionType: string
     case CreditNote = 'credit_note';
     case Bill = 'bill';
     case Payment = 'payment';
-    case BillPayment = 'bill-payment';
+    case BillPayment = 'bill_payment';
 }

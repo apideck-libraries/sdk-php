@@ -20,6 +20,14 @@ class AgedReportFilter
     public ?string $customerId = null;
 
     /**
+     * Filter by supplier id
+     *
+     * @var ?string $supplierId
+     */
+    #[SpeakeasyMetadata('queryParam:name=supplier_id')]
+    public ?string $supplierId = null;
+
+    /**
      * The cutoff date for considering transactions
      *
      * @var ?string $reportAsOfDate
@@ -45,13 +53,15 @@ class AgedReportFilter
 
     /**
      * @param  ?string  $customerId
+     * @param  ?string  $supplierId
      * @param  ?string  $reportAsOfDate
      * @param  ?int  $periodCount
      * @param  ?int  $periodLength
      */
-    public function __construct(?string $customerId = null, ?string $reportAsOfDate = null, ?int $periodCount = null, ?int $periodLength = null)
+    public function __construct(?string $customerId = null, ?string $supplierId = null, ?string $reportAsOfDate = null, ?int $periodCount = null, ?int $periodLength = null)
     {
         $this->customerId = $customerId;
+        $this->supplierId = $supplierId;
         $this->reportAsOfDate = $reportAsOfDate;
         $this->periodCount = $periodCount;
         $this->periodLength = $periodLength;
