@@ -12,24 +12,6 @@ use Brick\DateTime\LocalDate;
 class BalanceByPeriod
 {
     /**
-     * Start date of the period.
-     *
-     * @var ?LocalDate $startDate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('start_date')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LocalDate $startDate = null;
-
-    /**
-     * End date of the period.
-     *
-     * @var ?LocalDate $endDate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('end_date')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LocalDate $endDate = null;
-
-    /**
      * Total amount of the period.
      *
      * @var ?float $totalAmount
@@ -49,16 +31,34 @@ class BalanceByPeriod
     public ?array $balancesByTransaction = null;
 
     /**
-     * @param  ?LocalDate  $startDate
-     * @param  ?LocalDate  $endDate
+     * The starting date of the period. If not provided, it represents the oldest period, where all transactions due before the specified `end_date` are included.
+     *
+     * @var ?LocalDate $startDate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('start_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LocalDate $startDate = null;
+
+    /**
+     * The ending date of the period. If not provided, it represents an open-ended period starting from the `start_date`, typically capturing future-dated transactions that are not yet aged.
+     *
+     * @var ?LocalDate $endDate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('end_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LocalDate $endDate = null;
+
+    /**
      * @param  ?float  $totalAmount
      * @param  ?array<BalanceByTransaction>  $balancesByTransaction
+     * @param  ?LocalDate  $startDate
+     * @param  ?LocalDate  $endDate
      */
-    public function __construct(?LocalDate $startDate = null, ?LocalDate $endDate = null, ?float $totalAmount = null, ?array $balancesByTransaction = null)
+    public function __construct(?float $totalAmount = null, ?array $balancesByTransaction = null, ?LocalDate $startDate = null, ?LocalDate $endDate = null)
     {
-        $this->startDate = $startDate;
-        $this->endDate = $endDate;
         $this->totalAmount = $totalAmount;
         $this->balancesByTransaction = $balancesByTransaction;
+        $this->startDate = $startDate;
+        $this->endDate = $endDate;
     }
 }

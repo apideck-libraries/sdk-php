@@ -67,14 +67,24 @@ class BalanceByTransaction
     public ?float $outstandingBalance = null;
 
     /**
+     * Transaction number of the transaction.
+     *
+     * @var ?string $transactionNumber
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('transaction_number')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $transactionNumber = null;
+
+    /**
      * @param  ?string  $transactionId
      * @param  ?LocalDate  $transactionDate
      * @param  ?TransactionType  $transactionType
      * @param  ?LocalDate  $dueDate
      * @param  ?float  $originalAmount
      * @param  ?float  $outstandingBalance
+     * @param  ?string  $transactionNumber
      */
-    public function __construct(?string $transactionId = null, ?LocalDate $transactionDate = null, ?TransactionType $transactionType = null, ?LocalDate $dueDate = null, ?float $originalAmount = null, ?float $outstandingBalance = null)
+    public function __construct(?string $transactionId = null, ?LocalDate $transactionDate = null, ?TransactionType $transactionType = null, ?LocalDate $dueDate = null, ?float $originalAmount = null, ?float $outstandingBalance = null, ?string $transactionNumber = null)
     {
         $this->transactionId = $transactionId;
         $this->transactionDate = $transactionDate;
@@ -82,5 +92,6 @@ class BalanceByTransaction
         $this->dueDate = $dueDate;
         $this->originalAmount = $originalAmount;
         $this->outstandingBalance = $outstandingBalance;
+        $this->transactionNumber = $transactionNumber;
     }
 }

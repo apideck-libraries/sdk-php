@@ -33,6 +33,7 @@ $request = new Operations\AccountingAgedDebtorsOneRequest(
     serviceId: 'salesforce',
     filter: new Components\AgedReportFilter(
         customerId: '123abc',
+        supplierId: '123abc',
         reportAsOfDate: '2024-01-01',
         periodCount: 3,
         periodLength: 30,
