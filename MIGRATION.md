@@ -56,7 +56,7 @@ $response = $sdk->crm->contacts->list(
 );
 ```
 
-4. ** Response Structure**
+4. **Response Structure**
 
 ```
 // Old SDK
@@ -64,9 +64,14 @@ $response = $crmApi->contactsAll();
 $data = $response->getData();
 
 // New SDK
-$response = $sdk->crm->contacts->list($request);
-if ($response->getContactsResponse !== null) {
-    // handle response
+$responses = $sdk->crm->contacts->list(
+    request: $request
+);
+foreach ($responses as $response) {
+    if ($response->httpMeta->response->getStatusCode() === 200) {
+        // handle response
+        // $response.getContactsResponse...s
+    }
 }
 ```
 
