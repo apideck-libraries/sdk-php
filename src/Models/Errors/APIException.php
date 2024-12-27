@@ -10,23 +10,23 @@ namespace Apideck\Unify\Models\Errors;
 
 class APIException extends \Exception
 {
-    public int $statusCode;
-    public string $body;
-    public ?\Psr\Http\Message\ResponseInterface $rawResponse;
+    public ?\Psr\Http\Message\RequestInterface $request;
+    public ?\Psr\Http\Message\ResponseInterface $response;
 
-    public function __construct(string $message, int $statusCode, string $body, ?\Psr\Http\Message\ResponseInterface $rawResponse)
+    public function __construct(string $message = '', ?\Psr\Http\Message\RequestInterface $request = null, ?\Psr\Http\Message\ResponseInterface $response = null)
     {
         $this->message = $message;
-        $code = $statusCode;
-        $this->statusCode = $statusCode;
-        $this->body = $body;
-        $this->rawResponse = $rawResponse;
+        $this->request = $request;
+        $this->response = $response;
+        $code = $response->getStatusCode();
         parent::__construct($message, $code, null);
     }
 
     public function __toString(): string
     {
-        return "$this->message: Status $this->statusCode $this->body";
+        $status = $this->response->getStatusCode();
+
+        return "$this->message: Status $status";
     }
 
 }

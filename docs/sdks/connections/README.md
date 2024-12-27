@@ -104,7 +104,7 @@ $response = $sdk->vault->connections->delete(
 
 );
 
-if ($response->statusCode === 200) {
+if ($response->httpMeta->response->getStatusCode() === 200) {
     // handle response
 }
 ```
