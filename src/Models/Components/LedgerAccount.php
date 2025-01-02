@@ -97,6 +97,16 @@ class LedgerAccount
     public ?array $subsidiaries = null;
 
     /**
+     * $customFields
+     *
+     * @var ?array<CustomField> $customFields
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $customFields = null;
+
+    /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
      * @var ?array<PassThroughBody> $passThrough
@@ -327,6 +337,7 @@ class LedgerAccount
      * @param  ?ParentAccount  $parentAccount
      * @param  ?array<SubAccounts>  $subAccounts
      * @param  ?array<LedgerAccountSubsidiaries>  $subsidiaries
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $nominalCode
      * @param  ?string  $code
@@ -352,7 +363,7 @@ class LedgerAccount
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
      */
-    public function __construct(?string $id = null, ?string $displayId = null, ?LedgerAccountType $type = null, ?LinkedTaxRate $taxRate = null, ?BankAccount $bankAccount = null, ?array $categories = null, ?ParentAccount $parentAccount = null, ?array $subAccounts = null, ?array $subsidiaries = null, ?array $passThrough = null, ?string $nominalCode = null, ?string $code = null, ?Classification $classification = null, ?string $subType = null, ?string $name = null, ?string $fullyQualifiedName = null, ?string $description = null, ?float $openingBalance = null, ?float $currentBalance = null, ?Currency $currency = null, ?string $taxType = null, ?float $level = null, ?bool $active = null, ?AccountStatus $status = null, ?bool $header = null, ?bool $subAccount = null, ?LocalDate $lastReconciliationDate = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?string $displayId = null, ?LedgerAccountType $type = null, ?LinkedTaxRate $taxRate = null, ?BankAccount $bankAccount = null, ?array $categories = null, ?ParentAccount $parentAccount = null, ?array $subAccounts = null, ?array $subsidiaries = null, ?array $customFields = null, ?array $passThrough = null, ?string $nominalCode = null, ?string $code = null, ?Classification $classification = null, ?string $subType = null, ?string $name = null, ?string $fullyQualifiedName = null, ?string $description = null, ?float $openingBalance = null, ?float $currentBalance = null, ?Currency $currency = null, ?string $taxType = null, ?float $level = null, ?bool $active = null, ?AccountStatus $status = null, ?bool $header = null, ?bool $subAccount = null, ?LocalDate $lastReconciliationDate = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->displayId = $displayId;
@@ -363,6 +374,7 @@ class LedgerAccount
         $this->parentAccount = $parentAccount;
         $this->subAccounts = $subAccounts;
         $this->subsidiaries = $subsidiaries;
+        $this->customFields = $customFields;
         $this->passThrough = $passThrough;
         $this->nominalCode = $nominalCode;
         $this->code = $code;

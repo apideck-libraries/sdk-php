@@ -68,6 +68,16 @@ class LedgerAccountInput
     public ?array $subsidiaries = null;
 
     /**
+     * $customFields
+     *
+     * @var ?array<CustomField> $customFields
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $customFields = null;
+
+    /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
      * @var ?array<PassThroughBody> $passThrough
@@ -249,6 +259,7 @@ class LedgerAccountInput
      * @param  ?BankAccount  $bankAccount
      * @param  ?ParentAccount  $parentAccount
      * @param  ?array<LedgerAccountSubsidiaries>  $subsidiaries
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $nominalCode
      * @param  ?string  $code
@@ -269,7 +280,7 @@ class LedgerAccountInput
      * @param  ?LocalDate  $lastReconciliationDate
      * @param  ?string  $rowVersion
      */
-    public function __construct(?string $displayId = null, ?LedgerAccountType $type = null, ?LinkedTaxRateInput $taxRate = null, ?BankAccount $bankAccount = null, ?ParentAccount $parentAccount = null, ?array $subsidiaries = null, ?array $passThrough = null, ?string $nominalCode = null, ?string $code = null, ?Classification $classification = null, ?string $subType = null, ?string $name = null, ?string $fullyQualifiedName = null, ?string $description = null, ?float $openingBalance = null, ?float $currentBalance = null, ?Currency $currency = null, ?string $taxType = null, ?float $level = null, ?bool $active = null, ?AccountStatus $status = null, ?bool $header = null, ?bool $subAccount = null, ?LocalDate $lastReconciliationDate = null, ?string $rowVersion = null)
+    public function __construct(?string $displayId = null, ?LedgerAccountType $type = null, ?LinkedTaxRateInput $taxRate = null, ?BankAccount $bankAccount = null, ?ParentAccount $parentAccount = null, ?array $subsidiaries = null, ?array $customFields = null, ?array $passThrough = null, ?string $nominalCode = null, ?string $code = null, ?Classification $classification = null, ?string $subType = null, ?string $name = null, ?string $fullyQualifiedName = null, ?string $description = null, ?float $openingBalance = null, ?float $currentBalance = null, ?Currency $currency = null, ?string $taxType = null, ?float $level = null, ?bool $active = null, ?AccountStatus $status = null, ?bool $header = null, ?bool $subAccount = null, ?LocalDate $lastReconciliationDate = null, ?string $rowVersion = null)
     {
         $this->displayId = $displayId;
         $this->type = $type;
@@ -277,6 +288,7 @@ class LedgerAccountInput
         $this->bankAccount = $bankAccount;
         $this->parentAccount = $parentAccount;
         $this->subsidiaries = $subsidiaries;
+        $this->customFields = $customFields;
         $this->passThrough = $passThrough;
         $this->nominalCode = $nominalCode;
         $this->code = $code;

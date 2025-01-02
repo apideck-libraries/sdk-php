@@ -60,6 +60,14 @@ $request = new Operations\AccountingLedgerAccountsAddRequest(
             name: 'Bank Accounts',
             displayId: '1-1100',
         ),
+        customFields: [
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: true,
+            ),
+        ],
         passThrough: [
             new Components\PassThroughBody(
                 serviceId: '<id>',
@@ -360,6 +368,16 @@ $request = new Operations\AccountingLedgerAccountsUpdateRequest(
             name: 'Bank Accounts',
             displayId: '1-1100',
         ),
+        customFields: [
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: [
+                    new Components\Six(),
+                ],
+            ),
+        ],
         passThrough: [
             new Components\PassThroughBody(
                 serviceId: '<id>',

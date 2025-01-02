@@ -55,8 +55,6 @@ class Accounting
 
     public Expenses $expenses;
 
-    public AgedCreditors $agedCreditors;
-
     public AgedDebtors $agedDebtors;
 
     /**
@@ -86,7 +84,6 @@ class Accounting
         $this->trackingCategories = new TrackingCategories($this->sdkConfiguration);
         $this->billPayments = new BillPayments($this->sdkConfiguration);
         $this->expenses = new Expenses($this->sdkConfiguration);
-        $this->agedCreditors = new AgedCreditors($this->sdkConfiguration);
         $this->agedDebtors = new AgedDebtors($this->sdkConfiguration);
     }
     /**
