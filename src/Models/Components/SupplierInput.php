@@ -71,6 +71,16 @@ class SupplierInput
     public ?LinkedTaxRateInput $taxRate = null;
 
     /**
+     * $customFields
+     *
+     * @var ?array<CustomField> $customFields
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $customFields = null;
+
+    /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
      * @var ?array<PassThroughBody> $passThrough
@@ -258,6 +268,7 @@ class SupplierInput
      * @param  ?array<Website>  $websites
      * @param  ?array<BankAccount>  $bankAccounts
      * @param  ?LinkedTaxRateInput  $taxRate
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $subsidiaryId
      * @param  ?string  $displayId
@@ -279,7 +290,7 @@ class SupplierInput
      * @param  ?string  $channel
      * @param  ?string  $rowVersion
      */
-    public function __construct(?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRateInput $taxRate = null, ?array $passThrough = null, ?string $subsidiaryId = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?string $notes = null, ?string $taxNumber = null, ?Currency $currency = null, ?LinkedLedgerAccountInput $account = null, ?SupplierStatus $status = null, ?string $paymentMethod = null, ?string $channel = null, ?string $rowVersion = null)
+    public function __construct(?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $subsidiaryId = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?string $notes = null, ?string $taxNumber = null, ?Currency $currency = null, ?LinkedLedgerAccountInput $account = null, ?SupplierStatus $status = null, ?string $paymentMethod = null, ?string $channel = null, ?string $rowVersion = null)
     {
         $this->addresses = $addresses;
         $this->phoneNumbers = $phoneNumbers;
@@ -287,6 +298,7 @@ class SupplierInput
         $this->websites = $websites;
         $this->bankAccounts = $bankAccounts;
         $this->taxRate = $taxRate;
+        $this->customFields = $customFields;
         $this->passThrough = $passThrough;
         $this->subsidiaryId = $subsidiaryId;
         $this->displayId = $displayId;

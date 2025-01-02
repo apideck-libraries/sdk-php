@@ -106,6 +106,14 @@ $request = new Operations\AccountingSuppliersAddRequest(
             id: '123456',
             rate: 10,
         ),
+        customFields: [
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: true,
+            ),
+        ],
         passThrough: [
             new Components\PassThroughBody(
                 serviceId: '<id>',
@@ -463,6 +471,16 @@ $request = new Operations\AccountingSuppliersUpdateRequest(
             id: '123456',
             rate: 10,
         ),
+        customFields: [
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: [
+                    new Components\Six(),
+                ],
+            ),
+        ],
         passThrough: [
             new Components\PassThroughBody(
                 serviceId: '<id>',

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 7dcfb4378c6b67f6f82c84503a30eb9f
+  docChecksum: acdbd94ea7dcac1efe718acbf408db84
   docVersion: 10.9.0
   speakeasyVersion: 1.460.3
   generationVersion: 2.484.0
-  releaseVersion: 0.2.2
-  configChecksum: 758ae0aaed56628188138d11da1e750b
+  releaseVersion: 0.2.3
+  configChecksum: 1ddbd32153afdb7527fdec8db82a0baa
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php
   published: true
@@ -56,7 +56,6 @@ generatedFiles:
   - docs/Models/Components/ActivityType.md
   - docs/Models/Components/Address.md
   - docs/Models/Components/Addresses.md
-  - docs/Models/Components/AgedCreditors.md
   - docs/Models/Components/AgedDebtors.md
   - docs/Models/Components/AgedReportFilter.md
   - docs/Models/Components/Allocation.md
@@ -202,7 +201,6 @@ generatedFiles:
   - docs/Models/Components/CreateNoteResponse.md
   - docs/Models/Components/CreateOpportunityResponse.md
   - docs/Models/Components/CreatePaymentResponse.md
-  - docs/Models/Components/CreatePipelineResponse.md
   - docs/Models/Components/CreatePurchaseOrderResponse.md
   - docs/Models/Components/CreateSessionResponse.md
   - docs/Models/Components/CreateSessionResponseData.md
@@ -275,7 +273,6 @@ generatedFiles:
   - docs/Models/Components/DeleteNoteResponse.md
   - docs/Models/Components/DeleteOpportunityResponse.md
   - docs/Models/Components/DeletePaymentResponse.md
-  - docs/Models/Components/DeletePipelineResponse.md
   - docs/Models/Components/DeletePurchaseOrderResponse.md
   - docs/Models/Components/DeleteSharedLinkResponse.md
   - docs/Models/Components/DeleteSubsidiaryResponse.md
@@ -372,7 +369,6 @@ generatedFiles:
   - docs/Models/Components/GetAccountingLocationsResponse.md
   - docs/Models/Components/GetActivitiesResponse.md
   - docs/Models/Components/GetActivityResponse.md
-  - docs/Models/Components/GetAgedCreditorsResponse.md
   - docs/Models/Components/GetAgedDebtorsResponse.md
   - docs/Models/Components/GetApiResourceCoverageResponse.md
   - docs/Models/Components/GetApiResourceResponse.md
@@ -459,7 +455,6 @@ generatedFiles:
   - docs/Models/Components/GetPaymentsResponse.md
   - docs/Models/Components/GetPayrollResponse.md
   - docs/Models/Components/GetPayrollsResponse.md
-  - docs/Models/Components/GetPipelineResponse.md
   - docs/Models/Components/GetPipelinesResponse.md
   - docs/Models/Components/GetProductResponse.md
   - docs/Models/Components/GetProductsResponse.md
@@ -588,7 +583,6 @@ generatedFiles:
   - docs/Models/Components/OrdersSortBy.md
   - docs/Models/Components/OutstandingBalanceByCurrency.md
   - docs/Models/Components/OutstandingBalanceByCustomer.md
-  - docs/Models/Components/OutstandingBalanceBySupplier.md
   - docs/Models/Components/Owner.md
   - docs/Models/Components/PaginationCoverage.md
   - docs/Models/Components/PaginationCoverageMode.md
@@ -613,8 +607,6 @@ generatedFiles:
   - docs/Models/Components/PhoneNumber.md
   - docs/Models/Components/PhoneNumberType.md
   - docs/Models/Components/Pipeline.md
-  - docs/Models/Components/PipelineInput.md
-  - docs/Models/Components/PipelineStages.md
   - docs/Models/Components/Price.md
   - docs/Models/Components/Priority.md
   - docs/Models/Components/ProbationPeriod.md
@@ -741,7 +733,6 @@ generatedFiles:
   - docs/Models/Components/UpdateNoteResponse.md
   - docs/Models/Components/UpdateOpportunityResponse.md
   - docs/Models/Components/UpdatePaymentResponse.md
-  - docs/Models/Components/UpdatePipelineResponse.md
   - docs/Models/Components/UpdatePurchaseOrderResponse.md
   - docs/Models/Components/UpdateSharedLinkResponse.md
   - docs/Models/Components/UpdateSubsidiaryResponse.md
@@ -781,8 +772,6 @@ generatedFiles:
   - docs/Models/Errors/UnauthorizedResponseDetail.md
   - docs/Models/Errors/UnprocessableResponse.md
   - docs/Models/Errors/UnprocessableResponseDetail.md
-  - docs/Models/Operations/AccountingAgedCreditorsOneRequest.md
-  - docs/Models/Operations/AccountingAgedCreditorsOneResponse.md
   - docs/Models/Operations/AccountingAgedDebtorsOneRequest.md
   - docs/Models/Operations/AccountingAgedDebtorsOneResponse.md
   - docs/Models/Operations/AccountingAttachmentsAllRequest.md
@@ -1069,16 +1058,8 @@ generatedFiles:
   - docs/Models/Operations/CrmOpportunitiesOneResponse.md
   - docs/Models/Operations/CrmOpportunitiesUpdateRequest.md
   - docs/Models/Operations/CrmOpportunitiesUpdateResponse.md
-  - docs/Models/Operations/CrmPipelinesAddRequest.md
-  - docs/Models/Operations/CrmPipelinesAddResponse.md
   - docs/Models/Operations/CrmPipelinesAllRequest.md
   - docs/Models/Operations/CrmPipelinesAllResponse.md
-  - docs/Models/Operations/CrmPipelinesDeleteRequest.md
-  - docs/Models/Operations/CrmPipelinesDeleteResponse.md
-  - docs/Models/Operations/CrmPipelinesOneRequest.md
-  - docs/Models/Operations/CrmPipelinesOneResponse.md
-  - docs/Models/Operations/CrmPipelinesUpdateRequest.md
-  - docs/Models/Operations/CrmPipelinesUpdateResponse.md
   - docs/Models/Operations/CrmUsersAddRequest.md
   - docs/Models/Operations/CrmUsersAddResponse.md
   - docs/Models/Operations/CrmUsersAllRequest.md
@@ -1312,7 +1293,6 @@ generatedFiles:
   - docs/Models/Operations/WebhookWebhooksUpdateResponse.md
   - docs/sdks/accounting/README.md
   - docs/sdks/activities/README.md
-  - docs/sdks/agedcreditors/README.md
   - docs/sdks/ageddebtors/README.md
   - docs/sdks/apideck/README.md
   - docs/sdks/apideckcompanies/README.md
@@ -1403,7 +1383,6 @@ generatedFiles:
   - rector.php
   - src/Accounting.php
   - src/Activities.php
-  - src/AgedCreditors.php
   - src/AgedDebtors.php
   - src/ApiResourceCoverage.php
   - src/ApiResources.php
@@ -1500,7 +1479,6 @@ generatedFiles:
   - src/Models/Components/ActivityType.php
   - src/Models/Components/Address.php
   - src/Models/Components/Addresses.php
-  - src/Models/Components/AgedCreditors.php
   - src/Models/Components/AgedDebtors.php
   - src/Models/Components/AgedReportFilter.php
   - src/Models/Components/Allocation.php
@@ -1645,7 +1623,6 @@ generatedFiles:
   - src/Models/Components/CreateNoteResponse.php
   - src/Models/Components/CreateOpportunityResponse.php
   - src/Models/Components/CreatePaymentResponse.php
-  - src/Models/Components/CreatePipelineResponse.php
   - src/Models/Components/CreatePurchaseOrderResponse.php
   - src/Models/Components/CreateSessionResponse.php
   - src/Models/Components/CreateSessionResponseData.php
@@ -1718,7 +1695,6 @@ generatedFiles:
   - src/Models/Components/DeleteNoteResponse.php
   - src/Models/Components/DeleteOpportunityResponse.php
   - src/Models/Components/DeletePaymentResponse.php
-  - src/Models/Components/DeletePipelineResponse.php
   - src/Models/Components/DeletePurchaseOrderResponse.php
   - src/Models/Components/DeleteSharedLinkResponse.php
   - src/Models/Components/DeleteSubsidiaryResponse.php
@@ -1812,7 +1788,6 @@ generatedFiles:
   - src/Models/Components/GetAccountingLocationsResponse.php
   - src/Models/Components/GetActivitiesResponse.php
   - src/Models/Components/GetActivityResponse.php
-  - src/Models/Components/GetAgedCreditorsResponse.php
   - src/Models/Components/GetAgedDebtorsResponse.php
   - src/Models/Components/GetApiResourceCoverageResponse.php
   - src/Models/Components/GetApiResourceResponse.php
@@ -1899,7 +1874,6 @@ generatedFiles:
   - src/Models/Components/GetPaymentsResponse.php
   - src/Models/Components/GetPayrollResponse.php
   - src/Models/Components/GetPayrollsResponse.php
-  - src/Models/Components/GetPipelineResponse.php
   - src/Models/Components/GetPipelinesResponse.php
   - src/Models/Components/GetProductResponse.php
   - src/Models/Components/GetProductsResponse.php
@@ -2028,7 +2002,6 @@ generatedFiles:
   - src/Models/Components/OrdersSortBy.php
   - src/Models/Components/OutstandingBalanceByCurrency.php
   - src/Models/Components/OutstandingBalanceByCustomer.php
-  - src/Models/Components/OutstandingBalanceBySupplier.php
   - src/Models/Components/Owner.php
   - src/Models/Components/PaginationCoverage.php
   - src/Models/Components/PaginationCoverageMode.php
@@ -2053,8 +2026,6 @@ generatedFiles:
   - src/Models/Components/PhoneNumber.php
   - src/Models/Components/PhoneNumberType.php
   - src/Models/Components/Pipeline.php
-  - src/Models/Components/PipelineInput.php
-  - src/Models/Components/PipelineStages.php
   - src/Models/Components/Price.php
   - src/Models/Components/Priority.php
   - src/Models/Components/ProbationPeriod.php
@@ -2180,7 +2151,6 @@ generatedFiles:
   - src/Models/Components/UpdateNoteResponse.php
   - src/Models/Components/UpdateOpportunityResponse.php
   - src/Models/Components/UpdatePaymentResponse.php
-  - src/Models/Components/UpdatePipelineResponse.php
   - src/Models/Components/UpdatePurchaseOrderResponse.php
   - src/Models/Components/UpdateSharedLinkResponse.php
   - src/Models/Components/UpdateSubsidiaryResponse.php
@@ -2220,8 +2190,6 @@ generatedFiles:
   - src/Models/Errors/UnauthorizedResponseThrowable.php
   - src/Models/Errors/UnprocessableResponse.php
   - src/Models/Errors/UnprocessableResponseThrowable.php
-  - src/Models/Operations/AccountingAgedCreditorsOneRequest.php
-  - src/Models/Operations/AccountingAgedCreditorsOneResponse.php
   - src/Models/Operations/AccountingAgedDebtorsOneRequest.php
   - src/Models/Operations/AccountingAgedDebtorsOneResponse.php
   - src/Models/Operations/AccountingAttachmentsAllRequest.php
@@ -2508,16 +2476,8 @@ generatedFiles:
   - src/Models/Operations/CrmOpportunitiesOneResponse.php
   - src/Models/Operations/CrmOpportunitiesUpdateRequest.php
   - src/Models/Operations/CrmOpportunitiesUpdateResponse.php
-  - src/Models/Operations/CrmPipelinesAddRequest.php
-  - src/Models/Operations/CrmPipelinesAddResponse.php
   - src/Models/Operations/CrmPipelinesAllRequest.php
   - src/Models/Operations/CrmPipelinesAllResponse.php
-  - src/Models/Operations/CrmPipelinesDeleteRequest.php
-  - src/Models/Operations/CrmPipelinesDeleteResponse.php
-  - src/Models/Operations/CrmPipelinesOneRequest.php
-  - src/Models/Operations/CrmPipelinesOneResponse.php
-  - src/Models/Operations/CrmPipelinesUpdateRequest.php
-  - src/Models/Operations/CrmPipelinesUpdateResponse.php
   - src/Models/Operations/CrmUsersAddRequest.php
   - src/Models/Operations/CrmUsersAddResponse.php
   - src/Models/Operations/CrmUsersAllRequest.php

@@ -108,10 +108,6 @@ foreach ($responses as $response) {
 ### [accounting](docs/sdks/accounting/README.md)
 
 
-#### [accounting->agedCreditors](docs/sdks/agedcreditors/README.md)
-
-* [get](docs/sdks/agedcreditors/README.md#get) - Get Aged Creditors
-
 #### [accounting->agedDebtors](docs/sdks/ageddebtors/README.md)
 
 * [get](docs/sdks/ageddebtors/README.md#get) - Get Aged Debtors
@@ -378,11 +374,7 @@ foreach ($responses as $response) {
 
 #### [crm->pipelines](docs/sdks/pipelines/README.md)
 
-* [create](docs/sdks/pipelines/README.md#create) - Create pipeline
 * [list](docs/sdks/pipelines/README.md#list) - List pipelines
-* [delete](docs/sdks/pipelines/README.md#delete) - Delete pipeline
-* [get](docs/sdks/pipelines/README.md#get) - Get pipeline
-* [update](docs/sdks/pipelines/README.md#update) - Update pipeline
 
 #### [crm->users](docs/sdks/users/README.md)
 
