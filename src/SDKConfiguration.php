@@ -24,13 +24,13 @@ class SDKConfiguration
 
     public string $language = 'php';
 
-    public string $openapiDocVersion = '10.9.0';
+    public string $openapiDocVersion = '10.9.1';
 
-    public string $sdkVersion = '0.2.3';
+    public string $sdkVersion = '0.2.4';
 
-    public string $genVersion = '2.484.0';
+    public string $genVersion = '2.493.4';
 
-    public string $userAgent = 'speakeasy-sdk/php 0.2.3 2.484.0 10.9.0 apideck-libraries/sdk-php';
+    public string $userAgent = 'speakeasy-sdk/php 0.2.4 2.493.4 10.9.1 apideck-libraries/sdk-php';
     /** @var array<string, array<string, array<string, mixed>>> */
     public ?array $globals = [
         'parameters' => [],
@@ -79,7 +79,7 @@ class SDKConfiguration
      */
     public function getServerDetails(): Utils\ServerDetails
     {
-        if ($this->serverUrl !== null && $this->serverUrl !== '') {
+        if ($this->serverUrl !== '') {
             return new Utils\ServerDetails(rtrim($this->serverUrl, '/'), []);
         }
         if ($this->serverIndex === null) {

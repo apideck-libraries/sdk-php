@@ -26,12 +26,13 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 $request = new Operations\AccountingCustomersAddRequest(
     customer: new Components\CustomerInput(
@@ -206,12 +207,13 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 use Apideck\Unify\Utils;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 $request = new Operations\AccountingCustomersAllRequest(
     serviceId: 'salesforce',
@@ -281,12 +283,13 @@ require 'vendor/autoload.php';
 use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 $request = new Operations\AccountingCustomersDeleteRequest(
     id: '<id>',
@@ -337,12 +340,13 @@ require 'vendor/autoload.php';
 use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 $request = new Operations\AccountingCustomersOneRequest(
     id: '<id>',
@@ -395,12 +399,13 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 $request = new Operations\AccountingCustomersUpdateRequest(
     id: '<id>',

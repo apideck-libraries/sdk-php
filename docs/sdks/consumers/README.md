@@ -25,12 +25,13 @@ require 'vendor/autoload.php';
 use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 $consumer = new Components\ConsumerInput(
     consumerId: 'test_consumer_id',
@@ -89,12 +90,13 @@ require 'vendor/autoload.php';
 
 use Apideck\Unify;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 
 
@@ -149,12 +151,13 @@ require 'vendor/autoload.php';
 
 use Apideck\Unify;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 
 
@@ -205,12 +208,13 @@ require 'vendor/autoload.php';
 
 use Apideck\Unify;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 
 
@@ -261,12 +265,13 @@ require 'vendor/autoload.php';
 use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 $updateConsumerRequest = new Components\UpdateConsumerRequest(
     metadata: new Components\ConsumerMetadata(

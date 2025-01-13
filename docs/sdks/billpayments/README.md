@@ -27,12 +27,13 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 use Apideck\Unify\Utils;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 $request = new Operations\AccountingBillPaymentsAddRequest(
     billPayment: new Components\BillPaymentInput(
@@ -174,12 +175,13 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 use Apideck\Unify\Utils;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 $request = new Operations\AccountingBillPaymentsAllRequest(
     serviceId: 'salesforce',
@@ -243,12 +245,13 @@ require 'vendor/autoload.php';
 use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 $request = new Operations\AccountingBillPaymentsDeleteRequest(
     id: '<id>',
@@ -299,12 +302,13 @@ require 'vendor/autoload.php';
 use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 $request = new Operations\AccountingBillPaymentsOneRequest(
     id: '<id>',
@@ -358,12 +362,13 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 use Apideck\Unify\Utils;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 $request = new Operations\AccountingBillPaymentsUpdateRequest(
     id: '<id>',

@@ -25,12 +25,13 @@ require 'vendor/autoload.php';
 use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 $createWebhookRequest = new Components\CreateWebhookRequest(
     unifiedApi: Components\UnifiedApiId::Crm,
@@ -89,12 +90,13 @@ require 'vendor/autoload.php';
 
 use Apideck\Unify;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 
 
@@ -149,12 +151,13 @@ require 'vendor/autoload.php';
 
 use Apideck\Unify;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 
 
@@ -204,12 +207,13 @@ require 'vendor/autoload.php';
 
 use Apideck\Unify;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 
 
@@ -260,12 +264,13 @@ require 'vendor/autoload.php';
 use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 $updateWebhookRequest = new Components\UpdateWebhookRequest(
     status: Components\Status::Enabled,

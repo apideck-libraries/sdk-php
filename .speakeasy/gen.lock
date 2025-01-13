@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: acdbd94ea7dcac1efe718acbf408db84
-  docVersion: 10.9.0
-  speakeasyVersion: 1.460.3
-  generationVersion: 2.484.0
-  releaseVersion: 0.2.3
-  configChecksum: 1ddbd32153afdb7527fdec8db82a0baa
+  docChecksum: 3e6be91e9344532273c404d73c679c75
+  docVersion: 10.9.1
+  speakeasyVersion: 1.468.2
+  generationVersion: 2.493.4
+  releaseVersion: 0.2.4
+  configChecksum: 9f32326579255e87c1c93ac1e3a19fcd
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php
   published: true
 features:
   php:
     constsAndDefaults: 0.2.0
-    core: 3.7.7
+    core: 3.7.8
     deprecations: 2.81.1
     errors: 0.3.0
     flattening: 2.81.1
@@ -34,7 +34,6 @@ features:
     unions: 0.1.4
 generatedFiles:
   - .gitattributes
-  - CONTRIBUTING.md
   - USAGE.md
   - composer.json
   - docs/Models/Components/AccountStatus.md
