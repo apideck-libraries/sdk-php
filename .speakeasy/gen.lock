@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 3e6be91e9344532273c404d73c679c75
+  docChecksum: 8d9c85df713492bb9fe416a01201df13
   docVersion: 10.9.1
-  speakeasyVersion: 1.468.2
-  generationVersion: 2.493.4
-  releaseVersion: 0.2.4
-  configChecksum: 9f32326579255e87c1c93ac1e3a19fcd
+  speakeasyVersion: 1.468.5
+  generationVersion: 2.493.11
+  releaseVersion: 0.2.5
+  configChecksum: f7462055f1a27fb6c64c6840d3887fe2
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php
   published: true
