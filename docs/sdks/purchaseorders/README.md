@@ -124,7 +124,6 @@ $request = new Operations\AccountingPurchaseOrdersAddRequest(
             bankCode: 'BNH',
             currency: Components\Currency::Usd,
         ),
-        dueDate: LocalDate::parse('2020-10-30'),
         passThrough: [
             new Components\PassThroughBody(
                 serviceId: '<id>',
@@ -191,6 +190,7 @@ $request = new Operations\AccountingPurchaseOrdersAddRequest(
         templateId: '123456',
         discountPercentage: 5.5,
         accountingByRow: false,
+        dueDate: LocalDate::parse('2020-10-30'),
         paymentMethod: 'cash',
         taxCode: '1234',
         channel: 'email',
@@ -538,7 +538,6 @@ $request = new Operations\AccountingPurchaseOrdersUpdateRequest(
             bankCode: 'BNH',
             currency: Components\Currency::Usd,
         ),
-        dueDate: LocalDate::parse('2020-10-30'),
         passThrough: [
             new Components\PassThroughBody(
                 serviceId: '<id>',
@@ -605,6 +604,7 @@ $request = new Operations\AccountingPurchaseOrdersUpdateRequest(
         templateId: '123456',
         discountPercentage: 5.5,
         accountingByRow: false,
+        dueDate: LocalDate::parse('2020-10-30'),
         paymentMethod: 'cash',
         taxCode: '1234',
         channel: 'email',

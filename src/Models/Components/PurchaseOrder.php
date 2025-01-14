@@ -49,15 +49,6 @@ class PurchaseOrder
     public ?BankAccount $bankAccount = null;
 
     /**
-     * The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.
-     *
-     * @var ?LocalDate $dueDate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('due_date')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LocalDate $dueDate = null;
-
-    /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
      * @var ?array<PassThroughBody> $passThrough
@@ -241,6 +232,15 @@ class PurchaseOrder
     public ?bool $accountingByRow = null;
 
     /**
+     * The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.
+     *
+     * @var ?LocalDate $dueDate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('due_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LocalDate $dueDate = null;
+
+    /**
      * Payment method used for the transaction, such as cash, credit card, bank transfer, or check
      *
      * @var ?string $paymentMethod
@@ -346,7 +346,6 @@ class PurchaseOrder
      * @param  ?array<InvoiceLineItem>  $lineItems
      * @param  ?Address  $shippingAddress
      * @param  ?BankAccount  $bankAccount
-     * @param  ?LocalDate  $dueDate
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $downstreamId
      * @param  ?string  $poNumber
@@ -367,6 +366,7 @@ class PurchaseOrder
      * @param  ?string  $templateId
      * @param  ?float  $discountPercentage
      * @param  ?bool  $accountingByRow
+     * @param  ?LocalDate  $dueDate
      * @param  ?string  $paymentMethod
      * @param  ?string  $taxCode
      * @param  ?string  $channel
@@ -379,13 +379,12 @@ class PurchaseOrder
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
      */
-    public function __construct(?string $id = null, ?array $lineItems = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?LocalDate $dueDate = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $poNumber = null, ?string $reference = null, ?LinkedSupplier $supplier = null, ?string $companyId = null, ?PurchaseOrderStatus $status = null, ?LocalDate $issuedDate = null, ?LocalDate $deliveryDate = null, ?LocalDate $expectedArrivalDate = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?bool $taxInclusive = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $templateId = null, ?float $discountPercentage = null, ?bool $accountingByRow = null, ?string $paymentMethod = null, ?string $taxCode = null, ?string $channel = null, ?string $memo = null, ?array $trackingCategories = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?array $lineItems = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $poNumber = null, ?string $reference = null, ?LinkedSupplier $supplier = null, ?string $companyId = null, ?PurchaseOrderStatus $status = null, ?LocalDate $issuedDate = null, ?LocalDate $deliveryDate = null, ?LocalDate $expectedArrivalDate = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?bool $taxInclusive = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $templateId = null, ?float $discountPercentage = null, ?bool $accountingByRow = null, ?LocalDate $dueDate = null, ?string $paymentMethod = null, ?string $taxCode = null, ?string $channel = null, ?string $memo = null, ?array $trackingCategories = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->lineItems = $lineItems;
         $this->shippingAddress = $shippingAddress;
         $this->bankAccount = $bankAccount;
-        $this->dueDate = $dueDate;
         $this->passThrough = $passThrough;
         $this->downstreamId = $downstreamId;
         $this->poNumber = $poNumber;
@@ -406,6 +405,7 @@ class PurchaseOrder
         $this->templateId = $templateId;
         $this->discountPercentage = $discountPercentage;
         $this->accountingByRow = $accountingByRow;
+        $this->dueDate = $dueDate;
         $this->paymentMethod = $paymentMethod;
         $this->taxCode = $taxCode;
         $this->channel = $channel;

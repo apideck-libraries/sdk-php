@@ -21,24 +21,6 @@ class Bill
     public ?string $id = null;
 
     /**
-     * Date bill was issued - YYYY-MM-DD.
-     *
-     * @var ?LocalDate $billDate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('bill_date')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LocalDate $billDate = null;
-
-    /**
-     * The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.
-     *
-     * @var ?LocalDate $dueDate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('due_date')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LocalDate $dueDate = null;
-
-    /**
      * $lineItems
      *
      * @var ?array<BillLineItem> $lineItems
@@ -141,6 +123,24 @@ class Bill
     #[\Speakeasy\Serializer\Annotation\SerializedName('tax_inclusive')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $taxInclusive = null;
+
+    /**
+     * Date bill was issued - YYYY-MM-DD.
+     *
+     * @var ?LocalDate $billDate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('bill_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LocalDate $billDate = null;
+
+    /**
+     * The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.
+     *
+     * @var ?LocalDate $dueDate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('due_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LocalDate $dueDate = null;
 
     /**
      * The paid date is the date on which a payment was sent to the supplier - YYYY-MM-DD.
@@ -380,8 +380,6 @@ class Bill
 
     /**
      * @param  ?string  $id
-     * @param  ?LocalDate  $billDate
-     * @param  ?LocalDate  $dueDate
      * @param  ?array<BillLineItem>  $lineItems
      * @param  ?BankAccount  $bankAccount
      * @param  ?array<CustomField>  $customFields
@@ -393,6 +391,8 @@ class Bill
      * @param  ?Currency  $currency
      * @param  ?float  $currencyRate
      * @param  ?bool  $taxInclusive
+     * @param  ?LocalDate  $billDate
+     * @param  ?LocalDate  $dueDate
      * @param  ?LocalDate  $paidDate
      * @param  ?string  $poNumber
      * @param  ?string  $reference
@@ -420,11 +420,9 @@ class Bill
      * @param  ?CustomMappings  $customMappings
      * @param  ?string  $accountingPeriod
      */
-    public function __construct(?string $id = null, ?LocalDate $billDate = null, ?LocalDate $dueDate = null, ?array $lineItems = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $billNumber = null, ?LinkedSupplier $supplier = null, ?string $companyId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?LocalDate $paidDate = null, ?string $poNumber = null, ?string $reference = null, ?string $terms = null, ?float $balance = null, ?float $deposit = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?string $taxCode = null, ?string $notes = null, ?BillStatus $status = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?float $discountPercentage = null, ?array $trackingCategories = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null, ?CustomMappings $customMappings = null, ?string $accountingPeriod = null)
+    public function __construct(?string $id = null, ?array $lineItems = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $billNumber = null, ?LinkedSupplier $supplier = null, ?string $companyId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?LocalDate $billDate = null, ?LocalDate $dueDate = null, ?LocalDate $paidDate = null, ?string $poNumber = null, ?string $reference = null, ?string $terms = null, ?float $balance = null, ?float $deposit = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?string $taxCode = null, ?string $notes = null, ?BillStatus $status = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?float $discountPercentage = null, ?array $trackingCategories = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null, ?CustomMappings $customMappings = null, ?string $accountingPeriod = null)
     {
         $this->id = $id;
-        $this->billDate = $billDate;
-        $this->dueDate = $dueDate;
         $this->lineItems = $lineItems;
         $this->bankAccount = $bankAccount;
         $this->customFields = $customFields;
@@ -436,6 +434,8 @@ class Bill
         $this->currency = $currency;
         $this->currencyRate = $currencyRate;
         $this->taxInclusive = $taxInclusive;
+        $this->billDate = $billDate;
+        $this->dueDate = $dueDate;
         $this->paidDate = $paidDate;
         $this->poNumber = $poNumber;
         $this->reference = $reference;

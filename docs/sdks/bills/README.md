@@ -37,8 +37,6 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingBillsAddRequest(
     bill: new Components\BillInput(
-        billDate: LocalDate::parse('2020-09-30'),
-        dueDate: LocalDate::parse('2020-10-30'),
         lineItems: [
             new Components\BillLineItemInput(
                 rowId: '12345',
@@ -149,6 +147,8 @@ $request = new Operations\AccountingBillsAddRequest(
         currency: Components\Currency::Usd,
         currencyRate: 0.69,
         taxInclusive: true,
+        billDate: LocalDate::parse('2020-09-30'),
+        dueDate: LocalDate::parse('2020-10-30'),
         paidDate: LocalDate::parse('2020-10-30'),
         poNumber: '90000117',
         reference: '123456',
@@ -427,8 +427,6 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingBillsUpdateRequest(
     id: '<id>',
     bill: new Components\BillInput(
-        billDate: LocalDate::parse('2020-09-30'),
-        dueDate: LocalDate::parse('2020-10-30'),
         lineItems: [
             new Components\BillLineItemInput(
                 rowId: '12345',
@@ -541,6 +539,8 @@ $request = new Operations\AccountingBillsUpdateRequest(
         currency: Components\Currency::Usd,
         currencyRate: 0.69,
         taxInclusive: true,
+        billDate: LocalDate::parse('2020-09-30'),
+        dueDate: LocalDate::parse('2020-10-30'),
         paidDate: LocalDate::parse('2020-10-30'),
         poNumber: '90000117',
         reference: '123456',
