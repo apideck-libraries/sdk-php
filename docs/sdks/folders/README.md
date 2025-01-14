@@ -26,12 +26,13 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 $request = new Operations\FileStorageFoldersAddRequest(
     createFolderRequest: new Components\CreateFolderRequest(
@@ -104,12 +105,13 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 $request = new Operations\FileStorageFoldersCopyRequest(
     id: '<id>',
@@ -180,12 +182,13 @@ require 'vendor/autoload.php';
 use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 $request = new Operations\FileStorageFoldersDeleteRequest(
     id: '<id>',
@@ -236,12 +239,13 @@ require 'vendor/autoload.php';
 use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 $request = new Operations\FileStorageFoldersOneRequest(
     id: '<id>',
@@ -294,12 +298,13 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
-$security = '<YOUR_BEARER_TOKEN_HERE>';
-
 $sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
     ->setConsumerId('test-consumer')
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->setSecurity($security)->build();
+    ->build();
 
 $request = new Operations\FileStorageFoldersUpdateRequest(
     id: '<id>',
