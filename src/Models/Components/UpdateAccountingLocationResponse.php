@@ -53,6 +53,7 @@ class UpdateAccountingLocationResponse
     public string $operation;
 
     /**
+     * A object containing a unique identifier for the resource that was created, updated, or deleted.
      *
      * @var UnifiedId $data
      */

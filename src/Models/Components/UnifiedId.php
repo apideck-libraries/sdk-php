@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 
+/** UnifiedId - A object containing a unique identifier for the resource that was created, updated, or deleted. */
 class UnifiedId
 {
     /**
