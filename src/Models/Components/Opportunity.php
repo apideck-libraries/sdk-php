@@ -29,14 +29,6 @@ class Opportunity
     public ?string $id = null;
 
     /**
-     * The unique identifier of the primary contact associated with the opportunity.
-     *
-     * @var ?string $primaryContactId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('primary_contact_id')]
-    public ?string $primaryContactId;
-
-    /**
      * An array of unique identifiers of all contacts associated with the opportunity.
      *
      * @var ?array<string> $contactIds
@@ -74,6 +66,15 @@ class Opportunity
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * The unique identifier of the primary contact associated with the opportunity.
+     *
+     * @var ?string $primaryContactId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('primary_contact_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $primaryContactId = null;
 
     /**
      * A description of the opportunity.
@@ -396,11 +397,11 @@ class Opportunity
     /**
      * @param  string  $title
      * @param  ?string  $id
-     * @param  ?string  $primaryContactId
      * @param  ?array<string>  $contactIds
      * @param  ?array<CustomField>  $customFields
      * @param  ?bool  $deleted
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?string  $primaryContactId
      * @param  ?string  $description
      * @param  ?string  $type
      * @param  ?float  $monetaryAmount
@@ -437,15 +438,15 @@ class Opportunity
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
      */
-    public function __construct(string $title, ?string $id = null, ?string $primaryContactId = null, ?array $contactIds = null, ?array $customFields = null, ?bool $deleted = null, ?array $passThrough = null, ?string $description = null, ?string $type = null, ?float $monetaryAmount = null, ?Currency $currency = null, ?float $winProbability = null, ?float $expectedRevenue = null, ?LocalDate $closeDate = null, ?string $lossReasonId = null, ?string $lossReason = null, ?string $wonReasonId = null, ?string $wonReason = null, ?string $pipelineId = null, ?string $pipelineStageId = null, ?string $sourceId = null, ?string $leadId = null, ?string $leadSource = null, ?string $contactId = null, ?string $companyId = null, ?string $companyName = null, ?string $ownerId = null, ?string $priority = null, ?string $status = null, ?string $statusId = null, ?array $tags = null, ?float $interactionCount = null, ?\DateTime $stageLastChangedAt = null, ?string $lastActivityAt = null, ?\DateTime $dateStageChanged = null, ?\DateTime $dateLastContacted = null, ?\DateTime $dateLeadCreated = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(string $title, ?string $id = null, ?array $contactIds = null, ?array $customFields = null, ?bool $deleted = null, ?array $passThrough = null, ?string $primaryContactId = null, ?string $description = null, ?string $type = null, ?float $monetaryAmount = null, ?Currency $currency = null, ?float $winProbability = null, ?float $expectedRevenue = null, ?LocalDate $closeDate = null, ?string $lossReasonId = null, ?string $lossReason = null, ?string $wonReasonId = null, ?string $wonReason = null, ?string $pipelineId = null, ?string $pipelineStageId = null, ?string $sourceId = null, ?string $leadId = null, ?string $leadSource = null, ?string $contactId = null, ?string $companyId = null, ?string $companyName = null, ?string $ownerId = null, ?string $priority = null, ?string $status = null, ?string $statusId = null, ?array $tags = null, ?float $interactionCount = null, ?\DateTime $stageLastChangedAt = null, ?string $lastActivityAt = null, ?\DateTime $dateStageChanged = null, ?\DateTime $dateLastContacted = null, ?\DateTime $dateLeadCreated = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->title = $title;
         $this->id = $id;
-        $this->primaryContactId = $primaryContactId;
         $this->contactIds = $contactIds;
         $this->customFields = $customFields;
         $this->deleted = $deleted;
         $this->passThrough = $passThrough;
+        $this->primaryContactId = $primaryContactId;
         $this->description = $description;
         $this->type = $type;
         $this->monetaryAmount = $monetaryAmount;

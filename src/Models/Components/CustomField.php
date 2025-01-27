@@ -42,7 +42,7 @@ class CustomField
      * @var string|float|bool|Four|array<string>|array<Six>|null $value
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\Apideck\Unify\Models\Components\Four|array<string>|array<\Apideck\Unify\Models\Components\Six>')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\Apideck\Unify\Models\Components\Four|array<string>|array<\Apideck\Unify\Models\Components\Six>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public string|float|bool|Four|array|null $value = null;
 

@@ -12,7 +12,9 @@ namespace Apideck\Unify\Models\Components;
 /** Status of payment */
 enum PaymentStatus: string
 {
+    case Draft = 'draft';
     case Authorised = 'authorised';
+    case Rejected = 'rejected';
     case Paid = 'paid';
     case Voided = 'voided';
     case Deleted = 'deleted';

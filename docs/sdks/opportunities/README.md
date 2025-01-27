@@ -39,7 +39,6 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\CrmOpportunitiesAddRequest(
     opportunity: new Components\OpportunityInput(
         title: 'New Rocket',
-        primaryContactId: '12345',
         contactIds: [
             '12345',
         ],
@@ -66,6 +65,7 @@ $request = new Operations\CrmOpportunitiesAddRequest(
                 ],
             ),
         ],
+        primaryContactId: '12345',
         description: 'Opportunities are created for People and Companies that are interested in buying your products or services. Create Opportunities for People and Companies to move them through one of your Pipelines.',
         type: 'Existing Customer - Upgrade',
         monetaryAmount: 75000,
@@ -342,7 +342,6 @@ $request = new Operations\CrmOpportunitiesUpdateRequest(
     id: '<id>',
     opportunity: new Components\OpportunityInput(
         title: 'New Rocket',
-        primaryContactId: '12345',
         contactIds: [
             '12345',
         ],
@@ -371,6 +370,7 @@ $request = new Operations\CrmOpportunitiesUpdateRequest(
                 ],
             ),
         ],
+        primaryContactId: '12345',
         description: 'Opportunities are created for People and Companies that are interested in buying your products or services. Create Opportunities for People and Companies to move them through one of your Pipelines.',
         type: 'Existing Customer - Upgrade',
         monetaryAmount: 75000,

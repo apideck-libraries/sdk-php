@@ -116,4 +116,13 @@ enum WebhookEventType: string
     case AccountingExpenseCreated = 'accounting.expense.created';
     case AccountingExpenseUpdated = 'accounting.expense.updated';
     case AccountingExpenseDeleted = 'accounting.expense.deleted';
+    case EcommerceOrderCreated = 'ecommerce.order.created';
+    case EcommerceOrderUpdated = 'ecommerce.order.updated';
+    case EcommerceOrderDeleted = 'ecommerce.order.deleted';
+    case EcommerceProductCreated = 'ecommerce.product.created';
+    case EcommerceProductUpdated = 'ecommerce.product.updated';
+    case EcommerceProductDeleted = 'ecommerce.product.deleted';
+    case EcommerceCustomerCreated = 'ecommerce.customer.created';
+    case EcommerceCustomerUpdated = 'ecommerce.customer.updated';
+    case EcommerceCustomerDeleted = 'ecommerce.customer.deleted';
 }

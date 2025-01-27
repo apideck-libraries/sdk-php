@@ -167,6 +167,10 @@ $request = new Operations\AccountingInvoiceItemsAllRequest(
         name: 'Widgets Large',
         type: Components\InvoiceItemType::Service,
     ),
+    sort: new Components\InvoiceItemsSort(
+        by: Components\InvoiceItemsSortBy::UpdatedAt,
+        direction: Components\SortDirection::Desc,
+    ),
     passThrough: [
         'search' => 'San Francisco',
     ],
