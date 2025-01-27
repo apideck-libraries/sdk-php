@@ -45,6 +45,14 @@ class AccountingInvoiceItemsAllRequest
     public ?Components\InvoiceItemsFilter $filter = null;
 
     /**
+     * Apply sorting
+     *
+     * @var ?Components\InvoiceItemsSort $sort
+     */
+    #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=sort')]
+    public ?Components\InvoiceItemsSort $sort = null;
+
+    /**
      * Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
      *
      * @var ?array<string, mixed> $passThrough
@@ -91,16 +99,18 @@ class AccountingInvoiceItemsAllRequest
      * @param  ?string  $serviceId
      * @param  ?int  $limit
      * @param  ?Components\InvoiceItemsFilter  $filter
+     * @param  ?Components\InvoiceItemsSort  $sort
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields
      */
-    public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?Components\InvoiceItemsFilter $filter = null, ?array $passThrough = null, ?string $cursor = null, ?string $fields = null, ?bool $raw = false, ?int $limit = 20)
+    public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?Components\InvoiceItemsFilter $filter = null, ?Components\InvoiceItemsSort $sort = null, ?array $passThrough = null, ?string $cursor = null, ?string $fields = null, ?bool $raw = false, ?int $limit = 20)
     {
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
         $this->filter = $filter;
+        $this->sort = $sort;
         $this->passThrough = $passThrough;
         $this->cursor = $cursor;
         $this->fields = $fields;

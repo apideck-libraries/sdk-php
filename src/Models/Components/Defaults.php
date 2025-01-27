@@ -31,27 +31,27 @@ class Defaults
     /**
      * $options
      *
-     * @var ?array<mixed> $options
+     * @var ?array<SimpleFormFieldOption|FormFieldOptionGroup> $options
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\SimpleFormFieldOption|\Apideck\Unify\Models\Components\FormFieldOptionGroup>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $options = null;
 
     /**
      *
-     * @var string|int|float|bool|array<mixed>|null $value
+     * @var string|int|float|bool|array<string|int|float>|null $value
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|int|float|bool|array<mixed>')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|int|float|bool|array<string|int|float>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public string|int|float|bool|array|null $value = null;
 
     /**
      * @param  ?Target  $target
      * @param  ?string  $id
-     * @param  ?array<mixed>  $options
-     * @param  string|int|float|bool|array<mixed>|null  $value
+     * @param  ?array<SimpleFormFieldOption|FormFieldOptionGroup>  $options
+     * @param  string|int|float|bool|array<string|int|float>|null  $value
      */
     public function __construct(?Target $target = null, ?string $id = null, ?array $options = null, string|int|float|bool|array|null $value = null)
     {

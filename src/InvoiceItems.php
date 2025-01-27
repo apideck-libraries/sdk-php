@@ -312,6 +312,10 @@ class InvoiceItems
                         name: $request != null ? $request->filter->name : null,
                         type: $request != null ? $request->filter->type : null,
                     );
+                    $sort = new Components\InvoiceItemsSort(
+                        by: $request != null ? $request->sort->by : null,
+                        direction: $request != null ? $request->sort->direction : null,
+                    );
 
                     return $sdk->listIndividual(
                         request: new Operations\AccountingInvoiceItemsAllRequest(
@@ -322,6 +326,7 @@ class InvoiceItems
                             cursor: $nextCursor,
                             limit: $request != null ? $request->limit : null,
                             filter: $filter,
+                            sort: $sort,
                             passThrough: $request != null ? $request->passThrough : null,
                             fields: $request != null ? $request->fields : null,
                         ),
@@ -420,6 +425,10 @@ class InvoiceItems
                         name: $request != null ? $request->filter->name : null,
                         type: $request != null ? $request->filter->type : null,
                     );
+                    $sort = new Components\InvoiceItemsSort(
+                        by: $request != null ? $request->sort->by : null,
+                        direction: $request != null ? $request->sort->direction : null,
+                    );
 
                     return $sdk->listIndividual(
                         request: new Operations\AccountingInvoiceItemsAllRequest(
@@ -430,6 +439,7 @@ class InvoiceItems
                             cursor: $nextCursor,
                             limit: $request != null ? $request->limit : null,
                             filter: $filter,
+                            sort: $sort,
                             passThrough: $request != null ? $request->passThrough : null,
                             fields: $request != null ? $request->fields : null,
                         ),

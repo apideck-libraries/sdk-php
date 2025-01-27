@@ -58,10 +58,10 @@ class FormField
     /**
      * $options
      *
-     * @var ?array<mixed> $options
+     * @var ?array<SimpleFormFieldOption|FormFieldOptionGroup> $options
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\SimpleFormFieldOption|\Apideck\Unify\Models\Components\FormFieldOptionGroup>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $options = null;
 
@@ -153,7 +153,7 @@ class FormField
      * @param  ?bool  $required
      * @param  ?bool  $customField
      * @param  ?bool  $allowCustomValues
-     * @param  ?array<mixed>  $options
+     * @param  ?array<SimpleFormFieldOption|FormFieldOptionGroup>  $options
      * @param  ?string  $placeholder
      * @param  ?string  $description
      * @param  ?bool  $disabled

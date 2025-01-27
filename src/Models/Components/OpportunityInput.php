@@ -20,14 +20,6 @@ class OpportunityInput
     public string $title;
 
     /**
-     * The unique identifier of the primary contact associated with the opportunity.
-     *
-     * @var ?string $primaryContactId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('primary_contact_id')]
-    public ?string $primaryContactId;
-
-    /**
      * An array of unique identifiers of all contacts associated with the opportunity.
      *
      * @var ?array<string> $contactIds
@@ -56,6 +48,15 @@ class OpportunityInput
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * The unique identifier of the primary contact associated with the opportunity.
+     *
+     * @var ?string $primaryContactId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('primary_contact_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $primaryContactId = null;
 
     /**
      * A description of the opportunity.
@@ -277,10 +278,10 @@ class OpportunityInput
 
     /**
      * @param  string  $title
-     * @param  ?string  $primaryContactId
      * @param  ?array<string>  $contactIds
      * @param  ?array<CustomField>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?string  $primaryContactId
      * @param  ?string  $description
      * @param  ?string  $type
      * @param  ?float  $monetaryAmount
@@ -306,13 +307,13 @@ class OpportunityInput
      * @param  ?array<string>  $tags
      * @param  ?\DateTime  $stageLastChangedAt
      */
-    public function __construct(string $title, ?string $primaryContactId = null, ?array $contactIds = null, ?array $customFields = null, ?array $passThrough = null, ?string $description = null, ?string $type = null, ?float $monetaryAmount = null, ?Currency $currency = null, ?float $winProbability = null, ?LocalDate $closeDate = null, ?string $lossReasonId = null, ?string $lossReason = null, ?string $wonReasonId = null, ?string $wonReason = null, ?string $pipelineId = null, ?string $pipelineStageId = null, ?string $sourceId = null, ?string $leadId = null, ?string $leadSource = null, ?string $contactId = null, ?string $companyId = null, ?string $companyName = null, ?string $ownerId = null, ?string $priority = null, ?string $status = null, ?string $statusId = null, ?array $tags = null, ?\DateTime $stageLastChangedAt = null)
+    public function __construct(string $title, ?array $contactIds = null, ?array $customFields = null, ?array $passThrough = null, ?string $primaryContactId = null, ?string $description = null, ?string $type = null, ?float $monetaryAmount = null, ?Currency $currency = null, ?float $winProbability = null, ?LocalDate $closeDate = null, ?string $lossReasonId = null, ?string $lossReason = null, ?string $wonReasonId = null, ?string $wonReason = null, ?string $pipelineId = null, ?string $pipelineStageId = null, ?string $sourceId = null, ?string $leadId = null, ?string $leadSource = null, ?string $contactId = null, ?string $companyId = null, ?string $companyName = null, ?string $ownerId = null, ?string $priority = null, ?string $status = null, ?string $statusId = null, ?array $tags = null, ?\DateTime $stageLastChangedAt = null)
     {
         $this->title = $title;
-        $this->primaryContactId = $primaryContactId;
         $this->contactIds = $contactIds;
         $this->customFields = $customFields;
         $this->passThrough = $passThrough;
+        $this->primaryContactId = $primaryContactId;
         $this->description = $description;
         $this->type = $type;
         $this->monetaryAmount = $monetaryAmount;

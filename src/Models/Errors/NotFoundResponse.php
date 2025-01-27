@@ -55,7 +55,7 @@ class NotFoundResponse
      * @var string|array<string, mixed>|null $detail
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('detail')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|array<string, mixed>')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public string|array|null $detail = null;
 

@@ -43,7 +43,7 @@ bool $value = /* values here */
 
 ```php
 /**
-* @var array<mixed>
+* @var array<string|int|float>
 */
 array $value = /* values here */
 ```
