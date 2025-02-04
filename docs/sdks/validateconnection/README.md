@@ -38,6 +38,8 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\VaultValidateConnectionStateRequest(
     serviceId: 'pipedrive',
     unifiedApi: 'crm',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
 );
 
 $response = $sdk->vault->validateConnection->state(

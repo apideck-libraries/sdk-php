@@ -9,7 +9,6 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Errors;
 
 
-
 /** BadRequestResponse - Bad Request */
 class BadRequestResponse
 {

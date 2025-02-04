@@ -32,6 +32,8 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\EcommerceCustomersAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     filter: new Components\EcommerceCustomersFilter(
         email: 'elon@musk.com',
@@ -100,6 +102,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\EcommerceCustomersOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );

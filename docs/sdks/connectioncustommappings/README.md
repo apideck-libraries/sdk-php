@@ -33,6 +33,8 @@ $request = new Operations\VaultConnectionCustomMappingsAllRequest(
     unifiedApi: 'crm',
     serviceId: 'pipedrive',
     resource: 'leads',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     resourceId: '1234',
 );
 

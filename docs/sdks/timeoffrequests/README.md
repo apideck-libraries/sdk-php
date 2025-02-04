@@ -69,6 +69,8 @@ $request = new Operations\HrisTimeOffRequestsAddRequest(
         amount: 3.5,
         dayPart: 'morning',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -126,6 +128,8 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\HrisTimeOffRequestsAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     filter: new Components\TimeOffRequestsFilter(
         startDate: '2022-04-08',
@@ -199,6 +203,8 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\HrisTimeOffRequestsDeleteRequest(
     id: '<id>',
     employeeId: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -257,6 +263,8 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\HrisTimeOffRequestsOneRequest(
     id: '<id>',
     employeeId: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -351,6 +359,8 @@ $request = new Operations\HrisTimeOffRequestsUpdateRequest(
         amount: 3.5,
         dayPart: 'morning',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

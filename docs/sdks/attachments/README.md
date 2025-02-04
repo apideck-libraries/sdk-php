@@ -36,6 +36,8 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingAttachmentsAllRequest(
     referenceType: Components\AttachmentReferenceType::Invoice,
     referenceId: '12345',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -100,6 +102,8 @@ $request = new Operations\AccountingAttachmentsDeleteRequest(
     referenceType: Components\AttachmentReferenceType::Invoice,
     referenceId: '12345',
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -160,6 +164,8 @@ $request = new Operations\AccountingAttachmentsDownloadRequest(
     referenceType: Components\AttachmentReferenceType::Invoice,
     referenceId: '12345',
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -221,6 +227,8 @@ $request = new Operations\AccountingAttachmentsOneRequest(
     referenceType: Components\AttachmentReferenceType::Invoice,
     referenceId: '12345',
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );

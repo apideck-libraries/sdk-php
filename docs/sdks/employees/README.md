@@ -259,6 +259,8 @@ $request = new Operations\HrisEmployeesAddRequest(
         rowVersion: '1-12345',
         deleted: true,
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -316,6 +318,8 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\HrisEmployeesAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     filter: new Components\EmployeesFilter(
         companyId: '1234',
@@ -330,7 +334,6 @@ $request = new Operations\HrisEmployeesAllRequest(
     ),
     sort: new Components\EmployeesSort(
         by: Components\EmployeesSortBy::CreatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',
@@ -395,6 +398,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\HrisEmployeesDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -453,6 +458,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\HrisEmployeesOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     filter: new Components\EmployeesOneFilter(
         companyId: '1234',
@@ -744,6 +751,8 @@ $request = new Operations\HrisEmployeesUpdateRequest(
         rowVersion: '1-12345',
         deleted: true,
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

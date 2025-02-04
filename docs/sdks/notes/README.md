@@ -60,6 +60,8 @@ $request = new Operations\CrmNotesAddRequest(
         leadId: '12345',
         active: true,
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -116,6 +118,8 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\CrmNotesAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     passThrough: [
         'search' => 'San Francisco',
@@ -180,6 +184,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\CrmNotesDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -237,6 +243,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\CrmNotesOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -321,6 +329,8 @@ $request = new Operations\CrmNotesUpdateRequest(
         leadId: '12345',
         active: true,
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

@@ -102,6 +102,8 @@ $request = new Operations\AccountingLedgerAccountsAddRequest(
         lastReconciliationDate: LocalDate::parse('2020-09-30'),
         rowVersion: '1-12345',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -160,13 +162,14 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\AccountingLedgerAccountsAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     filter: new Components\LedgerAccountsFilter(
         updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
     ),
     sort: new Components\LedgerAccountsSort(
         by: Components\LedgerAccountsSortBy::UpdatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',
@@ -231,6 +234,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingLedgerAccountsDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -288,6 +293,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingLedgerAccountsOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -416,6 +423,8 @@ $request = new Operations\AccountingLedgerAccountsUpdateRequest(
         lastReconciliationDate: LocalDate::parse('2020-09-30'),
         rowVersion: '1-12345',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

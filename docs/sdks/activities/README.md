@@ -139,6 +139,8 @@ $request = new Operations\CrmActivitiesAddRequest(
         videoConferenceUrl: 'https://us02web.zoom.us/j/88120759396',
         videoConferenceId: 'zoom:88120759396',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -197,13 +199,14 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\CrmActivitiesAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     filter: new Components\ActivitiesFilter(
         updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
     ),
     sort: new Components\ActivitiesSort(
         by: Components\ActivitiesSortBy::CreatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',
@@ -268,6 +271,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\CrmActivitiesDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -325,6 +330,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\CrmActivitiesOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -490,6 +497,8 @@ $request = new Operations\CrmActivitiesUpdateRequest(
         videoConferenceUrl: 'https://us02web.zoom.us/j/88120759396',
         videoConferenceId: 'zoom:88120759396',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

@@ -55,6 +55,8 @@ $request = new Operations\FileStorageUploadSessionsAddRequest(
             ),
         ],
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -113,6 +115,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\FileStorageUploadSessionsDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -170,6 +174,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\FileStorageUploadSessionsFinishRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     digest: 'sha=fpRyg5eVQletdZqEKaFlqwBXJzM=',
 );
@@ -229,6 +235,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\FileStorageUploadSessionsOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );

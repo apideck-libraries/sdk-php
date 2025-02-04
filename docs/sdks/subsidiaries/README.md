@@ -56,6 +56,8 @@ $request = new Operations\AccountingSubsidiariesAddRequest(
         name: 'SpaceX',
         rowVersion: '1-12345',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -112,6 +114,8 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\AccountingSubsidiariesAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -173,6 +177,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingSubsidiariesDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -230,6 +236,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingSubsidiariesOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -310,6 +318,8 @@ $request = new Operations\AccountingSubsidiariesUpdateRequest(
         name: 'SpaceX',
         rowVersion: '1-12345',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

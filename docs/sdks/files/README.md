@@ -37,6 +37,8 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\FileStorageFilesAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     filter: new Components\FilesFilter(
         driveId: '1234',
@@ -45,7 +47,6 @@ $request = new Operations\FileStorageFilesAllRequest(
     ),
     sort: new Components\FilesSort(
         by: Components\FilesSortBy::UpdatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',
@@ -110,6 +111,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\FileStorageFilesDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -167,6 +170,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\FileStorageFilesDownloadRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -226,6 +231,8 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\FileStorageFilesExportRequest(
     id: '<id>',
     format: 'pdf',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -284,6 +291,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\FileStorageFilesOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -345,6 +354,8 @@ $request = new Operations\FileStorageFilesSearchRequest(
     filesSearch: new Components\FilesSearch(
         query: 'logo jpg',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     passThrough: [
         'search' => 'San Francisco',
@@ -432,6 +443,8 @@ $request = new Operations\FileStorageFilesUpdateRequest(
             ),
         ],
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

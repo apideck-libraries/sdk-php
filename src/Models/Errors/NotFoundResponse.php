@@ -9,7 +9,6 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Errors;
 
 
-
 /** NotFoundResponse - The specified resource was not found */
 class NotFoundResponse
 {

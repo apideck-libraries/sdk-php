@@ -62,6 +62,8 @@ $request = new Operations\SmsMessagesAddRequest(
             ),
         ],
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -118,6 +120,8 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\SmsMessagesAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -179,6 +183,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\SmsMessagesDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -236,6 +242,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\SmsMessagesOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -322,6 +330,8 @@ $request = new Operations\SmsMessagesUpdateRequest(
             ),
         ],
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

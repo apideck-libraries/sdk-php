@@ -71,6 +71,8 @@ $request = new Operations\IssueTrackingCollectionTicketsAddRequest(
         priority: Components\Priority::High,
         dueDate: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -129,10 +131,11 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\IssueTrackingCollectionTicketsAllRequest(
     collectionId: 'apideck-io',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     sort: new Components\TicketsSort(
         by: Components\TicketsSortBy::CreatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     filter: new Components\IssuesFilter(
         status: [
@@ -203,6 +206,8 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\IssueTrackingCollectionTicketsDeleteRequest(
     ticketId: '<id>',
     collectionId: 'apideck-io',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -261,6 +266,8 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\IssueTrackingCollectionTicketsOneRequest(
     ticketId: '<id>',
     collectionId: 'apideck-io',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -356,6 +363,8 @@ $request = new Operations\IssueTrackingCollectionTicketsUpdateRequest(
         priority: Components\Priority::High,
         dueDate: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
