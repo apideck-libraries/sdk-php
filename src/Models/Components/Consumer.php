@@ -110,6 +110,7 @@ class Consumer
      * @param  ?string  $created
      * @param  ?string  $modified
      * @param  ?string  $requestCountUpdated
+     * @phpstan-pure
      */
     public function __construct(string $consumerId, ?string $applicationId = null, ?ConsumerMetadata $metadata = null, ?array $connections = null, ?array $services = null, ?float $aggregatedRequestCount = null, ?RequestCountAllocation $requestCounts = null, ?string $created = null, ?string $modified = null, ?string $requestCountUpdated = null)
     {

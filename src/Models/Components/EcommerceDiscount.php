@@ -43,6 +43,7 @@ class EcommerceDiscount
      * @param  ?string  $code
      * @param  ?string  $amount
      * @param  ?string  $percentage
+     * @phpstan-pure
      */
     public function __construct(?string $code = null, ?string $amount = null, ?string $percentage = null)
     {

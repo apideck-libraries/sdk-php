@@ -42,6 +42,7 @@ class Price
      * @param  ?string  $perUnit
      * @param  ?string  $totalAmount
      * @param  ?Currency  $currency
+     * @phpstan-pure
      */
     public function __construct(?string $perUnit = null, ?string $totalAmount = null, ?Currency $currency = null)
     {

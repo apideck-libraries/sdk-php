@@ -30,6 +30,7 @@ class EmployeesSort
     /**
      * @param  ?EmployeesSortBy  $by
      * @param  ?SortDirection  $direction
+     * @phpstan-pure
      */
     public function __construct(?EmployeesSortBy $by = null, ?SortDirection $direction = SortDirection::Asc)
     {

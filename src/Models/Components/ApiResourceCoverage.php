@@ -54,6 +54,7 @@ class ApiResourceCoverage
      * @param  ?string  $name
      * @param  ?ResourceStatus  $status
      * @param  ?array<Coverage>  $coverage
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?ResourceStatus $status = null, ?array $coverage = null)
     {

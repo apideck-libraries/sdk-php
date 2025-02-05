@@ -253,6 +253,7 @@ class Address
      * @param  ?string  $website
      * @param  ?string  $notes
      * @param  ?string  $rowVersion
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?Type $type = null, ?string $string = null, ?string $name = null, ?string $line1 = null, ?string $line2 = null, ?string $line3 = null, ?string $line4 = null, ?string $streetNumber = null, ?string $city = null, ?string $state = null, ?string $postalCode = null, ?string $country = null, ?string $latitude = null, ?string $longitude = null, ?string $county = null, ?string $contactName = null, ?string $salutation = null, ?string $phoneNumber = null, ?string $fax = null, ?string $email = null, ?string $website = null, ?string $notes = null, ?string $rowVersion = null)
     {

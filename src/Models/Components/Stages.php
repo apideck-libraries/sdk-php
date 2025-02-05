@@ -62,6 +62,7 @@ class Stages
      * @param  ?string  $value
      * @param  ?int  $winProbability
      * @param  ?int  $displayOrder
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?string $value = null, ?int $winProbability = null, ?int $displayOrder = null)
     {

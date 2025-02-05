@@ -36,6 +36,7 @@ class LogsFilter
      * @param  ?string  $connectorId
      * @param  ?float  $statusCode
      * @param  ?string  $excludeUnifiedApis
+     * @phpstan-pure
      */
     public function __construct(?string $connectorId = null, ?float $statusCode = null, ?string $excludeUnifiedApis = null)
     {

@@ -67,6 +67,7 @@ class GetInvoiceItemResponse
      * @param  string  $resource
      * @param  string  $operation
      * @param  InvoiceItem  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, InvoiceItem $data)
     {

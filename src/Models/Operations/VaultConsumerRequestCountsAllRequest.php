@@ -48,6 +48,7 @@ class VaultConsumerRequestCountsAllRequest
      * @param  string  $startDatetime
      * @param  string  $endDatetime
      * @param  ?string  $appId
+     * @phpstan-pure
      */
     public function __construct(string $consumerId, string $startDatetime, string $endDatetime, ?string $appId = null)
     {

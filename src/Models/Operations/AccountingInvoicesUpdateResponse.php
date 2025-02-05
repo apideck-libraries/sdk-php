@@ -37,6 +37,7 @@ class AccountingInvoicesUpdateResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\UpdateInvoiceResponse  $updateInvoiceResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UpdateInvoiceResponse $updateInvoiceResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

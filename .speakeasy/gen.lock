@@ -1,24 +1,24 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 8c4b36cd08c587e8f2b1dbac4f9b76d0
-  docVersion: 10.11.0
-  speakeasyVersion: 1.476.2
-  generationVersion: 2.495.1
-  releaseVersion: 0.4.0
-  configChecksum: dfe58f7584884b2912483033c952f525
+  docChecksum: 068bc54ce549b3d15555126d167f788e
+  docVersion: 10.11.2
+  speakeasyVersion: 1.484.1
+  generationVersion: 2.503.2
+  releaseVersion: 0.4.1
+  configChecksum: 10409ec6f30074caf4371914ad9567cc
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php
   published: true
 features:
   php:
     constsAndDefaults: 0.2.0
-    core: 3.7.10
+    core: 3.7.13
     deprecations: 2.81.1
     errors: 0.3.0
     flattening: 2.81.1
     globalSecurity: 2.81.7
-    globalSecurityFlattening: 0.1.1
+    globalSecurityFlattening: 0.1.2
     globalServerURLs: 2.82.1
     globals: 2.82.2
     groups: 2.81.2
@@ -27,7 +27,7 @@ features:
     methodServerURLs: 2.82.1
     nameOverrides: 2.81.2
     nullables: 1.0.0
-    pagination: 0.1.0
+    pagination: 0.1.2
     responseFormat: 0.1.0
     retries: 0.1.0
     typeOverrides: 2.81.1

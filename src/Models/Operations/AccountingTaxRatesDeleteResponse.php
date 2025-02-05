@@ -37,6 +37,7 @@ class AccountingTaxRatesDeleteResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\DeleteTaxRateResponse  $deleteTaxRateResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteTaxRateResponse $deleteTaxRateResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

@@ -31,6 +31,7 @@ class ExtendPaths
     /**
      * @param  string  $path
      * @param  mixed  $value
+     * @phpstan-pure
      */
     public function __construct(string $path, mixed $value)
     {

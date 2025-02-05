@@ -177,6 +177,7 @@ class JournalEntryInput
      * @param  ?array<LinkedTrackingCategory>  $trackingCategories
      * @param  ?string  $accountingPeriod
      * @param  ?string  $rowVersion
+     * @phpstan-pure
      */
     public function __construct(?array $lineItems = null, ?\DateTime $postedAt = null, ?array $customFields = null, ?array $passThrough = null, ?string $title = null, ?float $currencyRate = null, ?Currency $currency = null, ?string $companyId = null, ?string $memo = null, ?string $journalSymbol = null, ?string $taxType = null, ?string $taxCode = null, ?string $number = null, ?array $trackingCategories = null, ?string $accountingPeriod = null, ?string $rowVersion = null)
     {

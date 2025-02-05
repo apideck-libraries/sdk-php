@@ -332,6 +332,7 @@ class Connection
      * @param  ?array<string, mixed>  $settings
      * @param  ?array<string, mixed>  $metadata
      * @param  ?float  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $serviceId = null, ?string $name = null, ?string $tagLine = null, ?string $unifiedApi = null, ?ConnectionState $state = null, ?IntegrationState $integrationState = null, ?AuthType $authType = null, ?OAuthGrantType $oauthGrantType = null, ?ConnectionStatus $status = null, ?bool $enabled = null, ?string $website = null, ?string $icon = null, ?string $logo = null, ?array $formFields = null, ?array $configuration = null, ?array $configurableResources = null, ?array $resourceSchemaSupport = null, ?array $resourceSettingsSupport = null, ?bool $validationSupport = null, ?bool $schemaSupport = null, ?array $settingsRequiredForAuthorization = null, ?array $subscriptions = null, ?bool $hasGuide = null, ?float $createdAt = null, ?array $customMappings = null, ?string $authorizeUrl = null, ?string $revokeUrl = null, ?array $settings = null, ?array $metadata = null, ?float $updatedAt = null)
     {

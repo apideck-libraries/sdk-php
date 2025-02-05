@@ -63,6 +63,7 @@ class CustomFieldFinder
      * @param  ?string  $finder
      * @param  ?string  $name
      * @param  ?string  $description
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, mixed $value = null, ?string $finder = null, ?string $name = null, ?string $description = null)
     {

@@ -37,6 +37,7 @@ class VaultCreateCallbackStateResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\CreateCallbackStateResponse  $createCallbackStateResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateCallbackStateResponse $createCallbackStateResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

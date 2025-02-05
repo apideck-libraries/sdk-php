@@ -440,6 +440,7 @@ class Job
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?int $sequence = null, ?Visibility $visibility = null, ?JobStatus $status = null, ?string $code = null, ?string $experience = null, ?string $requisitionId = null, ?Department $department = null, ?Branch $branch = null, ?array $hiringManagers = null, ?array $blocks = null, ?Salary $salary = null, ?array $links = null, ?bool $confidential = null, ?bool $availableToEmployees = null, ?array $addresses = null, ?array $customFields = null, ?string $slug = null, ?string $title = null, ?string $language = null, ?EmploymentTerms $employmentTerms = null, ?string $location = null, ?bool $remote = null, ?array $recruiters = null, ?array $followers = null, ?string $description = null, ?string $descriptionHtml = null, ?string $closing = null, ?string $closingHtml = null, ?LocalDate $closingDate = null, ?string $url = null, ?string $jobPortalUrl = null, ?string $recordUrl = null, ?array $tags = null, ?bool $deleted = null, ?string $ownerId = null, ?\DateTime $publishedAt = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {

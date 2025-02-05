@@ -67,6 +67,7 @@ class GetAccountingDepartmentResponse
      * @param  string  $resource
      * @param  string  $operation
      * @param  AccountingDepartment  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, AccountingDepartment $data)
     {

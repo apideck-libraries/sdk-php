@@ -63,6 +63,7 @@ class GetWebhooksResponse
      * @param  array<Webhook>  $data
      * @param  ?Meta  $meta
      * @param  ?Links  $links
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, array $data, ?Meta $meta = null, ?Links $links = null)
     {

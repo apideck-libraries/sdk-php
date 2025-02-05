@@ -42,6 +42,7 @@ class Tax
      * @param  ?string  $name
      * @param  ?bool  $employer
      * @param  ?float  $amount
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?bool $employer = null, ?float $amount = null)
     {

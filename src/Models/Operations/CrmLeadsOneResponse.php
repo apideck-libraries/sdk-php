@@ -37,6 +37,7 @@ class CrmLeadsOneResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetLeadResponse  $getLeadResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetLeadResponse $getLeadResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

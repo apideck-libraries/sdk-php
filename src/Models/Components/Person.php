@@ -104,6 +104,7 @@ class Person
      * @param  ?LocalDate  $birthday
      * @param  ?LocalDate  $deceasedOn
      * @param  ?CustomMappings  $customMappings
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $firstName = null, ?string $lastName = null, ?string $middleName = null, ?Gender $gender = null, ?string $initials = null, ?LocalDate $birthday = null, ?LocalDate $deceasedOn = null, ?CustomMappings $customMappings = null)
     {

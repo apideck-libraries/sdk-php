@@ -65,6 +65,7 @@ class ConnectorEvent
      * @param  ?string  $downstreamEventType
      * @param  ?array<string>  $resources
      * @param  ?string  $entityType
+     * @phpstan-pure
      */
     public function __construct(?string $eventType = null, ?EventSource $eventSource = null, ?string $downstreamEventType = null, ?array $resources = null, ?string $entityType = null)
     {

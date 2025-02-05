@@ -67,6 +67,7 @@ class GetBalanceSheetResponse
      * @param  string  $resource
      * @param  string  $operation
      * @param  BalanceSheet  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, BalanceSheet $data)
     {

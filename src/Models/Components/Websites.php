@@ -42,6 +42,7 @@ class Websites
      * @param  string  $url
      * @param  ?string  $id
      * @param  ?ApplicantType  $type
+     * @phpstan-pure
      */
     public function __construct(string $url, ?string $id = null, ?ApplicantType $type = null)
     {

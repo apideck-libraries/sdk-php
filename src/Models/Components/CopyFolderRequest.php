@@ -42,6 +42,7 @@ class CopyFolderRequest
      * @param  string  $parentFolderId
      * @param  ?string  $name
      * @param  ?array<PassThroughBody>  $passThrough
+     * @phpstan-pure
      */
     public function __construct(string $parentFolderId, ?string $name = null, ?array $passThrough = null)
     {

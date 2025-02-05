@@ -157,7 +157,6 @@ $request = new Operations\CrmOpportunitiesAllRequest(
     ),
     sort: new Components\OpportunitiesSort(
         by: Components\OpportunitiesSortBy::CreatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',

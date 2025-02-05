@@ -37,6 +37,7 @@ class IssueTrackingCollectionTicketsAddResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\CreateTicketResponse  $createTicketResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateTicketResponse $createTicketResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

@@ -227,7 +227,6 @@ $request = new Operations\CrmCompaniesAllRequest(
     ),
     sort: new Components\CompaniesSort(
         by: Components\CompaniesSortBy::CreatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',

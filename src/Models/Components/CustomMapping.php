@@ -102,6 +102,7 @@ class CustomMapping
      * @param  ?string  $description
      * @param  ?string  $consumerId
      * @param  ?string  $example
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $label = null, ?string $value = null, ?string $key = null, ?bool $required = null, ?bool $customField = null, ?string $description = null, ?string $consumerId = null, ?string $example = null)
     {

@@ -98,6 +98,7 @@ class Data
      * @param  ?string  $modified
      * @param  ?string  $requestCountUpdated
      * @param  ?array<string>  $services
+     * @phpstan-pure
      */
     public function __construct(?string $consumerId = null, ?string $applicationId = null, ?ConsumerMetadata $metadata = null, ?float $aggregatedRequestCount = null, ?RequestCountAllocation $requestCounts = null, ?string $created = null, ?string $modified = null, ?string $requestCountUpdated = null, ?array $services = null)
     {

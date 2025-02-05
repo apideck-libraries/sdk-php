@@ -37,6 +37,7 @@ class ConnectorApiResourceCoverageOneResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetApiResourceCoverageResponse  $getApiResourceCoverageResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetApiResourceCoverageResponse $getApiResourceCoverageResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

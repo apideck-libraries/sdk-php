@@ -32,6 +32,7 @@ class Deduction
     /**
      * @param  ?string  $name
      * @param  ?float  $amount
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?float $amount = null)
     {

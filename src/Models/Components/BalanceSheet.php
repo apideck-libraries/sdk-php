@@ -22,6 +22,7 @@ class BalanceSheet
 
     /**
      * @param  array<Reports>  $reports
+     * @phpstan-pure
      */
     public function __construct(array $reports)
     {

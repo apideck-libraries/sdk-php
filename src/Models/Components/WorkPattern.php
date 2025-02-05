@@ -32,6 +32,7 @@ class WorkPattern
     /**
      * @param  ?OddWeeks  $oddWeeks
      * @param  ?EvenWeeks  $evenWeeks
+     * @phpstan-pure
      */
     public function __construct(?OddWeeks $oddWeeks = null, ?EvenWeeks $evenWeeks = null)
     {

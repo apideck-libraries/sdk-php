@@ -30,6 +30,7 @@ class LedgerAccountsSort
     /**
      * @param  ?LedgerAccountsSortBy  $by
      * @param  ?SortDirection  $direction
+     * @phpstan-pure
      */
     public function __construct(?LedgerAccountsSortBy $by = null, ?SortDirection $direction = SortDirection::Asc)
     {

@@ -37,6 +37,7 @@ class CrmContactsDeleteResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\DeleteContactResponse  $deleteContactResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteContactResponse $deleteContactResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

@@ -21,6 +21,7 @@ class EmployeesOneFilter
 
     /**
      * @param  ?string  $companyId
+     * @phpstan-pure
      */
     public function __construct(?string $companyId = null)
     {

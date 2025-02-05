@@ -41,6 +41,7 @@ class ConnectorApisAllResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetApisResponse  $getApisResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetApisResponse $getApisResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

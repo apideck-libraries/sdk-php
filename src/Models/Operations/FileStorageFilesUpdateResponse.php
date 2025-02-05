@@ -37,6 +37,7 @@ class FileStorageFilesUpdateResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\UpdateFileResponse  $updateFileResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UpdateFileResponse $updateFileResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

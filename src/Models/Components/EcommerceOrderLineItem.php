@@ -182,6 +182,7 @@ class EcommerceOrderLineItem
      * @param  ?string  $refundedAmount
      * @param  ?string  $refundedQuantity
      * @param  ?string  $subTotal
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?array $options = null, ?string $quantity = null, ?string $totalAmount = null, ?array $discounts = null, ?string $id = null, ?string $productId = null, ?string $variantId = null, ?string $sku = null, ?string $description = null, ?string $unitPrice = null, ?string $taxRate = null, ?string $taxAmount = null, ?bool $isRefunded = null, ?string $refundedAmount = null, ?string $refundedQuantity = null, ?string $subTotal = null)
     {

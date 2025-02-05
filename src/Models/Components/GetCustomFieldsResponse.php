@@ -41,6 +41,7 @@ class GetCustomFieldsResponse
      * @param  int  $statusCode
      * @param  string  $status
      * @param  array<CustomFieldFinder>  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, array $data)
     {

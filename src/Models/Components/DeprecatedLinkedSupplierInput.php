@@ -37,6 +37,7 @@ class DeprecatedLinkedSupplierInput
     /**
      * @param  ?Address  $address
      * @param  ?string  $displayName
+     * @phpstan-pure
      */
     public function __construct(?Address $address = null, ?string $displayName = null)
     {

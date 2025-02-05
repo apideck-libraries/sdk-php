@@ -153,6 +153,7 @@ class ActivityAttendee
      * @param  ?string  $contactId
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $prefix = null, ?string $suffix = null, ?string $emailAddress = null, ?bool $isOrganizer = null, ?ActivityAttendeeStatus $status = null, ?string $userId = null, ?string $contactId = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {

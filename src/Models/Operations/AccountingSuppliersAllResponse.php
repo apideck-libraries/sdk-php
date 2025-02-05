@@ -41,6 +41,7 @@ class AccountingSuppliersAllResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetSuppliersResponse  $getSuppliersResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetSuppliersResponse $getSuppliersResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

@@ -57,6 +57,7 @@ class TaxRatesFilter
      * @param  ?bool  $expenses
      * @param  ?bool  $liabilities
      * @param  ?bool  $revenue
+     * @phpstan-pure
      */
     public function __construct(?bool $assets = null, ?bool $equity = null, ?bool $expenses = null, ?bool $liabilities = null, ?bool $revenue = null)
     {

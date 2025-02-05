@@ -64,6 +64,7 @@ class ConnectorDoc
      * @param  ?Audience  $audience
      * @param  ?Format  $format
      * @param  ?string  $url
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?Audience $audience = null, ?Format $format = null, ?string $url = null)
     {

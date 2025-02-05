@@ -103,6 +103,7 @@ class ActivityAttendeeInput
      * @param  ?string  $emailAddress
      * @param  ?bool  $isOrganizer
      * @param  ?ActivityAttendeeStatus  $status
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $prefix = null, ?string $suffix = null, ?string $emailAddress = null, ?bool $isOrganizer = null, ?ActivityAttendeeStatus $status = null)
     {

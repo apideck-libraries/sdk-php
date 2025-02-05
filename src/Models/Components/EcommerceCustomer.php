@@ -158,6 +158,7 @@ class EcommerceCustomer
      * @param  ?CustomMappings  $customMappings
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(string $id, ?array $addresses = null, ?array $orders = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $companyName = null, ?CustomerStatus $status = null, ?Currency $currency = null, ?array $emails = null, ?array $phoneNumbers = null, ?CustomMappings $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

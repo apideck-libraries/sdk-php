@@ -37,6 +37,7 @@ class AccountingBalanceSheetOneResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetBalanceSheetResponse  $getBalanceSheetResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetBalanceSheetResponse $getBalanceSheetResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

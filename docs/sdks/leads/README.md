@@ -205,7 +205,6 @@ $request = new Operations\CrmLeadsAllRequest(
     ),
     sort: new Components\LeadsSort(
         by: Components\LeadsSortBy::CreatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',

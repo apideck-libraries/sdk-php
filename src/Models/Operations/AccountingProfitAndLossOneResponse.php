@@ -37,6 +37,7 @@ class AccountingProfitAndLossOneResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetProfitAndLossResponse  $getProfitAndLossResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetProfitAndLossResponse $getProfitAndLossResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

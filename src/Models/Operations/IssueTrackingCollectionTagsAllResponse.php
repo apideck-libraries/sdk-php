@@ -41,6 +41,7 @@ class IssueTrackingCollectionTagsAllResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetCollectionTagsResponse  $getCollectionTagsResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetCollectionTagsResponse $getCollectionTagsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

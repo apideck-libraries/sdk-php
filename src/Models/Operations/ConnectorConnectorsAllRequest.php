@@ -49,6 +49,7 @@ class ConnectorConnectorsAllRequest
      * @param  ?int  $limit
      * @param  ?Components\ConnectorsFilter  $filter
      * @param  ?string  $cursor
+     * @phpstan-pure
      */
     public function __construct(?string $appId = null, ?Components\ConnectorsFilter $filter = null, ?string $cursor = null, ?int $limit = 20)
     {

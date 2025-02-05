@@ -117,7 +117,6 @@ $request = new Operations\IssueTrackingCollectionTicketCommentsAllRequest(
     serviceId: 'salesforce',
     sort: new Components\CommentsSort(
         by: Components\CommentsSortBy::CreatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',

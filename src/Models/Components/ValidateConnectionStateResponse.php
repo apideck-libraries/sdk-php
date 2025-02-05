@@ -40,6 +40,7 @@ class ValidateConnectionStateResponse
      * @param  int  $statusCode
      * @param  string  $status
      * @param  ValidateConnectionStateResponseData  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, ValidateConnectionStateResponseData $data)
     {

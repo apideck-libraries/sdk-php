@@ -30,6 +30,7 @@ class GrossProfit
     /**
      * @param  mixed  $records
      * @param  ?float  $total
+     * @phpstan-pure
      */
     public function __construct(mixed $records, ?float $total = null)
     {

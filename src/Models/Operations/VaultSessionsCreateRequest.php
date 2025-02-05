@@ -40,6 +40,7 @@ class VaultSessionsCreateRequest
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?Components\Session  $session
+     * @phpstan-pure
      */
     public function __construct(?string $consumerId = null, ?string $appId = null, ?Components\Session $session = null)
     {

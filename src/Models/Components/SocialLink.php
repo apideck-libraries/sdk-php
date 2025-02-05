@@ -41,6 +41,7 @@ class SocialLink
      * @param  string  $url
      * @param  ?string  $id
      * @param  ?string  $type
+     * @phpstan-pure
      */
     public function __construct(string $url, ?string $id = null, ?string $type = null)
     {

@@ -37,6 +37,7 @@ class CrmOpportunitiesDeleteResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\DeleteOpportunityResponse  $deleteOpportunityResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteOpportunityResponse $deleteOpportunityResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

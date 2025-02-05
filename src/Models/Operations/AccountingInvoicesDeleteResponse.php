@@ -37,6 +37,7 @@ class AccountingInvoicesDeleteResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\DeleteInvoiceResponse  $deleteInvoiceResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteInvoiceResponse $deleteInvoiceResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

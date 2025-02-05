@@ -41,6 +41,7 @@ class CrmPipelinesAllResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetPipelinesResponse  $getPipelinesResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetPipelinesResponse $getPipelinesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

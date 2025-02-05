@@ -63,6 +63,7 @@ class SharedLinkInput
      * @param  ?string  $downloadUrl
      * @param  ?Scope  $scope
      * @param  ?string  $password
+     * @phpstan-pure
      */
     public function __construct(?string $targetId = null, ?array $passThrough = null, ?string $downloadUrl = null, ?Scope $scope = null, ?string $password = null)
     {

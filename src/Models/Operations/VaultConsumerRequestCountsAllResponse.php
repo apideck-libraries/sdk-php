@@ -37,6 +37,7 @@ class VaultConsumerRequestCountsAllResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\ConsumerRequestCountsInDateRangeResponse  $consumerRequestCountsInDateRangeResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\ConsumerRequestCountsInDateRangeResponse $consumerRequestCountsInDateRangeResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

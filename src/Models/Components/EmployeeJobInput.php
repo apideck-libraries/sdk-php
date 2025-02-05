@@ -135,6 +135,7 @@ class EmployeeJobInput
      * @param  ?bool  $isPrimary
      * @param  ?bool  $isManager
      * @param  ?EmployeeJobStatus  $status
+     * @phpstan-pure
      */
     public function __construct(?Address $location = null, ?string $title = null, ?string $role = null, ?LocalDate $startDate = null, ?LocalDate $endDate = null, ?float $compensationRate = null, ?Currency $currency = null, ?PaymentUnit $paymentUnit = null, ?LocalDate $hiredAt = null, ?bool $isPrimary = null, ?bool $isManager = null, ?EmployeeJobStatus $status = null)
     {

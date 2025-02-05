@@ -37,6 +37,7 @@ class FileStorageUploadSessionsOneResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetUploadSessionResponse  $getUploadSessionResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetUploadSessionResponse $getUploadSessionResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

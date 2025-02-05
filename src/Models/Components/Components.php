@@ -48,6 +48,7 @@ class Components
      * @param  ?string  $id
      * @param  ?float  $rate
      * @param  ?bool  $compound
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?string $id = null, ?float $rate = null, ?bool $compound = null)
     {

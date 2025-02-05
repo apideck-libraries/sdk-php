@@ -214,6 +214,7 @@ class UnifiedFile
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
+     * @phpstan-pure
      */
     public function __construct(string $id, ?string $name = null, ?FileType $type = null, ?bool $downloadable = null, ?Owner $owner = null, ?array $parentFolders = null, ?bool $parentFoldersComplete = null, ?Permissions $permissions = null, ?bool $exportable = null, ?string $downstreamId = null, ?string $description = null, ?string $path = null, ?string $mimeType = null, ?int $size = null, ?array $exportFormats = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {

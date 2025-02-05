@@ -42,6 +42,7 @@ class Website
      * @param  string  $url
      * @param  ?string  $id
      * @param  ?WebsiteType  $type
+     * @phpstan-pure
      */
     public function __construct(string $url, ?string $id = null, ?WebsiteType $type = null)
     {

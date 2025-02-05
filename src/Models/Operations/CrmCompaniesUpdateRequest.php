@@ -66,6 +66,7 @@ class CrmCompaniesUpdateRequest
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId
+     * @phpstan-pure
      */
     public function __construct(string $id, Components\CompanyInput $company, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?bool $raw = false)
     {

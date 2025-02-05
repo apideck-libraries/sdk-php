@@ -169,7 +169,6 @@ $request = new Operations\AccountingInvoiceItemsAllRequest(
     ),
     sort: new Components\InvoiceItemsSort(
         by: Components\InvoiceItemsSortBy::UpdatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',

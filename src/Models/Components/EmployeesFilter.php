@@ -93,6 +93,7 @@ class EmployeesFilter
      * @param  ?EmployeesFilterEmploymentStatus  $employmentStatus
      * @param  ?string  $employeeNumber
      * @param  ?string  $departmentId
+     * @phpstan-pure
      */
     public function __construct(?string $companyId = null, ?string $email = null, ?string $firstName = null, ?string $title = null, ?string $lastName = null, ?string $managerId = null, ?EmployeesFilterEmploymentStatus $employmentStatus = null, ?string $employeeNumber = null, ?string $departmentId = null)
     {

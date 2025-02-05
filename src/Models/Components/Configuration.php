@@ -32,6 +32,7 @@ class Configuration
     /**
      * @param  ?string  $resource
      * @param  ?array<Defaults>  $defaults
+     * @phpstan-pure
      */
     public function __construct(?string $resource = null, ?array $defaults = null)
     {

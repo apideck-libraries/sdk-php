@@ -30,6 +30,7 @@ class FilesSort
     /**
      * @param  ?FilesSortBy  $by
      * @param  ?SortDirection  $direction
+     * @phpstan-pure
      */
     public function __construct(?FilesSortBy $by = null, ?SortDirection $direction = SortDirection::Asc)
     {

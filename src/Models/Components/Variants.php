@@ -104,6 +104,7 @@ class Variants
      * @param  ?string  $inventoryQuantity
      * @param  ?string  $weight
      * @param  ?string  $weightUnit
+     * @phpstan-pure
      */
     public function __construct(?array $options = null, ?array $images = null, ?string $id = null, ?string $name = null, ?string $price = null, ?string $sku = null, ?string $inventoryQuantity = null, ?string $weight = null, ?string $weightUnit = null)
     {

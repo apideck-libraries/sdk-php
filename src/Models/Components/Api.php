@@ -127,6 +127,7 @@ class Api
      * @param  ?array<string>  $events
      * @param  ?string  $description
      * @param  ?string  $postmanCollectionId
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?ApiType $type = null, ?string $name = null, ?ApiStatus $status = null, ?string $specUrl = null, ?string $apiReferenceUrl = null, ?array $categories = null, ?array $resources = null, ?array $events = null, ?string $description = null, ?string $postmanCollectionId = null)
     {

@@ -51,6 +51,7 @@ class CustomField
      * @param  ?string  $name
      * @param  ?string  $description
      * @param  string|float|bool|Four|array<string>|array<Six>|null  $value
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?string $description = null, string|float|bool|Four|array|null $value = null)
     {

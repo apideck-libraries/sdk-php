@@ -53,6 +53,7 @@ class BillPaymentAllocations
      * @param  ?string  $allocationId
      * @param  ?string  $id
      * @param  ?float  $amount
+     * @phpstan-pure
      */
     public function __construct(?BillPaymentAllocationType $type = null, ?string $allocationId = null, ?string $id = null, ?float $amount = null)
     {

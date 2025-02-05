@@ -37,6 +37,7 @@ class VaultConsumersDeleteResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\DeleteConsumerResponse  $deleteConsumerResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteConsumerResponse $deleteConsumerResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

@@ -41,6 +41,7 @@ class HrisEmployeesAllResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetEmployeesResponse  $getEmployeesResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetEmployeesResponse $getEmployeesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

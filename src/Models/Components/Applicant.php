@@ -460,6 +460,7 @@ class Applicant
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?string $coverLetter = null, ?string $headline = null, ?array $emails = null, ?array $customFields = null, ?array $phoneNumbers = null, ?array $addresses = null, ?array $websites = null, ?array $socialLinks = null, ?string $stageId = null, ?string $recruiterId = null, ?string $coordinatorId = null, ?string $sourceId = null, ?bool $confidential = null, ?bool $anonymized = null, ?string $cvUrl = null, ?array $passThrough = null, ?string $firstName = null, ?string $lastName = null, ?string $middleName = null, ?string $initials = null, ?LocalDate $birthday = null, ?string $jobUrl = null, ?string $photoUrl = null, ?string $title = null, ?array $applicationIds = null, ?array $applications = null, ?array $followers = null, ?array $sources = null, ?array $tags = null, ?bool $archived = null, ?\DateTime $lastInteractionAt = null, ?string $ownerId = null, ?string $sourcedBy = null, ?string $recordUrl = null, ?\DateTime $rejectedAt = null, ?CustomMappings $customMappings = null, ?bool $deleted = null, ?string $deletedBy = null, ?\DateTime $deletedAt = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {

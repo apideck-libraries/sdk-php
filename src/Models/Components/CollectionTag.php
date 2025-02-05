@@ -42,6 +42,7 @@ class CollectionTag
      * @param  ?string  $id
      * @param  ?string  $name
      * @param  ?CustomMappings  $customMappings
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?CustomMappings $customMappings = null)
     {

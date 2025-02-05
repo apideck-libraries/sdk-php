@@ -164,6 +164,7 @@ class ConsumerConnection
      * @param  ?Settings  $settings
      * @param  ?array<string, mixed>  $metadata
      * @param  ?string  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?string $icon = null, ?string $logo = null, ?string $website = null, ?string $tagLine = null, ?string $serviceId = null, ?string $unifiedApi = null, ?string $consumerId = null, ?AuthType $authType = null, ?bool $enabled = null, ?string $createdAt = null, ?ConnectionState $state = null, ?Settings $settings = null, ?array $metadata = null, ?string $updatedAt = null)
     {

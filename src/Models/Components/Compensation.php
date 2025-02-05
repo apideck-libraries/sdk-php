@@ -74,6 +74,7 @@ class Compensation
      * @param  ?array<Tax>  $taxes
      * @param  ?array<Deduction>  $deductions
      * @param  ?array<Benefit>  $benefits
+     * @phpstan-pure
      */
     public function __construct(?string $employeeId = null, ?float $netPay = null, ?float $grossPay = null, ?array $taxes = null, ?array $deductions = null, ?array $benefits = null)
     {

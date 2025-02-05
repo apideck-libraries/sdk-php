@@ -23,6 +23,7 @@ class Permissions
 
     /**
      * @param  ?bool  $download
+     * @phpstan-pure
      */
     public function __construct(?bool $download = null)
     {

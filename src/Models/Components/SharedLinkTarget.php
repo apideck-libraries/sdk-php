@@ -42,6 +42,7 @@ class SharedLinkTarget
      * @param  string  $id
      * @param  ?string  $name
      * @param  ?FileType  $type
+     * @phpstan-pure
      */
     public function __construct(string $id, ?string $name = null, ?FileType $type = null)
     {

@@ -227,6 +227,7 @@ class User
      * @param  ?CustomMappings  $customMappings
      * @param  ?string  $updatedAt
      * @param  ?string  $createdAt
+     * @phpstan-pure
      */
     public function __construct(array $emails, ?string $id = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $passThrough = null, ?string $parentId = null, ?string $username = null, ?string $firstName = null, ?string $lastName = null, ?string $title = null, ?string $division = null, ?string $department = null, ?string $companyName = null, ?string $employeeNumber = null, ?string $description = null, ?string $image = null, ?string $language = null, ?string $status = null, ?CustomMappings $customMappings = null, ?string $updatedAt = null, ?string $createdAt = null)
     {

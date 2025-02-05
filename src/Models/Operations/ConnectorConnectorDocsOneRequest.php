@@ -39,6 +39,7 @@ class ConnectorConnectorDocsOneRequest
      * @param  string  $id
      * @param  string  $docId
      * @param  ?string  $appId
+     * @phpstan-pure
      */
     public function __construct(string $id, string $docId, ?string $appId = null)
     {

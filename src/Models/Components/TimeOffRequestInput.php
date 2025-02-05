@@ -166,6 +166,7 @@ class TimeOffRequestInput
      * @param  ?Units  $units
      * @param  ?float  $amount
      * @param  ?string  $dayPart
+     * @phpstan-pure
      */
     public function __construct(?Notes $notes = null, ?array $passThrough = null, ?string $policyType = null, ?string $employeeId = null, ?string $policyId = null, ?TimeOffRequestStatusStatus $status = null, ?string $description = null, ?string $startDate = null, ?string $endDate = null, ?string $requestDate = null, ?RequestType $requestType = null, ?string $approvalDate = null, ?Units $units = null, ?float $amount = null, ?string $dayPart = null)
     {

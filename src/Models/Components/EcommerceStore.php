@@ -82,6 +82,7 @@ class EcommerceStore
      * @param  ?CustomMappings  $customMappings
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(string $id, ?string $name = null, ?string $storeUrl = null, ?string $adminUrl = null, ?CustomMappings $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

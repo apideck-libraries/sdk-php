@@ -63,6 +63,7 @@ class AgedDebtors
      * @param  ?int  $periodCount
      * @param  ?int  $periodLength
      * @param  ?array<OutstandingBalanceByCustomer>  $outstandingBalances
+     * @phpstan-pure
      */
     public function __construct(?\DateTime $reportGeneratedAt = null, ?LocalDate $reportAsOfDate = null, ?array $outstandingBalances = null, ?int $periodCount = 4, ?int $periodLength = 30)
     {

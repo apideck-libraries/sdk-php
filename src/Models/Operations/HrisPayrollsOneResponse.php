@@ -37,6 +37,7 @@ class HrisPayrollsOneResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetPayrollResponse  $getPayrollResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetPayrollResponse $getPayrollResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

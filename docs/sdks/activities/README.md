@@ -203,7 +203,6 @@ $request = new Operations\CrmActivitiesAllRequest(
     ),
     sort: new Components\ActivitiesSort(
         by: Components\ActivitiesSortBy::CreatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',

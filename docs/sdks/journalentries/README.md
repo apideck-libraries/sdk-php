@@ -203,7 +203,6 @@ $request = new Operations\AccountingJournalEntriesAllRequest(
     ),
     sort: new Components\JournalEntriesSort(
         by: Components\JournalEntriesSortBy::UpdatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',

@@ -40,6 +40,7 @@ class UpdateWebhookResponse
      * @param  int  $statusCode
      * @param  string  $status
      * @param  Webhook  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, Webhook $data)
     {

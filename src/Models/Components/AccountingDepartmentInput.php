@@ -75,6 +75,7 @@ class AccountingDepartmentInput
      * @param  ?string  $parentId
      * @param  ?string  $name
      * @param  ?string  $rowVersion
+     * @phpstan-pure
      */
     public function __construct(?DepartmentStatus $status = null, ?array $subsidiaries = null, ?array $passThrough = null, ?string $parentId = null, ?string $name = null, ?string $rowVersion = null)
     {

@@ -187,6 +187,7 @@ class TaxRateInput
      * @param  ?string  $originalTaxRateId
      * @param  ?TaxRateStatus  $status
      * @param  ?string  $rowVersion
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?array $passThrough = null, ?array $subsidiaries = null, ?array $customFields = null, ?string $id = null, ?string $code = null, ?string $description = null, ?float $effectiveTaxRate = null, ?float $totalTaxRate = null, ?string $taxPayableAccountId = null, ?string $taxRemittedAccountId = null, ?array $components = null, ?string $type = null, ?string $reportTaxType = null, ?string $originalTaxRateId = null, ?TaxRateStatus $status = null, ?string $rowVersion = null)
     {

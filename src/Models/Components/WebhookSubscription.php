@@ -64,6 +64,7 @@ class WebhookSubscription
      * @param  ?array<string>  $downstreamEventTypes
      * @param  ?string  $executeUrl
      * @param  ?string  $createdAt
+     * @phpstan-pure
      */
     public function __construct(?string $downstreamId = null, ?array $unifyEventTypes = null, ?array $downstreamEventTypes = null, ?string $executeUrl = null, ?string $createdAt = null)
     {

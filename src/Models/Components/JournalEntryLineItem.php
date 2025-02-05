@@ -165,6 +165,7 @@ class JournalEntryLineItem
      * @param  ?LinkedCustomer  $customer
      * @param  ?LinkedSupplier  $supplier
      * @param  ?int  $lineNumber
+     * @phpstan-pure
      */
     public function __construct(JournalEntryLineItemType $type, ?string $id = null, ?LinkedTaxRate $taxRate = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $departmentId = null, ?string $locationId = null, ?string $description = null, ?float $taxAmount = null, ?float $subTotal = null, ?float $totalAmount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?LinkedCustomer $customer = null, ?LinkedSupplier $supplier = null, ?int $lineNumber = null)
     {

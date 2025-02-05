@@ -40,6 +40,7 @@ class CreateCallbackStateResponse
      * @param  int  $statusCode
      * @param  string  $status
      * @param  CreateCallbackStateResponseData  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, CreateCallbackStateResponseData $data)
     {

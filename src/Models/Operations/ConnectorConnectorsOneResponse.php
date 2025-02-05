@@ -37,6 +37,7 @@ class ConnectorConnectorsOneResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetConnectorResponse  $getConnectorResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetConnectorResponse $getConnectorResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

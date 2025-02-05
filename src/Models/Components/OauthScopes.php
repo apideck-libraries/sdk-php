@@ -43,6 +43,7 @@ class OauthScopes
      * @param  ?string  $id
      * @param  ?string  $label
      * @param  ?array<string>  $defaultApis
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $label = null, ?array $defaultApis = null)
     {

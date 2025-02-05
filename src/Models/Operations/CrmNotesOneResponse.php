@@ -37,6 +37,7 @@ class CrmNotesOneResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetNoteResponse  $getNoteResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetNoteResponse $getNoteResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

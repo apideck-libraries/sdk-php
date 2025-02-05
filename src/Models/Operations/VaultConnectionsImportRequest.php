@@ -58,6 +58,7 @@ class VaultConnectionsImportRequest
      * @param  Components\ConnectionImportData  $connectionImportData
      * @param  ?string  $consumerId
      * @param  ?string  $appId
+     * @phpstan-pure
      */
     public function __construct(string $serviceId, string $unifiedApi, Components\ConnectionImportData $connectionImportData, ?string $consumerId = null, ?string $appId = null)
     {

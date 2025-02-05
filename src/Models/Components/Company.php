@@ -442,6 +442,7 @@ class Company
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?array $bankAccounts = null, ?array $websites = null, ?array $addresses = null, ?array $socialLinks = null, ?array $phoneNumbers = null, ?array $emails = null, ?CompanyRowType $rowType = null, ?array $customFields = null, ?bool $deleted = null, ?array $passThrough = null, ?int $interactionCount = null, ?string $ownerId = null, ?string $image = null, ?string $description = null, ?string $vatNumber = null, ?Currency $currency = null, ?string $status = null, ?string $fax = null, ?string $annualRevenue = null, ?string $numberOfEmployees = null, ?string $industry = null, ?string $ownership = null, ?string $salesTaxNumber = null, ?string $payeeNumber = null, ?string $abnOrTfn = null, ?string $abnBranch = null, ?string $acn = null, ?string $firstName = null, ?string $lastName = null, ?string $parentId = null, ?array $tags = null, ?bool $readOnly = null, ?\DateTime $lastActivityAt = null, ?string $salutation = null, ?LocalDate $birthday = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {

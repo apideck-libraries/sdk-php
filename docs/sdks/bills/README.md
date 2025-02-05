@@ -244,7 +244,6 @@ $request = new Operations\AccountingBillsAllRequest(
     ),
     sort: new Components\BillsSort(
         by: Components\By::UpdatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',

@@ -74,6 +74,7 @@ class LinkedCustomer
      * @param  ?string  $displayId
      * @param  ?string  $displayName
      * @param  ?string  $companyName
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?string $email = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null)
     {

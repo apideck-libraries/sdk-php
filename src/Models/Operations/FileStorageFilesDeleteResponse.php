@@ -37,6 +37,7 @@ class FileStorageFilesDeleteResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\DeleteFileResponse  $deleteFileResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteFileResponse $deleteFileResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

@@ -39,6 +39,7 @@ class RequestCountAllocation
      * @param  ?float  $unify
      * @param  ?float  $proxy
      * @param  ?float  $vault
+     * @phpstan-pure
      */
     public function __construct(?float $unify = null, ?float $proxy = null, ?float $vault = null)
     {

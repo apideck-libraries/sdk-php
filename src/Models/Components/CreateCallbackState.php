@@ -22,6 +22,7 @@ class CreateCallbackState
 
     /**
      * @param  ?string  $redirectUri
+     * @phpstan-pure
      */
     public function __construct(?string $redirectUri = null)
     {

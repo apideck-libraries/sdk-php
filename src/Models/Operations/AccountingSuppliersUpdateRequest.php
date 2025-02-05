@@ -66,6 +66,7 @@ class AccountingSuppliersUpdateRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?bool  $raw
+     * @phpstan-pure
      */
     public function __construct(string $id, Components\SupplierInput $supplier, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?bool $raw = false)
     {

@@ -37,6 +37,7 @@ class AccountingDepartmentsDeleteResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\DeleteAccountingDepartmentResponse  $deleteAccountingDepartmentResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteAccountingDepartmentResponse $deleteAccountingDepartmentResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

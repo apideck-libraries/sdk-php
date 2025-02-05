@@ -37,6 +37,7 @@ class AccountingExpensesAddResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\CreateExpenseResponse  $createExpenseResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateExpenseResponse $createExpenseResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

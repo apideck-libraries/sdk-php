@@ -216,7 +216,6 @@ $request = new Operations\CrmContactsAllRequest(
     ),
     sort: new Components\ContactsSort(
         by: Components\ContactsSortBy::CreatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',

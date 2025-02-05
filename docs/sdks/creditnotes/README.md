@@ -267,7 +267,6 @@ $request = new Operations\AccountingCreditNotesAllRequest(
     ),
     sort: new Components\CreditNotesSort(
         by: Components\CreditNotesSortBy::UpdatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',

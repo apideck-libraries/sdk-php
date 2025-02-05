@@ -455,6 +455,7 @@ class ActivityInput
      * @param  ?bool  $reminderSet
      * @param  ?string  $videoConferenceUrl
      * @param  ?string  $videoConferenceId
+     * @phpstan-pure
      */
     public function __construct(?ActivityType $type = null, ?Address $locationAddress = null, ?bool $recurrent = null, ?array $customFields = null, ?array $attendees = null, ?array $passThrough = null, ?string $activityDatetime = null, ?int $durationSeconds = null, ?string $userId = null, ?string $accountId = null, ?string $contactId = null, ?string $companyId = null, ?string $opportunityId = null, ?string $leadId = null, ?string $ownerId = null, ?string $campaignId = null, ?string $caseId = null, ?string $assetId = null, ?string $contractId = null, ?string $productId = null, ?string $solutionId = null, ?string $customObjectId = null, ?string $title = null, ?string $description = null, ?string $note = null, ?string $location = null, ?bool $allDayEvent = null, ?bool $private = null, ?bool $groupEvent = null, ?string $eventSubType = null, ?string $groupEventType = null, ?bool $child = null, ?bool $archived = null, ?bool $deleted = null, ?ShowAs $showAs = null, ?bool $done = null, ?string $startDatetime = null, ?string $endDatetime = null, ?string $activityDate = null, ?string $endDate = null, ?string $reminderDatetime = null, ?bool $reminderSet = null, ?string $videoConferenceUrl = null, ?string $videoConferenceId = null)
     {

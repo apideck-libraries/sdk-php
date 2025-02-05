@@ -37,6 +37,7 @@ class HrisDepartmentsOneResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetDepartmentResponse  $getDepartmentResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetDepartmentResponse $getDepartmentResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

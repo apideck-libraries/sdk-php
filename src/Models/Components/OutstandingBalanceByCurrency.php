@@ -44,6 +44,7 @@ class OutstandingBalanceByCurrency
      * @param  ?float  $totalAmount
      * @param  ?array<BalanceByPeriod>  $balancesByPeriod
      * @param  ?Currency  $currency
+     * @phpstan-pure
      */
     public function __construct(?float $totalAmount = null, ?array $balancesByPeriod = null, ?Currency $currency = null)
     {

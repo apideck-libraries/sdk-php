@@ -93,6 +93,7 @@ class FileStorageFilesSearchRequest
      * @param  ?Components\FilesFilter  $filter
      * @param  ?string  $fields
      * @param  ?string  $cursor
+     * @phpstan-pure
      */
     public function __construct(Components\FilesSearch $filesSearch, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?array $passThrough = null, ?Components\FilesFilter $filter = null, ?string $fields = null, ?string $cursor = null, ?int $limit = 20)
     {

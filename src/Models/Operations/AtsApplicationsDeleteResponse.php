@@ -37,6 +37,7 @@ class AtsApplicationsDeleteResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\DeleteApplicationResponse  $deleteApplicationResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteApplicationResponse $deleteApplicationResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

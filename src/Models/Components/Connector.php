@@ -305,6 +305,7 @@ class Connector
      * @param  ?array<ConnectorDoc>  $docs
      * @param  ?TlsSupport  $tlsSupport
      * @param  ?string  $description
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?ConnectorStatus $status = null, ?string $iconUrl = null, ?string $logoUrl = null, ?string $websiteUrl = null, ?string $signupUrl = null, ?string $partnerSignupUrl = null, ?bool $freeTrialAvailable = null, ?ConnectorAuthType $authType = null, ?bool $authOnly = null, ?bool $blindMapped = null, ?ConnectorOauthGrantType $oauthGrantType = null, ?OauthCredentialsSource $oauthCredentialsSource = null, ?array $oauthScopes = null, ?bool $customScopes = null, ?bool $hasSandboxCredentials = null, ?array $settings = null, ?string $serviceId = null, ?array $unifiedApis = null, ?array $supportedResources = null, ?array $configurableResources = null, ?array $supportedEvents = null, ?WebhookSupport $webhookSupport = null, ?SchemaSupport $schemaSupport = null, ?array $docs = null, ?TlsSupport $tlsSupport = null, ?string $description = null)
     {

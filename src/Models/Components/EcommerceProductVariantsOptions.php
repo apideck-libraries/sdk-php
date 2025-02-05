@@ -42,6 +42,7 @@ class EcommerceProductVariantsOptions
      * @param  ?string  $id
      * @param  ?string  $name
      * @param  ?string  $value
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?string $value = null)
     {

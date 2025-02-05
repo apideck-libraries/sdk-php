@@ -166,7 +166,6 @@ $request = new Operations\AccountingLedgerAccountsAllRequest(
     ),
     sort: new Components\LedgerAccountsSort(
         by: Components\LedgerAccountsSortBy::UpdatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',

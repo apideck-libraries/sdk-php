@@ -67,6 +67,7 @@ class GetAttachmentResponse
      * @param  string  $resource
      * @param  string  $operation
      * @param  Attachment  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, Attachment $data)
     {

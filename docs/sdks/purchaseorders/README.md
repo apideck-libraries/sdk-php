@@ -271,7 +271,6 @@ $request = new Operations\AccountingPurchaseOrdersAllRequest(
     ),
     sort: new Components\PurchaseOrdersSort(
         by: Components\PurchaseOrdersSortBy::UpdatedAt,
-        direction: Components\SortDirection::Desc,
     ),
 );
 

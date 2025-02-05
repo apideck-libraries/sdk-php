@@ -341,6 +341,7 @@ class CompanyInput
      * @param  ?bool  $readOnly
      * @param  ?string  $salutation
      * @param  ?LocalDate  $birthday
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?array $bankAccounts = null, ?array $websites = null, ?array $addresses = null, ?array $socialLinks = null, ?array $phoneNumbers = null, ?array $emails = null, ?CompanyRowType $rowType = null, ?array $customFields = null, ?array $passThrough = null, ?string $ownerId = null, ?string $image = null, ?string $description = null, ?string $vatNumber = null, ?Currency $currency = null, ?string $status = null, ?string $fax = null, ?string $annualRevenue = null, ?string $numberOfEmployees = null, ?string $industry = null, ?string $ownership = null, ?string $salesTaxNumber = null, ?string $payeeNumber = null, ?string $abnOrTfn = null, ?string $abnBranch = null, ?string $acn = null, ?string $firstName = null, ?string $lastName = null, ?array $tags = null, ?bool $readOnly = null, ?string $salutation = null, ?LocalDate $birthday = null)
     {

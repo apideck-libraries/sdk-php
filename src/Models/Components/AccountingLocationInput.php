@@ -96,6 +96,7 @@ class AccountingLocationInput
      * @param  ?string  $companyName
      * @param  ?string  $displayName
      * @param  ?string  $rowVersion
+     * @phpstan-pure
      */
     public function __construct(?LocationStatus $status = null, ?array $addresses = null, ?array $subsidiaries = null, ?array $passThrough = null, ?string $parentId = null, ?string $companyName = null, ?string $displayName = null, ?string $rowVersion = null)
     {

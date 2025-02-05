@@ -110,6 +110,7 @@ class Payroll
      * @param  ?string  $companyId
      * @param  ?string  $processedDate
      * @param  ?CustomMappings  $customMappings
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?bool $processed = null, ?string $checkDate = null, ?string $startDate = null, ?string $endDate = null, ?PayrollTotals $totals = null, ?array $compensations = null, ?string $companyId = null, ?string $processedDate = null, ?CustomMappings $customMappings = null)
     {

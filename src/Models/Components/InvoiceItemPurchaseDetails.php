@@ -51,6 +51,7 @@ class InvoiceItemPurchaseDetails
      * @param  ?float  $unitPrice
      * @param  ?string  $unitOfMeasure
      * @param  ?bool  $taxInclusive
+     * @phpstan-pure
      */
     public function __construct(?LinkedTaxRateInput $taxRate = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?bool $taxInclusive = null)
     {

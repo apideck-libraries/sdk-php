@@ -14,9 +14,7 @@ class SDKConfiguration
     public ?\GuzzleHttp\ClientInterface $client = null;
 
     public Hooks\SDKHooks $hooks;
-    public ?Models\Components\Security $security = null;
-
-    /** @var pure-Closure(): string */
+    /** @var ?pure-Closure(): Models\Components\Security */
     public ?\Closure $securitySource = null;
     public string $serverUrl = '';
 
@@ -24,13 +22,13 @@ class SDKConfiguration
 
     public string $language = 'php';
 
-    public string $openapiDocVersion = '10.11.0';
+    public string $openapiDocVersion = '10.11.2';
 
-    public string $sdkVersion = '0.4.0';
+    public string $sdkVersion = '0.4.1';
 
-    public string $genVersion = '2.495.1';
+    public string $genVersion = '2.503.2';
 
-    public string $userAgent = 'speakeasy-sdk/php 0.4.0 2.495.1 10.11.0 apideck-libraries/sdk-php';
+    public string $userAgent = 'speakeasy-sdk/php 0.4.1 2.503.2 10.11.2 apideck-libraries/sdk-php';
     /** @var array<string, array<string, array<string, mixed>>> */
     public ?array $globals = [
         'parameters' => [],
@@ -58,20 +56,12 @@ class SDKConfiguration
     }
     public function hasSecurity(): bool
     {
-        return $this->security !== null || $this->securitySource !== null;
+        return $this->securitySource !== null;
     }
 
     public function getSecurity(): ?Models\Components\Security
     {
-        if ($this->securitySource !== null) {
-            $security = new Models\Components\Security(
-                apiKey: $this->securitySource->call($this)
-            );
-
-            return $security;
-        } else {
-            return $this->security;
-        }
+        return $this->securitySource->call($this);
     }
 
     /**

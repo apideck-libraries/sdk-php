@@ -23,6 +23,7 @@ class UpdateConsumerRequest
 
     /**
      * @param  ?ConsumerMetadata  $metadata
+     * @phpstan-pure
      */
     public function __construct(?ConsumerMetadata $metadata = null)
     {

@@ -76,6 +76,7 @@ class HrisPayrollsAllRequest
      * @param  ?Components\PayrollsFilter  $filter
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $fields
+     * @phpstan-pure
      */
     public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?Components\PayrollsFilter $filter = null, ?array $passThrough = null, ?string $fields = null, ?bool $raw = false)
     {

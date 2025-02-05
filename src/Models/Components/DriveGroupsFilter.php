@@ -21,6 +21,7 @@ class DriveGroupsFilter
 
     /**
      * @param  ?string  $parentGroupId
+     * @phpstan-pure
      */
     public function __construct(?string $parentGroupId = null)
     {

@@ -116,6 +116,7 @@ class TicketInput
      * @param  ?string  $status
      * @param  ?Priority  $priority
      * @param  ?\DateTime  $dueDate
+     * @phpstan-pure
      */
     public function __construct(?array $assignees = null, ?array $tags = null, ?array $passThrough = null, ?string $parentId = null, ?string $type = null, ?string $subject = null, ?string $description = null, ?string $status = null, ?Priority $priority = null, ?\DateTime $dueDate = null)
     {

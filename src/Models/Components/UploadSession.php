@@ -71,6 +71,7 @@ class UploadSession
      * @param  ?bool  $parallelUploadSupported
      * @param  ?string  $uploadedByteRange
      * @param  ?\DateTime  $expiresAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?bool $success = null, ?float $partSize = null, ?bool $parallelUploadSupported = null, ?string $uploadedByteRange = null, ?\DateTime $expiresAt = null)
     {

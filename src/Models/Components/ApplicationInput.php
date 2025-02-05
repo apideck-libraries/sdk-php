@@ -59,6 +59,7 @@ class ApplicationInput
      * @param  ?Stage  $stage
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?ApplicationStatus  $status
+     * @phpstan-pure
      */
     public function __construct(?string $applicantId = null, ?string $jobId = null, ?Stage $stage = null, ?array $passThrough = null, ?ApplicationStatus $status = null)
     {

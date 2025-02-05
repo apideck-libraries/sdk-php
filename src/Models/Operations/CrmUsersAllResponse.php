@@ -41,6 +41,7 @@ class CrmUsersAllResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetUsersResponse  $getUsersResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetUsersResponse $getUsersResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

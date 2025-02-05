@@ -22,6 +22,7 @@ class DeleteConsumerResponseData
 
     /**
      * @param  ?string  $consumerId
+     * @phpstan-pure
      */
     public function __construct(?string $consumerId = null)
     {

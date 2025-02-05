@@ -32,6 +32,7 @@ class LinkedTaxRateInput
     /**
      * @param  ?string  $id
      * @param  ?float  $rate
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?float $rate = null)
     {

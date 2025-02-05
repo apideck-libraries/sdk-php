@@ -54,6 +54,7 @@ class LinkedCustomerInput
      * @param  ?string  $name
      * @param  ?string  $email
      * @param  ?string  $displayName
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?string $email = null, ?string $displayName = null)
     {

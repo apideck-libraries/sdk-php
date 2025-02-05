@@ -94,6 +94,7 @@ class AccountingPurchaseOrdersAllRequest
      * @param  ?Components\PurchaseOrdersFilter  $filter
      * @param  ?Components\PurchaseOrdersSort  $sort
      * @param  ?string  $cursor
+     * @phpstan-pure
      */
     public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?array $passThrough = null, ?Components\PurchaseOrdersFilter $filter = null, ?Components\PurchaseOrdersSort $sort = null, ?string $cursor = null, ?bool $raw = false, ?int $limit = 20)
     {

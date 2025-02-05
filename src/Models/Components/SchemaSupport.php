@@ -23,6 +23,7 @@ class SchemaSupport
 
     /**
      * @param  ?bool  $supported
+     * @phpstan-pure
      */
     public function __construct(?bool $supported = null)
     {

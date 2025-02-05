@@ -44,6 +44,7 @@ class ConnectionImportData
      * @param  ?Credentials  $credentials
      * @param  ?ConnectionImportDataSettings  $settings
      * @param  ?array<string, mixed>  $metadata
+     * @phpstan-pure
      */
     public function __construct(?Credentials $credentials = null, ?ConnectionImportDataSettings $settings = null, ?array $metadata = null)
     {

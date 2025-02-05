@@ -432,6 +432,7 @@ class Contact
      * @param  ?CustomMappings  $customMappings
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?array $websites = null, ?array $addresses = null, ?array $socialLinks = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $customFields = null, ?array $opportunityIds = null, ?array $passThrough = null, ?string $ownerId = null, ?ContactType $type = null, ?string $companyId = null, ?string $companyName = null, ?string $leadId = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $prefix = null, ?string $suffix = null, ?string $title = null, ?string $department = null, ?string $language = null, ?ContactGender $gender = null, ?string $birthday = null, ?string $image = null, ?string $photoUrl = null, ?string $leadSource = null, ?string $fax = null, ?string $description = null, ?float $currentBalance = null, ?string $status = null, ?bool $active = null, ?string $emailDomain = null, ?array $tags = null, ?\DateTime $firstCallAt = null, ?\DateTime $firstEmailAt = null, ?\DateTime $lastActivityAt = null, ?CustomMappings $customMappings = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {

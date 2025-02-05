@@ -28,6 +28,7 @@ class PurchaseOrdersFilter
     /**
      * @param  ?\DateTime  $updatedSince
      * @param  ?string  $supplierId
+     * @phpstan-pure
      */
     public function __construct(?\DateTime $updatedSince = null, ?string $supplierId = null)
     {

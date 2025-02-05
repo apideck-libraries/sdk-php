@@ -362,6 +362,7 @@ class LedgerAccount
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $displayId = null, ?LedgerAccountType $type = null, ?LinkedTaxRate $taxRate = null, ?BankAccount $bankAccount = null, ?array $categories = null, ?ParentAccount $parentAccount = null, ?array $subAccounts = null, ?array $subsidiaries = null, ?array $customFields = null, ?array $passThrough = null, ?string $nominalCode = null, ?string $code = null, ?Classification $classification = null, ?string $subType = null, ?string $name = null, ?string $fullyQualifiedName = null, ?string $description = null, ?float $openingBalance = null, ?float $currentBalance = null, ?Currency $currency = null, ?string $taxType = null, ?float $level = null, ?bool $active = null, ?AccountStatus $status = null, ?bool $header = null, ?bool $subAccount = null, ?LocalDate $lastReconciliationDate = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {

@@ -51,6 +51,7 @@ class DepartmentInput
      * @param  ?string  $name
      * @param  ?string  $code
      * @param  ?string  $description
+     * @phpstan-pure
      */
     public function __construct(?array $passThrough = null, ?string $name = null, ?string $code = null, ?string $description = null)
     {
