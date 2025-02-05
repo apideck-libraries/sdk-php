@@ -132,7 +132,6 @@ $request = new Operations\IssueTrackingCollectionTicketsAllRequest(
     serviceId: 'salesforce',
     sort: new Components\TicketsSort(
         by: Components\TicketsSortBy::CreatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     filter: new Components\IssuesFilter(
         status: [

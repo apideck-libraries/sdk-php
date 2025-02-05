@@ -92,6 +92,7 @@ class Collection
      * @param  ?CustomMappings  $customMappings
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
+     * @phpstan-pure
      */
     public function __construct(string $id, ?string $parentId = null, ?string $type = null, ?string $name = null, ?string $description = null, ?CustomMappings $customMappings = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {

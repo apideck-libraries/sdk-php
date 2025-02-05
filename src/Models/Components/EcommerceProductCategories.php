@@ -32,6 +32,7 @@ class EcommerceProductCategories
     /**
      * @param  ?string  $id
      * @param  ?string  $name
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null)
     {

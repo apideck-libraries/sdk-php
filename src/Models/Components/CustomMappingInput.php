@@ -22,6 +22,7 @@ class CustomMappingInput
 
     /**
      * @param  ?string  $value
+     * @phpstan-pure
      */
     public function __construct(?string $value = null)
     {

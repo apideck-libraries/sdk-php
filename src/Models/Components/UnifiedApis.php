@@ -87,6 +87,7 @@ class UnifiedApis
      * @param  ?array<LinkedConnectorResource>  $supportedResources
      * @param  ?array<string>  $downstreamUnsupportedResources
      * @param  ?array<ConnectorEvent>  $supportedEvents
+     * @phpstan-pure
      */
     public function __construct(?UnifiedApiId $id = null, ?string $name = null, ?bool $authOnly = null, ?array $oauthScopes = null, ?array $supportedResources = null, ?array $downstreamUnsupportedResources = null, ?array $supportedEvents = null)
     {

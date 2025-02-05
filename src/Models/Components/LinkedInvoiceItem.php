@@ -42,6 +42,7 @@ class LinkedInvoiceItem
      * @param  ?string  $id
      * @param  ?string  $code
      * @param  ?string  $name
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $code = null, ?string $name = null)
     {

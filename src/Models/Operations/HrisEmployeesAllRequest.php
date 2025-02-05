@@ -103,6 +103,7 @@ class HrisEmployeesAllRequest
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields
+     * @phpstan-pure
      */
     public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?Components\EmployeesFilter $filter = null, ?Components\EmployeesSort $sort = null, ?array $passThrough = null, ?string $cursor = null, ?string $fields = null, ?bool $raw = false, ?int $limit = 20)
     {

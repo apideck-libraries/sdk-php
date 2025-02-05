@@ -37,6 +37,7 @@ class FileStorageDriveGroupsUpdateResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\UpdateDriveGroupResponse  $updateDriveGroupResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UpdateDriveGroupResponse $updateDriveGroupResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

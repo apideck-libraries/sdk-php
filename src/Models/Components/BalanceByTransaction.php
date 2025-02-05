@@ -83,6 +83,7 @@ class BalanceByTransaction
      * @param  ?float  $originalAmount
      * @param  ?float  $outstandingBalance
      * @param  ?string  $transactionNumber
+     * @phpstan-pure
      */
     public function __construct(?string $transactionId = null, ?LocalDate $transactionDate = null, ?TransactionType $transactionType = null, ?LocalDate $dueDate = null, ?float $originalAmount = null, ?float $outstandingBalance = null, ?string $transactionNumber = null)
     {

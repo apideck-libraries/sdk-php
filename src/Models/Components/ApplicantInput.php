@@ -325,6 +325,7 @@ class ApplicantInput
      * @param  ?string  $ownerId
      * @param  ?string  $recordUrl
      * @param  ?bool  $deleted
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?string $coverLetter = null, ?string $headline = null, ?array $emails = null, ?array $customFields = null, ?array $phoneNumbers = null, ?array $addresses = null, ?array $websites = null, ?array $socialLinks = null, ?string $stageId = null, ?string $recruiterId = null, ?string $coordinatorId = null, ?bool $confidential = null, ?bool $anonymized = null, ?array $passThrough = null, ?string $firstName = null, ?string $lastName = null, ?string $middleName = null, ?string $initials = null, ?LocalDate $birthday = null, ?string $photoUrl = null, ?string $title = null, ?array $applicationIds = null, ?array $applications = null, ?array $followers = null, ?array $sources = null, ?array $tags = null, ?bool $archived = null, ?string $ownerId = null, ?string $recordUrl = null, ?bool $deleted = null)
     {

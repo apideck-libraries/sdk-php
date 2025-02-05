@@ -37,6 +37,7 @@ class AccountingLocationsUpdateResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\UpdateAccountingLocationResponse  $updateAccountingLocationResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UpdateAccountingLocationResponse $updateAccountingLocationResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

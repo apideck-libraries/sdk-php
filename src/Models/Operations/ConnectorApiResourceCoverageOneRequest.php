@@ -39,6 +39,7 @@ class ConnectorApiResourceCoverageOneRequest
      * @param  string  $id
      * @param  string  $resourceId
      * @param  ?string  $appId
+     * @phpstan-pure
      */
     public function __construct(string $id, string $resourceId, ?string $appId = null)
     {

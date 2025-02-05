@@ -85,6 +85,7 @@ class TrackingCategoryInput
      * @param  ?string  $parentId
      * @param  ?string  $code
      * @param  ?string  $rowVersion
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?TrackingCategoryStatus $status = null, ?array $passThrough = null, ?array $subsidiaries = null, ?string $parentId = null, ?string $code = null, ?string $rowVersion = null)
     {

@@ -72,6 +72,7 @@ class PhoneNumber
      * @param  ?string  $areaCode
      * @param  ?string  $extension
      * @param  ?PhoneNumberType  $type
+     * @phpstan-pure
      */
     public function __construct(string $number, ?string $id = null, ?string $countryCode = null, ?string $areaCode = null, ?string $extension = null, ?PhoneNumberType $type = null)
     {

@@ -41,7 +41,6 @@ $request = new Operations\EcommerceOrdersAllRequest(
     ),
     sort: new Components\OrdersSort(
         by: Components\OrdersSortBy::CreatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',

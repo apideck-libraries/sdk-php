@@ -63,6 +63,7 @@ class LinkedConnectorResource
      * @param  ?ResourceStatus  $status
      * @param  ?string  $downstreamId
      * @param  ?string  $downstreamName
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?ResourceStatus $status = null, ?string $downstreamId = null, ?string $downstreamName = null)
     {

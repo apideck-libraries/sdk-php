@@ -29,6 +29,7 @@ class VaultConnectionsDeleteResponse
     /**
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

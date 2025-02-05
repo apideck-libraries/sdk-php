@@ -45,7 +45,6 @@ $session = new Components\Session(
         unifiedApis: [
             Components\UnifiedApiId::Crm,
         ],
-        sessionLength: '30m',
     ),
     theme: new Components\Theme(
         favicon: 'https://res.cloudinary.com/apideck/icons/intercom',

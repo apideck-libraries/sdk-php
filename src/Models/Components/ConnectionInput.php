@@ -66,6 +66,7 @@ class ConnectionInput
      * @param  ?array<CustomMappingInput>  $customMappings
      * @param  ?array<string, mixed>  $settings
      * @param  ?array<string, mixed>  $metadata
+     * @phpstan-pure
      */
     public function __construct(?bool $enabled = null, ?array $configuration = null, ?array $customMappings = null, ?array $settings = null, ?array $metadata = null)
     {

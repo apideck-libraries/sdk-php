@@ -37,6 +37,7 @@ class VaultConsumersAddResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\CreateConsumerResponse  $createConsumerResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateConsumerResponse $createConsumerResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

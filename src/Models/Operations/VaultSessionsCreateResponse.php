@@ -37,6 +37,7 @@ class VaultSessionsCreateResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\CreateSessionResponse  $createSessionResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateSessionResponse $createSessionResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

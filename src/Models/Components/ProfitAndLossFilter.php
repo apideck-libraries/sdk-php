@@ -39,6 +39,7 @@ class ProfitAndLossFilter
      * @param  ?string  $customerId
      * @param  ?string  $startDate
      * @param  ?string  $endDate
+     * @phpstan-pure
      */
     public function __construct(?string $customerId = null, ?string $startDate = null, ?string $endDate = null)
     {

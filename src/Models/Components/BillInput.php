@@ -348,6 +348,7 @@ class BillInput
      * @param  ?array<LinkedTrackingCategory>  $trackingCategories
      * @param  ?string  $rowVersion
      * @param  ?string  $accountingPeriod
+     * @phpstan-pure
      */
     public function __construct(?array $lineItems = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $billNumber = null, ?LinkedSupplierInput $supplier = null, ?string $companyId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?LocalDate $billDate = null, ?LocalDate $dueDate = null, ?LocalDate $paidDate = null, ?string $poNumber = null, ?string $reference = null, ?string $terms = null, ?float $balance = null, ?float $deposit = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?string $taxCode = null, ?string $notes = null, ?BillStatus $status = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?float $discountPercentage = null, ?array $trackingCategories = null, ?string $rowVersion = null, ?string $accountingPeriod = null)
     {

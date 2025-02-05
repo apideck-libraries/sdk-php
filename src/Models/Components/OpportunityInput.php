@@ -306,6 +306,7 @@ class OpportunityInput
      * @param  ?string  $statusId
      * @param  ?array<string>  $tags
      * @param  ?\DateTime  $stageLastChangedAt
+     * @phpstan-pure
      */
     public function __construct(string $title, ?array $contactIds = null, ?array $customFields = null, ?array $passThrough = null, ?string $primaryContactId = null, ?string $description = null, ?string $type = null, ?float $monetaryAmount = null, ?Currency $currency = null, ?float $winProbability = null, ?LocalDate $closeDate = null, ?string $lossReasonId = null, ?string $lossReason = null, ?string $wonReasonId = null, ?string $wonReason = null, ?string $pipelineId = null, ?string $pipelineStageId = null, ?string $sourceId = null, ?string $leadId = null, ?string $leadSource = null, ?string $contactId = null, ?string $companyId = null, ?string $companyName = null, ?string $ownerId = null, ?string $priority = null, ?string $status = null, ?string $statusId = null, ?array $tags = null, ?\DateTime $stageLastChangedAt = null)
     {

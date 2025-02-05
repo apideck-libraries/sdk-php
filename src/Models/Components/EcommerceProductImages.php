@@ -32,6 +32,7 @@ class EcommerceProductImages
     /**
      * @param  ?string  $id
      * @param  ?string  $url
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $url = null)
     {

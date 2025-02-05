@@ -41,6 +41,7 @@ class RequestRate
      * @param  int  $rate
      * @param  int  $size
      * @param  Unit  $unit
+     * @phpstan-pure
      */
     public function __construct(int $rate, int $size, Unit $unit)
     {

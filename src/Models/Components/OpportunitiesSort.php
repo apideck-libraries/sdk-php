@@ -30,6 +30,7 @@ class OpportunitiesSort
     /**
      * @param  ?OpportunitiesSortBy  $by
      * @param  ?SortDirection  $direction
+     * @phpstan-pure
      */
     public function __construct(?OpportunitiesSortBy $by = null, ?SortDirection $direction = SortDirection::Asc)
     {

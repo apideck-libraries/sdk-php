@@ -223,7 +223,6 @@ $request = new Operations\AccountingSuppliersAllRequest(
     ),
     sort: new Components\SuppliersSort(
         by: Components\SuppliersSortBy::UpdatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',

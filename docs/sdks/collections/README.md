@@ -35,7 +35,6 @@ $request = new Operations\IssueTrackingCollectionsAllRequest(
     serviceId: 'salesforce',
     sort: new Components\CollectionsSort(
         by: Components\CollectionsSortBy::Name,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',

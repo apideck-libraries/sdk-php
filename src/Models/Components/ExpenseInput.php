@@ -195,6 +195,7 @@ class ExpenseInput
      * @param  ?string  $memo
      * @param  ?float  $totalAmount
      * @param  ?string  $rowVersion
+     * @phpstan-pure
      */
     public function __construct(string $accountId, array $lineItems, ?\DateTime $transactionDate = null, ?string $customerId = null, ?string $supplierId = null, ?string $departmentId = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?string $companyId = null, ?ExpensePaymentType $paymentType = null, ?Currency $currency = null, ?float $currencyRate = null, ?ExpenseType $type = null, ?string $memo = null, ?float $totalAmount = null, ?string $rowVersion = null)
     {

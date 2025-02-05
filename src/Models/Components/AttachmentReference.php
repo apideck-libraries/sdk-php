@@ -32,6 +32,7 @@ class AttachmentReference
     /**
      * @param  ?AttachmentReferenceType  $type
      * @param  ?string  $id
+     * @phpstan-pure
      */
     public function __construct(?AttachmentReferenceType $type = null, ?string $id = null)
     {

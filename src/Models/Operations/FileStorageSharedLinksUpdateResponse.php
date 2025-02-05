@@ -37,6 +37,7 @@ class FileStorageSharedLinksUpdateResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\UpdateSharedLinkResponse  $updateSharedLinkResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UpdateSharedLinkResponse $updateSharedLinkResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

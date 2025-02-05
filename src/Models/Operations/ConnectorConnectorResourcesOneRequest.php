@@ -49,6 +49,7 @@ class ConnectorConnectorResourcesOneRequest
      * @param  string  $resourceId
      * @param  ?string  $appId
      * @param  ?Components\UnifiedApiId  $unifiedApi
+     * @phpstan-pure
      */
     public function __construct(string $id, string $resourceId, ?string $appId = null, ?Components\UnifiedApiId $unifiedApi = null)
     {

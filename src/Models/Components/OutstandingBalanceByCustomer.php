@@ -43,6 +43,7 @@ class OutstandingBalanceByCustomer
      * @param  ?string  $customerId
      * @param  ?string  $customerName
      * @param  ?array<OutstandingBalanceByCurrency>  $outstandingBalancesByCurrency
+     * @phpstan-pure
      */
     public function __construct(?string $customerId = null, ?string $customerName = null, ?array $outstandingBalancesByCurrency = null)
     {

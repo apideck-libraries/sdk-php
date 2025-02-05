@@ -103,6 +103,7 @@ class CollectionUser
      * @param  ?CustomMappings  $customMappings
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $photoUrl = null, ?CustomMappings $customMappings = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {

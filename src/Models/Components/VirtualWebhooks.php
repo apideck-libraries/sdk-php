@@ -34,6 +34,7 @@ class VirtualWebhooks
     /**
      * @param  RequestRate  $requestRate
      * @param  ?array<string, WebhookSupportResources>  $resources
+     * @phpstan-pure
      */
     public function __construct(RequestRate $requestRate, ?array $resources = null)
     {

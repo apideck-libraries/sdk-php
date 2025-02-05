@@ -238,6 +238,7 @@ class JournalEntry
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
      * @param  ?string  $rowVersion
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?array $lineItems = null, ?\DateTime $postedAt = null, ?array $customFields = null, ?array $passThrough = null, ?string $title = null, ?float $currencyRate = null, ?Currency $currency = null, ?string $companyId = null, ?string $memo = null, ?string $journalSymbol = null, ?string $taxType = null, ?string $taxCode = null, ?string $number = null, ?array $trackingCategories = null, ?string $accountingPeriod = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null)
     {

@@ -32,6 +32,7 @@ class LinkedResources
     /**
      * @param  ?string  $id
      * @param  ?string  $unifiedProperty
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $unifiedProperty = null)
     {

@@ -203,6 +203,7 @@ class HrisCompany
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $legalName = null, ?HrisCompanyStatus $status = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?bool $deleted = null, ?array $passThrough = null, ?string $displayName = null, ?string $subdomain = null, ?string $companyNumber = null, ?Currency $currency = null, ?string $debtorId = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {

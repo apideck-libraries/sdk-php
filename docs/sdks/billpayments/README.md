@@ -190,7 +190,6 @@ $request = new Operations\AccountingBillPaymentsAllRequest(
     ),
     sort: new Components\PaymentsSort(
         by: Components\PaymentsSortBy::UpdatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',

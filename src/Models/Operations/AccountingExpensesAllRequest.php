@@ -66,6 +66,7 @@ class AccountingExpensesAllRequest
      * @param  ?string  $serviceId
      * @param  ?int  $limit
      * @param  ?string  $cursor
+     * @phpstan-pure
      */
     public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $cursor = null, ?bool $raw = false, ?int $limit = 20)
     {

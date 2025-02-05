@@ -30,6 +30,7 @@ class PayrollsFilter
     /**
      * @param  ?string  $startDate
      * @param  ?string  $endDate
+     * @phpstan-pure
      */
     public function __construct(?string $startDate = null, ?string $endDate = null)
     {

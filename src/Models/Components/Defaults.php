@@ -52,6 +52,7 @@ class Defaults
      * @param  ?string  $id
      * @param  ?array<SimpleFormFieldOption|FormFieldOptionGroup>  $options
      * @param  string|int|float|bool|array<string|int|float>|null  $value
+     * @phpstan-pure
      */
     public function __construct(?Target $target = null, ?string $id = null, ?array $options = null, string|int|float|bool|array|null $value = null)
     {

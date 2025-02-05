@@ -30,6 +30,7 @@ class PaymentsSort
     /**
      * @param  ?PaymentsSortBy  $by
      * @param  ?SortDirection  $direction
+     * @phpstan-pure
      */
     public function __construct(?PaymentsSortBy $by = null, ?SortDirection $direction = SortDirection::Asc)
     {

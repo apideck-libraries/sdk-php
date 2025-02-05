@@ -39,6 +39,7 @@ class FilesFilter
      * @param  ?string  $driveId
      * @param  ?string  $folderId
      * @param  ?bool  $shared
+     * @phpstan-pure
      */
     public function __construct(?string $driveId = null, ?string $folderId = null, ?bool $shared = null)
     {

@@ -67,6 +67,7 @@ class GetSupplierResponse
      * @param  string  $resource
      * @param  string  $operation
      * @param  Supplier  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, Supplier $data)
     {

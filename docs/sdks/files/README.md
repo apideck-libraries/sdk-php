@@ -45,7 +45,6 @@ $request = new Operations\FileStorageFilesAllRequest(
     ),
     sort: new Components\FilesSort(
         by: Components\FilesSortBy::UpdatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',

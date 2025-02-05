@@ -30,6 +30,7 @@ class Notes
     /**
      * @param  ?string  $employee
      * @param  ?string  $manager
+     * @phpstan-pure
      */
     public function __construct(?string $employee = null, ?string $manager = null)
     {

@@ -21,6 +21,7 @@ class ApisFilter
 
     /**
      * @param  ?ApiStatus  $status
+     * @phpstan-pure
      */
     public function __construct(?ApiStatus $status = null)
     {

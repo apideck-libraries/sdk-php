@@ -133,6 +133,7 @@ class HrisCompanyInput
      * @param  ?string  $companyNumber
      * @param  ?Currency  $currency
      * @param  ?string  $debtorId
+     * @phpstan-pure
      */
     public function __construct(?string $legalName = null, ?HrisCompanyStatus $status = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $passThrough = null, ?string $displayName = null, ?string $subdomain = null, ?string $companyNumber = null, ?Currency $currency = null, ?string $debtorId = null)
     {

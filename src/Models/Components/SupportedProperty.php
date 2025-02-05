@@ -33,6 +33,7 @@ class SupportedProperty
     /**
      * @param  ?string  $unifiedProperty
      * @param  ?array<SupportedProperty>  $childProperties
+     * @phpstan-pure
      */
     public function __construct(?string $unifiedProperty = null, ?array $childProperties = null)
     {

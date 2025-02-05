@@ -164,6 +164,7 @@ class Reports
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
+     * @phpstan-pure
      */
     public function __construct(string $endDate, BalanceSheetAssetsAccount $assets, BalanceSheetLiabilitiesAccount $liabilities, BalanceSheetEquityAccount $equity, ?string $id = null, ?string $reportName = null, ?string $startDate = null, ?float $netAssets = null, ?BalanceSheetUncategorizedItemsAccount $uncategorizedItems = null, ?Currency $currency = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {

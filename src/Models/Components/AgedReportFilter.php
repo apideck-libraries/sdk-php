@@ -57,6 +57,7 @@ class AgedReportFilter
      * @param  ?string  $reportAsOfDate
      * @param  ?int  $periodCount
      * @param  ?int  $periodLength
+     * @phpstan-pure
      */
     public function __construct(?string $customerId = null, ?string $supplierId = null, ?string $reportAsOfDate = null, ?int $periodCount = null, ?int $periodLength = null)
     {

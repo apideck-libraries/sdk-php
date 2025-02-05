@@ -44,7 +44,7 @@ class ApideckBuilder
         $security = new Models\Components\Security(
             apiKey: $apiKey
         );
-        $this->sdkConfig->security = $security;
+        $this->sdkConfig->securitySource = fn () => $security;
 
         return $this;
     }
@@ -58,7 +58,7 @@ class ApideckBuilder
      */
     public function setSecuritySource(\Closure $securitySource): ApideckBuilder
     {
-        $this->sdkConfig->securitySource = $securitySource;
+        $this->sdkConfig->securitySource = fn () => new Models\Components\Security(apiKey: $securitySource());
 
         return $this;
     }

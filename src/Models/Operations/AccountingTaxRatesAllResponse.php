@@ -41,6 +41,7 @@ class AccountingTaxRatesAllResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetTaxRatesResponse  $getTaxRatesResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetTaxRatesResponse $getTaxRatesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

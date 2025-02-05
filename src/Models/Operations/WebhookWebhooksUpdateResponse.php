@@ -37,6 +37,7 @@ class WebhookWebhooksUpdateResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\UpdateWebhookResponse  $updateWebhookResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UpdateWebhookResponse $updateWebhookResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

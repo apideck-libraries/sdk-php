@@ -30,6 +30,7 @@ class TicketsSort
     /**
      * @param  ?TicketsSortBy  $by
      * @param  ?SortDirection  $direction
+     * @phpstan-pure
      */
     public function __construct(?TicketsSortBy $by = null, ?SortDirection $direction = SortDirection::Asc)
     {

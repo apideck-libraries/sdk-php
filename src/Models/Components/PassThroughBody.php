@@ -53,6 +53,7 @@ class PassThroughBody
      * @param  ?string  $operationId
      * @param  ?array<string, mixed>  $extendObject
      * @param  ?array<ExtendPaths>  $extendPaths
+     * @phpstan-pure
      */
     public function __construct(string $serviceId, ?string $operationId = null, ?array $extendObject = null, ?array $extendPaths = null)
     {

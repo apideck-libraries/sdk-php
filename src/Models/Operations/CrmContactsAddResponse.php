@@ -37,6 +37,7 @@ class CrmContactsAddResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\CreateContactResponse  $createContactResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateContactResponse $createContactResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

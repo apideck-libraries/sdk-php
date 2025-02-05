@@ -30,6 +30,7 @@ class VaultConsumersDeleteRequest
     /**
      * @param  string  $consumerId
      * @param  ?string  $appId
+     * @phpstan-pure
      */
     public function __construct(string $consumerId, ?string $appId = null)
     {

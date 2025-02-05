@@ -84,6 +84,7 @@ class LinkedEcommerceCustomer
      * @param  ?string  $firstName
      * @param  ?string  $lastName
      * @param  ?string  $companyName
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?array $phoneNumbers = null, ?array $emails = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $companyName = null)
     {

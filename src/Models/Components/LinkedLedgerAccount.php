@@ -52,6 +52,7 @@ class LinkedLedgerAccount
      * @param  ?string  $name
      * @param  ?string  $nominalCode
      * @param  ?string  $code
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?string $nominalCode = null, ?string $code = null)
     {

@@ -37,6 +37,7 @@ class HrisCompaniesUpdateResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\UpdateHrisCompanyResponse  $updateHrisCompanyResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UpdateHrisCompanyResponse $updateHrisCompanyResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

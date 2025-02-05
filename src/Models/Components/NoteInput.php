@@ -103,6 +103,7 @@ class NoteInput
      * @param  ?string  $opportunityId
      * @param  ?string  $leadId
      * @param  ?bool  $active
+     * @phpstan-pure
      */
     public function __construct(?array $passThrough = null, ?string $title = null, ?string $content = null, ?string $ownerId = null, ?string $contactId = null, ?string $companyId = null, ?string $opportunityId = null, ?string $leadId = null, ?bool $active = null)
     {

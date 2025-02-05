@@ -66,6 +66,7 @@ class CrmUsersUpdateRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?bool  $raw
+     * @phpstan-pure
      */
     public function __construct(string $id, Components\UserInput $user, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?bool $raw = false)
     {

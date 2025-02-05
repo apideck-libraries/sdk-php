@@ -42,6 +42,7 @@ class DriveInput
      * @param  string  $name
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $description
+     * @phpstan-pure
      */
     public function __construct(string $name, ?array $passThrough = null, ?string $description = null)
     {

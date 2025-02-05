@@ -58,6 +58,7 @@ class VaultLogsAllRequest
      * @param  ?Components\LogsFilter  $filter
      * @param  ?int  $limit
      * @param  ?string  $cursor
+     * @phpstan-pure
      */
     public function __construct(?string $appId = null, ?string $consumerId = null, ?Components\LogsFilter $filter = null, ?string $cursor = null, ?int $limit = 20)
     {

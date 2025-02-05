@@ -30,6 +30,7 @@ class ConnectorsFilter
     /**
      * @param  ?UnifiedApiId  $unifiedApi
      * @param  ?ConnectorStatus  $status
+     * @phpstan-pure
      */
     public function __construct(?UnifiedApiId $unifiedApi = null, ?ConnectorStatus $status = null)
     {

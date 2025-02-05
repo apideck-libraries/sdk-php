@@ -32,6 +32,7 @@ class ConsumerInput
     /**
      * @param  string  $consumerId
      * @param  ?ConsumerMetadata  $metadata
+     * @phpstan-pure
      */
     public function __construct(string $consumerId, ?ConsumerMetadata $metadata = null)
     {

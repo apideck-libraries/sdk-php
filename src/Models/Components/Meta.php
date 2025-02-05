@@ -34,6 +34,7 @@ class Meta
     /**
      * @param  ?int  $itemsOnPage
      * @param  ?Cursors  $cursors
+     * @phpstan-pure
      */
     public function __construct(?int $itemsOnPage = null, ?Cursors $cursors = null)
     {

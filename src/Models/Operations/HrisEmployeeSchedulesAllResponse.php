@@ -37,6 +37,7 @@ class HrisEmployeeSchedulesAllResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetEmployeeSchedulesResponse  $getEmployeeSchedulesResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetEmployeeSchedulesResponse $getEmployeeSchedulesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

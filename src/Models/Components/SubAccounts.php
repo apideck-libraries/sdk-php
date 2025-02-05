@@ -32,6 +32,7 @@ class SubAccounts
     /**
      * @param  ?string  $id
      * @param  ?string  $accountSubName
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $accountSubName = null)
     {

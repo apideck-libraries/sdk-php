@@ -196,6 +196,7 @@ class UserInput
      * @param  ?string  $language
      * @param  ?string  $status
      * @param  ?string  $password
+     * @phpstan-pure
      */
     public function __construct(array $emails, ?array $addresses = null, ?array $phoneNumbers = null, ?array $passThrough = null, ?string $parentId = null, ?string $username = null, ?string $firstName = null, ?string $lastName = null, ?string $title = null, ?string $division = null, ?string $department = null, ?string $companyName = null, ?string $employeeNumber = null, ?string $description = null, ?string $image = null, ?string $language = null, ?string $status = null, ?string $password = null)
     {

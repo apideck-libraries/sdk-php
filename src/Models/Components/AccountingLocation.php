@@ -157,6 +157,7 @@ class AccountingLocation
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?LocationStatus $status = null, ?array $addresses = null, ?array $subsidiaries = null, ?array $passThrough = null, ?string $parentId = null, ?string $companyName = null, ?string $displayName = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {

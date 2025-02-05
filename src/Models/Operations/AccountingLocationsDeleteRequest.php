@@ -57,6 +57,7 @@ class AccountingLocationsDeleteRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?bool  $raw
+     * @phpstan-pure
      */
     public function __construct(string $id, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?bool $raw = false)
     {

@@ -67,6 +67,7 @@ class GetLedgerAccountResponse
      * @param  string  $resource
      * @param  string  $operation
      * @param  LedgerAccount  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, LedgerAccount $data)
     {

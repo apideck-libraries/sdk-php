@@ -308,6 +308,7 @@ class BillPayment
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(string $id, ?float $totalAmount = null, ?\DateTime $transactionDate = null, ?PaymentStatus $status = null, ?BillPaymentType $type = null, ?array $allocations = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?Currency $currency = null, ?float $currencyRate = null, ?string $reference = null, ?string $paymentMethod = null, ?string $paymentMethodReference = null, ?string $paymentMethodId = null, ?LinkedLedgerAccount $account = null, ?LinkedSupplier $supplier = null, ?string $companyId = null, ?bool $reconciled = null, ?string $note = null, ?string $number = null, ?array $trackingCategories = null, ?string $rowVersion = null, ?string $displayId = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

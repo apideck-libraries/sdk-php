@@ -67,6 +67,7 @@ class ConsumerRequestCountsInDateRangeResponseData
      * @param  ?string  $endDatetime
      * @param  ?float  $aggregatedRequestCount
      * @param  ?RequestCountAllocation  $requestCounts
+     * @phpstan-pure
      */
     public function __construct(?string $applicationId = null, ?string $consumerId = null, ?string $startDatetime = null, ?string $endDatetime = null, ?float $aggregatedRequestCount = null, ?RequestCountAllocation $requestCounts = null)
     {

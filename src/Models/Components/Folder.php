@@ -142,6 +142,7 @@ class Folder
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
+     * @phpstan-pure
      */
     public function __construct(string $name, array $parentFolders, ?string $id = null, ?Owner $owner = null, ?bool $parentFoldersComplete = null, ?string $description = null, ?string $path = null, ?int $size = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {

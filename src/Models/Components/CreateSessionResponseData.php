@@ -28,6 +28,7 @@ class CreateSessionResponseData
     /**
      * @param  string  $sessionUri
      * @param  string  $sessionToken
+     * @phpstan-pure
      */
     public function __construct(string $sessionUri, string $sessionToken)
     {

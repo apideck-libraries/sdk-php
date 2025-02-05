@@ -20,6 +20,7 @@ class LedgerAccountsFilter
 
     /**
      * @param  ?\DateTime  $updatedSince
+     * @phpstan-pure
      */
     public function __construct(?\DateTime $updatedSince = null)
     {

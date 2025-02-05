@@ -285,7 +285,6 @@ $request = new Operations\AccountingInvoicesAllRequest(
     ),
     sort: new Components\InvoicesSort(
         by: Components\InvoicesSortBy::UpdatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',

@@ -37,6 +37,7 @@ class CrmUsersDeleteResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\DeleteUserResponse  $deleteUserResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteUserResponse $deleteUserResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

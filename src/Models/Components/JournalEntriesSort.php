@@ -30,6 +30,7 @@ class JournalEntriesSort
     /**
      * @param  ?JournalEntriesSortBy  $by
      * @param  ?SortDirection  $direction
+     * @phpstan-pure
      */
     public function __construct(?JournalEntriesSortBy $by = null, ?SortDirection $direction = SortDirection::Asc)
     {

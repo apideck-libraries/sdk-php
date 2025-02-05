@@ -252,6 +252,7 @@ class BillLineItem
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRate $taxRate = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?BillLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $locationId = null, ?string $departmentId = null, ?LinkedLedgerAccount $ledgerAccount = null, ?array $trackingCategories = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

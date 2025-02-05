@@ -437,6 +437,7 @@ class Opportunity
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
+     * @phpstan-pure
      */
     public function __construct(string $title, ?string $id = null, ?array $contactIds = null, ?array $customFields = null, ?bool $deleted = null, ?array $passThrough = null, ?string $primaryContactId = null, ?string $description = null, ?string $type = null, ?float $monetaryAmount = null, ?Currency $currency = null, ?float $winProbability = null, ?float $expectedRevenue = null, ?LocalDate $closeDate = null, ?string $lossReasonId = null, ?string $lossReason = null, ?string $wonReasonId = null, ?string $wonReason = null, ?string $pipelineId = null, ?string $pipelineStageId = null, ?string $sourceId = null, ?string $leadId = null, ?string $leadSource = null, ?string $contactId = null, ?string $companyId = null, ?string $companyName = null, ?string $ownerId = null, ?string $priority = null, ?string $status = null, ?string $statusId = null, ?array $tags = null, ?float $interactionCount = null, ?\DateTime $stageLastChangedAt = null, ?string $lastActivityAt = null, ?\DateTime $dateStageChanged = null, ?\DateTime $dateLastContacted = null, ?\DateTime $dateLeadCreated = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {

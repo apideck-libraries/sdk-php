@@ -83,6 +83,7 @@ class EcommerceAddress
      * @param  ?string  $state
      * @param  ?string  $postalCode
      * @param  ?string  $country
+     * @phpstan-pure
      */
     public function __construct(?string $line1 = null, ?string $line2 = null, ?string $companyName = null, ?string $city = null, ?string $state = null, ?string $postalCode = null, ?string $country = null)
     {

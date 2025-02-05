@@ -37,6 +37,7 @@ class CrmOpportunitiesOneResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetOpportunityResponse  $getOpportunityResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetOpportunityResponse $getOpportunityResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

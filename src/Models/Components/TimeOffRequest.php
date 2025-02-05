@@ -227,6 +227,7 @@ class TimeOffRequest
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?Notes $notes = null, ?array $passThrough = null, ?string $policyType = null, ?string $employeeId = null, ?string $policyId = null, ?TimeOffRequestStatusStatus $status = null, ?string $description = null, ?string $startDate = null, ?string $endDate = null, ?string $requestDate = null, ?RequestType $requestType = null, ?string $approvalDate = null, ?Units $units = null, ?float $amount = null, ?string $dayPart = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {

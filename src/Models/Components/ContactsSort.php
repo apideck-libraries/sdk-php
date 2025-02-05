@@ -30,6 +30,7 @@ class ContactsSort
     /**
      * @param  ?ContactsSortBy  $by
      * @param  ?SortDirection  $direction
+     * @phpstan-pure
      */
     public function __construct(?ContactsSortBy $by = null, ?SortDirection $direction = SortDirection::Asc)
     {

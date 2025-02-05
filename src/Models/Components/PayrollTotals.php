@@ -103,6 +103,7 @@ class PayrollTotals
      * @param  ?float  $employeeTaxes
      * @param  ?float  $employerBenefitContributions
      * @param  ?float  $employeeBenefitDeductions
+     * @phpstan-pure
      */
     public function __construct(?float $companyDebit = null, ?float $taxDebit = null, ?float $checkAmount = null, ?float $netPay = null, ?float $grossPay = null, ?float $employerTaxes = null, ?float $employeeTaxes = null, ?float $employerBenefitContributions = null, ?float $employeeBenefitDeductions = null)
     {

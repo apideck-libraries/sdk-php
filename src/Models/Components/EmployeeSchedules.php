@@ -33,6 +33,7 @@ class EmployeeSchedules
     /**
      * @param  ?Employee  $employee
      * @param  ?array<Schedule>  $schedules
+     * @phpstan-pure
      */
     public function __construct(?Employee $employee = null, ?array $schedules = null)
     {

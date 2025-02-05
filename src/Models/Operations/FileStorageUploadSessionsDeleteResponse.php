@@ -37,6 +37,7 @@ class FileStorageUploadSessionsDeleteResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\DeleteUploadSessionResponse  $deleteUploadSessionResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteUploadSessionResponse $deleteUploadSessionResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

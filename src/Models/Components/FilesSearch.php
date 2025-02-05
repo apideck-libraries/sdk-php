@@ -42,6 +42,7 @@ class FilesSearch
      * @param  string  $query
      * @param  ?string  $driveId
      * @param  ?array<PassThroughBody>  $passThrough
+     * @phpstan-pure
      */
     public function __construct(string $query, ?string $driveId = null, ?array $passThrough = null)
     {

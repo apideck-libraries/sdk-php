@@ -109,6 +109,7 @@ class EmployeePayroll
      * @param  ?string  $employeeId
      * @param  ?string  $companyId
      * @param  ?string  $processedDate
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?bool $processed = null, ?string $checkDate = null, ?string $startDate = null, ?string $endDate = null, ?PayrollTotals $totals = null, ?array $compensations = null, ?string $employeeId = null, ?string $companyId = null, ?string $processedDate = null)
     {

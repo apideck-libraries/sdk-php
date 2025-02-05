@@ -83,6 +83,7 @@ class PersonInput
      * @param  ?string  $initials
      * @param  ?LocalDate  $birthday
      * @param  ?LocalDate  $deceasedOn
+     * @phpstan-pure
      */
     public function __construct(?string $firstName = null, ?string $lastName = null, ?string $middleName = null, ?Gender $gender = null, ?string $initials = null, ?LocalDate $birthday = null, ?LocalDate $deceasedOn = null)
     {

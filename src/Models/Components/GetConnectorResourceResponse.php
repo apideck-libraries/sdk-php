@@ -62,6 +62,7 @@ class GetConnectorResourceResponse
      * @param  ConnectorResource  $data
      * @param  ?Meta  $meta
      * @param  ?Links  $links
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, ConnectorResource $data, ?Meta $meta = null, ?Links $links = null)
     {

@@ -30,6 +30,7 @@ class LeadsSort
     /**
      * @param  ?LeadsSortBy  $by
      * @param  ?SortDirection  $direction
+     * @phpstan-pure
      */
     public function __construct(?LeadsSortBy $by = null, ?SortDirection $direction = SortDirection::Asc)
     {

@@ -33,6 +33,7 @@ class ValidateConnectionStateResponseData
     /**
      * @param  ?string  $id
      * @param  ?ConnectionState  $state
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?ConnectionState $state = null)
     {

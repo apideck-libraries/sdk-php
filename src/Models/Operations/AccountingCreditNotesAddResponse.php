@@ -37,6 +37,7 @@ class AccountingCreditNotesAddResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\CreateCreditNoteResponse  $createCreditNoteResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateCreditNoteResponse $createCreditNoteResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

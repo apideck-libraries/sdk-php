@@ -21,6 +21,7 @@ class AccountingDepartmentsFilter
 
     /**
      * @param  ?string  $subsidiary
+     * @phpstan-pure
      */
     public function __construct(?string $subsidiary = null)
     {

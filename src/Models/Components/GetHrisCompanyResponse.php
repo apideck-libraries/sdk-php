@@ -67,6 +67,7 @@ class GetHrisCompanyResponse
      * @param  string  $resource
      * @param  string  $operation
      * @param  HrisCompany  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, HrisCompany $data)
     {

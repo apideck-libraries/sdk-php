@@ -67,6 +67,7 @@ class GetSharedLinkResponse
      * @param  string  $resource
      * @param  string  $operation
      * @param  SharedLink  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, SharedLink $data)
     {

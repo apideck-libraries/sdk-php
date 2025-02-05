@@ -330,7 +330,6 @@ $request = new Operations\HrisEmployeesAllRequest(
     ),
     sort: new Components\EmployeesSort(
         by: Components\EmployeesSortBy::CreatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',

@@ -74,6 +74,7 @@ class FileStorageUploadSessionsFinishRequest
      * @param  ?string  $serviceId
      * @param  ?string  $digest
      * @param  ?FileStorageUploadSessionsFinishRequestBody  $requestBody
+     * @phpstan-pure
      */
     public function __construct(string $id, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $digest = null, ?FileStorageUploadSessionsFinishRequestBody $requestBody = null, ?bool $raw = false)
     {

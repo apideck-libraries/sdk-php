@@ -40,6 +40,7 @@ class UpdateConnectionResponse
      * @param  int  $statusCode
      * @param  string  $status
      * @param  Connection  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, Connection $data)
     {

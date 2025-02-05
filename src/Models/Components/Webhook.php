@@ -110,6 +110,7 @@ class Webhook
      * @param  ?string  $description
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
+     * @phpstan-pure
      */
     public function __construct(UnifiedApiId $unifiedApi, Status $status, string $deliveryUrl, string $executeBaseUrl, array $events, ?string $id = null, ?DisabledReason $disabledReason = null, ?string $description = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {

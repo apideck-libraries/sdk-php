@@ -40,6 +40,7 @@ class ConsumerRequestCountsInDateRangeResponse
      * @param  int  $statusCode
      * @param  string  $status
      * @param  ConsumerRequestCountsInDateRangeResponseData  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, ConsumerRequestCountsInDateRangeResponseData $data)
     {

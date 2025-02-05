@@ -31,6 +31,7 @@ class TlsSupport
     /**
      * @param  ?string  $type
      * @param  ?string  $description
+     * @phpstan-pure
      */
     public function __construct(?string $type = null, ?string $description = null)
     {

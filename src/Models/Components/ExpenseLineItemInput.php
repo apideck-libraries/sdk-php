@@ -102,6 +102,7 @@ class ExpenseLineItemInput
      * @param  ?bool  $billable
      * @param  ?array<LinkedTrackingCategory>  $trackingCategories
      * @param  ?string  $description
+     * @phpstan-pure
      */
     public function __construct(?string $accountId = null, ?string $customerId = null, ?string $departmentId = null, ?string $locationId = null, ?LinkedTaxRateInput $taxRate = null, ?float $totalAmount = null, ?bool $billable = null, ?array $trackingCategories = null, ?string $description = null)
     {

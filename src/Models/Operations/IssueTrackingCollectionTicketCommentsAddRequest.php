@@ -75,6 +75,7 @@ class IssueTrackingCollectionTicketCommentsAddRequest
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId
+     * @phpstan-pure
      */
     public function __construct(string $collectionId, string $ticketId, Components\CollectionTicketCommentInput $collectionTicketComment, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?bool $raw = false)
     {

@@ -32,6 +32,7 @@ class HTTPMetadata
     /**
      * @param  \Psr\Http\Message\ResponseInterface  $response
      * @param  \Psr\Http\Message\RequestInterface  $request
+     * @phpstan-pure
      */
     public function __construct(\Psr\Http\Message\ResponseInterface $response, \Psr\Http\Message\RequestInterface $request)
     {

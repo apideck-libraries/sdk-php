@@ -73,6 +73,7 @@ class Manager
      * @param  ?string  $lastName
      * @param  ?string  $email
      * @param  ?EmploymentStatus  $employmentStatus
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?EmploymentStatus $employmentStatus = null)
     {

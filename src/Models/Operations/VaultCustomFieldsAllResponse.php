@@ -37,6 +37,7 @@ class VaultCustomFieldsAllResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetCustomFieldsResponse  $getCustomFieldsResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetCustomFieldsResponse $getCustomFieldsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

@@ -31,6 +31,7 @@ class LinkedFolder
     /**
      * @param  string  $id
      * @param  ?string  $name
+     * @phpstan-pure
      */
     public function __construct(string $id, ?string $name = null)
     {

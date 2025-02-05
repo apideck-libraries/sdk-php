@@ -32,6 +32,7 @@ class InvoiceResponse
     /**
      * @param  ?string  $id
      * @param  ?string  $downstreamId
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $downstreamId = null)
     {

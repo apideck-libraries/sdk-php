@@ -43,6 +43,7 @@ class PaginationCoverage
      * @param  ?PaginationCoverageMode  $mode
      * @param  ?bool  $pagingSupport
      * @param  ?bool  $limitSupport
+     * @phpstan-pure
      */
     public function __construct(?PaginationCoverageMode $mode = null, ?bool $pagingSupport = null, ?bool $limitSupport = null)
     {

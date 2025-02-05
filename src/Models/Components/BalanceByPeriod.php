@@ -53,6 +53,7 @@ class BalanceByPeriod
      * @param  ?array<BalanceByTransaction>  $balancesByTransaction
      * @param  ?LocalDate  $startDate
      * @param  ?LocalDate  $endDate
+     * @phpstan-pure
      */
     public function __construct(?float $totalAmount = null, ?array $balancesByTransaction = null, ?LocalDate $startDate = null, ?LocalDate $endDate = null)
     {

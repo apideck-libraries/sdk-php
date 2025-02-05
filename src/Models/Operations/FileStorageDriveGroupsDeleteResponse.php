@@ -37,6 +37,7 @@ class FileStorageDriveGroupsDeleteResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\DeleteDriveGroupResponse  $deleteDriveGroupResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteDriveGroupResponse $deleteDriveGroupResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

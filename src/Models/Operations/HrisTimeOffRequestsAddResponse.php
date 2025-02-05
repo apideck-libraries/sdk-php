@@ -37,6 +37,7 @@ class HrisTimeOffRequestsAddResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\CreateTimeOffRequestResponse  $createTimeOffRequestResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateTimeOffRequestResponse $createTimeOffRequestResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

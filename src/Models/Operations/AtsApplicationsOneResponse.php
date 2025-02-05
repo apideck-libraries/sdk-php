@@ -37,6 +37,7 @@ class AtsApplicationsOneResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetApplicationResponse  $getApplicationResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetApplicationResponse $getApplicationResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

@@ -41,6 +41,7 @@ class AccountingTrackingCategoriesAllResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetTrackingCategoriesResponse  $getTrackingCategoriesResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetTrackingCategoriesResponse $getTrackingCategoriesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

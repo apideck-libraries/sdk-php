@@ -39,6 +39,7 @@ class WebhookWebhooksUpdateRequest
      * @param  string  $id
      * @param  Components\UpdateWebhookRequest  $updateWebhookRequest
      * @param  ?string  $appId
+     * @phpstan-pure
      */
     public function __construct(string $id, Components\UpdateWebhookRequest $updateWebhookRequest, ?string $appId = null)
     {

@@ -37,6 +37,7 @@ class AccountingDepartmentsUpdateResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\UpdateAccountingDepartmentResponse  $updateAccountingDepartmentResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UpdateAccountingDepartmentResponse $updateAccountingDepartmentResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

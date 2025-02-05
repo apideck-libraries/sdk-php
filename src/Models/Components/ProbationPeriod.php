@@ -32,6 +32,7 @@ class ProbationPeriod
     /**
      * @param  ?LocalDate  $startDate
      * @param  ?LocalDate  $endDate
+     * @phpstan-pure
      */
     public function __construct(?LocalDate $startDate = null, ?LocalDate $endDate = null)
     {

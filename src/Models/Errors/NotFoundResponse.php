@@ -9,7 +9,6 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Errors;
 
 
-
 /** NotFoundResponse - The specified resource was not found */
 class NotFoundResponse
 {
@@ -75,6 +74,7 @@ class NotFoundResponse
      * @param  ?string  $message
      * @param  string|array<string, mixed>|null  $detail
      * @param  ?string  $ref
+     * @phpstan-pure
      */
     public function __construct(?float $statusCode = null, ?string $error = null, ?string $typeName = null, ?string $message = null, string|array|null $detail = null, ?string $ref = null)
     {

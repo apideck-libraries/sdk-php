@@ -61,6 +61,7 @@ class CreateFolderRequest
      * @param  ?string  $description
      * @param  ?string  $driveId
      * @param  ?array<PassThroughBody>  $passThrough
+     * @phpstan-pure
      */
     public function __construct(string $name, string $parentFolderId, ?string $description = null, ?string $driveId = null, ?array $passThrough = null)
     {

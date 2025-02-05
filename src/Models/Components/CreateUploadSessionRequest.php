@@ -60,6 +60,7 @@ class CreateUploadSessionRequest
      * @param  ?string  $driveId
      * @param  ?int  $size
      * @param  ?array<PassThroughBody>  $passThrough
+     * @phpstan-pure
      */
     public function __construct(string $name, string $parentFolderId, ?string $driveId = null, ?int $size = null, ?array $passThrough = null)
     {

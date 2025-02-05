@@ -30,6 +30,7 @@ class VaultConsumersAddRequest
     /**
      * @param  Components\ConsumerInput  $consumer
      * @param  ?string  $appId
+     * @phpstan-pure
      */
     public function __construct(Components\ConsumerInput $consumer, ?string $appId = null)
     {

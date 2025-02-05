@@ -37,6 +37,7 @@ class AccountingAttachmentsDeleteResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\DeleteAttachmentResponse  $deleteAttachmentResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteAttachmentResponse $deleteAttachmentResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

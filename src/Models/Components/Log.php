@@ -206,6 +206,7 @@ class Log
      * @param  ?string  $parentId
      * @param  ?string  $errorMessage
      * @param  ?string  $sourceIp
+     * @phpstan-pure
      */
     public function __construct(string $apiStyle, string $baseUrl, bool $childRequest, string $consumerId, float $duration, int $execution, bool $hasChildren, string $httpMethod, string $id, float $latency, Operation $operation, string $path, bool $sandbox, Service $service, int $statusCode, bool $success, string $timestamp, UnifiedApi $unifiedApi, ?string $parentId = null, ?string $errorMessage = null, ?string $sourceIp = null)
     {

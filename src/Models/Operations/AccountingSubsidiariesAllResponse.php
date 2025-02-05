@@ -41,6 +41,7 @@ class AccountingSubsidiariesAllResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetSubsidiariesResponse  $getSubsidiariesResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetSubsidiariesResponse $getSubsidiariesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

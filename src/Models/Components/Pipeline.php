@@ -124,6 +124,7 @@ class Pipeline
      * @param  ?int  $displayOrder
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
+     * @phpstan-pure
      */
     public function __construct(string $name, ?string $id = null, ?bool $archived = null, ?bool $active = null, ?bool $winProbabilityEnabled = null, ?array $stages = null, ?array $passThrough = null, ?Currency $currency = null, ?int $displayOrder = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {

@@ -112,6 +112,7 @@ class IssueTrackingCollectionTicketsAllRequest
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields
+     * @phpstan-pure
      */
     public function __construct(string $collectionId, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?Components\TicketsSort $sort = null, ?Components\IssuesFilter $filter = null, ?array $passThrough = null, ?string $cursor = null, ?string $fields = null, ?bool $raw = false, ?int $limit = 20)
     {

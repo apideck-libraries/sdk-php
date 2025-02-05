@@ -66,6 +66,7 @@ class Session
      * @param  ?SessionSettings  $settings
      * @param  ?Theme  $theme
      * @param  ?array<string, mixed>  $customConsumerSettings
+     * @phpstan-pure
      */
     public function __construct(?ConsumerMetadata $consumerMetadata = null, ?string $redirectUri = null, ?SessionSettings $settings = null, ?Theme $theme = null, ?array $customConsumerSettings = null)
     {

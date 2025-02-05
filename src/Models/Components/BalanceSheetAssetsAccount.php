@@ -64,6 +64,7 @@ class BalanceSheetAssetsAccount
      * @param  ?string  $name
      * @param  ?float  $value
      * @param  mixed  $items
+     * @phpstan-pure
      */
     public function __construct(?string $accountId = null, ?string $code = null, ?string $name = null, ?float $value = null, mixed $items = null)
     {

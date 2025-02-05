@@ -63,6 +63,7 @@ class LinkedSupplier
      * @param  ?string  $displayId
      * @param  ?string  $displayName
      * @param  ?string  $companyName
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?Address $address = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null)
     {
