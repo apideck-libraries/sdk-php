@@ -48,6 +48,7 @@ class Schedule
      * @param  string  $startDate
      * @param  string  $endDate
      * @param  WorkPattern  $workPattern
+     * @phpstan-pure
      */
     public function __construct(string $id, string $startDate, string $endDate, WorkPattern $workPattern)
     {

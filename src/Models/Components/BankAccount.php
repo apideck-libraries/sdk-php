@@ -124,6 +124,7 @@ class BankAccount
      * @param  ?string  $branchIdentifier
      * @param  ?string  $bankCode
      * @param  ?Currency  $currency
+     * @phpstan-pure
      */
     public function __construct(?string $bankName = null, ?string $accountNumber = null, ?string $accountName = null, ?AccountType $accountType = null, ?string $iban = null, ?string $bic = null, ?string $routingNumber = null, ?string $bsbNumber = null, ?string $branchIdentifier = null, ?string $bankCode = null, ?Currency $currency = null)
     {

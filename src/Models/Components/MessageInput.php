@@ -110,6 +110,7 @@ class MessageInput
      * @param  ?string  $reference
      * @param  ?string  $messagingServiceId
      * @param  ?array<PassThroughBody>  $passThrough
+     * @phpstan-pure
      */
     public function __construct(string $from, string $to, string $body, ?string $subject = null, ?MessageType $type = null, ?\DateTime $scheduledAt = null, ?string $webhookUrl = null, ?string $reference = null, ?string $messagingServiceId = null, ?array $passThrough = null)
     {

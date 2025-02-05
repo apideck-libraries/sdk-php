@@ -180,6 +180,8 @@ $request = new Operations\AccountingBillsAddRequest(
         rowVersion: '1-12345',
         accountingPeriod: '01-24',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -238,13 +240,14 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\AccountingBillsAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     filter: new Components\BillsFilter(
         updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
     ),
     sort: new Components\BillsSort(
         by: Components\By::UpdatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',
@@ -309,6 +312,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingBillsDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -366,6 +371,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingBillsOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -572,6 +579,8 @@ $request = new Operations\AccountingBillsUpdateRequest(
         rowVersion: '1-12345',
         accountingPeriod: '01-24',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

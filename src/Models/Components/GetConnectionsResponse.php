@@ -41,6 +41,7 @@ class GetConnectionsResponse
      * @param  int  $statusCode
      * @param  string  $status
      * @param  array<Connection>  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, array $data)
     {

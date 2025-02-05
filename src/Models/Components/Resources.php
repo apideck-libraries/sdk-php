@@ -53,6 +53,7 @@ class Resources
      * @param  ?string  $name
      * @param  ?ResourceStatus  $status
      * @param  ?bool  $excludedFromCoverage
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?ResourceStatus $status = null, ?bool $excludedFromCoverage = null)
     {

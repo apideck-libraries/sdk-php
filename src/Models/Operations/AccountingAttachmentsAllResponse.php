@@ -41,6 +41,7 @@ class AccountingAttachmentsAllResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetAttachmentsResponse  $getAttachmentsResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetAttachmentsResponse $getAttachmentsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

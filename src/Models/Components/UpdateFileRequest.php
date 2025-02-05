@@ -53,6 +53,7 @@ class UpdateFileRequest
      * @param  ?string  $description
      * @param  ?string  $parentFolderId
      * @param  ?array<PassThroughBody>  $passThrough
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?string $description = null, ?string $parentFolderId = null, ?array $passThrough = null)
     {

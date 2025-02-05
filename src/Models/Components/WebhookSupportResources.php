@@ -23,6 +23,7 @@ class WebhookSupportResources
 
     /**
      * @param  ?array<string>  $events
+     * @phpstan-pure
      */
     public function __construct(?array $events = null)
     {

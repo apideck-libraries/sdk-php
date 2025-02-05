@@ -57,6 +57,7 @@ class WebhookSupport
      * @param  ?SubscriptionLevel  $subscriptionLevel
      * @param  ?ManagedVia  $managedVia
      * @param  ?VirtualWebhooks  $virtualWebhooks
+     * @phpstan-pure
      */
     public function __construct(?Mode $mode = null, ?SubscriptionLevel $subscriptionLevel = null, ?ManagedVia $managedVia = null, ?VirtualWebhooks $virtualWebhooks = null)
     {

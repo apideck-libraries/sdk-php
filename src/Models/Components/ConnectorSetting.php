@@ -40,6 +40,7 @@ class ConnectorSetting
      * @param  ?string  $id
      * @param  ?string  $label
      * @param  ?ConnectorSettingType  $type
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $label = null, ?ConnectorSettingType $type = null)
     {

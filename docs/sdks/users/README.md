@@ -110,6 +110,8 @@ $request = new Operations\CrmUsersAddRequest(
         status: 'active',
         password: 'supersecretpassword',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -166,6 +168,8 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\CrmUsersAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     passThrough: [
         'search' => 'San Francisco',
@@ -230,6 +234,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\CrmUsersDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -287,6 +293,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\CrmUsersOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -421,6 +429,8 @@ $request = new Operations\CrmUsersUpdateRequest(
         status: 'active',
         password: 'supersecretpassword',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

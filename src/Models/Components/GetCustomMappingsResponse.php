@@ -41,6 +41,7 @@ class GetCustomMappingsResponse
      * @param  int  $statusCode
      * @param  string  $status
      * @param  array<CustomMapping>  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, array $data)
     {

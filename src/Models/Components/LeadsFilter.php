@@ -57,6 +57,7 @@ class LeadsFilter
      * @param  ?string  $lastName
      * @param  ?string  $email
      * @param  ?string  $phoneNumber
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $phoneNumber = null)
     {

@@ -37,6 +37,8 @@ $request = new Operations\VaultCreateCallbackStateRequest(
     createCallbackState: new Components\CreateCallbackState(
         redirectUri: 'https://example.com/callback',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
 );
 
 $response = $sdk->vault->createCallback->state(

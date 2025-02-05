@@ -41,6 +41,7 @@ class EcommerceCustomersAllResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetEcommerceCustomersResponse  $getEcommerceCustomersResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetEcommerceCustomersResponse $getEcommerceCustomersResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

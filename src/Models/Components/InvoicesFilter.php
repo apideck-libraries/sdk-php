@@ -37,6 +37,7 @@ class InvoicesFilter
      * @param  ?\DateTime  $updatedSince
      * @param  ?\DateTime  $createdSince
      * @param  ?string  $number
+     * @phpstan-pure
      */
     public function __construct(?\DateTime $updatedSince = null, ?\DateTime $createdSince = null, ?string $number = null)
     {

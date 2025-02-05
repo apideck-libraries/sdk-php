@@ -39,6 +39,7 @@ class VaultConsumersAllRequest
      * @param  ?string  $appId
      * @param  ?int  $limit
      * @param  ?string  $cursor
+     * @phpstan-pure
      */
     public function __construct(?string $appId = null, ?string $cursor = null, ?int $limit = 20)
     {

@@ -75,6 +75,7 @@ class FileStorageFoldersCopyRequest
      * @param  ?string  $serviceId
      * @param  ?bool  $raw
      * @param  ?string  $fields
+     * @phpstan-pure
      */
     public function __construct(string $id, Components\CopyFolderRequest $copyFolderRequest, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $fields = null, ?bool $raw = false)
     {

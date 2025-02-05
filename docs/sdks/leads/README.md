@@ -139,6 +139,8 @@ $request = new Operations\CrmLeadsAddRequest(
             'New',
         ],
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -196,6 +198,8 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\CrmLeadsAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     filter: new Components\LeadsFilter(
         firstName: 'Elon',
@@ -205,7 +209,6 @@ $request = new Operations\CrmLeadsAllRequest(
     ),
     sort: new Components\LeadsSort(
         by: Components\LeadsSortBy::CreatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',
@@ -270,6 +273,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\CrmLeadsDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -327,6 +332,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\CrmLeadsOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -492,6 +499,8 @@ $request = new Operations\CrmLeadsUpdateRequest(
             'New',
         ],
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

@@ -90,6 +90,7 @@ class GetAccountingDepartmentsResponse
      * @param  array<AccountingDepartment>  $data
      * @param  ?Meta  $meta
      * @param  ?Links  $links
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, array $data, ?Meta $meta = null, ?Links $links = null)
     {

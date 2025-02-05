@@ -245,6 +245,7 @@ class Message
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
+     * @phpstan-pure
      */
     public function __construct(string $from, string $to, string $body, ?string $id = null, ?string $subject = null, ?MessageType $type = null, ?int $numberOfUnits = null, ?int $numberOfMediaFiles = null, ?Direction $direction = null, ?MessageStatus $status = null, ?\DateTime $scheduledAt = null, ?\DateTime $sentAt = null, ?string $webhookUrl = null, ?string $reference = null, ?Price $price = null, ?Error $error = null, ?string $messagingServiceId = null, ?array $passThrough = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {

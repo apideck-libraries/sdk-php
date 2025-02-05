@@ -120,6 +120,7 @@ class Application
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $applicantId = null, ?string $jobId = null, ?Stage $stage = null, ?array $passThrough = null, ?ApplicationStatus $status = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {

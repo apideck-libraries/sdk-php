@@ -37,6 +37,7 @@ class AccountingLedgerAccountsUpdateResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\UpdateLedgerAccountResponse  $updateLedgerAccountResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UpdateLedgerAccountResponse $updateLedgerAccountResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

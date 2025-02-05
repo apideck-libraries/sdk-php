@@ -236,6 +236,7 @@ class Expense
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
      * @param  ?string  $rowVersion
+     * @phpstan-pure
      */
     public function __construct(string $accountId, array $lineItems, ?string $id = null, ?\DateTime $transactionDate = null, ?string $customerId = null, ?string $supplierId = null, ?string $departmentId = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?string $companyId = null, ?ExpensePaymentType $paymentType = null, ?Currency $currency = null, ?float $currencyRate = null, ?ExpenseType $type = null, ?string $memo = null, ?float $totalAmount = null, ?CustomMappings $customMappings = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null)
     {

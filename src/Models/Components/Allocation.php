@@ -62,6 +62,7 @@ class Allocation
      * @param  ?string  $code
      * @param  ?string  $allocationId
      * @param  ?float  $amount
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?AllocationType $type = null, ?string $code = null, ?string $allocationId = null, ?float $amount = null)
     {

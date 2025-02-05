@@ -33,6 +33,7 @@ class ConnectorOauthScopes
     /**
      * @param  ?string  $id
      * @param  ?string  $label
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $label = null)
     {

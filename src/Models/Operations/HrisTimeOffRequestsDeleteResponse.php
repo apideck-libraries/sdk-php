@@ -37,6 +37,7 @@ class HrisTimeOffRequestsDeleteResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\DeleteTimeOffRequestResponse  $deleteTimeOffRequestResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteTimeOffRequestResponse $deleteTimeOffRequestResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

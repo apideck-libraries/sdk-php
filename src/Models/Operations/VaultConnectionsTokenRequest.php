@@ -56,6 +56,7 @@ class VaultConnectionsTokenRequest
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?VaultConnectionsTokenRequestBody  $requestBody
+     * @phpstan-pure
      */
     public function __construct(string $serviceId, string $unifiedApi, ?string $consumerId = null, ?string $appId = null, ?VaultConnectionsTokenRequestBody $requestBody = null)
     {

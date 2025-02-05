@@ -31,6 +31,8 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\AccountingProfitAndLossOneRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     filter: new Components\ProfitAndLossFilter(
         customerId: '123abc',

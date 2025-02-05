@@ -107,6 +107,7 @@ class Coverage
      * @param  ?array<string>  $supportedSortBy
      * @param  ?array<SupportedProperty>  $supportedFields
      * @param  ?array<SupportedProperty>  $supportedListFields
+     * @phpstan-pure
      */
     public function __construct(?string $downstreamId = null, ?string $downstreamName = null, ?bool $paginationSupported = null, ?PaginationCoverage $pagination = null, ?array $supportedOperations = null, ?array $supportedFilters = null, ?array $supportedSortBy = null, ?array $supportedFields = null, ?array $supportedListFields = null)
     {

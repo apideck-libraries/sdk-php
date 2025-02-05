@@ -31,6 +31,7 @@ class JobLinks
     /**
      * @param  ?JobType  $type
      * @param  ?string  $url
+     * @phpstan-pure
      */
     public function __construct(?JobType $type = null, ?string $url = null)
     {

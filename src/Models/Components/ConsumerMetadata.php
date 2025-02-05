@@ -53,6 +53,7 @@ class ConsumerMetadata
      * @param  ?string  $userName
      * @param  ?string  $email
      * @param  ?string  $image
+     * @phpstan-pure
      */
     public function __construct(?string $accountName = null, ?string $userName = null, ?string $email = null, ?string $image = null)
     {

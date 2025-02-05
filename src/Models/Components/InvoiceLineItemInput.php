@@ -223,6 +223,7 @@ class InvoiceLineItemInput
      * @param  ?array<LinkedTrackingCategory>  $trackingCategories
      * @param  ?LinkedLedgerAccountInput  $ledgerAccount
      * @param  ?string  $rowVersion
+     * @phpstan-pure
      */
     public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?string $id = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?InvoiceLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $locationId = null, ?string $departmentId = null, ?array $trackingCategories = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $rowVersion = null)
     {

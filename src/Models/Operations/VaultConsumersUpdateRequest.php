@@ -39,6 +39,7 @@ class VaultConsumersUpdateRequest
      * @param  string  $consumerId
      * @param  Components\UpdateConsumerRequest  $updateConsumerRequest
      * @param  ?string  $appId
+     * @phpstan-pure
      */
     public function __construct(string $consumerId, Components\UpdateConsumerRequest $updateConsumerRequest, ?string $appId = null)
     {

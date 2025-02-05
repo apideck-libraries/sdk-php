@@ -30,6 +30,7 @@ class WebhookWebhooksAddRequest
     /**
      * @param  Components\CreateWebhookRequest  $createWebhookRequest
      * @param  ?string  $appId
+     * @phpstan-pure
      */
     public function __construct(Components\CreateWebhookRequest $createWebhookRequest, ?string $appId = null)
     {

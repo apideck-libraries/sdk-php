@@ -35,6 +35,8 @@ $request = new Operations\VaultConnectionSettingsAllRequest(
     unifiedApi: 'crm',
     serviceId: 'pipedrive',
     resource: 'leads',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
 );
 
 $response = $sdk->vault->connectionSettings->list(
@@ -136,6 +138,8 @@ $request = new Operations\VaultConnectionSettingsUpdateRequest(
             'plan' => 'enterprise',
         ],
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
 );
 
 $response = $sdk->vault->connectionSettings->update(

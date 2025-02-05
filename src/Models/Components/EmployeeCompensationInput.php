@@ -76,6 +76,7 @@ class EmployeeCompensationInput
      * @param  ?FlsaStatus  $flsaStatus
      * @param  ?string  $effectiveDate
      * @param  ?PaymentFrequency  $paymentFrequency
+     * @phpstan-pure
      */
     public function __construct(?float $rate = null, ?PaymentUnit $paymentUnit = null, ?Currency $currency = null, ?FlsaStatus $flsaStatus = null, ?string $effectiveDate = null, ?PaymentFrequency $paymentFrequency = null)
     {

@@ -93,6 +93,7 @@ class Theme
      * @param  ?string  $vaultName
      * @param  ?string  $privacyUrl
      * @param  ?string  $termsUrl
+     * @phpstan-pure
      */
     public function __construct(?string $favicon = null, ?string $logo = null, ?string $primaryColor = null, ?string $sidepanelBackgroundColor = null, ?string $sidepanelTextColor = null, ?string $vaultName = null, ?string $privacyUrl = null, ?string $termsUrl = null)
     {

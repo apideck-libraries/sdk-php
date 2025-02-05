@@ -37,6 +37,7 @@ class AccountingAgedDebtorsOneResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetAgedDebtorsResponse  $getAgedDebtorsResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetAgedDebtorsResponse $getAgedDebtorsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

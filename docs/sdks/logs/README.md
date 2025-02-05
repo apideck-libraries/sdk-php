@@ -32,6 +32,8 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\VaultLogsAllRequest(
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
+    consumerId: 'test-consumer',
     filter: new Components\LogsFilter(
         connectorId: 'crm+salesforce',
         statusCode: 201,

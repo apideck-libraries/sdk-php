@@ -159,6 +159,7 @@ class ConnectorResource
      * @param  ?array<string>  $supportedSortBy
      * @param  ?array<SupportedProperty>  $supportedFields
      * @param  ?array<SupportedProperty>  $supportedListFields
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?string $downstreamId = null, ?string $downstreamName = null, ?ResourceStatus $status = null, ?bool $paginationSupported = null, ?PaginationCoverage $pagination = null, ?bool $customFieldsSupported = null, ?array $supportedOperations = null, ?array $downstreamUnsupportedOperations = null, ?array $supportedFilters = null, ?array $supportedSortBy = null, ?array $supportedFields = null, ?array $supportedListFields = null)
     {

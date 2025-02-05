@@ -37,6 +37,7 @@ class VaultConnectionsAllResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetConnectionsResponse  $getConnectionsResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetConnectionsResponse $getConnectionsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

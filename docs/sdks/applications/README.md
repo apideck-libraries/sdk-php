@@ -59,6 +59,8 @@ $request = new Operations\AtsApplicationsAddRequest(
         ],
         status: Components\ApplicationStatus::Open,
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -115,6 +117,8 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\AtsApplicationsAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     passThrough: [
         'search' => 'San Francisco',
@@ -178,6 +182,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AtsApplicationsDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -235,6 +241,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AtsApplicationsOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -317,6 +325,8 @@ $request = new Operations\AtsApplicationsUpdateRequest(
         ],
         status: Components\ApplicationStatus::Open,
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

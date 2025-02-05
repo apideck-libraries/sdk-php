@@ -74,6 +74,7 @@ class CustomersFilter
      * @param  ?string  $email
      * @param  ?\DateTime  $updatedSince
      * @param  ?CustomersFilterStatus  $status
+     * @phpstan-pure
      */
     public function __construct(?string $companyName = null, ?string $displayName = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?\DateTime $updatedSince = null, ?CustomersFilterStatus $status = null)
     {

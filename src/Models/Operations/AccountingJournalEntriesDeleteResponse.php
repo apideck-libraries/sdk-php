@@ -37,6 +37,7 @@ class AccountingJournalEntriesDeleteResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\DeleteJournalEntryResponse  $deleteJournalEntryResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteJournalEntryResponse $deleteJournalEntryResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

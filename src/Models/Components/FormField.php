@@ -162,6 +162,7 @@ class FormField
      * @param  ?bool  $sensitive
      * @param  ?string  $prefix
      * @param  ?string  $suffix
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $label = null, ?FormFieldType $type = null, ?bool $required = null, ?bool $customField = null, ?array $options = null, ?string $placeholder = null, ?string $description = null, ?bool $disabled = null, ?bool $hidden = null, ?bool $deprecated = null, ?bool $sensitive = null, ?string $prefix = null, ?string $suffix = null, ?bool $allowCustomValues = false)
     {

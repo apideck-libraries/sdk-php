@@ -54,6 +54,7 @@ class UpdateWebhookRequest
      * @param  ?string  $deliveryUrl
      * @param  ?array<WebhookEventType>  $events
      * @param  ?string  $description
+     * @phpstan-pure
      */
     public function __construct(?Status $status = null, ?string $deliveryUrl = null, ?array $events = null, ?string $description = null)
     {

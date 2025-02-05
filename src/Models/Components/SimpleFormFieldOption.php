@@ -31,6 +31,7 @@ class SimpleFormFieldOption
     /**
      * @param  ?string  $label
      * @param  string|int|float|bool|array<string|int|float>|null  $value
+     * @phpstan-pure
      */
     public function __construct(?string $label = null, string|int|float|bool|array|null $value = null)
     {

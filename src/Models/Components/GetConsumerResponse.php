@@ -40,6 +40,7 @@ class GetConsumerResponse
      * @param  int  $statusCode
      * @param  string  $status
      * @param  Consumer  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, Consumer $data)
     {

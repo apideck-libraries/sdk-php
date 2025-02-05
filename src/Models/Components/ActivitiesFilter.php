@@ -56,6 +56,7 @@ class ActivitiesFilter
      * @param  ?string  $contactId
      * @param  ?\DateTime  $updatedSince
      * @param  ?string  $type
+     * @phpstan-pure
      */
     public function __construct(?string $companyId = null, ?string $ownerId = null, ?string $contactId = null, ?\DateTime $updatedSince = null, ?string $type = null)
     {

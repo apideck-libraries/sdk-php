@@ -61,6 +61,7 @@ class CreateWebhookRequest
      * @param  string  $deliveryUrl
      * @param  array<WebhookEventType>  $events
      * @param  ?string  $description
+     * @phpstan-pure
      */
     public function __construct(UnifiedApiId $unifiedApi, Status $status, string $deliveryUrl, array $events, ?string $description = null)
     {

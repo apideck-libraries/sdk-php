@@ -21,6 +21,7 @@ class InvoiceItemFilter
 
     /**
      * @param  ?InvoiceItemFilterInvoiceItemType  $type
+     * @phpstan-pure
      */
     public function __construct(?InvoiceItemFilterInvoiceItemType $type = null)
     {

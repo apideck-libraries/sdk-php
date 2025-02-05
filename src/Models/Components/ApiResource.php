@@ -65,6 +65,7 @@ class ApiResource
      * @param  ?ResourceStatus  $status
      * @param  ?array<LinkedResources>  $linkedResources
      * @param  ?Schema  $schema
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?ResourceStatus $status = null, ?array $linkedResources = null, ?Schema $schema = null)
     {

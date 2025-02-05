@@ -37,6 +37,7 @@ class SmsMessagesDeleteResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\DeleteMessageResponse  $deleteMessageResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteMessageResponse $deleteMessageResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

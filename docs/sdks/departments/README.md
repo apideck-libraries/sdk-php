@@ -61,6 +61,8 @@ $request = new Operations\AccountingDepartmentsAddRequest(
         name: 'Sales',
         rowVersion: '1-12345',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -118,6 +120,8 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\AccountingDepartmentsAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     filter: new Components\AccountingDepartmentsFilter(
         subsidiary: '1',
@@ -182,6 +186,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingDepartmentsDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -239,6 +245,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingDepartmentsOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -324,6 +332,8 @@ $request = new Operations\AccountingDepartmentsUpdateRequest(
         name: 'Sales',
         rowVersion: '1-12345',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

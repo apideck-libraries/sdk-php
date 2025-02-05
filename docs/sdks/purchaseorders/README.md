@@ -203,6 +203,8 @@ $request = new Operations\AccountingPurchaseOrdersAddRequest(
         ],
         rowVersion: '1-12345',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -261,6 +263,8 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\AccountingPurchaseOrdersAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     passThrough: [
         'search' => 'San Francisco',
@@ -271,7 +275,6 @@ $request = new Operations\AccountingPurchaseOrdersAllRequest(
     ),
     sort: new Components\PurchaseOrdersSort(
         by: Components\PurchaseOrdersSortBy::UpdatedAt,
-        direction: Components\SortDirection::Desc,
     ),
 );
 
@@ -332,6 +335,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingPurchaseOrdersDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -389,6 +394,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingPurchaseOrdersOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -617,6 +624,8 @@ $request = new Operations\AccountingPurchaseOrdersUpdateRequest(
         ],
         rowVersion: '1-12345',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

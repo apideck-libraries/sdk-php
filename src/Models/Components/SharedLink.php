@@ -103,6 +103,7 @@ class SharedLink
      * @param  ?\DateTime  $expiresAt
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
+     * @phpstan-pure
      */
     public function __construct(?SharedLinkTarget $target = null, ?array $passThrough = null, ?string $url = null, ?string $downloadUrl = null, ?Scope $scope = null, ?bool $passwordProtected = null, ?\DateTime $expiresAt = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {

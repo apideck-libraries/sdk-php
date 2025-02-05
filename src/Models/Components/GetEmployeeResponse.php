@@ -67,6 +67,7 @@ class GetEmployeeResponse
      * @param  string  $resource
      * @param  string  $operation
      * @param  Employee  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, Employee $data)
     {

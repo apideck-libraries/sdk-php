@@ -67,6 +67,7 @@ class GetEcommerceOrderResponse
      * @param  string  $resource
      * @param  string  $operation
      * @param  EcommerceOrder  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, EcommerceOrder $data)
     {

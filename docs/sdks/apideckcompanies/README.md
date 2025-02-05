@@ -111,6 +111,8 @@ $request = new Operations\HrisCompaniesAddRequest(
         currency: Components\Currency::Usd,
         debtorId: '12345',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -167,6 +169,8 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\HrisCompaniesAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     passThrough: [
         'search' => 'San Francisco',
@@ -231,6 +235,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\HrisCompaniesDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -288,6 +294,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\HrisCompaniesOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -423,6 +431,8 @@ $request = new Operations\HrisCompaniesUpdateRequest(
         currency: Components\Currency::Usd,
         debtorId: '12345',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

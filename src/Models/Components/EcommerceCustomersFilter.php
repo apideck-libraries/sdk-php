@@ -30,6 +30,7 @@ class EcommerceCustomersFilter
     /**
      * @param  ?string  $email
      * @param  ?string  $phoneNumber
+     * @phpstan-pure
      */
     public function __construct(?string $email = null, ?string $phoneNumber = null)
     {

@@ -90,6 +90,8 @@ $request = new Operations\AccountingLocationsAddRequest(
         displayName: '11 UT - South Jordan',
         rowVersion: '1-12345',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -147,6 +149,8 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\AccountingLocationsAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     filter: new Components\AccountingLocationsFilter(
         subsidiary: '1',
@@ -211,6 +215,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingLocationsDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -268,6 +274,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingLocationsOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -382,6 +390,8 @@ $request = new Operations\AccountingLocationsUpdateRequest(
         displayName: '11 UT - South Jordan',
         rowVersion: '1-12345',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

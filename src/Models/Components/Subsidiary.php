@@ -125,6 +125,7 @@ class Subsidiary
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?SubsidiaryStatus $status = null, ?array $passThrough = null, ?string $parentId = null, ?string $name = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {

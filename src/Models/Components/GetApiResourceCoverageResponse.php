@@ -62,6 +62,7 @@ class GetApiResourceCoverageResponse
      * @param  ApiResourceCoverage  $data
      * @param  ?Meta  $meta
      * @param  ?Links  $links
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, ApiResourceCoverage $data, ?Meta $meta = null, ?Links $links = null)
     {

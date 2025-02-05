@@ -21,6 +21,7 @@ class ApplicantsFilter
 
     /**
      * @param  ?string  $jobId
+     * @phpstan-pure
      */
     public function __construct(?string $jobId = null)
     {

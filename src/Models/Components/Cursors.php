@@ -43,6 +43,7 @@ class Cursors
      * @param  ?string  $previous
      * @param  ?string  $current
      * @param  ?string  $next
+     * @phpstan-pure
      */
     public function __construct(?string $previous = null, ?string $current = null, ?string $next = null)
     {

@@ -42,6 +42,7 @@ class Owner
      * @param  ?string  $id
      * @param  ?string  $email
      * @param  ?string  $name
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $email = null, ?string $name = null)
     {

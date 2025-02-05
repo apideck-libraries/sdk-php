@@ -128,6 +128,7 @@ class SessionSettings
      * @param  ?bool  $autoRedirect
      * @param  ?bool  $hideGuides
      * @param  ?array<AllowActions>  $allowActions
+     * @phpstan-pure
      */
     public function __construct(?array $unifiedApis = null, ?array $allowActions = null, ?bool $hideResourceSettings = false, ?bool $sandboxMode = false, ?bool $isolationMode = false, ?string $sessionLength = '1h', ?bool $showLogs = true, ?bool $showSuggestions = false, ?bool $showSidebar = true, ?bool $autoRedirect = false, ?bool $hideGuides = false)
     {

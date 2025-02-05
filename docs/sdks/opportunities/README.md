@@ -93,6 +93,8 @@ $request = new Operations\CrmOpportunitiesAddRequest(
         ],
         stageLastChangedAt: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -150,6 +152,8 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\CrmOpportunitiesAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     filter: new Components\OpportunitiesFilter(
         status: 'Completed',
@@ -157,7 +161,6 @@ $request = new Operations\CrmOpportunitiesAllRequest(
     ),
     sort: new Components\OpportunitiesSort(
         by: Components\OpportunitiesSortBy::CreatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',
@@ -222,6 +225,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\CrmOpportunitiesDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -279,6 +284,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\CrmOpportunitiesOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -398,6 +405,8 @@ $request = new Operations\CrmOpportunitiesUpdateRequest(
         ],
         stageLastChangedAt: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

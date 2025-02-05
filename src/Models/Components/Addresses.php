@@ -92,6 +92,7 @@ class Addresses
      * @param  ?string  $state
      * @param  ?string  $postalCode
      * @param  ?string  $country
+     * @phpstan-pure
      */
     public function __construct(?EcommerceCustomerType $type = null, ?string $id = null, ?string $line1 = null, ?string $line2 = null, ?string $city = null, ?string $state = null, ?string $postalCode = null, ?string $country = null)
     {

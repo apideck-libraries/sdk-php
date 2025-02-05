@@ -75,6 +75,7 @@ class EvenWeeks
      * @param  ?float  $hoursFriday
      * @param  ?float  $hoursSaturday
      * @param  ?float  $hoursSunday
+     * @phpstan-pure
      */
     public function __construct(?float $hoursMonday = null, ?float $hoursTuesday = null, ?float $hoursWednesday = null, ?float $hoursThursday = null, ?float $hoursFriday = null, ?float $hoursSaturday = null, ?float $hoursSunday = null)
     {

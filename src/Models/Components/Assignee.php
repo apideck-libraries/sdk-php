@@ -30,6 +30,7 @@ class Assignee
     /**
      * @param  string  $id
      * @param  ?string  $username
+     * @phpstan-pure
      */
     public function __construct(string $id, ?string $username = null)
     {

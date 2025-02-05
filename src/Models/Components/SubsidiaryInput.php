@@ -64,6 +64,7 @@ class SubsidiaryInput
      * @param  ?string  $parentId
      * @param  ?string  $name
      * @param  ?string  $rowVersion
+     * @phpstan-pure
      */
     public function __construct(?SubsidiaryStatus $status = null, ?array $passThrough = null, ?string $parentId = null, ?string $name = null, ?string $rowVersion = null)
     {

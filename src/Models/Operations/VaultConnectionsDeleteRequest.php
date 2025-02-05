@@ -48,6 +48,7 @@ class VaultConnectionsDeleteRequest
      * @param  string  $unifiedApi
      * @param  ?string  $consumerId
      * @param  ?string  $appId
+     * @phpstan-pure
      */
     public function __construct(string $serviceId, string $unifiedApi, ?string $consumerId = null, ?string $appId = null)
     {

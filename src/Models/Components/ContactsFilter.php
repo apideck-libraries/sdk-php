@@ -75,6 +75,7 @@ class ContactsFilter
      * @param  ?string  $phoneNumber
      * @param  ?string  $companyId
      * @param  ?string  $ownerId
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $phoneNumber = null, ?string $companyId = null, ?string $ownerId = null)
     {

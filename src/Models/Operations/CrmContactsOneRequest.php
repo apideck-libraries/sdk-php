@@ -76,6 +76,7 @@ class CrmContactsOneRequest
      * @param  ?bool  $raw
      * @param  ?Components\ContactsFilter  $filter
      * @param  ?string  $fields
+     * @phpstan-pure
      */
     public function __construct(string $id, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?Components\ContactsFilter $filter = null, ?string $fields = null, ?bool $raw = false)
     {

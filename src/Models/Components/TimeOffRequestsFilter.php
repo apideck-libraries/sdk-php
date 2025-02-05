@@ -66,6 +66,7 @@ class TimeOffRequestsFilter
      * @param  ?string  $employeeId
      * @param  ?TimeOffRequestStatus  $timeOffRequestStatus
      * @param  ?string  $companyId
+     * @phpstan-pure
      */
     public function __construct(?string $startDate = null, ?string $endDate = null, ?string $updatedSince = null, ?string $employeeId = null, ?TimeOffRequestStatus $timeOffRequestStatus = null, ?string $companyId = null)
     {

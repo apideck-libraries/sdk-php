@@ -41,6 +41,7 @@ class CrmActivitiesAllResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetActivitiesResponse  $getActivitiesResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetActivitiesResponse $getActivitiesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

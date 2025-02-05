@@ -164,6 +164,8 @@ $request = new Operations\CrmCompaniesAddRequest(
         salutation: 'Mr',
         birthday: LocalDate::parse('2000-08-12'),
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -221,13 +223,14 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\CrmCompaniesAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     filter: new Components\CompaniesFilter(
         name: 'SpaceX',
     ),
     sort: new Components\CompaniesSort(
         by: Components\CompaniesSortBy::CreatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',
@@ -292,6 +295,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\CrmCompaniesDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -349,6 +354,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\CrmCompaniesOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -539,6 +546,8 @@ $request = new Operations\CrmCompaniesUpdateRequest(
         salutation: 'Mr',
         birthday: LocalDate::parse('2000-08-12'),
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

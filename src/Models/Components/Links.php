@@ -43,6 +43,7 @@ class Links
      * @param  ?string  $current
      * @param  ?string  $previous
      * @param  ?string  $next
+     * @phpstan-pure
      */
     public function __construct(?string $current = null, ?string $previous = null, ?string $next = null)
     {

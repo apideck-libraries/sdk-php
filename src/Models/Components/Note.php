@@ -164,6 +164,7 @@ class Note
      * @param  ?string  $createdBy
      * @param  ?string  $updatedAt
      * @param  ?string  $createdAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?array $passThrough = null, ?string $title = null, ?string $content = null, ?string $ownerId = null, ?string $contactId = null, ?string $companyId = null, ?string $opportunityId = null, ?string $leadId = null, ?bool $active = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?string $updatedAt = null, ?string $createdAt = null)
     {

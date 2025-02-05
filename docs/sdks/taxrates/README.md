@@ -81,6 +81,8 @@ $request = new Operations\AccountingTaxRatesAddRequest(
         status: Components\TaxRateStatus::Active,
         rowVersion: '1-12345',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -139,6 +141,8 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\AccountingTaxRatesAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     filter: new Components\TaxRatesFilter(
         assets: true,
@@ -210,6 +214,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingTaxRatesDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -268,6 +274,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingTaxRatesOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -375,6 +383,8 @@ $request = new Operations\AccountingTaxRatesUpdateRequest(
         status: Components\TaxRateStatus::Active,
         rowVersion: '1-12345',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

@@ -67,6 +67,7 @@ class AccountingBalanceSheetOneRequest
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?Components\BalanceSheetFilter  $filter
      * @param  ?bool  $raw
+     * @phpstan-pure
      */
     public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?array $passThrough = null, ?Components\BalanceSheetFilter $filter = null, ?bool $raw = false)
     {

@@ -105,6 +105,8 @@ $request = new Operations\AccountingInvoiceItemsAddRequest(
         active: true,
         rowVersion: '1-12345',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -162,6 +164,8 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\AccountingInvoiceItemsAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     filter: new Components\InvoiceItemsFilter(
         name: 'Widgets Large',
@@ -169,7 +173,6 @@ $request = new Operations\AccountingInvoiceItemsAllRequest(
     ),
     sort: new Components\InvoiceItemsSort(
         by: Components\InvoiceItemsSortBy::UpdatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',
@@ -234,6 +237,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingInvoiceItemsDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -292,6 +297,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingInvoiceItemsOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     filter: new Components\InvoiceItemFilter(
         type: Components\InvoiceItemFilterInvoiceItemType::Service,
@@ -424,6 +431,8 @@ $request = new Operations\AccountingInvoiceItemsUpdateRequest(
         active: true,
         rowVersion: '1-12345',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

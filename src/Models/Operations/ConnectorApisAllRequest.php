@@ -49,6 +49,7 @@ class ConnectorApisAllRequest
      * @param  ?int  $limit
      * @param  ?Components\ApisFilter  $filter
      * @param  ?string  $cursor
+     * @phpstan-pure
      */
     public function __construct(?string $appId = null, ?Components\ApisFilter $filter = null, ?string $cursor = null, ?int $limit = 20)
     {

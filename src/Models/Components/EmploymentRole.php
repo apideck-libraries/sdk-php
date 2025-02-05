@@ -34,6 +34,7 @@ class EmploymentRole
     /**
      * @param  ?EmploymentType  $type
      * @param  ?EmploymentSubType  $subType
+     * @phpstan-pure
      */
     public function __construct(?EmploymentType $type = null, ?EmploymentSubType $subType = null)
     {

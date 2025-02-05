@@ -37,6 +37,7 @@ class AccountingPurchaseOrdersOneResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetPurchaseOrderResponse  $getPurchaseOrderResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetPurchaseOrderResponse $getPurchaseOrderResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

@@ -378,6 +378,7 @@ class PurchaseOrder
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?array $lineItems = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $poNumber = null, ?string $reference = null, ?LinkedSupplier $supplier = null, ?string $companyId = null, ?PurchaseOrderStatus $status = null, ?LocalDate $issuedDate = null, ?LocalDate $deliveryDate = null, ?LocalDate $expectedArrivalDate = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?bool $taxInclusive = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $templateId = null, ?float $discountPercentage = null, ?bool $accountingByRow = null, ?LocalDate $dueDate = null, ?string $paymentMethod = null, ?string $taxCode = null, ?string $channel = null, ?string $memo = null, ?array $trackingCategories = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {

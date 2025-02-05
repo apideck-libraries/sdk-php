@@ -37,6 +37,7 @@ class VaultConnectionCustomMappingsAllResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetCustomMappingsResponse  $getCustomMappingsResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetCustomMappingsResponse $getCustomMappingsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

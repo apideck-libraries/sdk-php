@@ -22,6 +22,7 @@ class CreateCallbackStateResponseData
 
     /**
      * @param  ?string  $state
+     * @phpstan-pure
      */
     public function __construct(?string $state = null)
     {

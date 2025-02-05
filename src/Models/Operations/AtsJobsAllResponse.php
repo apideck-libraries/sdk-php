@@ -41,6 +41,7 @@ class AtsJobsAllResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetJobsResponse  $getJobsResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetJobsResponse $getJobsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

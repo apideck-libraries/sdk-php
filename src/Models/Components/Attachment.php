@@ -143,6 +143,7 @@ class Attachment
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?AttachmentReference $reference = null, ?array $passThrough = null, ?string $displayId = null, ?string $name = null, ?string $mimeType = null, ?int $size = null, ?string $description = null, ?string $parentFolderId = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {

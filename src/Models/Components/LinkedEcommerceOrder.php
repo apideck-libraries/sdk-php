@@ -44,6 +44,7 @@ class LinkedEcommerceOrder
      * @param  ?string  $id
      * @param  ?string  $total
      * @param  ?EcommerceOrderStatus  $status
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $total = null, ?EcommerceOrderStatus $status = null)
     {

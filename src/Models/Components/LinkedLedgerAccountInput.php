@@ -42,6 +42,7 @@ class LinkedLedgerAccountInput
      * @param  ?string  $id
      * @param  ?string  $nominalCode
      * @param  ?string  $code
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $nominalCode = null, ?string $code = null)
     {

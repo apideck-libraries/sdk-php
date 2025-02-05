@@ -149,6 +149,8 @@ $request = new Operations\CrmContactsAddRequest(
             'New',
         ],
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -206,6 +208,8 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\CrmContactsAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     filter: new Components\ContactsFilter(
         firstName: 'Elon',
@@ -216,7 +220,6 @@ $request = new Operations\CrmContactsAllRequest(
     ),
     sort: new Components\ContactsSort(
         by: Components\ContactsSortBy::CreatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',
@@ -281,6 +284,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\CrmContactsDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -339,6 +344,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\CrmContactsOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     filter: new Components\ContactsFilter(
         firstName: 'Elon',
@@ -521,6 +528,8 @@ $request = new Operations\CrmContactsUpdateRequest(
             'New',
         ],
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

@@ -268,6 +268,7 @@ class LeadInput
      * @param  ?Currency  $currency
      * @param  ?string  $fax
      * @param  ?array<string>  $tags
+     * @phpstan-pure
      */
     public function __construct(string $name, ?string $companyName = null, ?array $websites = null, ?array $addresses = null, ?array $socialLinks = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $customFields = null, ?array $passThrough = null, ?string $ownerId = null, ?string $ownerName = null, ?string $companyId = null, ?string $leadId = null, ?string $leadSource = null, ?string $firstName = null, ?string $lastName = null, ?string $description = null, ?string $prefix = null, ?string $title = null, ?string $language = null, ?string $status = null, ?float $monetaryAmount = null, ?Currency $currency = null, ?string $fax = null, ?array $tags = null)
     {

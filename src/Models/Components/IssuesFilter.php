@@ -39,6 +39,7 @@ class IssuesFilter
      * @param  ?array<string>  $status
      * @param  ?\DateTime  $since
      * @param  ?string  $assigneeId
+     * @phpstan-pure
      */
     public function __construct(?array $status = null, ?\DateTime $since = null, ?string $assigneeId = null)
     {

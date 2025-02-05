@@ -75,6 +75,7 @@ class OpportunitiesFilter
      * @param  ?string  $companyId
      * @param  ?string  $ownerId
      * @param  ?string  $primaryContactId
+     * @phpstan-pure
      */
     public function __construct(?string $title = null, ?string $status = null, ?float $monetaryAmount = null, ?float $winProbability = null, ?string $companyId = null, ?string $ownerId = null, ?string $primaryContactId = null)
     {

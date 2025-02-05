@@ -48,6 +48,7 @@ class EcommerceOrdersFilter
      * @param  ?string  $customerId
      * @param  ?string  $updatedSince
      * @param  ?string  $createdSince
+     * @phpstan-pure
      */
     public function __construct(?string $email = null, ?string $customerId = null, ?string $updatedSince = null, ?string $createdSince = null)
     {

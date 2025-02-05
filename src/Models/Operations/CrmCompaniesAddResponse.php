@@ -37,6 +37,7 @@ class CrmCompaniesAddResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\CreateCompanyResponse  $createCompanyResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateCompanyResponse $createCompanyResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

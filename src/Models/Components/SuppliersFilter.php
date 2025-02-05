@@ -65,6 +65,7 @@ class SuppliersFilter
      * @param  ?string  $lastName
      * @param  ?string  $email
      * @param  ?\DateTime  $updatedSince
+     * @phpstan-pure
      */
     public function __construct(?string $companyName = null, ?string $displayName = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?\DateTime $updatedSince = null)
     {

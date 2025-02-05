@@ -32,10 +32,11 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\IssueTrackingCollectionsAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     sort: new Components\CollectionsSort(
         by: Components\CollectionsSortBy::Name,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',
@@ -100,6 +101,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\IssueTrackingCollectionsOneRequest(
     collectionId: 'apideck-io',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );

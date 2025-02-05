@@ -63,6 +63,8 @@ $request = new Operations\AccountingTaxRatesAddRequest(
         status: Components\TaxRateStatus::Active,
         rowVersion: '1-12345',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

@@ -55,6 +55,8 @@ $request = new Operations\FileStorageDriveGroupsAddRequest(
         displayName: 'accounting',
         description: 'A description',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -112,6 +114,8 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\FileStorageDriveGroupsAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     filter: new Components\DriveGroupsFilter(
         parentGroupId: '1234',
@@ -179,6 +183,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\FileStorageDriveGroupsDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -236,6 +242,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\FileStorageDriveGroupsOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -315,6 +323,8 @@ $request = new Operations\FileStorageDriveGroupsUpdateRequest(
         displayName: 'accounting',
         description: 'A description',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

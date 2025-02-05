@@ -58,6 +58,7 @@ class VaultCreateCallbackStateRequest
      * @param  Components\CreateCallbackState  $createCallbackState
      * @param  ?string  $consumerId
      * @param  ?string  $appId
+     * @phpstan-pure
      */
     public function __construct(string $serviceId, string $unifiedApi, Components\CreateCallbackState $createCallbackState, ?string $consumerId = null, ?string $appId = null)
     {

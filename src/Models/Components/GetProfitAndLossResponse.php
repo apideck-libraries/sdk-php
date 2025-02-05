@@ -67,6 +67,7 @@ class GetProfitAndLossResponse
      * @param  string  $resource
      * @param  string  $operation
      * @param  ProfitAndLoss  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, ProfitAndLoss $data)
     {

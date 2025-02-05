@@ -55,6 +55,8 @@ $request = new Operations\FileStorageSharedLinksAddRequest(
         downloadUrl: 'https://www.box.com/shared/static/rh935iit6ewrmw0unyul.jpeg',
         scope: Components\Scope::Company,
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -111,6 +113,8 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\FileStorageSharedLinksAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     passThrough: [
         'search' => 'San Francisco',
@@ -175,6 +179,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\FileStorageSharedLinksDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -232,6 +238,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\FileStorageSharedLinksOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -311,6 +319,8 @@ $request = new Operations\FileStorageSharedLinksUpdateRequest(
         downloadUrl: 'https://www.box.com/shared/static/rh935iit6ewrmw0unyul.jpeg',
         scope: Components\Scope::Company,
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

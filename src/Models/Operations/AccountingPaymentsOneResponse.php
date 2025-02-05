@@ -37,6 +37,7 @@ class AccountingPaymentsOneResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetPaymentResponse  $getPaymentResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetPaymentResponse $getPaymentResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

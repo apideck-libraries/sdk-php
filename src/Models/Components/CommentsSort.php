@@ -30,6 +30,7 @@ class CommentsSort
     /**
      * @param  ?CommentsSortBy  $by
      * @param  ?SortDirection  $direction
+     * @phpstan-pure
      */
     public function __construct(?CommentsSortBy $by = null, ?SortDirection $direction = SortDirection::Asc)
     {

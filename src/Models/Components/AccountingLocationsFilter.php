@@ -21,6 +21,7 @@ class AccountingLocationsFilter
 
     /**
      * @param  ?string  $subsidiary
+     * @phpstan-pure
      */
     public function __construct(?string $subsidiary = null)
     {

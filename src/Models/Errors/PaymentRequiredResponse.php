@@ -9,7 +9,6 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Errors;
 
 
-
 /** PaymentRequiredResponse - Payment Required */
 class PaymentRequiredResponse
 {
@@ -74,6 +73,7 @@ class PaymentRequiredResponse
      * @param  ?string  $message
      * @param  ?string  $detail
      * @param  ?string  $ref
+     * @phpstan-pure
      */
     public function __construct(?float $statusCode = null, ?string $error = null, ?string $typeName = null, ?string $message = null, ?string $detail = null, ?string $ref = null)
     {

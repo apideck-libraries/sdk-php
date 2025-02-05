@@ -67,6 +67,7 @@ class GetNoteResponse
      * @param  string  $resource
      * @param  string  $operation
      * @param  Note  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, Note $data)
     {

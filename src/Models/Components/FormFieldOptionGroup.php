@@ -41,6 +41,7 @@ class FormFieldOptionGroup
      * @param  ?string  $id
      * @param  ?string  $label
      * @param  ?array<SimpleFormFieldOption>  $options
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $label = null, ?array $options = null)
     {

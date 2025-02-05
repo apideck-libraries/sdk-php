@@ -20,6 +20,7 @@ class Security
 
     /**
      * @param  string  $apiKey
+     * @phpstan-pure
      */
     public function __construct(string $apiKey)
     {

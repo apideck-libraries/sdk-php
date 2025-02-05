@@ -52,6 +52,7 @@ class Credentials
      * @param  ?string  $refreshToken
      * @param  ?\DateTime  $issuedAt
      * @param  ?int  $expiresIn
+     * @phpstan-pure
      */
     public function __construct(?string $accessToken = null, ?string $refreshToken = null, ?\DateTime $issuedAt = null, ?int $expiresIn = null)
     {

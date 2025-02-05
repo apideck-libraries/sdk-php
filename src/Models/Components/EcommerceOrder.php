@@ -262,6 +262,7 @@ class EcommerceOrder
      * @param  ?CustomMappings  $customMappings
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(string $id, ?array $discounts = null, ?LinkedEcommerceCustomer $customer = null, ?EcommerceAddress $billingAddress = null, ?EcommerceAddress $shippingAddress = null, ?array $tracking = null, ?array $lineItems = null, ?string $orderNumber = null, ?Currency $currency = null, ?string $subTotal = null, ?string $shippingCost = null, ?string $couponDiscount = null, ?string $totalDiscount = null, ?string $totalTax = null, ?string $totalAmount = null, ?string $refundedAmount = null, ?EcommerceOrderStatus $status = null, ?EcommerceOrderPaymentStatus $paymentStatus = null, ?FulfillmentStatus $fulfillmentStatus = null, ?string $paymentMethod = null, ?string $note = null, ?CustomMappings $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

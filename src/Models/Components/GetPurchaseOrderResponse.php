@@ -67,6 +67,7 @@ class GetPurchaseOrderResponse
      * @param  string  $resource
      * @param  string  $operation
      * @param  PurchaseOrder  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, PurchaseOrder $data)
     {

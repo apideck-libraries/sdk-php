@@ -37,6 +37,7 @@ class SmsMessagesAddResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\CreateMessageResponse  $createMessageResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateMessageResponse $createMessageResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

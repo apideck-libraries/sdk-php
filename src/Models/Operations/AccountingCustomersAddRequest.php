@@ -57,6 +57,7 @@ class AccountingCustomersAddRequest
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId
+     * @phpstan-pure
      */
     public function __construct(Components\CustomerInput $customer, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?bool $raw = false)
     {

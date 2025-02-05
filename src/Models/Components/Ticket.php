@@ -186,6 +186,7 @@ class Ticket
      * @param  ?\DateTime  $dueDate
      * @param  ?\DateTime  $completedAt
      * @param  ?CustomMappings  $customMappings
+     * @phpstan-pure
      */
     public function __construct(string $id, ?array $assignees = null, ?array $tags = null, ?array $passThrough = null, ?string $parentId = null, ?string $collectionId = null, ?string $type = null, ?string $subject = null, ?string $description = null, ?string $status = null, ?Priority $priority = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $createdBy = null, ?\DateTime $dueDate = null, ?\DateTime $completedAt = null, ?CustomMappings $customMappings = null)
     {

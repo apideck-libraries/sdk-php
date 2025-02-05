@@ -37,6 +37,7 @@ class AccountingTrackingCategoriesDeleteResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\DeleteTrackingCategoryResponse  $deleteTrackingCategoryResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteTrackingCategoryResponse $deleteTrackingCategoryResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

@@ -51,6 +51,7 @@ class TrackingItem
      * @param  ?string  $number
      * @param  ?string  $url
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(?string $provider = null, ?string $number = null, ?string $url = null, ?\DateTime $updatedAt = null)
     {

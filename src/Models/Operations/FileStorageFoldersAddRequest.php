@@ -66,6 +66,7 @@ class FileStorageFoldersAddRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?string  $fields
+     * @phpstan-pure
      */
     public function __construct(Components\CreateFolderRequest $createFolderRequest, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $fields = null, ?bool $raw = false)
     {

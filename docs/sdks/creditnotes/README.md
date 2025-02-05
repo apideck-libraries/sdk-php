@@ -203,6 +203,8 @@ $request = new Operations\AccountingCreditNotesAddRequest(
         ],
         rowVersion: '1-12345',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -261,13 +263,14 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\AccountingCreditNotesAllRequest(
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     filter: new Components\CreditNotesFilter(
         updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
     ),
     sort: new Components\CreditNotesSort(
         by: Components\CreditNotesSortBy::UpdatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',
@@ -332,6 +335,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingCreditNotesDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -389,6 +394,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingCreditNotesOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -618,6 +625,8 @@ $request = new Operations\AccountingCreditNotesUpdateRequest(
         ],
         rowVersion: '1-12345',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

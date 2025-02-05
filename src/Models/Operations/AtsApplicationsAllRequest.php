@@ -75,6 +75,7 @@ class AtsApplicationsAllRequest
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?int  $limit
      * @param  ?string  $cursor
+     * @phpstan-pure
      */
     public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?array $passThrough = null, ?string $cursor = null, ?bool $raw = false, ?int $limit = 20)
     {

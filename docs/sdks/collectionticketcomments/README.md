@@ -55,6 +55,8 @@ $request = new Operations\IssueTrackingCollectionTicketCommentsAddRequest(
         ],
         body: 'What internet provider do you use?',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -114,10 +116,11 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\IssueTrackingCollectionTicketCommentsAllRequest(
     collectionId: 'apideck-io',
     ticketId: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     sort: new Components\CommentsSort(
         by: Components\CommentsSortBy::CreatedAt,
-        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',
@@ -184,6 +187,8 @@ $request = new Operations\IssueTrackingCollectionTicketCommentsDeleteRequest(
     id: '<id>',
     collectionId: 'apideck-io',
     ticketId: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -243,6 +248,8 @@ $request = new Operations\IssueTrackingCollectionTicketCommentsOneRequest(
     id: '<id>',
     collectionId: 'apideck-io',
     ticketId: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -325,6 +332,8 @@ $request = new Operations\IssueTrackingCollectionTicketCommentsUpdateRequest(
         ],
         body: 'What internet provider do you use?',
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

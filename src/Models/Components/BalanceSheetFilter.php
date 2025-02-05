@@ -48,6 +48,7 @@ class BalanceSheetFilter
      * @param  ?string  $endDate
      * @param  ?int  $periodCount
      * @param  ?PeriodType  $periodType
+     * @phpstan-pure
      */
     public function __construct(?string $startDate = null, ?string $endDate = null, ?int $periodCount = null, ?PeriodType $periodType = null)
     {

@@ -67,6 +67,7 @@ class DeleteInvoiceResponse
      * @param  string  $resource
      * @param  string  $operation
      * @param  InvoiceResponse  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, InvoiceResponse $data)
     {

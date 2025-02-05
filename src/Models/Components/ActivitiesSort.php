@@ -30,6 +30,7 @@ class ActivitiesSort
     /**
      * @param  ?ActivitiesSortBy  $by
      * @param  ?SortDirection  $direction
+     * @phpstan-pure
      */
     public function __construct(?ActivitiesSortBy $by = null, ?SortDirection $direction = SortDirection::Asc)
     {

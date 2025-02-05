@@ -67,6 +67,7 @@ class VaultConnectionSettingsUpdateRequest
      * @param  Components\ConnectionInput  $connection
      * @param  ?string  $consumerId
      * @param  ?string  $appId
+     * @phpstan-pure
      */
     public function __construct(string $serviceId, string $unifiedApi, string $resource, Components\ConnectionInput $connection, ?string $consumerId = null, ?string $appId = null)
     {

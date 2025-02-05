@@ -41,6 +41,7 @@ class WebhookWebhooksAllResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetWebhooksResponse  $getWebhooksResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetWebhooksResponse $getWebhooksResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

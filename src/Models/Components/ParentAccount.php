@@ -42,6 +42,7 @@ class ParentAccount
      * @param  ?string  $id
      * @param  ?string  $name
      * @param  ?string  $displayId
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?string $displayId = null)
     {

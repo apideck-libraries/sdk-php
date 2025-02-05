@@ -40,6 +40,7 @@ class CreateSessionResponse
      * @param  int  $statusCode
      * @param  string  $status
      * @param  CreateSessionResponseData  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, CreateSessionResponseData $data)
     {

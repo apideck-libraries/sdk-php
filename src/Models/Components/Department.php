@@ -122,6 +122,7 @@ class Department
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?array $passThrough = null, ?string $parentId = null, ?string $name = null, ?string $code = null, ?string $description = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {

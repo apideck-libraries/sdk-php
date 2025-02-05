@@ -52,6 +52,7 @@ class Salary
      * @param  ?int  $max
      * @param  ?Currency  $currency
      * @param  ?string  $interval
+     * @phpstan-pure
      */
     public function __construct(?int $min = null, ?int $max = null, ?Currency $currency = null, ?string $interval = null)
     {

@@ -48,6 +48,7 @@ class VaultCustomMappingsAllRequest
      * @param  string  $serviceId
      * @param  ?string  $consumerId
      * @param  ?string  $appId
+     * @phpstan-pure
      */
     public function __construct(string $unifiedApi, string $serviceId, ?string $consumerId = null, ?string $appId = null)
     {

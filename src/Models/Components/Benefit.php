@@ -42,6 +42,7 @@ class Benefit
      * @param  ?string  $name
      * @param  ?float  $employeeDeduction
      * @param  ?float  $employerContribution
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?float $employeeDeduction = null, ?float $employerContribution = null)
     {

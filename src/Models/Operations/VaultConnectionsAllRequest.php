@@ -48,6 +48,7 @@ class VaultConnectionsAllRequest
      * @param  ?string  $appId
      * @param  ?string  $api
      * @param  ?bool  $configured
+     * @phpstan-pure
      */
     public function __construct(?string $consumerId = null, ?string $appId = null, ?string $api = null, ?bool $configured = null)
     {

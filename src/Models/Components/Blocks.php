@@ -30,6 +30,7 @@ class Blocks
     /**
      * @param  ?string  $title
      * @param  ?string  $content
+     * @phpstan-pure
      */
     public function __construct(?string $title = null, ?string $content = null)
     {

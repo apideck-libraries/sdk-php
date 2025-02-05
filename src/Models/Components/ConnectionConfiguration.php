@@ -32,6 +32,7 @@ class ConnectionConfiguration
     /**
      * @param  ?string  $resource
      * @param  ?array<ConnectionDefaults>  $defaults
+     * @phpstan-pure
      */
     public function __construct(?string $resource = null, ?array $defaults = null)
     {

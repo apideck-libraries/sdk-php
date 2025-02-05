@@ -56,6 +56,8 @@ $request = new Operations\FileStorageFoldersAddRequest(
             ),
         ],
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -134,6 +136,8 @@ $request = new Operations\FileStorageFoldersCopyRequest(
             ),
         ],
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -192,6 +196,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\FileStorageFoldersDeleteRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 
@@ -249,6 +255,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\FileStorageFoldersOneRequest(
     id: '<id>',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -328,6 +336,8 @@ $request = new Operations\FileStorageFoldersUpdateRequest(
             ),
         ],
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     serviceId: 'salesforce',
 );
 

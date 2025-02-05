@@ -30,6 +30,7 @@ class CreditNotesSort
     /**
      * @param  ?CreditNotesSortBy  $by
      * @param  ?SortDirection  $direction
+     * @phpstan-pure
      */
     public function __construct(?CreditNotesSortBy $by = null, ?SortDirection $direction = SortDirection::Asc)
     {

@@ -57,6 +57,7 @@ class VaultConnectionSettingsAllRequest
      * @param  string  $resource
      * @param  ?string  $consumerId
      * @param  ?string  $appId
+     * @phpstan-pure
      */
     public function __construct(string $unifiedApi, string $serviceId, string $resource, ?string $consumerId = null, ?string $appId = null)
     {

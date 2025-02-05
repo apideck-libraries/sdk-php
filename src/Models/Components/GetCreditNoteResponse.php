@@ -67,6 +67,7 @@ class GetCreditNoteResponse
      * @param  string  $resource
      * @param  string  $operation
      * @param  CreditNote  $data
+     * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, CreditNote $data)
     {

@@ -37,6 +37,7 @@ class AccountingJournalEntriesOneResponse
      * @param  Components\HTTPMetadata  $httpMeta
      * @param  ?Components\GetJournalEntryResponse  $getJournalEntryResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetJournalEntryResponse $getJournalEntryResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {

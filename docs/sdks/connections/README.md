@@ -176,6 +176,8 @@ $request = new Operations\VaultConnectionsImportRequest(
             'plan' => 'enterprise',
         ],
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
 );
 
 $response = $sdk->vault->connections->imports(
@@ -299,6 +301,8 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\VaultConnectionsTokenRequest(
     serviceId: 'pipedrive',
     unifiedApi: 'crm',
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
 );
 
 $response = $sdk->vault->connections->token(
@@ -399,6 +403,8 @@ $request = new Operations\VaultConnectionsUpdateRequest(
             'plan' => 'enterprise',
         ],
     ),
+    consumerId: 'test-consumer',
+    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
 );
 
 $response = $sdk->vault->connections->update(

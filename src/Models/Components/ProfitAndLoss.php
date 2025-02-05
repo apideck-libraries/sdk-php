@@ -128,6 +128,7 @@ class ProfitAndLoss
      * @param  ?NetOperatingIncome  $netOperatingIncome
      * @param  ?GrossProfit  $grossProfit
      * @param  ?CustomMappings  $customMappings
+     * @phpstan-pure
      */
     public function __construct(string $reportName, string $currency, Income $income, Expenses $expenses, ?string $id = null, ?string $startDate = null, ?string $endDate = null, ?string $customerId = null, ?NetIncome $netIncome = null, ?NetOperatingIncome $netOperatingIncome = null, ?GrossProfit $grossProfit = null, ?CustomMappings $customMappings = null)
     {

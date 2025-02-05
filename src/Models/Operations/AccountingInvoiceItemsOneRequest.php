@@ -76,6 +76,7 @@ class AccountingInvoiceItemsOneRequest
      * @param  ?bool  $raw
      * @param  ?Components\InvoiceItemFilter  $filter
      * @param  ?string  $fields
+     * @phpstan-pure
      */
     public function __construct(string $id, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?Components\InvoiceItemFilter $filter = null, ?string $fields = null, ?bool $raw = false)
     {

@@ -33,6 +33,7 @@ class CollectionTicketCommentInput
     /**
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $body
+     * @phpstan-pure
      */
     public function __construct(?array $passThrough = null, ?string $body = null)
     {
