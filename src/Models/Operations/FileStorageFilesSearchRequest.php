@@ -84,18 +84,27 @@ class FileStorageFilesSearchRequest
     public ?int $limit = null;
 
     /**
+     * Include raw response. Mostly used for debugging purposes
+     *
+     * @var ?bool $raw
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
+
+    /**
      * @param  Components\FilesSearch  $filesSearch
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?int  $limit
+     * @param  ?bool  $raw
      * @param  ?Components\FilesFilter  $filter
      * @param  ?string  $fields
      * @param  ?string  $cursor
      * @phpstan-pure
      */
-    public function __construct(Components\FilesSearch $filesSearch, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?array $passThrough = null, ?Components\FilesFilter $filter = null, ?string $fields = null, ?string $cursor = null, ?int $limit = 20)
+    public function __construct(Components\FilesSearch $filesSearch, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?array $passThrough = null, ?Components\FilesFilter $filter = null, ?string $fields = null, ?string $cursor = null, ?int $limit = 20, ?bool $raw = false)
     {
         $this->filesSearch = $filesSearch;
         $this->consumerId = $consumerId;
@@ -106,5 +115,6 @@ class FileStorageFilesSearchRequest
         $this->fields = $fields;
         $this->cursor = $cursor;
         $this->limit = $limit;
+        $this->raw = $raw;
     }
 }

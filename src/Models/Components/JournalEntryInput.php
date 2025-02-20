@@ -135,10 +135,10 @@ class JournalEntryInput
     /**
      * A list of linked tracking categories.
      *
-     * @var ?array<LinkedTrackingCategory> $trackingCategories
+     * @var ?array<?LinkedTrackingCategory> $trackingCategories
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory|null>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $trackingCategories = null;
 
@@ -174,7 +174,7 @@ class JournalEntryInput
      * @param  ?string  $taxType
      * @param  ?string  $taxCode
      * @param  ?string  $number
-     * @param  ?array<LinkedTrackingCategory>  $trackingCategories
+     * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?string  $accountingPeriod
      * @param  ?string  $rowVersion
      * @phpstan-pure

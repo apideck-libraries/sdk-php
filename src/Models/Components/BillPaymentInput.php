@@ -190,10 +190,10 @@ class BillPaymentInput
     /**
      * A list of linked tracking categories.
      *
-     * @var ?array<LinkedTrackingCategory> $trackingCategories
+     * @var ?array<?LinkedTrackingCategory> $trackingCategories
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory|null>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $trackingCategories = null;
 
@@ -235,7 +235,7 @@ class BillPaymentInput
      * @param  ?bool  $reconciled
      * @param  ?string  $note
      * @param  ?string  $number
-     * @param  ?array<LinkedTrackingCategory>  $trackingCategories
+     * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?string  $rowVersion
      * @param  ?string  $displayId
      * @phpstan-pure

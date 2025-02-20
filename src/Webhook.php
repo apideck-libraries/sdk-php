@@ -15,6 +15,8 @@ class Webhook
     private SDKConfiguration $sdkConfiguration;
     public Webhooks $webhooks;
 
+    public EventLogs $eventLogs;
+
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
@@ -22,6 +24,7 @@ class Webhook
     {
         $this->sdkConfiguration = $sdkConfig;
         $this->webhooks = new Webhooks($this->sdkConfiguration);
+        $this->eventLogs = new EventLogs($this->sdkConfiguration);
     }
     /**
      * @param  string  $baseUrl

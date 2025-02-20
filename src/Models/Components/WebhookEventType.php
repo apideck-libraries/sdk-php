@@ -73,6 +73,9 @@ enum WebhookEventType: string
     case AccountingPurchaseOrderCreated = 'accounting.purchase_order.created';
     case AccountingPurchaseOrderUpdated = 'accounting.purchase_order.updated';
     case AccountingPurchaseOrderDeleted = 'accounting.purchase_order.deleted';
+    case AccountingCreditNoteCreated = 'accounting.credit_note.created';
+    case AccountingCreditNoteUpdated = 'accounting.credit_note.updated';
+    case AccountingCreditNoteDeleted = 'accounting.credit_note.deleted';
     case PosOrderCreated = 'pos.order.created';
     case PosOrderUpdated = 'pos.order.updated';
     case PosOrderDeleted = 'pos.order.deleted';

@@ -307,6 +307,9 @@ class CollectionTicketComments
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listIndividual(
@@ -413,6 +416,9 @@ class CollectionTicketComments
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listIndividual(
@@ -712,6 +718,9 @@ class CollectionTicketComments
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->getIndividual(
@@ -817,6 +826,9 @@ class CollectionTicketComments
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->getIndividual(

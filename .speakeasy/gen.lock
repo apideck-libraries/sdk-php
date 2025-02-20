@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 068bc54ce549b3d15555126d167f788e
-  docVersion: 10.11.2
-  speakeasyVersion: 1.484.1
-  generationVersion: 2.503.2
-  releaseVersion: 0.4.1
-  configChecksum: 10409ec6f30074caf4371914ad9567cc
+  docChecksum: 8a84b005337515a4311dec5a8c491146
+  docVersion: 10.11.5
+  speakeasyVersion: 1.497.0
+  generationVersion: 2.517.3
+  releaseVersion: 0.5.0
+  configChecksum: 851ecda7fbcec54aca69233b47972ee1
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php
   published: true
@@ -14,10 +14,11 @@ features:
   php:
     constsAndDefaults: 0.2.0
     core: 3.7.13
+    deepObjectParams: 0.1.0
     deprecations: 2.81.1
     errors: 0.3.0
     flattening: 2.81.1
-    globalSecurity: 2.81.7
+    globalSecurity: 2.81.8
     globalSecurityFlattening: 0.1.2
     globalServerURLs: 2.82.1
     globals: 2.82.2
@@ -26,8 +27,8 @@ features:
     methodArguments: 0.1.0
     methodServerURLs: 2.82.1
     nameOverrides: 2.81.2
-    nullables: 1.0.0
-    pagination: 0.1.2
+    nullables: 1.0.1
+    pagination: 0.1.3
     responseFormat: 0.1.0
     retries: 0.1.0
     typeOverrides: 2.81.1
@@ -80,6 +81,7 @@ generatedFiles:
   - docs/Models/Components/Attachment.md
   - docs/Models/Components/AttachmentReference.md
   - docs/Models/Components/AttachmentReferenceType.md
+  - docs/Models/Components/Attempts.md
   - docs/Models/Components/Audience.md
   - docs/Models/Components/AuthType.md
   - docs/Models/Components/BalanceByPeriod.md
@@ -478,6 +480,7 @@ generatedFiles:
   - docs/Models/Components/GetUploadSessionResponse.md
   - docs/Models/Components/GetUserResponse.md
   - docs/Models/Components/GetUsersResponse.md
+  - docs/Models/Components/GetWebhookEventLogsResponse.md
   - docs/Models/Components/GetWebhookResponse.md
   - docs/Models/Components/GetWebhooksResponse.md
   - docs/Models/Components/GrossProfit.md
@@ -756,6 +759,10 @@ generatedFiles:
   - docs/Models/Components/VirtualWebhooks.md
   - docs/Models/Components/Visibility.md
   - docs/Models/Components/Webhook.md
+  - docs/Models/Components/WebhookEventLog.md
+  - docs/Models/Components/WebhookEventLogService.md
+  - docs/Models/Components/WebhookEventLogsFilter.md
+  - docs/Models/Components/WebhookEventLogsFilterService.md
   - docs/Models/Components/WebhookEventType.md
   - docs/Models/Components/WebhookSubscription.md
   - docs/Models/Components/WebhookSupport.md
@@ -1282,6 +1289,8 @@ generatedFiles:
   - docs/Models/Operations/VaultValidateConnectionStateRequest.md
   - docs/Models/Operations/VaultValidateConnectionStateRequestBody.md
   - docs/Models/Operations/VaultValidateConnectionStateResponse.md
+  - docs/Models/Operations/WebhookEventLogsAllRequest.md
+  - docs/Models/Operations/WebhookEventLogsAllResponse.md
   - docs/Models/Operations/WebhookWebhooksAddRequest.md
   - docs/Models/Operations/WebhookWebhooksAddResponse.md
   - docs/Models/Operations/WebhookWebhooksAllRequest.md
@@ -1339,6 +1348,7 @@ generatedFiles:
   - docs/sdks/employeepayrolls/README.md
   - docs/sdks/employees/README.md
   - docs/sdks/employeeschedules/README.md
+  - docs/sdks/eventlogs/README.md
   - docs/sdks/expenses/README.md
   - docs/sdks/files/README.md
   - docs/sdks/filestorage/README.md
@@ -1430,6 +1440,7 @@ generatedFiles:
   - src/EmployeePayrolls.php
   - src/EmployeeSchedules.php
   - src/Employees.php
+  - src/EventLogs.php
   - src/Expenses.php
   - src/FileStorage.php
   - src/Files.php
@@ -1505,6 +1516,7 @@ generatedFiles:
   - src/Models/Components/Attachment.php
   - src/Models/Components/AttachmentReference.php
   - src/Models/Components/AttachmentReferenceType.php
+  - src/Models/Components/Attempts.php
   - src/Models/Components/Audience.php
   - src/Models/Components/AuthType.php
   - src/Models/Components/BalanceByPeriod.php
@@ -1899,6 +1911,7 @@ generatedFiles:
   - src/Models/Components/GetUploadSessionResponse.php
   - src/Models/Components/GetUserResponse.php
   - src/Models/Components/GetUsersResponse.php
+  - src/Models/Components/GetWebhookEventLogsResponse.php
   - src/Models/Components/GetWebhookResponse.php
   - src/Models/Components/GetWebhooksResponse.php
   - src/Models/Components/GrossProfit.php
@@ -2174,6 +2187,10 @@ generatedFiles:
   - src/Models/Components/VirtualWebhooks.php
   - src/Models/Components/Visibility.php
   - src/Models/Components/Webhook.php
+  - src/Models/Components/WebhookEventLog.php
+  - src/Models/Components/WebhookEventLogService.php
+  - src/Models/Components/WebhookEventLogsFilter.php
+  - src/Models/Components/WebhookEventLogsFilterService.php
   - src/Models/Components/WebhookEventType.php
   - src/Models/Components/WebhookSubscription.php
   - src/Models/Components/WebhookSupport.php
@@ -2702,6 +2719,8 @@ generatedFiles:
   - src/Models/Operations/VaultValidateConnectionStateRequest.php
   - src/Models/Operations/VaultValidateConnectionStateRequestBody.php
   - src/Models/Operations/VaultValidateConnectionStateResponse.php
+  - src/Models/Operations/WebhookEventLogsAllRequest.php
+  - src/Models/Operations/WebhookEventLogsAllResponse.php
   - src/Models/Operations/WebhookWebhooksAddRequest.php
   - src/Models/Operations/WebhookWebhooksAddResponse.php
   - src/Models/Operations/WebhookWebhooksAllRequest.php
@@ -6812,6 +6831,7 @@ examples:
           fields: "id,updated_at"
           limit: 20
           filter: {"drive_id": "1234", "folder_id": "root", "shared": true}
+          raw: false
         header:
           x-apideck-consumer-id: "test-consumer"
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
@@ -9635,5 +9655,28 @@ examples:
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": {"error": "Unprocessable", "message": "Unprocessable request, please verify your request headers and body."}, "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": {"missing": [{"x-apideck-consumer-id": "required"}]}, "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  webhook.eventLogsAll:
+    "":
+      parameters:
+        query:
+          limit: 20
+          filter: {"exclude_apis": "vault,proxy", "consumer_id": "test_user_id", "entity_type": "Connection", "event_type": "vault.connection.callable"}
+        header:
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+      responses:
+        "200":
+          application/json: {"status_code": 200, "status": "OK", "data": [{"id": "1d174c4d-fe9e-4377-a76c-6da22fe9cd87", "status_code": 200, "success": true, "application_id": "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", "consumer_id": "test_consumer_id", "unified_api": "crm", "service": {"id": "101-data-solution", "name": "101 Data Solution"}, "endpoint": "https://example.com/my/webhook/endpoint", "event_type": "vault.connection.updated", "execution_attempt": 3, "http_method": "GET", "timestamp": "2021-07-12T14:26:17.420Z", "entity_type": "Connection", "request_body": "{\"entity\":{\"id\":\"2222+test_user_id\",\"application_id\":\"2222\",\"consumer_id\":\"test_user_id\",\"name\":\"ActiveCampaign\",\"icon\":\"https://res.cloudinary.com/apideck/image/upload/v1529455970/catalog/activecampaign/icon128x128.png\",\"logo\":\"https://www.activecampaign.com/site/assets/social-2x.png\",\"unified_api\":\"crm\",\"service_id\":\"activecampaign\",\"auth_type\":\"apiKey\",\"enabled\":true,\"tag_line\":\"Integrated email marketing, marketing automation, and small business CRM. Save time while growing your business with sales automation.\",\"website\":\"https://www.activecampaign.com/\",\"settings\":{\"instance_url\":\"https://eu28.salesforce.com\",\"base_url\":\"https://updated.api-us1.com\"},\"metadata\":{\"plan\":\"enterprise\",\"account\":{\"name\":\"My Company\"}},\"state\":\"callable\",\"created_at\":\"2021-09-10T10:39:49.628Z\",\"updated_at\":\"2021-09-10T10:39:52.715Z\"},\"entityType\":\"Connection\"}", "response_body": "{\"status\":\"OK\"}", "retry_scheduled": true, "attempts": [{"timestamp": "2021-07-12T14:26:17.420Z", "execution_attempt": 3, "status_code": 200, "success": true}, {"timestamp": "2021-07-12T14:26:17.420Z", "execution_attempt": 3, "status_code": 200, "success": true}]}, {"id": "1d174c4d-fe9e-4377-a76c-6da22fe9cd87", "status_code": 200, "success": true, "application_id": "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", "consumer_id": "test_consumer_id", "unified_api": "crm", "service": {"id": "101-data-solution", "name": "101 Data Solution"}, "endpoint": "https://example.com/my/webhook/endpoint", "event_type": "vault.connection.updated", "execution_attempt": 3, "http_method": "GET", "timestamp": "2021-07-12T14:26:17.420Z", "entity_type": "Connection", "request_body": "{\"entity\":{\"id\":\"2222+test_user_id\",\"application_id\":\"2222\",\"consumer_id\":\"test_user_id\",\"name\":\"ActiveCampaign\",\"icon\":\"https://res.cloudinary.com/apideck/image/upload/v1529455970/catalog/activecampaign/icon128x128.png\",\"logo\":\"https://www.activecampaign.com/site/assets/social-2x.png\",\"unified_api\":\"crm\",\"service_id\":\"activecampaign\",\"auth_type\":\"apiKey\",\"enabled\":true,\"tag_line\":\"Integrated email marketing, marketing automation, and small business CRM. Save time while growing your business with sales automation.\",\"website\":\"https://www.activecampaign.com/\",\"settings\":{\"instance_url\":\"https://eu28.salesforce.com\",\"base_url\":\"https://updated.api-us1.com\"},\"metadata\":{\"plan\":\"enterprise\",\"account\":{\"name\":\"My Company\"}},\"state\":\"callable\",\"created_at\":\"2021-09-10T10:39:49.628Z\",\"updated_at\":\"2021-09-10T10:39:52.715Z\"},\"entityType\":\"Connection\"}", "response_body": "{\"status\":\"OK\"}", "retry_scheduled": true, "attempts": [{"timestamp": "2021-07-12T14:26:17.420Z", "execution_attempt": 3, "status_code": 200, "success": true}, {"timestamp": "2021-07-12T14:26:17.420Z", "execution_attempt": 3, "status_code": 200, "success": true}, {"timestamp": "2021-07-12T14:26:17.420Z", "execution_attempt": 3, "status_code": 200, "success": true}]}, {"id": "1d174c4d-fe9e-4377-a76c-6da22fe9cd87", "status_code": 200, "success": true, "application_id": "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX", "consumer_id": "test_consumer_id", "unified_api": "crm", "service": {"id": "101-data-solution", "name": "101 Data Solution"}, "endpoint": "https://example.com/my/webhook/endpoint", "event_type": "vault.connection.updated", "execution_attempt": 3, "http_method": "GET", "timestamp": "2021-07-12T14:26:17.420Z", "entity_type": "Connection", "request_body": "{\"entity\":{\"id\":\"2222+test_user_id\",\"application_id\":\"2222\",\"consumer_id\":\"test_user_id\",\"name\":\"ActiveCampaign\",\"icon\":\"https://res.cloudinary.com/apideck/image/upload/v1529455970/catalog/activecampaign/icon128x128.png\",\"logo\":\"https://www.activecampaign.com/site/assets/social-2x.png\",\"unified_api\":\"crm\",\"service_id\":\"activecampaign\",\"auth_type\":\"apiKey\",\"enabled\":true,\"tag_line\":\"Integrated email marketing, marketing automation, and small business CRM. Save time while growing your business with sales automation.\",\"website\":\"https://www.activecampaign.com/\",\"settings\":{\"instance_url\":\"https://eu28.salesforce.com\",\"base_url\":\"https://updated.api-us1.com\"},\"metadata\":{\"plan\":\"enterprise\",\"account\":{\"name\":\"My Company\"}},\"state\":\"callable\",\"created_at\":\"2021-09-10T10:39:49.628Z\",\"updated_at\":\"2021-09-10T10:39:52.715Z\"},\"entityType\":\"Connection\"}", "response_body": "{\"status\":\"OK\"}", "retry_scheduled": true, "attempts": [{"timestamp": "2021-07-12T14:26:17.420Z", "execution_attempt": 3, "status_code": 200, "success": true}]}], "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}}, "links": {"previous": "https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D", "current": "https://unify.apideck.com/crm/companies", "next": "https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM"}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": {"not_found": {"entity": "widget", "id": "123"}}, "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": {"error": "Unprocessable", "message": "Unprocessable request, please verify your request headers and body."}, "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.0
 generatedTests: {}

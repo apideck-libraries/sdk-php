@@ -698,6 +698,10 @@ if ($response->createTaxRateResponse !== null) {
 ### [webhook](docs/sdks/webhook/README.md)
 
 
+#### [webhook->eventLogs](docs/sdks/eventlogs/README.md)
+
+* [list](docs/sdks/eventlogs/README.md#list) - List event logs
+
 #### [webhook->webhooks](docs/sdks/webhooks/README.md)
 
 * [create](docs/sdks/webhooks/README.md#create) - Create webhook subscription
@@ -973,6 +977,7 @@ require 'vendor/autoload.php';
 
 use Apideck\Unify;
 use Apideck\Unify\Models\Components;
+use Apideck\Unify\Models\Errors;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
@@ -1068,7 +1073,7 @@ try {
 
 ### Override Server URL Per-Client
 
-The default server can also be overridden globally using the `setServerUrl(string $serverUrl)` builder method when initializing the SDK client instance. For example:
+The default server can be overridden globally using the `setServerUrl(string $serverUrl)` builder method when initializing the SDK client instance. For example:
 ```php
 declare(strict_types=1);
 
