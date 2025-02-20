@@ -14,10 +14,10 @@ class EcommerceProductOptions
     /**
      * $values
      *
-     * @var ?array<string> $values
+     * @var ?array<?string> $values
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('values')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string|null>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $values = null;
 
@@ -40,7 +40,7 @@ class EcommerceProductOptions
     public ?string $name = null;
 
     /**
-     * @param  ?array<string>  $values
+     * @param  ?array<?string>  $values
      * @param  ?string  $id
      * @param  ?string  $name
      * @phpstan-pure

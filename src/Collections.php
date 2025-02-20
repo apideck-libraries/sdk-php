@@ -136,6 +136,9 @@ class Collections
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listIndividual(
@@ -240,6 +243,9 @@ class Collections
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listIndividual(

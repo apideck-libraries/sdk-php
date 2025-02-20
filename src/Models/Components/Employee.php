@@ -41,20 +41,20 @@ class Employee
     /**
      * $languages
      *
-     * @var ?array<string> $languages
+     * @var ?array<?string> $languages
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('languages')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string|null>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $languages = null;
 
     /**
      * $nationalities
      *
-     * @var ?array<string> $nationalities
+     * @var ?array<?string> $nationalities
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('nationalities')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string|null>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $nationalities = null;
 
@@ -626,8 +626,8 @@ class Employee
      * @param  ?Person  $partner
      * @param  ?EmploymentRole  $employmentRole
      * @param  ?Manager  $manager
-     * @param  ?array<string>  $languages
-     * @param  ?array<string>  $nationalities
+     * @param  ?array<?string>  $languages
+     * @param  ?array<?string>  $nationalities
      * @param  ?array<Address>  $addresses
      * @param  ?array<PhoneNumber>  $phoneNumbers
      * @param  ?array<Email>  $emails

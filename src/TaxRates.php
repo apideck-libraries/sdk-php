@@ -308,6 +308,9 @@ class TaxRates
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listIndividual(
@@ -412,6 +415,9 @@ class TaxRates
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listIndividual(

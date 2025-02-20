@@ -42,10 +42,10 @@ class EcommerceProduct
     /**
      * An array of tags for the product, used for organization and searching.
      *
-     * @var ?array<string> $tags
+     * @var ?array<?string> $tags
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tags')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string|null>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $tags = null;
 
@@ -174,7 +174,7 @@ class EcommerceProduct
      * @param  string  $id
      * @param  ?array<EcommerceProductOptions>  $options
      * @param  ?array<Variants>  $variants
-     * @param  ?array<string>  $tags
+     * @param  ?array<?string>  $tags
      * @param  ?array<EcommerceProductCategories>  $categories
      * @param  ?string  $name
      * @param  ?string  $description
