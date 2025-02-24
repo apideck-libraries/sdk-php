@@ -58,19 +58,31 @@ class GetWebhookEventLogsResponse
     public ?Links $links = null;
 
     /**
+     * Raw response from the integration when raw=true query param is provided
+     *
+     * @var ?array<string, mixed> $raw
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('_raw')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $raw = null;
+
+    /**
      * @param  int  $statusCode
      * @param  string  $status
      * @param  array<WebhookEventLog>  $data
      * @param  ?Meta  $meta
      * @param  ?Links  $links
+     * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */
-    public function __construct(int $statusCode, string $status, array $data, ?Meta $meta = null, ?Links $links = null)
+    public function __construct(int $statusCode, string $status, array $data, ?Meta $meta = null, ?Links $links = null, ?array $raw = null)
     {
         $this->statusCode = $statusCode;
         $this->status = $status;
         $this->data = $data;
         $this->meta = $meta;
         $this->links = $links;
+        $this->raw = $raw;
     }
 }
