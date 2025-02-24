@@ -37,15 +37,27 @@ class CreateSessionResponse
     public CreateSessionResponseData $data;
 
     /**
+     * Raw response from the integration when raw=true query param is provided
+     *
+     * @var ?array<string, mixed> $raw
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('_raw')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $raw = null;
+
+    /**
      * @param  int  $statusCode
      * @param  string  $status
      * @param  CreateSessionResponseData  $data
+     * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */
-    public function __construct(int $statusCode, string $status, CreateSessionResponseData $data)
+    public function __construct(int $statusCode, string $status, CreateSessionResponseData $data, ?array $raw = null)
     {
         $this->statusCode = $statusCode;
         $this->status = $status;
         $this->data = $data;
+        $this->raw = $raw;
     }
 }
