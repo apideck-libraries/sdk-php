@@ -9,14 +9,11 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 
-/** The type of address. */
+/** The type of the contact. */
 enum Type: string
 {
-    case Primary = 'primary';
-    case Secondary = 'secondary';
-    case Home = 'home';
-    case Office = 'office';
-    case Shipping = 'shipping';
-    case Billing = 'billing';
-    case Other = 'other';
+    case Customer = 'customer';
+    case Supplier = 'supplier';
+    case Employee = 'employee';
+    case Personal = 'personal';
 }

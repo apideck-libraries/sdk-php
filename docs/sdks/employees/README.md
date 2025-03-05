@@ -63,7 +63,7 @@ $request = new Operations\HrisEmployeesAddRequest(
         addresses: [
             new Components\Address(
                 id: '123',
-                type: Components\Type::Primary,
+                type: Components\AddressType::Primary,
                 string: '25 Spring Street, Blackburn, VIC 3130',
                 name: 'HQ US',
                 line1: 'Main street',
@@ -201,7 +201,7 @@ $request = new Operations\HrisEmployeesAddRequest(
             new Components\EmployeeJobInput(
                 location: new Components\Address(
                     id: '123',
-                    type: Components\Type::Primary,
+                    type: Components\AddressType::Primary,
                     string: '25 Spring Street, Blackburn, VIC 3130',
                     name: 'HQ US',
                     line1: 'Main street',
@@ -545,7 +545,7 @@ $request = new Operations\HrisEmployeesUpdateRequest(
         addresses: [
             new Components\Address(
                 id: '123',
-                type: Components\Type::Primary,
+                type: Components\AddressType::Primary,
                 string: '25 Spring Street, Blackburn, VIC 3130',
                 name: 'HQ US',
                 line1: 'Main street',
@@ -685,7 +685,7 @@ $request = new Operations\HrisEmployeesUpdateRequest(
             new Components\EmployeeJobInput(
                 location: new Components\Address(
                     id: '123',
-                    type: Components\Type::Primary,
+                    type: Components\AddressType::Primary,
                     string: '25 Spring Street, Blackburn, VIC 3130',
                     name: 'HQ US',
                     line1: 'Main street',
