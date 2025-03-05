@@ -23,12 +23,12 @@ class Address
     /**
      * The type of address.
      *
-     * @var ?Type $type
+     * @var ?AddressType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Type|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\AddressType|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Type $type = null;
+    public ?AddressType $type = null;
 
     /**
      * The address string. Some APIs don't provide structured address data.
@@ -230,7 +230,7 @@ class Address
 
     /**
      * @param  ?string  $id
-     * @param  ?Type  $type
+     * @param  ?AddressType  $type
      * @param  ?string  $string
      * @param  ?string  $name
      * @param  ?string  $line1
@@ -255,7 +255,7 @@ class Address
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?Type $type = null, ?string $string = null, ?string $name = null, ?string $line1 = null, ?string $line2 = null, ?string $line3 = null, ?string $line4 = null, ?string $streetNumber = null, ?string $city = null, ?string $state = null, ?string $postalCode = null, ?string $country = null, ?string $latitude = null, ?string $longitude = null, ?string $county = null, ?string $contactName = null, ?string $salutation = null, ?string $phoneNumber = null, ?string $fax = null, ?string $email = null, ?string $website = null, ?string $notes = null, ?string $rowVersion = null)
+    public function __construct(?string $id = null, ?AddressType $type = null, ?string $string = null, ?string $name = null, ?string $line1 = null, ?string $line2 = null, ?string $line3 = null, ?string $line4 = null, ?string $streetNumber = null, ?string $city = null, ?string $state = null, ?string $postalCode = null, ?string $country = null, ?string $latitude = null, ?string $longitude = null, ?string $county = null, ?string $contactName = null, ?string $salutation = null, ?string $phoneNumber = null, ?string $fax = null, ?string $email = null, ?string $website = null, ?string $notes = null, ?string $rowVersion = null)
     {
         $this->id = $id;
         $this->type = $type;

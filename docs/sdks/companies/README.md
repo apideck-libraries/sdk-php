@@ -63,7 +63,7 @@ $request = new Operations\CrmCompaniesAddRequest(
         addresses: [
             new Components\Address(
                 id: '123',
-                type: Components\Type::Primary,
+                type: Components\AddressType::Primary,
                 string: '25 Spring Street, Blackburn, VIC 3130',
                 name: 'HQ US',
                 line1: 'Main street',
@@ -435,7 +435,7 @@ $request = new Operations\CrmCompaniesUpdateRequest(
         addresses: [
             new Components\Address(
                 id: '123',
-                type: Components\Type::Primary,
+                type: Components\AddressType::Primary,
                 string: '25 Spring Street, Blackburn, VIC 3130',
                 name: 'HQ US',
                 line1: 'Main street',
