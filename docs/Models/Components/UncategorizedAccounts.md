@@ -1,6 +1,6 @@
-# Expenses
+# UncategorizedAccounts
 
-The operating expenses accounts
+The accounts not categorized in the other sections
 
 
 ## Fields
