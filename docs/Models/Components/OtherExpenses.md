@@ -1,6 +1,6 @@
-# Expenses
+# OtherExpenses
 
-The operating expenses accounts
+The other expenses accounts
 
 
 ## Fields

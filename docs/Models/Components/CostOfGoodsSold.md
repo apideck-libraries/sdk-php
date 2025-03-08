@@ -1,6 +1,6 @@
-# Expenses
+# CostOfGoodsSold
 
-The operating expenses accounts
+The cost of goods sold accounts
 
 
 ## Fields
