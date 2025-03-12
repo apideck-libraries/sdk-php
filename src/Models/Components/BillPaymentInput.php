@@ -12,7 +12,7 @@ namespace Apideck\Unify\Models\Components;
 class BillPaymentInput
 {
     /**
-     * The total amount of the transaction
+     * The total amount of the transaction or record
      *
      * @var ?float $totalAmount
      */

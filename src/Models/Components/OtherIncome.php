@@ -9,8 +9,8 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 
-/** Income - The operating income accounts */
-class Income
+/** OtherIncome - The other income accounts */
+class OtherIncome
 {
     /**
      *

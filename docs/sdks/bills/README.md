@@ -171,6 +171,7 @@ $request = new Operations\AccountingBillsAddRequest(
         language: 'EN',
         accountingByRow: false,
         discountPercentage: 5.5,
+        sourceDocumentUrl: 'https://www.invoicesolution.com/bill/123456',
         trackingCategories: [
             new Components\LinkedTrackingCategory(
                 id: '123456',
@@ -562,6 +563,7 @@ $request = new Operations\AccountingBillsUpdateRequest(
         language: 'EN',
         accountingByRow: false,
         discountPercentage: 5.5,
+        sourceDocumentUrl: 'https://www.invoicesolution.com/bill/123456',
         trackingCategories: [
             new Components\LinkedTrackingCategory(
                 id: '123456',

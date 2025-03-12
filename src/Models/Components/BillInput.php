@@ -287,6 +287,15 @@ class BillInput
     public ?float $discountPercentage = null;
 
     /**
+     * URL link to a source document - shown as 'Go to [appName]' in the downstream app. Currently only supported for Xero.
+     *
+     * @var ?string $sourceDocumentUrl
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source_document_url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $sourceDocumentUrl = null;
+
+    /**
      * A list of linked tracking categories.
      *
      * @var ?array<?LinkedTrackingCategory> $trackingCategories
@@ -345,12 +354,13 @@ class BillInput
      * @param  ?string  $language
      * @param  ?bool  $accountingByRow
      * @param  ?float  $discountPercentage
+     * @param  ?string  $sourceDocumentUrl
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?string  $rowVersion
      * @param  ?string  $accountingPeriod
      * @phpstan-pure
      */
-    public function __construct(?array $lineItems = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $billNumber = null, ?LinkedSupplierInput $supplier = null, ?string $companyId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?LocalDate $billDate = null, ?LocalDate $dueDate = null, ?LocalDate $paidDate = null, ?string $poNumber = null, ?string $reference = null, ?string $terms = null, ?float $balance = null, ?float $deposit = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?string $taxCode = null, ?string $notes = null, ?BillStatus $status = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?float $discountPercentage = null, ?array $trackingCategories = null, ?string $rowVersion = null, ?string $accountingPeriod = null)
+    public function __construct(?array $lineItems = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $billNumber = null, ?LinkedSupplierInput $supplier = null, ?string $companyId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?LocalDate $billDate = null, ?LocalDate $dueDate = null, ?LocalDate $paidDate = null, ?string $poNumber = null, ?string $reference = null, ?string $terms = null, ?float $balance = null, ?float $deposit = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?string $taxCode = null, ?string $notes = null, ?BillStatus $status = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?float $discountPercentage = null, ?string $sourceDocumentUrl = null, ?array $trackingCategories = null, ?string $rowVersion = null, ?string $accountingPeriod = null)
     {
         $this->lineItems = $lineItems;
         $this->bankAccount = $bankAccount;
@@ -382,6 +392,7 @@ class BillInput
         $this->language = $language;
         $this->accountingByRow = $accountingByRow;
         $this->discountPercentage = $discountPercentage;
+        $this->sourceDocumentUrl = $sourceDocumentUrl;
         $this->trackingCategories = $trackingCategories;
         $this->rowVersion = $rowVersion;
         $this->accountingPeriod = $accountingPeriod;

@@ -20,13 +20,7 @@ class ProfitAndLoss
     public string $reportName;
 
     /**
-     *
-     * @var string $currency
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
-    public string $currency;
-
-    /**
+     * The operating income accounts
      *
      * @var Income $income
      */
@@ -35,6 +29,7 @@ class ProfitAndLoss
     public Income $income;
 
     /**
+     * The operating expenses accounts
      *
      * @var Expenses $expenses
      */
@@ -61,7 +56,7 @@ class ProfitAndLoss
     public ?string $startDate = null;
 
     /**
-     * The start date of the report
+     * The end date of the report
      *
      * @var ?string $endDate
      */
@@ -70,40 +65,89 @@ class ProfitAndLoss
     public ?string $endDate = null;
 
     /**
-     * Customer id
+     * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?string $customerId
+     * @var ?Currency $currency
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('customer_id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
+    public ?Currency $currency;
+
+    /**
+     * The cost of goods sold accounts
+     *
+     * @var ?CostOfGoodsSold $costOfGoodsSold
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('cost_of_goods_sold')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CostOfGoodsSold|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $customerId = null;
+    public ?CostOfGoodsSold $costOfGoodsSold = null;
+
+    /**
+     * The other income accounts
+     *
+     * @var ?OtherIncome $otherIncome
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('other_income')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\OtherIncome|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?OtherIncome $otherIncome = null;
+
+    /**
+     * The other expenses accounts
+     *
+     * @var ?OtherExpenses $otherExpenses
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('other_expenses')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\OtherExpenses|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?OtherExpenses $otherExpenses = null;
+
+    /**
+     * The accounts not categorized in the other sections
+     *
+     * @var ?UncategorizedAccounts $uncategorizedAccounts
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('uncategorized_accounts')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\UncategorizedAccounts|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?UncategorizedAccounts $uncategorizedAccounts = null;
 
     /**
      *
-     * @var ?NetIncome $netIncome
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('net_income')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\NetIncome|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?NetIncome $netIncome = null;
-
-    /**
-     *
-     * @var ?NetOperatingIncome $netOperatingIncome
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('net_operating_income')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\NetOperatingIncome|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?NetOperatingIncome $netOperatingIncome = null;
-
-    /**
-     *
-     * @var ?GrossProfit $grossProfit
+     * @var ?ProfitAndLossIndicator $grossProfit
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('gross_profit')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\GrossProfit|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ProfitAndLossIndicator|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?GrossProfit $grossProfit = null;
+    public ?ProfitAndLossIndicator $grossProfit = null;
+
+    /**
+     *
+     * @var ?ProfitAndLossIndicator $netOperatingIncome
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('net_operating_income')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ProfitAndLossIndicator|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ProfitAndLossIndicator $netOperatingIncome = null;
+
+    /**
+     *
+     * @var ?ProfitAndLossIndicator $netIncome
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('net_income')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ProfitAndLossIndicator|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ProfitAndLossIndicator $netIncome = null;
+
+    /**
+     * The customer id
+     *
+     * @var ?string $customer
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $customer = null;
 
     /**
      * When custom mappings are configured on the resource, the result is included here.
@@ -117,32 +161,40 @@ class ProfitAndLoss
 
     /**
      * @param  string  $reportName
-     * @param  string  $currency
      * @param  Income  $income
      * @param  Expenses  $expenses
      * @param  ?string  $id
      * @param  ?string  $startDate
      * @param  ?string  $endDate
-     * @param  ?string  $customerId
-     * @param  ?NetIncome  $netIncome
-     * @param  ?NetOperatingIncome  $netOperatingIncome
-     * @param  ?GrossProfit  $grossProfit
+     * @param  ?Currency  $currency
+     * @param  ?CostOfGoodsSold  $costOfGoodsSold
+     * @param  ?OtherIncome  $otherIncome
+     * @param  ?OtherExpenses  $otherExpenses
+     * @param  ?UncategorizedAccounts  $uncategorizedAccounts
+     * @param  ?ProfitAndLossIndicator  $grossProfit
+     * @param  ?ProfitAndLossIndicator  $netOperatingIncome
+     * @param  ?ProfitAndLossIndicator  $netIncome
+     * @param  ?string  $customer
      * @param  ?CustomMappings  $customMappings
      * @phpstan-pure
      */
-    public function __construct(string $reportName, string $currency, Income $income, Expenses $expenses, ?string $id = null, ?string $startDate = null, ?string $endDate = null, ?string $customerId = null, ?NetIncome $netIncome = null, ?NetOperatingIncome $netOperatingIncome = null, ?GrossProfit $grossProfit = null, ?CustomMappings $customMappings = null)
+    public function __construct(string $reportName, Income $income, Expenses $expenses, ?string $id = null, ?string $startDate = null, ?string $endDate = null, ?Currency $currency = null, ?CostOfGoodsSold $costOfGoodsSold = null, ?OtherIncome $otherIncome = null, ?OtherExpenses $otherExpenses = null, ?UncategorizedAccounts $uncategorizedAccounts = null, ?ProfitAndLossIndicator $grossProfit = null, ?ProfitAndLossIndicator $netOperatingIncome = null, ?ProfitAndLossIndicator $netIncome = null, ?string $customer = null, ?CustomMappings $customMappings = null)
     {
         $this->reportName = $reportName;
-        $this->currency = $currency;
         $this->income = $income;
         $this->expenses = $expenses;
         $this->id = $id;
         $this->startDate = $startDate;
         $this->endDate = $endDate;
-        $this->customerId = $customerId;
-        $this->netIncome = $netIncome;
-        $this->netOperatingIncome = $netOperatingIncome;
+        $this->currency = $currency;
+        $this->costOfGoodsSold = $costOfGoodsSold;
+        $this->otherIncome = $otherIncome;
+        $this->otherExpenses = $otherExpenses;
+        $this->uncategorizedAccounts = $uncategorizedAccounts;
         $this->grossProfit = $grossProfit;
+        $this->netOperatingIncome = $netOperatingIncome;
+        $this->netIncome = $netIncome;
+        $this->customer = $customer;
         $this->customMappings = $customMappings;
     }
 }

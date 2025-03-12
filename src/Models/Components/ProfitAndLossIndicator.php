@@ -9,18 +9,10 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 
-class GrossProfit
+class ProfitAndLossIndicator
 {
     /**
-     *
-     * @var mixed $records
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('records')]
-    #[\Speakeasy\Serializer\Annotation\Type('mixed')]
-    public mixed $records;
-
-    /**
-     * Total gross profit
+     * The total amount of the transaction or record
      *
      * @var ?float $total
      */
@@ -28,13 +20,11 @@ class GrossProfit
     public ?float $total;
 
     /**
-     * @param  mixed  $records
      * @param  ?float  $total
      * @phpstan-pure
      */
-    public function __construct(mixed $records, ?float $total = null)
+    public function __construct(?float $total = null)
     {
-        $this->records = $records;
         $this->total = $total;
     }
 }

@@ -59,6 +59,14 @@ class CustomersFilter
     public ?\DateTime $updatedSince = null;
 
     /**
+     * Supplier ID of customer to search for
+     *
+     * @var ?string $supplierId
+     */
+    #[SpeakeasyMetadata('queryParam:name=supplier_id')]
+    public ?string $supplierId = null;
+
+    /**
      * Status of customer to filter on
      *
      * @var ?CustomersFilterStatus $status
@@ -73,10 +81,11 @@ class CustomersFilter
      * @param  ?string  $lastName
      * @param  ?string  $email
      * @param  ?\DateTime  $updatedSince
+     * @param  ?string  $supplierId
      * @param  ?CustomersFilterStatus  $status
      * @phpstan-pure
      */
-    public function __construct(?string $companyName = null, ?string $displayName = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?\DateTime $updatedSince = null, ?CustomersFilterStatus $status = null)
+    public function __construct(?string $companyName = null, ?string $displayName = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?\DateTime $updatedSince = null, ?string $supplierId = null, ?CustomersFilterStatus $status = null)
     {
         $this->companyName = $companyName;
         $this->displayName = $displayName;
@@ -84,6 +93,7 @@ class CustomersFilter
         $this->lastName = $lastName;
         $this->email = $email;
         $this->updatedSince = $updatedSince;
+        $this->supplierId = $supplierId;
         $this->status = $status;
     }
 }
