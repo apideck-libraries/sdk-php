@@ -224,6 +224,7 @@ $request = new Operations\AccountingCustomersAllRequest(
         lastName: 'Musk',
         email: 'elon@musk.com',
         updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
+        supplierId: '123',
         status: Components\CustomersFilterStatus::Active,
     ),
     sort: new Components\CustomersSort(

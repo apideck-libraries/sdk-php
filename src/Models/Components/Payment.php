@@ -20,7 +20,7 @@ class Payment
     public string $id;
 
     /**
-     * The total amount of the transaction
+     * The total amount of the transaction or record
      *
      * @var ?float $totalAmount
      */

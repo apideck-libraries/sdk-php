@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: d7135fd6bec8d864fcc4b9f14f36dfd2
-  docVersion: 10.11.5
-  speakeasyVersion: 1.509.1
-  generationVersion: 2.539.1
-  releaseVersion: 0.5.2
-  configChecksum: 77b3908c7438dd52dd705b8e966bdb35
+  docChecksum: 1c457e5380748926df036f79bf4d8520
+  docVersion: 10.12.3
+  speakeasyVersion: 1.517.0
+  generationVersion: 2.548.1
+  releaseVersion: 0.6.0
+  configChecksum: cb29eef1022abfa6b50a2d88d8d1fbd5
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php
   published: true
 features:
   php:
     constsAndDefaults: 0.2.0
-    core: 3.7.9
+    core: 3.8.0
     deepObjectParams: 0.1.0
     deprecations: 2.81.1
     errors: 0.3.0
@@ -28,7 +28,7 @@ features:
     methodServerURLs: 2.82.1
     nameOverrides: 2.81.2
     nullables: 1.0.1
-    pagination: 0.1.3
+    pagination: 0.1.4
     responseFormat: 0.1.0
     retries: 0.1.0
     typeOverrides: 2.81.1
@@ -167,6 +167,7 @@ generatedFiles:
   - docs/Models/Components/ContactsSort.md
   - docs/Models/Components/ContactsSortBy.md
   - docs/Models/Components/CopyFolderRequest.md
+  - docs/Models/Components/CostOfGoodsSold.md
   - docs/Models/Components/Coverage.md
   - docs/Models/Components/CreateAccountingDepartmentResponse.md
   - docs/Models/Components/CreateAccountingLocationResponse.md
@@ -483,7 +484,6 @@ generatedFiles:
   - docs/Models/Components/GetWebhookEventLogsResponse.md
   - docs/Models/Components/GetWebhookResponse.md
   - docs/Models/Components/GetWebhooksResponse.md
-  - docs/Models/Components/GrossProfit.md
   - docs/Models/Components/HTTPMetadata.md
   - docs/Models/Components/HrisCompany.md
   - docs/Models/Components/HrisCompanyInput.md
@@ -567,8 +567,6 @@ generatedFiles:
   - docs/Models/Components/MessageType.md
   - docs/Models/Components/Meta.md
   - docs/Models/Components/Mode.md
-  - docs/Models/Components/NetIncome.md
-  - docs/Models/Components/NetOperatingIncome.md
   - docs/Models/Components/Note.md
   - docs/Models/Components/NoteInput.md
   - docs/Models/Components/Notes.md
@@ -585,6 +583,8 @@ generatedFiles:
   - docs/Models/Components/Options.md
   - docs/Models/Components/OrdersSort.md
   - docs/Models/Components/OrdersSortBy.md
+  - docs/Models/Components/OtherExpenses.md
+  - docs/Models/Components/OtherIncome.md
   - docs/Models/Components/OutstandingBalanceByCurrency.md
   - docs/Models/Components/OutstandingBalanceByCustomer.md
   - docs/Models/Components/Owner.md
@@ -617,6 +617,8 @@ generatedFiles:
   - docs/Models/Components/ProductStatus.md
   - docs/Models/Components/ProfitAndLoss.md
   - docs/Models/Components/ProfitAndLossFilter.md
+  - docs/Models/Components/ProfitAndLossIndicator.md
+  - docs/Models/Components/ProfitAndLossType.md
   - docs/Models/Components/PurchaseDetails.md
   - docs/Models/Components/PurchaseOrder.md
   - docs/Models/Components/PurchaseOrderInput.md
@@ -695,6 +697,7 @@ generatedFiles:
   - docs/Models/Components/TrackingItem.md
   - docs/Models/Components/TransactionType.md
   - docs/Models/Components/Type.md
+  - docs/Models/Components/UncategorizedAccounts.md
   - docs/Models/Components/UnexpectedErrorResponse.md
   - docs/Models/Components/UnifiedApi.md
   - docs/Models/Components/UnifiedApiId.md
@@ -1601,6 +1604,7 @@ generatedFiles:
   - src/Models/Components/ContactsSort.php
   - src/Models/Components/ContactsSortBy.php
   - src/Models/Components/CopyFolderRequest.php
+  - src/Models/Components/CostOfGoodsSold.php
   - src/Models/Components/Coverage.php
   - src/Models/Components/CreateAccountingDepartmentResponse.php
   - src/Models/Components/CreateAccountingLocationResponse.php
@@ -1914,7 +1918,6 @@ generatedFiles:
   - src/Models/Components/GetWebhookEventLogsResponse.php
   - src/Models/Components/GetWebhookResponse.php
   - src/Models/Components/GetWebhooksResponse.php
-  - src/Models/Components/GrossProfit.php
   - src/Models/Components/HTTPMetadata.php
   - src/Models/Components/HrisCompany.php
   - src/Models/Components/HrisCompanyInput.php
@@ -1998,8 +2001,6 @@ generatedFiles:
   - src/Models/Components/MessageType.php
   - src/Models/Components/Meta.php
   - src/Models/Components/Mode.php
-  - src/Models/Components/NetIncome.php
-  - src/Models/Components/NetOperatingIncome.php
   - src/Models/Components/Note.php
   - src/Models/Components/NoteInput.php
   - src/Models/Components/Notes.php
@@ -2016,6 +2017,8 @@ generatedFiles:
   - src/Models/Components/Options.php
   - src/Models/Components/OrdersSort.php
   - src/Models/Components/OrdersSortBy.php
+  - src/Models/Components/OtherExpenses.php
+  - src/Models/Components/OtherIncome.php
   - src/Models/Components/OutstandingBalanceByCurrency.php
   - src/Models/Components/OutstandingBalanceByCustomer.php
   - src/Models/Components/Owner.php
@@ -2048,6 +2051,8 @@ generatedFiles:
   - src/Models/Components/ProductStatus.php
   - src/Models/Components/ProfitAndLoss.php
   - src/Models/Components/ProfitAndLossFilter.php
+  - src/Models/Components/ProfitAndLossIndicator.php
+  - src/Models/Components/ProfitAndLossType.php
   - src/Models/Components/PurchaseDetails.php
   - src/Models/Components/PurchaseOrder.php
   - src/Models/Components/PurchaseOrderInput.php
@@ -2125,6 +2130,7 @@ generatedFiles:
   - src/Models/Components/TrackingItem.php
   - src/Models/Components/TransactionType.php
   - src/Models/Components/Type.php
+  - src/Models/Components/UncategorizedAccounts.php
   - src/Models/Components/UnexpectedErrorResponse.php
   - src/Models/Components/UnifiedApi.php
   - src/Models/Components/UnifiedApiId.php
@@ -3614,7 +3620,7 @@ examples:
         query:
           raw: false
           limit: 20
-          filter: {"company_name": "SpaceX", "display_name": "Elon Musk", "first_name": "Elon", "last_name": "Musk", "email": "elon@musk.com", "status": "active", "updated_since": "2020-09-30T07:43:32.000Z"}
+          filter: {"company_name": "SpaceX", "display_name": "Elon Musk", "first_name": "Elon", "last_name": "Musk", "email": "elon@musk.com", "status": "active", "updated_since": "2020-09-30T07:43:32.000Z", "supplier_id": "123"}
           sort: {"by": "updated_at", "direction": "desc"}
           pass_through: {"search": "San Francisco"}
           fields: "id,updated_at"
@@ -4081,7 +4087,7 @@ examples:
           x-apideck-service-id: "salesforce"
       responses:
         "200":
-          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "ProfitAndLosses", "operation": "one", "data": {"id": "12345", "report_name": "ProfitAndLoss", "start_date": "2017-01-01", "end_date": "2017-01-01", "currency": "USD", "customer_id": "123", "income": {"total": 200000, "records": [{"id": "123", "name": "Income 1", "amount": 10000}, {"id": "456", "name": "Income 2", "amount": 20000}]}, "expenses": {"total": 200000, "records": [{"id": "123", "name": "Expense 1", "amount": 10000}, {"id": "456", "name": "Expense 2", "amount": 20000}]}, "net_income": {"total": 200000, "records": "<value>"}, "net_operating_income": {"total": 200000, "records": "<value>"}, "gross_profit": {"total": 200000, "records": "<value>"}}}
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "ProfitAndLosses", "operation": "one", "data": {"id": "12345", "report_name": "ProfitAndLoss", "start_date": "2017-01-01", "end_date": "2017-01-01", "currency": "USD", "income": {"total": 200000, "records": [{"id": "123", "name": "Income 1", "amount": 10000}, {"id": "456", "name": "Income 2", "amount": 20000}]}, "expenses": {"total": 200000, "records": [{"id": "123", "name": "Expense 1", "amount": 10000}, {"id": "456", "name": "Expense 2", "amount": 20000}]}, "gross_profit": {"total": 200000}, "net_operating_income": {"total": 200000}, "net_income": {"total": 200000}}}
         "400":
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": {"missing": [{"foobar": "required"}]}, "ref": "https://developers.apideck.com/errors#requestvalidationerror"}
         "401":
