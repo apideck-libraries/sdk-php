@@ -47,7 +47,7 @@ $request = new Operations\CrmContactsAddRequest(
         addresses: [
             new Components\Address(
                 id: '123',
-                type: Components\AddressType::Primary,
+                type: Components\Type::Primary,
                 string: '25 Spring Street, Blackburn, VIC 3130',
                 name: 'HQ US',
                 line1: 'Main street',
@@ -123,7 +123,7 @@ $request = new Operations\CrmContactsAddRequest(
             ),
         ],
         ownerId: '54321',
-        type: Components\Type::Personal,
+        type: Components\ContactType::Personal,
         companyId: '23456',
         companyName: '23456',
         leadId: '34567',
@@ -416,7 +416,7 @@ $request = new Operations\CrmContactsUpdateRequest(
         addresses: [
             new Components\Address(
                 id: '123',
-                type: Components\AddressType::Primary,
+                type: Components\Type::Primary,
                 string: '25 Spring Street, Blackburn, VIC 3130',
                 name: 'HQ US',
                 line1: 'Main street',
@@ -494,7 +494,7 @@ $request = new Operations\CrmContactsUpdateRequest(
             ),
         ],
         ownerId: '54321',
-        type: Components\Type::Personal,
+        type: Components\ContactType::Personal,
         companyId: '23456',
         companyName: '23456',
         leadId: '34567',
