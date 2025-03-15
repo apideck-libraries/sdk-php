@@ -87,7 +87,7 @@ $request = new Operations\AccountingPurchaseOrdersAddRequest(
         ],
         shippingAddress: new Components\Address(
             id: '123',
-            type: Components\AddressType::Primary,
+            type: Components\Type::Primary,
             string: '25 Spring Street, Blackburn, VIC 3130',
             name: 'HQ US',
             line1: 'Main street',
@@ -145,7 +145,7 @@ $request = new Operations\AccountingPurchaseOrdersAddRequest(
             id: '12345',
             address: new Components\Address(
                 id: '123',
-                type: Components\AddressType::Primary,
+                type: Components\Type::Primary,
                 string: '25 Spring Street, Blackburn, VIC 3130',
                 name: 'HQ US',
                 line1: 'Main street',
@@ -500,7 +500,7 @@ $request = new Operations\AccountingPurchaseOrdersUpdateRequest(
         ],
         shippingAddress: new Components\Address(
             id: '123',
-            type: Components\AddressType::Primary,
+            type: Components\Type::Primary,
             string: '25 Spring Street, Blackburn, VIC 3130',
             name: 'HQ US',
             line1: 'Main street',
@@ -558,7 +558,7 @@ $request = new Operations\AccountingPurchaseOrdersUpdateRequest(
             id: '12345',
             address: new Components\Address(
                 id: '123',
-                type: Components\AddressType::Primary,
+                type: Components\Type::Primary,
                 string: '25 Spring Street, Blackburn, VIC 3130',
                 name: 'HQ US',
                 line1: 'Main street',

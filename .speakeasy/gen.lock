@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 1c457e5380748926df036f79bf4d8520
+  docChecksum: 6c39ad7f10a42df924ab6c12c8ef2bc9
   docVersion: 10.12.3
-  speakeasyVersion: 1.517.0
-  generationVersion: 2.548.1
-  releaseVersion: 0.6.0
-  configChecksum: cb29eef1022abfa6b50a2d88d8d1fbd5
+  speakeasyVersion: 1.517.3
+  generationVersion: 2.548.6
+  releaseVersion: 0.6.1
+  configChecksum: ca0bbefcf496535177f2b2af60fd96fa
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php
   published: true
@@ -55,7 +55,6 @@ generatedFiles:
   - docs/Models/Components/ActivityInput.md
   - docs/Models/Components/ActivityType.md
   - docs/Models/Components/Address.md
-  - docs/Models/Components/AddressType.md
   - docs/Models/Components/Addresses.md
   - docs/Models/Components/AgedDebtors.md
   - docs/Models/Components/AgedReportFilter.md
@@ -163,6 +162,7 @@ generatedFiles:
   - docs/Models/Components/Contact.md
   - docs/Models/Components/ContactGender.md
   - docs/Models/Components/ContactInput.md
+  - docs/Models/Components/ContactType.md
   - docs/Models/Components/ContactsFilter.md
   - docs/Models/Components/ContactsSort.md
   - docs/Models/Components/ContactsSortBy.md
@@ -1493,7 +1493,6 @@ generatedFiles:
   - src/Models/Components/ActivityInput.php
   - src/Models/Components/ActivityType.php
   - src/Models/Components/Address.php
-  - src/Models/Components/AddressType.php
   - src/Models/Components/Addresses.php
   - src/Models/Components/AgedDebtors.php
   - src/Models/Components/AgedReportFilter.php
@@ -1600,6 +1599,7 @@ generatedFiles:
   - src/Models/Components/Contact.php
   - src/Models/Components/ContactGender.php
   - src/Models/Components/ContactInput.php
+  - src/Models/Components/ContactType.php
   - src/Models/Components/ContactsFilter.php
   - src/Models/Components/ContactsSort.php
   - src/Models/Components/ContactsSortBy.php
