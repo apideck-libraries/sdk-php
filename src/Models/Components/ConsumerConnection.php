@@ -122,12 +122,12 @@ class ConsumerConnection
     /**
      * Connection settings. Values will persist to `form_fields` with corresponding id
      *
-     * @var ?Settings $settings
+     * @var ?array<string, mixed> $settings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('settings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Settings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Settings $settings = null;
+    public ?array $settings = null;
 
     /**
      * Attach your own consumer specific metadata
@@ -161,12 +161,12 @@ class ConsumerConnection
      * @param  ?bool  $enabled
      * @param  ?string  $createdAt
      * @param  ?ConnectionState  $state
-     * @param  ?Settings  $settings
+     * @param  ?array<string, mixed>  $settings
      * @param  ?array<string, mixed>  $metadata
      * @param  ?string  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?string $icon = null, ?string $logo = null, ?string $website = null, ?string $tagLine = null, ?string $serviceId = null, ?string $unifiedApi = null, ?string $consumerId = null, ?AuthType $authType = null, ?bool $enabled = null, ?string $createdAt = null, ?ConnectionState $state = null, ?Settings $settings = null, ?array $metadata = null, ?string $updatedAt = null)
+    public function __construct(?string $id = null, ?string $name = null, ?string $icon = null, ?string $logo = null, ?string $website = null, ?string $tagLine = null, ?string $serviceId = null, ?string $unifiedApi = null, ?string $consumerId = null, ?AuthType $authType = null, ?bool $enabled = null, ?string $createdAt = null, ?ConnectionState $state = null, ?array $settings = null, ?array $metadata = null, ?string $updatedAt = null)
     {
         $this->id = $id;
         $this->name = $name;

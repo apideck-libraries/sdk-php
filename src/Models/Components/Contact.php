@@ -120,12 +120,12 @@ class Contact
     /**
      * The type of the contact.
      *
-     * @var ?Type $type
+     * @var ?ContactType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Type|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ContactType|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Type $type = null;
+    public ?ContactType $type = null;
 
     /**
      * The company the contact is associated with.
@@ -402,7 +402,7 @@ class Contact
      * @param  ?array<string>  $opportunityIds
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $ownerId
-     * @param  ?Type  $type
+     * @param  ?ContactType  $type
      * @param  ?string  $companyId
      * @param  ?string  $companyName
      * @param  ?string  $leadId
@@ -434,7 +434,7 @@ class Contact
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?array $websites = null, ?array $addresses = null, ?array $socialLinks = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $customFields = null, ?array $opportunityIds = null, ?array $passThrough = null, ?string $ownerId = null, ?Type $type = null, ?string $companyId = null, ?string $companyName = null, ?string $leadId = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $prefix = null, ?string $suffix = null, ?string $title = null, ?string $department = null, ?string $language = null, ?ContactGender $gender = null, ?string $birthday = null, ?string $image = null, ?string $photoUrl = null, ?string $leadSource = null, ?string $fax = null, ?string $description = null, ?float $currentBalance = null, ?string $status = null, ?bool $active = null, ?string $emailDomain = null, ?array $tags = null, ?\DateTime $firstCallAt = null, ?\DateTime $firstEmailAt = null, ?\DateTime $lastActivityAt = null, ?CustomMappings $customMappings = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?string $name = null, ?array $websites = null, ?array $addresses = null, ?array $socialLinks = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $customFields = null, ?array $opportunityIds = null, ?array $passThrough = null, ?string $ownerId = null, ?ContactType $type = null, ?string $companyId = null, ?string $companyName = null, ?string $leadId = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $prefix = null, ?string $suffix = null, ?string $title = null, ?string $department = null, ?string $language = null, ?ContactGender $gender = null, ?string $birthday = null, ?string $image = null, ?string $photoUrl = null, ?string $leadSource = null, ?string $fax = null, ?string $description = null, ?float $currentBalance = null, ?string $status = null, ?bool $active = null, ?string $emailDomain = null, ?array $tags = null, ?\DateTime $firstCallAt = null, ?\DateTime $firstEmailAt = null, ?\DateTime $lastActivityAt = null, ?CustomMappings $customMappings = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->name = $name;

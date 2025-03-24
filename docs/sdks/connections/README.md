@@ -167,7 +167,7 @@ $request = new Operations\VaultConnectionsImportRequest(
             accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
             refreshToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ',
         ),
-        settings: new Components\ConnectionImportDataSettings(),
+        settings: new Components\Settings(),
         metadata: [
             'account' => [
                 'name' => 'My Company',
@@ -367,14 +367,16 @@ $request = new Operations\VaultConnectionsUpdateRequest(
                         id: 'ProductInterest',
                         options: [
                             new Components\FormFieldOptionGroup(
-                                id: '1234',
                                 label: 'General Channel',
                                 options: [
                                     new Components\SimpleFormFieldOption(
                                         label: 'General Channel',
+                                        optionType: Components\OptionType::Simple,
                                         value: 12.5,
                                     ),
                                 ],
+                                optionType: Components\FormFieldOptionGroupOptionType::Group,
+                                id: '1234',
                             ),
                         ],
                         value: 10,

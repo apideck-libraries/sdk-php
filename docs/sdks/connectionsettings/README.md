@@ -104,14 +104,16 @@ $request = new Operations\VaultConnectionSettingsUpdateRequest(
                         id: 'ProductInterest',
                         options: [
                             new Components\FormFieldOptionGroup(
-                                id: '1234',
                                 label: 'General Channel',
                                 options: [
                                     new Components\SimpleFormFieldOption(
                                         label: 'General Channel',
+                                        optionType: Components\OptionType::Simple,
                                         value: 12.5,
                                     ),
                                 ],
+                                optionType: Components\FormFieldOptionGroupOptionType::Group,
+                                id: '1234',
                             ),
                         ],
                         value: 10,
