@@ -147,6 +147,15 @@ class Employee
     public ?string $id = null;
 
     /**
+     * The third-party API ID of original entity
+     *
+     * @var ?string $downstreamId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('downstream_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $downstreamId = null;
+
+    /**
      * The first name of the person.
      *
      * @var ?string $firstName
@@ -637,6 +646,7 @@ class Employee
      * @param  ?ProbationPeriod  $probationPeriod
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $id
+     * @param  ?string  $downstreamId
      * @param  ?string  $firstName
      * @param  ?string  $lastName
      * @param  ?string  $middleName
@@ -691,7 +701,7 @@ class Employee
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?Person $partner = null, ?EmploymentRole $employmentRole = null, ?Manager $manager = null, ?array $languages = null, ?array $nationalities = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $customFields = null, ?array $socialLinks = null, ?array $bankAccounts = null, ?ProbationPeriod $probationPeriod = null, ?array $passThrough = null, ?string $id = null, ?string $firstName = null, ?string $lastName = null, ?string $middleName = null, ?string $displayName = null, ?string $preferredName = null, ?string $initials = null, ?string $salutation = null, ?string $title = null, ?string $maritalStatus = null, ?string $division = null, ?string $divisionId = null, ?string $department = null, ?string $departmentId = null, ?string $departmentName = null, ?Team $team = null, ?string $companyId = null, ?string $companyName = null, ?string $employmentStartDate = null, ?string $employmentEndDate = null, ?LeavingReason $leavingReason = null, ?string $employeeNumber = null, ?EmploymentStatus $employmentStatus = null, ?string $ethnicity = null, ?array $directReports = null, ?string $socialSecurityNumber = null, ?LocalDate $birthday = null, ?LocalDate $deceasedOn = null, ?string $countryOfBirth = null, ?string $description = null, ?Gender $gender = null, ?string $pronouns = null, ?string $preferredLanguage = null, ?string $photoUrl = null, ?string $timezone = null, ?string $source = null, ?string $sourceId = null, ?string $recordUrl = null, ?array $jobs = null, ?array $compensations = null, ?bool $worksRemote = null, ?string $taxCode = null, ?string $taxId = null, ?string $dietaryPreference = null, ?array $foodAllergies = null, ?array $tags = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?bool $deleted = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?Person $partner = null, ?EmploymentRole $employmentRole = null, ?Manager $manager = null, ?array $languages = null, ?array $nationalities = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $customFields = null, ?array $socialLinks = null, ?array $bankAccounts = null, ?ProbationPeriod $probationPeriod = null, ?array $passThrough = null, ?string $id = null, ?string $downstreamId = null, ?string $firstName = null, ?string $lastName = null, ?string $middleName = null, ?string $displayName = null, ?string $preferredName = null, ?string $initials = null, ?string $salutation = null, ?string $title = null, ?string $maritalStatus = null, ?string $division = null, ?string $divisionId = null, ?string $department = null, ?string $departmentId = null, ?string $departmentName = null, ?Team $team = null, ?string $companyId = null, ?string $companyName = null, ?string $employmentStartDate = null, ?string $employmentEndDate = null, ?LeavingReason $leavingReason = null, ?string $employeeNumber = null, ?EmploymentStatus $employmentStatus = null, ?string $ethnicity = null, ?array $directReports = null, ?string $socialSecurityNumber = null, ?LocalDate $birthday = null, ?LocalDate $deceasedOn = null, ?string $countryOfBirth = null, ?string $description = null, ?Gender $gender = null, ?string $pronouns = null, ?string $preferredLanguage = null, ?string $photoUrl = null, ?string $timezone = null, ?string $source = null, ?string $sourceId = null, ?string $recordUrl = null, ?array $jobs = null, ?array $compensations = null, ?bool $worksRemote = null, ?string $taxCode = null, ?string $taxId = null, ?string $dietaryPreference = null, ?array $foodAllergies = null, ?array $tags = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?bool $deleted = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->partner = $partner;
         $this->employmentRole = $employmentRole;
@@ -707,6 +717,7 @@ class Employee
         $this->probationPeriod = $probationPeriod;
         $this->passThrough = $passThrough;
         $this->id = $id;
+        $this->downstreamId = $downstreamId;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->middleName = $middleName;

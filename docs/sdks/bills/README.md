@@ -117,7 +117,7 @@ $request = new Operations\AccountingBillsAddRequest(
             id: '12345',
             address: new Components\Address(
                 id: '123',
-                type: Components\AddressType::Primary,
+                type: Components\Type::Primary,
                 string: '25 Spring Street, Blackburn, VIC 3130',
                 name: 'HQ US',
                 line1: 'Main street',
@@ -509,7 +509,7 @@ $request = new Operations\AccountingBillsUpdateRequest(
             id: '12345',
             address: new Components\Address(
                 id: '123',
-                type: Components\AddressType::Primary,
+                type: Components\Type::Primary,
                 string: '25 Spring Street, Blackburn, VIC 3130',
                 name: 'HQ US',
                 line1: 'Main street',

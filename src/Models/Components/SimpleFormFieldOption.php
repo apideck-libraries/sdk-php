@@ -13,11 +13,18 @@ class SimpleFormFieldOption
 {
     /**
      *
-     * @var ?string $label
+     * @var string $label
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('label')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $label = null;
+    public string $label;
+
+    /**
+     *
+     * @var OptionType $optionType
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('option_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\OptionType')]
+    public OptionType $optionType;
 
     /**
      *
@@ -29,13 +36,15 @@ class SimpleFormFieldOption
     public string|int|float|bool|array|null $value = null;
 
     /**
-     * @param  ?string  $label
+     * @param  string  $label
+     * @param  OptionType  $optionType
      * @param  string|int|float|bool|array<string|int|float>|null  $value
      * @phpstan-pure
      */
-    public function __construct(?string $label = null, string|int|float|bool|array|null $value = null)
+    public function __construct(string $label, OptionType $optionType, string|int|float|bool|array|null $value = null)
     {
         $this->label = $label;
+        $this->optionType = $optionType;
         $this->value = $value;
     }
 }
