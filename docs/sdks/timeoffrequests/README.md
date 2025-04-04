@@ -5,102 +5,11 @@
 
 ### Available Operations
 
-* [create](#create) - Create Time Off Request
 * [list](#list) - List Time Off Requests
-* [delete](#delete) - Delete Time Off Request
+* [create](#create) - Create Time Off Request
 * [get](#get) - Get Time Off Request
 * [update](#update) - Update Time Off Request
-
-## create
-
-Create Time Off Request
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Components;
-use Apideck\Unify\Models\Operations;
-
-$sdk = Unify\Apideck::builder()
-    ->setSecurity(
-        '<YOUR_BEARER_TOKEN_HERE>'
-    )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->build();
-
-$request = new Operations\HrisTimeOffRequestsAddRequest(
-    timeOffRequest: new Components\TimeOffRequestInput(
-        notes: new Components\Notes(
-            employee: 'Relaxing on the beach for a few hours.',
-            manager: 'Enjoy!',
-        ),
-        passThrough: [
-            new Components\PassThroughBody(
-                serviceId: '<id>',
-                extendPaths: [
-                    new Components\ExtendPaths(
-                        path: '$.nested.property',
-                        value: [
-                            'TaxClassificationRef' => [
-                                'value' => 'EUC-99990201-V1-00020000',
-                            ],
-                        ],
-                    ),
-                ],
-            ),
-        ],
-        policyType: 'sick',
-        employeeId: '12345',
-        policyId: '12345',
-        status: Components\TimeOffRequestStatusStatus::Approved,
-        description: 'Enjoying some sun.',
-        startDate: '2022-04-01',
-        endDate: '2022-04-01',
-        requestDate: '2022-03-21',
-        requestType: Components\RequestType::Vacation,
-        approvalDate: '2022-03-21',
-        units: Components\Units::Hours,
-        amount: 3.5,
-        dayPart: 'morning',
-    ),
-    serviceId: 'salesforce',
-);
-
-$response = $sdk->hris->timeOffRequests->create(
-    request: $request
-);
-
-if ($response->createTimeOffRequestResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                           | [Operations\HrisTimeOffRequestsAddRequest](../../Models/Operations/HrisTimeOffRequestsAddRequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-
-### Response
-
-**[?Operations\HrisTimeOffRequestsAddResponse](../../Models/Operations/HrisTimeOffRequestsAddResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+* [delete](#delete) - Delete Time Off Request
 
 ## list
 
@@ -174,9 +83,9 @@ foreach ($responses as $response) {
 | Errors\UnprocessableResponse   | 422                            | application/json               |
 | Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
 
-## delete
+## create
 
-Delete Time Off Request
+Create Time Off Request
 
 ### Example Usage
 
@@ -186,6 +95,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Apideck\Unify;
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
@@ -196,30 +106,62 @@ $sdk = Unify\Apideck::builder()
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
-$request = new Operations\HrisTimeOffRequestsDeleteRequest(
-    id: '<id>',
-    employeeId: '<id>',
+$request = new Operations\HrisTimeOffRequestsAddRequest(
     serviceId: 'salesforce',
+    timeOffRequest: new Components\TimeOffRequestInput(
+        employeeId: '12345',
+        policyId: '12345',
+        status: Components\TimeOffRequestStatusStatus::Approved,
+        description: 'Enjoying some sun.',
+        startDate: '2022-04-01',
+        endDate: '2022-04-01',
+        requestDate: '2022-03-21',
+        requestType: Components\RequestType::Vacation,
+        approvalDate: '2022-03-21',
+        units: Components\Units::Hours,
+        amount: 3.5,
+        dayPart: 'morning',
+        notes: new Components\Notes(
+            employee: 'Relaxing on the beach for a few hours.',
+            manager: 'Enjoy!',
+        ),
+        passThrough: [
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+        ],
+        policyType: 'sick',
+    ),
 );
 
-$response = $sdk->hris->timeOffRequests->delete(
+$response = $sdk->hris->timeOffRequests->create(
     request: $request
 );
 
-if ($response->deleteTimeOffRequestResponse !== null) {
+if ($response->createTimeOffRequestResponse !== null) {
     // handle response
 }
 ```
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                 | [Operations\HrisTimeOffRequestsDeleteRequest](../../Models/Operations/HrisTimeOffRequestsDeleteRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                           | [Operations\HrisTimeOffRequestsAddRequest](../../Models/Operations/HrisTimeOffRequestsAddRequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
 
 ### Response
 
-**[?Operations\HrisTimeOffRequestsDeleteResponse](../../Models/Operations/HrisTimeOffRequestsDeleteResponse.md)**
+**[?Operations\HrisTimeOffRequestsAddResponse](../../Models/Operations/HrisTimeOffRequestsAddResponse.md)**
 
 ### Errors
 
@@ -256,9 +198,9 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\HrisTimeOffRequestsOneRequest(
     id: '<id>',
-    employeeId: '<id>',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
+    employeeId: '<id>',
 );
 
 $response = $sdk->hris->timeOffRequests->get(
@@ -316,8 +258,21 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\HrisTimeOffRequestsUpdateRequest(
     id: '<id>',
+    serviceId: 'salesforce',
     employeeId: '<id>',
     timeOffRequest: new Components\TimeOffRequestInput(
+        employeeId: '12345',
+        policyId: '12345',
+        status: Components\TimeOffRequestStatusStatus::Approved,
+        description: 'Enjoying some sun.',
+        startDate: '2022-04-01',
+        endDate: '2022-04-01',
+        requestDate: '2022-03-21',
+        requestType: Components\RequestType::Vacation,
+        approvalDate: '2022-03-21',
+        units: Components\Units::Hours,
+        amount: 3.5,
+        dayPart: 'morning',
         notes: new Components\Notes(
             employee: 'Relaxing on the beach for a few hours.',
             manager: 'Enjoy!',
@@ -338,20 +293,7 @@ $request = new Operations\HrisTimeOffRequestsUpdateRequest(
             ),
         ],
         policyType: 'sick',
-        employeeId: '12345',
-        policyId: '12345',
-        status: Components\TimeOffRequestStatusStatus::Approved,
-        description: 'Enjoying some sun.',
-        startDate: '2022-04-01',
-        endDate: '2022-04-01',
-        requestDate: '2022-03-21',
-        requestType: Components\RequestType::Vacation,
-        approvalDate: '2022-03-21',
-        units: Components\Units::Hours,
-        amount: 3.5,
-        dayPart: 'morning',
     ),
-    serviceId: 'salesforce',
 );
 
 $response = $sdk->hris->timeOffRequests->update(
@@ -372,6 +314,64 @@ if ($response->updateTimeOffRequestResponse !== null) {
 ### Response
 
 **[?Operations\HrisTimeOffRequestsUpdateResponse](../../Models/Operations/HrisTimeOffRequestsUpdateResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## delete
+
+Delete Time Off Request
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Operations;
+
+$sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->build();
+
+$request = new Operations\HrisTimeOffRequestsDeleteRequest(
+    id: '<id>',
+    serviceId: 'salesforce',
+    employeeId: '<id>',
+);
+
+$response = $sdk->hris->timeOffRequests->delete(
+    request: $request
+);
+
+if ($response->deleteTimeOffRequestResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                 | [Operations\HrisTimeOffRequestsDeleteRequest](../../Models/Operations/HrisTimeOffRequestsDeleteRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+
+### Response
+
+**[?Operations\HrisTimeOffRequestsDeleteResponse](../../Models/Operations/HrisTimeOffRequestsDeleteResponse.md)**
 
 ### Errors
 

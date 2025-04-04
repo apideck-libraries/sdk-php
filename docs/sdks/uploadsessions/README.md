@@ -6,9 +6,10 @@
 ### Available Operations
 
 * [create](#create) - Start Upload Session
+* [get](#get) - Get Upload Session
+* [upload](#upload) - Upload part of File to Upload Session
 * [delete](#delete) - Abort Upload Session
 * [finish](#finish) - Finish Upload Session
-* [get](#get) - Get Upload Session
 
 ## create
 
@@ -34,6 +35,7 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\FileStorageUploadSessionsAddRequest(
+    serviceId: 'salesforce',
     createUploadSessionRequest: new Components\CreateUploadSessionRequest(
         name: 'Documents',
         parentFolderId: '1234',
@@ -55,7 +57,6 @@ $request = new Operations\FileStorageUploadSessionsAddRequest(
             ),
         ],
     ),
-    serviceId: 'salesforce',
 );
 
 $response = $sdk->fileStorage->uploadSessions->create(
@@ -77,6 +78,126 @@ if ($response->createUploadSessionResponse !== null) {
 ### Response
 
 **[?Operations\FileStorageUploadSessionsAddResponse](../../Models/Operations/FileStorageUploadSessionsAddResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## get
+
+Get Upload Session. Use the `part_size` to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](/guides/file-upload).
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Operations;
+
+$sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->build();
+
+$request = new Operations\FileStorageUploadSessionsOneRequest(
+    id: '<id>',
+    serviceId: 'salesforce',
+    fields: 'id,updated_at',
+);
+
+$response = $sdk->fileStorage->uploadSessions->get(
+    request: $request
+);
+
+if ($response->getUploadSessionResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                       | [Operations\FileStorageUploadSessionsOneRequest](../../Models/Operations/FileStorageUploadSessionsOneRequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
+| `$serverURL`                                                                                                     | *string*                                                                                                         | :heavy_minus_sign:                                                                                               | An optional server URL to use.                                                                                   |
+
+### Response
+
+**[?Operations\FileStorageUploadSessionsOneResponse](../../Models/Operations/FileStorageUploadSessionsOneResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## upload
+
+Upload part of File to Upload Session (max 100MB). Get `part_size` from [Get Upload Session](#operation/uploadSessionsOne) first. Every File part (except the last one) uploaded to this endpoint should have Content-Length equal to `part_size`. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](/guides/file-upload).
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Operations;
+
+$sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->build();
+
+$request = new Operations\FileStorageUploadSessionsUploadRequest(
+    id: '<id>',
+    serviceId: 'salesforce',
+    partNumber: 0,
+    digest: 'sha=fpRyg5eVQletdZqEKaFlqwBXJzM=',
+    requestBody: '<binary string>',
+);
+
+$response = $sdk->fileStorage->uploadSessions->upload(
+    request: $request
+);
+
+if ($response->updateUploadSessionResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                             | [Operations\FileStorageUploadSessionsUploadRequest](../../Models/Operations/FileStorageUploadSessionsUploadRequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
+| `$serverURL`                                                                                                           | *string*                                                                                                               | :heavy_minus_sign:                                                                                                     | An optional server URL to use.                                                                                         |
+
+### Response
+
+**[?Operations\FileStorageUploadSessionsUploadResponse](../../Models/Operations/FileStorageUploadSessionsUploadResponse.md)**
 
 ### Errors
 
@@ -193,65 +314,6 @@ if ($response->getFileResponse !== null) {
 ### Response
 
 **[?Operations\FileStorageUploadSessionsFinishResponse](../../Models/Operations/FileStorageUploadSessionsFinishResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
-
-## get
-
-Get Upload Session. Use the `part_size` to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](/guides/file-upload).
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Operations;
-
-$sdk = Unify\Apideck::builder()
-    ->setSecurity(
-        '<YOUR_BEARER_TOKEN_HERE>'
-    )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->build();
-
-$request = new Operations\FileStorageUploadSessionsOneRequest(
-    id: '<id>',
-    serviceId: 'salesforce',
-    fields: 'id,updated_at',
-);
-
-$response = $sdk->fileStorage->uploadSessions->get(
-    request: $request
-);
-
-if ($response->getUploadSessionResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                       | [Operations\FileStorageUploadSessionsOneRequest](../../Models/Operations/FileStorageUploadSessionsOneRequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `$serverURL`                                                                                                     | *string*                                                                                                         | :heavy_minus_sign:                                                                                               | An optional server URL to use.                                                                                   |
-
-### Response
-
-**[?Operations\FileStorageUploadSessionsOneResponse](../../Models/Operations/FileStorageUploadSessionsOneResponse.md)**
 
 ### Errors
 

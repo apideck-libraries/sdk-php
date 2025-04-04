@@ -5,114 +5,11 @@
 
 ### Available Operations
 
-* [create](#create) - Create Tax Rate
 * [list](#list) - List Tax Rates
-* [delete](#delete) - Delete Tax Rate
+* [create](#create) - Create Tax Rate
 * [get](#get) - Get Tax Rate
 * [update](#update) - Update Tax Rate
-
-## create
-
-Create Tax Rate
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Components;
-use Apideck\Unify\Models\Operations;
-
-$sdk = Unify\Apideck::builder()
-    ->setSecurity(
-        '<YOUR_BEARER_TOKEN_HERE>'
-    )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->build();
-
-$request = new Operations\AccountingTaxRatesAddRequest(
-    taxRate: new Components\TaxRateInput(
-        name: 'GST on Purchases',
-        passThrough: [
-            new Components\PassThroughBody(
-                serviceId: '<id>',
-                extendPaths: [
-                    new Components\ExtendPaths(
-                        path: '$.nested.property',
-                        value: [
-                            'TaxClassificationRef' => [
-                                'value' => 'EUC-99990201-V1-00020000',
-                            ],
-                        ],
-                    ),
-                ],
-            ),
-        ],
-        customFields: [
-            new Components\CustomField(
-                id: '2389328923893298',
-                name: 'employee_level',
-                description: 'Employee Level',
-                value: true,
-            ),
-        ],
-        id: '1234',
-        code: 'ABN',
-        description: 'Reduced rate GST Purchases',
-        effectiveTaxRate: 10,
-        totalTaxRate: 10,
-        taxPayableAccountId: '123456',
-        taxRemittedAccountId: '123456',
-        components: [
-            new Components\Components(
-                name: 'GST',
-                id: '10',
-                rate: 10,
-                compound: true,
-            ),
-        ],
-        type: 'NONE',
-        reportTaxType: 'NONE',
-        originalTaxRateId: '12345',
-        status: Components\TaxRateStatus::Active,
-        rowVersion: '1-12345',
-    ),
-    serviceId: 'salesforce',
-);
-
-$response = $sdk->accounting->taxRates->create(
-    request: $request
-);
-
-if ($response->createTaxRateResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                         | [Operations\AccountingTaxRatesAddRequest](../../Models/Operations/AccountingTaxRatesAddRequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-
-### Response
-
-**[?Operations\AccountingTaxRatesAddResponse](../../Models/Operations/AccountingTaxRatesAddResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+* [delete](#delete) - Delete Tax Rate
 
 ## list
 
@@ -186,9 +83,9 @@ foreach ($responses as $response) {
 | Errors\UnprocessableResponse   | 422                            | application/json               |
 | Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
 
-## delete
+## create
 
-Delete Tax Rate
+Create Tax Rate
 
 ### Example Usage
 
@@ -198,6 +95,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Apideck\Unify;
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
@@ -208,29 +106,74 @@ $sdk = Unify\Apideck::builder()
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
-$request = new Operations\AccountingTaxRatesDeleteRequest(
-    id: '<id>',
+$request = new Operations\AccountingTaxRatesAddRequest(
     serviceId: 'salesforce',
+    taxRate: new Components\TaxRateInput(
+        id: '1234',
+        name: 'GST on Purchases',
+        code: 'ABN',
+        description: 'Reduced rate GST Purchases',
+        effectiveTaxRate: 10,
+        totalTaxRate: 10,
+        taxPayableAccountId: '123456',
+        taxRemittedAccountId: '123456',
+        components: [
+            new Components\Components(
+                id: '10',
+                name: 'GST',
+                rate: 10,
+                compound: true,
+            ),
+        ],
+        type: 'NONE',
+        reportTaxType: 'NONE',
+        originalTaxRateId: '12345',
+        status: Components\TaxRateStatus::Active,
+        rowVersion: '1-12345',
+        passThrough: [
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+        ],
+        customFields: [
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: true,
+            ),
+        ],
+    ),
 );
 
-$response = $sdk->accounting->taxRates->delete(
+$response = $sdk->accounting->taxRates->create(
     request: $request
 );
 
-if ($response->deleteTaxRateResponse !== null) {
+if ($response->createTaxRateResponse !== null) {
     // handle response
 }
 ```
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                               | [Operations\AccountingTaxRatesDeleteRequest](../../Models/Operations/AccountingTaxRatesDeleteRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                         | [Operations\AccountingTaxRatesAddRequest](../../Models/Operations/AccountingTaxRatesAddRequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
 
 ### Response
 
-**[?Operations\AccountingTaxRatesDeleteResponse](../../Models/Operations/AccountingTaxRatesDeleteResponse.md)**
+**[?Operations\AccountingTaxRatesAddResponse](../../Models/Operations/AccountingTaxRatesAddResponse.md)**
 
 ### Errors
 
@@ -327,8 +270,29 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingTaxRatesUpdateRequest(
     id: '<id>',
+    serviceId: 'salesforce',
     taxRate: new Components\TaxRateInput(
+        id: '1234',
         name: 'GST on Purchases',
+        code: 'ABN',
+        description: 'Reduced rate GST Purchases',
+        effectiveTaxRate: 10,
+        totalTaxRate: 10,
+        taxPayableAccountId: '123456',
+        taxRemittedAccountId: '123456',
+        components: [
+            new Components\Components(
+                id: '10',
+                name: 'GST',
+                rate: 10,
+                compound: true,
+            ),
+        ],
+        type: 'NONE',
+        reportTaxType: 'NONE',
+        originalTaxRateId: '12345',
+        status: Components\TaxRateStatus::Active,
+        rowVersion: '1-12345',
         passThrough: [
             new Components\PassThroughBody(
                 serviceId: '<id>',
@@ -354,28 +318,7 @@ $request = new Operations\AccountingTaxRatesUpdateRequest(
                 ],
             ),
         ],
-        id: '1234',
-        code: 'ABN',
-        description: 'Reduced rate GST Purchases',
-        effectiveTaxRate: 10,
-        totalTaxRate: 10,
-        taxPayableAccountId: '123456',
-        taxRemittedAccountId: '123456',
-        components: [
-            new Components\Components(
-                name: 'GST',
-                id: '10',
-                rate: 10,
-                compound: true,
-            ),
-        ],
-        type: 'NONE',
-        reportTaxType: 'NONE',
-        originalTaxRateId: '12345',
-        status: Components\TaxRateStatus::Active,
-        rowVersion: '1-12345',
     ),
-    serviceId: 'salesforce',
 );
 
 $response = $sdk->accounting->taxRates->update(
@@ -396,6 +339,63 @@ if ($response->updateTaxRateResponse !== null) {
 ### Response
 
 **[?Operations\AccountingTaxRatesUpdateResponse](../../Models/Operations/AccountingTaxRatesUpdateResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## delete
+
+Delete Tax Rate
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Operations;
+
+$sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->build();
+
+$request = new Operations\AccountingTaxRatesDeleteRequest(
+    id: '<id>',
+    serviceId: 'salesforce',
+);
+
+$response = $sdk->accounting->taxRates->delete(
+    request: $request
+);
+
+if ($response->deleteTaxRateResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                               | [Operations\AccountingTaxRatesDeleteRequest](../../Models/Operations/AccountingTaxRatesDeleteRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+
+### Response
+
+**[?Operations\AccountingTaxRatesDeleteResponse](../../Models/Operations/AccountingTaxRatesDeleteResponse.md)**
 
 ### Errors
 

@@ -1,0 +1,10 @@
+# AccountingAgedCreditorsOneResponse
+
+
+## Fields
+
+| Field                                                                                       | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                  | [Components\HTTPMetadata](../../Models/Components/HTTPMetadata.md)                          | :heavy_check_mark:                                                                          | N/A                                                                                         |
+| `getAgedCreditorsResponse`                                                                  | [?Components\GetAgedCreditorsResponse](../../Models/Components/GetAgedCreditorsResponse.md) | :heavy_minus_sign:                                                                          | Aged Creditors                                                                              |
+| `unexpectedErrorResponse`                                                                   | [?Components\UnexpectedErrorResponse](../../Models/Components/UnexpectedErrorResponse.md)   | :heavy_minus_sign:                                                                          | Unexpected error                                                                            |

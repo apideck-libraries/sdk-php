@@ -5,88 +5,11 @@
 
 ### Available Operations
 
-* [create](#create) - Create Department
 * [list](#list) - List Departments
-* [delete](#delete) - Delete Department
+* [create](#create) - Create Department
 * [get](#get) - Get Department
 * [update](#update) - Update Department
-
-## create
-
-Create Department
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Components;
-use Apideck\Unify\Models\Operations;
-
-$sdk = Unify\Apideck::builder()
-    ->setSecurity(
-        '<YOUR_BEARER_TOKEN_HERE>'
-    )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->build();
-
-$request = new Operations\HrisDepartmentsAddRequest(
-    department: new Components\DepartmentInput(
-        passThrough: [
-            new Components\PassThroughBody(
-                serviceId: '<id>',
-                extendPaths: [
-                    new Components\ExtendPaths(
-                        path: '$.nested.property',
-                        value: [
-                            'TaxClassificationRef' => [
-                                'value' => 'EUC-99990201-V1-00020000',
-                            ],
-                        ],
-                    ),
-                ],
-            ),
-        ],
-        name: 'R&D',
-        code: '2',
-        description: 'R&D',
-    ),
-    serviceId: 'salesforce',
-);
-
-$response = $sdk->hris->departments->create(
-    request: $request
-);
-
-if ($response->createDepartmentResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `$request`                                                                                   | [Operations\HrisDepartmentsAddRequest](../../Models/Operations/HrisDepartmentsAddRequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-
-### Response
-
-**[?Operations\HrisDepartmentsAddResponse](../../Models/Operations/HrisDepartmentsAddResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+* [delete](#delete) - Delete Department
 
 ## list
 
@@ -151,9 +74,9 @@ foreach ($responses as $response) {
 | Errors\UnprocessableResponse   | 422                            | application/json               |
 | Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
 
-## delete
+## create
 
-Delete Department
+Create Department
 
 ### Example Usage
 
@@ -163,6 +86,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Apideck\Unify;
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
@@ -173,29 +97,48 @@ $sdk = Unify\Apideck::builder()
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
-$request = new Operations\HrisDepartmentsDeleteRequest(
-    id: '<id>',
+$request = new Operations\HrisDepartmentsAddRequest(
     serviceId: 'salesforce',
+    department: new Components\DepartmentInput(
+        name: 'R&D',
+        code: '2',
+        description: 'R&D',
+        passThrough: [
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+        ],
+    ),
 );
 
-$response = $sdk->hris->departments->delete(
+$response = $sdk->hris->departments->create(
     request: $request
 );
 
-if ($response->deleteDepartmentResponse !== null) {
+if ($response->createDepartmentResponse !== null) {
     // handle response
 }
 ```
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                         | [Operations\HrisDepartmentsDeleteRequest](../../Models/Operations/HrisDepartmentsDeleteRequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `$request`                                                                                   | [Operations\HrisDepartmentsAddRequest](../../Models/Operations/HrisDepartmentsAddRequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
 
 ### Response
 
-**[?Operations\HrisDepartmentsDeleteResponse](../../Models/Operations/HrisDepartmentsDeleteResponse.md)**
+**[?Operations\HrisDepartmentsAddResponse](../../Models/Operations/HrisDepartmentsAddResponse.md)**
 
 ### Errors
 
@@ -291,7 +234,11 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\HrisDepartmentsUpdateRequest(
     id: '<id>',
+    serviceId: 'salesforce',
     department: new Components\DepartmentInput(
+        name: 'R&D',
+        code: '2',
+        description: 'R&D',
         passThrough: [
             new Components\PassThroughBody(
                 serviceId: '<id>',
@@ -307,11 +254,7 @@ $request = new Operations\HrisDepartmentsUpdateRequest(
                 ],
             ),
         ],
-        name: 'R&D',
-        code: '2',
-        description: 'R&D',
     ),
-    serviceId: 'salesforce',
 );
 
 $response = $sdk->hris->departments->update(
@@ -332,6 +275,63 @@ if ($response->updateDepartmentResponse !== null) {
 ### Response
 
 **[?Operations\HrisDepartmentsUpdateResponse](../../Models/Operations/HrisDepartmentsUpdateResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## delete
+
+Delete Department
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Operations;
+
+$sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->build();
+
+$request = new Operations\HrisDepartmentsDeleteRequest(
+    id: '<id>',
+    serviceId: 'salesforce',
+);
+
+$response = $sdk->hris->departments->delete(
+    request: $request
+);
+
+if ($response->deleteDepartmentResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                         | [Operations\HrisDepartmentsDeleteRequest](../../Models/Operations/HrisDepartmentsDeleteRequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+
+### Response
+
+**[?Operations\HrisDepartmentsDeleteResponse](../../Models/Operations/HrisDepartmentsDeleteResponse.md)**
 
 ### Errors
 

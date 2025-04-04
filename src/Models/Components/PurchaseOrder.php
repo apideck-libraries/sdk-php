@@ -49,6 +49,16 @@ class PurchaseOrder
     public ?BankAccount $bankAccount = null;
 
     /**
+     * $customFields
+     *
+     * @var ?array<CustomField> $customFields
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $customFields = null;
+
+    /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
      * @var ?array<PassThroughBody> $passThrough
@@ -346,6 +356,7 @@ class PurchaseOrder
      * @param  ?array<InvoiceLineItem>  $lineItems
      * @param  ?Address  $shippingAddress
      * @param  ?BankAccount  $bankAccount
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $downstreamId
      * @param  ?string  $poNumber
@@ -380,12 +391,13 @@ class PurchaseOrder
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?array $lineItems = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $poNumber = null, ?string $reference = null, ?LinkedSupplier $supplier = null, ?string $companyId = null, ?PurchaseOrderStatus $status = null, ?LocalDate $issuedDate = null, ?LocalDate $deliveryDate = null, ?LocalDate $expectedArrivalDate = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?bool $taxInclusive = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $templateId = null, ?float $discountPercentage = null, ?bool $accountingByRow = null, ?LocalDate $dueDate = null, ?string $paymentMethod = null, ?string $taxCode = null, ?string $channel = null, ?string $memo = null, ?array $trackingCategories = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?array $lineItems = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $poNumber = null, ?string $reference = null, ?LinkedSupplier $supplier = null, ?string $companyId = null, ?PurchaseOrderStatus $status = null, ?LocalDate $issuedDate = null, ?LocalDate $deliveryDate = null, ?LocalDate $expectedArrivalDate = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?bool $taxInclusive = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $templateId = null, ?float $discountPercentage = null, ?bool $accountingByRow = null, ?LocalDate $dueDate = null, ?string $paymentMethod = null, ?string $taxCode = null, ?string $channel = null, ?string $memo = null, ?array $trackingCategories = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->lineItems = $lineItems;
         $this->shippingAddress = $shippingAddress;
         $this->bankAccount = $bankAccount;
+        $this->customFields = $customFields;
         $this->passThrough = $passThrough;
         $this->downstreamId = $downstreamId;
         $this->poNumber = $poNumber;

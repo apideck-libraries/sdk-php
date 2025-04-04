@@ -5,88 +5,11 @@
 
 ### Available Operations
 
-* [create](#create) - Create Shared Link
 * [list](#list) - List SharedLinks
-* [delete](#delete) - Delete Shared Link
+* [create](#create) - Create Shared Link
 * [get](#get) - Get Shared Link
 * [update](#update) - Update Shared Link
-
-## create
-
-Create Shared Link
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Components;
-use Apideck\Unify\Models\Operations;
-
-$sdk = Unify\Apideck::builder()
-    ->setSecurity(
-        '<YOUR_BEARER_TOKEN_HERE>'
-    )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->build();
-
-$request = new Operations\FileStorageSharedLinksAddRequest(
-    sharedLink: new Components\SharedLinkInput(
-        targetId: '<id>',
-        passThrough: [
-            new Components\PassThroughBody(
-                serviceId: '<id>',
-                extendPaths: [
-                    new Components\ExtendPaths(
-                        path: '$.nested.property',
-                        value: [
-                            'TaxClassificationRef' => [
-                                'value' => 'EUC-99990201-V1-00020000',
-                            ],
-                        ],
-                    ),
-                ],
-            ),
-        ],
-        downloadUrl: 'https://www.box.com/shared/static/rh935iit6ewrmw0unyul.jpeg',
-        scope: Components\Scope::Company,
-    ),
-    serviceId: 'salesforce',
-);
-
-$response = $sdk->fileStorage->sharedLinks->create(
-    request: $request
-);
-
-if ($response->createSharedLinkResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                 | [Operations\FileStorageSharedLinksAddRequest](../../Models/Operations/FileStorageSharedLinksAddRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-
-### Response
-
-**[?Operations\FileStorageSharedLinksAddResponse](../../Models/Operations/FileStorageSharedLinksAddResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+* [delete](#delete) - Delete Shared Link
 
 ## list
 
@@ -151,9 +74,9 @@ foreach ($responses as $response) {
 | Errors\UnprocessableResponse   | 422                            | application/json               |
 | Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
 
-## delete
+## create
 
-Delete Shared Link
+Create Shared Link
 
 ### Example Usage
 
@@ -163,6 +86,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Apideck\Unify;
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
@@ -173,29 +97,48 @@ $sdk = Unify\Apideck::builder()
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
-$request = new Operations\FileStorageSharedLinksDeleteRequest(
-    id: '<id>',
+$request = new Operations\FileStorageSharedLinksAddRequest(
     serviceId: 'salesforce',
+    sharedLink: new Components\SharedLinkInput(
+        downloadUrl: 'https://www.box.com/shared/static/rh935iit6ewrmw0unyul.jpeg',
+        targetId: '<id>',
+        scope: Components\Scope::Company,
+        passThrough: [
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+        ],
+    ),
 );
 
-$response = $sdk->fileStorage->sharedLinks->delete(
+$response = $sdk->fileStorage->sharedLinks->create(
     request: $request
 );
 
-if ($response->deleteSharedLinkResponse !== null) {
+if ($response->createSharedLinkResponse !== null) {
     // handle response
 }
 ```
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                       | [Operations\FileStorageSharedLinksDeleteRequest](../../Models/Operations/FileStorageSharedLinksDeleteRequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                 | [Operations\FileStorageSharedLinksAddRequest](../../Models/Operations/FileStorageSharedLinksAddRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 
 ### Response
 
-**[?Operations\FileStorageSharedLinksDeleteResponse](../../Models/Operations/FileStorageSharedLinksDeleteResponse.md)**
+**[?Operations\FileStorageSharedLinksAddResponse](../../Models/Operations/FileStorageSharedLinksAddResponse.md)**
 
 ### Errors
 
@@ -291,8 +234,11 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\FileStorageSharedLinksUpdateRequest(
     id: '<id>',
+    serviceId: 'salesforce',
     sharedLink: new Components\SharedLinkInput(
+        downloadUrl: 'https://www.box.com/shared/static/rh935iit6ewrmw0unyul.jpeg',
         targetId: '<id>',
+        scope: Components\Scope::Company,
         passThrough: [
             new Components\PassThroughBody(
                 serviceId: '<id>',
@@ -308,10 +254,7 @@ $request = new Operations\FileStorageSharedLinksUpdateRequest(
                 ],
             ),
         ],
-        downloadUrl: 'https://www.box.com/shared/static/rh935iit6ewrmw0unyul.jpeg',
-        scope: Components\Scope::Company,
     ),
-    serviceId: 'salesforce',
 );
 
 $response = $sdk->fileStorage->sharedLinks->update(
@@ -332,6 +275,63 @@ if ($response->updateSharedLinkResponse !== null) {
 ### Response
 
 **[?Operations\FileStorageSharedLinksUpdateResponse](../../Models/Operations/FileStorageSharedLinksUpdateResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## delete
+
+Delete Shared Link
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Operations;
+
+$sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->build();
+
+$request = new Operations\FileStorageSharedLinksDeleteRequest(
+    id: '<id>',
+    serviceId: 'salesforce',
+);
+
+$response = $sdk->fileStorage->sharedLinks->delete(
+    request: $request
+);
+
+if ($response->deleteSharedLinkResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                       | [Operations\FileStorageSharedLinksDeleteRequest](../../Models/Operations/FileStorageSharedLinksDeleteRequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
+
+### Response
+
+**[?Operations\FileStorageSharedLinksDeleteResponse](../../Models/Operations/FileStorageSharedLinksDeleteResponse.md)**
 
 ### Errors
 

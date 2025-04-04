@@ -114,6 +114,24 @@ class JournalEntryLineItemInput
     public ?LinkedSupplierInput $supplier = null;
 
     /**
+     * The ID of the department
+     *
+     * @var ?string $departmentId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('department_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $departmentId = null;
+
+    /**
+     * The ID of the location
+     *
+     * @var ?string $locationId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('location_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $locationId = null;
+
+    /**
      * Line number of the resource
      *
      * @var ?int $lineNumber
@@ -134,10 +152,12 @@ class JournalEntryLineItemInput
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?LinkedCustomerInput  $customer
      * @param  ?LinkedSupplierInput  $supplier
+     * @param  ?string  $departmentId
+     * @param  ?string  $locationId
      * @param  ?int  $lineNumber
      * @phpstan-pure
      */
-    public function __construct(JournalEntryLineItemType $type, ?LinkedTaxRateInput $taxRate = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $description = null, ?float $taxAmount = null, ?float $subTotal = null, ?float $totalAmount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?LinkedCustomerInput $customer = null, ?LinkedSupplierInput $supplier = null, ?int $lineNumber = null)
+    public function __construct(JournalEntryLineItemType $type, ?LinkedTaxRateInput $taxRate = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $description = null, ?float $taxAmount = null, ?float $subTotal = null, ?float $totalAmount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?LinkedCustomerInput $customer = null, ?LinkedSupplierInput $supplier = null, ?string $departmentId = null, ?string $locationId = null, ?int $lineNumber = null)
     {
         $this->type = $type;
         $this->taxRate = $taxRate;
@@ -150,6 +170,8 @@ class JournalEntryLineItemInput
         $this->trackingCategories = $trackingCategories;
         $this->customer = $customer;
         $this->supplier = $supplier;
+        $this->departmentId = $departmentId;
+        $this->locationId = $locationId;
         $this->lineNumber = $lineNumber;
     }
 }

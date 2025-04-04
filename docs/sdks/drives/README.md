@@ -5,87 +5,11 @@
 
 ### Available Operations
 
-* [create](#create) - Create Drive
 * [list](#list) - List Drives
-* [delete](#delete) - Delete Drive
+* [create](#create) - Create Drive
 * [get](#get) - Get Drive
 * [update](#update) - Update Drive
-
-## create
-
-Create Drive
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Components;
-use Apideck\Unify\Models\Operations;
-
-$sdk = Unify\Apideck::builder()
-    ->setSecurity(
-        '<YOUR_BEARER_TOKEN_HERE>'
-    )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->build();
-
-$request = new Operations\FileStorageDrivesAddRequest(
-    drive: new Components\DriveInput(
-        name: 'Project Resources',
-        passThrough: [
-            new Components\PassThroughBody(
-                serviceId: '<id>',
-                extendPaths: [
-                    new Components\ExtendPaths(
-                        path: '$.nested.property',
-                        value: [
-                            'TaxClassificationRef' => [
-                                'value' => 'EUC-99990201-V1-00020000',
-                            ],
-                        ],
-                    ),
-                ],
-            ),
-        ],
-        description: 'A description',
-    ),
-    serviceId: 'salesforce',
-);
-
-$response = $sdk->fileStorage->drives->create(
-    request: $request
-);
-
-if ($response->createDriveResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                       | [Operations\FileStorageDrivesAddRequest](../../Models/Operations/FileStorageDrivesAddRequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-
-### Response
-
-**[?Operations\FileStorageDrivesAddResponse](../../Models/Operations/FileStorageDrivesAddResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+* [delete](#delete) - Delete Drive
 
 ## list
 
@@ -151,9 +75,9 @@ foreach ($responses as $response) {
 | Errors\UnprocessableResponse   | 422                            | application/json               |
 | Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
 
-## delete
+## create
 
-Delete Drive
+Create Drive
 
 ### Example Usage
 
@@ -163,6 +87,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Apideck\Unify;
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
@@ -173,29 +98,47 @@ $sdk = Unify\Apideck::builder()
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
-$request = new Operations\FileStorageDrivesDeleteRequest(
-    id: '<id>',
+$request = new Operations\FileStorageDrivesAddRequest(
     serviceId: 'salesforce',
+    drive: new Components\DriveInput(
+        name: 'Project Resources',
+        description: 'A description',
+        passThrough: [
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+        ],
+    ),
 );
 
-$response = $sdk->fileStorage->drives->delete(
+$response = $sdk->fileStorage->drives->create(
     request: $request
 );
 
-if ($response->deleteDriveResponse !== null) {
+if ($response->createDriveResponse !== null) {
     // handle response
 }
 ```
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                             | [Operations\FileStorageDrivesDeleteRequest](../../Models/Operations/FileStorageDrivesDeleteRequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                       | [Operations\FileStorageDrivesAddRequest](../../Models/Operations/FileStorageDrivesAddRequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
 
 ### Response
 
-**[?Operations\FileStorageDrivesDeleteResponse](../../Models/Operations/FileStorageDrivesDeleteResponse.md)**
+**[?Operations\FileStorageDrivesAddResponse](../../Models/Operations/FileStorageDrivesAddResponse.md)**
 
 ### Errors
 
@@ -291,8 +234,10 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\FileStorageDrivesUpdateRequest(
     id: '<id>',
+    serviceId: 'salesforce',
     drive: new Components\DriveInput(
         name: 'Project Resources',
+        description: 'A description',
         passThrough: [
             new Components\PassThroughBody(
                 serviceId: '<id>',
@@ -308,9 +253,7 @@ $request = new Operations\FileStorageDrivesUpdateRequest(
                 ],
             ),
         ],
-        description: 'A description',
     ),
-    serviceId: 'salesforce',
 );
 
 $response = $sdk->fileStorage->drives->update(
@@ -331,6 +274,63 @@ if ($response->updateDriveResponse !== null) {
 ### Response
 
 **[?Operations\FileStorageDrivesUpdateResponse](../../Models/Operations/FileStorageDrivesUpdateResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## delete
+
+Delete Drive
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Operations;
+
+$sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->build();
+
+$request = new Operations\FileStorageDrivesDeleteRequest(
+    id: '<id>',
+    serviceId: 'salesforce',
+);
+
+$response = $sdk->fileStorage->drives->delete(
+    request: $request
+);
+
+if ($response->deleteDriveResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                             | [Operations\FileStorageDrivesDeleteRequest](../../Models/Operations/FileStorageDrivesDeleteRequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+
+### Response
+
+**[?Operations\FileStorageDrivesDeleteResponse](../../Models/Operations/FileStorageDrivesDeleteResponse.md)**
 
 ### Errors
 

@@ -1,0 +1,10 @@
+# AccountingAttachmentsUploadResponse
+
+
+## Fields
+
+| Field                                                                                       | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                  | [Components\HTTPMetadata](../../Models/Components/HTTPMetadata.md)                          | :heavy_check_mark:                                                                          | N/A                                                                                         |
+| `createAttachmentResponse`                                                                  | [?Components\CreateAttachmentResponse](../../Models/Components/CreateAttachmentResponse.md) | :heavy_minus_sign:                                                                          | Attachments                                                                                 |
+| `unexpectedErrorResponse`                                                                   | [?Components\UnexpectedErrorResponse](../../Models/Components/UnexpectedErrorResponse.md)   | :heavy_minus_sign:                                                                          | Unexpected error                                                                            |

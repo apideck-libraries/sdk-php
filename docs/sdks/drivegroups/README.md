@@ -5,88 +5,11 @@
 
 ### Available Operations
 
-* [create](#create) - Create DriveGroup
 * [list](#list) - List DriveGroups
-* [delete](#delete) - Delete DriveGroup
+* [create](#create) - Create DriveGroup
 * [get](#get) - Get DriveGroup
 * [update](#update) - Update DriveGroup
-
-## create
-
-Create DriveGroup
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Components;
-use Apideck\Unify\Models\Operations;
-
-$sdk = Unify\Apideck::builder()
-    ->setSecurity(
-        '<YOUR_BEARER_TOKEN_HERE>'
-    )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->build();
-
-$request = new Operations\FileStorageDriveGroupsAddRequest(
-    driveGroup: new Components\DriveGroupInput(
-        name: 'accounting',
-        passThrough: [
-            new Components\PassThroughBody(
-                serviceId: '<id>',
-                extendPaths: [
-                    new Components\ExtendPaths(
-                        path: '$.nested.property',
-                        value: [
-                            'TaxClassificationRef' => [
-                                'value' => 'EUC-99990201-V1-00020000',
-                            ],
-                        ],
-                    ),
-                ],
-            ),
-        ],
-        displayName: 'accounting',
-        description: 'A description',
-    ),
-    serviceId: 'salesforce',
-);
-
-$response = $sdk->fileStorage->driveGroups->create(
-    request: $request
-);
-
-if ($response->createDriveGroupResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                 | [Operations\FileStorageDriveGroupsAddRequest](../../Models/Operations/FileStorageDriveGroupsAddRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-
-### Response
-
-**[?Operations\FileStorageDriveGroupsAddResponse](../../Models/Operations/FileStorageDriveGroupsAddResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+* [delete](#delete) - Delete DriveGroup
 
 ## list
 
@@ -155,9 +78,9 @@ foreach ($responses as $response) {
 | Errors\UnprocessableResponse   | 422                            | application/json               |
 | Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
 
-## delete
+## create
 
-Delete DriveGroup
+Create DriveGroup
 
 ### Example Usage
 
@@ -167,6 +90,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Apideck\Unify;
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
@@ -177,29 +101,48 @@ $sdk = Unify\Apideck::builder()
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
-$request = new Operations\FileStorageDriveGroupsDeleteRequest(
-    id: '<id>',
+$request = new Operations\FileStorageDriveGroupsAddRequest(
     serviceId: 'salesforce',
+    driveGroup: new Components\DriveGroupInput(
+        name: 'accounting',
+        displayName: 'accounting',
+        description: 'A description',
+        passThrough: [
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+        ],
+    ),
 );
 
-$response = $sdk->fileStorage->driveGroups->delete(
+$response = $sdk->fileStorage->driveGroups->create(
     request: $request
 );
 
-if ($response->deleteDriveGroupResponse !== null) {
+if ($response->createDriveGroupResponse !== null) {
     // handle response
 }
 ```
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                       | [Operations\FileStorageDriveGroupsDeleteRequest](../../Models/Operations/FileStorageDriveGroupsDeleteRequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                 | [Operations\FileStorageDriveGroupsAddRequest](../../Models/Operations/FileStorageDriveGroupsAddRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 
 ### Response
 
-**[?Operations\FileStorageDriveGroupsDeleteResponse](../../Models/Operations/FileStorageDriveGroupsDeleteResponse.md)**
+**[?Operations\FileStorageDriveGroupsAddResponse](../../Models/Operations/FileStorageDriveGroupsAddResponse.md)**
 
 ### Errors
 
@@ -295,8 +238,11 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\FileStorageDriveGroupsUpdateRequest(
     id: '<id>',
+    serviceId: 'salesforce',
     driveGroup: new Components\DriveGroupInput(
         name: 'accounting',
+        displayName: 'accounting',
+        description: 'A description',
         passThrough: [
             new Components\PassThroughBody(
                 serviceId: '<id>',
@@ -312,10 +258,7 @@ $request = new Operations\FileStorageDriveGroupsUpdateRequest(
                 ],
             ),
         ],
-        displayName: 'accounting',
-        description: 'A description',
     ),
-    serviceId: 'salesforce',
 );
 
 $response = $sdk->fileStorage->driveGroups->update(
@@ -336,6 +279,63 @@ if ($response->updateDriveGroupResponse !== null) {
 ### Response
 
 **[?Operations\FileStorageDriveGroupsUpdateResponse](../../Models/Operations/FileStorageDriveGroupsUpdateResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## delete
+
+Delete DriveGroup
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Operations;
+
+$sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->build();
+
+$request = new Operations\FileStorageDriveGroupsDeleteRequest(
+    id: '<id>',
+    serviceId: 'salesforce',
+);
+
+$response = $sdk->fileStorage->driveGroups->delete(
+    request: $request
+);
+
+if ($response->deleteDriveGroupResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                       | [Operations\FileStorageDriveGroupsDeleteRequest](../../Models/Operations/FileStorageDriveGroupsDeleteRequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
+
+### Response
+
+**[?Operations\FileStorageDriveGroupsDeleteResponse](../../Models/Operations/FileStorageDriveGroupsDeleteResponse.md)**
 
 ### Errors
 

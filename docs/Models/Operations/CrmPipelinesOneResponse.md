@@ -1,0 +1,10 @@
+# CrmPipelinesOneResponse
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                | [Components\HTTPMetadata](../../Models/Components/HTTPMetadata.md)                        | :heavy_check_mark:                                                                        | N/A                                                                                       |
+| `getPipelineResponse`                                                                     | [?Components\GetPipelineResponse](../../Models/Components/GetPipelineResponse.md)         | :heavy_minus_sign:                                                                        | Pipeline                                                                                  |
+| `unexpectedErrorResponse`                                                                 | [?Components\UnexpectedErrorResponse](../../Models/Components/UnexpectedErrorResponse.md) | :heavy_minus_sign:                                                                        | Unexpected error                                                                          |

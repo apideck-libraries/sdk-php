@@ -146,7 +146,7 @@ class BillLineItem
     public ?float $discountAmount = null;
 
     /**
-     * Location id
+     * The ID of the location
      *
      * @var ?string $locationId
      */
@@ -155,7 +155,7 @@ class BillLineItem
     public ?string $locationId = null;
 
     /**
-     * Department id
+     * The ID of the department
      *
      * @var ?string $departmentId
      */

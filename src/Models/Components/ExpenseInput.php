@@ -55,15 +55,6 @@ class ExpenseInput
     public ?string $supplierId = null;
 
     /**
-     * The ID of the department this expense is linked to.
-     *
-     * @var ?string $departmentId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('department_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $departmentId = null;
-
-    /**
      *
      * @var ?LinkedTaxRateInput $taxRate
      */
@@ -109,6 +100,15 @@ class ExpenseInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('company_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $companyId = null;
+
+    /**
+     * The ID of the department
+     *
+     * @var ?string $departmentId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('department_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $departmentId = null;
 
     /**
      * The type of payment for the expense.
@@ -182,12 +182,12 @@ class ExpenseInput
      * @param  ?\DateTime  $transactionDate
      * @param  ?string  $customerId
      * @param  ?string  $supplierId
-     * @param  ?string  $departmentId
      * @param  ?LinkedTaxRateInput  $taxRate
      * @param  ?array<CustomField>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $number
      * @param  ?string  $companyId
+     * @param  ?string  $departmentId
      * @param  ?ExpensePaymentType  $paymentType
      * @param  ?Currency  $currency
      * @param  ?float  $currencyRate
@@ -197,19 +197,19 @@ class ExpenseInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(string $accountId, array $lineItems, ?\DateTime $transactionDate = null, ?string $customerId = null, ?string $supplierId = null, ?string $departmentId = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?string $companyId = null, ?ExpensePaymentType $paymentType = null, ?Currency $currency = null, ?float $currencyRate = null, ?ExpenseType $type = null, ?string $memo = null, ?float $totalAmount = null, ?string $rowVersion = null)
+    public function __construct(string $accountId, array $lineItems, ?\DateTime $transactionDate = null, ?string $customerId = null, ?string $supplierId = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?string $companyId = null, ?string $departmentId = null, ?ExpensePaymentType $paymentType = null, ?Currency $currency = null, ?float $currencyRate = null, ?ExpenseType $type = null, ?string $memo = null, ?float $totalAmount = null, ?string $rowVersion = null)
     {
         $this->accountId = $accountId;
         $this->lineItems = $lineItems;
         $this->transactionDate = $transactionDate;
         $this->customerId = $customerId;
         $this->supplierId = $supplierId;
-        $this->departmentId = $departmentId;
         $this->taxRate = $taxRate;
         $this->customFields = $customFields;
         $this->passThrough = $passThrough;
         $this->number = $number;
         $this->companyId = $companyId;
+        $this->departmentId = $departmentId;
         $this->paymentType = $paymentType;
         $this->currency = $currency;
         $this->currencyRate = $currencyRate;

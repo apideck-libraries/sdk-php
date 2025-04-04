@@ -96,6 +96,17 @@ $request = new Operations\VaultConnectionSettingsUpdateRequest(
     resource: 'leads',
     connection: new Components\ConnectionInput(
         enabled: true,
+        settings: [
+            'instance_url' => 'https://eu28.salesforce.com',
+            'api_key' => '12345xxxxxx',
+        ],
+        metadata: [
+            'account' => [
+                'name' => 'My Company',
+                'id' => 'c01458a5-7276-41ce-bc19-639906b0450a',
+            ],
+            'plan' => 'enterprise',
+        ],
         configuration: [
             new Components\ConnectionConfiguration(
                 resource: 'leads',
@@ -104,16 +115,16 @@ $request = new Operations\VaultConnectionSettingsUpdateRequest(
                         id: 'ProductInterest',
                         options: [
                             new Components\FormFieldOptionGroup(
+                                id: '1234',
                                 label: 'General Channel',
                                 options: [
                                     new Components\SimpleFormFieldOption(
                                         label: 'General Channel',
-                                        optionType: Components\OptionType::Simple,
                                         value: 12.5,
+                                        optionType: Components\OptionType::Simple,
                                     ),
                                 ],
                                 optionType: Components\FormFieldOptionGroupOptionType::Group,
-                                id: '1234',
                             ),
                         ],
                         value: 10,
@@ -125,17 +136,6 @@ $request = new Operations\VaultConnectionSettingsUpdateRequest(
             new Components\CustomMappingInput(
                 value: '$.root.training.first_aid',
             ),
-        ],
-        settings: [
-            'instance_url' => 'https://eu28.salesforce.com',
-            'api_key' => '12345xxxxxx',
-        ],
-        metadata: [
-            'account' => [
-                'name' => 'My Company',
-                'id' => 'c01458a5-7276-41ce-bc19-639906b0450a',
-            ],
-            'plan' => 'enterprise',
         ],
     ),
 );

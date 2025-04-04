@@ -5,159 +5,11 @@
 
 ### Available Operations
 
-* [create](#create) - Create Bill Payment
 * [list](#list) - List Bill Payments
-* [delete](#delete) - Delete Bill Payment
+* [create](#create) - Create Bill Payment
 * [get](#get) - Get Bill Payment
 * [update](#update) - Update Bill Payment
-
-## create
-
-Create Bill Payment
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Components;
-use Apideck\Unify\Models\Operations;
-use Apideck\Unify\Utils;
-
-$sdk = Unify\Apideck::builder()
-    ->setSecurity(
-        '<YOUR_BEARER_TOKEN_HERE>'
-    )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->build();
-
-$request = new Operations\AccountingBillPaymentsAddRequest(
-    billPayment: new Components\BillPaymentInput(
-        totalAmount: 49.99,
-        transactionDate: Utils\Utils::parseDateTime('2021-05-01T12:00:00.000Z'),
-        status: Components\PaymentStatus::Authorised,
-        type: Components\BillPaymentType::AccountsPayable,
-        allocations: [
-            new Components\BillPaymentAllocations(
-                type: Components\BillPaymentAllocationType::Bill,
-                allocationId: '123456',
-                id: '12345',
-                amount: 49.99,
-            ),
-        ],
-        customFields: [
-            new Components\CustomField(
-                id: '2389328923893298',
-                name: 'employee_level',
-                description: 'Employee Level',
-                value: true,
-            ),
-        ],
-        passThrough: [
-            new Components\PassThroughBody(
-                serviceId: '<id>',
-                extendPaths: [
-                    new Components\ExtendPaths(
-                        path: '$.nested.property',
-                        value: [
-                            'TaxClassificationRef' => [
-                                'value' => 'EUC-99990201-V1-00020000',
-                            ],
-                        ],
-                    ),
-                ],
-            ),
-        ],
-        currency: Components\Currency::Usd,
-        currencyRate: 0.69,
-        reference: '123456',
-        paymentMethod: 'cash',
-        paymentMethodReference: '123456',
-        paymentMethodId: '12345',
-        account: new Components\LinkedLedgerAccountInput(
-            id: '123456',
-            nominalCode: 'N091',
-            code: '453',
-        ),
-        supplier: new Components\LinkedSupplierInput(
-            id: '12345',
-            address: new Components\Address(
-                id: '123',
-                type: Components\Type::Primary,
-                string: '25 Spring Street, Blackburn, VIC 3130',
-                name: 'HQ US',
-                line1: 'Main street',
-                line2: 'apt #',
-                line3: 'Suite #',
-                line4: 'delivery instructions',
-                streetNumber: '25',
-                city: 'San Francisco',
-                state: 'CA',
-                postalCode: '94104',
-                country: 'US',
-                latitude: '40.759211',
-                longitude: '-73.984638',
-                county: 'Santa Clara',
-                contactName: 'Elon Musk',
-                salutation: 'Mr',
-                phoneNumber: '111-111-1111',
-                fax: '122-111-1111',
-                email: 'elon@musk.com',
-                website: 'https://elonmusk.com',
-                notes: 'Address notes or delivery instructions.',
-                rowVersion: '1-12345',
-            ),
-            displayName: 'Windsurf Shop',
-        ),
-        companyId: '12345',
-        reconciled: true,
-        note: 'Some notes about this transaction',
-        number: '123456',
-        trackingCategories: [
-            new Components\LinkedTrackingCategory(
-                id: '123456',
-                name: 'New York',
-            ),
-        ],
-        rowVersion: '1-12345',
-        displayId: '123456',
-    ),
-    serviceId: 'salesforce',
-);
-
-$response = $sdk->accounting->billPayments->create(
-    request: $request
-);
-
-if ($response->createBillPaymentResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                 | [Operations\AccountingBillPaymentsAddRequest](../../Models/Operations/AccountingBillPaymentsAddRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-
-### Response
-
-**[?Operations\AccountingBillPaymentsAddResponse](../../Models/Operations/AccountingBillPaymentsAddResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+* [delete](#delete) - Delete Bill Payment
 
 ## list
 
@@ -230,9 +82,9 @@ foreach ($responses as $response) {
 | Errors\UnprocessableResponse   | 422                            | application/json               |
 | Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
 
-## delete
+## create
 
-Delete Bill Payment
+Create Bill Payment
 
 ### Example Usage
 
@@ -242,7 +94,9 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Apideck\Unify;
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
+use Apideck\Unify\Utils;
 
 $sdk = Unify\Apideck::builder()
     ->setSecurity(
@@ -252,29 +106,118 @@ $sdk = Unify\Apideck::builder()
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
-$request = new Operations\AccountingBillPaymentsDeleteRequest(
-    id: '<id>',
+$request = new Operations\AccountingBillPaymentsAddRequest(
     serviceId: 'salesforce',
+    billPayment: new Components\BillPaymentInput(
+        currency: Components\Currency::Usd,
+        currencyRate: 0.69,
+        totalAmount: 49.99,
+        reference: '123456',
+        paymentMethod: 'cash',
+        paymentMethodReference: '123456',
+        paymentMethodId: '12345',
+        account: new Components\LinkedLedgerAccountInput(
+            id: '123456',
+            nominalCode: 'N091',
+            code: '453',
+        ),
+        transactionDate: Utils\Utils::parseDateTime('2021-05-01T12:00:00.000Z'),
+        supplier: new Components\LinkedSupplierInput(
+            id: '12345',
+            displayName: 'Windsurf Shop',
+            address: new Components\Address(
+                id: '123',
+                type: Components\Type::Primary,
+                string: '25 Spring Street, Blackburn, VIC 3130',
+                name: 'HQ US',
+                line1: 'Main street',
+                line2: 'apt #',
+                line3: 'Suite #',
+                line4: 'delivery instructions',
+                streetNumber: '25',
+                city: 'San Francisco',
+                state: 'CA',
+                postalCode: '94104',
+                country: 'US',
+                latitude: '40.759211',
+                longitude: '-73.984638',
+                county: 'Santa Clara',
+                contactName: 'Elon Musk',
+                salutation: 'Mr',
+                phoneNumber: '111-111-1111',
+                fax: '122-111-1111',
+                email: 'elon@musk.com',
+                website: 'https://elonmusk.com',
+                notes: 'Address notes or delivery instructions.',
+                rowVersion: '1-12345',
+            ),
+        ),
+        companyId: '12345',
+        reconciled: true,
+        status: Components\PaymentStatus::Authorised,
+        type: Components\BillPaymentType::AccountsPayable,
+        allocations: [
+            new Components\BillPaymentAllocations(
+                id: '12345',
+                type: Components\BillPaymentAllocationType::Bill,
+                amount: 49.99,
+                allocationId: '123456',
+            ),
+        ],
+        note: 'Some notes about this transaction',
+        number: '123456',
+        trackingCategories: [
+            new Components\LinkedTrackingCategory(
+                id: '123456',
+                name: 'New York',
+            ),
+        ],
+        customFields: [
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: true,
+            ),
+        ],
+        rowVersion: '1-12345',
+        displayId: '123456',
+        passThrough: [
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+        ],
+    ),
 );
 
-$response = $sdk->accounting->billPayments->delete(
+$response = $sdk->accounting->billPayments->create(
     request: $request
 );
 
-if ($response->deleteBillPaymentResponse !== null) {
+if ($response->createBillPaymentResponse !== null) {
     // handle response
 }
 ```
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                       | [Operations\AccountingBillPaymentsDeleteRequest](../../Models/Operations/AccountingBillPaymentsDeleteRequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                 | [Operations\AccountingBillPaymentsAddRequest](../../Models/Operations/AccountingBillPaymentsAddRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 
 ### Response
 
-**[?Operations\AccountingBillPaymentsDeleteResponse](../../Models/Operations/AccountingBillPaymentsDeleteResponse.md)**
+**[?Operations\AccountingBillPaymentsAddResponse](../../Models/Operations/AccountingBillPaymentsAddResponse.md)**
 
 ### Errors
 
@@ -371,46 +314,11 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingBillPaymentsUpdateRequest(
     id: '<id>',
+    serviceId: 'salesforce',
     billPayment: new Components\BillPaymentInput(
-        totalAmount: 49.99,
-        transactionDate: Utils\Utils::parseDateTime('2021-05-01T12:00:00.000Z'),
-        status: Components\PaymentStatus::Authorised,
-        type: Components\BillPaymentType::AccountsPayable,
-        allocations: [
-            new Components\BillPaymentAllocations(
-                type: Components\BillPaymentAllocationType::Bill,
-                allocationId: '123456',
-                id: '12345',
-                amount: 49.99,
-            ),
-        ],
-        customFields: [
-            new Components\CustomField(
-                id: '2389328923893298',
-                name: 'employee_level',
-                description: 'Employee Level',
-                value: [
-                    new Components\Six(),
-                ],
-            ),
-        ],
-        passThrough: [
-            new Components\PassThroughBody(
-                serviceId: '<id>',
-                extendPaths: [
-                    new Components\ExtendPaths(
-                        path: '$.nested.property',
-                        value: [
-                            'TaxClassificationRef' => [
-                                'value' => 'EUC-99990201-V1-00020000',
-                            ],
-                        ],
-                    ),
-                ],
-            ),
-        ],
         currency: Components\Currency::Usd,
         currencyRate: 0.69,
+        totalAmount: 49.99,
         reference: '123456',
         paymentMethod: 'cash',
         paymentMethodReference: '123456',
@@ -420,8 +328,10 @@ $request = new Operations\AccountingBillPaymentsUpdateRequest(
             nominalCode: 'N091',
             code: '453',
         ),
+        transactionDate: Utils\Utils::parseDateTime('2021-05-01T12:00:00.000Z'),
         supplier: new Components\LinkedSupplierInput(
             id: '12345',
+            displayName: 'Windsurf Shop',
             address: new Components\Address(
                 id: '123',
                 type: Components\Type::Primary,
@@ -448,10 +358,19 @@ $request = new Operations\AccountingBillPaymentsUpdateRequest(
                 notes: 'Address notes or delivery instructions.',
                 rowVersion: '1-12345',
             ),
-            displayName: 'Windsurf Shop',
         ),
         companyId: '12345',
         reconciled: true,
+        status: Components\PaymentStatus::Authorised,
+        type: Components\BillPaymentType::AccountsPayable,
+        allocations: [
+            new Components\BillPaymentAllocations(
+                id: '12345',
+                type: Components\BillPaymentAllocationType::Bill,
+                amount: 49.99,
+                allocationId: '123456',
+            ),
+        ],
         note: 'Some notes about this transaction',
         number: '123456',
         trackingCategories: [
@@ -460,10 +379,34 @@ $request = new Operations\AccountingBillPaymentsUpdateRequest(
                 name: 'New York',
             ),
         ],
+        customFields: [
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: [
+                    new Components\Six(),
+                ],
+            ),
+        ],
         rowVersion: '1-12345',
         displayId: '123456',
+        passThrough: [
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+        ],
     ),
-    serviceId: 'salesforce',
 );
 
 $response = $sdk->accounting->billPayments->update(
@@ -484,6 +427,63 @@ if ($response->updateBillPaymentResponse !== null) {
 ### Response
 
 **[?Operations\AccountingBillPaymentsUpdateResponse](../../Models/Operations/AccountingBillPaymentsUpdateResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## delete
+
+Delete Bill Payment
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Operations;
+
+$sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->build();
+
+$request = new Operations\AccountingBillPaymentsDeleteRequest(
+    id: '<id>',
+    serviceId: 'salesforce',
+);
+
+$response = $sdk->accounting->billPayments->delete(
+    request: $request
+);
+
+if ($response->deleteBillPaymentResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                       | [Operations\AccountingBillPaymentsDeleteRequest](../../Models/Operations/AccountingBillPaymentsDeleteRequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
+
+### Response
+
+**[?Operations\AccountingBillPaymentsDeleteResponse](../../Models/Operations/AccountingBillPaymentsDeleteResponse.md)**
 
 ### Errors
 

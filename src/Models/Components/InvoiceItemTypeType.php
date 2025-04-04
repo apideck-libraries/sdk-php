@@ -13,6 +13,8 @@ namespace Apideck\Unify\Models\Components;
 enum InvoiceItemTypeType: string
 {
     case Inventory = 'inventory';
+    case NonInventory = 'non_inventory';
     case Service = 'service';
+    case Description = 'description';
     case Other = 'other';
 }
