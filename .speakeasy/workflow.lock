@@ -1,21 +1,21 @@
-speakeasyVersion: 1.523.0
+speakeasyVersion: 1.529.1
 sources:
     Apideck:
         sourceNamespace: apideck
-        sourceRevisionDigest: sha256:f0dc86af999e1465f8aa9a1c939af526d1fbfea5e0d21eb117faff7a73da5c31
-        sourceBlobDigest: sha256:53708e30587d09cdcd934b6c7bf237861ff24b79984d14715567cda1bfe57379
+        sourceRevisionDigest: sha256:3b43518e5535a14ae8edb79cd8bdbf3d3bcbc26b97b50a4459eecfa974488b89
+        sourceBlobDigest: sha256:129f9bc0d8b29efd7db3b87ac4fe87de06d8bc3060a12340799861913382fe05
         tags:
             - latest
-            - speakeasy-sdk-regen-1741788468
-            - 10.12.4
+            - speakeasy-sdk-regen-1743420870
+            - 10.14.1
 targets:
     apideck:
         source: Apideck
         sourceNamespace: apideck
-        sourceRevisionDigest: sha256:f0dc86af999e1465f8aa9a1c939af526d1fbfea5e0d21eb117faff7a73da5c31
-        sourceBlobDigest: sha256:53708e30587d09cdcd934b6c7bf237861ff24b79984d14715567cda1bfe57379
+        sourceRevisionDigest: sha256:3b43518e5535a14ae8edb79cd8bdbf3d3bcbc26b97b50a4459eecfa974488b89
+        sourceBlobDigest: sha256:129f9bc0d8b29efd7db3b87ac4fe87de06d8bc3060a12340799861913382fe05
         codeSamplesNamespace: apideck-php-code-samples
-        codeSamplesRevisionDigest: sha256:b874f6972ed7eb3793bf5b1d7a41bc5d264fec59676fc3418e98a7274bbedc30
+        codeSamplesRevisionDigest: sha256:7a2e05ab63fe2217d0f55b9004c8e3e58bc68c19447189ab72b2aeaf30bd09c9
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest

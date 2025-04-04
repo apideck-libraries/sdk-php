@@ -5,135 +5,11 @@
 
 ### Available Operations
 
-* [create](#create) - Create Ledger Account
 * [list](#list) - List Ledger Accounts
-* [delete](#delete) - Delete Ledger Account
+* [create](#create) - Create Ledger Account
 * [get](#get) - Get Ledger Account
 * [update](#update) - Update Ledger Account
-
-## create
-
-Create Ledger Account
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Components;
-use Apideck\Unify\Models\Operations;
-use Brick\DateTime\LocalDate;
-
-$sdk = Unify\Apideck::builder()
-    ->setSecurity(
-        '<YOUR_BEARER_TOKEN_HERE>'
-    )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->build();
-
-$request = new Operations\AccountingLedgerAccountsAddRequest(
-    ledgerAccount: new Components\LedgerAccountInput(
-        displayId: '1-12345',
-        type: Components\LedgerAccountType::Bank,
-        taxRate: new Components\LinkedTaxRateInput(
-            id: '123456',
-            rate: 10,
-        ),
-        bankAccount: new Components\BankAccount(
-            bankName: 'Monzo',
-            accountNumber: '123465',
-            accountName: 'SPACEX LLC',
-            accountType: Components\AccountType::CreditCard,
-            iban: 'CH2989144532982975332',
-            bic: 'AUDSCHGGXXX',
-            routingNumber: '012345678',
-            bsbNumber: '062-001',
-            branchIdentifier: '001',
-            bankCode: 'BNH',
-            currency: Components\Currency::Usd,
-        ),
-        parentAccount: new Components\ParentAccount(
-            id: '12345',
-            name: 'Bank Accounts',
-            displayId: '1-1100',
-        ),
-        customFields: [
-            new Components\CustomField(
-                id: '2389328923893298',
-                name: 'employee_level',
-                description: 'Employee Level',
-                value: true,
-            ),
-        ],
-        passThrough: [
-            new Components\PassThroughBody(
-                serviceId: '<id>',
-                extendPaths: [
-                    new Components\ExtendPaths(
-                        path: '$.nested.property',
-                        value: [
-                            'TaxClassificationRef' => [
-                                'value' => 'EUC-99990201-V1-00020000',
-                            ],
-                        ],
-                    ),
-                ],
-            ),
-        ],
-        code: '453',
-        classification: Components\Classification::Asset,
-        subType: 'CHECKING_ACCOUNT',
-        name: 'Bank account',
-        fullyQualifiedName: 'Asset.Bank.Checking_Account',
-        description: 'Main checking account',
-        openingBalance: 75000,
-        currentBalance: 20000,
-        currency: Components\Currency::Usd,
-        taxType: 'NONE',
-        level: 1,
-        active: true,
-        status: Components\AccountStatus::Active,
-        header: true,
-        subAccount: false,
-        lastReconciliationDate: LocalDate::parse('2020-09-30'),
-        rowVersion: '1-12345',
-    ),
-    serviceId: 'salesforce',
-);
-
-$response = $sdk->accounting->ledgerAccounts->create(
-    request: $request
-);
-
-if ($response->createLedgerAccountResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                     | [Operations\AccountingLedgerAccountsAddRequest](../../Models/Operations/AccountingLedgerAccountsAddRequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-
-### Response
-
-**[?Operations\AccountingLedgerAccountsAddResponse](../../Models/Operations/AccountingLedgerAccountsAddResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+* [delete](#delete) - Delete Ledger Account
 
 ## list
 
@@ -206,9 +82,9 @@ foreach ($responses as $response) {
 | Errors\UnprocessableResponse   | 422                            | application/json               |
 | Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
 
-## delete
+## create
 
-Delete Ledger Account
+Create Ledger Account
 
 ### Example Usage
 
@@ -218,7 +94,9 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Apideck\Unify;
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
+use Brick\DateTime\LocalDate;
 
 $sdk = Unify\Apideck::builder()
     ->setSecurity(
@@ -228,29 +106,94 @@ $sdk = Unify\Apideck::builder()
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
-$request = new Operations\AccountingLedgerAccountsDeleteRequest(
-    id: '<id>',
+$request = new Operations\AccountingLedgerAccountsAddRequest(
     serviceId: 'salesforce',
+    ledgerAccount: new Components\LedgerAccountInput(
+        displayId: '1-12345',
+        code: '453',
+        classification: Components\Classification::Asset,
+        type: Components\LedgerAccountType::Bank,
+        subType: 'CHECKING_ACCOUNT',
+        name: 'Bank account',
+        fullyQualifiedName: 'Asset.Bank.Checking_Account',
+        description: 'Main checking account',
+        openingBalance: 75000,
+        currentBalance: 20000,
+        currency: Components\Currency::Usd,
+        taxType: 'NONE',
+        taxRate: new Components\LinkedTaxRateInput(
+            id: '123456',
+            rate: 10,
+        ),
+        level: 1,
+        active: true,
+        status: Components\AccountStatus::Active,
+        header: true,
+        bankAccount: new Components\BankAccount(
+            bankName: 'Monzo',
+            accountNumber: '123465',
+            accountName: 'SPACEX LLC',
+            accountType: Components\AccountType::CreditCard,
+            iban: 'CH2989144532982975332',
+            bic: 'AUDSCHGGXXX',
+            routingNumber: '012345678',
+            bsbNumber: '062-001',
+            branchIdentifier: '001',
+            bankCode: 'BNH',
+            currency: Components\Currency::Usd,
+        ),
+        parentAccount: new Components\ParentAccount(
+            id: '12345',
+            name: 'Bank Accounts',
+            displayId: '1-1100',
+        ),
+        subAccount: false,
+        lastReconciliationDate: LocalDate::parse('2020-09-30'),
+        customFields: [
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: true,
+            ),
+        ],
+        rowVersion: '1-12345',
+        passThrough: [
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+        ],
+    ),
 );
 
-$response = $sdk->accounting->ledgerAccounts->delete(
+$response = $sdk->accounting->ledgerAccounts->create(
     request: $request
 );
 
-if ($response->deleteLedgerAccountResponse !== null) {
+if ($response->createLedgerAccountResponse !== null) {
     // handle response
 }
 ```
 
 ### Parameters
 
-| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                           | [Operations\AccountingLedgerAccountsDeleteRequest](../../Models/Operations/AccountingLedgerAccountsDeleteRequest.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
+| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                     | [Operations\AccountingLedgerAccountsAddRequest](../../Models/Operations/AccountingLedgerAccountsAddRequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
 
 ### Response
 
-**[?Operations\AccountingLedgerAccountsDeleteResponse](../../Models/Operations/AccountingLedgerAccountsDeleteResponse.md)**
+**[?Operations\AccountingLedgerAccountsAddResponse](../../Models/Operations/AccountingLedgerAccountsAddResponse.md)**
 
 ### Errors
 
@@ -347,13 +290,28 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingLedgerAccountsUpdateRequest(
     id: '<id>',
+    serviceId: 'salesforce',
     ledgerAccount: new Components\LedgerAccountInput(
         displayId: '1-12345',
+        code: '453',
+        classification: Components\Classification::Asset,
         type: Components\LedgerAccountType::Bank,
+        subType: 'CHECKING_ACCOUNT',
+        name: 'Bank account',
+        fullyQualifiedName: 'Asset.Bank.Checking_Account',
+        description: 'Main checking account',
+        openingBalance: 75000,
+        currentBalance: 20000,
+        currency: Components\Currency::Usd,
+        taxType: 'NONE',
         taxRate: new Components\LinkedTaxRateInput(
             id: '123456',
             rate: 10,
         ),
+        level: 1,
+        active: true,
+        status: Components\AccountStatus::Active,
+        header: true,
         bankAccount: new Components\BankAccount(
             bankName: 'Monzo',
             accountNumber: '123465',
@@ -372,6 +330,8 @@ $request = new Operations\AccountingLedgerAccountsUpdateRequest(
             name: 'Bank Accounts',
             displayId: '1-1100',
         ),
+        subAccount: false,
+        lastReconciliationDate: LocalDate::parse('2020-09-30'),
         customFields: [
             new Components\CustomField(
                 id: '2389328923893298',
@@ -382,6 +342,7 @@ $request = new Operations\AccountingLedgerAccountsUpdateRequest(
                 ],
             ),
         ],
+        rowVersion: '1-12345',
         passThrough: [
             new Components\PassThroughBody(
                 serviceId: '<id>',
@@ -397,25 +358,7 @@ $request = new Operations\AccountingLedgerAccountsUpdateRequest(
                 ],
             ),
         ],
-        code: '453',
-        classification: Components\Classification::Asset,
-        subType: 'CHECKING_ACCOUNT',
-        name: 'Bank account',
-        fullyQualifiedName: 'Asset.Bank.Checking_Account',
-        description: 'Main checking account',
-        openingBalance: 75000,
-        currentBalance: 20000,
-        currency: Components\Currency::Usd,
-        taxType: 'NONE',
-        level: 1,
-        active: true,
-        status: Components\AccountStatus::Active,
-        header: true,
-        subAccount: false,
-        lastReconciliationDate: LocalDate::parse('2020-09-30'),
-        rowVersion: '1-12345',
     ),
-    serviceId: 'salesforce',
 );
 
 $response = $sdk->accounting->ledgerAccounts->update(
@@ -436,6 +379,63 @@ if ($response->updateLedgerAccountResponse !== null) {
 ### Response
 
 **[?Operations\AccountingLedgerAccountsUpdateResponse](../../Models/Operations/AccountingLedgerAccountsUpdateResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## delete
+
+Delete Ledger Account
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Operations;
+
+$sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->build();
+
+$request = new Operations\AccountingLedgerAccountsDeleteRequest(
+    id: '<id>',
+    serviceId: 'salesforce',
+);
+
+$response = $sdk->accounting->ledgerAccounts->delete(
+    request: $request
+);
+
+if ($response->deleteLedgerAccountResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                           | [Operations\AccountingLedgerAccountsDeleteRequest](../../Models/Operations/AccountingLedgerAccountsDeleteRequest.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
+
+### Response
+
+**[?Operations\AccountingLedgerAccountsDeleteResponse](../../Models/Operations/AccountingLedgerAccountsDeleteResponse.md)**
 
 ### Errors
 

@@ -5,197 +5,11 @@
 
 ### Available Operations
 
-* [create](#create) - Create company
 * [list](#list) - List companies
-* [delete](#delete) - Delete company
+* [create](#create) - Create company
 * [get](#get) - Get company
 * [update](#update) - Update company
-
-## create
-
-Create company
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Components;
-use Apideck\Unify\Models\Operations;
-use Brick\DateTime\LocalDate;
-
-$sdk = Unify\Apideck::builder()
-    ->setSecurity(
-        '<YOUR_BEARER_TOKEN_HERE>'
-    )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->build();
-
-$request = new Operations\CrmCompaniesAddRequest(
-    company: new Components\CompanyInput(
-        name: 'SpaceX',
-        bankAccounts: [
-            new Components\BankAccount(
-                bankName: 'Monzo',
-                accountNumber: '123465',
-                accountName: 'SPACEX LLC',
-                accountType: Components\AccountType::CreditCard,
-                iban: 'CH2989144532982975332',
-                bic: 'AUDSCHGGXXX',
-                routingNumber: '012345678',
-                bsbNumber: '062-001',
-                branchIdentifier: '001',
-                bankCode: 'BNH',
-                currency: Components\Currency::Usd,
-            ),
-        ],
-        websites: [
-            new Components\Website(
-                url: 'http://example.com',
-                id: '12345',
-                type: Components\WebsiteType::Primary,
-            ),
-        ],
-        addresses: [
-            new Components\Address(
-                id: '123',
-                type: Components\Type::Primary,
-                string: '25 Spring Street, Blackburn, VIC 3130',
-                name: 'HQ US',
-                line1: 'Main street',
-                line2: 'apt #',
-                line3: 'Suite #',
-                line4: 'delivery instructions',
-                streetNumber: '25',
-                city: 'San Francisco',
-                state: 'CA',
-                postalCode: '94104',
-                country: 'US',
-                latitude: '40.759211',
-                longitude: '-73.984638',
-                county: 'Santa Clara',
-                contactName: 'Elon Musk',
-                salutation: 'Mr',
-                phoneNumber: '111-111-1111',
-                fax: '122-111-1111',
-                email: 'elon@musk.com',
-                website: 'https://elonmusk.com',
-                notes: 'Address notes or delivery instructions.',
-                rowVersion: '1-12345',
-            ),
-        ],
-        socialLinks: [
-            new Components\SocialLink(
-                url: 'https://www.twitter.com/apideck',
-                id: '12345',
-                type: 'twitter',
-            ),
-        ],
-        phoneNumbers: [
-            new Components\PhoneNumber(
-                number: '111-111-1111',
-                id: '12345',
-                countryCode: '1',
-                areaCode: '323',
-                extension: '105',
-                type: Components\PhoneNumberType::Primary,
-            ),
-        ],
-        emails: [
-            new Components\Email(
-                email: 'elon@musk.com',
-                id: '123',
-                type: Components\EmailType::Primary,
-            ),
-        ],
-        rowType: new Components\CompanyRowType(
-            id: '12345',
-            name: 'Customer Account',
-        ),
-        customFields: [
-            new Components\CustomField(
-                id: '2389328923893298',
-                name: 'employee_level',
-                description: 'Employee Level',
-                value: true,
-            ),
-        ],
-        passThrough: [
-            new Components\PassThroughBody(
-                serviceId: '<id>',
-                extendPaths: [
-                    new Components\ExtendPaths(
-                        path: '$.nested.property',
-                        value: [
-                            'TaxClassificationRef' => [
-                                'value' => 'EUC-99990201-V1-00020000',
-                            ],
-                        ],
-                    ),
-                ],
-            ),
-        ],
-        ownerId: '12345',
-        image: 'https://www.spacex.com/static/images/share.jpg',
-        description: 'Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation services and communications company headquartered in Hawthorne, California.',
-        vatNumber: 'BE0689615164',
-        currency: Components\Currency::Usd,
-        status: 'Open',
-        fax: '+12129876543',
-        annualRevenue: '+$35m',
-        numberOfEmployees: '500-1000',
-        industry: 'Apparel',
-        ownership: 'Public',
-        salesTaxNumber: '12456EN',
-        payeeNumber: '78932EN',
-        abnOrTfn: '46 115 614 695',
-        abnBranch: '123',
-        acn: 'XXX XXX XXX',
-        firstName: 'Elon',
-        lastName: 'Musk',
-        tags: [
-            'New',
-        ],
-        readOnly: false,
-        salutation: 'Mr',
-        birthday: LocalDate::parse('2000-08-12'),
-    ),
-    serviceId: 'salesforce',
-);
-
-$response = $sdk->crm->companies->create(
-    request: $request
-);
-
-if ($response->createCompanyResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `$request`                                                                             | [Operations\CrmCompaniesAddRequest](../../Models/Operations/CrmCompaniesAddRequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-
-### Response
-
-**[?Operations\CrmCompaniesAddResponse](../../Models/Operations/CrmCompaniesAddResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+* [delete](#delete) - Delete company
 
 ## list
 
@@ -267,9 +81,9 @@ foreach ($responses as $response) {
 | Errors\UnprocessableResponse   | 422                            | application/json               |
 | Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
 
-## delete
+## create
 
-Delete company
+Create company
 
 ### Example Usage
 
@@ -279,7 +93,9 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Apideck\Unify;
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
+use Brick\DateTime\LocalDate;
 
 $sdk = Unify\Apideck::builder()
     ->setSecurity(
@@ -289,29 +105,156 @@ $sdk = Unify\Apideck::builder()
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
-$request = new Operations\CrmCompaniesDeleteRequest(
-    id: '<id>',
+$request = new Operations\CrmCompaniesAddRequest(
     serviceId: 'salesforce',
+    company: new Components\CompanyInput(
+        name: 'SpaceX',
+        ownerId: '12345',
+        image: 'https://www.spacex.com/static/images/share.jpg',
+        description: 'Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation services and communications company headquartered in Hawthorne, California.',
+        vatNumber: 'BE0689615164',
+        currency: Components\Currency::Usd,
+        status: 'Open',
+        fax: '+12129876543',
+        annualRevenue: '+$35m',
+        numberOfEmployees: '500-1000',
+        industry: 'Apparel',
+        ownership: 'Public',
+        salesTaxNumber: '12456EN',
+        payeeNumber: '78932EN',
+        abnOrTfn: '46 115 614 695',
+        abnBranch: '123',
+        acn: 'XXX XXX XXX',
+        firstName: 'Elon',
+        lastName: 'Musk',
+        bankAccounts: [
+            new Components\BankAccount(
+                bankName: 'Monzo',
+                accountNumber: '123465',
+                accountName: 'SPACEX LLC',
+                accountType: Components\AccountType::CreditCard,
+                iban: 'CH2989144532982975332',
+                bic: 'AUDSCHGGXXX',
+                routingNumber: '012345678',
+                bsbNumber: '062-001',
+                branchIdentifier: '001',
+                bankCode: 'BNH',
+                currency: Components\Currency::Usd,
+            ),
+        ],
+        websites: [
+            new Components\Website(
+                id: '12345',
+                url: 'http://example.com',
+                type: Components\WebsiteType::Primary,
+            ),
+        ],
+        addresses: [
+            new Components\Address(
+                id: '123',
+                type: Components\Type::Primary,
+                string: '25 Spring Street, Blackburn, VIC 3130',
+                name: 'HQ US',
+                line1: 'Main street',
+                line2: 'apt #',
+                line3: 'Suite #',
+                line4: 'delivery instructions',
+                streetNumber: '25',
+                city: 'San Francisco',
+                state: 'CA',
+                postalCode: '94104',
+                country: 'US',
+                latitude: '40.759211',
+                longitude: '-73.984638',
+                county: 'Santa Clara',
+                contactName: 'Elon Musk',
+                salutation: 'Mr',
+                phoneNumber: '111-111-1111',
+                fax: '122-111-1111',
+                email: 'elon@musk.com',
+                website: 'https://elonmusk.com',
+                notes: 'Address notes or delivery instructions.',
+                rowVersion: '1-12345',
+            ),
+        ],
+        socialLinks: [
+            new Components\SocialLink(
+                id: '12345',
+                url: 'https://www.twitter.com/apideck',
+                type: 'twitter',
+            ),
+        ],
+        phoneNumbers: [
+            new Components\PhoneNumber(
+                id: '12345',
+                countryCode: '1',
+                areaCode: '323',
+                number: '111-111-1111',
+                extension: '105',
+                type: Components\PhoneNumberType::Primary,
+            ),
+        ],
+        emails: [
+            new Components\Email(
+                id: '123',
+                email: 'elon@musk.com',
+                type: Components\EmailType::Primary,
+            ),
+        ],
+        rowType: new Components\CompanyRowType(
+            id: '12345',
+            name: 'Customer Account',
+        ),
+        customFields: [
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: true,
+            ),
+        ],
+        tags: [
+            'New',
+        ],
+        readOnly: false,
+        salutation: 'Mr',
+        birthday: LocalDate::parse('2000-08-12'),
+        passThrough: [
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+        ],
+    ),
 );
 
-$response = $sdk->crm->companies->delete(
+$response = $sdk->crm->companies->create(
     request: $request
 );
 
-if ($response->deleteCompanyResponse !== null) {
+if ($response->createCompanyResponse !== null) {
     // handle response
 }
 ```
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `$request`                                                                                   | [Operations\CrmCompaniesDeleteRequest](../../Models/Operations/CrmCompaniesDeleteRequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `$request`                                                                             | [Operations\CrmCompaniesAddRequest](../../Models/Operations/CrmCompaniesAddRequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
 
 ### Response
 
-**[?Operations\CrmCompaniesDeleteResponse](../../Models/Operations/CrmCompaniesDeleteResponse.md)**
+**[?Operations\CrmCompaniesAddResponse](../../Models/Operations/CrmCompaniesAddResponse.md)**
 
 ### Errors
 
@@ -408,8 +351,27 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\CrmCompaniesUpdateRequest(
     id: '<id>',
+    serviceId: 'salesforce',
     company: new Components\CompanyInput(
         name: 'SpaceX',
+        ownerId: '12345',
+        image: 'https://www.spacex.com/static/images/share.jpg',
+        description: 'Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation services and communications company headquartered in Hawthorne, California.',
+        vatNumber: 'BE0689615164',
+        currency: Components\Currency::Usd,
+        status: 'Open',
+        fax: '+12129876543',
+        annualRevenue: '+$35m',
+        numberOfEmployees: '500-1000',
+        industry: 'Apparel',
+        ownership: 'Public',
+        salesTaxNumber: '12456EN',
+        payeeNumber: '78932EN',
+        abnOrTfn: '46 115 614 695',
+        abnBranch: '123',
+        acn: 'XXX XXX XXX',
+        firstName: 'Elon',
+        lastName: 'Musk',
         bankAccounts: [
             new Components\BankAccount(
                 bankName: 'Monzo',
@@ -427,8 +389,8 @@ $request = new Operations\CrmCompaniesUpdateRequest(
         ],
         websites: [
             new Components\Website(
-                url: 'http://example.com',
                 id: '12345',
+                url: 'http://example.com',
                 type: Components\WebsiteType::Primary,
             ),
         ],
@@ -462,25 +424,25 @@ $request = new Operations\CrmCompaniesUpdateRequest(
         ],
         socialLinks: [
             new Components\SocialLink(
-                url: 'https://www.twitter.com/apideck',
                 id: '12345',
+                url: 'https://www.twitter.com/apideck',
                 type: 'twitter',
             ),
         ],
         phoneNumbers: [
             new Components\PhoneNumber(
-                number: '111-111-1111',
                 id: '12345',
                 countryCode: '1',
                 areaCode: '323',
+                number: '111-111-1111',
                 extension: '105',
                 type: Components\PhoneNumberType::Primary,
             ),
         ],
         emails: [
             new Components\Email(
-                email: 'elon@musk.com',
                 id: '123',
+                email: 'elon@musk.com',
                 type: Components\EmailType::Primary,
             ),
         ],
@@ -498,6 +460,12 @@ $request = new Operations\CrmCompaniesUpdateRequest(
                 ],
             ),
         ],
+        tags: [
+            'New',
+        ],
+        readOnly: false,
+        salutation: 'Mr',
+        birthday: LocalDate::parse('2000-08-12'),
         passThrough: [
             new Components\PassThroughBody(
                 serviceId: '<id>',
@@ -513,32 +481,7 @@ $request = new Operations\CrmCompaniesUpdateRequest(
                 ],
             ),
         ],
-        ownerId: '12345',
-        image: 'https://www.spacex.com/static/images/share.jpg',
-        description: 'Space Exploration Technologies Corp. is an American aerospace manufacturer, space transportation services and communications company headquartered in Hawthorne, California.',
-        vatNumber: 'BE0689615164',
-        currency: Components\Currency::Usd,
-        status: 'Open',
-        fax: '+12129876543',
-        annualRevenue: '+$35m',
-        numberOfEmployees: '500-1000',
-        industry: 'Apparel',
-        ownership: 'Public',
-        salesTaxNumber: '12456EN',
-        payeeNumber: '78932EN',
-        abnOrTfn: '46 115 614 695',
-        abnBranch: '123',
-        acn: 'XXX XXX XXX',
-        firstName: 'Elon',
-        lastName: 'Musk',
-        tags: [
-            'New',
-        ],
-        readOnly: false,
-        salutation: 'Mr',
-        birthday: LocalDate::parse('2000-08-12'),
     ),
-    serviceId: 'salesforce',
 );
 
 $response = $sdk->crm->companies->update(
@@ -559,6 +502,63 @@ if ($response->updateCompanyResponse !== null) {
 ### Response
 
 **[?Operations\CrmCompaniesUpdateResponse](../../Models/Operations/CrmCompaniesUpdateResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## delete
+
+Delete company
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Operations;
+
+$sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->build();
+
+$request = new Operations\CrmCompaniesDeleteRequest(
+    id: '<id>',
+    serviceId: 'salesforce',
+);
+
+$response = $sdk->crm->companies->delete(
+    request: $request
+);
+
+if ($response->deleteCompanyResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `$request`                                                                                   | [Operations\CrmCompaniesDeleteRequest](../../Models/Operations/CrmCompaniesDeleteRequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+
+### Response
+
+**[?Operations\CrmCompaniesDeleteResponse](../../Models/Operations/CrmCompaniesDeleteResponse.md)**
 
 ### Errors
 

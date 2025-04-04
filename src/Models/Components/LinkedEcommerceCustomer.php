@@ -18,27 +18,8 @@ class LinkedEcommerceCustomer
      * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public ?string $id;
-
-    /**
-     * $phoneNumbers
-     *
-     * @var ?array<PhoneNumber> $phoneNumbers
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('phone_numbers')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PhoneNumber>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $phoneNumbers = null;
-
-    /**
-     * $emails
-     *
-     * @var ?array<Email> $emails
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('emails')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Email>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $emails = null;
+    public ?string $id = null;
 
     /**
      * Full name of the customer
@@ -77,23 +58,43 @@ class LinkedEcommerceCustomer
     public ?string $companyName = null;
 
     /**
+     * $phoneNumbers
+     *
+     * @var ?array<PhoneNumber> $phoneNumbers
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('phone_numbers')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PhoneNumber>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $phoneNumbers = null;
+
+    /**
+     * $emails
+     *
+     * @var ?array<Email> $emails
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('emails')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Email>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $emails = null;
+
+    /**
      * @param  ?string  $id
-     * @param  ?array<PhoneNumber>  $phoneNumbers
-     * @param  ?array<Email>  $emails
      * @param  ?string  $name
      * @param  ?string  $firstName
      * @param  ?string  $lastName
      * @param  ?string  $companyName
+     * @param  ?array<PhoneNumber>  $phoneNumbers
+     * @param  ?array<Email>  $emails
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?array $phoneNumbers = null, ?array $emails = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $companyName = null)
+    public function __construct(?string $id = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $companyName = null, ?array $phoneNumbers = null, ?array $emails = null)
     {
         $this->id = $id;
-        $this->phoneNumbers = $phoneNumbers;
-        $this->emails = $emails;
         $this->name = $name;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->companyName = $companyName;
+        $this->phoneNumbers = $phoneNumbers;
+        $this->emails = $emails;
     }
 }

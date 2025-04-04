@@ -5,104 +5,11 @@
 
 ### Available Operations
 
-* [create](#create) - Create Ticket
 * [list](#list) - List Tickets
-* [delete](#delete) - Delete Ticket
+* [create](#create) - Create Ticket
 * [get](#get) - Get Ticket
 * [update](#update) - Update Ticket
-
-## create
-
-Create Ticket
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Components;
-use Apideck\Unify\Models\Operations;
-use Apideck\Unify\Utils;
-
-$sdk = Unify\Apideck::builder()
-    ->setSecurity(
-        '<YOUR_BEARER_TOKEN_HERE>'
-    )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->build();
-
-$request = new Operations\IssueTrackingCollectionTicketsAddRequest(
-    collectionId: 'apideck-io',
-    ticket: new Components\TicketInput(
-        assignees: [
-            new Components\AssigneeInput(
-                id: '12345',
-            ),
-        ],
-        tags: [
-            new Components\CollectionTagInput(
-                id: '12345',
-            ),
-        ],
-        passThrough: [
-            new Components\PassThroughBody(
-                serviceId: '<id>',
-                extendPaths: [
-                    new Components\ExtendPaths(
-                        path: '$.nested.property',
-                        value: [
-                            'TaxClassificationRef' => [
-                                'value' => 'EUC-99990201-V1-00020000',
-                            ],
-                        ],
-                    ),
-                ],
-            ),
-        ],
-        parentId: '12345',
-        type: 'Technical',
-        subject: 'Technical Support Request',
-        description: 'I am facing issues with my internet connection',
-        status: 'open',
-        priority: Components\Priority::High,
-        dueDate: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
-    ),
-    serviceId: 'salesforce',
-);
-
-$response = $sdk->issueTracking->collectionTickets->create(
-    request: $request
-);
-
-if ($response->createTicketResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
-| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                                 | [Operations\IssueTrackingCollectionTicketsAddRequest](../../Models/Operations/IssueTrackingCollectionTicketsAddRequest.md) | :heavy_check_mark:                                                                                                         | The request object to use for the request.                                                                                 |
-
-### Response
-
-**[?Operations\IssueTrackingCollectionTicketsAddResponse](../../Models/Operations/IssueTrackingCollectionTicketsAddResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+* [delete](#delete) - Delete Ticket
 
 ## list
 
@@ -128,8 +35,8 @@ $sdk = Unify\Apideck::builder()
     ->build();
 
 $request = new Operations\IssueTrackingCollectionTicketsAllRequest(
-    collectionId: 'apideck-io',
     serviceId: 'salesforce',
+    collectionId: 'apideck-io',
     sort: new Components\TicketsSort(
         by: Components\TicketsSortBy::CreatedAt,
     ),
@@ -177,9 +84,9 @@ foreach ($responses as $response) {
 | Errors\UnprocessableResponse   | 422                            | application/json               |
 | Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
 
-## delete
+## create
 
-Delete Ticket
+Create Ticket
 
 ### Example Usage
 
@@ -189,7 +96,9 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Apideck\Unify;
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
+use Apideck\Unify\Utils;
 
 $sdk = Unify\Apideck::builder()
     ->setSecurity(
@@ -199,30 +108,63 @@ $sdk = Unify\Apideck::builder()
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
-$request = new Operations\IssueTrackingCollectionTicketsDeleteRequest(
-    ticketId: '<id>',
-    collectionId: 'apideck-io',
+$request = new Operations\IssueTrackingCollectionTicketsAddRequest(
     serviceId: 'salesforce',
+    collectionId: 'apideck-io',
+    ticket: new Components\TicketInput(
+        parentId: '12345',
+        type: 'Technical',
+        subject: 'Technical Support Request',
+        description: 'I am facing issues with my internet connection',
+        status: 'open',
+        priority: Components\Priority::High,
+        assignees: [
+            new Components\AssigneeInput(
+                id: '12345',
+            ),
+        ],
+        dueDate: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
+        tags: [
+            new Components\CollectionTagInput(
+                id: '12345',
+            ),
+        ],
+        passThrough: [
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+        ],
+    ),
 );
 
-$response = $sdk->issueTracking->collectionTickets->delete(
+$response = $sdk->issueTracking->collectionTickets->create(
     request: $request
 );
 
-if ($response->deleteTicketResponse !== null) {
+if ($response->createTicketResponse !== null) {
     // handle response
 }
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                                       | [Operations\IssueTrackingCollectionTicketsDeleteRequest](../../Models/Operations/IssueTrackingCollectionTicketsDeleteRequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
+| Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                                 | [Operations\IssueTrackingCollectionTicketsAddRequest](../../Models/Operations/IssueTrackingCollectionTicketsAddRequest.md) | :heavy_check_mark:                                                                                                         | The request object to use for the request.                                                                                 |
 
 ### Response
 
-**[?Operations\IssueTrackingCollectionTicketsDeleteResponse](../../Models/Operations/IssueTrackingCollectionTicketsDeleteResponse.md)**
+**[?Operations\IssueTrackingCollectionTicketsAddResponse](../../Models/Operations/IssueTrackingCollectionTicketsAddResponse.md)**
 
 ### Errors
 
@@ -259,8 +201,8 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\IssueTrackingCollectionTicketsOneRequest(
     ticketId: '<id>',
-    collectionId: 'apideck-io',
     serviceId: 'salesforce',
+    collectionId: 'apideck-io',
     fields: 'id,updated_at',
 );
 
@@ -320,13 +262,21 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\IssueTrackingCollectionTicketsUpdateRequest(
     ticketId: '<id>',
+    serviceId: 'salesforce',
     collectionId: 'apideck-io',
     ticket: new Components\TicketInput(
+        parentId: '12345',
+        type: 'Technical',
+        subject: 'Technical Support Request',
+        description: 'I am facing issues with my internet connection',
+        status: 'open',
+        priority: Components\Priority::High,
         assignees: [
             new Components\AssigneeInput(
                 id: '12345',
             ),
         ],
+        dueDate: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
         tags: [
             new Components\CollectionTagInput(
                 id: '12345',
@@ -347,15 +297,7 @@ $request = new Operations\IssueTrackingCollectionTicketsUpdateRequest(
                 ],
             ),
         ],
-        parentId: '12345',
-        type: 'Technical',
-        subject: 'Technical Support Request',
-        description: 'I am facing issues with my internet connection',
-        status: 'open',
-        priority: Components\Priority::High,
-        dueDate: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
     ),
-    serviceId: 'salesforce',
 );
 
 $response = $sdk->issueTracking->collectionTickets->update(
@@ -376,6 +318,64 @@ if ($response->updateTicketResponse !== null) {
 ### Response
 
 **[?Operations\IssueTrackingCollectionTicketsUpdateResponse](../../Models/Operations/IssueTrackingCollectionTicketsUpdateResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## delete
+
+Delete Ticket
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Operations;
+
+$sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->build();
+
+$request = new Operations\IssueTrackingCollectionTicketsDeleteRequest(
+    ticketId: '<id>',
+    serviceId: 'salesforce',
+    collectionId: 'apideck-io',
+);
+
+$response = $sdk->issueTracking->collectionTickets->delete(
+    request: $request
+);
+
+if ($response->deleteTicketResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                                       | [Operations\IssueTrackingCollectionTicketsDeleteRequest](../../Models/Operations/IssueTrackingCollectionTicketsDeleteRequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
+
+### Response
+
+**[?Operations\IssueTrackingCollectionTicketsDeleteResponse](../../Models/Operations/IssueTrackingCollectionTicketsDeleteResponse.md)**
 
 ### Errors
 

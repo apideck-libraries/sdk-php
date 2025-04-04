@@ -47,24 +47,6 @@ class JournalEntryLineItem
     public ?LinkedLedgerAccount $ledgerAccount;
 
     /**
-     * A unique identifier for an object.
-     *
-     * @var ?string $departmentId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('department_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $departmentId = null;
-
-    /**
-     * A unique identifier for an object.
-     *
-     * @var ?string $locationId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('location_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $locationId = null;
-
-    /**
      * User defined description
      *
      * @var ?string $description
@@ -141,6 +123,24 @@ class JournalEntryLineItem
     public ?LinkedSupplier $supplier = null;
 
     /**
+     * The ID of the department
+     *
+     * @var ?string $departmentId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('department_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $departmentId = null;
+
+    /**
+     * The ID of the location
+     *
+     * @var ?string $locationId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('location_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $locationId = null;
+
+    /**
      * Line number of the resource
      *
      * @var ?int $lineNumber
@@ -154,8 +154,6 @@ class JournalEntryLineItem
      * @param  ?string  $id
      * @param  ?LinkedTaxRate  $taxRate
      * @param  ?LinkedLedgerAccount  $ledgerAccount
-     * @param  ?string  $departmentId
-     * @param  ?string  $locationId
      * @param  ?string  $description
      * @param  ?float  $taxAmount
      * @param  ?float  $subTotal
@@ -164,17 +162,17 @@ class JournalEntryLineItem
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?LinkedCustomer  $customer
      * @param  ?LinkedSupplier  $supplier
+     * @param  ?string  $departmentId
+     * @param  ?string  $locationId
      * @param  ?int  $lineNumber
      * @phpstan-pure
      */
-    public function __construct(JournalEntryLineItemType $type, ?string $id = null, ?LinkedTaxRate $taxRate = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $departmentId = null, ?string $locationId = null, ?string $description = null, ?float $taxAmount = null, ?float $subTotal = null, ?float $totalAmount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?LinkedCustomer $customer = null, ?LinkedSupplier $supplier = null, ?int $lineNumber = null)
+    public function __construct(JournalEntryLineItemType $type, ?string $id = null, ?LinkedTaxRate $taxRate = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $description = null, ?float $taxAmount = null, ?float $subTotal = null, ?float $totalAmount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?LinkedCustomer $customer = null, ?LinkedSupplier $supplier = null, ?string $departmentId = null, ?string $locationId = null, ?int $lineNumber = null)
     {
         $this->type = $type;
         $this->id = $id;
         $this->taxRate = $taxRate;
         $this->ledgerAccount = $ledgerAccount;
-        $this->departmentId = $departmentId;
-        $this->locationId = $locationId;
         $this->description = $description;
         $this->taxAmount = $taxAmount;
         $this->subTotal = $subTotal;
@@ -183,6 +181,8 @@ class JournalEntryLineItem
         $this->trackingCategories = $trackingCategories;
         $this->customer = $customer;
         $this->supplier = $supplier;
+        $this->departmentId = $departmentId;
+        $this->locationId = $locationId;
         $this->lineNumber = $lineNumber;
     }
 }

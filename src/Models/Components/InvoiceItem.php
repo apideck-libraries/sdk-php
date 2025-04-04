@@ -202,6 +202,42 @@ class InvoiceItem
     public ?bool $active = null;
 
     /**
+     * The ID of the department
+     *
+     * @var ?string $departmentId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('department_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $departmentId = null;
+
+    /**
+     * The ID of the location
+     *
+     * @var ?string $locationId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('location_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $locationId = null;
+
+    /**
+     * The ID of the subsidiary
+     *
+     * @var ?string $subsidiaryId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiary_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $subsidiaryId = null;
+
+    /**
+     * The ID of the tax schedule
+     *
+     * @var ?string $taxScheduleId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_schedule_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $taxScheduleId = null;
+
+    /**
      * When custom mappings are configured on the resource, the result is included here.
      *
      * @var ?CustomMappings $customMappings
@@ -278,6 +314,10 @@ class InvoiceItem
      * @param  ?DeprecatedLinkedTrackingCategory  $trackingCategory
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?bool  $active
+     * @param  ?string  $departmentId
+     * @param  ?string  $locationId
+     * @param  ?string  $subsidiaryId
+     * @param  ?string  $taxScheduleId
      * @param  ?CustomMappings  $customMappings
      * @param  ?string  $rowVersion
      * @param  ?string  $updatedBy
@@ -286,7 +326,7 @@ class InvoiceItem
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?SalesDetails $salesDetails = null, ?PurchaseDetails $purchaseDetails = null, ?array $passThrough = null, ?string $name = null, ?string $description = null, ?string $code = null, ?bool $sold = null, ?bool $purchased = null, ?bool $tracked = null, ?bool $taxable = null, ?LocalDate $inventoryDate = null, ?InvoiceItemTypeType $type = null, ?float $quantity = null, ?float $unitPrice = null, ?LinkedLedgerAccount $assetAccount = null, ?LinkedLedgerAccount $incomeAccount = null, ?LinkedLedgerAccount $expenseAccount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?bool $active = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?SalesDetails $salesDetails = null, ?PurchaseDetails $purchaseDetails = null, ?array $passThrough = null, ?string $name = null, ?string $description = null, ?string $code = null, ?bool $sold = null, ?bool $purchased = null, ?bool $tracked = null, ?bool $taxable = null, ?LocalDate $inventoryDate = null, ?InvoiceItemTypeType $type = null, ?float $quantity = null, ?float $unitPrice = null, ?LinkedLedgerAccount $assetAccount = null, ?LinkedLedgerAccount $incomeAccount = null, ?LinkedLedgerAccount $expenseAccount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?bool $active = null, ?string $departmentId = null, ?string $locationId = null, ?string $subsidiaryId = null, ?string $taxScheduleId = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->salesDetails = $salesDetails;
@@ -309,6 +349,10 @@ class InvoiceItem
         $this->trackingCategory = $trackingCategory;
         $this->trackingCategories = $trackingCategories;
         $this->active = $active;
+        $this->departmentId = $departmentId;
+        $this->locationId = $locationId;
+        $this->subsidiaryId = $subsidiaryId;
+        $this->taxScheduleId = $taxScheduleId;
         $this->customMappings = $customMappings;
         $this->rowVersion = $rowVersion;
         $this->updatedBy = $updatedBy;

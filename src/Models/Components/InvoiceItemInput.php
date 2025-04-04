@@ -193,6 +193,42 @@ class InvoiceItemInput
     public ?bool $active = null;
 
     /**
+     * The ID of the department
+     *
+     * @var ?string $departmentId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('department_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $departmentId = null;
+
+    /**
+     * The ID of the location
+     *
+     * @var ?string $locationId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('location_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $locationId = null;
+
+    /**
+     * The ID of the subsidiary
+     *
+     * @var ?string $subsidiaryId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiary_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $subsidiaryId = null;
+
+    /**
+     * The ID of the tax schedule
+     *
+     * @var ?string $taxScheduleId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_schedule_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $taxScheduleId = null;
+
+    /**
      * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
      *
      * @var ?string $rowVersion
@@ -222,10 +258,14 @@ class InvoiceItemInput
      * @param  ?DeprecatedLinkedTrackingCategory  $trackingCategory
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?bool  $active
+     * @param  ?string  $departmentId
+     * @param  ?string  $locationId
+     * @param  ?string  $subsidiaryId
+     * @param  ?string  $taxScheduleId
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?InvoiceItemSalesDetails $salesDetails = null, ?InvoiceItemPurchaseDetails $purchaseDetails = null, ?array $passThrough = null, ?string $name = null, ?string $description = null, ?string $code = null, ?bool $sold = null, ?bool $purchased = null, ?bool $tracked = null, ?bool $taxable = null, ?LocalDate $inventoryDate = null, ?InvoiceItemTypeType $type = null, ?float $quantity = null, ?float $unitPrice = null, ?LinkedLedgerAccountInput $assetAccount = null, ?LinkedLedgerAccountInput $incomeAccount = null, ?LinkedLedgerAccountInput $expenseAccount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?bool $active = null, ?string $rowVersion = null)
+    public function __construct(?InvoiceItemSalesDetails $salesDetails = null, ?InvoiceItemPurchaseDetails $purchaseDetails = null, ?array $passThrough = null, ?string $name = null, ?string $description = null, ?string $code = null, ?bool $sold = null, ?bool $purchased = null, ?bool $tracked = null, ?bool $taxable = null, ?LocalDate $inventoryDate = null, ?InvoiceItemTypeType $type = null, ?float $quantity = null, ?float $unitPrice = null, ?LinkedLedgerAccountInput $assetAccount = null, ?LinkedLedgerAccountInput $incomeAccount = null, ?LinkedLedgerAccountInput $expenseAccount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?bool $active = null, ?string $departmentId = null, ?string $locationId = null, ?string $subsidiaryId = null, ?string $taxScheduleId = null, ?string $rowVersion = null)
     {
         $this->salesDetails = $salesDetails;
         $this->purchaseDetails = $purchaseDetails;
@@ -247,6 +287,10 @@ class InvoiceItemInput
         $this->trackingCategory = $trackingCategory;
         $this->trackingCategories = $trackingCategories;
         $this->active = $active;
+        $this->departmentId = $departmentId;
+        $this->locationId = $locationId;
+        $this->subsidiaryId = $subsidiaryId;
+        $this->taxScheduleId = $taxScheduleId;
         $this->rowVersion = $rowVersion;
     }
 }

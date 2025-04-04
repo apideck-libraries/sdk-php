@@ -30,24 +30,6 @@ class ExpenseLineItemInput
     public ?string $customerId = null;
 
     /**
-     * The ID of the department this expense item is linked to.
-     *
-     * @var ?string $departmentId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('department_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $departmentId = null;
-
-    /**
-     * The ID of the location this expense item is linked to.
-     *
-     * @var ?string $locationId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('location_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $locationId = null;
-
-    /**
      *
      * @var ?LinkedTaxRateInput $taxRate
      */
@@ -84,6 +66,33 @@ class ExpenseLineItemInput
     public ?array $trackingCategories = null;
 
     /**
+     * The ID of the department
+     *
+     * @var ?string $departmentId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('department_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $departmentId = null;
+
+    /**
+     * The ID of the location
+     *
+     * @var ?string $locationId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('location_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $locationId = null;
+
+    /**
+     * The ID of the subsidiary
+     *
+     * @var ?string $subsidiaryId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiary_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $subsidiaryId = null;
+
+    /**
      * The expense line item description
      *
      * @var ?string $description
@@ -95,25 +104,27 @@ class ExpenseLineItemInput
     /**
      * @param  ?string  $accountId
      * @param  ?string  $customerId
-     * @param  ?string  $departmentId
-     * @param  ?string  $locationId
      * @param  ?LinkedTaxRateInput  $taxRate
      * @param  ?float  $totalAmount
      * @param  ?bool  $billable
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
+     * @param  ?string  $departmentId
+     * @param  ?string  $locationId
+     * @param  ?string  $subsidiaryId
      * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(?string $accountId = null, ?string $customerId = null, ?string $departmentId = null, ?string $locationId = null, ?LinkedTaxRateInput $taxRate = null, ?float $totalAmount = null, ?bool $billable = null, ?array $trackingCategories = null, ?string $description = null)
+    public function __construct(?string $accountId = null, ?string $customerId = null, ?LinkedTaxRateInput $taxRate = null, ?float $totalAmount = null, ?bool $billable = null, ?array $trackingCategories = null, ?string $departmentId = null, ?string $locationId = null, ?string $subsidiaryId = null, ?string $description = null)
     {
         $this->accountId = $accountId;
         $this->customerId = $customerId;
-        $this->departmentId = $departmentId;
-        $this->locationId = $locationId;
         $this->taxRate = $taxRate;
         $this->totalAmount = $totalAmount;
         $this->billable = $billable;
         $this->trackingCategories = $trackingCategories;
+        $this->departmentId = $departmentId;
+        $this->locationId = $locationId;
+        $this->subsidiaryId = $subsidiaryId;
         $this->description = $description;
     }
 }

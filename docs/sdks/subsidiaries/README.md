@@ -5,89 +5,11 @@
 
 ### Available Operations
 
-* [create](#create) - Create Subsidiary
 * [list](#list) - List Subsidiaries
-* [delete](#delete) - Delete Subsidiary
+* [create](#create) - Create Subsidiary
 * [get](#get) - Get Subsidiary
 * [update](#update) - Update Subsidiary
-
-## create
-
-Create Subsidiary
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Apideck\Unify;
-use Apideck\Unify\Models\Components;
-use Apideck\Unify\Models\Operations;
-
-$sdk = Unify\Apideck::builder()
-    ->setSecurity(
-        '<YOUR_BEARER_TOKEN_HERE>'
-    )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
-    ->build();
-
-$request = new Operations\AccountingSubsidiariesAddRequest(
-    subsidiary: new Components\SubsidiaryInput(
-        status: Components\SubsidiaryStatus::Active,
-        passThrough: [
-            new Components\PassThroughBody(
-                serviceId: '<id>',
-                extendPaths: [
-                    new Components\ExtendPaths(
-                        path: '$.nested.property',
-                        value: [
-                            'TaxClassificationRef' => [
-                                'value' => 'EUC-99990201-V1-00020000',
-                            ],
-                        ],
-                    ),
-                ],
-            ),
-        ],
-        parentId: '12345',
-        name: 'SpaceX',
-        rowVersion: '1-12345',
-    ),
-    serviceId: 'salesforce',
-);
-
-$response = $sdk->accounting->subsidiaries->create(
-    request: $request
-);
-
-if ($response->createSubsidiaryResponse !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                 | [Operations\AccountingSubsidiariesAddRequest](../../Models/Operations/AccountingSubsidiariesAddRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-
-### Response
-
-**[?Operations\AccountingSubsidiariesAddResponse](../../Models/Operations/AccountingSubsidiariesAddResponse.md)**
-
-### Errors
-
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+* [delete](#delete) - Delete Subsidiary
 
 ## list
 
@@ -149,9 +71,9 @@ foreach ($responses as $response) {
 | Errors\UnprocessableResponse   | 422                            | application/json               |
 | Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
 
-## delete
+## create
 
-Delete Subsidiary
+Create Subsidiary
 
 ### Example Usage
 
@@ -161,6 +83,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Apideck\Unify;
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
@@ -171,29 +94,49 @@ $sdk = Unify\Apideck::builder()
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
-$request = new Operations\AccountingSubsidiariesDeleteRequest(
-    id: '<id>',
+$request = new Operations\AccountingSubsidiariesAddRequest(
     serviceId: 'salesforce',
+    subsidiary: new Components\SubsidiaryInput(
+        parentId: '12345',
+        name: 'SpaceX',
+        status: Components\SubsidiaryStatus::Active,
+        rowVersion: '1-12345',
+        passThrough: [
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+        ],
+    ),
 );
 
-$response = $sdk->accounting->subsidiaries->delete(
+$response = $sdk->accounting->subsidiaries->create(
     request: $request
 );
 
-if ($response->deleteSubsidiaryResponse !== null) {
+if ($response->createSubsidiaryResponse !== null) {
     // handle response
 }
 ```
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                       | [Operations\AccountingSubsidiariesDeleteRequest](../../Models/Operations/AccountingSubsidiariesDeleteRequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                 | [Operations\AccountingSubsidiariesAddRequest](../../Models/Operations/AccountingSubsidiariesAddRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 
 ### Response
 
-**[?Operations\AccountingSubsidiariesDeleteResponse](../../Models/Operations/AccountingSubsidiariesDeleteResponse.md)**
+**[?Operations\AccountingSubsidiariesAddResponse](../../Models/Operations/AccountingSubsidiariesAddResponse.md)**
 
 ### Errors
 
@@ -289,8 +232,12 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingSubsidiariesUpdateRequest(
     id: '<id>',
+    serviceId: 'salesforce',
     subsidiary: new Components\SubsidiaryInput(
+        parentId: '12345',
+        name: 'SpaceX',
         status: Components\SubsidiaryStatus::Active,
+        rowVersion: '1-12345',
         passThrough: [
             new Components\PassThroughBody(
                 serviceId: '<id>',
@@ -306,11 +253,7 @@ $request = new Operations\AccountingSubsidiariesUpdateRequest(
                 ],
             ),
         ],
-        parentId: '12345',
-        name: 'SpaceX',
-        rowVersion: '1-12345',
     ),
-    serviceId: 'salesforce',
 );
 
 $response = $sdk->accounting->subsidiaries->update(
@@ -331,6 +274,63 @@ if ($response->updateSubsidiaryResponse !== null) {
 ### Response
 
 **[?Operations\AccountingSubsidiariesUpdateResponse](../../Models/Operations/AccountingSubsidiariesUpdateResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## delete
+
+Delete Subsidiary
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Operations;
+
+$sdk = Unify\Apideck::builder()
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->build();
+
+$request = new Operations\AccountingSubsidiariesDeleteRequest(
+    id: '<id>',
+    serviceId: 'salesforce',
+);
+
+$response = $sdk->accounting->subsidiaries->delete(
+    request: $request
+);
+
+if ($response->deleteSubsidiaryResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                       | [Operations\AccountingSubsidiariesDeleteRequest](../../Models/Operations/AccountingSubsidiariesDeleteRequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
+
+### Response
+
+**[?Operations\AccountingSubsidiariesDeleteResponse](../../Models/Operations/AccountingSubsidiariesDeleteResponse.md)**
 
 ### Errors
 
