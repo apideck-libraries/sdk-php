@@ -83,7 +83,11 @@ class Attachments
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $baseUrl = $this->sdkConfiguration->getServerUrl();
@@ -324,7 +328,11 @@ class Attachments
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $baseUrl = $this->sdkConfiguration->getServerUrl();
@@ -490,7 +498,11 @@ class Attachments
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $baseUrl = $this->sdkConfiguration->getServerUrl();
@@ -653,7 +665,11 @@ class Attachments
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $baseUrl = $this->sdkConfiguration->getServerUrl();
@@ -820,7 +836,11 @@ class Attachments
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $baseUrl = Utils\Utils::templateUrl(Attachments::ACCOUNTING_ATTACHMENTS_UPLOAD_SERVERS[0], [

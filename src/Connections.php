@@ -85,7 +85,11 @@ class Connections
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $request = new Operations\VaultConnectionsAllRequest(
@@ -260,7 +264,11 @@ class Connections
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $request = new Operations\VaultConnectionsDeleteRequest(
@@ -420,7 +428,11 @@ class Connections
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $baseUrl = $this->sdkConfiguration->getServerUrl();
@@ -591,7 +603,11 @@ class Connections
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $request = new Operations\VaultConnectionsOneRequest(
@@ -766,7 +782,11 @@ class Connections
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $baseUrl = $this->sdkConfiguration->getServerUrl();
@@ -933,7 +953,11 @@ class Connections
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $baseUrl = $this->sdkConfiguration->getServerUrl();

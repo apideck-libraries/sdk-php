@@ -79,7 +79,11 @@ class Locations
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $baseUrl = $this->sdkConfiguration->getServerUrl();
@@ -250,7 +254,11 @@ class Locations
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $baseUrl = $this->sdkConfiguration->getServerUrl();
@@ -489,7 +497,11 @@ class Locations
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $baseUrl = $this->sdkConfiguration->getServerUrl();
@@ -655,7 +667,11 @@ class Locations
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $baseUrl = $this->sdkConfiguration->getServerUrl();
@@ -821,7 +837,11 @@ class Locations
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $baseUrl = $this->sdkConfiguration->getServerUrl();
