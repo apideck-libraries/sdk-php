@@ -336,6 +336,16 @@ class Invoice
     public ?string $sourceDocumentUrl = null;
 
     /**
+     * IDs of payments made on the invoice
+     *
+     * @var ?array<PaymentAllocations> $paymentAllocations
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('payment_allocations')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PaymentAllocations>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $paymentAllocations = null;
+
+    /**
      * Payment method used for the transaction, such as cash, credit card, bank transfer, or check
      *
      * @var ?string $paymentMethod
@@ -471,6 +481,7 @@ class Invoice
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?string  $templateId
      * @param  ?string  $sourceDocumentUrl
+     * @param  ?array<PaymentAllocations>  $paymentAllocations
      * @param  ?string  $paymentMethod
      * @param  ?string  $channel
      * @param  ?string  $language
@@ -484,7 +495,7 @@ class Invoice
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?bool $invoiceSent = null, ?array $lineItems = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?InvoiceType $type = null, ?string $number = null, ?LinkedCustomer $customer = null, ?string $companyId = null, ?LocalDate $invoiceDate = null, ?LocalDate $dueDate = null, ?string $terms = null, ?string $poNumber = null, ?string $reference = null, ?InvoiceStatus $status = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?float $total = null, ?float $balance = null, ?float $deposit = null, ?string $customerMemo = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?string $templateId = null, ?string $sourceDocumentUrl = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?LinkedLedgerAccount $ledgerAccount = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?bool $invoiceSent = null, ?array $lineItems = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?InvoiceType $type = null, ?string $number = null, ?LinkedCustomer $customer = null, ?string $companyId = null, ?LocalDate $invoiceDate = null, ?LocalDate $dueDate = null, ?string $terms = null, ?string $poNumber = null, ?string $reference = null, ?InvoiceStatus $status = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?float $total = null, ?float $balance = null, ?float $deposit = null, ?string $customerMemo = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?string $templateId = null, ?string $sourceDocumentUrl = null, ?array $paymentAllocations = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?LinkedLedgerAccount $ledgerAccount = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->invoiceSent = $invoiceSent;
@@ -521,6 +532,7 @@ class Invoice
         $this->trackingCategories = $trackingCategories;
         $this->templateId = $templateId;
         $this->sourceDocumentUrl = $sourceDocumentUrl;
+        $this->paymentAllocations = $paymentAllocations;
         $this->paymentMethod = $paymentMethod;
         $this->channel = $channel;
         $this->language = $language;

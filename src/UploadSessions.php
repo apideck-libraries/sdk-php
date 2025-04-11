@@ -96,7 +96,11 @@ class UploadSessions
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $baseUrl = Utils\Utils::templateUrl(UploadSessions::FILE_STORAGE_UPLOAD_SESSIONS_ADD_SERVERS[0], [
@@ -271,7 +275,11 @@ class UploadSessions
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $baseUrl = $this->sdkConfiguration->getServerUrl();
@@ -438,7 +446,11 @@ class UploadSessions
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $baseUrl = Utils\Utils::templateUrl(UploadSessions::FILE_STORAGE_UPLOAD_SESSIONS_FINISH_SERVERS[0], [
@@ -613,7 +625,11 @@ class UploadSessions
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $baseUrl = Utils\Utils::templateUrl(UploadSessions::FILE_STORAGE_UPLOAD_SESSIONS_ONE_SERVERS[0], [
@@ -784,7 +800,11 @@ class UploadSessions
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $baseUrl = Utils\Utils::templateUrl(UploadSessions::FILE_STORAGE_UPLOAD_SESSIONS_UPLOAD_SERVERS[0], [

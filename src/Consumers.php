@@ -80,7 +80,11 @@ class Consumers
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $request = new Operations\VaultConsumersAddRequest(
@@ -255,7 +259,11 @@ class Consumers
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $request = new Operations\VaultConsumersAllRequest(
@@ -489,7 +497,11 @@ class Consumers
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $request = new Operations\VaultConsumersDeleteRequest(
@@ -658,7 +670,11 @@ class Consumers
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $request = new Operations\VaultConsumersOneRequest(
@@ -827,7 +843,11 @@ class Consumers
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $request = new Operations\VaultConsumersUpdateRequest(

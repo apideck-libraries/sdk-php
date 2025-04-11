@@ -98,6 +98,7 @@ require 'vendor/autoload.php';
 use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
+use Apideck\Unify\Utils;
 use Brick\DateTime\LocalDate;
 
 $sdk = Unify\Apideck::builder()
@@ -246,6 +247,13 @@ $request = new Operations\AccountingInvoicesAddRequest(
         ),
         templateId: '123456',
         sourceDocumentUrl: 'https://www.invoicesolution.com/invoice/123456',
+        paymentAllocations: [
+            new Components\PaymentAllocations(
+                id: '123456',
+                allocatedAmount: 1000,
+                date: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
+            ),
+        ],
         paymentMethod: 'cash',
         channel: 'email',
         language: 'EN',
@@ -397,6 +405,7 @@ require 'vendor/autoload.php';
 use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
+use Apideck\Unify\Utils;
 use Brick\DateTime\LocalDate;
 
 $sdk = Unify\Apideck::builder()
@@ -548,6 +557,13 @@ $request = new Operations\AccountingInvoicesUpdateRequest(
         ),
         templateId: '123456',
         sourceDocumentUrl: 'https://www.invoicesolution.com/invoice/123456',
+        paymentAllocations: [
+            new Components\PaymentAllocations(
+                id: '123456',
+                allocatedAmount: 1000,
+                date: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
+            ),
+        ],
         paymentMethod: 'cash',
         channel: 'email',
         language: 'EN',

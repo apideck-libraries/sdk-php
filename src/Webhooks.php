@@ -80,7 +80,11 @@ class Webhooks
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $request = new Operations\WebhookWebhooksAddRequest(
@@ -254,7 +258,11 @@ class Webhooks
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $request = new Operations\WebhookWebhooksAllRequest(
@@ -487,7 +495,11 @@ class Webhooks
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $request = new Operations\WebhookWebhooksDeleteRequest(
@@ -655,7 +667,11 @@ class Webhooks
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $request = new Operations\WebhookWebhooksOneRequest(
@@ -824,7 +840,11 @@ class Webhooks
         }
         if ($retryCodes === null) {
             $retryCodes = [
-                '5XX',
+                '408',
+                '500',
+                '502',
+                '503',
+                '504',
             ];
         }
         $request = new Operations\WebhookWebhooksUpdateRequest(
