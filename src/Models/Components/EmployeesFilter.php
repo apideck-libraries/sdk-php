@@ -92,6 +92,14 @@ class EmployeesFilter
     public ?string $city = null;
 
     /**
+     * Country to filter on
+     *
+     * @var ?string $country
+     */
+    #[SpeakeasyMetadata('queryParam:name=country')]
+    public ?string $country = null;
+
+    /**
      * @param  ?string  $companyId
      * @param  ?string  $email
      * @param  ?string  $firstName
@@ -102,9 +110,10 @@ class EmployeesFilter
      * @param  ?string  $employeeNumber
      * @param  ?string  $departmentId
      * @param  ?string  $city
+     * @param  ?string  $country
      * @phpstan-pure
      */
-    public function __construct(?string $companyId = null, ?string $email = null, ?string $firstName = null, ?string $title = null, ?string $lastName = null, ?string $managerId = null, ?EmployeesFilterEmploymentStatus $employmentStatus = null, ?string $employeeNumber = null, ?string $departmentId = null, ?string $city = null)
+    public function __construct(?string $companyId = null, ?string $email = null, ?string $firstName = null, ?string $title = null, ?string $lastName = null, ?string $managerId = null, ?EmployeesFilterEmploymentStatus $employmentStatus = null, ?string $employeeNumber = null, ?string $departmentId = null, ?string $city = null, ?string $country = null)
     {
         $this->companyId = $companyId;
         $this->email = $email;
@@ -116,5 +125,6 @@ class EmployeesFilter
         $this->employeeNumber = $employeeNumber;
         $this->departmentId = $departmentId;
         $this->city = $city;
+        $this->country = $country;
     }
 }
