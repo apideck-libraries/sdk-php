@@ -109,6 +109,7 @@ $request = new Operations\AccountingDepartmentsAddRequest(
                 name: 'SpaceX',
             ),
         ],
+        code: '123',
         rowVersion: '1-12345',
         passThrough: [
             new Components\PassThroughBody(
@@ -251,6 +252,7 @@ $request = new Operations\AccountingDepartmentsUpdateRequest(
                 name: 'SpaceX',
             ),
         ],
+        code: '123',
         rowVersion: '1-12345',
         passThrough: [
             new Components\PassThroughBody(

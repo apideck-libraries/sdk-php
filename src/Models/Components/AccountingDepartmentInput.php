@@ -32,6 +32,15 @@ class AccountingDepartmentInput
     public ?array $subsidiaries = null;
 
     /**
+     * The code of the department.
+     *
+     * @var ?string $code
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('code')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $code = null;
+
+    /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
      * @var ?array<PassThroughBody> $passThrough
@@ -71,16 +80,18 @@ class AccountingDepartmentInput
     /**
      * @param  ?DepartmentStatus  $status
      * @param  ?array<SubsidiaryReferenceInput>  $subsidiaries
+     * @param  ?string  $code
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $parentId
      * @param  ?string  $name
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?DepartmentStatus $status = null, ?array $subsidiaries = null, ?array $passThrough = null, ?string $parentId = null, ?string $name = null, ?string $rowVersion = null)
+    public function __construct(?DepartmentStatus $status = null, ?array $subsidiaries = null, ?string $code = null, ?array $passThrough = null, ?string $parentId = null, ?string $name = null, ?string $rowVersion = null)
     {
         $this->status = $status;
         $this->subsidiaries = $subsidiaries;
+        $this->code = $code;
         $this->passThrough = $passThrough;
         $this->parentId = $parentId;
         $this->name = $name;

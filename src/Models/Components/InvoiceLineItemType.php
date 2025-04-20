@@ -16,5 +16,6 @@ enum InvoiceLineItemType: string
     case Discount = 'discount';
     case Info = 'info';
     case SubTotal = 'sub_total';
+    case Service = 'service';
     case Other = 'other';
 }

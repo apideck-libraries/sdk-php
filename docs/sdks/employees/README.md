@@ -46,6 +46,8 @@ $request = new Operations\HrisEmployeesAllRequest(
         employmentStatus: Components\EmployeesFilterEmploymentStatus::Active,
         employeeNumber: '123456-AB',
         departmentId: '1234',
+        city: 'San Francisco',
+        country: 'US',
     ),
     sort: new Components\EmployeesSort(
         by: Components\EmployeesSortBy::CreatedAt,
