@@ -41,6 +41,15 @@ class AccountingDepartment
     public ?array $subsidiaries = null;
 
     /**
+     * The code of the department.
+     *
+     * @var ?string $code
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('code')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $code = null;
+
+    /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
      * @var ?array<PassThroughBody> $passThrough
@@ -127,6 +136,7 @@ class AccountingDepartment
      * @param  ?string  $id
      * @param  ?DepartmentStatus  $status
      * @param  ?array<SubsidiaryReference>  $subsidiaries
+     * @param  ?string  $code
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $parentId
      * @param  ?string  $name
@@ -138,11 +148,12 @@ class AccountingDepartment
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?DepartmentStatus $status = null, ?array $subsidiaries = null, ?array $passThrough = null, ?string $parentId = null, ?string $name = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?DepartmentStatus $status = null, ?array $subsidiaries = null, ?string $code = null, ?array $passThrough = null, ?string $parentId = null, ?string $name = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->status = $status;
         $this->subsidiaries = $subsidiaries;
+        $this->code = $code;
         $this->passThrough = $passThrough;
         $this->parentId = $parentId;
         $this->name = $name;

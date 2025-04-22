@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 5f9c8c78f4e97650b9622752c12efc49
-  docVersion: 10.15.2
-  speakeasyVersion: 1.531.3
-  generationVersion: 2.570.3
-  releaseVersion: 0.8.0
-  configChecksum: cbb6e18f9f66133ca4f8f6c2df5cc499
+  docChecksum: b5dc0244aa499b8adfc991da71055e1b
+  docVersion: 10.16.2
+  speakeasyVersion: 1.537.0
+  generationVersion: 2.588.0
+  releaseVersion: 0.9.0
+  configChecksum: f6f390ae49f96c71c1ab249471d39447
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php
   published: true
@@ -7923,7 +7923,7 @@ examples:
         query:
           raw: false
           limit: 20
-          filter: {"company_id": "1234", "email": "elon@tesla.com", "first_name": "Elon", "title": "Manager", "last_name": "Musk", "manager_id": "1234", "employment_status": "active", "employee_number": "123456-AB", "department_id": "1234"}
+          filter: {"company_id": "1234", "email": "elon@tesla.com", "first_name": "Elon", "title": "Manager", "last_name": "Musk", "manager_id": "1234", "employment_status": "active", "employee_number": "123456-AB", "department_id": "1234", "city": "San Francisco", "country": "US"}
           sort: {"by": "created_at", "direction": "desc"}
           pass_through: {"search": "San Francisco"}
           fields: "id,updated_at"
