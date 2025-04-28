@@ -85,6 +85,15 @@ class Note
     public ?string $opportunityId = null;
 
     /**
+     * The activity that is related to the note.
+     *
+     * @var ?string $activityId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('activity_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $activityId = null;
+
+    /**
      * The lead that is related to the note.
      *
      * @var ?string $leadId
@@ -157,6 +166,7 @@ class Note
      * @param  ?string  $contactId
      * @param  ?string  $companyId
      * @param  ?string  $opportunityId
+     * @param  ?string  $activityId
      * @param  ?string  $leadId
      * @param  ?bool  $active
      * @param  ?CustomMappings  $customMappings
@@ -166,7 +176,7 @@ class Note
      * @param  ?string  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?array $passThrough = null, ?string $title = null, ?string $content = null, ?string $ownerId = null, ?string $contactId = null, ?string $companyId = null, ?string $opportunityId = null, ?string $leadId = null, ?bool $active = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?string $updatedAt = null, ?string $createdAt = null)
+    public function __construct(?string $id = null, ?array $passThrough = null, ?string $title = null, ?string $content = null, ?string $ownerId = null, ?string $contactId = null, ?string $companyId = null, ?string $opportunityId = null, ?string $activityId = null, ?string $leadId = null, ?bool $active = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?string $updatedAt = null, ?string $createdAt = null)
     {
         $this->id = $id;
         $this->passThrough = $passThrough;
@@ -176,6 +186,7 @@ class Note
         $this->contactId = $contactId;
         $this->companyId = $companyId;
         $this->opportunityId = $opportunityId;
+        $this->activityId = $activityId;
         $this->leadId = $leadId;
         $this->active = $active;
         $this->customMappings = $customMappings;
