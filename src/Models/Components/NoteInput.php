@@ -76,6 +76,15 @@ class NoteInput
     public ?string $opportunityId = null;
 
     /**
+     * The activity that is related to the note.
+     *
+     * @var ?string $activityId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('activity_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $activityId = null;
+
+    /**
      * The lead that is related to the note.
      *
      * @var ?string $leadId
@@ -101,11 +110,12 @@ class NoteInput
      * @param  ?string  $contactId
      * @param  ?string  $companyId
      * @param  ?string  $opportunityId
+     * @param  ?string  $activityId
      * @param  ?string  $leadId
      * @param  ?bool  $active
      * @phpstan-pure
      */
-    public function __construct(?array $passThrough = null, ?string $title = null, ?string $content = null, ?string $ownerId = null, ?string $contactId = null, ?string $companyId = null, ?string $opportunityId = null, ?string $leadId = null, ?bool $active = null)
+    public function __construct(?array $passThrough = null, ?string $title = null, ?string $content = null, ?string $ownerId = null, ?string $contactId = null, ?string $companyId = null, ?string $opportunityId = null, ?string $activityId = null, ?string $leadId = null, ?bool $active = null)
     {
         $this->passThrough = $passThrough;
         $this->title = $title;
@@ -114,6 +124,7 @@ class NoteInput
         $this->contactId = $contactId;
         $this->companyId = $companyId;
         $this->opportunityId = $opportunityId;
+        $this->activityId = $activityId;
         $this->leadId = $leadId;
         $this->active = $active;
     }
