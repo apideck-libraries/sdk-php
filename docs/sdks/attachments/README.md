@@ -101,7 +101,7 @@ $request = new Operations\AccountingAttachmentsUploadRequest(
     referenceType: Components\AttachmentReferenceType::Invoice,
     referenceId: '12345',
     serviceId: 'salesforce',
-    requestBody: '0x8cc9e675ad',
+    requestBody: '0x506D4BD16D',
 );
 
 $response = $sdk->accounting->attachments->upload(

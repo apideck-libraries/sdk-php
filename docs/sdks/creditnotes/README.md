@@ -255,7 +255,9 @@ $request = new Operations\AccountingCreditNotesAddRequest(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
-                value: new Components\Four(),
+                value: [
+                    '<value>',
+                ],
             ),
         ],
         rowVersion: '1-12345',
@@ -461,9 +463,7 @@ $request = new Operations\AccountingCreditNotesUpdateRequest(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
-                        value: [
-                            new Components\Six(),
-                        ],
+                        value: new Components\Four(),
                     ),
                 ],
                 rowVersion: '1-12345',

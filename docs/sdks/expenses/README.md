@@ -134,6 +134,7 @@ $request = new Operations\AccountingExpensesAddRequest(
                 description: 'Travel US.',
                 totalAmount: 275,
                 billable: true,
+                lineNumber: 1,
             ),
         ],
         customFields: [
@@ -315,6 +316,7 @@ $request = new Operations\AccountingExpensesUpdateRequest(
                 description: 'Travel US.',
                 totalAmount: 275,
                 billable: true,
+                lineNumber: 1,
             ),
         ],
         customFields: [
@@ -322,9 +324,7 @@ $request = new Operations\AccountingExpensesUpdateRequest(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
-                value: [
-                    new Components\Six(),
-                ],
+                value: true,
             ),
         ],
         rowVersion: '1-12345',

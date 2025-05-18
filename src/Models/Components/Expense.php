@@ -214,6 +214,24 @@ class Expense
     public ?string $rowVersion = null;
 
     /**
+     * The user who last updated the object.
+     *
+     * @var ?string $updatedBy
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_by')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $updatedBy = null;
+
+    /**
+     * The user who created the object.
+     *
+     * @var ?string $createdBy
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_by')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $createdBy = null;
+
+    /**
      * @param  string  $accountId
      * @param  array<ExpenseLineItem>  $lineItems
      * @param  ?string  $id
@@ -236,9 +254,11 @@ class Expense
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
      * @param  ?string  $rowVersion
+     * @param  ?string  $updatedBy
+     * @param  ?string  $createdBy
      * @phpstan-pure
      */
-    public function __construct(string $accountId, array $lineItems, ?string $id = null, ?\DateTime $transactionDate = null, ?string $customerId = null, ?string $supplierId = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?string $companyId = null, ?string $departmentId = null, ?ExpensePaymentType $paymentType = null, ?Currency $currency = null, ?float $currencyRate = null, ?ExpenseType $type = null, ?string $memo = null, ?float $totalAmount = null, ?CustomMappings $customMappings = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null)
+    public function __construct(string $accountId, array $lineItems, ?string $id = null, ?\DateTime $transactionDate = null, ?string $customerId = null, ?string $supplierId = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?string $companyId = null, ?string $departmentId = null, ?ExpensePaymentType $paymentType = null, ?Currency $currency = null, ?float $currencyRate = null, ?ExpenseType $type = null, ?string $memo = null, ?float $totalAmount = null, ?CustomMappings $customMappings = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null)
     {
         $this->accountId = $accountId;
         $this->lineItems = $lineItems;
@@ -262,5 +282,7 @@ class Expense
         $this->updatedAt = $updatedAt;
         $this->createdAt = $createdAt;
         $this->rowVersion = $rowVersion;
+        $this->updatedBy = $updatedBy;
+        $this->createdBy = $createdBy;
     }
 }

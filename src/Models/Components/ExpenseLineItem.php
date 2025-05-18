@@ -111,6 +111,15 @@ class ExpenseLineItem
     public ?string $description = null;
 
     /**
+     * Line number of the resource
+     *
+     * @var ?int $lineNumber
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('line_number')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?int $lineNumber = null;
+
+    /**
      * @param  ?string  $id
      * @param  ?string  $accountId
      * @param  ?string  $customerId
@@ -122,9 +131,10 @@ class ExpenseLineItem
      * @param  ?string  $locationId
      * @param  ?string  $subsidiaryId
      * @param  ?string  $description
+     * @param  ?int  $lineNumber
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $accountId = null, ?string $customerId = null, ?LinkedTaxRate $taxRate = null, ?float $totalAmount = null, ?bool $billable = null, ?array $trackingCategories = null, ?string $departmentId = null, ?string $locationId = null, ?string $subsidiaryId = null, ?string $description = null)
+    public function __construct(?string $id = null, ?string $accountId = null, ?string $customerId = null, ?LinkedTaxRate $taxRate = null, ?float $totalAmount = null, ?bool $billable = null, ?array $trackingCategories = null, ?string $departmentId = null, ?string $locationId = null, ?string $subsidiaryId = null, ?string $description = null, ?int $lineNumber = null)
     {
         $this->id = $id;
         $this->accountId = $accountId;
@@ -137,5 +147,6 @@ class ExpenseLineItem
         $this->locationId = $locationId;
         $this->subsidiaryId = $subsidiaryId;
         $this->description = $description;
+        $this->lineNumber = $lineNumber;
     }
 }
