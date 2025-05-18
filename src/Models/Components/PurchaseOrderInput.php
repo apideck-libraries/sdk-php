@@ -88,6 +88,15 @@ class PurchaseOrderInput
     public ?LinkedSupplierInput $supplier = null;
 
     /**
+     * The ID of the subsidiary
+     *
+     * @var ?string $subsidiaryId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiary_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $subsidiaryId = null;
+
+    /**
      * The company or subsidiary id the transaction belongs to
      *
      * @var ?string $companyId
@@ -296,6 +305,7 @@ class PurchaseOrderInput
      * @param  ?string  $poNumber
      * @param  ?string  $reference
      * @param  ?LinkedSupplierInput  $supplier
+     * @param  ?string  $subsidiaryId
      * @param  ?string  $companyId
      * @param  ?PurchaseOrderStatus  $status
      * @param  ?LocalDate  $issuedDate
@@ -320,7 +330,7 @@ class PurchaseOrderInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?array $lineItems = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $poNumber = null, ?string $reference = null, ?LinkedSupplierInput $supplier = null, ?string $companyId = null, ?PurchaseOrderStatus $status = null, ?LocalDate $issuedDate = null, ?LocalDate $deliveryDate = null, ?LocalDate $expectedArrivalDate = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?bool $taxInclusive = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $templateId = null, ?float $discountPercentage = null, ?bool $accountingByRow = null, ?LocalDate $dueDate = null, ?string $paymentMethod = null, ?string $taxCode = null, ?string $channel = null, ?string $memo = null, ?array $trackingCategories = null, ?string $rowVersion = null)
+    public function __construct(?array $lineItems = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $poNumber = null, ?string $reference = null, ?LinkedSupplierInput $supplier = null, ?string $subsidiaryId = null, ?string $companyId = null, ?PurchaseOrderStatus $status = null, ?LocalDate $issuedDate = null, ?LocalDate $deliveryDate = null, ?LocalDate $expectedArrivalDate = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?bool $taxInclusive = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $templateId = null, ?float $discountPercentage = null, ?bool $accountingByRow = null, ?LocalDate $dueDate = null, ?string $paymentMethod = null, ?string $taxCode = null, ?string $channel = null, ?string $memo = null, ?array $trackingCategories = null, ?string $rowVersion = null)
     {
         $this->lineItems = $lineItems;
         $this->shippingAddress = $shippingAddress;
@@ -330,6 +340,7 @@ class PurchaseOrderInput
         $this->poNumber = $poNumber;
         $this->reference = $reference;
         $this->supplier = $supplier;
+        $this->subsidiaryId = $subsidiaryId;
         $this->companyId = $companyId;
         $this->status = $status;
         $this->issuedDate = $issuedDate;

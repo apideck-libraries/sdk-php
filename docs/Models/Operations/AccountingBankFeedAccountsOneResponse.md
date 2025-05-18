@@ -1,0 +1,10 @@
+# AccountingBankFeedAccountsOneResponse
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                      | [Components\HTTPMetadata](../../Models/Components/HTTPMetadata.md)                              | :heavy_check_mark:                                                                              | N/A                                                                                             |
+| `getBankFeedAccountResponse`                                                                    | [?Components\GetBankFeedAccountResponse](../../Models/Components/GetBankFeedAccountResponse.md) | :heavy_minus_sign:                                                                              | Bank Feed Accounts                                                                              |
+| `unexpectedErrorResponse`                                                                       | [?Components\UnexpectedErrorResponse](../../Models/Components/UnexpectedErrorResponse.md)       | :heavy_minus_sign:                                                                              | Unexpected error                                                                                |

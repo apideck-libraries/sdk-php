@@ -210,7 +210,9 @@ $request = new Operations\CrmCompaniesAddRequest(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
-                value: true,
+                value: [
+                    '<value>',
+                ],
             ),
         ],
         tags: [
@@ -455,9 +457,7 @@ $request = new Operations\CrmCompaniesUpdateRequest(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
-                value: [
-                    new Components\Six(),
-                ],
+                value: 'Uses Salesforce and Marketo',
             ),
         ],
         tags: [

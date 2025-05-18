@@ -183,6 +183,22 @@ foreach ($responses as $response) {
 
 * [get](docs/sdks/balancesheet/README.md#get) - Get BalanceSheet
 
+#### [accounting->bankFeedAccounts](docs/sdks/bankfeedaccounts/README.md)
+
+* [list](docs/sdks/bankfeedaccounts/README.md#list) - List Bank Feed Accounts
+* [create](docs/sdks/bankfeedaccounts/README.md#create) - Create Bank Feed Account
+* [get](docs/sdks/bankfeedaccounts/README.md#get) - Get Bank Feed Account
+* [update](docs/sdks/bankfeedaccounts/README.md#update) - Update Bank Feed Account
+* [delete](docs/sdks/bankfeedaccounts/README.md#delete) - Delete Bank Feed Account
+
+#### [accounting->bankFeedStatements](docs/sdks/bankfeedstatements/README.md)
+
+* [list](docs/sdks/bankfeedstatements/README.md#list) - List Bank Feed Statements
+* [create](docs/sdks/bankfeedstatements/README.md#create) - Create Bank Feed Statement
+* [get](docs/sdks/bankfeedstatements/README.md#get) - Get Bank Feed Statement
+* [update](docs/sdks/bankfeedstatements/README.md#update) - Update Bank Feed Statement
+* [delete](docs/sdks/bankfeedstatements/README.md#delete) - Delete Bank Feed Statement
+
 #### [accounting->billPayments](docs/sdks/billpayments/README.md)
 
 * [list](docs/sdks/billpayments/README.md#list) - List Bill Payments
@@ -1024,7 +1040,7 @@ $request = new Operations\AccountingAttachmentsUploadRequest(
     referenceType: Components\AttachmentReferenceType::Invoice,
     referenceId: '12345',
     serviceId: 'salesforce',
-    requestBody: '0x8cc9e675ad',
+    requestBody: '0x506D4BD16D',
 );
 
 $response = $sdk->accounting->attachments->upload(

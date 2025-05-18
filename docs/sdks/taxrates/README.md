@@ -150,7 +150,9 @@ $request = new Operations\AccountingTaxRatesAddRequest(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
-                value: true,
+                value: [
+                    '<value>',
+                ],
             ),
         ],
     ),
@@ -313,9 +315,7 @@ $request = new Operations\AccountingTaxRatesUpdateRequest(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
-                value: [
-                    new Components\Six(),
-                ],
+                value: 'Uses Salesforce and Marketo',
             ),
         ],
     ),
