@@ -20,14 +20,6 @@ class LeadInput
     public string $name;
 
     /**
-     * The name of the company the lead is associated with.
-     *
-     * @var ?string $companyName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('company_name')]
-    public ?string $companyName;
-
-    /**
      * $websites
      *
      * @var ?array<Website> $websites
@@ -78,16 +70,6 @@ class LeadInput
     public ?array $emails = null;
 
     /**
-     * $customFields
-     *
-     * @var ?array<CustomField> $customFields
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $customFields = null;
-
-    /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
      * @var ?array<PassThroughBody> $passThrough
@@ -96,6 +78,15 @@ class LeadInput
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * The name of the company the lead is associated with.
+     *
+     * @var ?string $companyName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('company_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $companyName = null;
 
     /**
      * The owner of the lead.
@@ -233,6 +224,16 @@ class LeadInput
     public ?string $fax = null;
 
     /**
+     * $customFields
+     *
+     * @var ?array<CustomField> $customFields
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $customFields = null;
+
+    /**
      * $tags
      *
      * @var ?array<string> $tags
@@ -244,14 +245,13 @@ class LeadInput
 
     /**
      * @param  string  $name
-     * @param  ?string  $companyName
      * @param  ?array<Website>  $websites
      * @param  ?array<Address>  $addresses
      * @param  ?array<SocialLink>  $socialLinks
      * @param  ?array<PhoneNumber>  $phoneNumbers
      * @param  ?array<Email>  $emails
-     * @param  ?array<CustomField>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?string  $companyName
      * @param  ?string  $ownerId
      * @param  ?string  $ownerName
      * @param  ?string  $companyId
@@ -267,20 +267,20 @@ class LeadInput
      * @param  ?float  $monetaryAmount
      * @param  ?Currency  $currency
      * @param  ?string  $fax
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<string>  $tags
      * @phpstan-pure
      */
-    public function __construct(string $name, ?string $companyName = null, ?array $websites = null, ?array $addresses = null, ?array $socialLinks = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $customFields = null, ?array $passThrough = null, ?string $ownerId = null, ?string $ownerName = null, ?string $companyId = null, ?string $leadId = null, ?string $leadSource = null, ?string $firstName = null, ?string $lastName = null, ?string $description = null, ?string $prefix = null, ?string $title = null, ?string $language = null, ?string $status = null, ?float $monetaryAmount = null, ?Currency $currency = null, ?string $fax = null, ?array $tags = null)
+    public function __construct(string $name, ?array $websites = null, ?array $addresses = null, ?array $socialLinks = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $passThrough = null, ?string $companyName = null, ?string $ownerId = null, ?string $ownerName = null, ?string $companyId = null, ?string $leadId = null, ?string $leadSource = null, ?string $firstName = null, ?string $lastName = null, ?string $description = null, ?string $prefix = null, ?string $title = null, ?string $language = null, ?string $status = null, ?float $monetaryAmount = null, ?Currency $currency = null, ?string $fax = null, ?array $customFields = null, ?array $tags = null)
     {
         $this->name = $name;
-        $this->companyName = $companyName;
         $this->websites = $websites;
         $this->addresses = $addresses;
         $this->socialLinks = $socialLinks;
         $this->phoneNumbers = $phoneNumbers;
         $this->emails = $emails;
-        $this->customFields = $customFields;
         $this->passThrough = $passThrough;
+        $this->companyName = $companyName;
         $this->ownerId = $ownerId;
         $this->ownerName = $ownerName;
         $this->companyId = $companyId;
@@ -296,6 +296,7 @@ class LeadInput
         $this->monetaryAmount = $monetaryAmount;
         $this->currency = $currency;
         $this->fax = $fax;
+        $this->customFields = $customFields;
         $this->tags = $tags;
     }
 }

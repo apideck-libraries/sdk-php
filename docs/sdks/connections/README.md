@@ -181,20 +181,12 @@ $request = new Operations\VaultConnectionsUpdateRequest(
                     new Components\ConnectionDefaults(
                         id: 'ProductInterest',
                         options: [
-                            new Components\FormFieldOptionGroup(
-                                id: '1234',
+                            new Components\SimpleFormFieldOption(
                                 label: 'General Channel',
-                                options: [
-                                    new Components\SimpleFormFieldOption(
-                                        label: 'General Channel',
-                                        value: 12.5,
-                                        optionType: Components\OptionType::Simple,
-                                    ),
-                                ],
-                                optionType: Components\FormFieldOptionGroupOptionType::Group,
+                                optionType: Components\OptionType::Simple,
                             ),
                         ],
-                        value: 10,
+                        value: 'GC5000 series',
                     ),
                 ],
             ),

@@ -1,0 +1,10 @@
+# AccountingBankFeedAccountsUpdateResponse
+
+
+## Fields
+
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                            | [Components\HTTPMetadata](../../Models/Components/HTTPMetadata.md)                                    | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
+| `updateBankFeedAccountResponse`                                                                       | [?Components\UpdateBankFeedAccountResponse](../../Models/Components/UpdateBankFeedAccountResponse.md) | :heavy_minus_sign:                                                                                    | Bank Feed Accounts                                                                                    |
+| `unexpectedErrorResponse`                                                                             | [?Components\UnexpectedErrorResponse](../../Models/Components/UnexpectedErrorResponse.md)             | :heavy_minus_sign:                                                                                    | Unexpected error                                                                                      |

@@ -275,12 +275,12 @@ class LedgerAccount
     /**
      * When custom mappings are configured on the resource, the result is included here.
      *
-     * @var ?CustomMappings $customMappings
+     * @var ?array<string, mixed> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CustomMappings $customMappings = null;
+    public ?array $customMappings = null;
 
     /**
      * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
@@ -356,7 +356,7 @@ class LedgerAccount
      * @param  ?bool  $header
      * @param  ?bool  $subAccount
      * @param  ?LocalDate  $lastReconciliationDate
-     * @param  ?CustomMappings  $customMappings
+     * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $rowVersion
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy
@@ -364,7 +364,7 @@ class LedgerAccount
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $displayId = null, ?LedgerAccountType $type = null, ?LinkedTaxRate $taxRate = null, ?BankAccount $bankAccount = null, ?array $categories = null, ?ParentAccount $parentAccount = null, ?array $subAccounts = null, ?array $subsidiaries = null, ?array $customFields = null, ?array $passThrough = null, ?string $nominalCode = null, ?string $code = null, ?Classification $classification = null, ?string $subType = null, ?string $name = null, ?string $fullyQualifiedName = null, ?string $description = null, ?float $openingBalance = null, ?float $currentBalance = null, ?Currency $currency = null, ?string $taxType = null, ?float $level = null, ?bool $active = null, ?AccountStatus $status = null, ?bool $header = null, ?bool $subAccount = null, ?LocalDate $lastReconciliationDate = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?string $displayId = null, ?LedgerAccountType $type = null, ?LinkedTaxRate $taxRate = null, ?BankAccount $bankAccount = null, ?array $categories = null, ?ParentAccount $parentAccount = null, ?array $subAccounts = null, ?array $subsidiaries = null, ?array $customFields = null, ?array $passThrough = null, ?string $nominalCode = null, ?string $code = null, ?Classification $classification = null, ?string $subType = null, ?string $name = null, ?string $fullyQualifiedName = null, ?string $description = null, ?float $openingBalance = null, ?float $currentBalance = null, ?Currency $currency = null, ?string $taxType = null, ?float $level = null, ?bool $active = null, ?AccountStatus $status = null, ?bool $header = null, ?bool $subAccount = null, ?LocalDate $lastReconciliationDate = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->displayId = $displayId;

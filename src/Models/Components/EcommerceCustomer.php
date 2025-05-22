@@ -118,12 +118,12 @@ class EcommerceCustomer
     /**
      * When custom mappings are configured on the resource, the result is included here.
      *
-     * @var ?CustomMappings $customMappings
+     * @var ?array<string, mixed> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CustomMappings $customMappings = null;
+    public ?array $customMappings = null;
 
     /**
      * The date and time when the object was created.
@@ -155,12 +155,12 @@ class EcommerceCustomer
      * @param  ?Currency  $currency
      * @param  ?array<Email>  $emails
      * @param  ?array<PhoneNumber>  $phoneNumbers
-     * @param  ?CustomMappings  $customMappings
+     * @param  ?array<string, mixed>  $customMappings
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, ?array $addresses = null, ?array $orders = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $companyName = null, ?CustomerStatus $status = null, ?Currency $currency = null, ?array $emails = null, ?array $phoneNumbers = null, ?CustomMappings $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(string $id, ?array $addresses = null, ?array $orders = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $companyName = null, ?CustomerStatus $status = null, ?Currency $currency = null, ?array $emails = null, ?array $phoneNumbers = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
         $this->addresses = $addresses;

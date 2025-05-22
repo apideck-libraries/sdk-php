@@ -145,12 +145,12 @@ class EcommerceProduct
     /**
      * When custom mappings are configured on the resource, the result is included here.
      *
-     * @var ?CustomMappings $customMappings
+     * @var ?array<string, mixed> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CustomMappings $customMappings = null;
+    public ?array $customMappings = null;
 
     /**
      * The date and time when the object was created.
@@ -185,12 +185,12 @@ class EcommerceProduct
      * @param  ?array<Images>  $images
      * @param  ?string  $weight
      * @param  ?string  $weightUnit
-     * @param  ?CustomMappings  $customMappings
+     * @param  ?array<string, mixed>  $customMappings
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, ?array $options = null, ?array $variants = null, ?array $tags = null, ?array $categories = null, ?string $name = null, ?string $description = null, ?ProductStatus $status = null, ?string $price = null, ?string $sku = null, ?string $inventoryQuantity = null, ?array $images = null, ?string $weight = null, ?string $weightUnit = null, ?CustomMappings $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(string $id, ?array $options = null, ?array $variants = null, ?array $tags = null, ?array $categories = null, ?string $name = null, ?string $description = null, ?ProductStatus $status = null, ?string $price = null, ?string $sku = null, ?string $inventoryQuantity = null, ?array $images = null, ?string $weight = null, ?string $weightUnit = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
         $this->options = $options;

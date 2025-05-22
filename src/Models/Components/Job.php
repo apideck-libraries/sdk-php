@@ -354,12 +354,12 @@ class Job
     /**
      * When custom mappings are configured on the resource, the result is included here.
      *
-     * @var ?CustomMappings $customMappings
+     * @var ?array<string, mixed> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CustomMappings $customMappings = null;
+    public ?array $customMappings = null;
 
     /**
      * The user who last updated the object.
@@ -435,14 +435,14 @@ class Job
      * @param  ?bool  $deleted
      * @param  ?string  $ownerId
      * @param  ?\DateTime  $publishedAt
-     * @param  ?CustomMappings  $customMappings
+     * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?int $sequence = null, ?Visibility $visibility = null, ?JobStatus $status = null, ?string $code = null, ?string $experience = null, ?string $requisitionId = null, ?Department $department = null, ?Branch $branch = null, ?array $hiringManagers = null, ?array $blocks = null, ?Salary $salary = null, ?array $links = null, ?bool $confidential = null, ?bool $availableToEmployees = null, ?array $addresses = null, ?array $customFields = null, ?string $slug = null, ?string $title = null, ?string $language = null, ?EmploymentTerms $employmentTerms = null, ?string $location = null, ?bool $remote = null, ?array $recruiters = null, ?array $followers = null, ?string $description = null, ?string $descriptionHtml = null, ?string $closing = null, ?string $closingHtml = null, ?LocalDate $closingDate = null, ?string $url = null, ?string $jobPortalUrl = null, ?string $recordUrl = null, ?array $tags = null, ?bool $deleted = null, ?string $ownerId = null, ?\DateTime $publishedAt = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?int $sequence = null, ?Visibility $visibility = null, ?JobStatus $status = null, ?string $code = null, ?string $experience = null, ?string $requisitionId = null, ?Department $department = null, ?Branch $branch = null, ?array $hiringManagers = null, ?array $blocks = null, ?Salary $salary = null, ?array $links = null, ?bool $confidential = null, ?bool $availableToEmployees = null, ?array $addresses = null, ?array $customFields = null, ?string $slug = null, ?string $title = null, ?string $language = null, ?EmploymentTerms $employmentTerms = null, ?string $location = null, ?bool $remote = null, ?array $recruiters = null, ?array $followers = null, ?string $description = null, ?string $descriptionHtml = null, ?string $closing = null, ?string $closingHtml = null, ?LocalDate $closingDate = null, ?string $url = null, ?string $jobPortalUrl = null, ?string $recordUrl = null, ?array $tags = null, ?bool $deleted = null, ?string $ownerId = null, ?\DateTime $publishedAt = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->sequence = $sequence;

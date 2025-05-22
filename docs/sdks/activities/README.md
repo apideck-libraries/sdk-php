@@ -179,7 +179,7 @@ $request = new Operations\CrmActivitiesAddRequest(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
-                value: true,
+                value: 'Uses Salesforce and Marketo',
             ),
         ],
         attendees: [
@@ -399,9 +399,7 @@ $request = new Operations\CrmActivitiesUpdateRequest(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
-                value: [
-                    new Components\Six(),
-                ],
+                value: 'Uses Salesforce and Marketo',
             ),
         ],
         attendees: [

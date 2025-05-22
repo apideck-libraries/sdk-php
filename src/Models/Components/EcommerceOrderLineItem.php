@@ -39,14 +39,6 @@ class EcommerceOrderLineItem
     public ?string $quantity;
 
     /**
-     * The total amount for the product(s) or variant associated with the line item, including taxes and discounts.
-     *
-     * @var ?string $totalAmount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('total_amount')]
-    public ?string $totalAmount;
-
-    /**
      * $discounts
      *
      * @var ?array<EcommerceDiscount> $discounts
@@ -165,10 +157,18 @@ class EcommerceOrderLineItem
     public ?string $subTotal = null;
 
     /**
+     * The total amount for the product(s) or variant associated with the line item, including taxes and discounts.
+     *
+     * @var ?string $totalAmount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('total_amount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $totalAmount = null;
+
+    /**
      * @param  ?string  $name
      * @param  ?array<Options>  $options
      * @param  ?string  $quantity
-     * @param  ?string  $totalAmount
      * @param  ?array<EcommerceDiscount>  $discounts
      * @param  ?string  $id
      * @param  ?string  $productId
@@ -182,14 +182,14 @@ class EcommerceOrderLineItem
      * @param  ?string  $refundedAmount
      * @param  ?string  $refundedQuantity
      * @param  ?string  $subTotal
+     * @param  ?string  $totalAmount
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?array $options = null, ?string $quantity = null, ?string $totalAmount = null, ?array $discounts = null, ?string $id = null, ?string $productId = null, ?string $variantId = null, ?string $sku = null, ?string $description = null, ?string $unitPrice = null, ?string $taxRate = null, ?string $taxAmount = null, ?bool $isRefunded = null, ?string $refundedAmount = null, ?string $refundedQuantity = null, ?string $subTotal = null)
+    public function __construct(?string $name = null, ?array $options = null, ?string $quantity = null, ?array $discounts = null, ?string $id = null, ?string $productId = null, ?string $variantId = null, ?string $sku = null, ?string $description = null, ?string $unitPrice = null, ?string $taxRate = null, ?string $taxAmount = null, ?bool $isRefunded = null, ?string $refundedAmount = null, ?string $refundedQuantity = null, ?string $subTotal = null, ?string $totalAmount = null)
     {
         $this->name = $name;
         $this->options = $options;
         $this->quantity = $quantity;
-        $this->totalAmount = $totalAmount;
         $this->discounts = $discounts;
         $this->id = $id;
         $this->productId = $productId;
@@ -203,5 +203,6 @@ class EcommerceOrderLineItem
         $this->refundedAmount = $refundedAmount;
         $this->refundedQuantity = $refundedQuantity;
         $this->subTotal = $subTotal;
+        $this->totalAmount = $totalAmount;
     }
 }
