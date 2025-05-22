@@ -58,12 +58,12 @@ class Collection
     /**
      * When custom mappings are configured on the resource, the result is included here.
      *
-     * @var ?CustomMappings $customMappings
+     * @var ?array<string, mixed> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CustomMappings $customMappings = null;
+    public ?array $customMappings = null;
 
     /**
      * The date and time when the object was last updated.
@@ -89,12 +89,12 @@ class Collection
      * @param  ?string  $type
      * @param  ?string  $name
      * @param  ?string  $description
-     * @param  ?CustomMappings  $customMappings
+     * @param  ?array<string, mixed>  $customMappings
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(string $id, ?string $parentId = null, ?string $type = null, ?string $name = null, ?string $description = null, ?CustomMappings $customMappings = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(string $id, ?string $parentId = null, ?string $type = null, ?string $name = null, ?string $description = null, ?array $customMappings = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->parentId = $parentId;

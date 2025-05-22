@@ -59,6 +59,10 @@ class Accounting
 
     public AgedDebtors $agedDebtors;
 
+    public BankFeedAccounts $bankFeedAccounts;
+
+    public BankFeedStatements $bankFeedStatements;
+
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
@@ -88,6 +92,8 @@ class Accounting
         $this->expenses = new Expenses($this->sdkConfiguration);
         $this->agedCreditors = new AgedCreditors($this->sdkConfiguration);
         $this->agedDebtors = new AgedDebtors($this->sdkConfiguration);
+        $this->bankFeedAccounts = new BankFeedAccounts($this->sdkConfiguration);
+        $this->bankFeedStatements = new BankFeedStatements($this->sdkConfiguration);
     }
     /**
      * @param  string  $baseUrl

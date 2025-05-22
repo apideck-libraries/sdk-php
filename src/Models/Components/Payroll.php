@@ -92,12 +92,12 @@ class Payroll
     /**
      * When custom mappings are configured on the resource, the result is included here.
      *
-     * @var ?CustomMappings $customMappings
+     * @var ?array<string, mixed> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CustomMappings $customMappings = null;
+    public ?array $customMappings = null;
 
     /**
      * @param  ?string  $id
@@ -109,10 +109,10 @@ class Payroll
      * @param  ?array<Compensation>  $compensations
      * @param  ?string  $companyId
      * @param  ?string  $processedDate
-     * @param  ?CustomMappings  $customMappings
+     * @param  ?array<string, mixed>  $customMappings
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?bool $processed = null, ?string $checkDate = null, ?string $startDate = null, ?string $endDate = null, ?PayrollTotals $totals = null, ?array $compensations = null, ?string $companyId = null, ?string $processedDate = null, ?CustomMappings $customMappings = null)
+    public function __construct(?string $id = null, ?bool $processed = null, ?string $checkDate = null, ?string $startDate = null, ?string $endDate = null, ?PayrollTotals $totals = null, ?array $compensations = null, ?string $companyId = null, ?string $processedDate = null, ?array $customMappings = null)
     {
         $this->id = $id;
         $this->processed = $processed;

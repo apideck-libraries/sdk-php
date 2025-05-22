@@ -163,12 +163,12 @@ class JournalEntry
     /**
      * When custom mappings are configured on the resource, the result is included here.
      *
-     * @var ?CustomMappings $customMappings
+     * @var ?array<string, mixed> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CustomMappings $customMappings = null;
+    public ?array $customMappings = null;
 
     /**
      * The user who last updated the object.
@@ -232,7 +232,7 @@ class JournalEntry
      * @param  ?string  $number
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?string  $accountingPeriod
-     * @param  ?CustomMappings  $customMappings
+     * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
@@ -240,7 +240,7 @@ class JournalEntry
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?array $lineItems = null, ?\DateTime $postedAt = null, ?array $customFields = null, ?array $passThrough = null, ?string $title = null, ?float $currencyRate = null, ?Currency $currency = null, ?string $companyId = null, ?string $memo = null, ?string $journalSymbol = null, ?string $taxType = null, ?string $taxCode = null, ?string $number = null, ?array $trackingCategories = null, ?string $accountingPeriod = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null)
+    public function __construct(?string $id = null, ?array $lineItems = null, ?\DateTime $postedAt = null, ?array $customFields = null, ?array $passThrough = null, ?string $title = null, ?float $currencyRate = null, ?Currency $currency = null, ?string $companyId = null, ?string $memo = null, ?string $journalSymbol = null, ?string $taxType = null, ?string $taxCode = null, ?string $number = null, ?array $trackingCategories = null, ?string $accountingPeriod = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null)
     {
         $this->id = $id;
         $this->lineItems = $lineItems;

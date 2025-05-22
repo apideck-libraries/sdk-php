@@ -161,12 +161,12 @@ class Ticket
     /**
      * When custom mappings are configured on the resource, the result is included here.
      *
-     * @var ?CustomMappings $customMappings
+     * @var ?array<string, mixed> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CustomMappings $customMappings = null;
+    public ?array $customMappings = null;
 
     /**
      * @param  string  $id
@@ -185,10 +185,10 @@ class Ticket
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $dueDate
      * @param  ?\DateTime  $completedAt
-     * @param  ?CustomMappings  $customMappings
+     * @param  ?array<string, mixed>  $customMappings
      * @phpstan-pure
      */
-    public function __construct(string $id, ?array $assignees = null, ?array $tags = null, ?array $passThrough = null, ?string $parentId = null, ?string $collectionId = null, ?string $type = null, ?string $subject = null, ?string $description = null, ?string $status = null, ?Priority $priority = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $createdBy = null, ?\DateTime $dueDate = null, ?\DateTime $completedAt = null, ?CustomMappings $customMappings = null)
+    public function __construct(string $id, ?array $assignees = null, ?array $tags = null, ?array $passThrough = null, ?string $parentId = null, ?string $collectionId = null, ?string $type = null, ?string $subject = null, ?string $description = null, ?string $status = null, ?Priority $priority = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $createdBy = null, ?\DateTime $dueDate = null, ?\DateTime $completedAt = null, ?array $customMappings = null)
     {
         $this->id = $id;
         $this->assignees = $assignees;

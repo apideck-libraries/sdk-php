@@ -351,12 +351,12 @@ class Opportunity
     /**
      * When custom mappings are configured on the resource, the result is included here.
      *
-     * @var ?CustomMappings $customMappings
+     * @var ?array<string, mixed> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CustomMappings $customMappings = null;
+    public ?array $customMappings = null;
 
     /**
      * The unique identifier of the user who last updated the opportunity.
@@ -432,14 +432,14 @@ class Opportunity
      * @param  ?\DateTime  $dateStageChanged
      * @param  ?\DateTime  $dateLastContacted
      * @param  ?\DateTime  $dateLeadCreated
-     * @param  ?CustomMappings  $customMappings
+     * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(string $title, ?string $id = null, ?array $contactIds = null, ?array $customFields = null, ?bool $deleted = null, ?array $passThrough = null, ?string $primaryContactId = null, ?string $description = null, ?string $type = null, ?float $monetaryAmount = null, ?Currency $currency = null, ?float $winProbability = null, ?float $expectedRevenue = null, ?LocalDate $closeDate = null, ?string $lossReasonId = null, ?string $lossReason = null, ?string $wonReasonId = null, ?string $wonReason = null, ?string $pipelineId = null, ?string $pipelineStageId = null, ?string $sourceId = null, ?string $leadId = null, ?string $leadSource = null, ?string $contactId = null, ?string $companyId = null, ?string $companyName = null, ?string $ownerId = null, ?string $priority = null, ?string $status = null, ?string $statusId = null, ?array $tags = null, ?float $interactionCount = null, ?\DateTime $stageLastChangedAt = null, ?string $lastActivityAt = null, ?\DateTime $dateStageChanged = null, ?\DateTime $dateLastContacted = null, ?\DateTime $dateLeadCreated = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(string $title, ?string $id = null, ?array $contactIds = null, ?array $customFields = null, ?bool $deleted = null, ?array $passThrough = null, ?string $primaryContactId = null, ?string $description = null, ?string $type = null, ?float $monetaryAmount = null, ?Currency $currency = null, ?float $winProbability = null, ?float $expectedRevenue = null, ?LocalDate $closeDate = null, ?string $lossReasonId = null, ?string $lossReason = null, ?string $wonReasonId = null, ?string $wonReason = null, ?string $pipelineId = null, ?string $pipelineStageId = null, ?string $sourceId = null, ?string $leadId = null, ?string $leadSource = null, ?string $contactId = null, ?string $companyId = null, ?string $companyName = null, ?string $ownerId = null, ?string $priority = null, ?string $status = null, ?string $statusId = null, ?array $tags = null, ?float $interactionCount = null, ?\DateTime $stageLastChangedAt = null, ?string $lastActivityAt = null, ?\DateTime $dateStageChanged = null, ?\DateTime $dateLastContacted = null, ?\DateTime $dateLeadCreated = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->title = $title;
         $this->id = $id;

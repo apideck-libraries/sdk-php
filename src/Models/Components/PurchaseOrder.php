@@ -106,6 +106,15 @@ class PurchaseOrder
     public ?LinkedSupplier $supplier = null;
 
     /**
+     * The ID of the subsidiary
+     *
+     * @var ?string $subsidiaryId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiary_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $subsidiaryId = null;
+
+    /**
      * The company or subsidiary id the transaction belongs to
      *
      * @var ?string $companyId
@@ -299,12 +308,12 @@ class PurchaseOrder
     /**
      * When custom mappings are configured on the resource, the result is included here.
      *
-     * @var ?CustomMappings $customMappings
+     * @var ?array<string, mixed> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CustomMappings $customMappings = null;
+    public ?array $customMappings = null;
 
     /**
      * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
@@ -362,6 +371,7 @@ class PurchaseOrder
      * @param  ?string  $poNumber
      * @param  ?string  $reference
      * @param  ?LinkedSupplier  $supplier
+     * @param  ?string  $subsidiaryId
      * @param  ?string  $companyId
      * @param  ?PurchaseOrderStatus  $status
      * @param  ?LocalDate  $issuedDate
@@ -383,7 +393,7 @@ class PurchaseOrder
      * @param  ?string  $channel
      * @param  ?string  $memo
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
-     * @param  ?CustomMappings  $customMappings
+     * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $rowVersion
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy
@@ -391,7 +401,7 @@ class PurchaseOrder
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?array $lineItems = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $poNumber = null, ?string $reference = null, ?LinkedSupplier $supplier = null, ?string $companyId = null, ?PurchaseOrderStatus $status = null, ?LocalDate $issuedDate = null, ?LocalDate $deliveryDate = null, ?LocalDate $expectedArrivalDate = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?bool $taxInclusive = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $templateId = null, ?float $discountPercentage = null, ?bool $accountingByRow = null, ?LocalDate $dueDate = null, ?string $paymentMethod = null, ?string $taxCode = null, ?string $channel = null, ?string $memo = null, ?array $trackingCategories = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?array $lineItems = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $poNumber = null, ?string $reference = null, ?LinkedSupplier $supplier = null, ?string $subsidiaryId = null, ?string $companyId = null, ?PurchaseOrderStatus $status = null, ?LocalDate $issuedDate = null, ?LocalDate $deliveryDate = null, ?LocalDate $expectedArrivalDate = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?bool $taxInclusive = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $templateId = null, ?float $discountPercentage = null, ?bool $accountingByRow = null, ?LocalDate $dueDate = null, ?string $paymentMethod = null, ?string $taxCode = null, ?string $channel = null, ?string $memo = null, ?array $trackingCategories = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->lineItems = $lineItems;
@@ -403,6 +413,7 @@ class PurchaseOrder
         $this->poNumber = $poNumber;
         $this->reference = $reference;
         $this->supplier = $supplier;
+        $this->subsidiaryId = $subsidiaryId;
         $this->companyId = $companyId;
         $this->status = $status;
         $this->issuedDate = $issuedDate;

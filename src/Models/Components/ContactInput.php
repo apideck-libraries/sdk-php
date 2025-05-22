@@ -70,16 +70,6 @@ class ContactInput
     public ?array $emails = null;
 
     /**
-     * $customFields
-     *
-     * @var ?array<CustomField> $customFields
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $customFields = null;
-
-    /**
      * The opportunity ids of the contact.
      *
      * @var ?array<string> $opportunityIds
@@ -317,6 +307,16 @@ class ContactInput
     public ?string $emailDomain = null;
 
     /**
+     * $customFields
+     *
+     * @var ?array<CustomField> $customFields
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $customFields = null;
+
+    /**
      * $tags
      *
      * @var ?array<string> $tags
@@ -333,7 +333,6 @@ class ContactInput
      * @param  ?array<SocialLink>  $socialLinks
      * @param  ?array<PhoneNumber>  $phoneNumbers
      * @param  ?array<Email>  $emails
-     * @param  ?array<CustomField>  $customFields
      * @param  ?array<string>  $opportunityIds
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $ownerId
@@ -360,10 +359,11 @@ class ContactInput
      * @param  ?string  $status
      * @param  ?bool  $active
      * @param  ?string  $emailDomain
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<string>  $tags
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?array $websites = null, ?array $addresses = null, ?array $socialLinks = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $customFields = null, ?array $opportunityIds = null, ?array $passThrough = null, ?string $ownerId = null, ?ContactType $type = null, ?string $companyId = null, ?string $companyName = null, ?string $leadId = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $prefix = null, ?string $suffix = null, ?string $title = null, ?string $department = null, ?string $language = null, ?ContactGender $gender = null, ?string $birthday = null, ?string $image = null, ?string $photoUrl = null, ?string $leadSource = null, ?string $fax = null, ?string $description = null, ?float $currentBalance = null, ?string $status = null, ?bool $active = null, ?string $emailDomain = null, ?array $tags = null)
+    public function __construct(?string $name = null, ?array $websites = null, ?array $addresses = null, ?array $socialLinks = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $opportunityIds = null, ?array $passThrough = null, ?string $ownerId = null, ?ContactType $type = null, ?string $companyId = null, ?string $companyName = null, ?string $leadId = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $prefix = null, ?string $suffix = null, ?string $title = null, ?string $department = null, ?string $language = null, ?ContactGender $gender = null, ?string $birthday = null, ?string $image = null, ?string $photoUrl = null, ?string $leadSource = null, ?string $fax = null, ?string $description = null, ?float $currentBalance = null, ?string $status = null, ?bool $active = null, ?string $emailDomain = null, ?array $customFields = null, ?array $tags = null)
     {
         $this->name = $name;
         $this->websites = $websites;
@@ -371,7 +371,6 @@ class ContactInput
         $this->socialLinks = $socialLinks;
         $this->phoneNumbers = $phoneNumbers;
         $this->emails = $emails;
-        $this->customFields = $customFields;
         $this->opportunityIds = $opportunityIds;
         $this->passThrough = $passThrough;
         $this->ownerId = $ownerId;
@@ -398,6 +397,7 @@ class ContactInput
         $this->status = $status;
         $this->active = $active;
         $this->emailDomain = $emailDomain;
+        $this->customFields = $customFields;
         $this->tags = $tags;
     }
 }

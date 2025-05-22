@@ -19,11 +19,20 @@ class PaymentsFilter
     public ?\DateTime $updatedSince = null;
 
     /**
+     *
+     * @var ?string $invoiceId
+     */
+    #[SpeakeasyMetadata('queryParam:name=invoice_id')]
+    public ?string $invoiceId = null;
+
+    /**
      * @param  ?\DateTime  $updatedSince
+     * @param  ?string  $invoiceId
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedSince = null)
+    public function __construct(?\DateTime $updatedSince = null, ?string $invoiceId = null)
     {
         $this->updatedSince = $updatedSince;
+        $this->invoiceId = $invoiceId;
     }
 }

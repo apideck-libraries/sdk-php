@@ -212,12 +212,12 @@ class EcommerceOrder
     /**
      * When custom mappings are configured on the resource, the result is included here.
      *
-     * @var ?CustomMappings $customMappings
+     * @var ?array<string, mixed> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CustomMappings $customMappings = null;
+    public ?array $customMappings = null;
 
     /**
      * The date and time when the object was created.
@@ -259,12 +259,12 @@ class EcommerceOrder
      * @param  ?FulfillmentStatus  $fulfillmentStatus
      * @param  ?string  $paymentMethod
      * @param  ?string  $note
-     * @param  ?CustomMappings  $customMappings
+     * @param  ?array<string, mixed>  $customMappings
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, ?array $discounts = null, ?LinkedEcommerceCustomer $customer = null, ?EcommerceAddress $billingAddress = null, ?EcommerceAddress $shippingAddress = null, ?array $tracking = null, ?array $lineItems = null, ?string $orderNumber = null, ?Currency $currency = null, ?string $subTotal = null, ?string $shippingCost = null, ?string $couponDiscount = null, ?string $totalDiscount = null, ?string $totalTax = null, ?string $totalAmount = null, ?string $refundedAmount = null, ?EcommerceOrderStatus $status = null, ?EcommerceOrderPaymentStatus $paymentStatus = null, ?FulfillmentStatus $fulfillmentStatus = null, ?string $paymentMethod = null, ?string $note = null, ?CustomMappings $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(string $id, ?array $discounts = null, ?LinkedEcommerceCustomer $customer = null, ?EcommerceAddress $billingAddress = null, ?EcommerceAddress $shippingAddress = null, ?array $tracking = null, ?array $lineItems = null, ?string $orderNumber = null, ?Currency $currency = null, ?string $subTotal = null, ?string $shippingCost = null, ?string $couponDiscount = null, ?string $totalDiscount = null, ?string $totalTax = null, ?string $totalAmount = null, ?string $refundedAmount = null, ?EcommerceOrderStatus $status = null, ?EcommerceOrderPaymentStatus $paymentStatus = null, ?FulfillmentStatus $fulfillmentStatus = null, ?string $paymentMethod = null, ?string $note = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
         $this->discounts = $discounts;

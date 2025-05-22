@@ -163,12 +163,12 @@ class CompanyInfo
     /**
      * When custom mappings are configured on the resource, the result is included here.
      *
-     * @var ?CustomMappings $customMappings
+     * @var ?array<string, mixed> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CustomMappings $customMappings = null;
+    public ?array $customMappings = null;
 
     /**
      * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
@@ -232,7 +232,7 @@ class CompanyInfo
      * @param  ?string  $salesTaxNumber
      * @param  ?Currency  $currency
      * @param  ?string  $language
-     * @param  ?CustomMappings  $customMappings
+     * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $rowVersion
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy
@@ -240,7 +240,7 @@ class CompanyInfo
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?CompanyStatus $status = null, ?string $legalName = null, ?bool $automatedSalesTax = null, ?bool $salesTaxEnabled = null, ?TaxRate $defaultSalesTax = null, ?TheStartMonthOfFiscalYear $fiscalYearStartMonth = null, ?LocalDate $companyStartDate = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?string $companyName = null, ?string $country = null, ?string $salesTaxNumber = null, ?Currency $currency = null, ?string $language = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?CompanyStatus $status = null, ?string $legalName = null, ?bool $automatedSalesTax = null, ?bool $salesTaxEnabled = null, ?TaxRate $defaultSalesTax = null, ?TheStartMonthOfFiscalYear $fiscalYearStartMonth = null, ?LocalDate $companyStartDate = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?string $companyName = null, ?string $country = null, ?string $salesTaxNumber = null, ?Currency $currency = null, ?string $language = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->status = $status;

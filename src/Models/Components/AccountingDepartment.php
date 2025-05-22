@@ -80,12 +80,12 @@ class AccountingDepartment
     /**
      * When custom mappings are configured on the resource, the result is included here.
      *
-     * @var ?CustomMappings $customMappings
+     * @var ?array<string, mixed> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CustomMappings $customMappings = null;
+    public ?array $customMappings = null;
 
     /**
      * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
@@ -140,7 +140,7 @@ class AccountingDepartment
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $parentId
      * @param  ?string  $name
-     * @param  ?CustomMappings  $customMappings
+     * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $rowVersion
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy
@@ -148,7 +148,7 @@ class AccountingDepartment
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?DepartmentStatus $status = null, ?array $subsidiaries = null, ?string $code = null, ?array $passThrough = null, ?string $parentId = null, ?string $name = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?DepartmentStatus $status = null, ?array $subsidiaries = null, ?string $code = null, ?array $passThrough = null, ?string $parentId = null, ?string $name = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->status = $status;

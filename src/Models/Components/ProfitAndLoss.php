@@ -152,12 +152,12 @@ class ProfitAndLoss
     /**
      * When custom mappings are configured on the resource, the result is included here.
      *
-     * @var ?CustomMappings $customMappings
+     * @var ?array<string, mixed> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CustomMappings $customMappings = null;
+    public ?array $customMappings = null;
 
     /**
      * @param  string  $reportName
@@ -175,10 +175,10 @@ class ProfitAndLoss
      * @param  ?ProfitAndLossIndicator  $netOperatingIncome
      * @param  ?ProfitAndLossIndicator  $netIncome
      * @param  ?string  $customer
-     * @param  ?CustomMappings  $customMappings
+     * @param  ?array<string, mixed>  $customMappings
      * @phpstan-pure
      */
-    public function __construct(string $reportName, Income $income, Expenses $expenses, ?string $id = null, ?string $startDate = null, ?string $endDate = null, ?Currency $currency = null, ?CostOfGoodsSold $costOfGoodsSold = null, ?OtherIncome $otherIncome = null, ?OtherExpenses $otherExpenses = null, ?UncategorizedAccounts $uncategorizedAccounts = null, ?ProfitAndLossIndicator $grossProfit = null, ?ProfitAndLossIndicator $netOperatingIncome = null, ?ProfitAndLossIndicator $netIncome = null, ?string $customer = null, ?CustomMappings $customMappings = null)
+    public function __construct(string $reportName, Income $income, Expenses $expenses, ?string $id = null, ?string $startDate = null, ?string $endDate = null, ?Currency $currency = null, ?CostOfGoodsSold $costOfGoodsSold = null, ?OtherIncome $otherIncome = null, ?OtherExpenses $otherExpenses = null, ?UncategorizedAccounts $uncategorizedAccounts = null, ?ProfitAndLossIndicator $grossProfit = null, ?ProfitAndLossIndicator $netOperatingIncome = null, ?ProfitAndLossIndicator $netIncome = null, ?string $customer = null, ?array $customMappings = null)
     {
         $this->reportName = $reportName;
         $this->income = $income;

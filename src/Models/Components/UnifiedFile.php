@@ -150,12 +150,12 @@ class UnifiedFile
     /**
      * When custom mappings are configured on the resource, the result is included here.
      *
-     * @var ?CustomMappings $customMappings
+     * @var ?array<string, mixed> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CustomMappings $customMappings = null;
+    public ?array $customMappings = null;
 
     /**
      * The user who last updated the object.
@@ -209,14 +209,14 @@ class UnifiedFile
      * @param  ?string  $mimeType
      * @param  ?int  $size
      * @param  ?array<string>  $exportFormats
-     * @param  ?CustomMappings  $customMappings
+     * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(string $id, ?string $name = null, ?FileType $type = null, ?bool $downloadable = null, ?Owner $owner = null, ?array $parentFolders = null, ?bool $parentFoldersComplete = null, ?Permissions $permissions = null, ?bool $exportable = null, ?string $downstreamId = null, ?string $description = null, ?string $path = null, ?string $mimeType = null, ?int $size = null, ?array $exportFormats = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(string $id, ?string $name = null, ?FileType $type = null, ?bool $downloadable = null, ?Owner $owner = null, ?array $parentFolders = null, ?bool $parentFoldersComplete = null, ?Permissions $permissions = null, ?bool $exportable = null, ?string $downstreamId = null, ?string $description = null, ?string $path = null, ?string $mimeType = null, ?int $size = null, ?array $exportFormats = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->name = $name;

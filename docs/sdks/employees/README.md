@@ -284,7 +284,7 @@ $request = new Operations\HrisEmployeesAddRequest(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
-                value: true,
+                value: 'Uses Salesforce and Marketo',
             ),
         ],
         socialLinks: [
@@ -631,9 +631,7 @@ $request = new Operations\HrisEmployeesUpdateRequest(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
-                value: [
-                    new Components\Six(),
-                ],
+                value: 'Uses Salesforce and Marketo',
             ),
         ],
         socialLinks: [

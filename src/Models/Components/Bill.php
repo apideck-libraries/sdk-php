@@ -371,12 +371,12 @@ class Bill
     /**
      * When custom mappings are configured on the resource, the result is included here.
      *
-     * @var ?CustomMappings $customMappings
+     * @var ?array<string, mixed> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CustomMappings $customMappings = null;
+    public ?array $customMappings = null;
 
     /**
      * Accounting period
@@ -427,11 +427,11 @@ class Bill
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
      * @param  ?string  $rowVersion
-     * @param  ?CustomMappings  $customMappings
+     * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $accountingPeriod
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?array $lineItems = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $billNumber = null, ?LinkedSupplier $supplier = null, ?string $companyId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?LocalDate $billDate = null, ?LocalDate $dueDate = null, ?LocalDate $paidDate = null, ?string $poNumber = null, ?string $reference = null, ?string $terms = null, ?float $balance = null, ?float $deposit = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?string $taxCode = null, ?string $notes = null, ?BillStatus $status = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?float $discountPercentage = null, ?string $sourceDocumentUrl = null, ?array $trackingCategories = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null, ?CustomMappings $customMappings = null, ?string $accountingPeriod = null)
+    public function __construct(?string $id = null, ?array $lineItems = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $billNumber = null, ?LinkedSupplier $supplier = null, ?string $companyId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?LocalDate $billDate = null, ?LocalDate $dueDate = null, ?LocalDate $paidDate = null, ?string $poNumber = null, ?string $reference = null, ?string $terms = null, ?float $balance = null, ?float $deposit = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?string $taxCode = null, ?string $notes = null, ?BillStatus $status = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?float $discountPercentage = null, ?string $sourceDocumentUrl = null, ?array $trackingCategories = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null, ?array $customMappings = null, ?string $accountingPeriod = null)
     {
         $this->id = $id;
         $this->lineItems = $lineItems;

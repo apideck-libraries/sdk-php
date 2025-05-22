@@ -273,12 +273,12 @@ class CreditNote
     /**
      * When custom mappings are configured on the resource, the result is included here.
      *
-     * @var ?CustomMappings $customMappings
+     * @var ?array<string, mixed> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CustomMappings $customMappings = null;
+    public ?array $customMappings = null;
 
     /**
      * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
@@ -354,7 +354,7 @@ class CreditNote
      * @param  ?string  $note
      * @param  ?string  $terms
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
-     * @param  ?CustomMappings  $customMappings
+     * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $rowVersion
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy
@@ -362,7 +362,7 @@ class CreditNote
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(string $id, float $totalAmount, ?CreditNoteStatus $status = null, ?\DateTime $dateIssued = null, ?CreditNoteType $type = null, ?array $lineItems = null, ?array $allocations = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?LinkedCustomer $customer = null, ?string $companyId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $balance = null, ?float $remainingCredit = null, ?string $reference = null, ?\DateTime $datePaid = null, ?LinkedLedgerAccount $account = null, ?string $note = null, ?string $terms = null, ?array $trackingCategories = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(string $id, float $totalAmount, ?CreditNoteStatus $status = null, ?\DateTime $dateIssued = null, ?CreditNoteType $type = null, ?array $lineItems = null, ?array $allocations = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?LinkedCustomer $customer = null, ?string $companyId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $balance = null, ?float $remainingCredit = null, ?string $reference = null, ?\DateTime $datePaid = null, ?LinkedLedgerAccount $account = null, ?string $note = null, ?string $terms = null, ?array $trackingCategories = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->totalAmount = $totalAmount;

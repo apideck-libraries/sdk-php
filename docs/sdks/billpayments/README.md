@@ -39,6 +39,7 @@ $request = new Operations\AccountingBillPaymentsAllRequest(
     serviceId: 'salesforce',
     filter: new Components\PaymentsFilter(
         updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
+        invoiceId: '123',
     ),
     sort: new Components\PaymentsSort(
         by: Components\PaymentsSortBy::UpdatedAt,
@@ -177,7 +178,7 @@ $request = new Operations\AccountingBillPaymentsAddRequest(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
-                value: true,
+                value: 'Uses Salesforce and Marketo',
             ),
         ],
         rowVersion: '1-12345',
@@ -384,9 +385,7 @@ $request = new Operations\AccountingBillPaymentsUpdateRequest(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
-                value: [
-                    new Components\Six(),
-                ],
+                value: 'Uses Salesforce and Marketo',
             ),
         ],
         rowVersion: '1-12345',

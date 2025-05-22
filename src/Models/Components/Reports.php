@@ -105,12 +105,12 @@ class Reports
     /**
      * When custom mappings are configured on the resource, the result is included here.
      *
-     * @var ?CustomMappings $customMappings
+     * @var ?array<string, mixed> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CustomMappings $customMappings = null;
+    public ?array $customMappings = null;
 
     /**
      * The user who last updated the object.
@@ -159,14 +159,14 @@ class Reports
      * @param  ?float  $netAssets
      * @param  ?BalanceSheetUncategorizedItemsAccount  $uncategorizedItems
      * @param  ?Currency  $currency
-     * @param  ?CustomMappings  $customMappings
+     * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(string $endDate, BalanceSheetAssetsAccount $assets, BalanceSheetLiabilitiesAccount $liabilities, BalanceSheetEquityAccount $equity, ?string $id = null, ?string $reportName = null, ?string $startDate = null, ?float $netAssets = null, ?BalanceSheetUncategorizedItemsAccount $uncategorizedItems = null, ?Currency $currency = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(string $endDate, BalanceSheetAssetsAccount $assets, BalanceSheetLiabilitiesAccount $liabilities, BalanceSheetEquityAccount $equity, ?string $id = null, ?string $reportName = null, ?string $startDate = null, ?float $netAssets = null, ?BalanceSheetUncategorizedItemsAccount $uncategorizedItems = null, ?Currency $currency = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->endDate = $endDate;
         $this->assets = $assets;

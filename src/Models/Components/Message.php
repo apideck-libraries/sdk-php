@@ -178,12 +178,12 @@ class Message
     /**
      * When custom mappings are configured on the resource, the result is included here.
      *
-     * @var ?CustomMappings $customMappings
+     * @var ?array<string, mixed> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CustomMappings $customMappings = null;
+    public ?array $customMappings = null;
 
     /**
      * The user who last updated the object.
@@ -240,14 +240,14 @@ class Message
      * @param  ?Error  $error
      * @param  ?string  $messagingServiceId
      * @param  ?array<PassThroughBody>  $passThrough
-     * @param  ?CustomMappings  $customMappings
+     * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(string $from, string $to, string $body, ?string $id = null, ?string $subject = null, ?MessageType $type = null, ?int $numberOfUnits = null, ?int $numberOfMediaFiles = null, ?Direction $direction = null, ?MessageStatus $status = null, ?\DateTime $scheduledAt = null, ?\DateTime $sentAt = null, ?string $webhookUrl = null, ?string $reference = null, ?Price $price = null, ?Error $error = null, ?string $messagingServiceId = null, ?array $passThrough = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(string $from, string $to, string $body, ?string $id = null, ?string $subject = null, ?MessageType $type = null, ?int $numberOfUnits = null, ?int $numberOfMediaFiles = null, ?Direction $direction = null, ?MessageStatus $status = null, ?\DateTime $scheduledAt = null, ?\DateTime $sentAt = null, ?string $webhookUrl = null, ?string $reference = null, ?Price $price = null, ?Error $error = null, ?string $messagingServiceId = null, ?array $passThrough = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->from = $from;
         $this->to = $to;

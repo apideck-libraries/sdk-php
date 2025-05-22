@@ -440,12 +440,12 @@ class Activity
     /**
      * When custom mappings are configured on the resource, the result is included here.
      *
-     * @var ?CustomMappings $customMappings
+     * @var ?array<string, mixed> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CustomMappings $customMappings = null;
+    public ?array $customMappings = null;
 
     /**
      * The user who last updated the activity
@@ -531,14 +531,14 @@ class Activity
      * @param  ?bool  $reminderSet
      * @param  ?string  $videoConferenceUrl
      * @param  ?string  $videoConferenceId
-     * @param  ?CustomMappings  $customMappings
+     * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy
      * @param  ?string  $updatedAt
      * @param  ?string  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?ActivityType $type = null, ?Address $locationAddress = null, ?bool $recurrent = null, ?array $customFields = null, ?array $attendees = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $activityDatetime = null, ?int $durationSeconds = null, ?string $userId = null, ?string $accountId = null, ?string $contactId = null, ?string $companyId = null, ?string $opportunityId = null, ?string $leadId = null, ?string $ownerId = null, ?string $campaignId = null, ?string $caseId = null, ?string $assetId = null, ?string $contractId = null, ?string $productId = null, ?string $solutionId = null, ?string $customObjectId = null, ?string $title = null, ?string $description = null, ?string $note = null, ?string $location = null, ?bool $allDayEvent = null, ?bool $private = null, ?bool $groupEvent = null, ?string $eventSubType = null, ?string $groupEventType = null, ?bool $child = null, ?bool $archived = null, ?bool $deleted = null, ?ShowAs $showAs = null, ?bool $done = null, ?string $startDatetime = null, ?string $endDatetime = null, ?int $durationMinutes = null, ?string $activityDate = null, ?string $endDate = null, ?string $reminderDatetime = null, ?bool $reminderSet = null, ?string $videoConferenceUrl = null, ?string $videoConferenceId = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?string $updatedAt = null, ?string $createdAt = null)
+    public function __construct(?string $id = null, ?ActivityType $type = null, ?Address $locationAddress = null, ?bool $recurrent = null, ?array $customFields = null, ?array $attendees = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $activityDatetime = null, ?int $durationSeconds = null, ?string $userId = null, ?string $accountId = null, ?string $contactId = null, ?string $companyId = null, ?string $opportunityId = null, ?string $leadId = null, ?string $ownerId = null, ?string $campaignId = null, ?string $caseId = null, ?string $assetId = null, ?string $contractId = null, ?string $productId = null, ?string $solutionId = null, ?string $customObjectId = null, ?string $title = null, ?string $description = null, ?string $note = null, ?string $location = null, ?bool $allDayEvent = null, ?bool $private = null, ?bool $groupEvent = null, ?string $eventSubType = null, ?string $groupEventType = null, ?bool $child = null, ?bool $archived = null, ?bool $deleted = null, ?ShowAs $showAs = null, ?bool $done = null, ?string $startDatetime = null, ?string $endDatetime = null, ?int $durationMinutes = null, ?string $activityDate = null, ?string $endDate = null, ?string $reminderDatetime = null, ?bool $reminderSet = null, ?string $videoConferenceUrl = null, ?string $videoConferenceId = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?string $updatedAt = null, ?string $createdAt = null)
     {
         $this->id = $id;
         $this->type = $type;

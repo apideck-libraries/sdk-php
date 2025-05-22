@@ -162,12 +162,12 @@ class TimeOffRequest
     /**
      * When custom mappings are configured on the resource, the result is included here.
      *
-     * @var ?CustomMappings $customMappings
+     * @var ?array<string, mixed> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CustomMappings $customMappings = null;
+    public ?array $customMappings = null;
 
     /**
      * The user who last updated the object.
@@ -222,14 +222,14 @@ class TimeOffRequest
      * @param  ?Units  $units
      * @param  ?float  $amount
      * @param  ?string  $dayPart
-     * @param  ?CustomMappings  $customMappings
+     * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?Notes $notes = null, ?array $passThrough = null, ?string $policyType = null, ?string $employeeId = null, ?string $policyId = null, ?TimeOffRequestStatusStatus $status = null, ?string $description = null, ?string $startDate = null, ?string $endDate = null, ?string $requestDate = null, ?RequestType $requestType = null, ?string $approvalDate = null, ?Units $units = null, ?float $amount = null, ?string $dayPart = null, ?CustomMappings $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?Notes $notes = null, ?array $passThrough = null, ?string $policyType = null, ?string $employeeId = null, ?string $policyId = null, ?TimeOffRequestStatusStatus $status = null, ?string $description = null, ?string $startDate = null, ?string $endDate = null, ?string $requestDate = null, ?RequestType $requestType = null, ?string $approvalDate = null, ?Units $units = null, ?float $amount = null, ?string $dayPart = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->notes = $notes;

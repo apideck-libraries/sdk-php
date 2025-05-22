@@ -393,12 +393,12 @@ class Invoice
     /**
      * When custom mappings are configured on the resource, the result is included here.
      *
-     * @var ?CustomMappings $customMappings
+     * @var ?array<string, mixed> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CustomMappings $customMappings = null;
+    public ?array $customMappings = null;
 
     /**
      * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
@@ -487,7 +487,7 @@ class Invoice
      * @param  ?string  $language
      * @param  ?bool  $accountingByRow
      * @param  ?LinkedLedgerAccount  $ledgerAccount
-     * @param  ?CustomMappings  $customMappings
+     * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $rowVersion
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy
@@ -495,7 +495,7 @@ class Invoice
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?bool $invoiceSent = null, ?array $lineItems = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?InvoiceType $type = null, ?string $number = null, ?LinkedCustomer $customer = null, ?string $companyId = null, ?LocalDate $invoiceDate = null, ?LocalDate $dueDate = null, ?string $terms = null, ?string $poNumber = null, ?string $reference = null, ?InvoiceStatus $status = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?float $total = null, ?float $balance = null, ?float $deposit = null, ?string $customerMemo = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?string $templateId = null, ?string $sourceDocumentUrl = null, ?array $paymentAllocations = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?LinkedLedgerAccount $ledgerAccount = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?bool $invoiceSent = null, ?array $lineItems = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?InvoiceType $type = null, ?string $number = null, ?LinkedCustomer $customer = null, ?string $companyId = null, ?LocalDate $invoiceDate = null, ?LocalDate $dueDate = null, ?string $terms = null, ?string $poNumber = null, ?string $reference = null, ?InvoiceStatus $status = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?float $total = null, ?float $balance = null, ?float $deposit = null, ?string $customerMemo = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?string $templateId = null, ?string $sourceDocumentUrl = null, ?array $paymentAllocations = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?LinkedLedgerAccount $ledgerAccount = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->invoiceSent = $invoiceSent;

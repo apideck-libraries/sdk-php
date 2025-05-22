@@ -163,12 +163,12 @@ class TaxRate
     /**
      * When custom mappings are configured on the resource, the result is included here.
      *
-     * @var ?CustomMappings $customMappings
+     * @var ?array<string, mixed> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomMappings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CustomMappings $customMappings = null;
+    public ?array $customMappings = null;
 
     /**
      * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
@@ -232,7 +232,7 @@ class TaxRate
      * @param  ?string  $reportTaxType
      * @param  ?string  $originalTaxRateId
      * @param  ?TaxRateStatus  $status
-     * @param  ?CustomMappings  $customMappings
+     * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $rowVersion
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy
@@ -240,7 +240,7 @@ class TaxRate
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?array $passThrough = null, ?array $subsidiaries = null, ?array $customFields = null, ?string $id = null, ?string $code = null, ?string $description = null, ?float $effectiveTaxRate = null, ?float $totalTaxRate = null, ?string $taxPayableAccountId = null, ?string $taxRemittedAccountId = null, ?array $components = null, ?string $type = null, ?string $reportTaxType = null, ?string $originalTaxRateId = null, ?TaxRateStatus $status = null, ?CustomMappings $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $name = null, ?array $passThrough = null, ?array $subsidiaries = null, ?array $customFields = null, ?string $id = null, ?string $code = null, ?string $description = null, ?float $effectiveTaxRate = null, ?float $totalTaxRate = null, ?string $taxPayableAccountId = null, ?string $taxRemittedAccountId = null, ?array $components = null, ?string $type = null, ?string $reportTaxType = null, ?string $originalTaxRateId = null, ?TaxRateStatus $status = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->name = $name;
         $this->passThrough = $passThrough;
