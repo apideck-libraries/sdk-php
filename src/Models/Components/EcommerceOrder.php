@@ -80,6 +80,16 @@ class EcommerceOrder
     public ?array $lineItems = null;
 
     /**
+     * $refunds
+     *
+     * @var ?array<EcommerceOrderRefund> $refunds
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('refunds')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceOrderRefund>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $refunds = null;
+
+    /**
      * Order number, if any.
      *
      * @var ?string $orderNumber
@@ -245,6 +255,7 @@ class EcommerceOrder
      * @param  ?EcommerceAddress  $shippingAddress
      * @param  ?array<TrackingItem>  $tracking
      * @param  ?array<EcommerceOrderLineItem>  $lineItems
+     * @param  ?array<EcommerceOrderRefund>  $refunds
      * @param  ?string  $orderNumber
      * @param  ?Currency  $currency
      * @param  ?string  $subTotal
@@ -264,7 +275,7 @@ class EcommerceOrder
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, ?array $discounts = null, ?LinkedEcommerceCustomer $customer = null, ?EcommerceAddress $billingAddress = null, ?EcommerceAddress $shippingAddress = null, ?array $tracking = null, ?array $lineItems = null, ?string $orderNumber = null, ?Currency $currency = null, ?string $subTotal = null, ?string $shippingCost = null, ?string $couponDiscount = null, ?string $totalDiscount = null, ?string $totalTax = null, ?string $totalAmount = null, ?string $refundedAmount = null, ?EcommerceOrderStatus $status = null, ?EcommerceOrderPaymentStatus $paymentStatus = null, ?FulfillmentStatus $fulfillmentStatus = null, ?string $paymentMethod = null, ?string $note = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(string $id, ?array $discounts = null, ?LinkedEcommerceCustomer $customer = null, ?EcommerceAddress $billingAddress = null, ?EcommerceAddress $shippingAddress = null, ?array $tracking = null, ?array $lineItems = null, ?array $refunds = null, ?string $orderNumber = null, ?Currency $currency = null, ?string $subTotal = null, ?string $shippingCost = null, ?string $couponDiscount = null, ?string $totalDiscount = null, ?string $totalTax = null, ?string $totalAmount = null, ?string $refundedAmount = null, ?EcommerceOrderStatus $status = null, ?EcommerceOrderPaymentStatus $paymentStatus = null, ?FulfillmentStatus $fulfillmentStatus = null, ?string $paymentMethod = null, ?string $note = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
         $this->discounts = $discounts;
@@ -273,6 +284,7 @@ class EcommerceOrder
         $this->shippingAddress = $shippingAddress;
         $this->tracking = $tracking;
         $this->lineItems = $lineItems;
+        $this->refunds = $refunds;
         $this->orderNumber = $orderNumber;
         $this->currency = $currency;
         $this->subTotal = $subTotal;
