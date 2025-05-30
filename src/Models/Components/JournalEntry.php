@@ -97,6 +97,16 @@ class JournalEntry
     public ?string $companyId = null;
 
     /**
+     * Journal entry status
+     *
+     * @var ?JournalEntryStatus $status
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\JournalEntryStatus|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?JournalEntryStatus $status = null;
+
+    /**
      * Reference for the journal entry.
      *
      * @var ?string $memo
@@ -225,6 +235,7 @@ class JournalEntry
      * @param  ?float  $currencyRate
      * @param  ?Currency  $currency
      * @param  ?string  $companyId
+     * @param  ?JournalEntryStatus  $status
      * @param  ?string  $memo
      * @param  ?string  $journalSymbol
      * @param  ?string  $taxType
@@ -240,7 +251,7 @@ class JournalEntry
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?array $lineItems = null, ?\DateTime $postedAt = null, ?array $customFields = null, ?array $passThrough = null, ?string $title = null, ?float $currencyRate = null, ?Currency $currency = null, ?string $companyId = null, ?string $memo = null, ?string $journalSymbol = null, ?string $taxType = null, ?string $taxCode = null, ?string $number = null, ?array $trackingCategories = null, ?string $accountingPeriod = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null)
+    public function __construct(?string $id = null, ?array $lineItems = null, ?\DateTime $postedAt = null, ?array $customFields = null, ?array $passThrough = null, ?string $title = null, ?float $currencyRate = null, ?Currency $currency = null, ?string $companyId = null, ?JournalEntryStatus $status = null, ?string $memo = null, ?string $journalSymbol = null, ?string $taxType = null, ?string $taxCode = null, ?string $number = null, ?array $trackingCategories = null, ?string $accountingPeriod = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null)
     {
         $this->id = $id;
         $this->lineItems = $lineItems;
@@ -251,6 +262,7 @@ class JournalEntry
         $this->currencyRate = $currencyRate;
         $this->currency = $currency;
         $this->companyId = $companyId;
+        $this->status = $status;
         $this->memo = $memo;
         $this->journalSymbol = $journalSymbol;
         $this->taxType = $taxType;
