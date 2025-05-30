@@ -29,6 +29,10 @@ class Crm
 
     public Activities $activities;
 
+    public CustomObjectSchemas $customObjectSchemas;
+
+    public CustomObjects $customObjects;
+
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
@@ -43,6 +47,8 @@ class Crm
         $this->notes = new Notes($this->sdkConfiguration);
         $this->users = new Users($this->sdkConfiguration);
         $this->activities = new Activities($this->sdkConfiguration);
+        $this->customObjectSchemas = new CustomObjectSchemas($this->sdkConfiguration);
+        $this->customObjects = new CustomObjects($this->sdkConfiguration);
     }
     /**
      * @param  string  $baseUrl

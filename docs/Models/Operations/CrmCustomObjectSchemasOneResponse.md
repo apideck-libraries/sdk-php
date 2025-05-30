@@ -1,0 +1,10 @@
+# CrmCustomObjectSchemasOneResponse
+
+
+## Fields
+
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                            | [Components\HTTPMetadata](../../Models/Components/HTTPMetadata.md)                                    | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
+| `getCustomObjectSchemaResponse`                                                                       | [?Components\GetCustomObjectSchemaResponse](../../Models/Components/GetCustomObjectSchemaResponse.md) | :heavy_minus_sign:                                                                                    | Custom object schema                                                                                  |
+| `unexpectedErrorResponse`                                                                             | [?Components\UnexpectedErrorResponse](../../Models/Components/UnexpectedErrorResponse.md)             | :heavy_minus_sign:                                                                                    | Unexpected error                                                                                      |

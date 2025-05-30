@@ -22,13 +22,13 @@ class SDKConfiguration
 
     public string $language = 'php';
 
-    public string $openapiDocVersion = '10.16.8';
+    public string $openapiDocVersion = '10.17.2';
 
-    public string $sdkVersion = '0.9.3';
+    public string $sdkVersion = '0.10.0';
 
-    public string $genVersion = '2.610.0';
+    public string $genVersion = '2.616.1';
 
-    public string $userAgent = 'speakeasy-sdk/php 0.9.3 2.610.0 10.16.8 apideck-libraries/sdk-php';
+    public string $userAgent = 'speakeasy-sdk/php 0.10.0 2.616.1 10.17.2 apideck-libraries/sdk-php';
     /** @var array<string, array<string, array<string, mixed>>> */
     public ?array $globals = [
         'parameters' => [],
@@ -87,16 +87,5 @@ class SDKConfiguration
         }
 
         return Utils\Utils::templateUrl($this->getServerUrl(), []);
-    }
-
-    public function initHooks(\GuzzleHttp\ClientInterface $client): \GuzzleHttp\ClientInterface
-    {
-        $preHooksUrl = $this->getTemplatedServerUrl();
-        $ret = $this->hooks->sdkInit($preHooksUrl, $client);
-        if ($preHooksUrl != $ret->url) {
-            $this->serverUrl = $ret->url;
-        }
-
-        return $ret->client;
     }
 }
