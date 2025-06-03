@@ -17,7 +17,8 @@ class ProfitAndLossIndicator
      * @var ?float $total
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('total')]
-    public ?float $total;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $total = null;
 
     /**
      * @param  ?float  $total

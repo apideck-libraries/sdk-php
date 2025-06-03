@@ -65,15 +65,6 @@ class ProfitAndLoss
     public ?string $endDate = null;
 
     /**
-     * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
-     *
-     * @var ?Currency $currency
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
-    public ?Currency $currency;
-
-    /**
      * The cost of goods sold accounts
      *
      * @var ?CostOfGoodsSold $costOfGoodsSold
@@ -150,6 +141,16 @@ class ProfitAndLoss
     public ?string $customer = null;
 
     /**
+     * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
+     *
+     * @var ?Currency $currency
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Currency $currency = null;
+
+    /**
      * When custom mappings are configured on the resource, the result is included here.
      *
      * @var ?array<string, mixed> $customMappings
@@ -166,7 +167,6 @@ class ProfitAndLoss
      * @param  ?string  $id
      * @param  ?string  $startDate
      * @param  ?string  $endDate
-     * @param  ?Currency  $currency
      * @param  ?CostOfGoodsSold  $costOfGoodsSold
      * @param  ?OtherIncome  $otherIncome
      * @param  ?OtherExpenses  $otherExpenses
@@ -175,10 +175,11 @@ class ProfitAndLoss
      * @param  ?ProfitAndLossIndicator  $netOperatingIncome
      * @param  ?ProfitAndLossIndicator  $netIncome
      * @param  ?string  $customer
+     * @param  ?Currency  $currency
      * @param  ?array<string, mixed>  $customMappings
      * @phpstan-pure
      */
-    public function __construct(string $reportName, Income $income, Expenses $expenses, ?string $id = null, ?string $startDate = null, ?string $endDate = null, ?Currency $currency = null, ?CostOfGoodsSold $costOfGoodsSold = null, ?OtherIncome $otherIncome = null, ?OtherExpenses $otherExpenses = null, ?UncategorizedAccounts $uncategorizedAccounts = null, ?ProfitAndLossIndicator $grossProfit = null, ?ProfitAndLossIndicator $netOperatingIncome = null, ?ProfitAndLossIndicator $netIncome = null, ?string $customer = null, ?array $customMappings = null)
+    public function __construct(string $reportName, Income $income, Expenses $expenses, ?string $id = null, ?string $startDate = null, ?string $endDate = null, ?CostOfGoodsSold $costOfGoodsSold = null, ?OtherIncome $otherIncome = null, ?OtherExpenses $otherExpenses = null, ?UncategorizedAccounts $uncategorizedAccounts = null, ?ProfitAndLossIndicator $grossProfit = null, ?ProfitAndLossIndicator $netOperatingIncome = null, ?ProfitAndLossIndicator $netIncome = null, ?string $customer = null, ?Currency $currency = null, ?array $customMappings = null)
     {
         $this->reportName = $reportName;
         $this->income = $income;
@@ -186,7 +187,6 @@ class ProfitAndLoss
         $this->id = $id;
         $this->startDate = $startDate;
         $this->endDate = $endDate;
-        $this->currency = $currency;
         $this->costOfGoodsSold = $costOfGoodsSold;
         $this->otherIncome = $otherIncome;
         $this->otherExpenses = $otherExpenses;
@@ -195,6 +195,7 @@ class ProfitAndLoss
         $this->netOperatingIncome = $netOperatingIncome;
         $this->netIncome = $netIncome;
         $this->customer = $customer;
+        $this->currency = $currency;
         $this->customMappings = $customMappings;
     }
 }
