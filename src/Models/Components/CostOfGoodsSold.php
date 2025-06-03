@@ -48,14 +48,6 @@ class CostOfGoodsSold
     public ?string $title = null;
 
     /**
-     * The aggregated total of all accounts within this category.
-     *
-     * @var ?float $total
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('total')]
-    public ?float $total;
-
-    /**
      * The type of profit and loss
      *
      * @var ?ProfitAndLossType $type
@@ -66,21 +58,30 @@ class CostOfGoodsSold
     public ?ProfitAndLossType $type = null;
 
     /**
+     * The aggregated total of all accounts within this category.
+     *
+     * @var ?float $total
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('total')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $total = null;
+
+    /**
      * @param  mixed  $records
      * @param  ?string  $id
      * @param  ?string  $code
      * @param  ?string  $title
-     * @param  ?float  $total
      * @param  ?ProfitAndLossType  $type
+     * @param  ?float  $total
      * @phpstan-pure
      */
-    public function __construct(mixed $records, ?string $id = null, ?string $code = null, ?string $title = null, ?float $total = null, ?ProfitAndLossType $type = null)
+    public function __construct(mixed $records, ?string $id = null, ?string $code = null, ?string $title = null, ?ProfitAndLossType $type = null, ?float $total = null)
     {
         $this->records = $records;
         $this->id = $id;
         $this->code = $code;
         $this->title = $title;
-        $this->total = $total;
         $this->type = $type;
+        $this->total = $total;
     }
 }

@@ -19,4 +19,5 @@ enum JournalEntryStatus: string
     case Voided = 'voided';
     case Rejected = 'rejected';
     case Deleted = 'deleted';
+    case Other = 'other';
 }
