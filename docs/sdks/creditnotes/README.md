@@ -28,11 +28,11 @@ use Apideck\Unify\Models\Operations;
 use Apideck\Unify\Utils;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingCreditNotesAllRequest(
@@ -42,6 +42,7 @@ $request = new Operations\AccountingCreditNotesAllRequest(
     ),
     sort: new Components\CreditNotesSort(
         by: Components\CreditNotesSortBy::UpdatedAt,
+        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',
@@ -99,11 +100,11 @@ use Apideck\Unify\Models\Operations;
 use Apideck\Unify\Utils;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingCreditNotesAddRequest(
@@ -162,6 +163,10 @@ $request = new Operations\AccountingCreditNotesAddRequest(
                     rate: 10,
                 ),
                 trackingCategories: [
+                    new Components\LinkedTrackingCategory(
+                        id: '123456',
+                        name: 'New York',
+                    ),
                     new Components\LinkedTrackingCategory(
                         id: '123456',
                         name: 'New York',
@@ -257,6 +262,18 @@ $request = new Operations\AccountingCreditNotesAddRequest(
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo',
+            ),
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo',
+            ),
         ],
         rowVersion: '1-12345',
         passThrough: [
@@ -322,11 +339,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingCreditNotesOneRequest(
@@ -382,11 +399,11 @@ use Apideck\Unify\Models\Operations;
 use Apideck\Unify\Utils;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingCreditNotesUpdateRequest(
@@ -463,11 +480,28 @@ $request = new Operations\AccountingCreditNotesUpdateRequest(
                         description: 'Employee Level',
                         value: 'Uses Salesforce and Marketo',
                     ),
+                    new Components\CustomField(
+                        id: '2389328923893298',
+                        name: 'employee_level',
+                        description: 'Employee Level',
+                        value: 'Uses Salesforce and Marketo',
+                    ),
+                    new Components\CustomField(
+                        id: '2389328923893298',
+                        name: 'employee_level',
+                        description: 'Employee Level',
+                        value: 'Uses Salesforce and Marketo',
+                    ),
                 ],
                 rowVersion: '1-12345',
             ),
         ],
         allocations: [
+            new Components\AllocationInput(
+                id: '123456',
+                amount: 49.99,
+                allocationId: '123456',
+            ),
             new Components\AllocationInput(
                 id: '123456',
                 amount: 49.99,
@@ -533,8 +567,18 @@ $request = new Operations\AccountingCreditNotesUpdateRequest(
                 id: '123456',
                 name: 'New York',
             ),
+            new Components\LinkedTrackingCategory(
+                id: '123456',
+                name: 'New York',
+            ),
         ],
         customFields: [
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo',
+            ),
             new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
@@ -606,11 +650,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingCreditNotesDeleteRequest(
