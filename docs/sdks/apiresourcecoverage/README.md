@@ -21,19 +21,17 @@ require 'vendor/autoload.php';
 use Apideck\Unify;
 
 $sdk = Unify\Apideck::builder()
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 
 
 $response = $sdk->connector->apiResourceCoverage->get(
     id: '<id>',
-    resourceId: '<id>',
-    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX'
+    resourceId: '<id>'
 
 );
 

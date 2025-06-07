@@ -26,11 +26,10 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 
 $sdk = Unify\Apideck::builder()
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $consumer = new Components\ConsumerInput(
@@ -44,9 +43,7 @@ $consumer = new Components\ConsumerInput(
 );
 
 $response = $sdk->vault->consumers->create(
-    consumer: $consumer,
-    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX'
-
+    consumer: $consumer
 );
 
 if ($response->createConsumerResponse !== null) {
@@ -91,20 +88,16 @@ require 'vendor/autoload.php';
 use Apideck\Unify;
 
 $sdk = Unify\Apideck::builder()
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 
 
 $responses = $sdk->vault->consumers->list(
-    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
-    cursor: '<value>',
     limit: 20
-
 );
 
 
@@ -153,19 +146,16 @@ require 'vendor/autoload.php';
 use Apideck\Unify;
 
 $sdk = Unify\Apideck::builder()
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 
 
 $response = $sdk->vault->consumers->get(
-    consumerId: 'test_user_id',
-    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX'
-
+    consumerId: 'test_user_id'
 );
 
 if ($response->getConsumerResponse !== null) {
@@ -210,11 +200,10 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 
 $sdk = Unify\Apideck::builder()
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $updateConsumerRequest = new Components\UpdateConsumerRequest(
@@ -228,8 +217,7 @@ $updateConsumerRequest = new Components\UpdateConsumerRequest(
 
 $response = $sdk->vault->consumers->update(
     consumerId: 'test_user_id',
-    updateConsumerRequest: $updateConsumerRequest,
-    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX'
+    updateConsumerRequest: $updateConsumerRequest
 
 );
 
@@ -275,19 +263,16 @@ require 'vendor/autoload.php';
 use Apideck\Unify;
 
 $sdk = Unify\Apideck::builder()
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 
 
 $response = $sdk->vault->consumers->delete(
-    consumerId: 'test_user_id',
-    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX'
-
+    consumerId: 'test_user_id'
 );
 
 if ($response->deleteConsumerResponse !== null) {

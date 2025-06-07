@@ -25,20 +25,16 @@ require 'vendor/autoload.php';
 use Apideck\Unify;
 
 $sdk = Unify\Apideck::builder()
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 
 
 $responses = $sdk->webhook->webhooks->list(
-    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
-    cursor: '<value>',
     limit: 20
-
 );
 
 
@@ -87,11 +83,10 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 
 $sdk = Unify\Apideck::builder()
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $createWebhookRequest = new Components\CreateWebhookRequest(
@@ -106,9 +101,7 @@ $createWebhookRequest = new Components\CreateWebhookRequest(
 );
 
 $response = $sdk->webhook->webhooks->create(
-    createWebhookRequest: $createWebhookRequest,
-    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX'
-
+    createWebhookRequest: $createWebhookRequest
 );
 
 if ($response->createWebhookResponse !== null) {
@@ -152,19 +145,16 @@ require 'vendor/autoload.php';
 use Apideck\Unify;
 
 $sdk = Unify\Apideck::builder()
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 
 
 $response = $sdk->webhook->webhooks->get(
-    id: '<id>',
-    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX'
-
+    id: '<id>'
 );
 
 if ($response->getWebhookResponse !== null) {
@@ -209,11 +199,10 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 
 $sdk = Unify\Apideck::builder()
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $updateWebhookRequest = new Components\UpdateWebhookRequest(
@@ -228,8 +217,7 @@ $updateWebhookRequest = new Components\UpdateWebhookRequest(
 
 $response = $sdk->webhook->webhooks->update(
     id: '<id>',
-    updateWebhookRequest: $updateWebhookRequest,
-    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX'
+    updateWebhookRequest: $updateWebhookRequest
 
 );
 
@@ -275,19 +263,16 @@ require 'vendor/autoload.php';
 use Apideck\Unify;
 
 $sdk = Unify\Apideck::builder()
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 
 
 $response = $sdk->webhook->webhooks->delete(
-    id: '<id>',
-    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX'
-
+    id: '<id>'
 );
 
 if ($response->deleteWebhookResponse !== null) {

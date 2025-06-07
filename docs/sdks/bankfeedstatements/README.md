@@ -26,11 +26,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingBankFeedStatementsAllRequest(
@@ -91,11 +91,11 @@ use Apideck\Unify\Models\Operations;
 use Apideck\Unify\Utils;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingBankFeedStatementsAddRequest(
@@ -110,6 +110,26 @@ $request = new Operations\AccountingBankFeedStatementsAddRequest(
         endBalance: 9800.5,
         endBalanceCreditOrDebit: Components\CreditOrDebit::Debit,
         transactions: [
+            new Components\Transactions(
+                postedDate: Utils\Utils::parseDateTime('2025-01-15T12:00:00.000Z'),
+                description: 'Payment received from ACME Corp',
+                amount: 250,
+                creditOrDebit: Components\CreditOrDebit::Debit,
+                sourceTransactionId: 'txn_987',
+                counterparty: 'ACME Corp',
+                reference: 'INV-2025-01',
+                transactionType: Components\BankFeedStatementTransactionType::Payment,
+            ),
+            new Components\Transactions(
+                postedDate: Utils\Utils::parseDateTime('2025-01-15T12:00:00.000Z'),
+                description: 'Payment received from ACME Corp',
+                amount: 250,
+                creditOrDebit: Components\CreditOrDebit::Debit,
+                sourceTransactionId: 'txn_987',
+                counterparty: 'ACME Corp',
+                reference: 'INV-2025-01',
+                transactionType: Components\BankFeedStatementTransactionType::Payment,
+            ),
             new Components\Transactions(
                 postedDate: Utils\Utils::parseDateTime('2025-01-15T12:00:00.000Z'),
                 description: 'Payment received from ACME Corp',
@@ -169,11 +189,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingBankFeedStatementsOneRequest(
@@ -229,11 +249,11 @@ use Apideck\Unify\Models\Operations;
 use Apideck\Unify\Utils;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingBankFeedStatementsUpdateRequest(
@@ -249,6 +269,16 @@ $request = new Operations\AccountingBankFeedStatementsUpdateRequest(
         endBalance: 9800.5,
         endBalanceCreditOrDebit: Components\CreditOrDebit::Debit,
         transactions: [
+            new Components\Transactions(
+                postedDate: Utils\Utils::parseDateTime('2025-01-15T12:00:00.000Z'),
+                description: 'Payment received from ACME Corp',
+                amount: 250,
+                creditOrDebit: Components\CreditOrDebit::Debit,
+                sourceTransactionId: 'txn_987',
+                counterparty: 'ACME Corp',
+                reference: 'INV-2025-01',
+                transactionType: Components\BankFeedStatementTransactionType::Payment,
+            ),
             new Components\Transactions(
                 postedDate: Utils\Utils::parseDateTime('2025-01-15T12:00:00.000Z'),
                 description: 'Payment received from ACME Corp',
@@ -308,11 +338,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingBankFeedStatementsDeleteRequest(

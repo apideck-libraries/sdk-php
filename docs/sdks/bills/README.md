@@ -28,11 +28,11 @@ use Apideck\Unify\Models\Operations;
 use Apideck\Unify\Utils;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingBillsAllRequest(
@@ -42,6 +42,7 @@ $request = new Operations\AccountingBillsAllRequest(
     ),
     sort: new Components\BillsSort(
         by: Components\By::UpdatedAt,
+        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',
@@ -99,11 +100,11 @@ use Apideck\Unify\Models\Operations;
 use Brick\DateTime\LocalDate;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingBillsAddRequest(
@@ -184,6 +185,14 @@ $request = new Operations\AccountingBillsAddRequest(
                         id: '123456',
                         name: 'New York',
                     ),
+                    new Components\LinkedTrackingCategory(
+                        id: '123456',
+                        name: 'New York',
+                    ),
+                    new Components\LinkedTrackingCategory(
+                        id: '123456',
+                        name: 'New York',
+                    ),
                 ],
                 rowVersion: '1-12345',
             ),
@@ -221,14 +230,21 @@ $request = new Operations\AccountingBillsAddRequest(
         ),
         discountPercentage: 5.5,
         sourceDocumentUrl: 'https://www.invoicesolution.com/bill/123456',
-        trackingCategories: [
-            new Components\LinkedTrackingCategory(
-                id: '123456',
-                name: 'New York',
-            ),
-        ],
+        trackingCategories: null,
         rowVersion: '1-12345',
         customFields: [
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo',
+            ),
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo',
+            ),
             new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
@@ -240,6 +256,80 @@ $request = new Operations\AccountingBillsAddRequest(
             new Components\PassThroughBody(
                 serviceId: '<id>',
                 extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
                     new Components\ExtendPaths(
                         path: '$.nested.property',
                         value: [
@@ -300,11 +390,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingBillsOneRequest(
@@ -360,11 +450,11 @@ use Apideck\Unify\Models\Operations;
 use Brick\DateTime\LocalDate;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingBillsUpdateRequest(
@@ -449,6 +539,43 @@ $request = new Operations\AccountingBillsUpdateRequest(
                 ],
                 rowVersion: '1-12345',
             ),
+            new Components\BillLineItemInput(
+                rowId: '12345',
+                code: '120-C',
+                lineNumber: 1,
+                description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
+                type: Components\BillLineItemType::ExpenseAccount,
+                taxAmount: 27500,
+                totalAmount: 27500,
+                quantity: 1,
+                unitPrice: 27500.5,
+                unitOfMeasure: 'pc.',
+                discountPercentage: 0.01,
+                discountAmount: 19.99,
+                locationId: '12345',
+                departmentId: '12345',
+                item: new Components\LinkedInvoiceItem(
+                    id: '12344',
+                    code: '120-C',
+                    name: 'Model Y',
+                ),
+                taxRate: new Components\LinkedTaxRateInput(
+                    id: '123456',
+                    rate: 10,
+                ),
+                ledgerAccount: new Components\LinkedLedgerAccountInput(
+                    id: '123456',
+                    nominalCode: 'N091',
+                    code: '453',
+                ),
+                trackingCategories: [
+                    new Components\LinkedTrackingCategory(
+                        id: '123456',
+                        name: 'New York',
+                    ),
+                ],
+                rowVersion: '1-12345',
+            ),
         ],
         terms: 'Net 30 days',
         balance: 27500,
@@ -497,8 +624,27 @@ $request = new Operations\AccountingBillsUpdateRequest(
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo',
+            ),
         ],
         passThrough: [
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
             new Components\PassThroughBody(
                 serviceId: '<id>',
                 extendPaths: [
@@ -562,11 +708,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingBillsDeleteRequest(
