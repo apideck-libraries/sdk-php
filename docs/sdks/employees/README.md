@@ -27,11 +27,11 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\HrisEmployeesAllRequest(
@@ -51,6 +51,7 @@ $request = new Operations\HrisEmployeesAllRequest(
     ),
     sort: new Components\EmployeesSort(
         by: Components\EmployeesSortBy::CreatedAt,
+        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',
@@ -108,11 +109,11 @@ use Apideck\Unify\Models\Operations;
 use Brick\DateTime\LocalDate;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\HrisEmployeesAddRequest(
@@ -224,6 +225,84 @@ $request = new Operations\HrisEmployeesAddRequest(
                     rowVersion: '1-12345',
                 ),
             ),
+            new Components\EmployeeJobInput(
+                title: 'CEO',
+                role: 'Sales',
+                startDate: LocalDate::parse('2020-08-12'),
+                endDate: LocalDate::parse('2020-08-12'),
+                compensationRate: 72000,
+                currency: Components\Currency::Usd,
+                paymentUnit: Components\PaymentUnit::Year,
+                hiredAt: LocalDate::parse('2020-08-12'),
+                isPrimary: true,
+                isManager: true,
+                status: Components\EmployeeJobStatus::Active,
+                location: new Components\Address(
+                    id: '123',
+                    type: Components\Type::Primary,
+                    string: '25 Spring Street, Blackburn, VIC 3130',
+                    name: 'HQ US',
+                    line1: 'Main street',
+                    line2: 'apt #',
+                    line3: 'Suite #',
+                    line4: 'delivery instructions',
+                    streetNumber: '25',
+                    city: 'San Francisco',
+                    state: 'CA',
+                    postalCode: '94104',
+                    country: 'US',
+                    latitude: '40.759211',
+                    longitude: '-73.984638',
+                    county: 'Santa Clara',
+                    contactName: 'Elon Musk',
+                    salutation: 'Mr',
+                    phoneNumber: '111-111-1111',
+                    fax: '122-111-1111',
+                    email: 'elon@musk.com',
+                    website: 'https://elonmusk.com',
+                    notes: 'Address notes or delivery instructions.',
+                    rowVersion: '1-12345',
+                ),
+            ),
+            new Components\EmployeeJobInput(
+                title: 'CEO',
+                role: 'Sales',
+                startDate: LocalDate::parse('2020-08-12'),
+                endDate: LocalDate::parse('2020-08-12'),
+                compensationRate: 72000,
+                currency: Components\Currency::Usd,
+                paymentUnit: Components\PaymentUnit::Year,
+                hiredAt: LocalDate::parse('2020-08-12'),
+                isPrimary: true,
+                isManager: true,
+                status: Components\EmployeeJobStatus::Active,
+                location: new Components\Address(
+                    id: '123',
+                    type: Components\Type::Primary,
+                    string: '25 Spring Street, Blackburn, VIC 3130',
+                    name: 'HQ US',
+                    line1: 'Main street',
+                    line2: 'apt #',
+                    line3: 'Suite #',
+                    line4: 'delivery instructions',
+                    streetNumber: '25',
+                    city: 'San Francisco',
+                    state: 'CA',
+                    postalCode: '94104',
+                    country: 'US',
+                    latitude: '40.759211',
+                    longitude: '-73.984638',
+                    county: 'Santa Clara',
+                    contactName: 'Elon Musk',
+                    salutation: 'Mr',
+                    phoneNumber: '111-111-1111',
+                    fax: '122-111-1111',
+                    email: 'elon@musk.com',
+                    website: 'https://elonmusk.com',
+                    notes: 'Address notes or delivery instructions.',
+                    rowVersion: '1-12345',
+                ),
+            ),
         ],
         compensations: [
             new Components\EmployeeCompensationInput(
@@ -235,6 +314,32 @@ $request = new Operations\HrisEmployeesAddRequest(
         ],
         worksRemote: true,
         addresses: [
+            new Components\Address(
+                id: '123',
+                type: Components\Type::Primary,
+                string: '25 Spring Street, Blackburn, VIC 3130',
+                name: 'HQ US',
+                line1: 'Main street',
+                line2: 'apt #',
+                line3: 'Suite #',
+                line4: 'delivery instructions',
+                streetNumber: '25',
+                city: 'San Francisco',
+                state: 'CA',
+                postalCode: '94104',
+                country: 'US',
+                latitude: '40.759211',
+                longitude: '-73.984638',
+                county: 'Santa Clara',
+                contactName: 'Elon Musk',
+                salutation: 'Mr',
+                phoneNumber: '111-111-1111',
+                fax: '122-111-1111',
+                email: 'elon@musk.com',
+                website: 'https://elonmusk.com',
+                notes: 'Address notes or delivery instructions.',
+                rowVersion: '1-12345',
+            ),
             new Components\Address(
                 id: '123',
                 type: Components\Type::Primary,
@@ -286,6 +391,12 @@ $request = new Operations\HrisEmployeesAddRequest(
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo',
+            ),
         ],
         socialLinks: [
             new Components\SocialLink(
@@ -293,8 +404,39 @@ $request = new Operations\HrisEmployeesAddRequest(
                 url: 'https://www.twitter.com/apideck',
                 type: 'twitter',
             ),
+            new Components\SocialLink(
+                id: '12345',
+                url: 'https://www.twitter.com/apideck',
+                type: 'twitter',
+            ),
         ],
         bankAccounts: [
+            new Components\BankAccount(
+                bankName: 'Monzo',
+                accountNumber: '123465',
+                accountName: 'SPACEX LLC',
+                accountType: Components\AccountType::CreditCard,
+                iban: 'CH2989144532982975332',
+                bic: 'AUDSCHGGXXX',
+                routingNumber: '012345678',
+                bsbNumber: '062-001',
+                branchIdentifier: '001',
+                bankCode: 'BNH',
+                currency: Components\Currency::Usd,
+            ),
+            new Components\BankAccount(
+                bankName: 'Monzo',
+                accountNumber: '123465',
+                accountName: 'SPACEX LLC',
+                accountType: Components\AccountType::CreditCard,
+                iban: 'CH2989144532982975332',
+                bic: 'AUDSCHGGXXX',
+                routingNumber: '012345678',
+                bsbNumber: '062-001',
+                branchIdentifier: '001',
+                bankCode: 'BNH',
+                currency: Components\Currency::Usd,
+            ),
             new Components\BankAccount(
                 bankName: 'Monzo',
                 accountNumber: '123465',
@@ -328,6 +470,56 @@ $request = new Operations\HrisEmployeesAddRequest(
             new Components\PassThroughBody(
                 serviceId: '<id>',
                 extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
                     new Components\ExtendPaths(
                         path: '$.nested.property',
                         value: [
@@ -388,11 +580,11 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\HrisEmployeesOneRequest(
@@ -454,11 +646,11 @@ use Apideck\Unify\Models\Operations;
 use Brick\DateTime\LocalDate;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\HrisEmployeesUpdateRequest(
@@ -618,6 +810,14 @@ $request = new Operations\HrisEmployeesUpdateRequest(
                 extension: '105',
                 type: Components\PhoneNumberType::Primary,
             ),
+            new Components\PhoneNumber(
+                id: '12345',
+                countryCode: '1',
+                areaCode: '323',
+                number: '111-111-1111',
+                extension: '105',
+                type: Components\PhoneNumberType::Primary,
+            ),
         ],
         emails: [
             new Components\Email(
@@ -633,8 +833,25 @@ $request = new Operations\HrisEmployeesUpdateRequest(
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo',
+            ),
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo',
+            ),
         ],
         socialLinks: [
+            new Components\SocialLink(
+                id: '12345',
+                url: 'https://www.twitter.com/apideck',
+                type: 'twitter',
+            ),
             new Components\SocialLink(
                 id: '12345',
                 url: 'https://www.twitter.com/apideck',
@@ -672,6 +889,19 @@ $request = new Operations\HrisEmployeesUpdateRequest(
         rowVersion: '1-12345',
         deleted: true,
         passThrough: [
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
             new Components\PassThroughBody(
                 serviceId: '<id>',
                 extendPaths: [
@@ -734,11 +964,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\HrisEmployeesDeleteRequest(

@@ -27,11 +27,11 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\CrmCompaniesAllRequest(
@@ -41,6 +41,7 @@ $request = new Operations\CrmCompaniesAllRequest(
     ),
     sort: new Components\CompaniesSort(
         by: Components\CompaniesSortBy::CreatedAt,
+        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',
@@ -98,11 +99,11 @@ use Apideck\Unify\Models\Operations;
 use Brick\DateTime\LocalDate;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\CrmCompaniesAddRequest(
@@ -128,6 +129,32 @@ $request = new Operations\CrmCompaniesAddRequest(
         firstName: 'Elon',
         lastName: 'Musk',
         bankAccounts: [
+            new Components\BankAccount(
+                bankName: 'Monzo',
+                accountNumber: '123465',
+                accountName: 'SPACEX LLC',
+                accountType: Components\AccountType::CreditCard,
+                iban: 'CH2989144532982975332',
+                bic: 'AUDSCHGGXXX',
+                routingNumber: '012345678',
+                bsbNumber: '062-001',
+                branchIdentifier: '001',
+                bankCode: 'BNH',
+                currency: Components\Currency::Usd,
+            ),
+            new Components\BankAccount(
+                bankName: 'Monzo',
+                accountNumber: '123465',
+                accountName: 'SPACEX LLC',
+                accountType: Components\AccountType::CreditCard,
+                iban: 'CH2989144532982975332',
+                bic: 'AUDSCHGGXXX',
+                routingNumber: '012345678',
+                bsbNumber: '062-001',
+                branchIdentifier: '001',
+                bankCode: 'BNH',
+                currency: Components\Currency::Usd,
+            ),
             new Components\BankAccount(
                 bankName: 'Monzo',
                 accountNumber: '123465',
@@ -193,6 +220,22 @@ $request = new Operations\CrmCompaniesAddRequest(
                 extension: '105',
                 type: Components\PhoneNumberType::Primary,
             ),
+            new Components\PhoneNumber(
+                id: '12345',
+                countryCode: '1',
+                areaCode: '323',
+                number: '111-111-1111',
+                extension: '105',
+                type: Components\PhoneNumberType::Primary,
+            ),
+            new Components\PhoneNumber(
+                id: '12345',
+                countryCode: '1',
+                areaCode: '323',
+                number: '111-111-1111',
+                extension: '105',
+                type: Components\PhoneNumberType::Primary,
+            ),
         ],
         emails: [
             new Components\Email(
@@ -212,6 +255,12 @@ $request = new Operations\CrmCompaniesAddRequest(
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo',
+            ),
         ],
         tags: [
             'New',
@@ -223,6 +272,22 @@ $request = new Operations\CrmCompaniesAddRequest(
             new Components\PassThroughBody(
                 serviceId: '<id>',
                 extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
                     new Components\ExtendPaths(
                         path: '$.nested.property',
                         value: [
@@ -282,11 +347,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\CrmCompaniesOneRequest(
@@ -342,11 +407,11 @@ use Apideck\Unify\Models\Operations;
 use Brick\DateTime\LocalDate;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\CrmCompaniesUpdateRequest(
@@ -393,8 +458,70 @@ $request = new Operations\CrmCompaniesUpdateRequest(
                 url: 'http://example.com',
                 type: Components\WebsiteType::Primary,
             ),
+            new Components\Website(
+                id: '12345',
+                url: 'http://example.com',
+                type: Components\WebsiteType::Primary,
+            ),
+            new Components\Website(
+                id: '12345',
+                url: 'http://example.com',
+                type: Components\WebsiteType::Primary,
+            ),
         ],
         addresses: [
+            new Components\Address(
+                id: '123',
+                type: Components\Type::Primary,
+                string: '25 Spring Street, Blackburn, VIC 3130',
+                name: 'HQ US',
+                line1: 'Main street',
+                line2: 'apt #',
+                line3: 'Suite #',
+                line4: 'delivery instructions',
+                streetNumber: '25',
+                city: 'San Francisco',
+                state: 'CA',
+                postalCode: '94104',
+                country: 'US',
+                latitude: '40.759211',
+                longitude: '-73.984638',
+                county: 'Santa Clara',
+                contactName: 'Elon Musk',
+                salutation: 'Mr',
+                phoneNumber: '111-111-1111',
+                fax: '122-111-1111',
+                email: 'elon@musk.com',
+                website: 'https://elonmusk.com',
+                notes: 'Address notes or delivery instructions.',
+                rowVersion: '1-12345',
+            ),
+            new Components\Address(
+                id: '123',
+                type: Components\Type::Primary,
+                string: '25 Spring Street, Blackburn, VIC 3130',
+                name: 'HQ US',
+                line1: 'Main street',
+                line2: 'apt #',
+                line3: 'Suite #',
+                line4: 'delivery instructions',
+                streetNumber: '25',
+                city: 'San Francisco',
+                state: 'CA',
+                postalCode: '94104',
+                country: 'US',
+                latitude: '40.759211',
+                longitude: '-73.984638',
+                county: 'Santa Clara',
+                contactName: 'Elon Musk',
+                salutation: 'Mr',
+                phoneNumber: '111-111-1111',
+                fax: '122-111-1111',
+                email: 'elon@musk.com',
+                website: 'https://elonmusk.com',
+                notes: 'Address notes or delivery instructions.',
+                rowVersion: '1-12345',
+            ),
             new Components\Address(
                 id: '123',
                 type: Components\Type::Primary,
@@ -438,6 +565,14 @@ $request = new Operations\CrmCompaniesUpdateRequest(
                 extension: '105',
                 type: Components\PhoneNumberType::Primary,
             ),
+            new Components\PhoneNumber(
+                id: '12345',
+                countryCode: '1',
+                areaCode: '323',
+                number: '111-111-1111',
+                extension: '105',
+                type: Components\PhoneNumberType::Primary,
+            ),
         ],
         emails: [
             new Components\Email(
@@ -457,6 +592,12 @@ $request = new Operations\CrmCompaniesUpdateRequest(
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo',
+            ),
         ],
         tags: [
             'New',
@@ -465,6 +606,32 @@ $request = new Operations\CrmCompaniesUpdateRequest(
         salutation: 'Mr',
         birthday: LocalDate::parse('2000-08-12'),
         passThrough: [
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
             new Components\PassThroughBody(
                 serviceId: '<id>',
                 extendPaths: [
@@ -527,11 +694,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\CrmCompaniesDeleteRequest(

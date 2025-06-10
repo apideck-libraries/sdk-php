@@ -27,11 +27,11 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\IssueTrackingCollectionTicketsAllRequest(
@@ -39,6 +39,7 @@ $request = new Operations\IssueTrackingCollectionTicketsAllRequest(
     collectionId: 'apideck-io',
     sort: new Components\TicketsSort(
         by: Components\TicketsSortBy::CreatedAt,
+        direction: Components\SortDirection::Desc,
     ),
     filter: new Components\IssuesFilter(
         status: [
@@ -101,11 +102,11 @@ use Apideck\Unify\Models\Operations;
 use Apideck\Unify\Utils;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\IssueTrackingCollectionTicketsAddRequest(
@@ -122,9 +123,21 @@ $request = new Operations\IssueTrackingCollectionTicketsAddRequest(
             new Components\AssigneeInput(
                 id: '12345',
             ),
+            new Components\AssigneeInput(
+                id: '12345',
+            ),
+            new Components\AssigneeInput(
+                id: '12345',
+            ),
         ],
         dueDate: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
         tags: [
+            new Components\CollectionTagInput(
+                id: '12345',
+            ),
+            new Components\CollectionTagInput(
+                id: '12345',
+            ),
             new Components\CollectionTagInput(
                 id: '12345',
             ),
@@ -133,6 +146,56 @@ $request = new Operations\IssueTrackingCollectionTicketsAddRequest(
             new Components\PassThroughBody(
                 serviceId: '<id>',
                 extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
                     new Components\ExtendPaths(
                         path: '$.nested.property',
                         value: [
@@ -192,11 +255,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\IssueTrackingCollectionTicketsOneRequest(
@@ -253,11 +316,11 @@ use Apideck\Unify\Models\Operations;
 use Apideck\Unify\Utils;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\IssueTrackingCollectionTicketsUpdateRequest(
@@ -275,6 +338,9 @@ $request = new Operations\IssueTrackingCollectionTicketsUpdateRequest(
             new Components\AssigneeInput(
                 id: '12345',
             ),
+            new Components\AssigneeInput(
+                id: '12345',
+            ),
         ],
         dueDate: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
         tags: [
@@ -286,6 +352,56 @@ $request = new Operations\IssueTrackingCollectionTicketsUpdateRequest(
             new Components\PassThroughBody(
                 serviceId: '<id>',
                 extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
                     new Components\ExtendPaths(
                         path: '$.nested.property',
                         value: [
@@ -345,11 +461,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\IssueTrackingCollectionTicketsDeleteRequest(

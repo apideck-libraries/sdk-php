@@ -29,11 +29,11 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\FileStorageFilesAllRequest(
@@ -45,6 +45,7 @@ $request = new Operations\FileStorageFilesAllRequest(
     ),
     sort: new Components\FilesSort(
         by: Components\FilesSortBy::UpdatedAt,
+        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',
@@ -101,11 +102,11 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\FileStorageFilesSearchRequest(
@@ -169,11 +170,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\FileStorageFilesOneRequest(
@@ -228,11 +229,11 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\FileStorageFilesUpdateRequest(
@@ -305,11 +306,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\FileStorageFilesDeleteRequest(
@@ -362,11 +363,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\FileStorageFilesDownloadRequest(
@@ -420,11 +421,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\FileStorageFilesExportRequest(

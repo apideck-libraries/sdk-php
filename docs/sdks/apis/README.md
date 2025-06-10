@@ -23,11 +23,10 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 
 $sdk = Unify\Apideck::builder()
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $filter = new Components\ApisFilter(
@@ -35,8 +34,6 @@ $filter = new Components\ApisFilter(
 );
 
 $responses = $sdk->connector->apis->list(
-    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
-    cursor: '<value>',
     limit: 20,
     filter: $filter
 
@@ -86,19 +83,16 @@ require 'vendor/autoload.php';
 use Apideck\Unify;
 
 $sdk = Unify\Apideck::builder()
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 
 
 $response = $sdk->connector->apis->get(
-    id: '<id>',
-    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX'
-
+    id: '<id>'
 );
 
 if ($response->getApiResponse !== null) {

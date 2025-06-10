@@ -33,12 +33,12 @@ class Session
     /**
      * Settings to change the way the Vault is displayed.
      *
-     * @var ?SessionSettings $settings
+     * @var ?Settings $settings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('settings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\SessionSettings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Settings|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?SessionSettings $settings = null;
+    public ?Settings $settings = null;
 
     /**
      * Theming options to change the look and feel of Vault.
@@ -63,12 +63,12 @@ class Session
     /**
      * @param  ?ConsumerMetadata  $consumerMetadata
      * @param  ?string  $redirectUri
-     * @param  ?SessionSettings  $settings
+     * @param  ?Settings  $settings
      * @param  ?Theme  $theme
      * @param  ?array<string, mixed>  $customConsumerSettings
      * @phpstan-pure
      */
-    public function __construct(?ConsumerMetadata $consumerMetadata = null, ?string $redirectUri = null, ?SessionSettings $settings = null, ?Theme $theme = null, ?array $customConsumerSettings = null)
+    public function __construct(?ConsumerMetadata $consumerMetadata = null, ?string $redirectUri = null, ?Settings $settings = null, ?Theme $theme = null, ?array $customConsumerSettings = null)
     {
         $this->consumerMetadata = $consumerMetadata;
         $this->redirectUri = $redirectUri;

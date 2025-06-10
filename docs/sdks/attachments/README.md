@@ -27,16 +27,16 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingAttachmentsAllRequest(
     referenceType: Components\AttachmentReferenceType::Invoice,
-    referenceId: '12345',
+    referenceId: '123456',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -90,16 +90,17 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingAttachmentsUploadRequest(
     referenceType: Components\AttachmentReferenceType::Invoice,
-    referenceId: '12345',
+    referenceId: '123456',
+    xApideckMetadata: '{"name":"document.pdf","description":"Invoice attachment"}',
     serviceId: 'salesforce',
     requestBody: '0x506D4BD16D',
 );
@@ -151,16 +152,16 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingAttachmentsOneRequest(
     referenceType: Components\AttachmentReferenceType::Invoice,
-    referenceId: '12345',
+    referenceId: '123456',
     id: '<id>',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
@@ -212,16 +213,16 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingAttachmentsDeleteRequest(
     referenceType: Components\AttachmentReferenceType::Invoice,
-    referenceId: '12345',
+    referenceId: '123456',
     id: '<id>',
     serviceId: 'salesforce',
 );
@@ -272,16 +273,16 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingAttachmentsDownloadRequest(
     referenceType: Components\AttachmentReferenceType::Invoice,
-    referenceId: '12345',
+    referenceId: '123456',
     id: '<id>',
     serviceId: 'salesforce',
     fields: 'id,updated_at',

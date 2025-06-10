@@ -27,11 +27,11 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingInvoiceItemsAllRequest(
@@ -42,6 +42,7 @@ $request = new Operations\AccountingInvoiceItemsAllRequest(
     ),
     sort: new Components\InvoiceItemsSort(
         by: Components\InvoiceItemsSortBy::UpdatedAt,
+        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',
@@ -99,11 +100,11 @@ use Apideck\Unify\Models\Operations;
 use Brick\DateTime\LocalDate;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingInvoiceItemsAddRequest(
@@ -153,12 +154,7 @@ $request = new Operations\AccountingInvoiceItemsAddRequest(
             nominalCode: 'N091',
             code: '453',
         ),
-        trackingCategories: [
-            new Components\LinkedTrackingCategory(
-                id: '123456',
-                name: 'New York',
-            ),
-        ],
+        trackingCategories: null,
         active: true,
         departmentId: '12345',
         locationId: '12345',
@@ -169,6 +165,14 @@ $request = new Operations\AccountingInvoiceItemsAddRequest(
             new Components\PassThroughBody(
                 serviceId: '<id>',
                 extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
                     new Components\ExtendPaths(
                         path: '$.nested.property',
                         value: [
@@ -229,11 +233,11 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingInvoiceItemsOneRequest(
@@ -292,11 +296,11 @@ use Apideck\Unify\Models\Operations;
 use Brick\DateTime\LocalDate;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingInvoiceItemsUpdateRequest(
@@ -337,17 +341,17 @@ $request = new Operations\AccountingInvoiceItemsUpdateRequest(
             nominalCode: 'N091',
             code: '453',
         ),
-        incomeAccount: new Components\LinkedLedgerAccountInput(
-            id: '123456',
-            nominalCode: 'N091',
-            code: '453',
-        ),
+        incomeAccount: null,
         expenseAccount: new Components\LinkedLedgerAccountInput(
             id: '123456',
             nominalCode: 'N091',
             code: '453',
         ),
         trackingCategories: [
+            new Components\LinkedTrackingCategory(
+                id: '123456',
+                name: 'New York',
+            ),
             new Components\LinkedTrackingCategory(
                 id: '123456',
                 name: 'New York',
@@ -360,6 +364,19 @@ $request = new Operations\AccountingInvoiceItemsUpdateRequest(
         taxScheduleId: '123456',
         rowVersion: '1-12345',
         passThrough: [
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
             new Components\PassThroughBody(
                 serviceId: '<id>',
                 extendPaths: [
@@ -422,11 +439,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingInvoiceItemsDeleteRequest(

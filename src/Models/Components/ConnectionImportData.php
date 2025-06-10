@@ -23,12 +23,12 @@ class ConnectionImportData
     /**
      * Connection settings. Values will persist to `form_fields` with corresponding id
      *
-     * @var ?Settings $settings
+     * @var ?array<string, mixed> $settings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('settings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Settings|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Settings $settings = null;
+    public ?array $settings = null;
 
     /**
      * Attach your own consumer specific metadata
@@ -42,11 +42,11 @@ class ConnectionImportData
 
     /**
      * @param  ?Credentials  $credentials
-     * @param  ?Settings  $settings
+     * @param  ?array<string, mixed>  $settings
      * @param  ?array<string, mixed>  $metadata
      * @phpstan-pure
      */
-    public function __construct(?Credentials $credentials = null, ?Settings $settings = null, ?array $metadata = null)
+    public function __construct(?Credentials $credentials = null, ?array $settings = null, ?array $metadata = null)
     {
         $this->credentials = $credentials;
         $this->settings = $settings;

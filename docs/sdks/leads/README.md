@@ -27,11 +27,11 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\CrmLeadsAllRequest(
@@ -44,6 +44,7 @@ $request = new Operations\CrmLeadsAllRequest(
     ),
     sort: new Components\LeadsSort(
         by: Components\LeadsSortBy::CreatedAt,
+        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',
@@ -100,11 +101,11 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\CrmLeadsAddRequest(
@@ -128,6 +129,11 @@ $request = new Operations\CrmLeadsAddRequest(
         currency: Components\Currency::Usd,
         fax: '+12129876543',
         websites: [
+            new Components\Website(
+                id: '12345',
+                url: 'http://example.com',
+                type: Components\WebsiteType::Primary,
+            ),
             new Components\Website(
                 id: '12345',
                 url: 'http://example.com',
@@ -161,8 +167,70 @@ $request = new Operations\CrmLeadsAddRequest(
                 notes: 'Address notes or delivery instructions.',
                 rowVersion: '1-12345',
             ),
+            new Components\Address(
+                id: '123',
+                type: Components\Type::Primary,
+                string: '25 Spring Street, Blackburn, VIC 3130',
+                name: 'HQ US',
+                line1: 'Main street',
+                line2: 'apt #',
+                line3: 'Suite #',
+                line4: 'delivery instructions',
+                streetNumber: '25',
+                city: 'San Francisco',
+                state: 'CA',
+                postalCode: '94104',
+                country: 'US',
+                latitude: '40.759211',
+                longitude: '-73.984638',
+                county: 'Santa Clara',
+                contactName: 'Elon Musk',
+                salutation: 'Mr',
+                phoneNumber: '111-111-1111',
+                fax: '122-111-1111',
+                email: 'elon@musk.com',
+                website: 'https://elonmusk.com',
+                notes: 'Address notes or delivery instructions.',
+                rowVersion: '1-12345',
+            ),
+            new Components\Address(
+                id: '123',
+                type: Components\Type::Primary,
+                string: '25 Spring Street, Blackburn, VIC 3130',
+                name: 'HQ US',
+                line1: 'Main street',
+                line2: 'apt #',
+                line3: 'Suite #',
+                line4: 'delivery instructions',
+                streetNumber: '25',
+                city: 'San Francisco',
+                state: 'CA',
+                postalCode: '94104',
+                country: 'US',
+                latitude: '40.759211',
+                longitude: '-73.984638',
+                county: 'Santa Clara',
+                contactName: 'Elon Musk',
+                salutation: 'Mr',
+                phoneNumber: '111-111-1111',
+                fax: '122-111-1111',
+                email: 'elon@musk.com',
+                website: 'https://elonmusk.com',
+                notes: 'Address notes or delivery instructions.',
+                rowVersion: '1-12345',
+            ),
         ],
         socialLinks: [
+            new Components\SocialLink(
+                id: '12345',
+                url: 'https://www.twitter.com/apideck',
+                type: 'twitter',
+            ),
+            new Components\SocialLink(
+                id: '12345',
+                url: 'https://www.twitter.com/apideck',
+                type: 'twitter',
+            ),
             new Components\SocialLink(
                 id: '12345',
                 url: 'https://www.twitter.com/apideck',
@@ -185,8 +253,19 @@ $request = new Operations\CrmLeadsAddRequest(
                 email: 'elon@musk.com',
                 type: Components\EmailType::Primary,
             ),
+            new Components\Email(
+                id: '123',
+                email: 'elon@musk.com',
+                type: Components\EmailType::Primary,
+            ),
         ],
         customFields: [
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo',
+            ),
             new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
@@ -201,6 +280,80 @@ $request = new Operations\CrmLeadsAddRequest(
             new Components\PassThroughBody(
                 serviceId: '<id>',
                 extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
                     new Components\ExtendPaths(
                         path: '$.nested.property',
                         value: [
@@ -260,11 +413,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\CrmLeadsOneRequest(
@@ -319,11 +472,11 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\CrmLeadsUpdateRequest(
@@ -348,6 +501,16 @@ $request = new Operations\CrmLeadsUpdateRequest(
         currency: Components\Currency::Usd,
         fax: '+12129876543',
         websites: [
+            new Components\Website(
+                id: '12345',
+                url: 'http://example.com',
+                type: Components\WebsiteType::Primary,
+            ),
+            new Components\Website(
+                id: '12345',
+                url: 'http://example.com',
+                type: Components\WebsiteType::Primary,
+            ),
             new Components\Website(
                 id: '12345',
                 url: 'http://example.com',
@@ -381,8 +544,65 @@ $request = new Operations\CrmLeadsUpdateRequest(
                 notes: 'Address notes or delivery instructions.',
                 rowVersion: '1-12345',
             ),
+            new Components\Address(
+                id: '123',
+                type: Components\Type::Primary,
+                string: '25 Spring Street, Blackburn, VIC 3130',
+                name: 'HQ US',
+                line1: 'Main street',
+                line2: 'apt #',
+                line3: 'Suite #',
+                line4: 'delivery instructions',
+                streetNumber: '25',
+                city: 'San Francisco',
+                state: 'CA',
+                postalCode: '94104',
+                country: 'US',
+                latitude: '40.759211',
+                longitude: '-73.984638',
+                county: 'Santa Clara',
+                contactName: 'Elon Musk',
+                salutation: 'Mr',
+                phoneNumber: '111-111-1111',
+                fax: '122-111-1111',
+                email: 'elon@musk.com',
+                website: 'https://elonmusk.com',
+                notes: 'Address notes or delivery instructions.',
+                rowVersion: '1-12345',
+            ),
+            new Components\Address(
+                id: '123',
+                type: Components\Type::Primary,
+                string: '25 Spring Street, Blackburn, VIC 3130',
+                name: 'HQ US',
+                line1: 'Main street',
+                line2: 'apt #',
+                line3: 'Suite #',
+                line4: 'delivery instructions',
+                streetNumber: '25',
+                city: 'San Francisco',
+                state: 'CA',
+                postalCode: '94104',
+                country: 'US',
+                latitude: '40.759211',
+                longitude: '-73.984638',
+                county: 'Santa Clara',
+                contactName: 'Elon Musk',
+                salutation: 'Mr',
+                phoneNumber: '111-111-1111',
+                fax: '122-111-1111',
+                email: 'elon@musk.com',
+                website: 'https://elonmusk.com',
+                notes: 'Address notes or delivery instructions.',
+                rowVersion: '1-12345',
+            ),
         ],
         socialLinks: [
+            new Components\SocialLink(
+                id: '12345',
+                url: 'https://www.twitter.com/apideck',
+                type: 'twitter',
+            ),
             new Components\SocialLink(
                 id: '12345',
                 url: 'https://www.twitter.com/apideck',
@@ -413,6 +633,18 @@ $request = new Operations\CrmLeadsUpdateRequest(
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo',
+            ),
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo',
+            ),
         ],
         tags: [
             'New',
@@ -421,6 +653,35 @@ $request = new Operations\CrmLeadsUpdateRequest(
             new Components\PassThroughBody(
                 serviceId: '<id>',
                 extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
                     new Components\ExtendPaths(
                         path: '$.nested.property',
                         value: [
@@ -480,11 +741,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\CrmLeadsDeleteRequest(
