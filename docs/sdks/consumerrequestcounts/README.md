@@ -22,11 +22,10 @@ require 'vendor/autoload.php';
 use Apideck\Unify;
 
 $sdk = Unify\Apideck::builder()
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 
@@ -34,8 +33,7 @@ $sdk = Unify\Apideck::builder()
 $response = $sdk->vault->consumerRequestCounts->list(
     consumerId: 'test_user_id',
     startDatetime: '2021-05-01T12:00:00.000Z',
-    endDatetime: '2021-05-30T12:00:00.000Z',
-    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX'
+    endDatetime: '2021-05-30T12:00:00.000Z'
 
 );
 

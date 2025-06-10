@@ -29,18 +29,16 @@ require 'vendor/autoload.php';
 use Apideck\Unify;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 
 
 $response = $sdk->vault->connections->list(
-    consumerId: 'test-consumer',
-    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     api: 'crm',
     configured: true
 
@@ -89,20 +87,18 @@ require 'vendor/autoload.php';
 use Apideck\Unify;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 
 
 $response = $sdk->vault->connections->get(
     serviceId: 'pipedrive',
-    unifiedApi: 'crm',
-    consumerId: 'test-consumer',
-    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX'
+    unifiedApi: 'crm'
 
 );
 
@@ -151,11 +147,11 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\VaultConnectionsUpdateRequest(
@@ -181,6 +177,61 @@ $request = new Operations\VaultConnectionsUpdateRequest(
                     new Components\ConnectionDefaults(
                         id: 'ProductInterest',
                         options: [
+                            new Components\FormFieldOptionGroup(
+                                label: 'General Channel',
+                                options: [],
+                                optionType: Components\FormFieldOptionGroupOptionType::Group,
+                            ),
+                            new Components\SimpleFormFieldOption(
+                                label: 'General Channel',
+                                optionType: Components\OptionType::Simple,
+                            ),
+                        ],
+                        value: 'GC5000 series',
+                    ),
+                    new Components\ConnectionDefaults(
+                        id: 'ProductInterest',
+                        options: [
+                            new Components\FormFieldOptionGroup(
+                                label: 'General Channel',
+                                options: [],
+                                optionType: Components\FormFieldOptionGroupOptionType::Group,
+                            ),
+                            new Components\SimpleFormFieldOption(
+                                label: 'General Channel',
+                                optionType: Components\OptionType::Simple,
+                            ),
+                        ],
+                        value: 'GC5000 series',
+                    ),
+                ],
+            ),
+            new Components\ConnectionConfiguration(
+                resource: 'leads',
+                defaults: [
+                    new Components\ConnectionDefaults(
+                        id: 'ProductInterest',
+                        options: [
+                            new Components\FormFieldOptionGroup(
+                                label: 'General Channel',
+                                options: [],
+                                optionType: Components\FormFieldOptionGroupOptionType::Group,
+                            ),
+                            new Components\SimpleFormFieldOption(
+                                label: 'General Channel',
+                                optionType: Components\OptionType::Simple,
+                            ),
+                        ],
+                        value: 'GC5000 series',
+                    ),
+                    new Components\ConnectionDefaults(
+                        id: 'ProductInterest',
+                        options: [
+                            new Components\FormFieldOptionGroup(
+                                label: 'General Channel',
+                                options: [],
+                                optionType: Components\FormFieldOptionGroupOptionType::Group,
+                            ),
                             new Components\SimpleFormFieldOption(
                                 label: 'General Channel',
                                 optionType: Components\OptionType::Simple,
@@ -192,6 +243,12 @@ $request = new Operations\VaultConnectionsUpdateRequest(
             ),
         ],
         customMappings: [
+            new Components\CustomMappingInput(
+                value: '$.root.training.first_aid',
+            ),
+            new Components\CustomMappingInput(
+                value: '$.root.training.first_aid',
+            ),
             new Components\CustomMappingInput(
                 value: '$.root.training.first_aid',
             ),
@@ -243,20 +300,18 @@ require 'vendor/autoload.php';
 use Apideck\Unify;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 
 
 $response = $sdk->vault->connections->delete(
     serviceId: 'pipedrive',
-    unifiedApi: 'crm',
-    consumerId: 'test-consumer',
-    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX'
+    unifiedApi: 'crm'
 
 );
 
@@ -306,11 +361,11 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\VaultConnectionsImportRequest(
@@ -321,7 +376,9 @@ $request = new Operations\VaultConnectionsImportRequest(
             refreshToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ',
             accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
         ),
-        settings: new Components\Settings(),
+        settings: [
+            'instance_url' => 'https://eu28.salesforce.com',
+        ],
         metadata: [
             'account' => [
                 'name' => 'My Company',
@@ -383,11 +440,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\VaultConnectionsTokenRequest(

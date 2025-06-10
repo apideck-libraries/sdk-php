@@ -28,11 +28,11 @@ use Apideck\Unify\Models\Operations;
 use Apideck\Unify\Utils;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingCustomersAllRequest(
@@ -49,6 +49,7 @@ $request = new Operations\AccountingCustomersAllRequest(
     ),
     sort: new Components\CustomersSort(
         by: Components\CustomersSortBy::UpdatedAt,
+        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',
@@ -105,11 +106,11 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingCustomersAddRequest(
@@ -177,8 +178,31 @@ $request = new Operations\AccountingCustomersAddRequest(
                 url: 'http://example.com',
                 type: Components\WebsiteType::Primary,
             ),
+            new Components\Website(
+                id: '12345',
+                url: 'http://example.com',
+                type: Components\WebsiteType::Primary,
+            ),
+            new Components\Website(
+                id: '12345',
+                url: 'http://example.com',
+                type: Components\WebsiteType::Primary,
+            ),
         ],
         bankAccounts: [
+            new Components\BankAccount(
+                bankName: 'Monzo',
+                accountNumber: '123465',
+                accountName: 'SPACEX LLC',
+                accountType: Components\AccountType::CreditCard,
+                iban: 'CH2989144532982975332',
+                bic: 'AUDSCHGGXXX',
+                routingNumber: '012345678',
+                bsbNumber: '062-001',
+                branchIdentifier: '001',
+                bankCode: 'BNH',
+                currency: Components\Currency::Usd,
+            ),
             new Components\BankAccount(
                 bankName: 'Monzo',
                 accountNumber: '123465',
@@ -217,7 +241,19 @@ $request = new Operations\AccountingCustomersAddRequest(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
-                value: 'Uses Salesforce and Marketo',
+                value: null,
+            ),
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: null,
+            ),
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: null,
             ),
         ],
         rowVersion: '1-12345',
@@ -225,6 +261,14 @@ $request = new Operations\AccountingCustomersAddRequest(
             new Components\PassThroughBody(
                 serviceId: '<id>',
                 extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
                     new Components\ExtendPaths(
                         path: '$.nested.property',
                         value: [
@@ -284,11 +328,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingCustomersOneRequest(
@@ -343,11 +387,11 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingCustomersUpdateRequest(
@@ -402,6 +446,14 @@ $request = new Operations\AccountingCustomersUpdateRequest(
                 extension: '105',
                 type: Components\PhoneNumberType::Primary,
             ),
+            new Components\PhoneNumber(
+                id: '12345',
+                countryCode: '1',
+                areaCode: '323',
+                number: '111-111-1111',
+                extension: '105',
+                type: Components\PhoneNumberType::Primary,
+            ),
         ],
         emails: [
             new Components\Email(
@@ -416,8 +468,44 @@ $request = new Operations\AccountingCustomersUpdateRequest(
                 url: 'http://example.com',
                 type: Components\WebsiteType::Primary,
             ),
+            new Components\Website(
+                id: '12345',
+                url: 'http://example.com',
+                type: Components\WebsiteType::Primary,
+            ),
+            new Components\Website(
+                id: '12345',
+                url: 'http://example.com',
+                type: Components\WebsiteType::Primary,
+            ),
         ],
         bankAccounts: [
+            new Components\BankAccount(
+                bankName: 'Monzo',
+                accountNumber: '123465',
+                accountName: 'SPACEX LLC',
+                accountType: Components\AccountType::CreditCard,
+                iban: 'CH2989144532982975332',
+                bic: 'AUDSCHGGXXX',
+                routingNumber: '012345678',
+                bsbNumber: '062-001',
+                branchIdentifier: '001',
+                bankCode: 'BNH',
+                currency: Components\Currency::Usd,
+            ),
+            new Components\BankAccount(
+                bankName: 'Monzo',
+                accountNumber: '123465',
+                accountName: 'SPACEX LLC',
+                accountType: Components\AccountType::CreditCard,
+                iban: 'CH2989144532982975332',
+                bic: 'AUDSCHGGXXX',
+                routingNumber: '012345678',
+                bsbNumber: '062-001',
+                branchIdentifier: '001',
+                bankCode: 'BNH',
+                currency: Components\Currency::Usd,
+            ),
             new Components\BankAccount(
                 bankName: 'Monzo',
                 accountNumber: '123465',
@@ -464,6 +552,22 @@ $request = new Operations\AccountingCustomersUpdateRequest(
             new Components\PassThroughBody(
                 serviceId: '<id>',
                 extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
                     new Components\ExtendPaths(
                         path: '$.nested.property',
                         value: [
@@ -523,11 +627,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingCustomersDeleteRequest(

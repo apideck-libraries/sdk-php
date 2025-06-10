@@ -22,11 +22,10 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 
 $sdk = Unify\Apideck::builder()
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 
@@ -34,7 +33,6 @@ $sdk = Unify\Apideck::builder()
 $response = $sdk->connector->connectorResources->get(
     id: '<id>',
     resourceId: '<id>',
-    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     unifiedApi: Components\UnifiedApiId::Crm
 
 );

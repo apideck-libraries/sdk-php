@@ -28,11 +28,11 @@ use Apideck\Unify\Models\Operations;
 use Apideck\Unify\Utils;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingBillPaymentsAllRequest(
@@ -43,6 +43,7 @@ $request = new Operations\AccountingBillPaymentsAllRequest(
     ),
     sort: new Components\PaymentsSort(
         by: Components\PaymentsSortBy::UpdatedAt,
+        direction: Components\SortDirection::Desc,
     ),
     passThrough: [
         'search' => 'San Francisco',
@@ -100,11 +101,11 @@ use Apideck\Unify\Models\Operations;
 use Apideck\Unify\Utils;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingBillPaymentsAddRequest(
@@ -164,6 +165,18 @@ $request = new Operations\AccountingBillPaymentsAddRequest(
                 amount: 49.99,
                 allocationId: '123456',
             ),
+            new Components\BillPaymentAllocations(
+                id: '12345',
+                type: Components\BillPaymentAllocationType::Bill,
+                amount: 49.99,
+                allocationId: '123456',
+            ),
+            new Components\BillPaymentAllocations(
+                id: '12345',
+                type: Components\BillPaymentAllocationType::Bill,
+                amount: 49.99,
+                allocationId: '123456',
+            ),
         ],
         note: 'Some notes about this transaction',
         number: '123456',
@@ -180,6 +193,18 @@ $request = new Operations\AccountingBillPaymentsAddRequest(
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo',
+            ),
+            new Components\CustomField(
+                id: '2389328923893298',
+                name: 'employee_level',
+                description: 'Employee Level',
+                value: 'Uses Salesforce and Marketo',
+            ),
         ],
         rowVersion: '1-12345',
         displayId: '123456',
@@ -187,6 +212,22 @@ $request = new Operations\AccountingBillPaymentsAddRequest(
             new Components\PassThroughBody(
                 serviceId: '<id>',
                 extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
                     new Components\ExtendPaths(
                         path: '$.nested.property',
                         value: [
@@ -246,11 +287,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingBillPaymentsOneRequest(
@@ -306,11 +347,11 @@ use Apideck\Unify\Models\Operations;
 use Apideck\Unify\Utils;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingBillPaymentsUpdateRequest(
@@ -371,15 +412,22 @@ $request = new Operations\AccountingBillPaymentsUpdateRequest(
                 amount: 49.99,
                 allocationId: '123456',
             ),
+            new Components\BillPaymentAllocations(
+                id: '12345',
+                type: Components\BillPaymentAllocationType::Bill,
+                amount: 49.99,
+                allocationId: '123456',
+            ),
+            new Components\BillPaymentAllocations(
+                id: '12345',
+                type: Components\BillPaymentAllocationType::Bill,
+                amount: 49.99,
+                allocationId: '123456',
+            ),
         ],
         note: 'Some notes about this transaction',
         number: '123456',
-        trackingCategories: [
-            new Components\LinkedTrackingCategory(
-                id: '123456',
-                name: 'New York',
-            ),
-        ],
+        trackingCategories: null,
         customFields: [
             new Components\CustomField(
                 id: '2389328923893298',
@@ -391,6 +439,19 @@ $request = new Operations\AccountingBillPaymentsUpdateRequest(
         rowVersion: '1-12345',
         displayId: '123456',
         passThrough: [
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
             new Components\PassThroughBody(
                 serviceId: '<id>',
                 extendPaths: [
@@ -453,11 +514,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\AccountingBillPaymentsDeleteRequest(

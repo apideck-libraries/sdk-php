@@ -26,11 +26,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $session = new Components\Session(
@@ -41,10 +41,11 @@ $session = new Components\Session(
         image: 'https://www.spacex.com/static/images/share.jpg',
     ),
     redirectUri: 'https://mysaas.com/dashboard',
-    settings: new Components\SessionSettings(
+    settings: new Components\Settings(
         unifiedApis: [
             Components\UnifiedApiId::Crm,
         ],
+        sessionLength: '30m',
     ),
     theme: new Components\Theme(
         favicon: 'https://res.cloudinary.com/apideck/icons/intercom',
@@ -72,10 +73,7 @@ $session = new Components\Session(
 );
 
 $response = $sdk->vault->sessions->create(
-    consumerId: 'test-consumer',
-    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
     session: $session
-
 );
 
 if ($response->createSessionResponse !== null) {

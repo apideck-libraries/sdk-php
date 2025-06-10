@@ -22,11 +22,10 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Components;
 
 $sdk = Unify\Apideck::builder()
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $filter = new Components\WebhookEventLogsFilter(
@@ -37,8 +36,6 @@ $filter = new Components\WebhookEventLogsFilter(
 );
 
 $responses = $sdk->webhook->eventLogs->list(
-    appId: 'dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX',
-    cursor: '<value>',
     limit: 20,
     filter: $filter
 

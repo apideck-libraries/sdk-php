@@ -24,11 +24,11 @@ use Apideck\Unify;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\VaultConnectionSettingsAllRequest(
@@ -83,11 +83,11 @@ use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->setSecurity(
         '<YOUR_BEARER_TOKEN_HERE>'
     )
-    ->setConsumerId('test-consumer')
-    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
     ->build();
 
 $request = new Operations\VaultConnectionSettingsUpdateRequest(
@@ -114,16 +114,64 @@ $request = new Operations\VaultConnectionSettingsUpdateRequest(
                     new Components\ConnectionDefaults(
                         id: 'ProductInterest',
                         options: [
-                            new Components\FormFieldOptionGroup(
+                            new Components\SimpleFormFieldOption(
                                 label: 'General Channel',
-                                options: [
-                                    new Components\SimpleFormFieldOption(
-                                        label: 'General Channel',
-                                        value: 'general',
-                                        optionType: Components\OptionType::Simple,
-                                    ),
-                                ],
-                                optionType: Components\FormFieldOptionGroupOptionType::Group,
+                                optionType: Components\OptionType::Simple,
+                            ),
+                        ],
+                        value: 'GC5000 series',
+                    ),
+                    new Components\ConnectionDefaults(
+                        id: 'ProductInterest',
+                        options: [
+                            new Components\SimpleFormFieldOption(
+                                label: 'General Channel',
+                                optionType: Components\OptionType::Simple,
+                            ),
+                        ],
+                        value: 'GC5000 series',
+                    ),
+                    new Components\ConnectionDefaults(
+                        id: 'ProductInterest',
+                        options: [
+                            new Components\SimpleFormFieldOption(
+                                label: 'General Channel',
+                                optionType: Components\OptionType::Simple,
+                            ),
+                        ],
+                        value: 'GC5000 series',
+                    ),
+                ],
+            ),
+            new Components\ConnectionConfiguration(
+                resource: 'leads',
+                defaults: [
+                    new Components\ConnectionDefaults(
+                        id: 'ProductInterest',
+                        options: [
+                            new Components\SimpleFormFieldOption(
+                                label: 'General Channel',
+                                optionType: Components\OptionType::Simple,
+                            ),
+                        ],
+                        value: 'GC5000 series',
+                    ),
+                    new Components\ConnectionDefaults(
+                        id: 'ProductInterest',
+                        options: [
+                            new Components\SimpleFormFieldOption(
+                                label: 'General Channel',
+                                optionType: Components\OptionType::Simple,
+                            ),
+                        ],
+                        value: 'GC5000 series',
+                    ),
+                    new Components\ConnectionDefaults(
+                        id: 'ProductInterest',
+                        options: [
+                            new Components\SimpleFormFieldOption(
+                                label: 'General Channel',
+                                optionType: Components\OptionType::Simple,
                             ),
                         ],
                         value: 'GC5000 series',
@@ -132,6 +180,9 @@ $request = new Operations\VaultConnectionSettingsUpdateRequest(
             ),
         ],
         customMappings: [
+            new Components\CustomMappingInput(
+                value: '$.root.training.first_aid',
+            ),
             new Components\CustomMappingInput(
                 value: '$.root.training.first_aid',
             ),
