@@ -1,0 +1,10 @@
+# AccountingCategoriesOneResponse
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                | [Components\HTTPMetadata](../../Models/Components/HTTPMetadata.md)                        | :heavy_check_mark:                                                                        | N/A                                                                                       |
+| `getCategoryResponse`                                                                     | [?Components\GetCategoryResponse](../../Models/Components/GetCategoryResponse.md)         | :heavy_minus_sign:                                                                        | Category                                                                                  |
+| `unexpectedErrorResponse`                                                                 | [?Components\UnexpectedErrorResponse](../../Models/Components/UnexpectedErrorResponse.md) | :heavy_minus_sign:                                                                        | Unexpected error                                                                          |

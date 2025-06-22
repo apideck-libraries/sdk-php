@@ -168,6 +168,15 @@ class ExpenseInput
     public ?float $totalAmount = null;
 
     /**
+     * Optional reference identifier for the transaction.
+     *
+     * @var ?string $reference
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('reference')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $reference = null;
+
+    /**
      * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
      *
      * @var ?string $rowVersion
@@ -194,10 +203,11 @@ class ExpenseInput
      * @param  ?ExpenseType  $type
      * @param  ?string  $memo
      * @param  ?float  $totalAmount
+     * @param  ?string  $reference
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(string $accountId, array $lineItems, ?\DateTime $transactionDate = null, ?string $customerId = null, ?string $supplierId = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?string $companyId = null, ?string $departmentId = null, ?ExpensePaymentType $paymentType = null, ?Currency $currency = null, ?float $currencyRate = null, ?ExpenseType $type = null, ?string $memo = null, ?float $totalAmount = null, ?string $rowVersion = null)
+    public function __construct(string $accountId, array $lineItems, ?\DateTime $transactionDate = null, ?string $customerId = null, ?string $supplierId = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?string $companyId = null, ?string $departmentId = null, ?ExpensePaymentType $paymentType = null, ?Currency $currency = null, ?float $currencyRate = null, ?ExpenseType $type = null, ?string $memo = null, ?float $totalAmount = null, ?string $reference = null, ?string $rowVersion = null)
     {
         $this->accountId = $accountId;
         $this->lineItems = $lineItems;
@@ -216,6 +226,7 @@ class ExpenseInput
         $this->type = $type;
         $this->memo = $memo;
         $this->totalAmount = $totalAmount;
+        $this->reference = $reference;
         $this->rowVersion = $rowVersion;
     }
 }

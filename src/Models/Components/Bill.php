@@ -161,7 +161,7 @@ class Bill
     public ?string $poNumber = null;
 
     /**
-     * Optional bill reference.
+     * Optional reference identifier for the transaction.
      *
      * @var ?string $reference
      */

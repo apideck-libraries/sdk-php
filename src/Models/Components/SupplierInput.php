@@ -136,6 +136,15 @@ class SupplierInput
     public ?string $companyId = null;
 
     /**
+     * The category/type of the supplier
+     *
+     * @var ?string $supplierCategory
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('supplier_category')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $supplierCategory = null;
+
+    /**
      * The job title of the person.
      *
      * @var ?string $title
@@ -275,6 +284,7 @@ class SupplierInput
      * @param  ?string  $displayName
      * @param  ?string  $companyName
      * @param  ?string  $companyId
+     * @param  ?string  $supplierCategory
      * @param  ?string  $title
      * @param  ?string  $firstName
      * @param  ?string  $middleName
@@ -291,7 +301,7 @@ class SupplierInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $subsidiaryId = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?string $notes = null, ?string $taxNumber = null, ?Currency $currency = null, ?LinkedLedgerAccountInput $account = null, ?SupplierStatus $status = null, ?string $paymentMethod = null, ?string $channel = null, ?string $rowVersion = null)
+    public function __construct(?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $subsidiaryId = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $supplierCategory = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?string $notes = null, ?string $taxNumber = null, ?Currency $currency = null, ?LinkedLedgerAccountInput $account = null, ?SupplierStatus $status = null, ?string $paymentMethod = null, ?string $channel = null, ?string $rowVersion = null)
     {
         $this->addresses = $addresses;
         $this->phoneNumbers = $phoneNumbers;
@@ -306,6 +316,7 @@ class SupplierInput
         $this->displayName = $displayName;
         $this->companyName = $companyName;
         $this->companyId = $companyId;
+        $this->supplierCategory = $supplierCategory;
         $this->title = $title;
         $this->firstName = $firstName;
         $this->middleName = $middleName;
