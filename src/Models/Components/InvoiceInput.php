@@ -152,7 +152,7 @@ class InvoiceInput
     public ?string $poNumber = null;
 
     /**
-     * Optional invoice reference.
+     * Optional reference identifier for the transaction.
      *
      * @var ?string $reference
      */
