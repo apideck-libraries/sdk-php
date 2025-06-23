@@ -177,6 +177,15 @@ class Expense
     public ?float $totalAmount = null;
 
     /**
+     * Optional reference identifier for the transaction.
+     *
+     * @var ?string $reference
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('reference')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $reference = null;
+
+    /**
      * When custom mappings are configured on the resource, the result is included here.
      *
      * @var ?array<string, mixed> $customMappings
@@ -250,6 +259,7 @@ class Expense
      * @param  ?ExpenseType  $type
      * @param  ?string  $memo
      * @param  ?float  $totalAmount
+     * @param  ?string  $reference
      * @param  ?array<string, mixed>  $customMappings
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
@@ -258,7 +268,7 @@ class Expense
      * @param  ?string  $createdBy
      * @phpstan-pure
      */
-    public function __construct(string $accountId, array $lineItems, ?string $id = null, ?\DateTime $transactionDate = null, ?string $customerId = null, ?string $supplierId = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?string $companyId = null, ?string $departmentId = null, ?ExpensePaymentType $paymentType = null, ?Currency $currency = null, ?float $currencyRate = null, ?ExpenseType $type = null, ?string $memo = null, ?float $totalAmount = null, ?array $customMappings = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null)
+    public function __construct(string $accountId, array $lineItems, ?string $id = null, ?\DateTime $transactionDate = null, ?string $customerId = null, ?string $supplierId = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?string $companyId = null, ?string $departmentId = null, ?ExpensePaymentType $paymentType = null, ?Currency $currency = null, ?float $currencyRate = null, ?ExpenseType $type = null, ?string $memo = null, ?float $totalAmount = null, ?string $reference = null, ?array $customMappings = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null)
     {
         $this->accountId = $accountId;
         $this->lineItems = $lineItems;
@@ -278,6 +288,7 @@ class Expense
         $this->type = $type;
         $this->memo = $memo;
         $this->totalAmount = $totalAmount;
+        $this->reference = $reference;
         $this->customMappings = $customMappings;
         $this->updatedAt = $updatedAt;
         $this->createdAt = $createdAt;
