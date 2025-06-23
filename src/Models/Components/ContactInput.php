@@ -12,14 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class ContactInput
 {
     /**
-     * Full name of the contact.
-     *
-     * @var ?string $name
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    public ?string $name;
-
-    /**
      * $websites
      *
      * @var ?array<Website> $websites
@@ -88,6 +80,15 @@ class ContactInput
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * Full name of the contact.
+     *
+     * @var ?string $name
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $name = null;
 
     /**
      * The owner of the contact.
@@ -327,7 +328,6 @@ class ContactInput
     public ?array $tags = null;
 
     /**
-     * @param  ?string  $name
      * @param  ?array<Website>  $websites
      * @param  ?array<Address>  $addresses
      * @param  ?array<SocialLink>  $socialLinks
@@ -335,6 +335,7 @@ class ContactInput
      * @param  ?array<Email>  $emails
      * @param  ?array<string>  $opportunityIds
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?string  $name
      * @param  ?string  $ownerId
      * @param  ?ContactType  $type
      * @param  ?string  $companyId
@@ -363,9 +364,8 @@ class ContactInput
      * @param  ?array<string>  $tags
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?array $websites = null, ?array $addresses = null, ?array $socialLinks = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $opportunityIds = null, ?array $passThrough = null, ?string $ownerId = null, ?ContactType $type = null, ?string $companyId = null, ?string $companyName = null, ?string $leadId = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $prefix = null, ?string $suffix = null, ?string $title = null, ?string $department = null, ?string $language = null, ?ContactGender $gender = null, ?string $birthday = null, ?string $image = null, ?string $photoUrl = null, ?string $leadSource = null, ?string $fax = null, ?string $description = null, ?float $currentBalance = null, ?string $status = null, ?bool $active = null, ?string $emailDomain = null, ?array $customFields = null, ?array $tags = null)
+    public function __construct(?array $websites = null, ?array $addresses = null, ?array $socialLinks = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $opportunityIds = null, ?array $passThrough = null, ?string $name = null, ?string $ownerId = null, ?ContactType $type = null, ?string $companyId = null, ?string $companyName = null, ?string $leadId = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $prefix = null, ?string $suffix = null, ?string $title = null, ?string $department = null, ?string $language = null, ?ContactGender $gender = null, ?string $birthday = null, ?string $image = null, ?string $photoUrl = null, ?string $leadSource = null, ?string $fax = null, ?string $description = null, ?float $currentBalance = null, ?string $status = null, ?bool $active = null, ?string $emailDomain = null, ?array $customFields = null, ?array $tags = null)
     {
-        $this->name = $name;
         $this->websites = $websites;
         $this->addresses = $addresses;
         $this->socialLinks = $socialLinks;
@@ -373,6 +373,7 @@ class ContactInput
         $this->emails = $emails;
         $this->opportunityIds = $opportunityIds;
         $this->passThrough = $passThrough;
+        $this->name = $name;
         $this->ownerId = $ownerId;
         $this->type = $type;
         $this->companyId = $companyId;
