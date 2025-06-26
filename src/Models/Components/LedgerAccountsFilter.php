@@ -19,11 +19,21 @@ class LedgerAccountsFilter
     public ?\DateTime $updatedSince = null;
 
     /**
+     * Filter by account classification.
+     *
+     * @var ?Classification $classification
+     */
+    #[SpeakeasyMetadata('queryParam:name=classification')]
+    public ?Classification $classification = null;
+
+    /**
      * @param  ?\DateTime  $updatedSince
+     * @param  ?Classification  $classification
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedSince = null)
+    public function __construct(?\DateTime $updatedSince = null, ?Classification $classification = null)
     {
         $this->updatedSince = $updatedSince;
+        $this->classification = $classification;
     }
 }

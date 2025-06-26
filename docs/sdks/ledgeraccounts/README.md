@@ -112,7 +112,7 @@ $request = new Operations\AccountingLedgerAccountsAddRequest(
     ledgerAccount: new Components\LedgerAccountInput(
         displayId: '1-12345',
         code: '453',
-        classification: Components\Classification::Asset,
+        classification: Components\LedgerAccountClassification::Asset,
         type: Components\LedgerAccountType::Bank,
         subType: 'CHECKING_ACCOUNT',
         name: 'Bank account',
@@ -321,7 +321,7 @@ $request = new Operations\AccountingLedgerAccountsUpdateRequest(
     ledgerAccount: new Components\LedgerAccountInput(
         displayId: '1-12345',
         code: '453',
-        classification: Components\Classification::Asset,
+        classification: Components\LedgerAccountClassification::Asset,
         type: Components\LedgerAccountType::Bank,
         subType: 'CHECKING_ACCOUNT',
         name: 'Bank account',
