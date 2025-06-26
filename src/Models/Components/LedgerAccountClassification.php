@@ -9,8 +9,8 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 
-/** Filter by account classification. */
-enum Classification: string
+/** The classification of account. */
+enum LedgerAccountClassification: string
 {
     case Asset = 'asset';
     case Equity = 'equity';

@@ -109,12 +109,12 @@ class LedgerAccountInput
     /**
      * The classification of account.
      *
-     * @var ?Classification $classification
+     * @var ?LedgerAccountClassification $classification
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('classification')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Classification|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LedgerAccountClassification|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Classification $classification = null;
+    public ?LedgerAccountClassification $classification = null;
 
     /**
      * The sub type of account.
@@ -263,7 +263,7 @@ class LedgerAccountInput
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $nominalCode
      * @param  ?string  $code
-     * @param  ?Classification  $classification
+     * @param  ?LedgerAccountClassification  $classification
      * @param  ?string  $subType
      * @param  ?string  $name
      * @param  ?string  $fullyQualifiedName
@@ -281,7 +281,7 @@ class LedgerAccountInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?string $displayId = null, ?LedgerAccountType $type = null, ?LinkedTaxRateInput $taxRate = null, ?BankAccount $bankAccount = null, ?ParentAccount $parentAccount = null, ?array $subsidiaries = null, ?array $customFields = null, ?array $passThrough = null, ?string $nominalCode = null, ?string $code = null, ?Classification $classification = null, ?string $subType = null, ?string $name = null, ?string $fullyQualifiedName = null, ?string $description = null, ?float $openingBalance = null, ?float $currentBalance = null, ?Currency $currency = null, ?string $taxType = null, ?float $level = null, ?bool $active = null, ?AccountStatus $status = null, ?bool $header = null, ?bool $subAccount = null, ?LocalDate $lastReconciliationDate = null, ?string $rowVersion = null)
+    public function __construct(?string $displayId = null, ?LedgerAccountType $type = null, ?LinkedTaxRateInput $taxRate = null, ?BankAccount $bankAccount = null, ?ParentAccount $parentAccount = null, ?array $subsidiaries = null, ?array $customFields = null, ?array $passThrough = null, ?string $nominalCode = null, ?string $code = null, ?LedgerAccountClassification $classification = null, ?string $subType = null, ?string $name = null, ?string $fullyQualifiedName = null, ?string $description = null, ?float $openingBalance = null, ?float $currentBalance = null, ?Currency $currency = null, ?string $taxType = null, ?float $level = null, ?bool $active = null, ?AccountStatus $status = null, ?bool $header = null, ?bool $subAccount = null, ?LocalDate $lastReconciliationDate = null, ?string $rowVersion = null)
     {
         $this->displayId = $displayId;
         $this->type = $type;

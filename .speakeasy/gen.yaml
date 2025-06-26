@@ -16,8 +16,12 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: true
     oAuth2PasswordEnabled: true
+  tests:
+    generateTests: true
+    generateNewTests: false
+    skipResponseBodyAssertions: false
 php:
-  version: 0.11.0
+  version: 0.11.1
   additionalDependencies:
     autoload: {}
     autoload-dev: {}
