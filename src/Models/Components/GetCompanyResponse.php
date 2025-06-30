@@ -54,11 +54,11 @@ class GetCompanyResponse
 
     /**
      *
-     * @var Company $data
+     * @var Company1 $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Company')]
-    public Company $data;
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Company1')]
+    public Company1 $data;
 
     /**
      * Raw response from the integration when raw=true query param is provided
@@ -76,11 +76,11 @@ class GetCompanyResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Company  $data
+     * @param  Company1  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */
-    public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, Company $data, ?array $raw = null)
+    public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, Company1 $data, ?array $raw = null)
     {
         $this->statusCode = $statusCode;
         $this->status = $status;

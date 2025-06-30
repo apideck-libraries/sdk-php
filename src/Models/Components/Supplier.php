@@ -270,6 +270,15 @@ class Supplier
     public ?string $paymentMethod = null;
 
     /**
+     * Terms of payment.
+     *
+     * @var ?string $terms
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('terms')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $terms = null;
+
+    /**
      * The channel through which the transaction is processed.
      *
      * @var ?string $channel
@@ -362,6 +371,7 @@ class Supplier
      * @param  ?LinkedLedgerAccount  $account
      * @param  ?SupplierStatus  $status
      * @param  ?string  $paymentMethod
+     * @param  ?string  $terms
      * @param  ?string  $channel
      * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $updatedBy
@@ -371,7 +381,7 @@ class Supplier
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(string $id, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $subsidiaryId = null, ?string $downstreamId = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $supplierCategory = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?string $notes = null, ?string $taxNumber = null, ?Currency $currency = null, ?LinkedLedgerAccount $account = null, ?SupplierStatus $status = null, ?string $paymentMethod = null, ?string $channel = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null)
+    public function __construct(string $id, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $subsidiaryId = null, ?string $downstreamId = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $supplierCategory = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?string $notes = null, ?string $taxNumber = null, ?Currency $currency = null, ?LinkedLedgerAccount $account = null, ?SupplierStatus $status = null, ?string $paymentMethod = null, ?string $terms = null, ?string $channel = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null)
     {
         $this->id = $id;
         $this->addresses = $addresses;
@@ -401,6 +411,7 @@ class Supplier
         $this->account = $account;
         $this->status = $status;
         $this->paymentMethod = $paymentMethod;
+        $this->terms = $terms;
         $this->channel = $channel;
         $this->customMappings = $customMappings;
         $this->updatedBy = $updatedBy;

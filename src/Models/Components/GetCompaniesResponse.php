@@ -55,10 +55,10 @@ class GetCompaniesResponse
     /**
      * $data
      *
-     * @var array<Company> $data
+     * @var array<Company1> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Company>')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Company1>')]
     public array $data;
 
     /**
@@ -97,7 +97,7 @@ class GetCompaniesResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  array<Company>  $data
+     * @param  array<Company1>  $data
      * @param  ?Meta  $meta
      * @param  ?Links  $links
      * @param  ?array<string, mixed>  $raw
