@@ -90,7 +90,7 @@ class Companies
         $url = Utils\Utils::generateUrl($baseUrl, '/crm/companies');
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'company', 'json');
+        $body = Utils\Utils::serializeRequestBody($request, 'company1', 'json');
         if ($body === null) {
             throw new \Exception('Request body is required');
         }
@@ -852,7 +852,7 @@ class Companies
         $url = Utils\Utils::generateUrl($baseUrl, '/crm/companies/{id}', Operations\CrmCompaniesUpdateRequest::class, $request, $this->sdkConfiguration->globals);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'company', 'json');
+        $body = Utils\Utils::serializeRequestBody($request, 'company1', 'json');
         if ($body === null) {
             throw new \Exception('Request body is required');
         }

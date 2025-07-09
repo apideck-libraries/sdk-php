@@ -14,10 +14,10 @@ class CrmCompaniesAddRequest
 {
     /**
      *
-     * @var Components\CompanyInput $company
+     * @var Components\Company1Input $company1
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\CompanyInput $company;
+    public Components\Company1Input $company1;
 
     /**
      * ID of the consumer which you want to get or push data from
@@ -52,16 +52,16 @@ class CrmCompaniesAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\CompanyInput  $company
+     * @param  Components\Company1Input  $company1
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @phpstan-pure
      */
-    public function __construct(Components\CompanyInput $company, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?bool $raw = false)
+    public function __construct(Components\Company1Input $company1, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?bool $raw = false)
     {
-        $this->company = $company;
+        $this->company1 = $company1;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;

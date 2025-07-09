@@ -116,6 +116,15 @@ class CompanyInfo
     public ?array $emails = null;
 
     /**
+     * Whether tracking categories are enabled for the company on transactions
+     *
+     * @var ?bool $trackingCategoriesEnabled
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories_enabled')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $trackingCategoriesEnabled = null;
+
+    /**
      * The name of the company.
      *
      * @var ?string $companyName
@@ -227,6 +236,7 @@ class CompanyInfo
      * @param  ?array<Address>  $addresses
      * @param  ?array<PhoneNumber>  $phoneNumbers
      * @param  ?array<Email>  $emails
+     * @param  ?bool  $trackingCategoriesEnabled
      * @param  ?string  $companyName
      * @param  ?string  $country
      * @param  ?string  $salesTaxNumber
@@ -240,7 +250,7 @@ class CompanyInfo
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?CompanyStatus $status = null, ?string $legalName = null, ?bool $automatedSalesTax = null, ?bool $salesTaxEnabled = null, ?TaxRate $defaultSalesTax = null, ?TheStartMonthOfFiscalYear $fiscalYearStartMonth = null, ?LocalDate $companyStartDate = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?string $companyName = null, ?string $country = null, ?string $salesTaxNumber = null, ?Currency $currency = null, ?string $language = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?CompanyStatus $status = null, ?string $legalName = null, ?bool $automatedSalesTax = null, ?bool $salesTaxEnabled = null, ?TaxRate $defaultSalesTax = null, ?TheStartMonthOfFiscalYear $fiscalYearStartMonth = null, ?LocalDate $companyStartDate = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?bool $trackingCategoriesEnabled = null, ?string $companyName = null, ?string $country = null, ?string $salesTaxNumber = null, ?Currency $currency = null, ?string $language = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->status = $status;
@@ -253,6 +263,7 @@ class CompanyInfo
         $this->addresses = $addresses;
         $this->phoneNumbers = $phoneNumbers;
         $this->emails = $emails;
+        $this->trackingCategoriesEnabled = $trackingCategoriesEnabled;
         $this->companyName = $companyName;
         $this->country = $country;
         $this->salesTaxNumber = $salesTaxNumber;

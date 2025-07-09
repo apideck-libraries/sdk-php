@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 
-class BankAccount
+class BankAccount1
 {
     /**
      * The name of the bank
@@ -41,12 +41,12 @@ class BankAccount
     /**
      * The type of bank account.
      *
-     * @var ?AccountType $accountType
+     * @var ?BankAccount1AccountType $accountType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('account_type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\AccountType|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BankAccount1AccountType|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?AccountType $accountType = null;
+    public ?BankAccount1AccountType $accountType = null;
 
     /**
      * The International Bank Account Number (IBAN).
@@ -125,7 +125,7 @@ class BankAccount
      * @param  ?string  $bankName
      * @param  ?string  $accountNumber
      * @param  ?string  $accountName
-     * @param  ?AccountType  $accountType
+     * @param  ?BankAccount1AccountType  $accountType
      * @param  ?string  $iban
      * @param  ?string  $bic
      * @param  ?string  $routingNumber
@@ -136,7 +136,7 @@ class BankAccount
      * @param  ?string  $country
      * @phpstan-pure
      */
-    public function __construct(?string $bankName = null, ?string $accountNumber = null, ?string $accountName = null, ?AccountType $accountType = null, ?string $iban = null, ?string $bic = null, ?string $routingNumber = null, ?string $bsbNumber = null, ?string $branchIdentifier = null, ?string $bankCode = null, ?Currency $currency = null, ?string $country = null)
+    public function __construct(?string $bankName = null, ?string $accountNumber = null, ?string $accountName = null, ?BankAccount1AccountType $accountType = null, ?string $iban = null, ?string $bic = null, ?string $routingNumber = null, ?string $bsbNumber = null, ?string $branchIdentifier = null, ?string $bankCode = null, ?Currency $currency = null, ?string $country = null)
     {
         $this->bankName = $bankName;
         $this->accountNumber = $accountNumber;
