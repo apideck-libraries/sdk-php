@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 use Brick\DateTime\LocalDate;
-class Company
+class Company1
 {
     /**
      * Unique identifier for the company
@@ -31,10 +31,10 @@ class Company
     /**
      * $bankAccounts
      *
-     * @var ?array<BankAccount> $bankAccounts
+     * @var ?array<BankAccount1> $bankAccounts
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('bank_accounts')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\BankAccount>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\BankAccount1>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $bankAccounts = null;
 
@@ -402,7 +402,7 @@ class Company
     /**
      * @param  ?string  $id
      * @param  ?string  $name
-     * @param  ?array<BankAccount>  $bankAccounts
+     * @param  ?array<BankAccount1>  $bankAccounts
      * @param  ?array<Website>  $websites
      * @param  ?array<Address>  $addresses
      * @param  ?array<SocialLink>  $socialLinks

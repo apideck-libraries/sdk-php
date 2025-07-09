@@ -108,7 +108,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\CrmCompaniesAddRequest(
     serviceId: 'salesforce',
-    company: new Components\CompanyInput(
+    company1: new Components\Company1Input(
         name: 'SpaceX',
         ownerId: '12345',
         image: 'https://www.spacex.com/static/images/share.jpg',
@@ -129,11 +129,11 @@ $request = new Operations\CrmCompaniesAddRequest(
         firstName: 'Elon',
         lastName: 'Musk',
         bankAccounts: [
-            new Components\BankAccount(
+            new Components\BankAccount1(
                 bankName: 'Monzo',
                 accountNumber: '123465',
                 accountName: 'SPACEX LLC',
-                accountType: Components\AccountType::CreditCard,
+                accountType: Components\BankAccount1AccountType::CreditCard,
                 iban: 'CH2989144532982975332',
                 bic: 'AUDSCHGGXXX',
                 routingNumber: '012345678',
@@ -142,11 +142,11 @@ $request = new Operations\CrmCompaniesAddRequest(
                 bankCode: 'BNH',
                 currency: Components\Currency::Usd,
             ),
-            new Components\BankAccount(
+            new Components\BankAccount1(
                 bankName: 'Monzo',
                 accountNumber: '123465',
                 accountName: 'SPACEX LLC',
-                accountType: Components\AccountType::CreditCard,
+                accountType: Components\BankAccount1AccountType::CreditCard,
                 iban: 'CH2989144532982975332',
                 bic: 'AUDSCHGGXXX',
                 routingNumber: '012345678',
@@ -155,11 +155,11 @@ $request = new Operations\CrmCompaniesAddRequest(
                 bankCode: 'BNH',
                 currency: Components\Currency::Usd,
             ),
-            new Components\BankAccount(
+            new Components\BankAccount1(
                 bankName: 'Monzo',
                 accountNumber: '123465',
                 accountName: 'SPACEX LLC',
-                accountType: Components\AccountType::CreditCard,
+                accountType: Components\BankAccount1AccountType::CreditCard,
                 iban: 'CH2989144532982975332',
                 bic: 'AUDSCHGGXXX',
                 routingNumber: '012345678',
@@ -417,7 +417,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\CrmCompaniesUpdateRequest(
     id: '<id>',
     serviceId: 'salesforce',
-    company: new Components\CompanyInput(
+    company1: new Components\Company1Input(
         name: 'SpaceX',
         ownerId: '12345',
         image: 'https://www.spacex.com/static/images/share.jpg',
@@ -438,11 +438,11 @@ $request = new Operations\CrmCompaniesUpdateRequest(
         firstName: 'Elon',
         lastName: 'Musk',
         bankAccounts: [
-            new Components\BankAccount(
+            new Components\BankAccount1(
                 bankName: 'Monzo',
                 accountNumber: '123465',
                 accountName: 'SPACEX LLC',
-                accountType: Components\AccountType::CreditCard,
+                accountType: Components\BankAccount1AccountType::CreditCard,
                 iban: 'CH2989144532982975332',
                 bic: 'AUDSCHGGXXX',
                 routingNumber: '012345678',
