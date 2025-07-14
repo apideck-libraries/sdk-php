@@ -156,6 +156,15 @@ class InvoiceLineItemInput
     public ?float $discountAmount = null;
 
     /**
+     * ID of the category of the line item
+     *
+     * @var ?string $categoryId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('category_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $categoryId = null;
+
+    /**
      * The ID of the location
      *
      * @var ?string $locationId
@@ -218,6 +227,7 @@ class InvoiceLineItemInput
      * @param  ?string  $unitOfMeasure
      * @param  ?float  $discountPercentage
      * @param  ?float  $discountAmount
+     * @param  ?string  $categoryId
      * @param  ?string  $locationId
      * @param  ?string  $departmentId
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
@@ -225,7 +235,7 @@ class InvoiceLineItemInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?string $id = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?InvoiceLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $locationId = null, ?string $departmentId = null, ?array $trackingCategories = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $rowVersion = null)
+    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?string $id = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?InvoiceLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $categoryId = null, ?string $locationId = null, ?string $departmentId = null, ?array $trackingCategories = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $rowVersion = null)
     {
         $this->rowId = $rowId;
         $this->item = $item;
@@ -243,6 +253,7 @@ class InvoiceLineItemInput
         $this->unitOfMeasure = $unitOfMeasure;
         $this->discountPercentage = $discountPercentage;
         $this->discountAmount = $discountAmount;
+        $this->categoryId = $categoryId;
         $this->locationId = $locationId;
         $this->departmentId = $departmentId;
         $this->trackingCategories = $trackingCategories;

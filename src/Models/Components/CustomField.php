@@ -39,21 +39,21 @@ class CustomField
 
     /**
      *
-     * @var string|float|bool|Four|array<string>|array<Six>|null $value
+     * @var string|float|bool|array<string, mixed>|array<string|float|bool|array<string, mixed>|null>|null $value
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\Apideck\Unify\Models\Components\Four|array<string>|array<\Apideck\Unify\Models\Components\Six>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|array<string, mixed>|array<string|float|bool|array<string, mixed>|null>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public string|float|bool|Four|array|null $value = null;
+    public string|float|bool|array|null $value = null;
 
     /**
      * @param  ?string  $id
      * @param  ?string  $name
      * @param  ?string  $description
-     * @param  string|float|bool|Four|array<string>|array<Six>|null  $value
+     * @param  string|float|bool|array<string, mixed>|array<string|float|bool|array<string, mixed>|null>|null  $value
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?string $description = null, string|float|bool|Four|array|null $value = null)
+    public function __construct(?string $id = null, ?string $name = null, ?string $description = null, string|float|bool|array|null $value = null)
     {
         $this->id = $id;
         $this->name = $name;

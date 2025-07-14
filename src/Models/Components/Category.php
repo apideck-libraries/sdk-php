@@ -30,6 +30,16 @@ class Category
     public ?string $name = null;
 
     /**
+     * The type of the category.
+     *
+     * @var ?CategoryType $type
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CategoryType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?CategoryType $type = null;
+
+    /**
      * Based on the status some functionality is enabled or disabled.
      *
      * @var ?CategoryStatus $status
@@ -107,6 +117,7 @@ class Category
     /**
      * @param  ?string  $id
      * @param  ?string  $name
+     * @param  ?CategoryType  $type
      * @param  ?CategoryStatus  $status
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?array<string, mixed>  $customMappings
@@ -117,10 +128,11 @@ class Category
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?CategoryStatus $status = null, ?array $passThrough = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?string $name = null, ?CategoryType $type = null, ?CategoryStatus $status = null, ?array $passThrough = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->name = $name;
+        $this->type = $type;
         $this->status = $status;
         $this->passThrough = $passThrough;
         $this->customMappings = $customMappings;

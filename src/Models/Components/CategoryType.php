@@ -9,10 +9,10 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 
-class Six
+/** The type of the category. */
+enum CategoryType: string
 {
-
-    public function __construct()
-    {
-    }
+    case Supplier = 'supplier';
+    case Expense = 'expense';
+    case Revenue = 'revenue';
 }

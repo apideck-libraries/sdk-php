@@ -20,6 +20,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Apideck\Unify;
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
@@ -33,6 +34,9 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingCategoriesAllRequest(
     serviceId: 'salesforce',
     fields: 'id,updated_at',
+    filter: new Components\CategoriesFilter(
+        type: Components\CategoriesFilterType::Expense,
+    ),
 );
 
 $responses = $sdk->accounting->categories->list(
@@ -80,6 +84,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Apideck\Unify;
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
@@ -94,6 +99,9 @@ $request = new Operations\AccountingCategoriesOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
+    filter: new Components\CategoriesFilter(
+        type: Components\CategoriesFilterType::Expense,
+    ),
 );
 
 $response = $sdk->accounting->categories->get(

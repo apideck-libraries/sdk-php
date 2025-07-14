@@ -45,17 +45,27 @@ class BalanceSheetFilter
     public ?PeriodType $periodType = null;
 
     /**
+     * The ID of the location to include in the resource.
+     *
+     * @var ?string $locationId
+     */
+    #[SpeakeasyMetadata('queryParam:name=location_id')]
+    public ?string $locationId = null;
+
+    /**
      * @param  ?string  $startDate
      * @param  ?string  $endDate
      * @param  ?int  $periodCount
      * @param  ?PeriodType  $periodType
+     * @param  ?string  $locationId
      * @phpstan-pure
      */
-    public function __construct(?string $startDate = null, ?string $endDate = null, ?int $periodCount = null, ?PeriodType $periodType = null)
+    public function __construct(?string $startDate = null, ?string $endDate = null, ?int $periodCount = null, ?PeriodType $periodType = null, ?string $locationId = null)
     {
         $this->startDate = $startDate;
         $this->endDate = $endDate;
         $this->periodCount = $periodCount;
         $this->periodType = $periodType;
+        $this->locationId = $locationId;
     }
 }

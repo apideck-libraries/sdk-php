@@ -154,6 +154,7 @@ class Categories
                             cursor: $nextCursor,
                             limit: $request != null ? $request->limit : null,
                             fields: $request != null ? $request->fields : null,
+                            filter: $request != null ? $request->filter : null,
                         ),
                     );
                 };
@@ -259,6 +260,7 @@ class Categories
                             cursor: $nextCursor,
                             limit: $request != null ? $request->limit : null,
                             fields: $request != null ? $request->fields : null,
+                            filter: $request != null ? $request->filter : null,
                         ),
                     );
                 };

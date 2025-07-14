@@ -36,15 +36,25 @@ class ProfitAndLossFilter
     public ?string $endDate = null;
 
     /**
+     * Filter by location id
+     *
+     * @var ?string $locationId
+     */
+    #[SpeakeasyMetadata('queryParam:name=location_id')]
+    public ?string $locationId = null;
+
+    /**
      * @param  ?string  $customerId
      * @param  ?string  $startDate
      * @param  ?string  $endDate
+     * @param  ?string  $locationId
      * @phpstan-pure
      */
-    public function __construct(?string $customerId = null, ?string $startDate = null, ?string $endDate = null)
+    public function __construct(?string $customerId = null, ?string $startDate = null, ?string $endDate = null, ?string $locationId = null)
     {
         $this->customerId = $customerId;
         $this->startDate = $startDate;
         $this->endDate = $endDate;
+        $this->locationId = $locationId;
     }
 }

@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace Apideck\Unify\Models\Operations;
 
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Utils\SpeakeasyMetadata;
 class AccountingCategoriesOneRequest
 {
@@ -44,6 +45,14 @@ class AccountingCategoriesOneRequest
     public ?string $serviceId = null;
 
     /**
+     * Apply filters
+     *
+     * @var ?Components\CategoriesFilter $filter
+     */
+    #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
+    public ?Components\CategoriesFilter $filter = null;
+
+    /**
      * The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
      *
      * @var ?string $fields
@@ -65,15 +74,17 @@ class AccountingCategoriesOneRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?bool  $raw
+     * @param  ?Components\CategoriesFilter  $filter
      * @param  ?string  $fields
      * @phpstan-pure
      */
-    public function __construct(string $id, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $fields = null, ?bool $raw = false)
+    public function __construct(string $id, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?Components\CategoriesFilter $filter = null, ?string $fields = null, ?bool $raw = false)
     {
         $this->id = $id;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
+        $this->filter = $filter;
         $this->fields = $fields;
         $this->raw = $raw;
     }

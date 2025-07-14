@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace Apideck\Unify\Models\Operations;
 
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Utils\SpeakeasyMetadata;
 class AccountingCategoriesAllRequest
 {
@@ -34,6 +35,14 @@ class AccountingCategoriesAllRequest
      */
     #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-apideck-service-id')]
     public ?string $serviceId = null;
+
+    /**
+     * Apply filters
+     *
+     * @var ?Components\CategoriesFilter $filter
+     */
+    #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
+    public ?Components\CategoriesFilter $filter = null;
 
     /**
      * Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
@@ -73,15 +82,17 @@ class AccountingCategoriesAllRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?int  $limit
+     * @param  ?Components\CategoriesFilter  $filter
      * @param  ?string  $cursor
      * @param  ?string  $fields
      * @phpstan-pure
      */
-    public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $cursor = null, ?string $fields = null, ?bool $raw = false, ?int $limit = 20)
+    public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?Components\CategoriesFilter $filter = null, ?string $cursor = null, ?string $fields = null, ?bool $raw = false, ?int $limit = 20)
     {
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
+        $this->filter = $filter;
         $this->cursor = $cursor;
         $this->fields = $fields;
         $this->raw = $raw;

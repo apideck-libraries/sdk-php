@@ -30,20 +30,11 @@ float $value = /* values here */
 bool $value = /* values here */
 ```
 
-### `Components\Four`
-
-```php
-/**
-* @var Components\Four
-*/
-Components\Four $value = /* values here */
-```
-
 ### `array`
 
 ```php
 /**
-* @var array<string>
+* @var array<string, mixed>
 */
 array $value = /* values here */
 ```
@@ -52,7 +43,7 @@ array $value = /* values here */
 
 ```php
 /**
-* @var array<Components\Six>
+* @var array<string|float|bool|array<string, mixed>|null>
 */
 array $value = /* values here */
 ```
