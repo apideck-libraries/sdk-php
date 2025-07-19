@@ -174,6 +174,26 @@ class BillLineItemInput
     public ?array $trackingCategories = null;
 
     /**
+     * The customer this entity is linked to.
+     *
+     * @var ?LinkedCustomerInput $customer
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedCustomerInput|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedCustomerInput $customer = null;
+
+    /**
+     * Rebilling metadata for this line item.
+     *
+     * @var ?Rebilling $rebilling
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('rebilling')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Rebilling|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Rebilling $rebilling = null;
+
+    /**
      * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
      *
      * @var ?string $rowVersion
@@ -201,10 +221,12 @@ class BillLineItemInput
      * @param  ?string  $departmentId
      * @param  ?LinkedLedgerAccountInput  $ledgerAccount
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
+     * @param  ?LinkedCustomerInput  $customer
+     * @param  ?Rebilling  $rebilling
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRateInput $taxRate = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?BillLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $locationId = null, ?string $departmentId = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?array $trackingCategories = null, ?string $rowVersion = null)
+    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRateInput $taxRate = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?BillLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $locationId = null, ?string $departmentId = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?array $trackingCategories = null, ?LinkedCustomerInput $customer = null, ?Rebilling $rebilling = null, ?string $rowVersion = null)
     {
         $this->rowId = $rowId;
         $this->item = $item;
@@ -224,6 +246,8 @@ class BillLineItemInput
         $this->departmentId = $departmentId;
         $this->ledgerAccount = $ledgerAccount;
         $this->trackingCategories = $trackingCategories;
+        $this->customer = $customer;
+        $this->rebilling = $rebilling;
         $this->rowVersion = $rowVersion;
     }
 }
