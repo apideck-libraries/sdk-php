@@ -111,6 +111,16 @@ class ExpenseLineItemInput
     public ?int $lineNumber = null;
 
     /**
+     * Rebilling metadata for this line item.
+     *
+     * @var ?Rebilling $rebilling
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('rebilling')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Rebilling|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Rebilling $rebilling = null;
+
+    /**
      * @param  ?string  $accountId
      * @param  ?string  $customerId
      * @param  ?LinkedTaxRateInput  $taxRate
@@ -122,9 +132,10 @@ class ExpenseLineItemInput
      * @param  ?string  $subsidiaryId
      * @param  ?string  $description
      * @param  ?int  $lineNumber
+     * @param  ?Rebilling  $rebilling
      * @phpstan-pure
      */
-    public function __construct(?string $accountId = null, ?string $customerId = null, ?LinkedTaxRateInput $taxRate = null, ?float $totalAmount = null, ?bool $billable = null, ?array $trackingCategories = null, ?string $departmentId = null, ?string $locationId = null, ?string $subsidiaryId = null, ?string $description = null, ?int $lineNumber = null)
+    public function __construct(?string $accountId = null, ?string $customerId = null, ?LinkedTaxRateInput $taxRate = null, ?float $totalAmount = null, ?bool $billable = null, ?array $trackingCategories = null, ?string $departmentId = null, ?string $locationId = null, ?string $subsidiaryId = null, ?string $description = null, ?int $lineNumber = null, ?Rebilling $rebilling = null)
     {
         $this->accountId = $accountId;
         $this->customerId = $customerId;
@@ -137,5 +148,6 @@ class ExpenseLineItemInput
         $this->subsidiaryId = $subsidiaryId;
         $this->description = $description;
         $this->lineNumber = $lineNumber;
+        $this->rebilling = $rebilling;
     }
 }
