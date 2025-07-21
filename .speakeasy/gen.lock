@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: a309a85446f6cd9732ce34745b5f0bbd
-  docVersion: 10.18.2
-  speakeasyVersion: 1.581.0
-  generationVersion: 2.656.5
-  releaseVersion: 0.11.3
-  configChecksum: 526aef102c24eee24ede6714f565e302
+  docChecksum: 1cdf4ae41061f1f4436b2dd63e53c696
+  docVersion: 10.18.3
+  speakeasyVersion: 1.583.0
+  generationVersion: 2.658.3
+  releaseVersion: 0.11.4
+  configChecksum: b2370f97b43dbc6c0d1179ae7af54d1e
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php
   published: true
@@ -680,6 +680,8 @@ generatedFiles:
   - docs/Models/Components/PurchaseOrdersFilter.md
   - docs/Models/Components/PurchaseOrdersSort.md
   - docs/Models/Components/PurchaseOrdersSortBy.md
+  - docs/Models/Components/RebillStatus.md
+  - docs/Models/Components/Rebilling.md
   - docs/Models/Components/Reports.md
   - docs/Models/Components/RequestCountAllocation.md
   - docs/Models/Components/RequestRate.md
@@ -2243,6 +2245,8 @@ generatedFiles:
   - src/Models/Components/PurchaseOrdersFilter.php
   - src/Models/Components/PurchaseOrdersSort.php
   - src/Models/Components/PurchaseOrdersSortBy.php
+  - src/Models/Components/RebillStatus.php
+  - src/Models/Components/Rebilling.php
   - src/Models/Components/Reports.php
   - src/Models/Components/RequestCountAllocation.php
   - src/Models/Components/RequestRate.php
