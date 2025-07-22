@@ -269,6 +269,16 @@ class PurchaseOrder
     public ?string $paymentMethod = null;
 
     /**
+     * Type of amortization
+     *
+     * @var ?AmortizationType $amortizationType
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('amortization_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\AmortizationType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?AmortizationType $amortizationType = null;
+
+    /**
      * Applicable tax id/code override if tax is not supplied on a line item basis.
      *
      * @var ?string $taxCode
@@ -294,6 +304,15 @@ class PurchaseOrder
     #[\Speakeasy\Serializer\Annotation\SerializedName('memo')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $memo = null;
+
+    /**
+     * Internal notes for the purchase order.
+     *
+     * @var ?string $notes
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('notes')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $notes = null;
 
     /**
      * A list of linked tracking categories.
@@ -389,9 +408,11 @@ class PurchaseOrder
      * @param  ?bool  $accountingByRow
      * @param  ?LocalDate  $dueDate
      * @param  ?string  $paymentMethod
+     * @param  ?AmortizationType  $amortizationType
      * @param  ?string  $taxCode
      * @param  ?string  $channel
      * @param  ?string  $memo
+     * @param  ?string  $notes
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $rowVersion
@@ -401,7 +422,7 @@ class PurchaseOrder
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?array $lineItems = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $poNumber = null, ?string $reference = null, ?LinkedSupplier $supplier = null, ?string $subsidiaryId = null, ?string $companyId = null, ?PurchaseOrderStatus $status = null, ?LocalDate $issuedDate = null, ?LocalDate $deliveryDate = null, ?LocalDate $expectedArrivalDate = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?bool $taxInclusive = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $templateId = null, ?float $discountPercentage = null, ?bool $accountingByRow = null, ?LocalDate $dueDate = null, ?string $paymentMethod = null, ?string $taxCode = null, ?string $channel = null, ?string $memo = null, ?array $trackingCategories = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?array $lineItems = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $poNumber = null, ?string $reference = null, ?LinkedSupplier $supplier = null, ?string $subsidiaryId = null, ?string $companyId = null, ?PurchaseOrderStatus $status = null, ?LocalDate $issuedDate = null, ?LocalDate $deliveryDate = null, ?LocalDate $expectedArrivalDate = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?bool $taxInclusive = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $templateId = null, ?float $discountPercentage = null, ?bool $accountingByRow = null, ?LocalDate $dueDate = null, ?string $paymentMethod = null, ?AmortizationType $amortizationType = null, ?string $taxCode = null, ?string $channel = null, ?string $memo = null, ?string $notes = null, ?array $trackingCategories = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->lineItems = $lineItems;
@@ -431,9 +452,11 @@ class PurchaseOrder
         $this->accountingByRow = $accountingByRow;
         $this->dueDate = $dueDate;
         $this->paymentMethod = $paymentMethod;
+        $this->amortizationType = $amortizationType;
         $this->taxCode = $taxCode;
         $this->channel = $channel;
         $this->memo = $memo;
+        $this->notes = $notes;
         $this->trackingCategories = $trackingCategories;
         $this->customMappings = $customMappings;
         $this->rowVersion = $rowVersion;

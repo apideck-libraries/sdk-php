@@ -164,6 +164,24 @@ class BillLineItem
     public ?string $departmentId = null;
 
     /**
+     * The ID of the subsidiary
+     *
+     * @var ?string $subsidiaryId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiary_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $subsidiaryId = null;
+
+    /**
+     * ID of the category of the line item
+     *
+     * @var ?string $categoryId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('category_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $categoryId = null;
+
+    /**
      *
      * @var ?LinkedLedgerAccount $ledgerAccount
      */
@@ -171,6 +189,15 @@ class BillLineItem
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?LinkedLedgerAccount $ledgerAccount = null;
+
+    /**
+     *
+     * @var ?LinkedPurchaseOrder $purchaseOrder
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('purchase_order')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedPurchaseOrder|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedPurchaseOrder $purchaseOrder = null;
 
     /**
      * A list of linked tracking categories.
@@ -265,7 +292,10 @@ class BillLineItem
      * @param  ?float  $discountAmount
      * @param  ?string  $locationId
      * @param  ?string  $departmentId
+     * @param  ?string  $subsidiaryId
+     * @param  ?string  $categoryId
      * @param  ?LinkedLedgerAccount  $ledgerAccount
+     * @param  ?LinkedPurchaseOrder  $purchaseOrder
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?LinkedCustomer  $customer
      * @param  ?Rebilling  $rebilling
@@ -276,7 +306,7 @@ class BillLineItem
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRate $taxRate = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?BillLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $locationId = null, ?string $departmentId = null, ?LinkedLedgerAccount $ledgerAccount = null, ?array $trackingCategories = null, ?LinkedCustomer $customer = null, ?Rebilling $rebilling = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(?string $id = null, ?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRate $taxRate = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?BillLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $locationId = null, ?string $departmentId = null, ?string $subsidiaryId = null, ?string $categoryId = null, ?LinkedLedgerAccount $ledgerAccount = null, ?LinkedPurchaseOrder $purchaseOrder = null, ?array $trackingCategories = null, ?LinkedCustomer $customer = null, ?Rebilling $rebilling = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
         $this->rowId = $rowId;
@@ -295,7 +325,10 @@ class BillLineItem
         $this->discountAmount = $discountAmount;
         $this->locationId = $locationId;
         $this->departmentId = $departmentId;
+        $this->subsidiaryId = $subsidiaryId;
+        $this->categoryId = $categoryId;
         $this->ledgerAccount = $ledgerAccount;
+        $this->purchaseOrder = $purchaseOrder;
         $this->trackingCategories = $trackingCategories;
         $this->customer = $customer;
         $this->rebilling = $rebilling;

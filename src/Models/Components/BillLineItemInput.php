@@ -155,6 +155,24 @@ class BillLineItemInput
     public ?string $departmentId = null;
 
     /**
+     * The ID of the subsidiary
+     *
+     * @var ?string $subsidiaryId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiary_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $subsidiaryId = null;
+
+    /**
+     * ID of the category of the line item
+     *
+     * @var ?string $categoryId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('category_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $categoryId = null;
+
+    /**
      *
      * @var ?LinkedLedgerAccountInput $ledgerAccount
      */
@@ -162,6 +180,15 @@ class BillLineItemInput
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccountInput|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?LinkedLedgerAccountInput $ledgerAccount = null;
+
+    /**
+     *
+     * @var ?LinkedPurchaseOrder $purchaseOrder
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('purchase_order')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedPurchaseOrder|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedPurchaseOrder $purchaseOrder = null;
 
     /**
      * A list of linked tracking categories.
@@ -219,14 +246,17 @@ class BillLineItemInput
      * @param  ?float  $discountAmount
      * @param  ?string  $locationId
      * @param  ?string  $departmentId
+     * @param  ?string  $subsidiaryId
+     * @param  ?string  $categoryId
      * @param  ?LinkedLedgerAccountInput  $ledgerAccount
+     * @param  ?LinkedPurchaseOrder  $purchaseOrder
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?LinkedCustomerInput  $customer
      * @param  ?Rebilling  $rebilling
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRateInput $taxRate = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?BillLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $locationId = null, ?string $departmentId = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?array $trackingCategories = null, ?LinkedCustomerInput $customer = null, ?Rebilling $rebilling = null, ?string $rowVersion = null)
+    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRateInput $taxRate = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?BillLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $locationId = null, ?string $departmentId = null, ?string $subsidiaryId = null, ?string $categoryId = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?LinkedPurchaseOrder $purchaseOrder = null, ?array $trackingCategories = null, ?LinkedCustomerInput $customer = null, ?Rebilling $rebilling = null, ?string $rowVersion = null)
     {
         $this->rowId = $rowId;
         $this->item = $item;
@@ -244,7 +274,10 @@ class BillLineItemInput
         $this->discountAmount = $discountAmount;
         $this->locationId = $locationId;
         $this->departmentId = $departmentId;
+        $this->subsidiaryId = $subsidiaryId;
+        $this->categoryId = $categoryId;
         $this->ledgerAccount = $ledgerAccount;
+        $this->purchaseOrder = $purchaseOrder;
         $this->trackingCategories = $trackingCategories;
         $this->customer = $customer;
         $this->rebilling = $rebilling;
