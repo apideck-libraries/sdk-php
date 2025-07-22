@@ -251,6 +251,16 @@ class PurchaseOrderInput
     public ?string $paymentMethod = null;
 
     /**
+     * Type of amortization
+     *
+     * @var ?AmortizationType $amortizationType
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('amortization_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\AmortizationType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?AmortizationType $amortizationType = null;
+
+    /**
      * Applicable tax id/code override if tax is not supplied on a line item basis.
      *
      * @var ?string $taxCode
@@ -276,6 +286,15 @@ class PurchaseOrderInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('memo')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $memo = null;
+
+    /**
+     * Internal notes for the purchase order.
+     *
+     * @var ?string $notes
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('notes')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $notes = null;
 
     /**
      * A list of linked tracking categories.
@@ -323,14 +342,16 @@ class PurchaseOrderInput
      * @param  ?bool  $accountingByRow
      * @param  ?LocalDate  $dueDate
      * @param  ?string  $paymentMethod
+     * @param  ?AmortizationType  $amortizationType
      * @param  ?string  $taxCode
      * @param  ?string  $channel
      * @param  ?string  $memo
+     * @param  ?string  $notes
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?array $lineItems = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $poNumber = null, ?string $reference = null, ?LinkedSupplierInput $supplier = null, ?string $subsidiaryId = null, ?string $companyId = null, ?PurchaseOrderStatus $status = null, ?LocalDate $issuedDate = null, ?LocalDate $deliveryDate = null, ?LocalDate $expectedArrivalDate = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?bool $taxInclusive = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $templateId = null, ?float $discountPercentage = null, ?bool $accountingByRow = null, ?LocalDate $dueDate = null, ?string $paymentMethod = null, ?string $taxCode = null, ?string $channel = null, ?string $memo = null, ?array $trackingCategories = null, ?string $rowVersion = null)
+    public function __construct(?array $lineItems = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $poNumber = null, ?string $reference = null, ?LinkedSupplierInput $supplier = null, ?string $subsidiaryId = null, ?string $companyId = null, ?PurchaseOrderStatus $status = null, ?LocalDate $issuedDate = null, ?LocalDate $deliveryDate = null, ?LocalDate $expectedArrivalDate = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?bool $taxInclusive = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $templateId = null, ?float $discountPercentage = null, ?bool $accountingByRow = null, ?LocalDate $dueDate = null, ?string $paymentMethod = null, ?AmortizationType $amortizationType = null, ?string $taxCode = null, ?string $channel = null, ?string $memo = null, ?string $notes = null, ?array $trackingCategories = null, ?string $rowVersion = null)
     {
         $this->lineItems = $lineItems;
         $this->shippingAddress = $shippingAddress;
@@ -358,9 +379,11 @@ class PurchaseOrderInput
         $this->accountingByRow = $accountingByRow;
         $this->dueDate = $dueDate;
         $this->paymentMethod = $paymentMethod;
+        $this->amortizationType = $amortizationType;
         $this->taxCode = $taxCode;
         $this->channel = $channel;
         $this->memo = $memo;
+        $this->notes = $notes;
         $this->trackingCategories = $trackingCategories;
         $this->rowVersion = $rowVersion;
     }

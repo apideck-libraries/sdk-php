@@ -183,6 +183,24 @@ class InvoiceLineItem
     public ?string $departmentId = null;
 
     /**
+     * The ID of the subsidiary
+     *
+     * @var ?string $subsidiaryId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiary_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $subsidiaryId = null;
+
+    /**
+     * Whether the line item is prepaid
+     *
+     * @var ?bool $prepaid
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('prepaid')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $prepaid = null;
+
+    /**
      * A list of linked tracking categories.
      *
      * @var ?array<?LinkedTrackingCategory> $trackingCategories
@@ -266,6 +284,8 @@ class InvoiceLineItem
      * @param  ?string  $categoryId
      * @param  ?string  $locationId
      * @param  ?string  $departmentId
+     * @param  ?string  $subsidiaryId
+     * @param  ?bool  $prepaid
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?LinkedLedgerAccount  $ledgerAccount
      * @param  ?string  $rowVersion
@@ -275,7 +295,7 @@ class InvoiceLineItem
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?string $id = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?InvoiceLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $categoryId = null, ?string $locationId = null, ?string $departmentId = null, ?array $trackingCategories = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?string $id = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?InvoiceLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $categoryId = null, ?string $locationId = null, ?string $departmentId = null, ?string $subsidiaryId = null, ?bool $prepaid = null, ?array $trackingCategories = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->rowId = $rowId;
         $this->item = $item;
@@ -296,6 +316,8 @@ class InvoiceLineItem
         $this->categoryId = $categoryId;
         $this->locationId = $locationId;
         $this->departmentId = $departmentId;
+        $this->subsidiaryId = $subsidiaryId;
+        $this->prepaid = $prepaid;
         $this->trackingCategories = $trackingCategories;
         $this->ledgerAccount = $ledgerAccount;
         $this->rowVersion = $rowVersion;
