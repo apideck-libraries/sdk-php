@@ -192,6 +192,24 @@ class InvoiceLineItemInput
     public ?string $subsidiaryId = null;
 
     /**
+     * ID of the shipping of the line item
+     *
+     * @var ?string $shippingId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('shipping_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $shippingId = null;
+
+    /**
+     * Memo
+     *
+     * @var ?string $memo
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('memo')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $memo = null;
+
+    /**
      * Whether the line item is prepaid
      *
      * @var ?bool $prepaid
@@ -199,6 +217,52 @@ class InvoiceLineItemInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('prepaid')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $prepaid = null;
+
+    /**
+     * Tax applicable on
+     *
+     * @var ?string $taxApplicableOn
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_applicable_on')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $taxApplicableOn = null;
+
+    /**
+     * Tax recoverability
+     *
+     * @var ?string $taxRecoverability
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_recoverability')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $taxRecoverability = null;
+
+    /**
+     * Method of tax calculation
+     *
+     * @var ?string $taxMethod
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_method')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $taxMethod = null;
+
+    /**
+     * Budget of the line item
+     *
+     * @var ?Budget $budget
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('budget')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Budget|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Budget $budget = null;
+
+    /**
+     * ID of the project of the line item
+     *
+     * @var ?string $projectId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('project_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $projectId = null;
 
     /**
      * A list of linked tracking categories.
@@ -249,13 +313,20 @@ class InvoiceLineItemInput
      * @param  ?string  $locationId
      * @param  ?string  $departmentId
      * @param  ?string  $subsidiaryId
+     * @param  ?string  $shippingId
+     * @param  ?string  $memo
      * @param  ?bool  $prepaid
+     * @param  ?string  $taxApplicableOn
+     * @param  ?string  $taxRecoverability
+     * @param  ?string  $taxMethod
+     * @param  ?Budget  $budget
+     * @param  ?string  $projectId
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?LinkedLedgerAccountInput  $ledgerAccount
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?string $id = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?InvoiceLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $categoryId = null, ?string $locationId = null, ?string $departmentId = null, ?string $subsidiaryId = null, ?bool $prepaid = null, ?array $trackingCategories = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $rowVersion = null)
+    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?string $id = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?InvoiceLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $categoryId = null, ?string $locationId = null, ?string $departmentId = null, ?string $subsidiaryId = null, ?string $shippingId = null, ?string $memo = null, ?bool $prepaid = null, ?string $taxApplicableOn = null, ?string $taxRecoverability = null, ?string $taxMethod = null, ?Budget $budget = null, ?string $projectId = null, ?array $trackingCategories = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $rowVersion = null)
     {
         $this->rowId = $rowId;
         $this->item = $item;
@@ -277,7 +348,14 @@ class InvoiceLineItemInput
         $this->locationId = $locationId;
         $this->departmentId = $departmentId;
         $this->subsidiaryId = $subsidiaryId;
+        $this->shippingId = $shippingId;
+        $this->memo = $memo;
         $this->prepaid = $prepaid;
+        $this->taxApplicableOn = $taxApplicableOn;
+        $this->taxRecoverability = $taxRecoverability;
+        $this->taxMethod = $taxMethod;
+        $this->budget = $budget;
+        $this->projectId = $projectId;
         $this->trackingCategories = $trackingCategories;
         $this->ledgerAccount = $ledgerAccount;
         $this->rowVersion = $rowVersion;
