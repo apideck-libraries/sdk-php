@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace Apideck\Unify\Models\Operations;
 
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Utils\SpeakeasyMetadata;
 class EcommerceProductsAllRequest
 {
@@ -42,6 +43,14 @@ class EcommerceProductsAllRequest
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=pass_through')]
     public ?array $passThrough = null;
+
+    /**
+     * Apply filters
+     *
+     * @var ?Components\EcommerceProductsFilter $filter
+     */
+    #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
+    public ?Components\EcommerceProductsFilter $filter = null;
 
     /**
      * Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
@@ -82,16 +91,18 @@ class EcommerceProductsAllRequest
      * @param  ?string  $serviceId
      * @param  ?int  $limit
      * @param  ?array<string, mixed>  $passThrough
+     * @param  ?Components\EcommerceProductsFilter  $filter
      * @param  ?string  $cursor
      * @param  ?string  $fields
      * @phpstan-pure
      */
-    public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?array $passThrough = null, ?string $cursor = null, ?string $fields = null, ?bool $raw = false, ?int $limit = 20)
+    public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?array $passThrough = null, ?Components\EcommerceProductsFilter $filter = null, ?string $cursor = null, ?string $fields = null, ?bool $raw = false, ?int $limit = 20)
     {
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
         $this->passThrough = $passThrough;
+        $this->filter = $filter;
         $this->cursor = $cursor;
         $this->fields = $fields;
         $this->raw = $raw;
