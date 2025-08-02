@@ -17,6 +17,7 @@ List companies
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.companiesAll" method="get" path="/crm/companies" -->
 ```php
 declare(strict_types=1);
 
@@ -88,6 +89,7 @@ Create company
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.companiesAdd" method="post" path="/crm/companies" -->
 ```php
 declare(strict_types=1);
 
@@ -338,6 +340,7 @@ Get company
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.companiesOne" method="get" path="/crm/companies/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -396,6 +399,7 @@ Update company
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.companiesUpdate" method="patch" path="/crm/companies/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -685,6 +689,7 @@ Delete company
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.companiesDelete" method="delete" path="/crm/companies/{id}" -->
 ```php
 declare(strict_types=1);
 

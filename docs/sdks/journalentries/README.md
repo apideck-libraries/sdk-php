@@ -17,6 +17,7 @@ List Journal Entries
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.journalEntriesAll" method="get" path="/accounting/journal-entries" -->
 ```php
 declare(strict_types=1);
 
@@ -89,6 +90,7 @@ Create Journal Entry
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.journalEntriesAdd" method="post" path="/accounting/journal-entries" -->
 ```php
 declare(strict_types=1);
 
@@ -330,6 +332,7 @@ Get Journal Entry
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.journalEntriesOne" method="get" path="/accounting/journal-entries/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -388,6 +391,7 @@ Update Journal Entry
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.journalEntriesUpdate" method="patch" path="/accounting/journal-entries/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -594,6 +598,7 @@ Delete Journal Entry
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.journalEntriesDelete" method="delete" path="/accounting/journal-entries/{id}" -->
 ```php
 declare(strict_types=1);
 

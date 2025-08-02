@@ -17,6 +17,7 @@ List Locations
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.locationsAll" method="get" path="/accounting/locations" -->
 ```php
 declare(strict_types=1);
 
@@ -81,6 +82,7 @@ Create Location
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.locationsAdd" method="post" path="/accounting/locations" -->
 ```php
 declare(strict_types=1);
 
@@ -196,6 +198,7 @@ Get Location
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.locationsOne" method="get" path="/accounting/locations/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -254,6 +257,7 @@ Update Location
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.locationsUpdate" method="patch" path="/accounting/locations/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -441,6 +445,7 @@ Delete Location
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.locationsDelete" method="delete" path="/accounting/locations/{id}" -->
 ```php
 declare(strict_types=1);
 

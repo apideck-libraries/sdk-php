@@ -17,6 +17,7 @@ List Customers
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.customersAll" method="get" path="/accounting/customers" -->
 ```php
 declare(strict_types=1);
 
@@ -96,6 +97,7 @@ Create Customer
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.customersAdd" method="post" path="/accounting/customers" -->
 ```php
 declare(strict_types=1);
 
@@ -319,6 +321,7 @@ Get Customer
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.customersOne" method="get" path="/accounting/customers/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -377,6 +380,7 @@ Update Customer
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.customersUpdate" method="patch" path="/accounting/customers/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -618,6 +622,7 @@ Delete Customer
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.customersDelete" method="delete" path="/accounting/customers/{id}" -->
 ```php
 declare(strict_types=1);
 

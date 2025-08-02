@@ -14,6 +14,7 @@ List Orders
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ecommerce.ordersAll" method="get" path="/ecommerce/orders" -->
 ```php
 declare(strict_types=1);
 
@@ -88,6 +89,7 @@ Get Order
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ecommerce.ordersOne" method="get" path="/ecommerce/orders/{id}" -->
 ```php
 declare(strict_types=1);
 

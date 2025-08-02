@@ -18,6 +18,7 @@ List Tax Rates. Note: Not all connectors return the actual rate/percentage value
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.taxRatesAll" method="get" path="/accounting/tax-rates" -->
 ```php
 declare(strict_types=1);
 
@@ -89,6 +90,7 @@ Create Tax Rate
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.taxRatesAdd" method="post" path="/accounting/tax-rates" -->
 ```php
 declare(strict_types=1);
 
@@ -219,6 +221,7 @@ Get Tax Rate. Note: Not all connectors return the actual rate/percentage value. 
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.taxRatesOne" method="get" path="/accounting/tax-rates/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -277,6 +280,7 @@ Update Tax Rate
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.taxRatesUpdate" method="patch" path="/accounting/tax-rates/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -444,6 +448,7 @@ Delete Tax Rate
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.taxRatesDelete" method="delete" path="/accounting/tax-rates/{id}" -->
 ```php
 declare(strict_types=1);
 

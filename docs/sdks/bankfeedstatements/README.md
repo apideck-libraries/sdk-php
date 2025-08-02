@@ -17,6 +17,7 @@ List Bank Feed Statements
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.bankFeedStatementsAll" method="get" path="/accounting/bank-feed-statements" -->
 ```php
 declare(strict_types=1);
 
@@ -80,6 +81,7 @@ Create Bank Feed Statement
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.bankFeedStatementsAdd" method="post" path="/accounting/bank-feed-statements" -->
 ```php
 declare(strict_types=1);
 
@@ -180,6 +182,7 @@ Get Bank Feed Statement
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.bankFeedStatementsOne" method="get" path="/accounting/bank-feed-statements/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -238,6 +241,7 @@ Update Bank Feed Statement
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.bankFeedStatementsUpdate" method="patch" path="/accounting/bank-feed-statements/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -329,6 +333,7 @@ Delete Bank Feed Statement
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.bankFeedStatementsDelete" method="delete" path="/accounting/bank-feed-statements/{id}" -->
 ```php
 declare(strict_types=1);
 

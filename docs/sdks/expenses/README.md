@@ -17,6 +17,7 @@ List Expenses
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.expensesAll" method="get" path="/accounting/expenses" -->
 ```php
 declare(strict_types=1);
 
@@ -76,6 +77,7 @@ Create Expense
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.expensesAdd" method="post" path="/accounting/expenses" -->
 ```php
 declare(strict_types=1);
 
@@ -265,6 +267,7 @@ Get Expense
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.expensesOne" method="get" path="/accounting/expenses/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -322,6 +325,7 @@ Update Expense
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.expensesUpdate" method="patch" path="/accounting/expenses/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -481,6 +485,7 @@ Delete Expense
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.expensesDelete" method="delete" path="/accounting/expenses/{id}" -->
 ```php
 declare(strict_types=1);
 

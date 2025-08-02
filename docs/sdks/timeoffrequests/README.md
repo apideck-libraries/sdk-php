@@ -17,6 +17,7 @@ List Time Off Requests
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris.timeOffRequestsAll" method="get" path="/hris/time-off-requests" -->
 ```php
 declare(strict_types=1);
 
@@ -89,6 +90,7 @@ Create Time Off Request
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris.timeOffRequestsAdd" method="post" path="/hris/time-off-requests" -->
 ```php
 declare(strict_types=1);
 
@@ -180,6 +182,7 @@ Get Time Off Request
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris.timeOffRequestsOne" method="get" path="/hris/time-off-requests/employees/{employee_id}/time-off-requests/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -239,6 +242,7 @@ Update Time Off Request
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris.timeOffRequestsUpdate" method="patch" path="/hris/time-off-requests/employees/{employee_id}/time-off-requests/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -348,6 +352,7 @@ Delete Time Off Request
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris.timeOffRequestsDelete" method="delete" path="/hris/time-off-requests/employees/{employee_id}/time-off-requests/{id}" -->
 ```php
 declare(strict_types=1);
 

@@ -14,6 +14,7 @@ Get consumer request counts within a given datetime range.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="vault.consumerRequestCountsAll" method="get" path="/vault/consumers/{consumer_id}/stats" -->
 ```php
 declare(strict_types=1);
 

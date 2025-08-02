@@ -14,6 +14,7 @@ List Collections
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="issueTracking.collectionsAll" method="get" path="/issue-tracking/collections" -->
 ```php
 declare(strict_types=1);
 
@@ -82,6 +83,7 @@ Get Collection
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="issueTracking.collectionsOne" method="get" path="/issue-tracking/collections/{collection_id}" -->
 ```php
 declare(strict_types=1);
 

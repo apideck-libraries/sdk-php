@@ -17,6 +17,7 @@ List Invoices
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.invoicesAll" method="get" path="/accounting/invoices" -->
 ```php
 declare(strict_types=1);
 
@@ -91,6 +92,7 @@ Create Invoice
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.invoicesAdd" method="post" path="/accounting/invoices" -->
 ```php
 declare(strict_types=1);
 
@@ -362,6 +364,7 @@ Get Invoice
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.invoicesOne" method="get" path="/accounting/invoices/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -420,6 +423,7 @@ Update Invoice
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.invoicesUpdate" method="patch" path="/accounting/invoices/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -769,6 +773,7 @@ Delete Invoice
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.invoicesDelete" method="delete" path="/accounting/invoices/{id}" -->
 ```php
 declare(strict_types=1);
 

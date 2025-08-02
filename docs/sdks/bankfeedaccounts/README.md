@@ -17,6 +17,7 @@ List Bank Feed Accounts
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.bankFeedAccountsAll" method="get" path="/accounting/bank-feed-accounts" -->
 ```php
 declare(strict_types=1);
 
@@ -80,6 +81,7 @@ Create Bank Feed Account
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.bankFeedAccountsAdd" method="post" path="/accounting/bank-feed-accounts" -->
 ```php
 declare(strict_types=1);
 
@@ -167,6 +169,7 @@ Get Bank Feed Account
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.bankFeedAccountsOne" method="get" path="/accounting/bank-feed-accounts/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -225,6 +228,7 @@ Update Bank Feed Account
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.bankFeedAccountsUpdate" method="patch" path="/accounting/bank-feed-accounts/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -307,6 +311,7 @@ Delete Bank Feed Account
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.bankFeedAccountsDelete" method="delete" path="/accounting/bank-feed-accounts/{id}" -->
 ```php
 declare(strict_types=1);
 

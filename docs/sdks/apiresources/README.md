@@ -13,6 +13,7 @@ Get API Resource
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="connector.apiResourcesOne" method="get" path="/connector/apis/{id}/resources/{resource_id}" -->
 ```php
 declare(strict_types=1);
 

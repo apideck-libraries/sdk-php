@@ -17,6 +17,7 @@ Create Folder
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.foldersAdd" method="post" path="/file-storage/folders" -->
 ```php
 declare(strict_types=1);
 
@@ -96,6 +97,7 @@ Get Folder
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.foldersOne" method="get" path="/file-storage/folders/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -154,6 +156,7 @@ Rename or move Folder
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.foldersUpdate" method="patch" path="/file-storage/folders/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -240,6 +243,7 @@ Delete Folder
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.foldersDelete" method="delete" path="/file-storage/folders/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -297,6 +301,7 @@ Copy Folder
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.foldersCopy" method="post" path="/file-storage/folders/{id}/copy" -->
 ```php
 declare(strict_types=1);
 

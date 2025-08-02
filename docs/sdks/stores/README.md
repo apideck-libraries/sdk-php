@@ -13,6 +13,7 @@ Get Store
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ecommerce.storesOne" method="get" path="/ecommerce/store" -->
 ```php
 declare(strict_types=1);
 

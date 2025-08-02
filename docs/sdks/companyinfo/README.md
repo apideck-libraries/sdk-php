@@ -13,6 +13,7 @@ Get company info
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.companyInfoOne" method="get" path="/accounting/company-info" -->
 ```php
 declare(strict_types=1);
 

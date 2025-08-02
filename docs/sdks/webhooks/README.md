@@ -17,6 +17,7 @@ List all webhook subscriptions
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="webhook.webhooksAll" method="get" path="/webhook/webhooks" -->
 ```php
 declare(strict_types=1);
 
@@ -74,6 +75,7 @@ Create a webhook subscription to receive events
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="webhook.webhooksAdd" method="post" path="/webhook/webhooks" -->
 ```php
 declare(strict_types=1);
 
@@ -137,6 +139,7 @@ Get the webhook subscription details
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="webhook.webhooksOne" method="get" path="/webhook/webhooks/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -190,6 +193,7 @@ Update a webhook subscription
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="webhook.webhooksUpdate" method="patch" path="/webhook/webhooks/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -255,6 +259,7 @@ Delete a webhook subscription
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="webhook.webhooksDelete" method="delete" path="/webhook/webhooks/{id}" -->
 ```php
 declare(strict_types=1);
 

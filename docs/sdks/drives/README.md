@@ -17,6 +17,7 @@ List Drives
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.drivesAll" method="get" path="/file-storage/drives" -->
 ```php
 declare(strict_types=1);
 
@@ -81,6 +82,7 @@ Create Drive
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.drivesAdd" method="post" path="/file-storage/drives" -->
 ```php
 declare(strict_types=1);
 
@@ -183,6 +185,7 @@ Get Drive
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.drivesOne" method="get" path="/file-storage/drives/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -241,6 +244,7 @@ Update Drive
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.drivesUpdate" method="patch" path="/file-storage/drives/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -318,6 +322,7 @@ Delete Drive
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.drivesDelete" method="delete" path="/file-storage/drives/{id}" -->
 ```php
 declare(strict_types=1);
 
