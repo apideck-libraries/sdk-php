@@ -13,6 +13,7 @@ Get BalanceSheet
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.balanceSheetOne" method="get" path="/accounting/balance-sheet" -->
 ```php
 declare(strict_types=1);
 

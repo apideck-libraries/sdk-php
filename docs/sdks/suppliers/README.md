@@ -17,6 +17,7 @@ List Suppliers
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.suppliersAll" method="get" path="/accounting/suppliers" -->
 ```php
 declare(strict_types=1);
 
@@ -94,6 +95,7 @@ Create Supplier
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.suppliersAdd" method="post" path="/accounting/suppliers" -->
 ```php
 declare(strict_types=1);
 
@@ -307,6 +309,7 @@ Get Supplier
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.suppliersOne" method="get" path="/accounting/suppliers/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -365,6 +368,7 @@ Update Supplier
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.suppliersUpdate" method="patch" path="/accounting/suppliers/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -569,6 +573,7 @@ Delete Supplier
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.suppliersDelete" method="delete" path="/accounting/suppliers/{id}" -->
 ```php
 declare(strict_types=1);
 

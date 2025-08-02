@@ -17,6 +17,7 @@ List Comments
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="issueTracking.collectionTicketCommentsAll" method="get" path="/issue-tracking/collections/{collection_id}/tickets/{ticket_id}/comments" -->
 ```php
 declare(strict_types=1);
 
@@ -87,6 +88,7 @@ Create Comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="issueTracking.collectionTicketCommentsAdd" method="post" path="/issue-tracking/collections/{collection_id}/tickets/{ticket_id}/comments" -->
 ```php
 declare(strict_types=1);
 
@@ -209,6 +211,7 @@ Get Comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="issueTracking.collectionTicketCommentsOne" method="get" path="/issue-tracking/collections/{collection_id}/tickets/{ticket_id}/comments/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -272,6 +275,7 @@ Update Comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="issueTracking.collectionTicketCommentsUpdate" method="patch" path="/issue-tracking/collections/{collection_id}/tickets/{ticket_id}/comments/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -358,6 +362,7 @@ Delete Comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="issueTracking.collectionTicketCommentsDelete" method="delete" path="/issue-tracking/collections/{collection_id}/tickets/{ticket_id}/comments/{id}" -->
 ```php
 declare(strict_types=1);
 

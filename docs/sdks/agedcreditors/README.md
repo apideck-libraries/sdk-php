@@ -13,6 +13,7 @@ Get Aged Creditors
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.agedCreditorsOne" method="get" path="/accounting/aged-creditors" -->
 ```php
 declare(strict_types=1);
 

@@ -13,6 +13,7 @@ Get Profit and Loss
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.profitAndLossOne" method="get" path="/accounting/profit-and-loss" -->
 ```php
 declare(strict_types=1);
 

@@ -17,6 +17,7 @@ List Subsidiaries
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.subsidiariesAll" method="get" path="/accounting/subsidiaries" -->
 ```php
 declare(strict_types=1);
 
@@ -77,6 +78,7 @@ Create Subsidiary
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.subsidiariesAdd" method="post" path="/accounting/subsidiaries" -->
 ```php
 declare(strict_types=1);
 
@@ -181,6 +183,7 @@ Get Subsidiary
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.subsidiariesOne" method="get" path="/accounting/subsidiaries/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -239,6 +242,7 @@ Update Subsidiary
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.subsidiariesUpdate" method="patch" path="/accounting/subsidiaries/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -326,6 +330,7 @@ Delete Subsidiary
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.subsidiariesDelete" method="delete" path="/accounting/subsidiaries/{id}" -->
 ```php
 declare(strict_types=1);
 

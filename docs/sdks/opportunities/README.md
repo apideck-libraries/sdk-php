@@ -17,6 +17,7 @@ List opportunities
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.opportunitiesAll" method="get" path="/crm/opportunities" -->
 ```php
 declare(strict_types=1);
 
@@ -89,6 +90,7 @@ Create opportunity
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.opportunitiesAdd" method="post" path="/crm/opportunities" -->
 ```php
 declare(strict_types=1);
 
@@ -224,6 +226,7 @@ Get opportunity
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.opportunitiesOne" method="get" path="/crm/opportunities/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -282,6 +285,7 @@ Update opportunity
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.opportunitiesUpdate" method="patch" path="/crm/opportunities/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -426,6 +430,7 @@ Delete opportunity
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.opportunitiesDelete" method="delete" path="/crm/opportunities/{id}" -->
 ```php
 declare(strict_types=1);
 

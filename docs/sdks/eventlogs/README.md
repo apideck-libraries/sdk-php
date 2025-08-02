@@ -13,6 +13,7 @@ List event logs
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="webhook.eventLogsAll" method="get" path="/webhook/logs" -->
 ```php
 declare(strict_types=1);
 

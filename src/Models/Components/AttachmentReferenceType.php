@@ -14,4 +14,5 @@ enum AttachmentReferenceType: string
     case Invoice = 'invoice';
     case Bill = 'bill';
     case Expense = 'expense';
+    case Quote = 'quote';
 }

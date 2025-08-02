@@ -17,6 +17,7 @@ List Credit Notes
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.creditNotesAll" method="get" path="/accounting/credit-notes" -->
 ```php
 declare(strict_types=1);
 
@@ -89,6 +90,7 @@ Create Credit Note
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.creditNotesAdd" method="post" path="/accounting/credit-notes" -->
 ```php
 declare(strict_types=1);
 
@@ -330,6 +332,7 @@ Get Credit Note
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.creditNotesOne" method="get" path="/accounting/credit-notes/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -388,6 +391,7 @@ Update Credit Note
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.creditNotesUpdate" method="patch" path="/accounting/credit-notes/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -641,6 +645,7 @@ Delete Credit Note
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.creditNotesDelete" method="delete" path="/accounting/credit-notes/{id}" -->
 ```php
 declare(strict_types=1);
 

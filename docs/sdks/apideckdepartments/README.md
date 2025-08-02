@@ -17,6 +17,7 @@ List Departments
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris.departmentsAll" method="get" path="/hris/departments" -->
 ```php
 declare(strict_types=1);
 
@@ -80,6 +81,7 @@ Create Department
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris.departmentsAdd" method="post" path="/hris/departments" -->
 ```php
 declare(strict_types=1);
 
@@ -183,6 +185,7 @@ Get Department
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris.departmentsOne" method="get" path="/hris/departments/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -241,6 +244,7 @@ Update Department
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris.departmentsUpdate" method="patch" path="/hris/departments/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -319,6 +323,7 @@ Delete Department
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris.departmentsDelete" method="delete" path="/hris/departments/{id}" -->
 ```php
 declare(strict_types=1);
 

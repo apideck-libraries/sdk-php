@@ -15,6 +15,7 @@ This endpoint returns custom settings and their defaults required by connection 
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="vault.connectionSettingsAll" method="get" path="/vault/connections/{unified_api}/{service_id}/{resource}/config" -->
 ```php
 declare(strict_types=1);
 
@@ -73,6 +74,7 @@ Update default values for a connection's resource settings
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="vault.connectionSettingsUpdate" method="patch" path="/vault/connections/{unified_api}/{service_id}/{resource}/config" -->
 ```php
 declare(strict_types=1);
 

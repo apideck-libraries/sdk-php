@@ -17,6 +17,7 @@ Create a consumer
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="vault.consumersAdd" method="post" path="/vault/consumers" -->
 ```php
 declare(strict_types=1);
 
@@ -80,6 +81,7 @@ This endpoint includes all application consumers, along with an aggregated count
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="vault.consumersAll" method="get" path="/vault/consumers" -->
 ```php
 declare(strict_types=1);
 
@@ -138,6 +140,7 @@ Consumer detail including their aggregated counts with the connections they have
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="vault.consumersOne" method="get" path="/vault/consumers/{consumer_id}" -->
 ```php
 declare(strict_types=1);
 
@@ -191,6 +194,7 @@ Update consumer metadata such as name and email.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="vault.consumersUpdate" method="patch" path="/vault/consumers/{consumer_id}" -->
 ```php
 declare(strict_types=1);
 
@@ -255,6 +259,7 @@ Delete consumer and all their connections, including credentials.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="vault.consumersDelete" method="delete" path="/vault/consumers/{consumer_id}" -->
 ```php
 declare(strict_types=1);
 
