@@ -17,6 +17,7 @@ List Messages
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="sms.messagesAll" method="get" path="/sms/messages" -->
 ```php
 declare(strict_types=1);
 
@@ -77,6 +78,7 @@ Create Message
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="sms.messagesAdd" method="post" path="/sms/messages" -->
 ```php
 declare(strict_types=1);
 
@@ -190,6 +192,7 @@ Get Message
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="sms.messagesOne" method="get" path="/sms/messages/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -248,6 +251,7 @@ Update Message
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="sms.messagesUpdate" method="patch" path="/sms/messages/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -346,6 +350,7 @@ Delete Message
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="sms.messagesDelete" method="delete" path="/sms/messages/{id}" -->
 ```php
 declare(strict_types=1);
 

@@ -14,6 +14,7 @@ This endpoint includes all consumer request logs.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="vault.logsAll" method="get" path="/vault/logs" -->
 ```php
 declare(strict_types=1);
 

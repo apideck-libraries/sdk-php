@@ -17,6 +17,7 @@ List custom objects
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.customObjectsAll" method="get" path="/crm/custom-objects/{object_id}" -->
 ```php
 declare(strict_types=1);
 
@@ -81,6 +82,7 @@ Create custom object
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.customObjectsAdd" method="post" path="/crm/custom-objects/{object_id}" -->
 ```php
 declare(strict_types=1);
 
@@ -197,6 +199,7 @@ Get custom object
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.customObjectsOne" method="get" path="/crm/custom-objects/{object_id}/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -255,6 +258,7 @@ Update custom object
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.customObjectsUpdate" method="patch" path="/crm/custom-objects/{object_id}/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -350,6 +354,7 @@ Delete custom object
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.customObjectsDelete" method="delete" path="/crm/custom-objects/{object_id}/{id}" -->
 ```php
 declare(strict_types=1);
 

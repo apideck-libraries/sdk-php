@@ -17,6 +17,7 @@ List Applicants
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats.applicantsAll" method="get" path="/ats/applicants" -->
 ```php
 declare(strict_types=1);
 
@@ -84,6 +85,7 @@ Create Applicant
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats.applicantsAdd" method="post" path="/ats/applicants" -->
 ```php
 declare(strict_types=1);
 
@@ -355,6 +357,7 @@ Get Applicant
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats.applicantsOne" method="get" path="/ats/applicants/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -413,6 +416,7 @@ Update Applicant
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats.applicantsUpdate" method="patch" path="/ats/applicants/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -694,6 +698,7 @@ Delete Applicant
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats.applicantsDelete" method="delete" path="/ats/applicants/{id}" -->
 ```php
 declare(strict_types=1);
 

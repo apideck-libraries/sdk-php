@@ -17,6 +17,7 @@ List Applications
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats.applicationsAll" method="get" path="/ats/applications" -->
 ```php
 declare(strict_types=1);
 
@@ -79,6 +80,7 @@ Create Application
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats.applicationsAdd" method="post" path="/ats/applications" -->
 ```php
 declare(strict_types=1);
 
@@ -168,6 +170,7 @@ Get Application
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats.applicationsOne" method="get" path="/ats/applications/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -225,6 +228,7 @@ Update Application
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats.applicationsUpdate" method="patch" path="/ats/applications/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -381,6 +385,7 @@ Delete Application
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats.applicationsDelete" method="delete" path="/ats/applications/{id}" -->
 ```php
 declare(strict_types=1);
 

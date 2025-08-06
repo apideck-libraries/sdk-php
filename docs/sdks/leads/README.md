@@ -17,6 +17,7 @@ List leads
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.leadsAll" method="get" path="/crm/leads" -->
 ```php
 declare(strict_types=1);
 
@@ -91,6 +92,7 @@ Create lead
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.leadsAdd" method="post" path="/crm/leads" -->
 ```php
 declare(strict_types=1);
 
@@ -404,6 +406,7 @@ Get lead
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.leadsOne" method="get" path="/crm/leads/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -462,6 +465,7 @@ Update lead
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.leadsUpdate" method="patch" path="/crm/leads/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -732,6 +736,7 @@ Delete lead
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.leadsDelete" method="delete" path="/crm/leads/{id}" -->
 ```php
 declare(strict_types=1);
 

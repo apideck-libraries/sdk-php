@@ -14,12 +14,14 @@ List Products
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ecommerce.productsAll" method="get" path="/ecommerce/products" -->
 ```php
 declare(strict_types=1);
 
 require 'vendor/autoload.php';
 
 use Apideck\Unify;
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
@@ -36,6 +38,11 @@ $request = new Operations\EcommerceProductsAllRequest(
         'search' => 'San Francisco',
     ],
     fields: 'id,updated_at',
+    filter: new Components\EcommerceProductsFilter(
+        name: 'Product Name',
+        updatedSince: '2020-09-30T07:43:32.000Z',
+        createdSince: '2020-09-30T07:43:32.000Z',
+    ),
 );
 
 $responses = $sdk->ecommerce->products->list(
@@ -77,6 +84,7 @@ Get Product
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ecommerce.productsOne" method="get" path="/ecommerce/products/{id}" -->
 ```php
 declare(strict_types=1);
 

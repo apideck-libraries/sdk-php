@@ -14,6 +14,7 @@ List Users
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="issueTracking.collectionUsersAll" method="get" path="/issue-tracking/collections/{collection_id}/users" -->
 ```php
 declare(strict_types=1);
 
@@ -78,6 +79,7 @@ Get user
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="issueTracking.collectionUsersOne" method="get" path="/issue-tracking/collections/{collection_id}/users/{id}" -->
 ```php
 declare(strict_types=1);
 

@@ -17,6 +17,7 @@ List Attachments
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.attachmentsAll" method="get" path="/accounting/attachments/{reference_type}/{reference_id}" -->
 ```php
 declare(strict_types=1);
 
@@ -80,6 +81,7 @@ Upload attachment
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.attachmentsUpload" method="post" path="/accounting/attachments/{reference_type}/{reference_id}" -->
 ```php
 declare(strict_types=1);
 
@@ -142,6 +144,7 @@ Get Attachment
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.attachmentsOne" method="get" path="/accounting/attachments/{reference_type}/{reference_id}/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -203,6 +206,7 @@ Delete Attachment
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.attachmentsDelete" method="delete" path="/accounting/attachments/{reference_type}/{reference_id}/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -263,6 +267,7 @@ Download Attachment
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.attachmentsDownload" method="get" path="/accounting/attachments/{reference_type}/{reference_id}/{id}/download" -->
 ```php
 declare(strict_types=1);
 

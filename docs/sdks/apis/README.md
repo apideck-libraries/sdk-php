@@ -14,6 +14,7 @@ List APIs
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="connector.apisAll" method="get" path="/connector/apis" -->
 ```php
 declare(strict_types=1);
 
@@ -75,6 +76,7 @@ Get API
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="connector.apisOne" method="get" path="/connector/apis/{id}" -->
 ```php
 declare(strict_types=1);
 

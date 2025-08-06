@@ -14,6 +14,7 @@ List Connectors
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="connector.connectorsAll" method="get" path="/connector/connectors" -->
 ```php
 declare(strict_types=1);
 
@@ -75,6 +76,7 @@ Get Connector
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="connector.connectorsOne" method="get" path="/connector/connectors/{id}" -->
 ```php
 declare(strict_types=1);
 

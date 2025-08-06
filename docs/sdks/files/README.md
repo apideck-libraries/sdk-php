@@ -19,6 +19,7 @@ List Files
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.filesAll" method="get" path="/file-storage/files" -->
 ```php
 declare(strict_types=1);
 
@@ -92,6 +93,7 @@ Search Files
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.filesSearch" method="post" path="/file-storage/files/search" -->
 ```php
 declare(strict_types=1);
 
@@ -161,6 +163,7 @@ Get File
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.filesOne" method="get" path="/file-storage/files/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -219,6 +222,7 @@ Rename or move File
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.filesUpdate" method="patch" path="/file-storage/files/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -297,6 +301,7 @@ Delete File
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.filesDelete" method="delete" path="/file-storage/files/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -354,6 +359,7 @@ Download File
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.filesDownload" method="get" path="/file-storage/files/{id}/download" -->
 ```php
 declare(strict_types=1);
 
@@ -412,6 +418,7 @@ Export File
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.filesExport" method="get" path="/file-storage/files/{id}/export" -->
 ```php
 declare(strict_types=1);
 

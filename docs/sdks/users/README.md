@@ -17,6 +17,7 @@ List users
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.usersAll" method="get" path="/crm/users" -->
 ```php
 declare(strict_types=1);
 
@@ -80,6 +81,7 @@ Create user
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.usersAdd" method="post" path="/crm/users" -->
 ```php
 declare(strict_types=1);
 
@@ -303,6 +305,7 @@ Get user
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.usersOne" method="get" path="/crm/users/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -361,6 +364,7 @@ Update user
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.usersUpdate" method="patch" path="/crm/users/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -549,6 +553,7 @@ Delete user
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.usersDelete" method="delete" path="/crm/users/{id}" -->
 ```php
 declare(strict_types=1);
 

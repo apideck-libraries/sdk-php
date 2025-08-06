@@ -17,6 +17,7 @@ List Tickets
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="issueTracking.collectionTicketsAll" method="get" path="/issue-tracking/collections/{collection_id}/tickets" -->
 ```php
 declare(strict_types=1);
 
@@ -91,6 +92,7 @@ Create Ticket
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="issueTracking.collectionTicketsAdd" method="post" path="/issue-tracking/collections/{collection_id}/tickets" -->
 ```php
 declare(strict_types=1);
 
@@ -246,6 +248,7 @@ Get Ticket
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="issueTracking.collectionTicketsOne" method="get" path="/issue-tracking/collections/{collection_id}/tickets/{ticket_id}" -->
 ```php
 declare(strict_types=1);
 
@@ -305,6 +308,7 @@ Update Ticket
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="issueTracking.collectionTicketsUpdate" method="patch" path="/issue-tracking/collections/{collection_id}/tickets/{ticket_id}" -->
 ```php
 declare(strict_types=1);
 
@@ -452,6 +456,7 @@ Delete Ticket
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="issueTracking.collectionTicketsDelete" method="delete" path="/issue-tracking/collections/{collection_id}/tickets/{ticket_id}" -->
 ```php
 declare(strict_types=1);
 

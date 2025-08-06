@@ -14,6 +14,7 @@ List Customers
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ecommerce.customersAll" method="get" path="/ecommerce/customers" -->
 ```php
 declare(strict_types=1);
 
@@ -82,6 +83,7 @@ Get Customer
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ecommerce.customersOne" method="get" path="/ecommerce/customers/{id}" -->
 ```php
 declare(strict_types=1);
 

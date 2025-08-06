@@ -17,6 +17,7 @@ List SharedLinks
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.sharedLinksAll" method="get" path="/file-storage/shared-links" -->
 ```php
 declare(strict_types=1);
 
@@ -80,6 +81,7 @@ Create Shared Link
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.sharedLinksAdd" method="post" path="/file-storage/shared-links" -->
 ```php
 declare(strict_types=1);
 
@@ -183,6 +185,7 @@ Get Shared Link
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.sharedLinksOne" method="get" path="/file-storage/shared-links/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -241,6 +244,7 @@ Update Shared Link
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.sharedLinksUpdate" method="patch" path="/file-storage/shared-links/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -348,6 +352,7 @@ Delete Shared Link
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.sharedLinksDelete" method="delete" path="/file-storage/shared-links/{id}" -->
 ```php
 declare(strict_types=1);
 

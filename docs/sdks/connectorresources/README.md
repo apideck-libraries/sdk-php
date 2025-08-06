@@ -13,6 +13,7 @@ Get Connector Resource
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="connector.connectorResourcesOne" method="get" path="/connector/connectors/{id}/resources/{resource_id}" -->
 ```php
 declare(strict_types=1);
 

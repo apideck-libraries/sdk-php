@@ -17,6 +17,7 @@ List Bills
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.billsAll" method="get" path="/accounting/bills" -->
 ```php
 declare(strict_types=1);
 
@@ -89,6 +90,7 @@ Create Bill
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.billsAdd" method="post" path="/accounting/bills" -->
 ```php
 declare(strict_types=1);
 
@@ -381,6 +383,7 @@ Get Bill
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.billsOne" method="get" path="/accounting/bills/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -439,6 +442,7 @@ Update Bill
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.billsUpdate" method="patch" path="/accounting/bills/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -699,6 +703,7 @@ Delete Bill
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.billsDelete" method="delete" path="/accounting/bills/{id}" -->
 ```php
 declare(strict_types=1);
 
