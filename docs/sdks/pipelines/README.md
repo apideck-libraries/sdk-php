@@ -17,6 +17,7 @@ List pipelines
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.pipelinesAll" method="get" path="/crm/pipelines" -->
 ```php
 declare(strict_types=1);
 
@@ -80,6 +81,7 @@ Create pipeline
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.pipelinesAdd" method="post" path="/crm/pipelines" -->
 ```php
 declare(strict_types=1);
 
@@ -188,6 +190,7 @@ Get pipeline
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.pipelinesOne" method="get" path="/crm/pipelines/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -246,6 +249,7 @@ Update pipeline
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.pipelinesUpdate" method="patch" path="/crm/pipelines/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -387,6 +391,7 @@ Delete pipeline
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.pipelinesDelete" method="delete" path="/crm/pipelines/{id}" -->
 ```php
 declare(strict_types=1);
 

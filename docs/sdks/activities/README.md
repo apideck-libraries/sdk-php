@@ -17,6 +17,7 @@ List activities
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.activitiesAll" method="get" path="/crm/activities" -->
 ```php
 declare(strict_types=1);
 
@@ -89,6 +90,7 @@ Create activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.activitiesAdd" method="post" path="/crm/activities" -->
 ```php
 declare(strict_types=1);
 
@@ -250,6 +252,7 @@ Get activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.activitiesOne" method="get" path="/crm/activities/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -308,6 +311,7 @@ Update activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.activitiesUpdate" method="patch" path="/crm/activities/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -548,6 +552,7 @@ Delete activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.activitiesDelete" method="delete" path="/crm/activities/{id}" -->
 ```php
 declare(strict_types=1);
 

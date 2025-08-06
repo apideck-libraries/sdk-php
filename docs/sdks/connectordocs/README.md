@@ -13,6 +13,7 @@ Get Connector Doc content
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="connector.connectorDocsOne" method="get" path="/connector/connectors/{id}/docs/{doc_id}" -->
 ```php
 declare(strict_types=1);
 

@@ -17,6 +17,7 @@ List Ledger Accounts
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.ledgerAccountsAll" method="get" path="/accounting/ledger-accounts" -->
 ```php
 declare(strict_types=1);
 
@@ -89,6 +90,7 @@ Create Ledger Account
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.ledgerAccountsAdd" method="post" path="/accounting/ledger-accounts" -->
 ```php
 declare(strict_types=1);
 
@@ -239,6 +241,7 @@ Get Ledger Account
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.ledgerAccountsOne" method="get" path="/accounting/ledger-accounts/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -297,6 +300,7 @@ Update Ledger Account
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.ledgerAccountsUpdate" method="patch" path="/accounting/ledger-accounts/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -436,6 +440,7 @@ Delete Ledger Account
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.ledgerAccountsDelete" method="delete" path="/accounting/ledger-accounts/{id}" -->
 ```php
 declare(strict_types=1);
 

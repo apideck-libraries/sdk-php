@@ -13,6 +13,7 @@ Get Aged Debtors
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.agedDebtorsOne" method="get" path="/accounting/aged-debtors" -->
 ```php
 declare(strict_types=1);
 

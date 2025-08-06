@@ -17,6 +17,7 @@ List contacts
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.contactsAll" method="get" path="/crm/contacts" -->
 ```php
 declare(strict_types=1);
 
@@ -92,6 +93,7 @@ Create contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.contactsAdd" method="post" path="/crm/contacts" -->
 ```php
 declare(strict_types=1);
 
@@ -333,6 +335,7 @@ Get contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.contactsOne" method="get" path="/crm/contacts/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -399,6 +402,7 @@ Update contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.contactsUpdate" method="patch" path="/crm/contacts/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -695,6 +699,7 @@ Delete contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.contactsDelete" method="delete" path="/crm/contacts/{id}" -->
 ```php
 declare(strict_types=1);
 

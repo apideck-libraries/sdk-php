@@ -17,6 +17,7 @@ List Departments
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.departmentsAll" method="get" path="/accounting/departments" -->
 ```php
 declare(strict_types=1);
 
@@ -81,6 +82,7 @@ Create Department
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.departmentsAdd" method="post" path="/accounting/departments" -->
 ```php
 declare(strict_types=1);
 
@@ -171,6 +173,7 @@ Get Department
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.departmentsOne" method="get" path="/accounting/departments/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -229,6 +232,7 @@ Update Department
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.departmentsUpdate" method="patch" path="/accounting/departments/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -336,6 +340,7 @@ Delete Department
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.departmentsDelete" method="delete" path="/accounting/departments/{id}" -->
 ```php
 declare(strict_types=1);
 

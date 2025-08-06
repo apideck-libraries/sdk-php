@@ -17,6 +17,7 @@ List notes
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.notesAll" method="get" path="/crm/notes" -->
 ```php
 declare(strict_types=1);
 
@@ -80,6 +81,7 @@ Create note
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.notesAdd" method="post" path="/crm/notes" -->
 ```php
 declare(strict_types=1);
 
@@ -213,6 +215,7 @@ Get note
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.notesOne" method="get" path="/crm/notes/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -271,6 +274,7 @@ Update note
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.notesUpdate" method="patch" path="/crm/notes/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -405,6 +409,7 @@ Delete note
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm.notesDelete" method="delete" path="/crm/notes/{id}" -->
 ```php
 declare(strict_types=1);
 

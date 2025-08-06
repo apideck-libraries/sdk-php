@@ -13,6 +13,7 @@ Get API Resource Coverage
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="connector.apiResourceCoverageOne" method="get" path="/connector/apis/{id}/resources/{resource_id}/coverage" -->
 ```php
 declare(strict_types=1);
 

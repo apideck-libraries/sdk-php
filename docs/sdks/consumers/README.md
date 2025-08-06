@@ -17,6 +17,7 @@ Create a consumer
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="vault.consumersAdd" method="post" path="/vault/consumers" -->
 ```php
 declare(strict_types=1);
 
@@ -32,7 +33,7 @@ $sdk = Unify\Apideck::builder()
     )
     ->build();
 
-$consumer = new Components\ConsumerInput(
+$createConsumerRequest = new Components\CreateConsumerRequest(
     consumerId: 'test_consumer_id',
     metadata: new Components\ConsumerMetadata(
         accountName: 'SpaceX',
@@ -43,7 +44,7 @@ $consumer = new Components\ConsumerInput(
 );
 
 $response = $sdk->vault->consumers->create(
-    consumer: $consumer
+    createConsumerRequest: $createConsumerRequest
 );
 
 if ($response->createConsumerResponse !== null) {
@@ -53,10 +54,10 @@ if ($response->createConsumerResponse !== null) {
 
 ### Parameters
 
-| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          | Example                                                              |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `consumer`                                                           | [Components\ConsumerInput](../../Models/Components/ConsumerInput.md) | :heavy_check_mark:                                                   | N/A                                                                  |                                                                      |
-| `appId`                                                              | *?string*                                                            | :heavy_minus_sign:                                                   | The ID of your Unify application                                     | dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX                              |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          | Example                                                                              |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `createConsumerRequest`                                                              | [Components\CreateConsumerRequest](../../Models/Components/CreateConsumerRequest.md) | :heavy_check_mark:                                                                   | N/A                                                                                  |                                                                                      |
+| `appId`                                                                              | *?string*                                                                            | :heavy_minus_sign:                                                                   | The ID of your Unify application                                                     | dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX                                              |
 
 ### Response
 
@@ -80,6 +81,7 @@ This endpoint includes all application consumers, along with an aggregated count
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="vault.consumersAll" method="get" path="/vault/consumers" -->
 ```php
 declare(strict_types=1);
 
@@ -138,6 +140,7 @@ Consumer detail including their aggregated counts with the connections they have
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="vault.consumersOne" method="get" path="/vault/consumers/{consumer_id}" -->
 ```php
 declare(strict_types=1);
 
@@ -191,6 +194,7 @@ Update consumer metadata such as name and email.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="vault.consumersUpdate" method="patch" path="/vault/consumers/{consumer_id}" -->
 ```php
 declare(strict_types=1);
 
@@ -255,6 +259,7 @@ Delete consumer and all their connections, including credentials.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="vault.consumersDelete" method="delete" path="/vault/consumers/{consumer_id}" -->
 ```php
 declare(strict_types=1);
 

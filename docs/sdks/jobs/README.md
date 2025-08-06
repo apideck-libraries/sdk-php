@@ -14,6 +14,7 @@ List Jobs
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats.jobsAll" method="get" path="/ats/jobs" -->
 ```php
 declare(strict_types=1);
 
@@ -77,6 +78,7 @@ Get Job
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats.jobsOne" method="get" path="/ats/jobs/{id}" -->
 ```php
 declare(strict_types=1);
 

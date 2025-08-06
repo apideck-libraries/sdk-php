@@ -155,6 +155,7 @@ class Products
                             limit: $request != null ? $request->limit : null,
                             passThrough: $request != null ? $request->passThrough : null,
                             fields: $request != null ? $request->fields : null,
+                            filter: $request != null ? $request->filter : null,
                         ),
                     );
                 };
@@ -261,6 +262,7 @@ class Products
                             limit: $request != null ? $request->limit : null,
                             passThrough: $request != null ? $request->passThrough : null,
                             fields: $request != null ? $request->fields : null,
+                            filter: $request != null ? $request->filter : null,
                         ),
                     );
                 };

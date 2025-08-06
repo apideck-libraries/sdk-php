@@ -17,6 +17,7 @@ List Tracking Categories
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.trackingCategoriesAll" method="get" path="/accounting/tracking-categories" -->
 ```php
 declare(strict_types=1);
 
@@ -80,6 +81,7 @@ Create Tracking Category
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.trackingCategoriesAdd" method="post" path="/accounting/tracking-categories" -->
 ```php
 declare(strict_types=1);
 
@@ -204,6 +206,7 @@ Get Tracking Category
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.trackingCategoriesOne" method="get" path="/accounting/tracking-categories/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -262,6 +265,7 @@ Update Tracking Category
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.trackingCategoriesUpdate" method="patch" path="/accounting/tracking-categories/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -350,6 +354,7 @@ Delete Tracking Category
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.trackingCategoriesDelete" method="delete" path="/accounting/tracking-categories/{id}" -->
 ```php
 declare(strict_types=1);
 

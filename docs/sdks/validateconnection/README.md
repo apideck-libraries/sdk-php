@@ -19,6 +19,7 @@ Note:
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="vault.validateConnectionState" method="post" path="/vault/connections/{unified_api}/{service_id}/validate" -->
 ```php
 declare(strict_types=1);
 

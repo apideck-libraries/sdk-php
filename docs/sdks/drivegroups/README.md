@@ -17,6 +17,7 @@ List DriveGroups
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.driveGroupsAll" method="get" path="/file-storage/drive-groups" -->
 ```php
 declare(strict_types=1);
 
@@ -84,6 +85,7 @@ Create DriveGroup
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.driveGroupsAdd" method="post" path="/file-storage/drive-groups" -->
 ```php
 declare(strict_types=1);
 
@@ -190,6 +192,7 @@ Get DriveGroup
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.driveGroupsOne" method="get" path="/file-storage/drive-groups/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -248,6 +251,7 @@ Update DriveGroup
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.driveGroupsUpdate" method="patch" path="/file-storage/drive-groups/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -376,6 +380,7 @@ Delete DriveGroup
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="fileStorage.driveGroupsDelete" method="delete" path="/file-storage/drive-groups/{id}" -->
 ```php
 declare(strict_types=1);
 

@@ -17,6 +17,7 @@ List Purchase Orders
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.purchaseOrdersAll" method="get" path="/accounting/purchase-orders" -->
 ```php
 declare(strict_types=1);
 
@@ -89,6 +90,7 @@ Create Purchase Order
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.purchaseOrdersAdd" method="post" path="/accounting/purchase-orders" -->
 ```php
 declare(strict_types=1);
 
@@ -465,6 +467,7 @@ Get Purchase Order
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.purchaseOrdersOne" method="get" path="/accounting/purchase-orders/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -522,6 +525,7 @@ Update Purchase Order
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.purchaseOrdersUpdate" method="patch" path="/accounting/purchase-orders/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -839,6 +843,7 @@ Delete Purchase Order
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.purchaseOrdersDelete" method="delete" path="/accounting/purchase-orders/{id}" -->
 ```php
 declare(strict_types=1);
 

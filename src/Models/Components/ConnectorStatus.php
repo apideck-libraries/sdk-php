@@ -14,6 +14,7 @@ enum ConnectorStatus: string
 {
     case Live = 'live';
     case Beta = 'beta';
+    case EarlyAccess = 'early-access';
     case Development = 'development';
     case Considering = 'considering';
 }

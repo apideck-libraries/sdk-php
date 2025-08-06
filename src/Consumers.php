@@ -52,12 +52,12 @@ class Consumers
      *
      * Create a consumer
      *
-     * @param  Components\ConsumerInput  $consumer
+     * @param  Components\CreateConsumerRequest  $createConsumerRequest
      * @param  ?string  $appId
      * @return Operations\VaultConsumersAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
-    public function create(Components\ConsumerInput $consumer, ?string $appId = null, ?Options $options = null): Operations\VaultConsumersAddResponse
+    public function create(Components\CreateConsumerRequest $createConsumerRequest, ?string $appId = null, ?Options $options = null): Operations\VaultConsumersAddResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -88,14 +88,14 @@ class Consumers
             ];
         }
         $request = new Operations\VaultConsumersAddRequest(
-            consumer: $consumer,
+            createConsumerRequest: $createConsumerRequest,
             appId: $appId,
         );
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/vault/consumers');
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'consumer', 'json');
+        $body = Utils\Utils::serializeRequestBody($request, 'createConsumerRequest', 'json');
         if ($body === null) {
             throw new \Exception('Request body is required');
         }

@@ -13,6 +13,7 @@ List Tags
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="issueTracking.collectionTagsAll" method="get" path="/issue-tracking/collections/{collection_id}/tags" -->
 ```php
 declare(strict_types=1);
 

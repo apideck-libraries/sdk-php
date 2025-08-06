@@ -17,6 +17,7 @@ Apideck operates as a stateless Unified API, which means that the list endpoint 
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris.employeesAll" method="get" path="/hris/employees" -->
 ```php
 declare(strict_types=1);
 
@@ -98,6 +99,7 @@ Create Employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris.employeesAdd" method="post" path="/hris/employees" -->
 ```php
 declare(strict_types=1);
 
@@ -570,6 +572,7 @@ Get Employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris.employeesOne" method="get" path="/hris/employees/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -635,6 +638,7 @@ Update Employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris.employeesUpdate" method="patch" path="/hris/employees/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -955,6 +959,7 @@ Delete Employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris.employeesDelete" method="delete" path="/hris/employees/{id}" -->
 ```php
 declare(strict_types=1);
 

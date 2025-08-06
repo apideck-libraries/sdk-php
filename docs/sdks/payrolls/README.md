@@ -14,6 +14,7 @@ List Payroll
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris.payrollsAll" method="get" path="/hris/payrolls" -->
 ```php
 declare(strict_types=1);
 
@@ -79,6 +80,7 @@ Get Payroll
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris.payrollsOne" method="get" path="/hris/payrolls/{payroll_id}" -->
 ```php
 declare(strict_types=1);
 

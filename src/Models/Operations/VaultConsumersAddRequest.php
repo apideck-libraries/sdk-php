@@ -14,10 +14,10 @@ class VaultConsumersAddRequest
 {
     /**
      *
-     * @var Components\ConsumerInput $consumer
+     * @var Components\CreateConsumerRequest $createConsumerRequest
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\ConsumerInput $consumer;
+    public Components\CreateConsumerRequest $createConsumerRequest;
 
     /**
      * The ID of your Unify application
@@ -28,13 +28,13 @@ class VaultConsumersAddRequest
     public ?string $appId = null;
 
     /**
-     * @param  Components\ConsumerInput  $consumer
+     * @param  Components\CreateConsumerRequest  $createConsumerRequest
      * @param  ?string  $appId
      * @phpstan-pure
      */
-    public function __construct(Components\ConsumerInput $consumer, ?string $appId = null)
+    public function __construct(Components\CreateConsumerRequest $createConsumerRequest, ?string $appId = null)
     {
-        $this->consumer = $consumer;
+        $this->createConsumerRequest = $createConsumerRequest;
         $this->appId = $appId;
     }
 }

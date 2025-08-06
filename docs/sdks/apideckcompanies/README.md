@@ -17,6 +17,7 @@ List Companies
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris.companiesAll" method="get" path="/hris/companies" -->
 ```php
 declare(strict_types=1);
 
@@ -80,6 +81,7 @@ Create Company
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris.companiesAdd" method="post" path="/hris/companies" -->
 ```php
 declare(strict_types=1);
 
@@ -299,6 +301,7 @@ Get Company
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris.companiesOne" method="get" path="/hris/companies/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -357,6 +360,7 @@ Update Company
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris.companiesUpdate" method="patch" path="/hris/companies/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -577,6 +581,7 @@ Delete Company
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris.companiesDelete" method="delete" path="/hris/companies/{id}" -->
 ```php
 declare(strict_types=1);
 

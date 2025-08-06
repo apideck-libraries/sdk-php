@@ -17,6 +17,7 @@ List Payments
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.paymentsAll" method="get" path="/accounting/payments" -->
 ```php
 declare(strict_types=1);
 
@@ -90,6 +91,7 @@ Create Payment
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.paymentsAdd" method="post" path="/accounting/payments" -->
 ```php
 declare(strict_types=1);
 
@@ -234,6 +236,7 @@ Get Payment
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.paymentsOne" method="get" path="/accounting/payments/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -292,6 +295,7 @@ Update Payment
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.paymentsUpdate" method="patch" path="/accounting/payments/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -434,6 +438,7 @@ Delete Payment
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.paymentsDelete" method="delete" path="/accounting/payments/{id}" -->
 ```php
 declare(strict_types=1);
 

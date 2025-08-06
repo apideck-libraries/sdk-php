@@ -14,6 +14,7 @@ List Categories
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.categoriesAll" method="get" path="/accounting/categories" -->
 ```php
 declare(strict_types=1);
 
@@ -78,6 +79,7 @@ Get Category
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="accounting.categoriesOne" method="get" path="/accounting/categories/{id}" -->
 ```php
 declare(strict_types=1);
 

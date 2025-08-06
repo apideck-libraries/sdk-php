@@ -21,6 +21,7 @@ OAuth2 supported integrations will contain authorize and revoke links to handle 
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="vault.connectionsAll" method="get" path="/vault/connections" -->
 ```php
 declare(strict_types=1);
 
@@ -79,6 +80,7 @@ Get a connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="vault.connectionsOne" method="get" path="/vault/connections/{unified_api}/{service_id}" -->
 ```php
 declare(strict_types=1);
 
@@ -137,6 +139,7 @@ Update a connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="vault.connectionsUpdate" method="patch" path="/vault/connections/{unified_api}/{service_id}" -->
 ```php
 declare(strict_types=1);
 
@@ -292,6 +295,7 @@ Deletes a connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="vault.connectionsDelete" method="delete" path="/vault/connections/{unified_api}/{service_id}" -->
 ```php
 declare(strict_types=1);
 
@@ -351,6 +355,7 @@ Import an authorized connection.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="vault.connectionsImport" method="post" path="/vault/connections/{unified_api}/{service_id}/import" -->
 ```php
 declare(strict_types=1);
 
@@ -431,6 +436,7 @@ Note:
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="vault.connectionsToken" method="post" path="/vault/connections/{unified_api}/{service_id}/token" -->
 ```php
 declare(strict_types=1);
 

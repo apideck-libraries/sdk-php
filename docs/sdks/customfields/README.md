@@ -14,6 +14,7 @@ This endpoint returns an custom fields on a connection resource.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="vault.customFieldsAll" method="get" path="/vault/connections/{unified_api}/{service_id}/{resource}/custom-fields" -->
 ```php
 declare(strict_types=1);
 
