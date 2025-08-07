@@ -18,5 +18,6 @@ enum Type: string
     case Office = 'office';
     case Shipping = 'shipping';
     case Billing = 'billing';
+    case Work = 'work';
     case Other = 'other';
 }
