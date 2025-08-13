@@ -97,13 +97,22 @@ class QuoteInput
     public ?string $salesOrderId = null;
 
     /**
-     * The company or subsidiary id the transaction belongs to
+     * The company ID the transaction belongs to
      *
      * @var ?string $companyId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('company_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $companyId = null;
+
+    /**
+     * The ID of the department
+     *
+     * @var ?string $departmentId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('department_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $departmentId = null;
 
     /**
      * Date quote was issued - YYYY-MM-DD.
@@ -290,6 +299,7 @@ class QuoteInput
      * @param  ?LinkedCustomerInput  $customer
      * @param  ?string  $salesOrderId
      * @param  ?string  $companyId
+     * @param  ?string  $departmentId
      * @param  ?LocalDate  $quoteDate
      * @param  ?LocalDate  $expiryDate
      * @param  ?string  $terms
@@ -311,7 +321,7 @@ class QuoteInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?string $projectId = null, ?array $lineItems = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?LinkedCustomerInput $customer = null, ?string $salesOrderId = null, ?string $companyId = null, ?LocalDate $quoteDate = null, ?LocalDate $expiryDate = null, ?string $terms = null, ?string $reference = null, ?QuoteStatus $status = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?float $total = null, ?string $customerMemo = null, ?array $trackingCategories = null, ?string $templateId = null, ?string $sourceDocumentUrl = null, ?string $rowVersion = null)
+    public function __construct(?string $projectId = null, ?array $lineItems = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?LinkedCustomerInput $customer = null, ?string $salesOrderId = null, ?string $companyId = null, ?string $departmentId = null, ?LocalDate $quoteDate = null, ?LocalDate $expiryDate = null, ?string $terms = null, ?string $reference = null, ?QuoteStatus $status = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?float $total = null, ?string $customerMemo = null, ?array $trackingCategories = null, ?string $templateId = null, ?string $sourceDocumentUrl = null, ?string $rowVersion = null)
     {
         $this->projectId = $projectId;
         $this->lineItems = $lineItems;
@@ -323,6 +333,7 @@ class QuoteInput
         $this->customer = $customer;
         $this->salesOrderId = $salesOrderId;
         $this->companyId = $companyId;
+        $this->departmentId = $departmentId;
         $this->quoteDate = $quoteDate;
         $this->expiryDate = $expiryDate;
         $this->terms = $terms;

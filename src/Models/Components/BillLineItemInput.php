@@ -39,6 +39,16 @@ class BillLineItemInput
     public ?LinkedTaxRateInput $taxRate = null;
 
     /**
+     * A list of linked worktags. This is only supported for Workday.
+     *
+     * @var ?array<?LinkedWorktag> $worktags
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('worktags')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedWorktag|null>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $worktags = null;
+
+    /**
      * User defined item code
      *
      * @var ?string $code
@@ -173,6 +183,78 @@ class BillLineItemInput
     public ?string $categoryId = null;
 
     /**
+     * ID of the shipping of the line item
+     *
+     * @var ?string $shippingId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('shipping_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $shippingId = null;
+
+    /**
+     * Memo
+     *
+     * @var ?string $memo
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('memo')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $memo = null;
+
+    /**
+     * Whether the line item is prepaid
+     *
+     * @var ?bool $prepaid
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('prepaid')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $prepaid = null;
+
+    /**
+     * Tax applicable on
+     *
+     * @var ?string $taxApplicableOn
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_applicable_on')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $taxApplicableOn = null;
+
+    /**
+     * Tax recoverability
+     *
+     * @var ?string $taxRecoverability
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_recoverability')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $taxRecoverability = null;
+
+    /**
+     * Method of tax calculation
+     *
+     * @var ?string $taxMethod
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_method')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $taxMethod = null;
+
+    /**
+     * Retention amount
+     *
+     * @var ?float $retentionAmount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('retention_amount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $retentionAmount = null;
+
+    /**
+     * Payment amount
+     *
+     * @var ?float $paymentAmount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('payment_amount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $paymentAmount = null;
+
+    /**
      *
      * @var ?LinkedLedgerAccountInput $ledgerAccount
      */
@@ -233,6 +315,7 @@ class BillLineItemInput
      * @param  ?string  $rowId
      * @param  ?LinkedInvoiceItem  $item
      * @param  ?LinkedTaxRateInput  $taxRate
+     * @param  ?array<?LinkedWorktag>  $worktags
      * @param  ?string  $code
      * @param  ?int  $lineNumber
      * @param  ?string  $description
@@ -248,6 +331,14 @@ class BillLineItemInput
      * @param  ?string  $departmentId
      * @param  ?string  $subsidiaryId
      * @param  ?string  $categoryId
+     * @param  ?string  $shippingId
+     * @param  ?string  $memo
+     * @param  ?bool  $prepaid
+     * @param  ?string  $taxApplicableOn
+     * @param  ?string  $taxRecoverability
+     * @param  ?string  $taxMethod
+     * @param  ?float  $retentionAmount
+     * @param  ?float  $paymentAmount
      * @param  ?LinkedLedgerAccountInput  $ledgerAccount
      * @param  ?LinkedPurchaseOrder  $purchaseOrder
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
@@ -256,11 +347,12 @@ class BillLineItemInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRateInput $taxRate = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?BillLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $locationId = null, ?string $departmentId = null, ?string $subsidiaryId = null, ?string $categoryId = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?LinkedPurchaseOrder $purchaseOrder = null, ?array $trackingCategories = null, ?LinkedCustomerInput $customer = null, ?Rebilling $rebilling = null, ?string $rowVersion = null)
+    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRateInput $taxRate = null, ?array $worktags = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?BillLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $locationId = null, ?string $departmentId = null, ?string $subsidiaryId = null, ?string $categoryId = null, ?string $shippingId = null, ?string $memo = null, ?bool $prepaid = null, ?string $taxApplicableOn = null, ?string $taxRecoverability = null, ?string $taxMethod = null, ?float $retentionAmount = null, ?float $paymentAmount = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?LinkedPurchaseOrder $purchaseOrder = null, ?array $trackingCategories = null, ?LinkedCustomerInput $customer = null, ?Rebilling $rebilling = null, ?string $rowVersion = null)
     {
         $this->rowId = $rowId;
         $this->item = $item;
         $this->taxRate = $taxRate;
+        $this->worktags = $worktags;
         $this->code = $code;
         $this->lineNumber = $lineNumber;
         $this->description = $description;
@@ -276,6 +368,14 @@ class BillLineItemInput
         $this->departmentId = $departmentId;
         $this->subsidiaryId = $subsidiaryId;
         $this->categoryId = $categoryId;
+        $this->shippingId = $shippingId;
+        $this->memo = $memo;
+        $this->prepaid = $prepaid;
+        $this->taxApplicableOn = $taxApplicableOn;
+        $this->taxRecoverability = $taxRecoverability;
+        $this->taxMethod = $taxMethod;
+        $this->retentionAmount = $retentionAmount;
+        $this->paymentAmount = $paymentAmount;
         $this->ledgerAccount = $ledgerAccount;
         $this->purchaseOrder = $purchaseOrder;
         $this->trackingCategories = $trackingCategories;

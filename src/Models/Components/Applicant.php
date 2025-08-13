@@ -31,6 +31,14 @@ class Applicant
 
     /**
      *
+     * @var ?string $type
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $type = null;
+
+    /**
+     *
      * @var ?string $coverLetter
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('cover_letter')]
@@ -173,6 +181,15 @@ class Applicant
     public ?array $passThrough = null;
 
     /**
+     * A formal salutation for the person. For example, 'Mr', 'Mrs'
+     *
+     * @var ?string $salutation
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('salutation')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $salutation = null;
+
+    /**
      * The first name of the person.
      *
      * @var ?string $firstName
@@ -216,6 +233,25 @@ class Applicant
     #[\Speakeasy\Serializer\Annotation\SerializedName('birthday')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?LocalDate $birthday = null;
+
+    /**
+     * The gender represents the gender identity of a person.
+     *
+     * @var ?ApplicantGender $gender
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('gender')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ApplicantGender|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ApplicantGender $gender = null;
+
+    /**
+     * A unique identifier assigned by the government. This field is considered sensitive information and may be subject to special security and privacy restrictions.
+     *
+     * @var ?string $socialSecurityNumber
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('social_security_number')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $socialSecurityNumber = null;
 
     /**
      *
@@ -418,6 +454,7 @@ class Applicant
     /**
      * @param  ?string  $id
      * @param  ?string  $name
+     * @param  ?string  $type
      * @param  ?string  $coverLetter
      * @param  ?string  $headline
      * @param  ?array<Email>  $emails
@@ -434,11 +471,14 @@ class Applicant
      * @param  ?bool  $anonymized
      * @param  ?string  $cvUrl
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?string  $salutation
      * @param  ?string  $firstName
      * @param  ?string  $lastName
      * @param  ?string  $middleName
      * @param  ?string  $initials
      * @param  ?LocalDate  $birthday
+     * @param  ?ApplicantGender  $gender
+     * @param  ?string  $socialSecurityNumber
      * @param  ?string  $jobUrl
      * @param  ?string  $photoUrl
      * @param  ?string  $title
@@ -463,10 +503,11 @@ class Applicant
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?string $coverLetter = null, ?string $headline = null, ?array $emails = null, ?array $customFields = null, ?array $phoneNumbers = null, ?array $addresses = null, ?array $websites = null, ?array $socialLinks = null, ?string $stageId = null, ?string $recruiterId = null, ?string $coordinatorId = null, ?string $sourceId = null, ?bool $confidential = null, ?bool $anonymized = null, ?string $cvUrl = null, ?array $passThrough = null, ?string $firstName = null, ?string $lastName = null, ?string $middleName = null, ?string $initials = null, ?LocalDate $birthday = null, ?string $jobUrl = null, ?string $photoUrl = null, ?string $title = null, ?array $applicationIds = null, ?array $applications = null, ?array $followers = null, ?array $sources = null, ?array $tags = null, ?bool $archived = null, ?\DateTime $lastInteractionAt = null, ?string $ownerId = null, ?string $sourcedBy = null, ?string $recordUrl = null, ?\DateTime $rejectedAt = null, ?array $customMappings = null, ?bool $deleted = null, ?string $deletedBy = null, ?\DateTime $deletedAt = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?string $name = null, ?string $type = null, ?string $coverLetter = null, ?string $headline = null, ?array $emails = null, ?array $customFields = null, ?array $phoneNumbers = null, ?array $addresses = null, ?array $websites = null, ?array $socialLinks = null, ?string $stageId = null, ?string $recruiterId = null, ?string $coordinatorId = null, ?string $sourceId = null, ?bool $confidential = null, ?bool $anonymized = null, ?string $cvUrl = null, ?array $passThrough = null, ?string $salutation = null, ?string $firstName = null, ?string $lastName = null, ?string $middleName = null, ?string $initials = null, ?LocalDate $birthday = null, ?ApplicantGender $gender = null, ?string $socialSecurityNumber = null, ?string $jobUrl = null, ?string $photoUrl = null, ?string $title = null, ?array $applicationIds = null, ?array $applications = null, ?array $followers = null, ?array $sources = null, ?array $tags = null, ?bool $archived = null, ?\DateTime $lastInteractionAt = null, ?string $ownerId = null, ?string $sourcedBy = null, ?string $recordUrl = null, ?\DateTime $rejectedAt = null, ?array $customMappings = null, ?bool $deleted = null, ?string $deletedBy = null, ?\DateTime $deletedAt = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->name = $name;
+        $this->type = $type;
         $this->coverLetter = $coverLetter;
         $this->headline = $headline;
         $this->emails = $emails;
@@ -483,11 +524,14 @@ class Applicant
         $this->anonymized = $anonymized;
         $this->cvUrl = $cvUrl;
         $this->passThrough = $passThrough;
+        $this->salutation = $salutation;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->middleName = $middleName;
         $this->initials = $initials;
         $this->birthday = $birthday;
+        $this->gender = $gender;
+        $this->socialSecurityNumber = $socialSecurityNumber;
         $this->jobUrl = $jobUrl;
         $this->photoUrl = $photoUrl;
         $this->title = $title;

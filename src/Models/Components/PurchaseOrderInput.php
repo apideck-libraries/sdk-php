@@ -106,13 +106,22 @@ class PurchaseOrderInput
     public ?string $subsidiaryId = null;
 
     /**
-     * The company or subsidiary id the transaction belongs to
+     * The company ID the transaction belongs to
      *
      * @var ?string $companyId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('company_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $companyId = null;
+
+    /**
+     * The ID of the department
+     *
+     * @var ?string $departmentId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('department_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $departmentId = null;
 
     /**
      *
@@ -271,12 +280,12 @@ class PurchaseOrderInput
     /**
      * Type of amortization
      *
-     * @var ?AmortizationType $amortizationType
+     * @var ?PurchaseOrderAmortizationType $amortizationType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('amortization_type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\AmortizationType|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\PurchaseOrderAmortizationType|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?AmortizationType $amortizationType = null;
+    public ?PurchaseOrderAmortizationType $amortizationType = null;
 
     /**
      * Applicable tax id/code override if tax is not supplied on a line item basis.
@@ -372,6 +381,7 @@ class PurchaseOrderInput
      * @param  ?LinkedSupplierInput  $supplier
      * @param  ?string  $subsidiaryId
      * @param  ?string  $companyId
+     * @param  ?string  $departmentId
      * @param  ?PurchaseOrderStatus  $status
      * @param  ?LocalDate  $issuedDate
      * @param  ?LocalDate  $deliveryDate
@@ -389,7 +399,7 @@ class PurchaseOrderInput
      * @param  ?LocalDate  $dueDate
      * @param  ?string  $paymentMethod
      * @param  ?string  $terms
-     * @param  ?AmortizationType  $amortizationType
+     * @param  ?PurchaseOrderAmortizationType  $amortizationType
      * @param  ?string  $taxCode
      * @param  ?string  $taxMethod
      * @param  ?string  $issuedMethod
@@ -401,7 +411,7 @@ class PurchaseOrderInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?array $lineItems = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $poNumber = null, ?string $reference = null, ?LinkedSupplierInput $supplier = null, ?string $subsidiaryId = null, ?string $companyId = null, ?PurchaseOrderStatus $status = null, ?LocalDate $issuedDate = null, ?LocalDate $deliveryDate = null, ?LocalDate $expectedArrivalDate = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?bool $taxInclusive = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $templateId = null, ?float $discountPercentage = null, ?bool $accountingByRow = null, ?LocalDate $dueDate = null, ?string $paymentMethod = null, ?string $terms = null, ?AmortizationType $amortizationType = null, ?string $taxCode = null, ?string $taxMethod = null, ?string $issuedMethod = null, ?string $issuedEmail = null, ?string $channel = null, ?string $memo = null, ?string $notes = null, ?array $trackingCategories = null, ?string $rowVersion = null)
+    public function __construct(?array $lineItems = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $poNumber = null, ?string $reference = null, ?LinkedSupplierInput $supplier = null, ?string $subsidiaryId = null, ?string $companyId = null, ?string $departmentId = null, ?PurchaseOrderStatus $status = null, ?LocalDate $issuedDate = null, ?LocalDate $deliveryDate = null, ?LocalDate $expectedArrivalDate = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?bool $taxInclusive = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $templateId = null, ?float $discountPercentage = null, ?bool $accountingByRow = null, ?LocalDate $dueDate = null, ?string $paymentMethod = null, ?string $terms = null, ?PurchaseOrderAmortizationType $amortizationType = null, ?string $taxCode = null, ?string $taxMethod = null, ?string $issuedMethod = null, ?string $issuedEmail = null, ?string $channel = null, ?string $memo = null, ?string $notes = null, ?array $trackingCategories = null, ?string $rowVersion = null)
     {
         $this->lineItems = $lineItems;
         $this->billingAddress = $billingAddress;
@@ -414,6 +424,7 @@ class PurchaseOrderInput
         $this->supplier = $supplier;
         $this->subsidiaryId = $subsidiaryId;
         $this->companyId = $companyId;
+        $this->departmentId = $departmentId;
         $this->status = $status;
         $this->issuedDate = $issuedDate;
         $this->deliveryDate = $deliveryDate;

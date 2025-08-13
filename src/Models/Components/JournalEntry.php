@@ -88,7 +88,7 @@ class JournalEntry
     public ?Currency $currency = null;
 
     /**
-     * The company or subsidiary id the transaction belongs to
+     * The company ID the transaction belongs to
      *
      * @var ?string $companyId
      */

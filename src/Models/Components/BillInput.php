@@ -51,6 +51,25 @@ class BillInput
     public ?array $passThrough = null;
 
     /**
+     * $attachments
+     *
+     * @var ?array<?LinkedAttachment> $attachments
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('attachments')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedAttachment|null>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $attachments = null;
+
+    /**
+     * Id to be displayed.
+     *
+     * @var ?string $displayId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('display_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $displayId = null;
+
+    /**
      * Reference to supplier bill number
      *
      * @var ?string $billNumber
@@ -70,13 +89,22 @@ class BillInput
     public ?LinkedSupplierInput $supplier = null;
 
     /**
-     * The company or subsidiary id the transaction belongs to
+     * The company ID the transaction belongs to
      *
      * @var ?string $companyId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('company_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $companyId = null;
+
+    /**
+     * The ID of the department
+     *
+     * @var ?string $departmentId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('department_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $departmentId = null;
 
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
@@ -287,6 +315,52 @@ class BillInput
     public ?float $discountPercentage = null;
 
     /**
+     * Optional bill template
+     *
+     * @var ?string $templateId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('template_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $templateId = null;
+
+    /**
+     * The user who approved the bill
+     *
+     * @var ?string $approvedBy
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('approved_by')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $approvedBy = null;
+
+    /**
+     * Type of amortization
+     *
+     * @var ?AmortizationType $amortizationType
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('amortization_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\AmortizationType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?AmortizationType $amortizationType = null;
+
+    /**
+     * Method of tax calculation
+     *
+     * @var ?string $taxMethod
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_method')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $taxMethod = null;
+
+    /**
+     * Whether the document has been received
+     *
+     * @var ?bool $documentReceived
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('document_received')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $documentReceived = null;
+
+    /**
      * URL link to a source document - shown as 'Go to [appName]' in the downstream app. Currently only supported for Xero.
      *
      * @var ?string $sourceDocumentUrl
@@ -328,9 +402,12 @@ class BillInput
      * @param  ?BankAccount  $bankAccount
      * @param  ?array<CustomField>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<?LinkedAttachment>  $attachments
+     * @param  ?string  $displayId
      * @param  ?string  $billNumber
      * @param  ?LinkedSupplierInput  $supplier
      * @param  ?string  $companyId
+     * @param  ?string  $departmentId
      * @param  ?Currency  $currency
      * @param  ?float  $currencyRate
      * @param  ?bool  $taxInclusive
@@ -354,21 +431,29 @@ class BillInput
      * @param  ?string  $language
      * @param  ?bool  $accountingByRow
      * @param  ?float  $discountPercentage
+     * @param  ?string  $templateId
+     * @param  ?string  $approvedBy
+     * @param  ?AmortizationType  $amortizationType
+     * @param  ?string  $taxMethod
+     * @param  ?bool  $documentReceived
      * @param  ?string  $sourceDocumentUrl
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?string  $rowVersion
      * @param  ?string  $accountingPeriod
      * @phpstan-pure
      */
-    public function __construct(?array $lineItems = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $billNumber = null, ?LinkedSupplierInput $supplier = null, ?string $companyId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?LocalDate $billDate = null, ?LocalDate $dueDate = null, ?LocalDate $paidDate = null, ?string $poNumber = null, ?string $reference = null, ?string $terms = null, ?float $balance = null, ?float $deposit = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?string $taxCode = null, ?string $notes = null, ?BillStatus $status = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?float $discountPercentage = null, ?string $sourceDocumentUrl = null, ?array $trackingCategories = null, ?string $rowVersion = null, ?string $accountingPeriod = null)
+    public function __construct(?array $lineItems = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?array $attachments = null, ?string $displayId = null, ?string $billNumber = null, ?LinkedSupplierInput $supplier = null, ?string $companyId = null, ?string $departmentId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?LocalDate $billDate = null, ?LocalDate $dueDate = null, ?LocalDate $paidDate = null, ?string $poNumber = null, ?string $reference = null, ?string $terms = null, ?float $balance = null, ?float $deposit = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?string $taxCode = null, ?string $notes = null, ?BillStatus $status = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?float $discountPercentage = null, ?string $templateId = null, ?string $approvedBy = null, ?AmortizationType $amortizationType = null, ?string $taxMethod = null, ?bool $documentReceived = null, ?string $sourceDocumentUrl = null, ?array $trackingCategories = null, ?string $rowVersion = null, ?string $accountingPeriod = null)
     {
         $this->lineItems = $lineItems;
         $this->bankAccount = $bankAccount;
         $this->customFields = $customFields;
         $this->passThrough = $passThrough;
+        $this->attachments = $attachments;
+        $this->displayId = $displayId;
         $this->billNumber = $billNumber;
         $this->supplier = $supplier;
         $this->companyId = $companyId;
+        $this->departmentId = $departmentId;
         $this->currency = $currency;
         $this->currencyRate = $currencyRate;
         $this->taxInclusive = $taxInclusive;
@@ -392,6 +477,11 @@ class BillInput
         $this->language = $language;
         $this->accountingByRow = $accountingByRow;
         $this->discountPercentage = $discountPercentage;
+        $this->templateId = $templateId;
+        $this->approvedBy = $approvedBy;
+        $this->amortizationType = $amortizationType;
+        $this->taxMethod = $taxMethod;
+        $this->documentReceived = $documentReceived;
         $this->sourceDocumentUrl = $sourceDocumentUrl;
         $this->trackingCategories = $trackingCategories;
         $this->rowVersion = $rowVersion;
