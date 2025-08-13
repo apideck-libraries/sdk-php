@@ -22,6 +22,14 @@ class ApplicantInput
 
     /**
      *
+     * @var ?string $type
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $type = null;
+
+    /**
+     *
      * @var ?string $coverLetter
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('cover_letter')]
@@ -148,6 +156,15 @@ class ApplicantInput
     public ?array $passThrough = null;
 
     /**
+     * A formal salutation for the person. For example, 'Mr', 'Mrs'
+     *
+     * @var ?string $salutation
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('salutation')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $salutation = null;
+
+    /**
      * The first name of the person.
      *
      * @var ?string $firstName
@@ -191,6 +208,25 @@ class ApplicantInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('birthday')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?LocalDate $birthday = null;
+
+    /**
+     * The gender represents the gender identity of a person.
+     *
+     * @var ?ApplicantGender $gender
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('gender')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ApplicantGender|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ApplicantGender $gender = null;
+
+    /**
+     * A unique identifier assigned by the government. This field is considered sensitive information and may be subject to special security and privacy restrictions.
+     *
+     * @var ?string $socialSecurityNumber
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('social_security_number')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $socialSecurityNumber = null;
 
     /**
      * The URL of the photo of a person.
@@ -296,6 +332,7 @@ class ApplicantInput
 
     /**
      * @param  ?string  $name
+     * @param  ?string  $type
      * @param  ?string  $coverLetter
      * @param  ?string  $headline
      * @param  ?array<Email>  $emails
@@ -310,11 +347,14 @@ class ApplicantInput
      * @param  ?bool  $confidential
      * @param  ?bool  $anonymized
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?string  $salutation
      * @param  ?string  $firstName
      * @param  ?string  $lastName
      * @param  ?string  $middleName
      * @param  ?string  $initials
      * @param  ?LocalDate  $birthday
+     * @param  ?ApplicantGender  $gender
+     * @param  ?string  $socialSecurityNumber
      * @param  ?string  $photoUrl
      * @param  ?string  $title
      * @param  ?array<string>  $applicationIds
@@ -328,9 +368,10 @@ class ApplicantInput
      * @param  ?bool  $deleted
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?string $coverLetter = null, ?string $headline = null, ?array $emails = null, ?array $customFields = null, ?array $phoneNumbers = null, ?array $addresses = null, ?array $websites = null, ?array $socialLinks = null, ?string $stageId = null, ?string $recruiterId = null, ?string $coordinatorId = null, ?bool $confidential = null, ?bool $anonymized = null, ?array $passThrough = null, ?string $firstName = null, ?string $lastName = null, ?string $middleName = null, ?string $initials = null, ?LocalDate $birthday = null, ?string $photoUrl = null, ?string $title = null, ?array $applicationIds = null, ?array $applications = null, ?array $followers = null, ?array $sources = null, ?array $tags = null, ?bool $archived = null, ?string $ownerId = null, ?string $recordUrl = null, ?bool $deleted = null)
+    public function __construct(?string $name = null, ?string $type = null, ?string $coverLetter = null, ?string $headline = null, ?array $emails = null, ?array $customFields = null, ?array $phoneNumbers = null, ?array $addresses = null, ?array $websites = null, ?array $socialLinks = null, ?string $stageId = null, ?string $recruiterId = null, ?string $coordinatorId = null, ?bool $confidential = null, ?bool $anonymized = null, ?array $passThrough = null, ?string $salutation = null, ?string $firstName = null, ?string $lastName = null, ?string $middleName = null, ?string $initials = null, ?LocalDate $birthday = null, ?ApplicantGender $gender = null, ?string $socialSecurityNumber = null, ?string $photoUrl = null, ?string $title = null, ?array $applicationIds = null, ?array $applications = null, ?array $followers = null, ?array $sources = null, ?array $tags = null, ?bool $archived = null, ?string $ownerId = null, ?string $recordUrl = null, ?bool $deleted = null)
     {
         $this->name = $name;
+        $this->type = $type;
         $this->coverLetter = $coverLetter;
         $this->headline = $headline;
         $this->emails = $emails;
@@ -345,11 +386,14 @@ class ApplicantInput
         $this->confidential = $confidential;
         $this->anonymized = $anonymized;
         $this->passThrough = $passThrough;
+        $this->salutation = $salutation;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->middleName = $middleName;
         $this->initials = $initials;
         $this->birthday = $birthday;
+        $this->gender = $gender;
+        $this->socialSecurityNumber = $socialSecurityNumber;
         $this->photoUrl = $photoUrl;
         $this->title = $title;
         $this->applicationIds = $applicationIds;

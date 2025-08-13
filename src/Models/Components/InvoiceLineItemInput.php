@@ -30,6 +30,16 @@ class InvoiceLineItemInput
     public ?LinkedInvoiceItem $item = null;
 
     /**
+     * Worktags of the line item. This is currently only supported in Workday.
+     *
+     * @var ?array<?LinkedWorktag> $worktags
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('worktags')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedWorktag|null>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $worktags = null;
+
+    /**
      *
      * @var ?LinkedTaxRateInput $taxRate
      */
@@ -246,25 +256,6 @@ class InvoiceLineItemInput
     public ?string $taxMethod = null;
 
     /**
-     * Budget of the line item
-     *
-     * @var ?Budget $budget
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('budget')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Budget|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Budget $budget = null;
-
-    /**
-     * ID of the project of the line item
-     *
-     * @var ?string $projectId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('project_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $projectId = null;
-
-    /**
      * A list of linked tracking categories.
      *
      * @var ?array<?LinkedTrackingCategory> $trackingCategories
@@ -295,6 +286,7 @@ class InvoiceLineItemInput
     /**
      * @param  ?string  $rowId
      * @param  ?LinkedInvoiceItem  $item
+     * @param  ?array<?LinkedWorktag>  $worktags
      * @param  ?LinkedTaxRateInput  $taxRate
      * @param  ?array<CustomField>  $customFields
      * @param  ?string  $id
@@ -319,17 +311,16 @@ class InvoiceLineItemInput
      * @param  ?string  $taxApplicableOn
      * @param  ?string  $taxRecoverability
      * @param  ?string  $taxMethod
-     * @param  ?Budget  $budget
-     * @param  ?string  $projectId
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?LinkedLedgerAccountInput  $ledgerAccount
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?string $id = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?InvoiceLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $categoryId = null, ?string $locationId = null, ?string $departmentId = null, ?string $subsidiaryId = null, ?string $shippingId = null, ?string $memo = null, ?bool $prepaid = null, ?string $taxApplicableOn = null, ?string $taxRecoverability = null, ?string $taxMethod = null, ?Budget $budget = null, ?string $projectId = null, ?array $trackingCategories = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $rowVersion = null)
+    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?array $worktags = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?string $id = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?InvoiceLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $categoryId = null, ?string $locationId = null, ?string $departmentId = null, ?string $subsidiaryId = null, ?string $shippingId = null, ?string $memo = null, ?bool $prepaid = null, ?string $taxApplicableOn = null, ?string $taxRecoverability = null, ?string $taxMethod = null, ?array $trackingCategories = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $rowVersion = null)
     {
         $this->rowId = $rowId;
         $this->item = $item;
+        $this->worktags = $worktags;
         $this->taxRate = $taxRate;
         $this->customFields = $customFields;
         $this->id = $id;
@@ -354,8 +345,6 @@ class InvoiceLineItemInput
         $this->taxApplicableOn = $taxApplicableOn;
         $this->taxRecoverability = $taxRecoverability;
         $this->taxMethod = $taxMethod;
-        $this->budget = $budget;
-        $this->projectId = $projectId;
         $this->trackingCategories = $trackingCategories;
         $this->ledgerAccount = $ledgerAccount;
         $this->rowVersion = $rowVersion;

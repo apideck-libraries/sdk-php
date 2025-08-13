@@ -9,10 +9,11 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 
-/** Budget of the line item */
-enum Budget: string
+/** Type of amortization */
+enum PurchaseOrderAmortizationType: string
 {
-    case OutOfBudget = 'out_of_budget';
-    case InBudget = 'in_budget';
+    case Manual = 'manual';
+    case Receipt = 'receipt';
+    case Schedule = 'schedule';
     case Other = 'other';
 }

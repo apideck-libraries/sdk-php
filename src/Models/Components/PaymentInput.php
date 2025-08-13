@@ -183,7 +183,7 @@ class PaymentInput
     public ?DeprecatedLinkedSupplierInput $supplier = null;
 
     /**
-     * The company or subsidiary id the transaction belongs to
+     * The company ID the transaction belongs to
      *
      * @var ?string $companyId
      */
