@@ -110,6 +110,7 @@ enum WebhookEventType: string
     case FileStorageFileCreated = 'file-storage.file.created';
     case FileStorageFileUpdated = 'file-storage.file.updated';
     case FileStorageFileDeleted = 'file-storage.file.deleted';
+    case FileStorageDriveUpdated = 'file-storage.drive.updated';
     case IssueTrackingTicketCreated = 'issue-tracking.ticket.created';
     case IssueTrackingTicketUpdated = 'issue-tracking.ticket.updated';
     case IssueTrackingTicketDeleted = 'issue-tracking.ticket.deleted';
