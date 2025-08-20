@@ -59,6 +59,16 @@ class Subsidiary
     public ?string $name = null;
 
     /**
+     * List of currencies supported by this subsidiary
+     *
+     * @var ?array<?Currency> $currencies
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('currencies')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Currency|null>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $currencies = null;
+
+    /**
      * When custom mappings are configured on the resource, the result is included here.
      *
      * @var ?array<string, mixed> $customMappings
@@ -119,6 +129,7 @@ class Subsidiary
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $parentId
      * @param  ?string  $name
+     * @param  ?array<?Currency>  $currencies
      * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $rowVersion
      * @param  ?string  $updatedBy
@@ -127,13 +138,14 @@ class Subsidiary
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?SubsidiaryStatus $status = null, ?array $passThrough = null, ?string $parentId = null, ?string $name = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?SubsidiaryStatus $status = null, ?array $passThrough = null, ?string $parentId = null, ?string $name = null, ?array $currencies = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->status = $status;
         $this->passThrough = $passThrough;
         $this->parentId = $parentId;
         $this->name = $name;
+        $this->currencies = $currencies;
         $this->customMappings = $customMappings;
         $this->rowVersion = $rowVersion;
         $this->updatedBy = $updatedBy;

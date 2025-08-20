@@ -22,5 +22,6 @@ enum PhoneNumberType: string
     case Fax = 'fax';
     case DirectDialIn = 'direct-dial-in';
     case Personal = 'personal';
+    case Billing = 'billing';
     case Other = 'other';
 }

@@ -16,6 +16,7 @@ enum JobStatus: string
     case Internal = 'internal';
     case Published = 'published';
     case Completed = 'completed';
+    case Placed = 'placed';
     case OnHold = 'on-hold';
     case Private = 'private';
 }
