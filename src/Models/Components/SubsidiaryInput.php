@@ -50,6 +50,16 @@ class SubsidiaryInput
     public ?string $name = null;
 
     /**
+     * List of currencies supported by this subsidiary
+     *
+     * @var ?array<?Currency> $currencies
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('currencies')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Currency|null>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $currencies = null;
+
+    /**
      * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
      *
      * @var ?string $rowVersion
@@ -63,15 +73,17 @@ class SubsidiaryInput
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $parentId
      * @param  ?string  $name
+     * @param  ?array<?Currency>  $currencies
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?SubsidiaryStatus $status = null, ?array $passThrough = null, ?string $parentId = null, ?string $name = null, ?string $rowVersion = null)
+    public function __construct(?SubsidiaryStatus $status = null, ?array $passThrough = null, ?string $parentId = null, ?string $name = null, ?array $currencies = null, ?string $rowVersion = null)
     {
         $this->status = $status;
         $this->passThrough = $passThrough;
         $this->parentId = $parentId;
         $this->name = $name;
+        $this->currencies = $currencies;
         $this->rowVersion = $rowVersion;
     }
 }
