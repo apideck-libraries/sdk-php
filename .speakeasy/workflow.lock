@@ -6,7 +6,7 @@ sources:
         sourceBlobDigest: sha256:59550febc58556eef6a4a1f331887614e8f267d5f44114f2c3dfd5408e90a1bf
         tags:
             - latest
-            - speakeasy-sdk-regen-1755773169
+            - speakeasy-sdk-regen-1755799880
             - 10.20.10
 targets:
     apideck:
@@ -15,7 +15,7 @@ targets:
         sourceRevisionDigest: sha256:07681cc944d7e4ed8caf781eba5bd5d0eae8c2058ae7141f2b2bc744cf8c695d
         sourceBlobDigest: sha256:59550febc58556eef6a4a1f331887614e8f267d5f44114f2c3dfd5408e90a1bf
         codeSamplesNamespace: apideck-php-code-samples
-        codeSamplesRevisionDigest: sha256:9ccfab1b1b20ef019afa0149316f30e550181b1db20d7377f0afa3c922763ca7
+        codeSamplesRevisionDigest: sha256:27fc50f25b48efe0d9c686a4450d1bedf2b21a6976e16c8329557fe867742d1d
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
