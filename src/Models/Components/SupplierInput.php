@@ -81,6 +81,26 @@ class SupplierInput
     public ?array $customFields = null;
 
     /**
+     * $taxDetails
+     *
+     * @var ?array<?LinkedTaxDetail> $taxDetails
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_details')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTaxDetail|null>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $taxDetails = null;
+
+    /**
+     * $taxStatusDetails
+     *
+     * @var ?array<?LinkedTaxStatusDetail> $taxStatusDetails
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_status_details')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTaxStatusDetail|null>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $taxStatusDetails = null;
+
+    /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
      * @var ?array<PassThroughBody> $passThrough
@@ -98,6 +118,15 @@ class SupplierInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiary_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $subsidiaryId = null;
+
+    /**
+     * The integration system the supplier belongs to.
+     *
+     * @var ?string $integrationSystemId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('integration_system_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $integrationSystemId = null;
 
     /**
      * Display ID
@@ -271,6 +300,24 @@ class SupplierInput
     public ?string $channel = null;
 
     /**
+     * Method of issuance of the purchase order for the supplier
+     *
+     * @var ?string $issuedMethod
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('issued_method')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $issuedMethod = null;
+
+    /**
+     * Email address of the person who issued the purchase order for the supplier
+     *
+     * @var ?string $issuedEmail
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('issued_email')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $issuedEmail = null;
+
+    /**
      * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
      *
      * @var ?string $rowVersion
@@ -287,8 +334,11 @@ class SupplierInput
      * @param  ?array<BankAccount>  $bankAccounts
      * @param  ?LinkedTaxRateInput  $taxRate
      * @param  ?array<CustomField>  $customFields
+     * @param  ?array<?LinkedTaxDetail>  $taxDetails
+     * @param  ?array<?LinkedTaxStatusDetail>  $taxStatusDetails
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $subsidiaryId
+     * @param  ?string  $integrationSystemId
      * @param  ?string  $displayId
      * @param  ?string  $displayName
      * @param  ?string  $companyName
@@ -308,10 +358,12 @@ class SupplierInput
      * @param  ?string  $paymentMethod
      * @param  ?string  $terms
      * @param  ?string  $channel
+     * @param  ?string  $issuedMethod
+     * @param  ?string  $issuedEmail
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $subsidiaryId = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $supplierCategory = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?string $notes = null, ?string $taxNumber = null, ?Currency $currency = null, ?LinkedLedgerAccountInput $account = null, ?SupplierStatus $status = null, ?string $paymentMethod = null, ?string $terms = null, ?string $channel = null, ?string $rowVersion = null)
+    public function __construct(?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $taxDetails = null, ?array $taxStatusDetails = null, ?array $passThrough = null, ?string $subsidiaryId = null, ?string $integrationSystemId = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $supplierCategory = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?string $notes = null, ?string $taxNumber = null, ?Currency $currency = null, ?LinkedLedgerAccountInput $account = null, ?SupplierStatus $status = null, ?string $paymentMethod = null, ?string $terms = null, ?string $channel = null, ?string $issuedMethod = null, ?string $issuedEmail = null, ?string $rowVersion = null)
     {
         $this->addresses = $addresses;
         $this->phoneNumbers = $phoneNumbers;
@@ -320,8 +372,11 @@ class SupplierInput
         $this->bankAccounts = $bankAccounts;
         $this->taxRate = $taxRate;
         $this->customFields = $customFields;
+        $this->taxDetails = $taxDetails;
+        $this->taxStatusDetails = $taxStatusDetails;
         $this->passThrough = $passThrough;
         $this->subsidiaryId = $subsidiaryId;
+        $this->integrationSystemId = $integrationSystemId;
         $this->displayId = $displayId;
         $this->displayName = $displayName;
         $this->companyName = $companyName;
@@ -341,6 +396,8 @@ class SupplierInput
         $this->paymentMethod = $paymentMethod;
         $this->terms = $terms;
         $this->channel = $channel;
+        $this->issuedMethod = $issuedMethod;
+        $this->issuedEmail = $issuedEmail;
         $this->rowVersion = $rowVersion;
     }
 }
