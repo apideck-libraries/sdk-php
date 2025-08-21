@@ -19,4 +19,8 @@ enum JobStatus: string
     case Placed = 'placed';
     case OnHold = 'on-hold';
     case Private = 'private';
+    case AcceptingCandidates = 'accepting_candidates';
+    case Open = 'open';
+    case Closed = 'closed';
+    case Archived = 'archived';
 }
