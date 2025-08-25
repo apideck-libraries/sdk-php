@@ -12,7 +12,7 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class TimeOffRequestsFilter
 {
     /**
-     * Start date
+     * Start date of the date range to filter time off requests. When used with end_date, filters for requests within the specified date range.
      *
      * @var ?string $startDate
      */
@@ -20,7 +20,7 @@ class TimeOffRequestsFilter
     public ?string $startDate = null;
 
     /**
-     * End date
+     * End date of the date range to filter time off requests. When used with start_date, filters for requests within the specified date range.
      *
      * @var ?string $endDate
      */

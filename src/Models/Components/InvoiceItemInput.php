@@ -138,6 +138,16 @@ class InvoiceItemInput
     public ?float $unitPrice = null;
 
     /**
+     * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
+     *
+     * @var ?Currency $currency
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Currency $currency = null;
+
+    /**
      *
      * @var ?LinkedLedgerAccountInput $assetAccount
      */
@@ -252,6 +262,7 @@ class InvoiceItemInput
      * @param  ?InvoiceItemTypeType  $type
      * @param  ?float  $quantity
      * @param  ?float  $unitPrice
+     * @param  ?Currency  $currency
      * @param  ?LinkedLedgerAccountInput  $assetAccount
      * @param  ?LinkedLedgerAccountInput  $incomeAccount
      * @param  ?LinkedLedgerAccountInput  $expenseAccount
@@ -265,7 +276,7 @@ class InvoiceItemInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?InvoiceItemSalesDetails $salesDetails = null, ?InvoiceItemPurchaseDetails $purchaseDetails = null, ?array $passThrough = null, ?string $name = null, ?string $description = null, ?string $code = null, ?bool $sold = null, ?bool $purchased = null, ?bool $tracked = null, ?bool $taxable = null, ?LocalDate $inventoryDate = null, ?InvoiceItemTypeType $type = null, ?float $quantity = null, ?float $unitPrice = null, ?LinkedLedgerAccountInput $assetAccount = null, ?LinkedLedgerAccountInput $incomeAccount = null, ?LinkedLedgerAccountInput $expenseAccount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?bool $active = null, ?string $departmentId = null, ?string $locationId = null, ?string $subsidiaryId = null, ?string $taxScheduleId = null, ?string $rowVersion = null)
+    public function __construct(?InvoiceItemSalesDetails $salesDetails = null, ?InvoiceItemPurchaseDetails $purchaseDetails = null, ?array $passThrough = null, ?string $name = null, ?string $description = null, ?string $code = null, ?bool $sold = null, ?bool $purchased = null, ?bool $tracked = null, ?bool $taxable = null, ?LocalDate $inventoryDate = null, ?InvoiceItemTypeType $type = null, ?float $quantity = null, ?float $unitPrice = null, ?Currency $currency = null, ?LinkedLedgerAccountInput $assetAccount = null, ?LinkedLedgerAccountInput $incomeAccount = null, ?LinkedLedgerAccountInput $expenseAccount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?bool $active = null, ?string $departmentId = null, ?string $locationId = null, ?string $subsidiaryId = null, ?string $taxScheduleId = null, ?string $rowVersion = null)
     {
         $this->salesDetails = $salesDetails;
         $this->purchaseDetails = $purchaseDetails;
@@ -281,6 +292,7 @@ class InvoiceItemInput
         $this->type = $type;
         $this->quantity = $quantity;
         $this->unitPrice = $unitPrice;
+        $this->currency = $currency;
         $this->assetAccount = $assetAccount;
         $this->incomeAccount = $incomeAccount;
         $this->expenseAccount = $expenseAccount;
