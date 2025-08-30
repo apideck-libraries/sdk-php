@@ -24,7 +24,9 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Apideck\Unify;
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
+use Apideck\Unify\Utils;
 
 $sdk = Unify\Apideck::builder()
     ->setConsumerId('test-consumer')
@@ -36,6 +38,10 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingExpensesAllRequest(
     serviceId: 'salesforce',
+    filter: new Components\ExpensesFilter(
+        updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
+        status: Components\ExpensesFilterStatus::Draft,
+    ),
 );
 
 $responses = $sdk->accounting->expenses->list(

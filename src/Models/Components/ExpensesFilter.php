@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 use Apideck\Unify\Utils\SpeakeasyMetadata;
-class JournalEntriesFilter
+class ExpensesFilter
 {
     /**
      *
@@ -20,17 +20,17 @@ class JournalEntriesFilter
 
     /**
      *
-     * @var ?JournalEntriesFilterStatus $status
+     * @var ?ExpensesFilterStatus $status
      */
     #[SpeakeasyMetadata('queryParam:name=status')]
-    public ?JournalEntriesFilterStatus $status = null;
+    public ?ExpensesFilterStatus $status = null;
 
     /**
      * @param  ?\DateTime  $updatedSince
-     * @param  ?JournalEntriesFilterStatus  $status
+     * @param  ?ExpensesFilterStatus  $status
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedSince = null, ?JournalEntriesFilterStatus $status = null)
+    public function __construct(?\DateTime $updatedSince = null, ?ExpensesFilterStatus $status = null)
     {
         $this->updatedSince = $updatedSince;
         $this->status = $status;
