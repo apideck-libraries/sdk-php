@@ -315,7 +315,7 @@ class Suppliers
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
-                        if ($nextCursor == null) {
+                        if ($nextCursor == null || (is_string($nextCursor) && trim($nextCursor) === '')) {
                             return null;
                         }
                     }
@@ -423,7 +423,7 @@ class Suppliers
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
-                        if ($nextCursor == null) {
+                        if ($nextCursor == null || (is_string($nextCursor) && trim($nextCursor) === '')) {
                             return null;
                         }
                     }

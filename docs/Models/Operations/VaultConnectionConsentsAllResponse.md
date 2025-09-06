@@ -1,0 +1,10 @@
+# VaultConnectionConsentsAllResponse
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                    | [Components\HTTPMetadata](../../Models/Components/HTTPMetadata.md)                            | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `getConsentRecordsResponse`                                                                   | [?Components\GetConsentRecordsResponse](../../Models/Components/GetConsentRecordsResponse.md) | :heavy_minus_sign:                                                                            | Consent records                                                                               |
+| `unexpectedErrorResponse`                                                                     | [?Components\UnexpectedErrorResponse](../../Models/Components/UnexpectedErrorResponse.md)     | :heavy_minus_sign:                                                                            | Unexpected error                                                                              |
