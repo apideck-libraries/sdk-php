@@ -664,6 +664,14 @@ foreach ($responses as $response) {
 ### [vault](docs/sdks/vault/README.md)
 
 
+#### [vault->connectionConsent](docs/sdks/connectionconsent/README.md)
+
+* [update](docs/sdks/connectionconsent/README.md#update) - Update consent state
+
+#### [vault->connectionConsents](docs/sdks/connectionconsents/README.md)
+
+* [list](docs/sdks/connectionconsents/README.md#list) - Get consent records
+
 #### [vault->connectionCustomMappings](docs/sdks/connectioncustommappings/README.md)
 
 * [list](docs/sdks/connectioncustommappings/README.md#list) - List connection custom mappings

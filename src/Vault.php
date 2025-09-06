@@ -21,6 +21,10 @@ class Vault
 
     public ValidateConnection $validateConnection;
 
+    public ConnectionConsents $connectionConsents;
+
+    public ConnectionConsent $connectionConsent;
+
     public CreateCallback $createCallback;
 
     public ConnectionSettings $connectionSettings;
@@ -45,6 +49,8 @@ class Vault
         $this->consumerRequestCounts = new ConsumerRequestCounts($this->sdkConfiguration);
         $this->connections = new Connections($this->sdkConfiguration);
         $this->validateConnection = new ValidateConnection($this->sdkConfiguration);
+        $this->connectionConsents = new ConnectionConsents($this->sdkConfiguration);
+        $this->connectionConsent = new ConnectionConsent($this->sdkConfiguration);
         $this->createCallback = new CreateCallback($this->sdkConfiguration);
         $this->connectionSettings = new ConnectionSettings($this->sdkConfiguration);
         $this->customFields = new CustomFields($this->sdkConfiguration);

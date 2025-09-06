@@ -1,0 +1,10 @@
+# VaultConnectionConsentUpdateResponse
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                | [Components\HTTPMetadata](../../Models/Components/HTTPMetadata.md)                        | :heavy_check_mark:                                                                        | N/A                                                                                       |
+| `updateConsentResponse`                                                                   | [?Components\UpdateConsentResponse](../../Models/Components/UpdateConsentResponse.md)     | :heavy_minus_sign:                                                                        | Consent updated                                                                           |
+| `unexpectedErrorResponse`                                                                 | [?Components\UnexpectedErrorResponse](../../Models/Components/UnexpectedErrorResponse.md) | :heavy_minus_sign:                                                                        | Unexpected error                                                                          |
