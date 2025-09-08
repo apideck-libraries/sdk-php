@@ -186,6 +186,16 @@ class ExpenseInput
     public ?string $sourceDocumentUrl = null;
 
     /**
+     * Expense status
+     *
+     * @var ?ExpenseStatus $status
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ExpenseStatus|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ExpenseStatus $status = null;
+
+    /**
      * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
      *
      * @var ?string $rowVersion
@@ -214,10 +224,11 @@ class ExpenseInput
      * @param  ?float  $totalAmount
      * @param  ?string  $reference
      * @param  ?string  $sourceDocumentUrl
+     * @param  ?ExpenseStatus  $status
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(string $accountId, array $lineItems, ?\DateTime $transactionDate = null, ?string $customerId = null, ?string $supplierId = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?string $companyId = null, ?string $departmentId = null, ?ExpensePaymentType $paymentType = null, ?Currency $currency = null, ?float $currencyRate = null, ?ExpenseType $type = null, ?string $memo = null, ?float $totalAmount = null, ?string $reference = null, ?string $sourceDocumentUrl = null, ?string $rowVersion = null)
+    public function __construct(string $accountId, array $lineItems, ?\DateTime $transactionDate = null, ?string $customerId = null, ?string $supplierId = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?string $companyId = null, ?string $departmentId = null, ?ExpensePaymentType $paymentType = null, ?Currency $currency = null, ?float $currencyRate = null, ?ExpenseType $type = null, ?string $memo = null, ?float $totalAmount = null, ?string $reference = null, ?string $sourceDocumentUrl = null, ?ExpenseStatus $status = null, ?string $rowVersion = null)
     {
         $this->accountId = $accountId;
         $this->lineItems = $lineItems;
@@ -238,6 +249,7 @@ class ExpenseInput
         $this->totalAmount = $totalAmount;
         $this->reference = $reference;
         $this->sourceDocumentUrl = $sourceDocumentUrl;
+        $this->status = $status;
         $this->rowVersion = $rowVersion;
     }
 }

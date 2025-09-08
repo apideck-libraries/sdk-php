@@ -315,7 +315,7 @@ class Expenses
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
-                        if ($nextCursor == null) {
+                        if ($nextCursor == null || (is_string($nextCursor) && trim($nextCursor) === '')) {
                             return null;
                         }
                     }
@@ -328,6 +328,7 @@ class Expenses
                             serviceId: $request != null ? $request->serviceId : null,
                             cursor: $nextCursor,
                             limit: $request != null ? $request->limit : null,
+                            filter: $request != null ? $request->filter : null,
                         ),
                     );
                 };
@@ -419,7 +420,7 @@ class Expenses
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
-                        if ($nextCursor == null) {
+                        if ($nextCursor == null || (is_string($nextCursor) && trim($nextCursor) === '')) {
                             return null;
                         }
                     }
@@ -432,6 +433,7 @@ class Expenses
                             serviceId: $request != null ? $request->serviceId : null,
                             cursor: $nextCursor,
                             limit: $request != null ? $request->limit : null,
+                            filter: $request != null ? $request->filter : null,
                         ),
                     );
                 };

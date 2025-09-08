@@ -25,8 +25,8 @@ enum WebhookEventType: string
     case CrmLeadUpdated = 'crm.lead.updated';
     case CrmLeadDeleted = 'crm.lead.deleted';
     case CrmNoteCreated = 'crm.note.created';
-    case CrmNotesUpdated = 'crm.notes.updated';
-    case CrmNotesDeleted = 'crm.notes.deleted';
+    case CrmNoteUpdated = 'crm.note.updated';
+    case CrmNoteDeleted = 'crm.note.deleted';
     case CrmOpportunityCreated = 'crm.opportunity.created';
     case CrmOpportunityUpdated = 'crm.opportunity.updated';
     case CrmOpportunityDeleted = 'crm.opportunity.deleted';

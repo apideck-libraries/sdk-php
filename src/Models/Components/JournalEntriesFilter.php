@@ -19,11 +19,20 @@ class JournalEntriesFilter
     public ?\DateTime $updatedSince = null;
 
     /**
+     *
+     * @var ?JournalEntriesFilterStatus $status
+     */
+    #[SpeakeasyMetadata('queryParam:name=status')]
+    public ?JournalEntriesFilterStatus $status = null;
+
+    /**
      * @param  ?\DateTime  $updatedSince
+     * @param  ?JournalEntriesFilterStatus  $status
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedSince = null)
+    public function __construct(?\DateTime $updatedSince = null, ?JournalEntriesFilterStatus $status = null)
     {
         $this->updatedSince = $updatedSince;
+        $this->status = $status;
     }
 }
