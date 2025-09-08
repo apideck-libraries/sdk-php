@@ -315,7 +315,7 @@ class CustomObjects
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
-                        if ($nextCursor == null) {
+                        if ($nextCursor == null || (is_string($nextCursor) && trim($nextCursor) === '')) {
                             return null;
                         }
                     }
@@ -422,7 +422,7 @@ class CustomObjects
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
-                        if ($nextCursor == null) {
+                        if ($nextCursor == null || (is_string($nextCursor) && trim($nextCursor) === '')) {
                             return null;
                         }
                     }

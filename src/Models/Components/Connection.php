@@ -255,6 +255,44 @@ class Connection
     public ?array $customMappings = null;
 
     /**
+     * The current consent state of the connection
+     *
+     * @var ?ConsentState $consentState
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('consent_state')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConsentState|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ConsentState $consentState = null;
+
+    /**
+     * Immutable array of consent records for compliance and audit purposes
+     *
+     * @var ?array<ConsentRecord> $consents
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('consents')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ConsentRecord>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $consents = null;
+
+    /**
+     *
+     * @var ?ConsentRecord $latestConsent
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('latest_consent')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConsentRecord|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ConsentRecord $latestConsent = null;
+
+    /**
+     *
+     * @var ?DataScopes $applicationDataScopes
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('application_data_scopes')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\DataScopes|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?DataScopes $applicationDataScopes = null;
+
+    /**
      * The OAuth redirect URI. Redirect your users to this URI to let them authorize your app in the connector's UI. Before you can use this URI, you must add `redirect_uri` as a query parameter to the `authorize_url`. Be sure to URL encode the `redirect_uri` part. Your users will be redirected to this `redirect_uri` after they granted access to your app in the connector's UI.
      *
      * @var ?string $authorizeUrl
@@ -327,6 +365,10 @@ class Connection
      * @param  ?bool  $hasGuide
      * @param  ?float  $createdAt
      * @param  ?array<CustomMapping>  $customMappings
+     * @param  ?ConsentState  $consentState
+     * @param  ?array<ConsentRecord>  $consents
+     * @param  ?ConsentRecord  $latestConsent
+     * @param  ?DataScopes  $applicationDataScopes
      * @param  ?string  $authorizeUrl
      * @param  ?string  $revokeUrl
      * @param  ?array<string, mixed>  $settings
@@ -334,7 +376,7 @@ class Connection
      * @param  ?float  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $serviceId = null, ?string $name = null, ?string $tagLine = null, ?string $unifiedApi = null, ?ConnectionState $state = null, ?IntegrationState $integrationState = null, ?AuthType $authType = null, ?OAuthGrantType $oauthGrantType = null, ?ConnectionStatus $status = null, ?bool $enabled = null, ?string $website = null, ?string $icon = null, ?string $logo = null, ?array $formFields = null, ?array $configuration = null, ?array $configurableResources = null, ?array $resourceSchemaSupport = null, ?array $resourceSettingsSupport = null, ?bool $validationSupport = null, ?bool $schemaSupport = null, ?array $settingsRequiredForAuthorization = null, ?array $subscriptions = null, ?bool $hasGuide = null, ?float $createdAt = null, ?array $customMappings = null, ?string $authorizeUrl = null, ?string $revokeUrl = null, ?array $settings = null, ?array $metadata = null, ?float $updatedAt = null)
+    public function __construct(?string $id = null, ?string $serviceId = null, ?string $name = null, ?string $tagLine = null, ?string $unifiedApi = null, ?ConnectionState $state = null, ?IntegrationState $integrationState = null, ?AuthType $authType = null, ?OAuthGrantType $oauthGrantType = null, ?ConnectionStatus $status = null, ?bool $enabled = null, ?string $website = null, ?string $icon = null, ?string $logo = null, ?array $formFields = null, ?array $configuration = null, ?array $configurableResources = null, ?array $resourceSchemaSupport = null, ?array $resourceSettingsSupport = null, ?bool $validationSupport = null, ?bool $schemaSupport = null, ?array $settingsRequiredForAuthorization = null, ?array $subscriptions = null, ?bool $hasGuide = null, ?float $createdAt = null, ?array $customMappings = null, ?ConsentState $consentState = null, ?array $consents = null, ?ConsentRecord $latestConsent = null, ?DataScopes $applicationDataScopes = null, ?string $authorizeUrl = null, ?string $revokeUrl = null, ?array $settings = null, ?array $metadata = null, ?float $updatedAt = null)
     {
         $this->id = $id;
         $this->serviceId = $serviceId;
@@ -362,6 +404,10 @@ class Connection
         $this->hasGuide = $hasGuide;
         $this->createdAt = $createdAt;
         $this->customMappings = $customMappings;
+        $this->consentState = $consentState;
+        $this->consents = $consents;
+        $this->latestConsent = $latestConsent;
+        $this->applicationDataScopes = $applicationDataScopes;
         $this->authorizeUrl = $authorizeUrl;
         $this->revokeUrl = $revokeUrl;
         $this->settings = $settings;

@@ -205,6 +205,16 @@ class Expense
     public ?array $customMappings = null;
 
     /**
+     * Expense status
+     *
+     * @var ?ExpenseStatus $status
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ExpenseStatus|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ExpenseStatus $status = null;
+
+    /**
      * The date and time when the object was last updated.
      *
      * @var ?\DateTime $updatedAt
@@ -271,6 +281,7 @@ class Expense
      * @param  ?string  $reference
      * @param  ?string  $sourceDocumentUrl
      * @param  ?array<string, mixed>  $customMappings
+     * @param  ?ExpenseStatus  $status
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
      * @param  ?string  $rowVersion
@@ -278,7 +289,7 @@ class Expense
      * @param  ?string  $createdBy
      * @phpstan-pure
      */
-    public function __construct(string $accountId, array $lineItems, ?string $id = null, ?\DateTime $transactionDate = null, ?string $customerId = null, ?string $supplierId = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?string $companyId = null, ?string $departmentId = null, ?ExpensePaymentType $paymentType = null, ?Currency $currency = null, ?float $currencyRate = null, ?ExpenseType $type = null, ?string $memo = null, ?float $totalAmount = null, ?string $reference = null, ?string $sourceDocumentUrl = null, ?array $customMappings = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null)
+    public function __construct(string $accountId, array $lineItems, ?string $id = null, ?\DateTime $transactionDate = null, ?string $customerId = null, ?string $supplierId = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?string $companyId = null, ?string $departmentId = null, ?ExpensePaymentType $paymentType = null, ?Currency $currency = null, ?float $currencyRate = null, ?ExpenseType $type = null, ?string $memo = null, ?float $totalAmount = null, ?string $reference = null, ?string $sourceDocumentUrl = null, ?array $customMappings = null, ?ExpenseStatus $status = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null)
     {
         $this->accountId = $accountId;
         $this->lineItems = $lineItems;
@@ -301,6 +312,7 @@ class Expense
         $this->reference = $reference;
         $this->sourceDocumentUrl = $sourceDocumentUrl;
         $this->customMappings = $customMappings;
+        $this->status = $status;
         $this->updatedAt = $updatedAt;
         $this->createdAt = $createdAt;
         $this->rowVersion = $rowVersion;

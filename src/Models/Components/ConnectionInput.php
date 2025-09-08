@@ -41,6 +41,34 @@ class ConnectionInput
     public ?array $customMappings = null;
 
     /**
+     * The current consent state of the connection
+     *
+     * @var ?ConsentState $consentState
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('consent_state')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConsentState|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ConsentState $consentState = null;
+
+    /**
+     *
+     * @var ?ConsentRecordInput $latestConsent
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('latest_consent')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConsentRecordInput|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ConsentRecordInput $latestConsent = null;
+
+    /**
+     *
+     * @var ?DataScopesInput $applicationDataScopes
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('application_data_scopes')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\DataScopesInput|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?DataScopesInput $applicationDataScopes = null;
+
+    /**
      * Connection settings. Values will persist to `form_fields` with corresponding id
      *
      * @var ?array<string, mixed> $settings
@@ -64,15 +92,21 @@ class ConnectionInput
      * @param  ?bool  $enabled
      * @param  ?array<ConnectionConfiguration>  $configuration
      * @param  ?array<CustomMappingInput>  $customMappings
+     * @param  ?ConsentState  $consentState
+     * @param  ?ConsentRecordInput  $latestConsent
+     * @param  ?DataScopesInput  $applicationDataScopes
      * @param  ?array<string, mixed>  $settings
      * @param  ?array<string, mixed>  $metadata
      * @phpstan-pure
      */
-    public function __construct(?bool $enabled = null, ?array $configuration = null, ?array $customMappings = null, ?array $settings = null, ?array $metadata = null)
+    public function __construct(?bool $enabled = null, ?array $configuration = null, ?array $customMappings = null, ?ConsentState $consentState = null, ?ConsentRecordInput $latestConsent = null, ?DataScopesInput $applicationDataScopes = null, ?array $settings = null, ?array $metadata = null)
     {
         $this->enabled = $enabled;
         $this->configuration = $configuration;
         $this->customMappings = $customMappings;
+        $this->consentState = $consentState;
+        $this->latestConsent = $latestConsent;
+        $this->applicationDataScopes = $applicationDataScopes;
         $this->settings = $settings;
         $this->metadata = $metadata;
     }

@@ -24,4 +24,5 @@ enum FormFieldType: string
     case Date = 'date';
     case Time = 'time';
     case Number = 'number';
+    case Password = 'password';
 }

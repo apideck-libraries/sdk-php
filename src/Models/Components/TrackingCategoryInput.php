@@ -60,6 +60,15 @@ class TrackingCategoryInput
     public ?string $parentId = null;
 
     /**
+     * The name of the parent tracking category.
+     *
+     * @var ?string $parentName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $parentName = null;
+
+    /**
      * The code of the tracking category.
      *
      * @var ?string $code
@@ -83,17 +92,19 @@ class TrackingCategoryInput
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?array<TrackingCategorySubsidiaries>  $subsidiaries
      * @param  ?string  $parentId
+     * @param  ?string  $parentName
      * @param  ?string  $code
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?TrackingCategoryStatus $status = null, ?array $passThrough = null, ?array $subsidiaries = null, ?string $parentId = null, ?string $code = null, ?string $rowVersion = null)
+    public function __construct(?string $name = null, ?TrackingCategoryStatus $status = null, ?array $passThrough = null, ?array $subsidiaries = null, ?string $parentId = null, ?string $parentName = null, ?string $code = null, ?string $rowVersion = null)
     {
         $this->name = $name;
         $this->status = $status;
         $this->passThrough = $passThrough;
         $this->subsidiaries = $subsidiaries;
         $this->parentId = $parentId;
+        $this->parentName = $parentName;
         $this->code = $code;
         $this->rowVersion = $rowVersion;
     }
