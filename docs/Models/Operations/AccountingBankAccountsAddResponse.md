@@ -1,0 +1,10 @@
+# AccountingBankAccountsAddResponse
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                    | [Components\HTTPMetadata](../../Models/Components/HTTPMetadata.md)                            | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `createBankAccountResponse`                                                                   | [?Components\CreateBankAccountResponse](../../Models/Components/CreateBankAccountResponse.md) | :heavy_minus_sign:                                                                            | Bank Account created                                                                          |
+| `unexpectedErrorResponse`                                                                     | [?Components\UnexpectedErrorResponse](../../Models/Components/UnexpectedErrorResponse.md)     | :heavy_minus_sign:                                                                            | Unexpected error                                                                              |
