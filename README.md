@@ -183,6 +183,14 @@ foreach ($responses as $response) {
 
 * [get](docs/sdks/balancesheet/README.md#get) - Get BalanceSheet
 
+#### [accounting->bankAccounts](docs/sdks/bankaccounts/README.md)
+
+* [list](docs/sdks/bankaccounts/README.md#list) - List Bank Accounts
+* [create](docs/sdks/bankaccounts/README.md#create) - Create Bank Account
+* [get](docs/sdks/bankaccounts/README.md#get) - Get Bank Account
+* [update](docs/sdks/bankaccounts/README.md#update) - Update Bank Account
+* [delete](docs/sdks/bankaccounts/README.md#delete) - Delete Bank Account
+
 #### [accounting->bankFeedAccounts](docs/sdks/bankfeedaccounts/README.md)
 
 * [list](docs/sdks/bankfeedaccounts/README.md#list) - List Bank Feed Accounts

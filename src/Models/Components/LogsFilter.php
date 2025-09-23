@@ -19,11 +19,20 @@ class LogsFilter
     public ?string $connectorId = null;
 
     /**
+     * Filter by a single HTTP status code. For backward compatibility - use status_codes for multiple values.
      *
      * @var ?float $statusCode
      */
     #[SpeakeasyMetadata('queryParam:name=status_code')]
     public ?float $statusCode = null;
+
+    /**
+     * Filter by multiple HTTP status codes. Values must be between 100-599. Maximum 50 status codes allowed.
+     *
+     * @var ?array<float> $statusCodes
+     */
+    #[SpeakeasyMetadata('queryParam:name=status_codes')]
+    public ?array $statusCodes = null;
 
     /**
      *
@@ -35,13 +44,15 @@ class LogsFilter
     /**
      * @param  ?string  $connectorId
      * @param  ?float  $statusCode
+     * @param  ?array<float>  $statusCodes
      * @param  ?string  $excludeUnifiedApis
      * @phpstan-pure
      */
-    public function __construct(?string $connectorId = null, ?float $statusCode = null, ?string $excludeUnifiedApis = null)
+    public function __construct(?string $connectorId = null, ?float $statusCode = null, ?array $statusCodes = null, ?string $excludeUnifiedApis = null)
     {
         $this->connectorId = $connectorId;
         $this->statusCode = $statusCode;
+        $this->statusCodes = $statusCodes;
         $this->excludeUnifiedApis = $excludeUnifiedApis;
     }
 }
