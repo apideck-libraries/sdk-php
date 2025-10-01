@@ -132,4 +132,7 @@ enum WebhookEventType: string
     case AccountingQuoteCreated = 'accounting.quote.created';
     case AccountingQuoteUpdated = 'accounting.quote.updated';
     case AccountingQuoteDeleted = 'accounting.quote.deleted';
+    case AccountingProjectCreated = 'accounting.project.created';
+    case AccountingProjectUpdated = 'accounting.project.updated';
+    case AccountingProjectDeleted = 'accounting.project.deleted';
 }

@@ -120,7 +120,7 @@ $request = new Operations\IssueTrackingCollectionTicketsAddRequest(
         subject: 'Technical Support Request',
         description: 'I am facing issues with my internet connection',
         status: 'open',
-        priority: Components\Priority::High,
+        priority: Components\TicketPriority::High,
         assignees: [
             new Components\AssigneeInput(
                 id: '12345',
@@ -337,7 +337,7 @@ $request = new Operations\IssueTrackingCollectionTicketsUpdateRequest(
         subject: 'Technical Support Request',
         description: 'I am facing issues with my internet connection',
         status: 'open',
-        priority: Components\Priority::High,
+        priority: Components\TicketPriority::High,
         assignees: [
             new Components\AssigneeInput(
                 id: '12345',

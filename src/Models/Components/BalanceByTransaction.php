@@ -32,12 +32,12 @@ class BalanceByTransaction
     /**
      * Type of the transaction.
      *
-     * @var ?TransactionType $transactionType
+     * @var ?BalanceByTransactionTransactionType $transactionType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('transaction_type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\TransactionType|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BalanceByTransactionTransactionType|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?TransactionType $transactionType = null;
+    public ?BalanceByTransactionTransactionType $transactionType = null;
 
     /**
      * Due date of the transaction.
@@ -78,14 +78,14 @@ class BalanceByTransaction
     /**
      * @param  ?string  $transactionId
      * @param  ?LocalDate  $transactionDate
-     * @param  ?TransactionType  $transactionType
+     * @param  ?BalanceByTransactionTransactionType  $transactionType
      * @param  ?LocalDate  $dueDate
      * @param  ?float  $originalAmount
      * @param  ?float  $outstandingBalance
      * @param  ?string  $transactionNumber
      * @phpstan-pure
      */
-    public function __construct(?string $transactionId = null, ?LocalDate $transactionDate = null, ?TransactionType $transactionType = null, ?LocalDate $dueDate = null, ?float $originalAmount = null, ?float $outstandingBalance = null, ?string $transactionNumber = null)
+    public function __construct(?string $transactionId = null, ?LocalDate $transactionDate = null, ?BalanceByTransactionTransactionType $transactionType = null, ?LocalDate $dueDate = null, ?float $originalAmount = null, ?float $outstandingBalance = null, ?string $transactionNumber = null)
     {
         $this->transactionId = $transactionId;
         $this->transactionDate = $transactionDate;

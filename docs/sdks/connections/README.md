@@ -319,7 +319,7 @@ $response = $sdk->vault->connections->delete(
 
 );
 
-if ($response->httpMeta->response->getStatusCode() === 200) {
+if ($response->unexpectedErrorResponse !== null) {
     // handle response
 }
 ```

@@ -316,6 +316,14 @@ foreach ($responses as $response) {
 
 * [get](docs/sdks/profitandloss/README.md#get) - Get Profit and Loss
 
+#### [accounting->projects](docs/sdks/projects/README.md)
+
+* [list](docs/sdks/projects/README.md#list) - List projects
+* [create](docs/sdks/projects/README.md#create) - Create project
+* [get](docs/sdks/projects/README.md#get) - Get project
+* [update](docs/sdks/projects/README.md#update) - Update project
+* [delete](docs/sdks/projects/README.md#delete) - Delete project
+
 #### [accounting->purchaseOrders](docs/sdks/purchaseorders/README.md)
 
 * [list](docs/sdks/purchaseorders/README.md#list) - List Purchase Orders

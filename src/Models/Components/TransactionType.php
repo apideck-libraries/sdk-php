@@ -9,12 +9,9 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 
-/** Type of the transaction. */
+/** The kind of transaction, indicating whether it is a sales transaction or a purchase transaction. */
 enum TransactionType: string
 {
-    case Invoice = 'invoice';
-    case CreditNote = 'credit_note';
-    case Bill = 'bill';
-    case Payment = 'payment';
-    case BillPayment = 'bill_payment';
+    case Sale = 'sale';
+    case Purchase = 'purchase';
 }

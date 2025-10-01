@@ -162,6 +162,33 @@ class JournalEntryInput
     public ?string $accountingPeriod = null;
 
     /**
+     * Amounts are including tax
+     *
+     * @var ?bool $taxInclusive
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_inclusive')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $taxInclusive = null;
+
+    /**
+     * The source type of the journal entry
+     *
+     * @var ?string $sourceType
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source_type')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $sourceType = null;
+
+    /**
+     * A unique identifier for the source of the journal entry
+     *
+     * @var ?string $sourceId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $sourceId = null;
+
+    /**
      * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
      *
      * @var ?string $rowVersion
@@ -187,10 +214,13 @@ class JournalEntryInput
      * @param  ?string  $number
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?string  $accountingPeriod
+     * @param  ?bool  $taxInclusive
+     * @param  ?string  $sourceType
+     * @param  ?string  $sourceId
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?array $lineItems = null, ?\DateTime $postedAt = null, ?array $customFields = null, ?array $passThrough = null, ?string $title = null, ?float $currencyRate = null, ?Currency $currency = null, ?string $companyId = null, ?JournalEntryStatus $status = null, ?string $memo = null, ?string $journalSymbol = null, ?string $taxType = null, ?string $taxCode = null, ?string $number = null, ?array $trackingCategories = null, ?string $accountingPeriod = null, ?string $rowVersion = null)
+    public function __construct(?array $lineItems = null, ?\DateTime $postedAt = null, ?array $customFields = null, ?array $passThrough = null, ?string $title = null, ?float $currencyRate = null, ?Currency $currency = null, ?string $companyId = null, ?JournalEntryStatus $status = null, ?string $memo = null, ?string $journalSymbol = null, ?string $taxType = null, ?string $taxCode = null, ?string $number = null, ?array $trackingCategories = null, ?string $accountingPeriod = null, ?bool $taxInclusive = null, ?string $sourceType = null, ?string $sourceId = null, ?string $rowVersion = null)
     {
         $this->lineItems = $lineItems;
         $this->postedAt = $postedAt;
@@ -208,6 +238,9 @@ class JournalEntryInput
         $this->number = $number;
         $this->trackingCategories = $trackingCategories;
         $this->accountingPeriod = $accountingPeriod;
+        $this->taxInclusive = $taxInclusive;
+        $this->sourceType = $sourceType;
+        $this->sourceId = $sourceId;
         $this->rowVersion = $rowVersion;
     }
 }

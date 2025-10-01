@@ -34,15 +34,25 @@ class InvoicesFilter
     public ?string $number = null;
 
     /**
+     * Supplier ID to filter invoices by
+     *
+     * @var ?string $supplierId
+     */
+    #[SpeakeasyMetadata('queryParam:name=supplier_id')]
+    public ?string $supplierId = null;
+
+    /**
      * @param  ?\DateTime  $updatedSince
      * @param  ?\DateTime  $createdSince
      * @param  ?string  $number
+     * @param  ?string  $supplierId
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedSince = null, ?\DateTime $createdSince = null, ?string $number = null)
+    public function __construct(?\DateTime $updatedSince = null, ?\DateTime $createdSince = null, ?string $number = null, ?string $supplierId = null)
     {
         $this->updatedSince = $updatedSince;
         $this->createdSince = $createdSince;
         $this->number = $number;
+        $this->supplierId = $supplierId;
     }
 }

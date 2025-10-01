@@ -15,4 +15,5 @@ enum CategoriesFilterType: string
     case Supplier = 'supplier';
     case Expense = 'expense';
     case Revenue = 'revenue';
+    case Customer = 'customer';
 }

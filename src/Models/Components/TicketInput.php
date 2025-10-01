@@ -89,12 +89,12 @@ class TicketInput
     /**
      * Priority of the ticket
      *
-     * @var ?Priority $priority
+     * @var ?TicketPriority $priority
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('priority')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Priority|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\TicketPriority|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Priority $priority = null;
+    public ?TicketPriority $priority = null;
 
     /**
      * Due date of the ticket
@@ -114,11 +114,11 @@ class TicketInput
      * @param  ?string  $subject
      * @param  ?string  $description
      * @param  ?string  $status
-     * @param  ?Priority  $priority
+     * @param  ?TicketPriority  $priority
      * @param  ?\DateTime  $dueDate
      * @phpstan-pure
      */
-    public function __construct(?array $assignees = null, ?array $tags = null, ?array $passThrough = null, ?string $parentId = null, ?string $type = null, ?string $subject = null, ?string $description = null, ?string $status = null, ?Priority $priority = null, ?\DateTime $dueDate = null)
+    public function __construct(?array $assignees = null, ?array $tags = null, ?array $passThrough = null, ?string $parentId = null, ?string $type = null, ?string $subject = null, ?string $description = null, ?string $status = null, ?TicketPriority $priority = null, ?\DateTime $dueDate = null)
     {
         $this->assignees = $assignees;
         $this->tags = $tags;
