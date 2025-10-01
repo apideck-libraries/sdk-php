@@ -127,6 +127,15 @@ class CustomerInput
     public ?string $companyId = null;
 
     /**
+     * The category/type of the customer
+     *
+     * @var ?string $customerCategory
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customer_category')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $customerCategory = null;
+
+    /**
      * The job title of the person.
      *
      * @var ?string $title
@@ -254,6 +263,15 @@ class CustomerInput
     public ?string $paymentMethod = null;
 
     /**
+     * Terms of payment.
+     *
+     * @var ?string $terms
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('terms')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $terms = null;
+
+    /**
      * The channel through which the transaction is processed.
      *
      * @var ?string $channel
@@ -284,6 +302,7 @@ class CustomerInput
      * @param  ?string  $displayName
      * @param  ?string  $companyName
      * @param  ?string  $companyId
+     * @param  ?string  $customerCategory
      * @param  ?string  $title
      * @param  ?string  $firstName
      * @param  ?string  $middleName
@@ -298,11 +317,12 @@ class CustomerInput
      * @param  ?LinkedParentCustomer  $parent
      * @param  ?CustomerStatusStatus  $status
      * @param  ?string  $paymentMethod
+     * @param  ?string  $terms
      * @param  ?string  $channel
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?bool $project = null, ?string $notes = null, ?string $taxNumber = null, ?Currency $currency = null, ?LinkedLedgerAccountInput $account = null, ?LinkedParentCustomer $parent = null, ?CustomerStatusStatus $status = null, ?string $paymentMethod = null, ?string $channel = null, ?string $rowVersion = null)
+    public function __construct(?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $customerCategory = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?bool $project = null, ?string $notes = null, ?string $taxNumber = null, ?Currency $currency = null, ?LinkedLedgerAccountInput $account = null, ?LinkedParentCustomer $parent = null, ?CustomerStatusStatus $status = null, ?string $paymentMethod = null, ?string $terms = null, ?string $channel = null, ?string $rowVersion = null)
     {
         $this->addresses = $addresses;
         $this->phoneNumbers = $phoneNumbers;
@@ -316,6 +336,7 @@ class CustomerInput
         $this->displayName = $displayName;
         $this->companyName = $companyName;
         $this->companyId = $companyId;
+        $this->customerCategory = $customerCategory;
         $this->title = $title;
         $this->firstName = $firstName;
         $this->middleName = $middleName;
@@ -330,6 +351,7 @@ class CustomerInput
         $this->parent = $parent;
         $this->status = $status;
         $this->paymentMethod = $paymentMethod;
+        $this->terms = $terms;
         $this->channel = $channel;
         $this->rowVersion = $rowVersion;
     }

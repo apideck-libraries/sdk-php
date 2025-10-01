@@ -85,6 +85,15 @@ class Address
     public ?string $line4 = null;
 
     /**
+     * Line 5 of the address
+     *
+     * @var ?string $line5
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('line5')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $line5 = null;
+
+    /**
      * Street number
      *
      * @var ?string $streetNumber
@@ -237,6 +246,7 @@ class Address
      * @param  ?string  $line2
      * @param  ?string  $line3
      * @param  ?string  $line4
+     * @param  ?string  $line5
      * @param  ?string  $streetNumber
      * @param  ?string  $city
      * @param  ?string  $state
@@ -255,7 +265,7 @@ class Address
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?Type $type = null, ?string $string = null, ?string $name = null, ?string $line1 = null, ?string $line2 = null, ?string $line3 = null, ?string $line4 = null, ?string $streetNumber = null, ?string $city = null, ?string $state = null, ?string $postalCode = null, ?string $country = null, ?string $latitude = null, ?string $longitude = null, ?string $county = null, ?string $contactName = null, ?string $salutation = null, ?string $phoneNumber = null, ?string $fax = null, ?string $email = null, ?string $website = null, ?string $notes = null, ?string $rowVersion = null)
+    public function __construct(?string $id = null, ?Type $type = null, ?string $string = null, ?string $name = null, ?string $line1 = null, ?string $line2 = null, ?string $line3 = null, ?string $line4 = null, ?string $line5 = null, ?string $streetNumber = null, ?string $city = null, ?string $state = null, ?string $postalCode = null, ?string $country = null, ?string $latitude = null, ?string $longitude = null, ?string $county = null, ?string $contactName = null, ?string $salutation = null, ?string $phoneNumber = null, ?string $fax = null, ?string $email = null, ?string $website = null, ?string $notes = null, ?string $rowVersion = null)
     {
         $this->id = $id;
         $this->type = $type;
@@ -265,6 +275,7 @@ class Address
         $this->line2 = $line2;
         $this->line3 = $line3;
         $this->line4 = $line4;
+        $this->line5 = $line5;
         $this->streetNumber = $streetNumber;
         $this->city = $city;
         $this->state = $state;

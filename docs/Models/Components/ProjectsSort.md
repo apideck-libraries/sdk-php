@@ -1,0 +1,9 @@
+# ProjectsSort
+
+
+## Fields
+
+| Field                                                                           | Type                                                                            | Required                                                                        | Description                                                                     | Example                                                                         |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `by`                                                                            | [?Components\ProjectsSortSortBy](../../Models/Components/ProjectsSortSortBy.md) | :heavy_minus_sign:                                                              | The field to sort by                                                            | name                                                                            |
+| `direction`                                                                     | [?Components\SortDirection](../../Models/Components/SortDirection.md)           | :heavy_minus_sign:                                                              | The direction in which to sort the results                                      |                                                                                 |

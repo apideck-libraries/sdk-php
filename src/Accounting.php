@@ -69,6 +69,8 @@ class Accounting
 
     public Quotes $quotes;
 
+    public Projects $projects;
+
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
@@ -103,6 +105,7 @@ class Accounting
         $this->bankFeedStatements = new BankFeedStatements($this->sdkConfiguration);
         $this->categories = new Categories($this->sdkConfiguration);
         $this->quotes = new Quotes($this->sdkConfiguration);
+        $this->projects = new Projects($this->sdkConfiguration);
     }
     /**
      * @param  string  $baseUrl

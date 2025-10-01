@@ -9,11 +9,11 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 
-/** Priority of the ticket */
+/** Priority level of the project */
 enum Priority: string
 {
     case Low = 'low';
-    case Normal = 'normal';
+    case Medium = 'medium';
     case High = 'high';
-    case Urgent = 'urgent';
+    case Critical = 'critical';
 }

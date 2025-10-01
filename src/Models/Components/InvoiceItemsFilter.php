@@ -28,13 +28,23 @@ class InvoiceItemsFilter
     public ?InvoiceItemType $type = null;
 
     /**
+     * The kind of transaction, indicating whether it is a sales transaction or a purchase transaction.
+     *
+     * @var ?TransactionType $transactionType
+     */
+    #[SpeakeasyMetadata('queryParam:name=transaction_type')]
+    public ?TransactionType $transactionType = null;
+
+    /**
      * @param  ?string  $name
      * @param  ?InvoiceItemType  $type
+     * @param  ?TransactionType  $transactionType
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?InvoiceItemType $type = null)
+    public function __construct(?string $name = null, ?InvoiceItemType $type = null, ?TransactionType $transactionType = null)
     {
         $this->name = $name;
         $this->type = $type;
+        $this->transactionType = $transactionType;
     }
 }

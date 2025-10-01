@@ -106,12 +106,12 @@ class Ticket
     /**
      * Priority of the ticket
      *
-     * @var ?Priority $priority
+     * @var ?TicketPriority $priority
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('priority')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Priority|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\TicketPriority|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Priority $priority = null;
+    public ?TicketPriority $priority = null;
 
     /**
      * The date and time when the object was last updated.
@@ -179,7 +179,7 @@ class Ticket
      * @param  ?string  $subject
      * @param  ?string  $description
      * @param  ?string  $status
-     * @param  ?Priority  $priority
+     * @param  ?TicketPriority  $priority
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
      * @param  ?string  $createdBy
@@ -188,7 +188,7 @@ class Ticket
      * @param  ?array<string, mixed>  $customMappings
      * @phpstan-pure
      */
-    public function __construct(string $id, ?array $assignees = null, ?array $tags = null, ?array $passThrough = null, ?string $parentId = null, ?string $collectionId = null, ?string $type = null, ?string $subject = null, ?string $description = null, ?string $status = null, ?Priority $priority = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $createdBy = null, ?\DateTime $dueDate = null, ?\DateTime $completedAt = null, ?array $customMappings = null)
+    public function __construct(string $id, ?array $assignees = null, ?array $tags = null, ?array $passThrough = null, ?string $parentId = null, ?string $collectionId = null, ?string $type = null, ?string $subject = null, ?string $description = null, ?string $status = null, ?TicketPriority $priority = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $createdBy = null, ?\DateTime $dueDate = null, ?\DateTime $completedAt = null, ?array $customMappings = null)
     {
         $this->id = $id;
         $this->assignees = $assignees;

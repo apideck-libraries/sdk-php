@@ -15,4 +15,5 @@ enum CategoryType: string
     case Supplier = 'supplier';
     case Expense = 'expense';
     case Revenue = 'revenue';
+    case Customer = 'customer';
 }
