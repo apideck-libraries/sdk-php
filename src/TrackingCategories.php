@@ -69,7 +69,7 @@ class TrackingCategories
                 initialIntervalMs: 500,
                 maxIntervalMs: 60000,
                 exponent: 1.5,
-                maxElapsedTimeMs: 3600000,
+                maxElapsedTimeMs: 900000,
                 retryConnectionErrors: true,
             );
         }
@@ -104,7 +104,7 @@ class TrackingCategories
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.trackingCategoriesAdd', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.trackingCategoriesAdd', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -244,7 +244,7 @@ class TrackingCategories
                 initialIntervalMs: 500,
                 maxIntervalMs: 60000,
                 exponent: 1.5,
-                maxElapsedTimeMs: 3600000,
+                maxElapsedTimeMs: 900000,
                 retryConnectionErrors: true,
             );
         }
@@ -274,7 +274,7 @@ class TrackingCategories
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.trackingCategoriesAll', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.trackingCategoriesAll', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -487,7 +487,7 @@ class TrackingCategories
                 initialIntervalMs: 500,
                 maxIntervalMs: 60000,
                 exponent: 1.5,
-                maxElapsedTimeMs: 3600000,
+                maxElapsedTimeMs: 900000,
                 retryConnectionErrors: true,
             );
         }
@@ -517,7 +517,7 @@ class TrackingCategories
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('DELETE', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.trackingCategoriesDelete', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.trackingCategoriesDelete', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -657,7 +657,7 @@ class TrackingCategories
                 initialIntervalMs: 500,
                 maxIntervalMs: 60000,
                 exponent: 1.5,
-                maxElapsedTimeMs: 3600000,
+                maxElapsedTimeMs: 900000,
                 retryConnectionErrors: true,
             );
         }
@@ -687,7 +687,7 @@ class TrackingCategories
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.trackingCategoriesOne', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.trackingCategoriesOne', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -827,7 +827,7 @@ class TrackingCategories
                 initialIntervalMs: 500,
                 maxIntervalMs: 60000,
                 exponent: 1.5,
-                maxElapsedTimeMs: 3600000,
+                maxElapsedTimeMs: 900000,
                 retryConnectionErrors: true,
             );
         }
@@ -862,7 +862,7 @@ class TrackingCategories
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('PATCH', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.trackingCategoriesUpdate', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.trackingCategoriesUpdate', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);

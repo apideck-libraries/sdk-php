@@ -69,7 +69,7 @@ class TaxRates
                 initialIntervalMs: 500,
                 maxIntervalMs: 60000,
                 exponent: 1.5,
-                maxElapsedTimeMs: 3600000,
+                maxElapsedTimeMs: 900000,
                 retryConnectionErrors: true,
             );
         }
@@ -104,7 +104,7 @@ class TaxRates
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.taxRatesAdd', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.taxRatesAdd', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -245,7 +245,7 @@ class TaxRates
                 initialIntervalMs: 500,
                 maxIntervalMs: 60000,
                 exponent: 1.5,
-                maxElapsedTimeMs: 3600000,
+                maxElapsedTimeMs: 900000,
                 retryConnectionErrors: true,
             );
         }
@@ -275,7 +275,7 @@ class TaxRates
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.taxRatesAll', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.taxRatesAll', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -491,7 +491,7 @@ class TaxRates
                 initialIntervalMs: 500,
                 maxIntervalMs: 60000,
                 exponent: 1.5,
-                maxElapsedTimeMs: 3600000,
+                maxElapsedTimeMs: 900000,
                 retryConnectionErrors: true,
             );
         }
@@ -521,7 +521,7 @@ class TaxRates
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('DELETE', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.taxRatesDelete', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.taxRatesDelete', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -662,7 +662,7 @@ class TaxRates
                 initialIntervalMs: 500,
                 maxIntervalMs: 60000,
                 exponent: 1.5,
-                maxElapsedTimeMs: 3600000,
+                maxElapsedTimeMs: 900000,
                 retryConnectionErrors: true,
             );
         }
@@ -692,7 +692,7 @@ class TaxRates
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.taxRatesOne', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.taxRatesOne', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -832,7 +832,7 @@ class TaxRates
                 initialIntervalMs: 500,
                 maxIntervalMs: 60000,
                 exponent: 1.5,
-                maxElapsedTimeMs: 3600000,
+                maxElapsedTimeMs: 900000,
                 retryConnectionErrors: true,
             );
         }
@@ -867,7 +867,7 @@ class TaxRates
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('PATCH', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.taxRatesUpdate', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.taxRatesUpdate', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);

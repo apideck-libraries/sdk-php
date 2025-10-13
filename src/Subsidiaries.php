@@ -69,7 +69,7 @@ class Subsidiaries
                 initialIntervalMs: 500,
                 maxIntervalMs: 60000,
                 exponent: 1.5,
-                maxElapsedTimeMs: 3600000,
+                maxElapsedTimeMs: 900000,
                 retryConnectionErrors: true,
             );
         }
@@ -104,7 +104,7 @@ class Subsidiaries
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.subsidiariesAdd', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.subsidiariesAdd', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -244,7 +244,7 @@ class Subsidiaries
                 initialIntervalMs: 500,
                 maxIntervalMs: 60000,
                 exponent: 1.5,
-                maxElapsedTimeMs: 3600000,
+                maxElapsedTimeMs: 900000,
                 retryConnectionErrors: true,
             );
         }
@@ -274,7 +274,7 @@ class Subsidiaries
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.subsidiariesAll', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.subsidiariesAll', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -485,7 +485,7 @@ class Subsidiaries
                 initialIntervalMs: 500,
                 maxIntervalMs: 60000,
                 exponent: 1.5,
-                maxElapsedTimeMs: 3600000,
+                maxElapsedTimeMs: 900000,
                 retryConnectionErrors: true,
             );
         }
@@ -515,7 +515,7 @@ class Subsidiaries
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('DELETE', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.subsidiariesDelete', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.subsidiariesDelete', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -655,7 +655,7 @@ class Subsidiaries
                 initialIntervalMs: 500,
                 maxIntervalMs: 60000,
                 exponent: 1.5,
-                maxElapsedTimeMs: 3600000,
+                maxElapsedTimeMs: 900000,
                 retryConnectionErrors: true,
             );
         }
@@ -685,7 +685,7 @@ class Subsidiaries
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.subsidiariesOne', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.subsidiariesOne', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -825,7 +825,7 @@ class Subsidiaries
                 initialIntervalMs: 500,
                 maxIntervalMs: 60000,
                 exponent: 1.5,
-                maxElapsedTimeMs: 3600000,
+                maxElapsedTimeMs: 900000,
                 retryConnectionErrors: true,
             );
         }
@@ -860,7 +860,7 @@ class Subsidiaries
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('PATCH', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.subsidiariesUpdate', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.subsidiariesUpdate', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);

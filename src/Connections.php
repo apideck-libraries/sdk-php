@@ -75,7 +75,7 @@ class Connections
                 initialIntervalMs: 500,
                 maxIntervalMs: 60000,
                 exponent: 1.5,
-                maxElapsedTimeMs: 3600000,
+                maxElapsedTimeMs: 900000,
                 retryConnectionErrors: true,
             );
         }
@@ -111,7 +111,7 @@ class Connections
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'vault.connectionsAll', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'vault.connectionsAll', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -254,7 +254,7 @@ class Connections
                 initialIntervalMs: 500,
                 maxIntervalMs: 60000,
                 exponent: 1.5,
-                maxElapsedTimeMs: 3600000,
+                maxElapsedTimeMs: 900000,
                 retryConnectionErrors: true,
             );
         }
@@ -288,7 +288,7 @@ class Connections
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('DELETE', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'vault.connectionsDelete', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'vault.connectionsDelete', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
@@ -418,7 +418,7 @@ class Connections
                 initialIntervalMs: 500,
                 maxIntervalMs: 60000,
                 exponent: 1.5,
-                maxElapsedTimeMs: 3600000,
+                maxElapsedTimeMs: 900000,
                 retryConnectionErrors: true,
             );
         }
@@ -451,7 +451,7 @@ class Connections
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'vault.connectionsImport', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'vault.connectionsImport', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
@@ -593,7 +593,7 @@ class Connections
                 initialIntervalMs: 500,
                 maxIntervalMs: 60000,
                 exponent: 1.5,
-                maxElapsedTimeMs: 3600000,
+                maxElapsedTimeMs: 900000,
                 retryConnectionErrors: true,
             );
         }
@@ -627,7 +627,7 @@ class Connections
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'vault.connectionsOne', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'vault.connectionsOne', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
@@ -772,7 +772,7 @@ class Connections
                 initialIntervalMs: 500,
                 maxIntervalMs: 60000,
                 exponent: 1.5,
-                maxElapsedTimeMs: 3600000,
+                maxElapsedTimeMs: 900000,
                 retryConnectionErrors: true,
             );
         }
@@ -804,7 +804,7 @@ class Connections
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'vault.connectionsToken', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'vault.connectionsToken', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
@@ -943,7 +943,7 @@ class Connections
                 initialIntervalMs: 500,
                 maxIntervalMs: 60000,
                 exponent: 1.5,
-                maxElapsedTimeMs: 3600000,
+                maxElapsedTimeMs: 900000,
                 retryConnectionErrors: true,
             );
         }
@@ -976,7 +976,7 @@ class Connections
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('PATCH', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'vault.connectionsUpdate', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'vault.connectionsUpdate', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);

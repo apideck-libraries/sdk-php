@@ -96,6 +96,15 @@ class ProjectInput
     public ?ProjectProjectStatus $status = null;
 
     /**
+     * Indicates whether the project is currently active or inactive
+     *
+     * @var ?bool $active
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('active')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $active = null;
+
+    /**
      * Type or category of the project
      *
      * @var ?ProjectType $projectType
@@ -340,6 +349,7 @@ class ProjectInput
      * @param  ?string  $referenceId
      * @param  ?string  $description
      * @param  ?ProjectProjectStatus  $status
+     * @param  ?bool  $active
      * @param  ?ProjectType  $projectType
      * @param  ?Priority  $priority
      * @param  ?float  $completionPercentage
@@ -367,7 +377,7 @@ class ProjectInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(string $name, ?LinkedTaxRateInput $taxRate = null, ?array $tags = null, ?array $addresses = null, ?array $customFields = null, ?string $displayId = null, ?string $referenceId = null, ?string $description = null, ?ProjectProjectStatus $status = null, ?ProjectType $projectType = null, ?Priority $priority = null, ?float $completionPercentage = null, ?LocalDate $startDate = null, ?LocalDate $endDate = null, ?LinkedCustomerInput $customer = null, ?ProjectDepartment $department = null, ?string $companyId = null, ?string $ownerId = null, ?ParentProject $parentProject = null, ?Currency $currency = null, ?float $budgetAmount = null, ?float $approvedAmount = null, ?float $budgetHours = null, ?float $hourlyRate = null, ?BillingMethod $billingMethod = null, ?ProjectPhase $phase = null, ?array $trackingCategories = null, ?string $notes = null, ?string $contractNumber = null, ?float $profitMargin = null, ?ScheduleStatus $scheduleStatus = null, ?int $teamSize = null, ?string $rowVersion = null, ?bool $isBillable = true)
+    public function __construct(string $name, ?LinkedTaxRateInput $taxRate = null, ?array $tags = null, ?array $addresses = null, ?array $customFields = null, ?string $displayId = null, ?string $referenceId = null, ?string $description = null, ?ProjectProjectStatus $status = null, ?bool $active = null, ?ProjectType $projectType = null, ?Priority $priority = null, ?float $completionPercentage = null, ?LocalDate $startDate = null, ?LocalDate $endDate = null, ?LinkedCustomerInput $customer = null, ?ProjectDepartment $department = null, ?string $companyId = null, ?string $ownerId = null, ?ParentProject $parentProject = null, ?Currency $currency = null, ?float $budgetAmount = null, ?float $approvedAmount = null, ?float $budgetHours = null, ?float $hourlyRate = null, ?BillingMethod $billingMethod = null, ?ProjectPhase $phase = null, ?array $trackingCategories = null, ?string $notes = null, ?string $contractNumber = null, ?float $profitMargin = null, ?ScheduleStatus $scheduleStatus = null, ?int $teamSize = null, ?string $rowVersion = null, ?bool $isBillable = true)
     {
         $this->name = $name;
         $this->taxRate = $taxRate;
@@ -378,6 +388,7 @@ class ProjectInput
         $this->referenceId = $referenceId;
         $this->description = $description;
         $this->status = $status;
+        $this->active = $active;
         $this->projectType = $projectType;
         $this->priority = $priority;
         $this->completionPercentage = $completionPercentage;

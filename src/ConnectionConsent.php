@@ -69,7 +69,7 @@ class ConnectionConsent
                 initialIntervalMs: 500,
                 maxIntervalMs: 60000,
                 exponent: 1.5,
-                maxElapsedTimeMs: 3600000,
+                maxElapsedTimeMs: 900000,
                 retryConnectionErrors: true,
             );
         }
@@ -102,7 +102,7 @@ class ConnectionConsent
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('PATCH', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'vault.connectionConsentUpdate', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'vault.connectionConsentUpdate', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);

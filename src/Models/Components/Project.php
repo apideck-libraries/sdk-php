@@ -114,6 +114,15 @@ class Project
     public ?ProjectProjectStatus $status = null;
 
     /**
+     * Indicates whether the project is currently active or inactive
+     *
+     * @var ?bool $active
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('active')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $active = null;
+
+    /**
      * Type or category of the project
      *
      * @var ?ProjectType $projectType
@@ -414,6 +423,7 @@ class Project
      * @param  ?string  $referenceId
      * @param  ?string  $description
      * @param  ?ProjectProjectStatus  $status
+     * @param  ?bool  $active
      * @param  ?ProjectType  $projectType
      * @param  ?Priority  $priority
      * @param  ?float  $completionPercentage
@@ -447,7 +457,7 @@ class Project
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(string $name, ?string $id = null, ?LinkedTaxRate $taxRate = null, ?array $tags = null, ?array $addresses = null, ?array $customFields = null, ?string $downstreamId = null, ?string $displayId = null, ?string $referenceId = null, ?string $description = null, ?ProjectProjectStatus $status = null, ?ProjectType $projectType = null, ?Priority $priority = null, ?float $completionPercentage = null, ?LocalDate $startDate = null, ?LocalDate $endDate = null, ?LinkedCustomer $customer = null, ?ProjectDepartment $department = null, ?string $companyId = null, ?string $ownerId = null, ?ParentProject $parentProject = null, ?Currency $currency = null, ?float $budgetAmount = null, ?float $approvedAmount = null, ?float $actualAmount = null, ?float $budgetHours = null, ?float $actualHours = null, ?float $hourlyRate = null, ?BillingMethod $billingMethod = null, ?ProjectPhase $phase = null, ?array $trackingCategories = null, ?string $notes = null, ?string $contractNumber = null, ?float $profitMargin = null, ?ScheduleStatus $scheduleStatus = null, ?int $teamSize = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?bool $isBillable = true)
+    public function __construct(string $name, ?string $id = null, ?LinkedTaxRate $taxRate = null, ?array $tags = null, ?array $addresses = null, ?array $customFields = null, ?string $downstreamId = null, ?string $displayId = null, ?string $referenceId = null, ?string $description = null, ?ProjectProjectStatus $status = null, ?bool $active = null, ?ProjectType $projectType = null, ?Priority $priority = null, ?float $completionPercentage = null, ?LocalDate $startDate = null, ?LocalDate $endDate = null, ?LinkedCustomer $customer = null, ?ProjectDepartment $department = null, ?string $companyId = null, ?string $ownerId = null, ?ParentProject $parentProject = null, ?Currency $currency = null, ?float $budgetAmount = null, ?float $approvedAmount = null, ?float $actualAmount = null, ?float $budgetHours = null, ?float $actualHours = null, ?float $hourlyRate = null, ?BillingMethod $billingMethod = null, ?ProjectPhase $phase = null, ?array $trackingCategories = null, ?string $notes = null, ?string $contractNumber = null, ?float $profitMargin = null, ?ScheduleStatus $scheduleStatus = null, ?int $teamSize = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?bool $isBillable = true)
     {
         $this->name = $name;
         $this->id = $id;
@@ -460,6 +470,7 @@ class Project
         $this->referenceId = $referenceId;
         $this->description = $description;
         $this->status = $status;
+        $this->active = $active;
         $this->projectType = $projectType;
         $this->priority = $priority;
         $this->completionPercentage = $completionPercentage;

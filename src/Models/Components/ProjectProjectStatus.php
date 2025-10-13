@@ -17,5 +17,7 @@ enum ProjectProjectStatus: string
     case OnHold = 'on_hold';
     case Cancelled = 'cancelled';
     case Draft = 'draft';
+    case InProgress = 'in_progress';
+    case Approved = 'approved';
     case Other = 'other';
 }

@@ -12,24 +12,24 @@ namespace Apideck\Unify\Models\Components;
 /** The type of account. */
 enum LedgerAccountType: string
 {
+    case AccountsPayable = 'accounts_payable';
     case AccountsReceivable = 'accounts_receivable';
-    case Revenue = 'revenue';
-    case Sales = 'sales';
-    case OtherIncome = 'other_income';
-    case Bank = 'bank';
-    case CurrentAsset = 'current_asset';
-    case FixedAsset = 'fixed_asset';
-    case NonCurrentAsset = 'non_current_asset';
-    case OtherAsset = 'other_asset';
     case Balancesheet = 'balancesheet';
+    case Bank = 'bank';
+    case CostsOfSales = 'costs_of_sales';
+    case CreditCard = 'credit_card';
+    case CurrentAsset = 'current_asset';
+    case CurrentLiability = 'current_liability';
     case Equity = 'equity';
     case Expense = 'expense';
-    case OtherExpense = 'other_expense';
-    case CostsOfSales = 'costs_of_sales';
-    case AccountsPayable = 'accounts_payable';
-    case CreditCard = 'credit_card';
-    case CurrentLiability = 'current_liability';
+    case FixedAsset = 'fixed_asset';
+    case NonCurrentAsset = 'non_current_asset';
     case NonCurrentLiability = 'non_current_liability';
+    case OtherAsset = 'other_asset';
+    case OtherExpense = 'other_expense';
+    case OtherIncome = 'other_income';
     case OtherLiability = 'other_liability';
+    case Revenue = 'revenue';
+    case Sales = 'sales';
     case Other = 'other';
 }

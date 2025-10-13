@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Apideck\Unify\Models\Components;
 
-
+use Brick\DateTime\LocalDate;
 class InvoiceLineItem
 {
     /**
@@ -164,6 +164,15 @@ class InvoiceLineItem
     #[\Speakeasy\Serializer\Annotation\SerializedName('discount_amount')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $discountAmount = null;
+
+    /**
+     * Date on which the service was provided or performed - YYYY-MM-DD.
+     *
+     * @var ?LocalDate $serviceDate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('service_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LocalDate $serviceDate = null;
 
     /**
      * ID of the category of the line item
@@ -337,6 +346,7 @@ class InvoiceLineItem
      * @param  ?string  $unitOfMeasure
      * @param  ?float  $discountPercentage
      * @param  ?float  $discountAmount
+     * @param  ?LocalDate  $serviceDate
      * @param  ?string  $categoryId
      * @param  ?string  $locationId
      * @param  ?string  $departmentId
@@ -356,7 +366,7 @@ class InvoiceLineItem
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?array $worktags = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?string $id = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?InvoiceLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $categoryId = null, ?string $locationId = null, ?string $departmentId = null, ?string $subsidiaryId = null, ?string $shippingId = null, ?string $memo = null, ?bool $prepaid = null, ?string $taxApplicableOn = null, ?string $taxRecoverability = null, ?string $taxMethod = null, ?array $trackingCategories = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?array $worktags = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?string $id = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?InvoiceLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?LocalDate $serviceDate = null, ?string $categoryId = null, ?string $locationId = null, ?string $departmentId = null, ?string $subsidiaryId = null, ?string $shippingId = null, ?string $memo = null, ?bool $prepaid = null, ?string $taxApplicableOn = null, ?string $taxRecoverability = null, ?string $taxMethod = null, ?array $trackingCategories = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->rowId = $rowId;
         $this->item = $item;
@@ -375,6 +385,7 @@ class InvoiceLineItem
         $this->unitOfMeasure = $unitOfMeasure;
         $this->discountPercentage = $discountPercentage;
         $this->discountAmount = $discountAmount;
+        $this->serviceDate = $serviceDate;
         $this->categoryId = $categoryId;
         $this->locationId = $locationId;
         $this->departmentId = $departmentId;

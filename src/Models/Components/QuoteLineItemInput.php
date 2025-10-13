@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Apideck\Unify\Models\Components;
 
-
+use Brick\DateTime\LocalDate;
 class QuoteLineItemInput
 {
     /**
@@ -156,6 +156,15 @@ class QuoteLineItemInput
     public ?float $discountAmount = null;
 
     /**
+     * Date on which the service was provided or performed - YYYY-MM-DD.
+     *
+     * @var ?LocalDate $serviceDate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('service_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LocalDate $serviceDate = null;
+
+    /**
      * ID of the category of the line item
      *
      * @var ?string $categoryId
@@ -227,6 +236,7 @@ class QuoteLineItemInput
      * @param  ?string  $unitOfMeasure
      * @param  ?float  $discountPercentage
      * @param  ?float  $discountAmount
+     * @param  ?LocalDate  $serviceDate
      * @param  ?string  $categoryId
      * @param  ?string  $locationId
      * @param  ?string  $departmentId
@@ -235,7 +245,7 @@ class QuoteLineItemInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?string $id = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?QuoteLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $categoryId = null, ?string $locationId = null, ?string $departmentId = null, ?array $trackingCategories = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $rowVersion = null)
+    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?string $id = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?QuoteLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?LocalDate $serviceDate = null, ?string $categoryId = null, ?string $locationId = null, ?string $departmentId = null, ?array $trackingCategories = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $rowVersion = null)
     {
         $this->rowId = $rowId;
         $this->item = $item;
@@ -253,6 +263,7 @@ class QuoteLineItemInput
         $this->unitOfMeasure = $unitOfMeasure;
         $this->discountPercentage = $discountPercentage;
         $this->discountAmount = $discountAmount;
+        $this->serviceDate = $serviceDate;
         $this->categoryId = $categoryId;
         $this->locationId = $locationId;
         $this->departmentId = $departmentId;
