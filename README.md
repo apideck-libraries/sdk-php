@@ -160,9 +160,6 @@ foreach ($responses as $response) {
 <details open>
 <summary>Available methods</summary>
 
-### [accounting](docs/sdks/accounting/README.md)
-
-
 #### [accounting->agedCreditors](docs/sdks/agedcreditors/README.md)
 
 * [get](docs/sdks/agedcreditors/README.md#get) - Get Aged Creditors
@@ -372,10 +369,6 @@ foreach ($responses as $response) {
 * [update](docs/sdks/trackingcategories/README.md#update) - Update Tracking Category
 * [delete](docs/sdks/trackingcategories/README.md#delete) - Delete Tracking Category
 
-
-### [ats](docs/sdks/ats/README.md)
-
-
 #### [ats->applicants](docs/sdks/applicants/README.md)
 
 * [list](docs/sdks/applicants/README.md#list) - List Applicants
@@ -396,9 +389,6 @@ foreach ($responses as $response) {
 
 * [list](docs/sdks/jobs/README.md#list) - List Jobs
 * [get](docs/sdks/jobs/README.md#get) - Get Job
-
-### [connector](docs/sdks/connector/README.md)
-
 
 #### [connector->apiResourceCoverage](docs/sdks/apiresourcecoverage/README.md)
 
@@ -425,9 +415,6 @@ foreach ($responses as $response) {
 
 * [list](docs/sdks/connectors/README.md#list) - List Connectors
 * [get](docs/sdks/connectors/README.md#get) - Get Connector
-
-### [crm](docs/sdks/crm/README.md)
-
 
 #### [crm->activities](docs/sdks/activities/README.md)
 
@@ -509,9 +496,6 @@ foreach ($responses as $response) {
 * [update](docs/sdks/users/README.md#update) - Update user
 * [delete](docs/sdks/users/README.md#delete) - Delete user
 
-### [ecommerce](docs/sdks/ecommerce/README.md)
-
-
 #### [ecommerce->customers](docs/sdks/apideckcustomers/README.md)
 
 * [list](docs/sdks/apideckcustomers/README.md#list) - List Customers
@@ -530,9 +514,6 @@ foreach ($responses as $response) {
 #### [ecommerce->stores](docs/sdks/stores/README.md)
 
 * [get](docs/sdks/stores/README.md#get) - Get Store
-
-### [fileStorage](docs/sdks/filestorage/README.md)
-
 
 #### [fileStorage->driveGroups](docs/sdks/drivegroups/README.md)
 
@@ -584,9 +565,6 @@ foreach ($responses as $response) {
 * [delete](docs/sdks/uploadsessions/README.md#delete) - Abort Upload Session
 * [finish](docs/sdks/uploadsessions/README.md#finish) - Finish Upload Session
 
-### [hris](docs/sdks/hris/README.md)
-
-
 #### [hris->companies](docs/sdks/apideckcompanies/README.md)
 
 * [list](docs/sdks/apideckcompanies/README.md#list) - List Companies
@@ -633,9 +611,6 @@ foreach ($responses as $response) {
 * [update](docs/sdks/timeoffrequests/README.md#update) - Update Time Off Request
 * [delete](docs/sdks/timeoffrequests/README.md#delete) - Delete Time Off Request
 
-### [issueTracking](docs/sdks/issuetracking/README.md)
-
-
 #### [issueTracking->collections](docs/sdks/collections/README.md)
 
 * [list](docs/sdks/collections/README.md#list) - List Collections
@@ -666,9 +641,6 @@ foreach ($responses as $response) {
 * [list](docs/sdks/collectionusers/README.md#list) - List Users
 * [get](docs/sdks/collectionusers/README.md#get) - Get user
 
-### [sms](docs/sdks/sms/README.md)
-
-
 #### [sms->messages](docs/sdks/messages/README.md)
 
 * [list](docs/sdks/messages/README.md#list) - List Messages
@@ -676,9 +648,6 @@ foreach ($responses as $response) {
 * [get](docs/sdks/messages/README.md#get) - Get Message
 * [update](docs/sdks/messages/README.md#update) - Update Message
 * [delete](docs/sdks/messages/README.md#delete) - Delete Message
-
-### [vault](docs/sdks/vault/README.md)
-
 
 #### [vault->connectionConsent](docs/sdks/connectionconsent/README.md)
 
@@ -741,9 +710,6 @@ foreach ($responses as $response) {
 #### [vault->validateConnection](docs/sdks/validateconnection/README.md)
 
 * [state](docs/sdks/validateconnection/README.md#state) - Validate Connection State
-
-### [webhook](docs/sdks/webhook/README.md)
-
 
 #### [webhook->eventLogs](docs/sdks/eventlogs/README.md)
 
