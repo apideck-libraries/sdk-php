@@ -54,11 +54,11 @@ class GetExpenseResponse
 
     /**
      *
-     * @var Expense $data
+     * @var Expense1|Expense2|Three $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Expense')]
-    public Expense $data;
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Expense1|\Apideck\Unify\Models\Components\Expense2|\Apideck\Unify\Models\Components\Three')]
+    public Expense1|Expense2|Three $data;
 
     /**
      * Raw response from the integration when raw=true query param is provided
@@ -76,11 +76,11 @@ class GetExpenseResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Expense  $data
+     * @param  Expense1|Expense2|Three  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */
-    public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, Expense $data, ?array $raw = null)
+    public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, Expense1|Expense2|Three $data, ?array $raw = null)
     {
         $this->statusCode = $statusCode;
         $this->status = $status;

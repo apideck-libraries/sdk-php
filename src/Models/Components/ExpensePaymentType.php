@@ -15,4 +15,5 @@ enum ExpensePaymentType: string
     case Cash = 'cash';
     case Check = 'check';
     case CreditCard = 'credit_card';
+    case Other = 'other';
 }

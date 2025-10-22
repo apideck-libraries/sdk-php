@@ -110,8 +110,15 @@ $request = new Operations\AccountingBankAccountsAddRequest(
     accountingBankAccount: new Components\AccountingBankAccountInput(
         displayId: 'BA-001',
         name: 'Main Operating Account',
-        accountNumber: '1234567890',
+        accountNumber: '123465',
         accountType: Components\AccountingBankAccountAccountType::Checking,
+        ledgerAccount: new Components\LinkedLedgerAccountInput(
+            id: '123456',
+            nominalCode: 'N091',
+            code: '453',
+            parentId: '123456',
+            displayId: '123456',
+        ),
         bankName: 'Chase Bank',
         currency: Components\Currency::Usd,
         balance: 25000,
@@ -256,8 +263,15 @@ $request = new Operations\AccountingBankAccountsUpdateRequest(
     accountingBankAccount: new Components\AccountingBankAccountInput(
         displayId: 'BA-001',
         name: 'Main Operating Account',
-        accountNumber: '1234567890',
+        accountNumber: '123465',
         accountType: Components\AccountingBankAccountAccountType::Checking,
+        ledgerAccount: new Components\LinkedLedgerAccountInput(
+            id: '123456',
+            nominalCode: 'N091',
+            code: '453',
+            parentId: '123456',
+            displayId: '123456',
+        ),
         bankName: 'Chase Bank',
         currency: Components\Currency::Usd,
         balance: 25000,

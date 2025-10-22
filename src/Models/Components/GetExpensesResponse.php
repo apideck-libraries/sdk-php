@@ -55,10 +55,10 @@ class GetExpensesResponse
     /**
      * $data
      *
-     * @var array<Expense> $data
+     * @var array<Expense1|Expense2|Three> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Expense>')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Expense1|\Apideck\Unify\Models\Components\Expense2|\Apideck\Unify\Models\Components\Three>')]
     public array $data;
 
     /**
@@ -97,7 +97,7 @@ class GetExpensesResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  array<Expense>  $data
+     * @param  array<Expense1|Expense2|Three>  $data
      * @param  ?Meta  $meta
      * @param  ?Links  $links
      * @param  ?array<string, mixed>  $raw

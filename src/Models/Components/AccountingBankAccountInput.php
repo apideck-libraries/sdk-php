@@ -12,15 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class AccountingBankAccountInput
 {
     /**
-     * The name of the bank account as it appears in the accounting system
-     *
-     * @var ?string $name
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $name = null;
-
-    /**
      * The type of bank account
      *
      * @var ?AccountingBankAccountAccountType $accountType
@@ -50,6 +41,15 @@ class AccountingBankAccountInput
     public ?string $displayId = null;
 
     /**
+     * The name of the bank account
+     *
+     * @var ?string $name
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $name = null;
+
+    /**
      * The bank account number
      *
      * @var ?string $accountNumber
@@ -57,6 +57,15 @@ class AccountingBankAccountInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('account_number')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $accountNumber = null;
+
+    /**
+     *
+     * @var ?LinkedLedgerAccountInput $ledgerAccount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ledger_account')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccountInput|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedLedgerAccountInput $ledgerAccount = null;
 
     /**
      * The name of the bank or financial institution
@@ -187,11 +196,12 @@ class AccountingBankAccountInput
     public ?string $description = null;
 
     /**
-     * @param  ?string  $name
      * @param  ?AccountingBankAccountAccountType  $accountType
      * @param  ?array<CustomField>  $customFields
      * @param  ?string  $displayId
+     * @param  ?string  $name
      * @param  ?string  $accountNumber
+     * @param  ?LinkedLedgerAccountInput  $ledgerAccount
      * @param  ?string  $bankName
      * @param  ?Currency  $currency
      * @param  ?float  $balance
@@ -208,13 +218,14 @@ class AccountingBankAccountInput
      * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?AccountingBankAccountAccountType $accountType = null, ?array $customFields = null, ?string $displayId = null, ?string $accountNumber = null, ?string $bankName = null, ?Currency $currency = null, ?float $balance = null, ?float $availableBalance = null, ?float $overdraftLimit = null, ?string $routingNumber = null, ?string $iban = null, ?string $bic = null, ?string $bsbNumber = null, ?string $branchIdentifier = null, ?string $bankCode = null, ?string $country = null, ?AccountingBankAccountStatus $status = null, ?string $description = null)
+    public function __construct(?AccountingBankAccountAccountType $accountType = null, ?array $customFields = null, ?string $displayId = null, ?string $name = null, ?string $accountNumber = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $bankName = null, ?Currency $currency = null, ?float $balance = null, ?float $availableBalance = null, ?float $overdraftLimit = null, ?string $routingNumber = null, ?string $iban = null, ?string $bic = null, ?string $bsbNumber = null, ?string $branchIdentifier = null, ?string $bankCode = null, ?string $country = null, ?AccountingBankAccountStatus $status = null, ?string $description = null)
     {
-        $this->name = $name;
         $this->accountType = $accountType;
         $this->customFields = $customFields;
         $this->displayId = $displayId;
+        $this->name = $name;
         $this->accountNumber = $accountNumber;
+        $this->ledgerAccount = $ledgerAccount;
         $this->bankName = $bankName;
         $this->currency = $currency;
         $this->balance = $balance;

@@ -12,7 +12,7 @@ namespace Apideck\Unify\Models\Components;
 class BankAccount
 {
     /**
-     * The name of the bank
+     * The name of the bank or financial institution
      *
      * @var ?string $bankName
      */
@@ -21,7 +21,7 @@ class BankAccount
     public ?string $bankName = null;
 
     /**
-     * A bank account number is a number that is tied to your bank account. If you have several bank accounts, such as personal, joint, business (and so on), each account will have a different account number.
+     * The bank account number
      *
      * @var ?string $accountNumber
      */
@@ -30,7 +30,7 @@ class BankAccount
     public ?string $accountNumber = null;
 
     /**
-     * The name which you used in opening your bank account.
+     * The name of the bank account
      *
      * @var ?string $accountName
      */
@@ -49,7 +49,7 @@ class BankAccount
     public ?AccountType $accountType = null;
 
     /**
-     * The International Bank Account Number (IBAN).
+     * International Bank Account Number
      *
      * @var ?string $iban
      */
@@ -58,7 +58,7 @@ class BankAccount
     public ?string $iban = null;
 
     /**
-     * The Bank Identifier Code (BIC).
+     * Bank Identifier Code / SWIFT Code
      *
      * @var ?string $bic
      */
@@ -67,7 +67,7 @@ class BankAccount
     public ?string $bic = null;
 
     /**
-     * A routing number is a nine-digit code used to identify a financial institution in the United States.
+     * Bank routing number (US)
      *
      * @var ?string $routingNumber
      */
@@ -76,7 +76,7 @@ class BankAccount
     public ?string $routingNumber = null;
 
     /**
-     * A BSB is a 6 digit numeric code used for identifying the branch of an Australian or New Zealand bank or financial institution.
+     * Bank State Branch number (Australia/New Zealand)
      *
      * @var ?string $bsbNumber
      */
@@ -85,7 +85,7 @@ class BankAccount
     public ?string $bsbNumber = null;
 
     /**
-     * A branch identifier is a unique identifier for a branch of a bank or financial institution.
+     * Bank branch identifier
      *
      * @var ?string $branchIdentifier
      */
@@ -94,7 +94,7 @@ class BankAccount
     public ?string $branchIdentifier = null;
 
     /**
-     * A bank code is a code assigned by a central bank, a bank supervisory body or a Bankers Association in a country to all its licensed member banks or financial institutions.
+     * Bank code assigned by central bank
      *
      * @var ?string $bankCode
      */

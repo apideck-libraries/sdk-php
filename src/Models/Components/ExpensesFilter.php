@@ -26,13 +26,22 @@ class ExpensesFilter
     public ?ExpensesFilterStatus $status = null;
 
     /**
+     *
+     * @var ?ExpensesFilterType $type
+     */
+    #[SpeakeasyMetadata('queryParam:name=type')]
+    public ?ExpensesFilterType $type = null;
+
+    /**
      * @param  ?\DateTime  $updatedSince
      * @param  ?ExpensesFilterStatus  $status
+     * @param  ?ExpensesFilterType  $type
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedSince = null, ?ExpensesFilterStatus $status = null)
+    public function __construct(?\DateTime $updatedSince = null, ?ExpensesFilterStatus $status = null, ?ExpensesFilterType $type = null)
     {
         $this->updatedSince = $updatedSince;
         $this->status = $status;
+        $this->type = $type;
     }
 }

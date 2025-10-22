@@ -9,33 +9,16 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 
-class Expense
+class Expense2Input
 {
-    /**
-     * The unique identifier for the ledger account that this expense should be credited to. 
-     *
-     * @var string $accountId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('account_id')]
-    public string $accountId;
-
     /**
      * Expense line items linked to this expense.
      *
-     * @var array<ExpenseLineItem> $lineItems
+     * @var array<ExpenseLineItemInput> $lineItems
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ExpenseLineItem>')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ExpenseLineItemInput>')]
     public array $lineItems;
-
-    /**
-     * A unique identifier for an object.
-     *
-     * @var ?string $id
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $id = null;
 
     /**
      * The date of the transaction - YYYY:MM::DDThh:mm:ss.sTZD
@@ -44,6 +27,24 @@ class Expense
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('transaction_date')]
     public ?\DateTime $transactionDate;
+
+    /**
+     * The unique identifier for the ledger account that this expense should be credited to. Deprecated, use account instead.
+     *
+     * @var ?string $accountId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('account_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $accountId = null;
+
+    /**
+     *
+     * @var ?LinkedLedgerAccountInput $account
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('account')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccountInput|null')]
+    public ?LinkedLedgerAccountInput $account;
 
     /**
      * The ID of the customer this entity is linked to. Used for expenses that should be marked as billable to customers.
@@ -65,12 +66,12 @@ class Expense
 
     /**
      *
-     * @var ?LinkedTaxRate $taxRate
+     * @var ?LinkedTaxRateInput $taxRate
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRate|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRateInput|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LinkedTaxRate $taxRate = null;
+    public ?LinkedTaxRateInput $taxRate = null;
 
     /**
      * $customFields
@@ -102,6 +103,15 @@ class Expense
     public ?string $number = null;
 
     /**
+     *
+     * @var ?LinkedBankAccount $bankAccount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('bank_account')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedBankAccount|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedBankAccount $bankAccount = null;
+
+    /**
      * The company ID the transaction belongs to
      *
      * @var ?string $companyId
@@ -122,12 +132,12 @@ class Expense
     /**
      * The type of payment for the expense.
      *
-     * @var ?ExpensePaymentType $paymentType
+     * @var ?Expense2PaymentType $paymentType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('payment_type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ExpensePaymentType|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Expense2PaymentType|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?ExpensePaymentType $paymentType = null;
+    public ?Expense2PaymentType $paymentType = null;
 
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
@@ -151,12 +161,12 @@ class Expense
     /**
      * The type of expense.
      *
-     * @var ?ExpenseType $type
+     * @var ?ExpenseExpenseType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ExpenseType|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ExpenseExpenseType|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?ExpenseType $type = null;
+    public ?ExpenseExpenseType $type = null;
 
     /**
      * The memo of the expense.
@@ -195,42 +205,14 @@ class Expense
     public ?string $sourceDocumentUrl = null;
 
     /**
-     * When custom mappings are configured on the resource, the result is included here.
-     *
-     * @var ?array<string, mixed> $customMappings
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $customMappings = null;
-
-    /**
      * Expense status
      *
-     * @var ?ExpenseStatus $status
+     * @var ?Expense2Status $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ExpenseStatus|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Expense2Status|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?ExpenseStatus $status = null;
-
-    /**
-     * The date and time when the object was last updated.
-     *
-     * @var ?\DateTime $updatedAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?\DateTime $updatedAt = null;
-
-    /**
-     * The date and time when the object was created.
-     *
-     * @var ?\DateTime $createdAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?\DateTime $createdAt = null;
+    public ?Expense2Status $status = null;
 
     /**
      * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
@@ -242,65 +224,44 @@ class Expense
     public ?string $rowVersion = null;
 
     /**
-     * The user who last updated the object.
-     *
-     * @var ?string $updatedBy
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_by')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $updatedBy = null;
-
-    /**
-     * The user who created the object.
-     *
-     * @var ?string $createdBy
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('created_by')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $createdBy = null;
-
-    /**
-     * @param  string  $accountId
-     * @param  array<ExpenseLineItem>  $lineItems
-     * @param  ?string  $id
+     * @param  array<ExpenseLineItemInput>  $lineItems
      * @param  ?\DateTime  $transactionDate
+     * @param  ?string  $accountId
+     * @param  ?LinkedLedgerAccountInput  $account
      * @param  ?string  $customerId
      * @param  ?string  $supplierId
-     * @param  ?LinkedTaxRate  $taxRate
+     * @param  ?LinkedTaxRateInput  $taxRate
      * @param  ?array<CustomField>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $number
+     * @param  ?LinkedBankAccount  $bankAccount
      * @param  ?string  $companyId
      * @param  ?string  $departmentId
-     * @param  ?ExpensePaymentType  $paymentType
+     * @param  ?Expense2PaymentType  $paymentType
      * @param  ?Currency  $currency
      * @param  ?float  $currencyRate
-     * @param  ?ExpenseType  $type
+     * @param  ?ExpenseExpenseType  $type
      * @param  ?string  $memo
      * @param  ?float  $totalAmount
      * @param  ?string  $reference
      * @param  ?string  $sourceDocumentUrl
-     * @param  ?array<string, mixed>  $customMappings
-     * @param  ?ExpenseStatus  $status
-     * @param  ?\DateTime  $updatedAt
-     * @param  ?\DateTime  $createdAt
+     * @param  ?Expense2Status  $status
      * @param  ?string  $rowVersion
-     * @param  ?string  $updatedBy
-     * @param  ?string  $createdBy
      * @phpstan-pure
      */
-    public function __construct(string $accountId, array $lineItems, ?string $id = null, ?\DateTime $transactionDate = null, ?string $customerId = null, ?string $supplierId = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?string $companyId = null, ?string $departmentId = null, ?ExpensePaymentType $paymentType = null, ?Currency $currency = null, ?float $currencyRate = null, ?ExpenseType $type = null, ?string $memo = null, ?float $totalAmount = null, ?string $reference = null, ?string $sourceDocumentUrl = null, ?array $customMappings = null, ?ExpenseStatus $status = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null)
+    public function __construct(array $lineItems, ?\DateTime $transactionDate = null, ?string $accountId = null, ?LinkedLedgerAccountInput $account = null, ?string $customerId = null, ?string $supplierId = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?LinkedBankAccount $bankAccount = null, ?string $companyId = null, ?string $departmentId = null, ?Expense2PaymentType $paymentType = null, ?Currency $currency = null, ?float $currencyRate = null, ?ExpenseExpenseType $type = null, ?string $memo = null, ?float $totalAmount = null, ?string $reference = null, ?string $sourceDocumentUrl = null, ?Expense2Status $status = null, ?string $rowVersion = null)
     {
-        $this->accountId = $accountId;
         $this->lineItems = $lineItems;
-        $this->id = $id;
         $this->transactionDate = $transactionDate;
+        $this->accountId = $accountId;
+        $this->account = $account;
         $this->customerId = $customerId;
         $this->supplierId = $supplierId;
         $this->taxRate = $taxRate;
         $this->customFields = $customFields;
         $this->passThrough = $passThrough;
         $this->number = $number;
+        $this->bankAccount = $bankAccount;
         $this->companyId = $companyId;
         $this->departmentId = $departmentId;
         $this->paymentType = $paymentType;
@@ -311,12 +272,7 @@ class Expense
         $this->totalAmount = $totalAmount;
         $this->reference = $reference;
         $this->sourceDocumentUrl = $sourceDocumentUrl;
-        $this->customMappings = $customMappings;
         $this->status = $status;
-        $this->updatedAt = $updatedAt;
-        $this->createdAt = $createdAt;
         $this->rowVersion = $rowVersion;
-        $this->updatedBy = $updatedBy;
-        $this->createdBy = $createdBy;
     }
 }

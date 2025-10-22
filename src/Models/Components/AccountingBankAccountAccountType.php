@@ -18,4 +18,5 @@ enum AccountingBankAccountAccountType: string
     case MoneyMarket = 'money_market';
     case LineOfCredit = 'line_of_credit';
     case Other = 'other';
+    case Cash = 'cash';
 }

@@ -48,17 +48,39 @@ class LinkedLedgerAccount
     public ?string $code = null;
 
     /**
+     * The parent ID of the account.
+     *
+     * @var ?string $parentId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $parentId = null;
+
+    /**
+     * The display ID of the account.
+     *
+     * @var ?string $displayId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('display_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $displayId = null;
+
+    /**
      * @param  ?string  $id
      * @param  ?string  $name
      * @param  ?string  $nominalCode
      * @param  ?string  $code
+     * @param  ?string  $parentId
+     * @param  ?string  $displayId
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?string $nominalCode = null, ?string $code = null)
+    public function __construct(?string $id = null, ?string $name = null, ?string $nominalCode = null, ?string $code = null, ?string $parentId = null, ?string $displayId = null)
     {
         $this->id = $id;
         $this->name = $name;
         $this->nominalCode = $nominalCode;
         $this->code = $code;
+        $this->parentId = $parentId;
+        $this->displayId = $displayId;
     }
 }
