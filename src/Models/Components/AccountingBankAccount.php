@@ -20,15 +20,6 @@ class AccountingBankAccount
     public string $id;
 
     /**
-     * The name of the bank account as it appears in the accounting system
-     *
-     * @var ?string $name
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $name = null;
-
-    /**
      * The type of bank account
      *
      * @var ?AccountingBankAccountAccountType $accountType
@@ -58,6 +49,15 @@ class AccountingBankAccount
     public ?string $displayId = null;
 
     /**
+     * The name of the bank account
+     *
+     * @var ?string $name
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $name = null;
+
+    /**
      * The bank account number
      *
      * @var ?string $accountNumber
@@ -65,6 +65,15 @@ class AccountingBankAccount
     #[\Speakeasy\Serializer\Annotation\SerializedName('account_number')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $accountNumber = null;
+
+    /**
+     *
+     * @var ?LinkedLedgerAccount $ledgerAccount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ledger_account')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedLedgerAccount $ledgerAccount = null;
 
     /**
      * The name of the bank or financial institution
@@ -242,11 +251,12 @@ class AccountingBankAccount
 
     /**
      * @param  string  $id
-     * @param  ?string  $name
      * @param  ?AccountingBankAccountAccountType  $accountType
      * @param  ?array<CustomField>  $customFields
      * @param  ?string  $displayId
+     * @param  ?string  $name
      * @param  ?string  $accountNumber
+     * @param  ?LinkedLedgerAccount  $ledgerAccount
      * @param  ?string  $bankName
      * @param  ?Currency  $currency
      * @param  ?float  $balance
@@ -268,14 +278,15 @@ class AccountingBankAccount
      * @param  ?string  $updatedBy
      * @phpstan-pure
      */
-    public function __construct(string $id, ?string $name = null, ?AccountingBankAccountAccountType $accountType = null, ?array $customFields = null, ?string $displayId = null, ?string $accountNumber = null, ?string $bankName = null, ?Currency $currency = null, ?float $balance = null, ?float $availableBalance = null, ?float $overdraftLimit = null, ?string $routingNumber = null, ?string $iban = null, ?string $bic = null, ?string $bsbNumber = null, ?string $branchIdentifier = null, ?string $bankCode = null, ?string $country = null, ?AccountingBankAccountStatus $status = null, ?string $description = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $createdBy = null, ?string $updatedBy = null)
+    public function __construct(string $id, ?AccountingBankAccountAccountType $accountType = null, ?array $customFields = null, ?string $displayId = null, ?string $name = null, ?string $accountNumber = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $bankName = null, ?Currency $currency = null, ?float $balance = null, ?float $availableBalance = null, ?float $overdraftLimit = null, ?string $routingNumber = null, ?string $iban = null, ?string $bic = null, ?string $bsbNumber = null, ?string $branchIdentifier = null, ?string $bankCode = null, ?string $country = null, ?AccountingBankAccountStatus $status = null, ?string $description = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $createdBy = null, ?string $updatedBy = null)
     {
         $this->id = $id;
-        $this->name = $name;
         $this->accountType = $accountType;
         $this->customFields = $customFields;
         $this->displayId = $displayId;
+        $this->name = $name;
         $this->accountNumber = $accountNumber;
+        $this->ledgerAccount = $ledgerAccount;
         $this->bankName = $bankName;
         $this->currency = $currency;
         $this->balance = $balance;

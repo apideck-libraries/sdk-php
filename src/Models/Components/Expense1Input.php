@@ -9,12 +9,13 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 
-class ExpenseInput
+class Expense1Input
 {
     /**
-     * The unique identifier for the ledger account that this expense should be credited to. 
+     * The unique identifier for the ledger account that this expense should be credited to. Deprecated, use account instead.
      *
      * @var string $accountId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('account_id')]
     public string $accountId;
@@ -91,6 +92,24 @@ class ExpenseInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('number')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $number = null;
+
+    /**
+     *
+     * @var ?LinkedLedgerAccountInput $account
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('account')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccountInput|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedLedgerAccountInput $account = null;
+
+    /**
+     *
+     * @var ?LinkedBankAccount $bankAccount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('bank_account')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedBankAccount|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedBankAccount $bankAccount = null;
 
     /**
      * The company ID the transaction belongs to
@@ -214,6 +233,8 @@ class ExpenseInput
      * @param  ?array<CustomField>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $number
+     * @param  ?LinkedLedgerAccountInput  $account
+     * @param  ?LinkedBankAccount  $bankAccount
      * @param  ?string  $companyId
      * @param  ?string  $departmentId
      * @param  ?ExpensePaymentType  $paymentType
@@ -228,7 +249,7 @@ class ExpenseInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(string $accountId, array $lineItems, ?\DateTime $transactionDate = null, ?string $customerId = null, ?string $supplierId = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?string $companyId = null, ?string $departmentId = null, ?ExpensePaymentType $paymentType = null, ?Currency $currency = null, ?float $currencyRate = null, ?ExpenseType $type = null, ?string $memo = null, ?float $totalAmount = null, ?string $reference = null, ?string $sourceDocumentUrl = null, ?ExpenseStatus $status = null, ?string $rowVersion = null)
+    public function __construct(string $accountId, array $lineItems, ?\DateTime $transactionDate = null, ?string $customerId = null, ?string $supplierId = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?LinkedLedgerAccountInput $account = null, ?LinkedBankAccount $bankAccount = null, ?string $companyId = null, ?string $departmentId = null, ?ExpensePaymentType $paymentType = null, ?Currency $currency = null, ?float $currencyRate = null, ?ExpenseType $type = null, ?string $memo = null, ?float $totalAmount = null, ?string $reference = null, ?string $sourceDocumentUrl = null, ?ExpenseStatus $status = null, ?string $rowVersion = null)
     {
         $this->accountId = $accountId;
         $this->lineItems = $lineItems;
@@ -239,6 +260,8 @@ class ExpenseInput
         $this->customFields = $customFields;
         $this->passThrough = $passThrough;
         $this->number = $number;
+        $this->account = $account;
+        $this->bankAccount = $bankAccount;
         $this->companyId = $companyId;
         $this->departmentId = $departmentId;
         $this->paymentType = $paymentType;

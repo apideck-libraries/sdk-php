@@ -413,11 +413,11 @@ $request = new Operations\HrisEmployeesAddRequest(
             ),
         ],
         bankAccounts: [
-            new Components\BankAccount(
+            new Components\BankAccount2(
                 bankName: 'Monzo',
                 accountNumber: '123465',
                 accountName: 'SPACEX LLC',
-                accountType: Components\AccountType::CreditCard,
+                accountType: Components\BankAccount2AccountType::CreditCard,
                 iban: 'CH2989144532982975332',
                 bic: 'AUDSCHGGXXX',
                 routingNumber: '012345678',
@@ -426,11 +426,11 @@ $request = new Operations\HrisEmployeesAddRequest(
                 bankCode: 'BNH',
                 currency: Components\Currency::Usd,
             ),
-            new Components\BankAccount(
+            new Components\BankAccount2(
                 bankName: 'Monzo',
                 accountNumber: '123465',
                 accountName: 'SPACEX LLC',
-                accountType: Components\AccountType::CreditCard,
+                accountType: Components\BankAccount2AccountType::CreditCard,
                 iban: 'CH2989144532982975332',
                 bic: 'AUDSCHGGXXX',
                 routingNumber: '012345678',
@@ -439,11 +439,11 @@ $request = new Operations\HrisEmployeesAddRequest(
                 bankCode: 'BNH',
                 currency: Components\Currency::Usd,
             ),
-            new Components\BankAccount(
+            new Components\BankAccount2(
                 bankName: 'Monzo',
                 accountNumber: '123465',
                 accountName: 'SPACEX LLC',
-                accountType: Components\AccountType::CreditCard,
+                accountType: Components\BankAccount2AccountType::CreditCard,
                 iban: 'CH2989144532982975332',
                 bic: 'AUDSCHGGXXX',
                 routingNumber: '012345678',
@@ -863,11 +863,11 @@ $request = new Operations\HrisEmployeesUpdateRequest(
             ),
         ],
         bankAccounts: [
-            new Components\BankAccount(
+            new Components\BankAccount2(
                 bankName: 'Monzo',
                 accountNumber: '123465',
                 accountName: 'SPACEX LLC',
-                accountType: Components\AccountType::CreditCard,
+                accountType: Components\BankAccount2AccountType::CreditCard,
                 iban: 'CH2989144532982975332',
                 bic: 'AUDSCHGGXXX',
                 routingNumber: '012345678',

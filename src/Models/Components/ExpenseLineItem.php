@@ -21,9 +21,10 @@ class ExpenseLineItem
     public ?string $id = null;
 
     /**
-     * The unique identifier for the ledger account.
+     * The unique identifier for the ledger account. Deprecated, use account instead.
      *
      * @var ?string $accountId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('account_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
@@ -73,6 +74,15 @@ class ExpenseLineItem
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory|null>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $trackingCategories = null;
+
+    /**
+     *
+     * @var ?LinkedLedgerAccount $account
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('account')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedLedgerAccount $account = null;
 
     /**
      * The ID of the department
@@ -137,6 +147,7 @@ class ExpenseLineItem
      * @param  ?float  $totalAmount
      * @param  ?bool  $billable
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
+     * @param  ?LinkedLedgerAccount  $account
      * @param  ?string  $departmentId
      * @param  ?string  $locationId
      * @param  ?string  $subsidiaryId
@@ -145,7 +156,7 @@ class ExpenseLineItem
      * @param  ?Rebilling  $rebilling
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $accountId = null, ?string $customerId = null, ?LinkedTaxRate $taxRate = null, ?float $totalAmount = null, ?bool $billable = null, ?array $trackingCategories = null, ?string $departmentId = null, ?string $locationId = null, ?string $subsidiaryId = null, ?string $description = null, ?int $lineNumber = null, ?Rebilling $rebilling = null)
+    public function __construct(?string $id = null, ?string $accountId = null, ?string $customerId = null, ?LinkedTaxRate $taxRate = null, ?float $totalAmount = null, ?bool $billable = null, ?array $trackingCategories = null, ?LinkedLedgerAccount $account = null, ?string $departmentId = null, ?string $locationId = null, ?string $subsidiaryId = null, ?string $description = null, ?int $lineNumber = null, ?Rebilling $rebilling = null)
     {
         $this->id = $id;
         $this->accountId = $accountId;
@@ -154,6 +165,7 @@ class ExpenseLineItem
         $this->totalAmount = $totalAmount;
         $this->billable = $billable;
         $this->trackingCategories = $trackingCategories;
+        $this->account = $account;
         $this->departmentId = $departmentId;
         $this->locationId = $locationId;
         $this->subsidiaryId = $subsidiaryId;

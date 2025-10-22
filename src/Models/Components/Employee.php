@@ -111,10 +111,10 @@ class Employee
     /**
      * $bankAccounts
      *
-     * @var ?array<BankAccount> $bankAccounts
+     * @var ?array<BankAccount2> $bankAccounts
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('bank_accounts')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\BankAccount>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\BankAccount2>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $bankAccounts = null;
 
@@ -642,7 +642,7 @@ class Employee
      * @param  ?array<Email>  $emails
      * @param  ?array<CustomField>  $customFields
      * @param  ?array<SocialLink>  $socialLinks
-     * @param  ?array<BankAccount>  $bankAccounts
+     * @param  ?array<BankAccount2>  $bankAccounts
      * @param  ?ProbationPeriod  $probationPeriod
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $id

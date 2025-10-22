@@ -9,10 +9,11 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 
-/** Indicates if the webhook has has been disabled as it reached its retry limit or if account is over the usage allocated by it's plan. */
+/** Indicates why the webhook has been disabled. `retry_limit`: webhook reached its retry limit. `usage_limit`: account is over its usage limit. `delivery_url_validation_failed`: delivery URL failed validation during webhook creation or update. */
 enum DisabledReason: string
 {
     case None = 'none';
     case RetryLimit = 'retry_limit';
     case UsageLimit = 'usage_limit';
+    case DeliveryUrlValidationFailed = 'delivery_url_validation_failed';
 }

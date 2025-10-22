@@ -47,6 +47,16 @@ class JournalEntryLineItem
     public ?LinkedLedgerAccount $ledgerAccount;
 
     /**
+     * Worktags of the line item. This is currently only supported in Workday.
+     *
+     * @var ?array<?LinkedWorktag> $worktags
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('worktags')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedWorktag|null>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $worktags = null;
+
+    /**
      * User defined description
      *
      * @var ?string $description
@@ -154,6 +164,7 @@ class JournalEntryLineItem
      * @param  ?string  $id
      * @param  ?LinkedTaxRate  $taxRate
      * @param  ?LinkedLedgerAccount  $ledgerAccount
+     * @param  ?array<?LinkedWorktag>  $worktags
      * @param  ?string  $description
      * @param  ?float  $taxAmount
      * @param  ?float  $subTotal
@@ -167,12 +178,13 @@ class JournalEntryLineItem
      * @param  ?int  $lineNumber
      * @phpstan-pure
      */
-    public function __construct(JournalEntryLineItemType $type, ?string $id = null, ?LinkedTaxRate $taxRate = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $description = null, ?float $taxAmount = null, ?float $subTotal = null, ?float $totalAmount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?LinkedCustomer $customer = null, ?LinkedSupplier $supplier = null, ?string $departmentId = null, ?string $locationId = null, ?int $lineNumber = null)
+    public function __construct(JournalEntryLineItemType $type, ?string $id = null, ?LinkedTaxRate $taxRate = null, ?LinkedLedgerAccount $ledgerAccount = null, ?array $worktags = null, ?string $description = null, ?float $taxAmount = null, ?float $subTotal = null, ?float $totalAmount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?LinkedCustomer $customer = null, ?LinkedSupplier $supplier = null, ?string $departmentId = null, ?string $locationId = null, ?int $lineNumber = null)
     {
         $this->type = $type;
         $this->id = $id;
         $this->taxRate = $taxRate;
         $this->ledgerAccount = $ledgerAccount;
+        $this->worktags = $worktags;
         $this->description = $description;
         $this->taxAmount = $taxAmount;
         $this->subTotal = $subTotal;
