@@ -20,4 +20,5 @@ enum BillStatus: string
     case Void = 'void';
     case Credit = 'credit';
     case Deleted = 'deleted';
+    case Posted = 'posted';
 }
