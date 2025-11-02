@@ -64,6 +64,9 @@ enum WebhookEventType: string
     case AccountingBillCreated = 'accounting.bill.created';
     case AccountingBillUpdated = 'accounting.bill.updated';
     case AccountingBillDeleted = 'accounting.bill.deleted';
+    case AccountingBillPaymentCreated = 'accounting.bill_payment.created';
+    case AccountingBillPaymentUpdated = 'accounting.bill_payment.updated';
+    case AccountingBillPaymentDeleted = 'accounting.bill_payment.deleted';
     case AccountingPaymentCreated = 'accounting.payment.created';
     case AccountingPaymentUpdated = 'accounting.payment.updated';
     case AccountingPaymentDeleted = 'accounting.payment.deleted';

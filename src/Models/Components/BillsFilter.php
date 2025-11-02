@@ -19,11 +19,21 @@ class BillsFilter
     public ?\DateTime $updatedSince = null;
 
     /**
+     * Filter by bill status
+     *
+     * @var ?BillsFilterStatus $status
+     */
+    #[SpeakeasyMetadata('queryParam:name=status')]
+    public ?BillsFilterStatus $status = null;
+
+    /**
      * @param  ?\DateTime  $updatedSince
+     * @param  ?BillsFilterStatus  $status
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedSince = null)
+    public function __construct(?\DateTime $updatedSince = null, ?BillsFilterStatus $status = null)
     {
         $this->updatedSince = $updatedSince;
+        $this->status = $status;
     }
 }

@@ -58,6 +58,15 @@ class InvoiceItemInput
     public ?string $description = null;
 
     /**
+     * Display ID of the item
+     *
+     * @var ?string $displayId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('display_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $displayId = null;
+
+    /**
      * User defined item code
      *
      * @var ?string $code
@@ -253,6 +262,7 @@ class InvoiceItemInput
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $name
      * @param  ?string  $description
+     * @param  ?string  $displayId
      * @param  ?string  $code
      * @param  ?bool  $sold
      * @param  ?bool  $purchased
@@ -276,13 +286,14 @@ class InvoiceItemInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?InvoiceItemSalesDetails $salesDetails = null, ?InvoiceItemPurchaseDetails $purchaseDetails = null, ?array $passThrough = null, ?string $name = null, ?string $description = null, ?string $code = null, ?bool $sold = null, ?bool $purchased = null, ?bool $tracked = null, ?bool $taxable = null, ?LocalDate $inventoryDate = null, ?InvoiceItemTypeType $type = null, ?float $quantity = null, ?float $unitPrice = null, ?Currency $currency = null, ?LinkedLedgerAccountInput $assetAccount = null, ?LinkedLedgerAccountInput $incomeAccount = null, ?LinkedLedgerAccountInput $expenseAccount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?bool $active = null, ?string $departmentId = null, ?string $locationId = null, ?string $subsidiaryId = null, ?string $taxScheduleId = null, ?string $rowVersion = null)
+    public function __construct(?InvoiceItemSalesDetails $salesDetails = null, ?InvoiceItemPurchaseDetails $purchaseDetails = null, ?array $passThrough = null, ?string $name = null, ?string $description = null, ?string $displayId = null, ?string $code = null, ?bool $sold = null, ?bool $purchased = null, ?bool $tracked = null, ?bool $taxable = null, ?LocalDate $inventoryDate = null, ?InvoiceItemTypeType $type = null, ?float $quantity = null, ?float $unitPrice = null, ?Currency $currency = null, ?LinkedLedgerAccountInput $assetAccount = null, ?LinkedLedgerAccountInput $incomeAccount = null, ?LinkedLedgerAccountInput $expenseAccount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?bool $active = null, ?string $departmentId = null, ?string $locationId = null, ?string $subsidiaryId = null, ?string $taxScheduleId = null, ?string $rowVersion = null)
     {
         $this->salesDetails = $salesDetails;
         $this->purchaseDetails = $purchaseDetails;
         $this->passThrough = $passThrough;
         $this->name = $name;
         $this->description = $description;
+        $this->displayId = $displayId;
         $this->code = $code;
         $this->sold = $sold;
         $this->purchased = $purchased;

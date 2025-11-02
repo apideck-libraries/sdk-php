@@ -19,4 +19,5 @@ enum EcommerceOrderPaymentStatus: string
     case Refunded = 'refunded';
     case Voided = 'voided';
     case Unknown = 'unknown';
+    case PartiallyRefunded = 'partially_refunded';
 }
