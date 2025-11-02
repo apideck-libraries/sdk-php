@@ -60,6 +60,15 @@ class Category
     public ?array $passThrough = null;
 
     /**
+     * Display ID of the category
+     *
+     * @var ?string $displayId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('display_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $displayId = null;
+
+    /**
      * When custom mappings are configured on the resource, the result is included here.
      *
      * @var ?array<string, mixed> $customMappings
@@ -120,6 +129,7 @@ class Category
      * @param  ?CategoryType  $type
      * @param  ?CategoryStatus  $status
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?string  $displayId
      * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $rowVersion
      * @param  ?string  $updatedBy
@@ -128,13 +138,14 @@ class Category
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?CategoryType $type = null, ?CategoryStatus $status = null, ?array $passThrough = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?string $name = null, ?CategoryType $type = null, ?CategoryStatus $status = null, ?array $passThrough = null, ?string $displayId = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->name = $name;
         $this->type = $type;
         $this->status = $status;
         $this->passThrough = $passThrough;
+        $this->displayId = $displayId;
         $this->customMappings = $customMappings;
         $this->rowVersion = $rowVersion;
         $this->updatedBy = $updatedBy;
