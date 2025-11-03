@@ -14,12 +14,12 @@ Contains parameter or domain specific information related to the error and why i
 string $value = /* values here */
 ```
 
-### `array`
+### `Errors\Two`
 
 ```php
 /**
-* @var array<string, mixed>
+* @var Errors\Two
 */
-array $value = /* values here */
+Errors\Two $value = /* values here */
 ```
 

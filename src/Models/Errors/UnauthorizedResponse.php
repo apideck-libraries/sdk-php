@@ -51,12 +51,12 @@ class UnauthorizedResponse
     /**
      * Contains parameter or domain specific information related to the error and why it occurred.
      *
-     * @var string|array<string, mixed>|null $detail
+     * @var string|Two|null $detail
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('detail')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|\Apideck\Unify\Models\Errors\Two|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public string|array|null $detail = null;
+    public string|Two|null $detail = null;
 
     /**
      * Link to documentation of error type
@@ -72,11 +72,11 @@ class UnauthorizedResponse
      * @param  ?string  $error
      * @param  ?string  $typeName
      * @param  ?string  $message
-     * @param  string|array<string, mixed>|null  $detail
+     * @param  string|Two|null  $detail
      * @param  ?string  $ref
      * @phpstan-pure
      */
-    public function __construct(?float $statusCode = null, ?string $error = null, ?string $typeName = null, ?string $message = null, string|array|null $detail = null, ?string $ref = null)
+    public function __construct(?float $statusCode = null, ?string $error = null, ?string $typeName = null, ?string $message = null, string|Two|null $detail = null, ?string $ref = null)
     {
         $this->statusCode = $statusCode;
         $this->error = $error;
