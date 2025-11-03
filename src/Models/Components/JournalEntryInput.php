@@ -51,6 +51,15 @@ class JournalEntryInput
     public ?array $passThrough = null;
 
     /**
+     * Display ID of the journal entry
+     *
+     * @var ?string $displayId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('display_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $displayId = null;
+
+    /**
      * Journal entry title
      *
      * @var ?string $title
@@ -202,6 +211,7 @@ class JournalEntryInput
      * @param  ?\DateTime  $postedAt
      * @param  ?array<CustomField>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?string  $displayId
      * @param  ?string  $title
      * @param  ?float  $currencyRate
      * @param  ?Currency  $currency
@@ -220,12 +230,13 @@ class JournalEntryInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?array $lineItems = null, ?\DateTime $postedAt = null, ?array $customFields = null, ?array $passThrough = null, ?string $title = null, ?float $currencyRate = null, ?Currency $currency = null, ?string $companyId = null, ?JournalEntryStatus $status = null, ?string $memo = null, ?string $journalSymbol = null, ?string $taxType = null, ?string $taxCode = null, ?string $number = null, ?array $trackingCategories = null, ?string $accountingPeriod = null, ?bool $taxInclusive = null, ?string $sourceType = null, ?string $sourceId = null, ?string $rowVersion = null)
+    public function __construct(?array $lineItems = null, ?\DateTime $postedAt = null, ?array $customFields = null, ?array $passThrough = null, ?string $displayId = null, ?string $title = null, ?float $currencyRate = null, ?Currency $currency = null, ?string $companyId = null, ?JournalEntryStatus $status = null, ?string $memo = null, ?string $journalSymbol = null, ?string $taxType = null, ?string $taxCode = null, ?string $number = null, ?array $trackingCategories = null, ?string $accountingPeriod = null, ?bool $taxInclusive = null, ?string $sourceType = null, ?string $sourceId = null, ?string $rowVersion = null)
     {
         $this->lineItems = $lineItems;
         $this->postedAt = $postedAt;
         $this->customFields = $customFields;
         $this->passThrough = $passThrough;
+        $this->displayId = $displayId;
         $this->title = $title;
         $this->currencyRate = $currencyRate;
         $this->currency = $currency;

@@ -237,14 +237,6 @@ class Connection
     public ?bool $hasGuide = null;
 
     /**
-     *
-     * @var ?float $createdAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?float $createdAt = null;
-
-    /**
      * List of custom mappings configured for this connection
      *
      * @var ?array<CustomMapping> $customMappings
@@ -291,6 +283,42 @@ class Connection
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\DataScopes|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?DataScopes $applicationDataScopes = null;
+
+    /**
+     * Operational health status of the connection
+     *
+     * @var ?Health $health
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('health')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Health|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Health $health = null;
+
+    /**
+     * Unix timestamp in milliseconds when credentials will be deleted if token refresh continues to fail. A value of 0 indicates no active retention window (connection is healthy or not using OAuth token refresh).
+     *
+     * @var ?float $credentialsExpireAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('credentials_expire_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $credentialsExpireAt = null;
+
+    /**
+     * Unix timestamp in milliseconds of the last failed token refresh attempt. A value of 0 indicates no recent failures. This field is used internally to enforce cooldown periods between retry attempts.
+     *
+     * @var ?float $lastRefreshFailedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('last_refresh_failed_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $lastRefreshFailedAt = null;
+
+    /**
+     *
+     * @var ?float $createdAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $createdAt = null;
 
     /**
      * The OAuth redirect URI. Redirect your users to this URI to let them authorize your app in the connector's UI. Before you can use this URI, you must add `redirect_uri` as a query parameter to the `authorize_url`. Be sure to URL encode the `redirect_uri` part. Your users will be redirected to this `redirect_uri` after they granted access to your app in the connector's UI.
@@ -363,12 +391,15 @@ class Connection
      * @param  ?array<string>  $settingsRequiredForAuthorization
      * @param  ?array<WebhookSubscription>  $subscriptions
      * @param  ?bool  $hasGuide
-     * @param  ?float  $createdAt
      * @param  ?array<CustomMapping>  $customMappings
      * @param  ?ConsentState  $consentState
      * @param  ?array<ConsentRecord>  $consents
      * @param  ?ConsentRecord  $latestConsent
      * @param  ?DataScopes  $applicationDataScopes
+     * @param  ?Health  $health
+     * @param  ?float  $credentialsExpireAt
+     * @param  ?float  $lastRefreshFailedAt
+     * @param  ?float  $createdAt
      * @param  ?string  $authorizeUrl
      * @param  ?string  $revokeUrl
      * @param  ?array<string, mixed>  $settings
@@ -376,7 +407,7 @@ class Connection
      * @param  ?float  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $serviceId = null, ?string $name = null, ?string $tagLine = null, ?string $unifiedApi = null, ?ConnectionState $state = null, ?IntegrationState $integrationState = null, ?AuthType $authType = null, ?OAuthGrantType $oauthGrantType = null, ?ConnectionStatus $status = null, ?bool $enabled = null, ?string $website = null, ?string $icon = null, ?string $logo = null, ?array $formFields = null, ?array $configuration = null, ?array $configurableResources = null, ?array $resourceSchemaSupport = null, ?array $resourceSettingsSupport = null, ?bool $validationSupport = null, ?bool $schemaSupport = null, ?array $settingsRequiredForAuthorization = null, ?array $subscriptions = null, ?bool $hasGuide = null, ?float $createdAt = null, ?array $customMappings = null, ?ConsentState $consentState = null, ?array $consents = null, ?ConsentRecord $latestConsent = null, ?DataScopes $applicationDataScopes = null, ?string $authorizeUrl = null, ?string $revokeUrl = null, ?array $settings = null, ?array $metadata = null, ?float $updatedAt = null)
+    public function __construct(?string $id = null, ?string $serviceId = null, ?string $name = null, ?string $tagLine = null, ?string $unifiedApi = null, ?ConnectionState $state = null, ?IntegrationState $integrationState = null, ?AuthType $authType = null, ?OAuthGrantType $oauthGrantType = null, ?ConnectionStatus $status = null, ?bool $enabled = null, ?string $website = null, ?string $icon = null, ?string $logo = null, ?array $formFields = null, ?array $configuration = null, ?array $configurableResources = null, ?array $resourceSchemaSupport = null, ?array $resourceSettingsSupport = null, ?bool $validationSupport = null, ?bool $schemaSupport = null, ?array $settingsRequiredForAuthorization = null, ?array $subscriptions = null, ?bool $hasGuide = null, ?array $customMappings = null, ?ConsentState $consentState = null, ?array $consents = null, ?ConsentRecord $latestConsent = null, ?DataScopes $applicationDataScopes = null, ?Health $health = null, ?float $credentialsExpireAt = null, ?float $lastRefreshFailedAt = null, ?float $createdAt = null, ?string $authorizeUrl = null, ?string $revokeUrl = null, ?array $settings = null, ?array $metadata = null, ?float $updatedAt = null)
     {
         $this->id = $id;
         $this->serviceId = $serviceId;
@@ -402,12 +433,15 @@ class Connection
         $this->settingsRequiredForAuthorization = $settingsRequiredForAuthorization;
         $this->subscriptions = $subscriptions;
         $this->hasGuide = $hasGuide;
-        $this->createdAt = $createdAt;
         $this->customMappings = $customMappings;
         $this->consentState = $consentState;
         $this->consents = $consents;
         $this->latestConsent = $latestConsent;
         $this->applicationDataScopes = $applicationDataScopes;
+        $this->health = $health;
+        $this->credentialsExpireAt = $credentialsExpireAt;
+        $this->lastRefreshFailedAt = $lastRefreshFailedAt;
+        $this->createdAt = $createdAt;
         $this->authorizeUrl = $authorizeUrl;
         $this->revokeUrl = $revokeUrl;
         $this->settings = $settings;

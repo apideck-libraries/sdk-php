@@ -50,6 +50,15 @@ class SubsidiaryInput
     public ?string $name = null;
 
     /**
+     * Display ID of the subsidiary
+     *
+     * @var ?string $displayId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('display_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $displayId = null;
+
+    /**
      * List of currencies supported by this subsidiary
      *
      * @var ?array<?Currency> $currencies
@@ -73,16 +82,18 @@ class SubsidiaryInput
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $parentId
      * @param  ?string  $name
+     * @param  ?string  $displayId
      * @param  ?array<?Currency>  $currencies
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?SubsidiaryStatus $status = null, ?array $passThrough = null, ?string $parentId = null, ?string $name = null, ?array $currencies = null, ?string $rowVersion = null)
+    public function __construct(?SubsidiaryStatus $status = null, ?array $passThrough = null, ?string $parentId = null, ?string $name = null, ?string $displayId = null, ?array $currencies = null, ?string $rowVersion = null)
     {
         $this->status = $status;
         $this->passThrough = $passThrough;
         $this->parentId = $parentId;
         $this->name = $name;
+        $this->displayId = $displayId;
         $this->currencies = $currencies;
         $this->rowVersion = $rowVersion;
     }

@@ -69,6 +69,15 @@ class JournalEntry
     public ?string $downstreamId = null;
 
     /**
+     * Display ID of the journal entry
+     *
+     * @var ?string $displayId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('display_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $displayId = null;
+
+    /**
      * Journal entry title
      *
      * @var ?string $title
@@ -268,6 +277,7 @@ class JournalEntry
      * @param  ?array<CustomField>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $downstreamId
+     * @param  ?string  $displayId
      * @param  ?string  $title
      * @param  ?float  $currencyRate
      * @param  ?Currency  $currency
@@ -291,7 +301,7 @@ class JournalEntry
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?array $lineItems = null, ?\DateTime $postedAt = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $title = null, ?float $currencyRate = null, ?Currency $currency = null, ?string $companyId = null, ?JournalEntryStatus $status = null, ?string $memo = null, ?string $journalSymbol = null, ?string $taxType = null, ?string $taxCode = null, ?string $number = null, ?array $trackingCategories = null, ?string $accountingPeriod = null, ?bool $taxInclusive = null, ?string $sourceType = null, ?string $sourceId = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null)
+    public function __construct(?string $id = null, ?array $lineItems = null, ?\DateTime $postedAt = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $displayId = null, ?string $title = null, ?float $currencyRate = null, ?Currency $currency = null, ?string $companyId = null, ?JournalEntryStatus $status = null, ?string $memo = null, ?string $journalSymbol = null, ?string $taxType = null, ?string $taxCode = null, ?string $number = null, ?array $trackingCategories = null, ?string $accountingPeriod = null, ?bool $taxInclusive = null, ?string $sourceType = null, ?string $sourceId = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null)
     {
         $this->id = $id;
         $this->lineItems = $lineItems;
@@ -299,6 +309,7 @@ class JournalEntry
         $this->customFields = $customFields;
         $this->passThrough = $passThrough;
         $this->downstreamId = $downstreamId;
+        $this->displayId = $displayId;
         $this->title = $title;
         $this->currencyRate = $currencyRate;
         $this->currency = $currency;
