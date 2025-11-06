@@ -105,7 +105,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingExpensesAddRequest(
     serviceId: 'salesforce',
-    expense: new Components\Expense1Input(
+    expense: new Components\ExpenseInput(
         number: 'OIT00546',
         transactionDate: Utils\Utils::parseDateTime('2021-05-01T12:00:00.000Z'),
         accountId: '123456',
@@ -354,7 +354,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingExpensesUpdateRequest(
     id: '<id>',
     serviceId: 'salesforce',
-    expense: new Components\Expense1Input(
+    expense: new Components\ExpenseInput(
         number: 'OIT00546',
         transactionDate: Utils\Utils::parseDateTime('2021-05-01T12:00:00.000Z'),
         accountId: '123456',

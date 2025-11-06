@@ -120,7 +120,7 @@ $request = new Operations\AccountingPaymentsAddRequest(
         paymentMethod: 'cash',
         paymentMethodReference: '123456',
         paymentMethodId: '12345',
-        account: new Components\LinkedLedgerAccountInput(
+        account: new Components\LinkedLedgerAccount(
             id: '123456',
             nominalCode: 'N091',
             code: '453',
@@ -325,7 +325,7 @@ $request = new Operations\AccountingPaymentsUpdateRequest(
         paymentMethod: 'cash',
         paymentMethodReference: '123456',
         paymentMethodId: '12345',
-        account: new Components\LinkedLedgerAccountInput(
+        account: new Components\LinkedLedgerAccount(
             id: '123456',
             nominalCode: 'N091',
             code: '453',

@@ -255,12 +255,12 @@ class SupplierInput
 
     /**
      *
-     * @var ?LinkedLedgerAccountInput $account
+     * @var ?LinkedLedgerAccount $account
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('account')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccountInput|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LinkedLedgerAccountInput $account = null;
+    public ?LinkedLedgerAccount $account = null;
 
     /**
      * Supplier status
@@ -353,7 +353,7 @@ class SupplierInput
      * @param  ?string  $notes
      * @param  ?string  $taxNumber
      * @param  ?Currency  $currency
-     * @param  ?LinkedLedgerAccountInput  $account
+     * @param  ?LinkedLedgerAccount  $account
      * @param  ?SupplierStatus  $status
      * @param  ?string  $paymentMethod
      * @param  ?string  $terms
@@ -363,7 +363,7 @@ class SupplierInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $taxDetails = null, ?array $taxStatusDetails = null, ?array $passThrough = null, ?string $subsidiaryId = null, ?string $integrationSystemId = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $supplierCategory = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?string $notes = null, ?string $taxNumber = null, ?Currency $currency = null, ?LinkedLedgerAccountInput $account = null, ?SupplierStatus $status = null, ?string $paymentMethod = null, ?string $terms = null, ?string $channel = null, ?string $issuedMethod = null, ?string $issuedEmail = null, ?string $rowVersion = null)
+    public function __construct(?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $taxDetails = null, ?array $taxStatusDetails = null, ?array $passThrough = null, ?string $subsidiaryId = null, ?string $integrationSystemId = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $supplierCategory = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?string $notes = null, ?string $taxNumber = null, ?Currency $currency = null, ?LinkedLedgerAccount $account = null, ?SupplierStatus $status = null, ?string $paymentMethod = null, ?string $terms = null, ?string $channel = null, ?string $issuedMethod = null, ?string $issuedEmail = null, ?string $rowVersion = null)
     {
         $this->addresses = $addresses;
         $this->phoneNumbers = $phoneNumbers;

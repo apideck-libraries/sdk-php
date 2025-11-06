@@ -48,9 +48,19 @@ class ExpenseLineItemInput
     public ?float $totalAmount;
 
     /**
+     *
+     * @var ?LinkedInvoiceItem $item
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('item')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedInvoiceItem|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedInvoiceItem $item = null;
+
+    /**
      * Boolean that indicates if the line item is billable or not.
      *
      * @var ?bool $billable
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('billable')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
@@ -68,12 +78,12 @@ class ExpenseLineItemInput
 
     /**
      *
-     * @var ?LinkedLedgerAccountInput $account
+     * @var ?LinkedLedgerAccount $account
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('account')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccountInput|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LinkedLedgerAccountInput $account = null;
+    public ?LinkedLedgerAccount $account = null;
 
     /**
      * The ID of the department
@@ -112,6 +122,41 @@ class ExpenseLineItemInput
     public ?string $description = null;
 
     /**
+     * Line Item type
+     *
+     * @var ?LineItemType $type
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LineItemType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LineItemType $type = null;
+
+    /**
+     * Tax amount
+     *
+     * @var ?float $taxAmount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_amount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $taxAmount = null;
+
+    /**
+     *
+     * @var ?float $quantity
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('quantity')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $quantity = null;
+
+    /**
+     *
+     * @var ?float $unitPrice
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('unit_price')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $unitPrice = null;
+
+    /**
      * Line number of the resource
      *
      * @var ?int $lineNumber
@@ -135,23 +180,29 @@ class ExpenseLineItemInput
      * @param  ?string  $customerId
      * @param  ?LinkedTaxRateInput  $taxRate
      * @param  ?float  $totalAmount
+     * @param  ?LinkedInvoiceItem  $item
      * @param  ?bool  $billable
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
-     * @param  ?LinkedLedgerAccountInput  $account
+     * @param  ?LinkedLedgerAccount  $account
      * @param  ?string  $departmentId
      * @param  ?string  $locationId
      * @param  ?string  $subsidiaryId
      * @param  ?string  $description
+     * @param  ?LineItemType  $type
+     * @param  ?float  $taxAmount
+     * @param  ?float  $quantity
+     * @param  ?float  $unitPrice
      * @param  ?int  $lineNumber
      * @param  ?Rebilling  $rebilling
      * @phpstan-pure
      */
-    public function __construct(?string $accountId = null, ?string $customerId = null, ?LinkedTaxRateInput $taxRate = null, ?float $totalAmount = null, ?bool $billable = null, ?array $trackingCategories = null, ?LinkedLedgerAccountInput $account = null, ?string $departmentId = null, ?string $locationId = null, ?string $subsidiaryId = null, ?string $description = null, ?int $lineNumber = null, ?Rebilling $rebilling = null)
+    public function __construct(?string $accountId = null, ?string $customerId = null, ?LinkedTaxRateInput $taxRate = null, ?float $totalAmount = null, ?LinkedInvoiceItem $item = null, ?bool $billable = null, ?array $trackingCategories = null, ?LinkedLedgerAccount $account = null, ?string $departmentId = null, ?string $locationId = null, ?string $subsidiaryId = null, ?string $description = null, ?LineItemType $type = null, ?float $taxAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?int $lineNumber = null, ?Rebilling $rebilling = null)
     {
         $this->accountId = $accountId;
         $this->customerId = $customerId;
         $this->taxRate = $taxRate;
         $this->totalAmount = $totalAmount;
+        $this->item = $item;
         $this->billable = $billable;
         $this->trackingCategories = $trackingCategories;
         $this->account = $account;
@@ -159,6 +210,10 @@ class ExpenseLineItemInput
         $this->locationId = $locationId;
         $this->subsidiaryId = $subsidiaryId;
         $this->description = $description;
+        $this->type = $type;
+        $this->taxAmount = $taxAmount;
+        $this->quantity = $quantity;
+        $this->unitPrice = $unitPrice;
         $this->lineNumber = $lineNumber;
         $this->rebilling = $rebilling;
     }

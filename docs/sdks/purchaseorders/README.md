@@ -188,7 +188,7 @@ $request = new Operations\AccountingPurchaseOrdersAddRequest(
                         name: 'New York',
                     ),
                 ],
-                ledgerAccount: new Components\LinkedLedgerAccountInput(
+                ledgerAccount: new Components\LinkedLedgerAccount(
                     id: '123456',
                     nominalCode: 'N091',
                     code: '453',
@@ -234,7 +234,7 @@ $request = new Operations\AccountingPurchaseOrdersAddRequest(
                         name: 'New York',
                     ),
                 ],
-                ledgerAccount: new Components\LinkedLedgerAccountInput(
+                ledgerAccount: new Components\LinkedLedgerAccount(
                     id: '123456',
                     nominalCode: 'N091',
                     code: '453',
@@ -280,7 +280,7 @@ $request = new Operations\AccountingPurchaseOrdersAddRequest(
                         name: 'New York',
                     ),
                 ],
-                ledgerAccount: new Components\LinkedLedgerAccountInput(
+                ledgerAccount: new Components\LinkedLedgerAccount(
                     id: '123456',
                     nominalCode: 'N091',
                     code: '453',
@@ -322,7 +322,7 @@ $request = new Operations\AccountingPurchaseOrdersAddRequest(
             notes: 'Address notes or delivery instructions.',
             rowVersion: '1-12345',
         ),
-        ledgerAccount: new Components\LinkedLedgerAccountInput(
+        ledgerAccount: new Components\LinkedLedgerAccount(
             id: '123456',
             nominalCode: 'N091',
             code: '453',
@@ -619,7 +619,7 @@ $request = new Operations\AccountingPurchaseOrdersUpdateRequest(
                     rate: 10,
                 ),
                 trackingCategories: null,
-                ledgerAccount: new Components\LinkedLedgerAccountInput(
+                ledgerAccount: new Components\LinkedLedgerAccount(
                     id: '123456',
                     nominalCode: 'N091',
                     code: '453',
@@ -672,7 +672,7 @@ $request = new Operations\AccountingPurchaseOrdersUpdateRequest(
                     rate: 10,
                 ),
                 trackingCategories: null,
-                ledgerAccount: new Components\LinkedLedgerAccountInput(
+                ledgerAccount: new Components\LinkedLedgerAccount(
                     id: '123456',
                     nominalCode: 'N091',
                     code: '453',
@@ -726,7 +726,7 @@ $request = new Operations\AccountingPurchaseOrdersUpdateRequest(
             notes: 'Address notes or delivery instructions.',
             rowVersion: '1-12345',
         ),
-        ledgerAccount: new Components\LinkedLedgerAccountInput(
+        ledgerAccount: new Components\LinkedLedgerAccount(
             id: '123456',
             nominalCode: 'N091',
             code: '453',

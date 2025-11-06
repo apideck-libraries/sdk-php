@@ -207,7 +207,7 @@ class BillInput
     public ?float $deposit = null;
 
     /**
-     * Sub-total amount, normally before tax.
+     * Subtotal amount, normally before tax.
      *
      * @var ?float $subTotal
      */
@@ -216,7 +216,7 @@ class BillInput
     public ?float $subTotal = null;
 
     /**
-     * Total tax amount applied to this bill.
+     * Total tax amount applied to this transaction.
      *
      * @var ?float $totalTax
      */
@@ -262,12 +262,12 @@ class BillInput
 
     /**
      *
-     * @var ?LinkedLedgerAccountInput $ledgerAccount
+     * @var ?LinkedLedgerAccount $ledgerAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('ledger_account')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccountInput|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LinkedLedgerAccountInput $ledgerAccount = null;
+    public ?LinkedLedgerAccount $ledgerAccount = null;
 
     /**
      * Payment method used for the transaction, such as cash, credit card, bank transfer, or check
@@ -425,7 +425,7 @@ class BillInput
      * @param  ?string  $taxCode
      * @param  ?string  $notes
      * @param  ?BillStatus  $status
-     * @param  ?LinkedLedgerAccountInput  $ledgerAccount
+     * @param  ?LinkedLedgerAccount  $ledgerAccount
      * @param  ?string  $paymentMethod
      * @param  ?string  $channel
      * @param  ?string  $language
@@ -442,7 +442,7 @@ class BillInput
      * @param  ?string  $accountingPeriod
      * @phpstan-pure
      */
-    public function __construct(?array $lineItems = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?array $attachments = null, ?string $displayId = null, ?string $billNumber = null, ?LinkedSupplierInput $supplier = null, ?string $companyId = null, ?string $departmentId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?LocalDate $billDate = null, ?LocalDate $dueDate = null, ?LocalDate $paidDate = null, ?string $poNumber = null, ?string $reference = null, ?string $terms = null, ?float $balance = null, ?float $deposit = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?string $taxCode = null, ?string $notes = null, ?BillStatus $status = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?float $discountPercentage = null, ?string $templateId = null, ?string $approvedBy = null, ?AmortizationType $amortizationType = null, ?string $taxMethod = null, ?bool $documentReceived = null, ?string $sourceDocumentUrl = null, ?array $trackingCategories = null, ?string $rowVersion = null, ?string $accountingPeriod = null)
+    public function __construct(?array $lineItems = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?array $attachments = null, ?string $displayId = null, ?string $billNumber = null, ?LinkedSupplierInput $supplier = null, ?string $companyId = null, ?string $departmentId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?LocalDate $billDate = null, ?LocalDate $dueDate = null, ?LocalDate $paidDate = null, ?string $poNumber = null, ?string $reference = null, ?string $terms = null, ?float $balance = null, ?float $deposit = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?string $taxCode = null, ?string $notes = null, ?BillStatus $status = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?float $discountPercentage = null, ?string $templateId = null, ?string $approvedBy = null, ?AmortizationType $amortizationType = null, ?string $taxMethod = null, ?bool $documentReceived = null, ?string $sourceDocumentUrl = null, ?array $trackingCategories = null, ?string $rowVersion = null, ?string $accountingPeriod = null)
     {
         $this->lineItems = $lineItems;
         $this->bankAccount = $bankAccount;

@@ -149,6 +149,7 @@ $request = new Operations\AccountingProjectsAddRequest(
         phase: Components\ProjectPhase::Execution,
         taxRate: new Components\LinkedTaxRateInput(
             id: '123456',
+            code: 'N-T',
             rate: 10,
         ),
         trackingCategories: [
@@ -358,6 +359,7 @@ $request = new Operations\AccountingProjectsUpdateRequest(
         phase: Components\ProjectPhase::Execution,
         taxRate: new Components\LinkedTaxRateInput(
             id: '123456',
+            code: 'N-T',
             rate: 10,
         ),
         trackingCategories: [
