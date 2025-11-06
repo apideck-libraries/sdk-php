@@ -158,7 +158,7 @@ $request = new Operations\AccountingBillsAddRequest(
                 code: '120-C',
                 lineNumber: 1,
                 description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-                type: Components\BillLineItemType::ExpenseAccount,
+                type: Components\LineItemType::ExpenseAccount,
                 taxAmount: 27500,
                 totalAmount: 27500,
                 quantity: 1,
@@ -177,7 +177,7 @@ $request = new Operations\AccountingBillsAddRequest(
                     id: '123456',
                     rate: 10,
                 ),
-                ledgerAccount: new Components\LinkedLedgerAccountInput(
+                ledgerAccount: new Components\LinkedLedgerAccount(
                     id: '123456',
                     nominalCode: 'N091',
                     code: '453',
@@ -208,7 +208,7 @@ $request = new Operations\AccountingBillsAddRequest(
         taxCode: '1234',
         notes: 'Some notes about this bill.',
         status: Components\BillStatus::Draft,
-        ledgerAccount: new Components\LinkedLedgerAccountInput(
+        ledgerAccount: new Components\LinkedLedgerAccount(
             id: '123456',
             nominalCode: 'N091',
             code: '453',
@@ -511,7 +511,7 @@ $request = new Operations\AccountingBillsUpdateRequest(
                 code: '120-C',
                 lineNumber: 1,
                 description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-                type: Components\BillLineItemType::ExpenseAccount,
+                type: Components\LineItemType::ExpenseAccount,
                 taxAmount: 27500,
                 totalAmount: 27500,
                 quantity: 1,
@@ -530,7 +530,7 @@ $request = new Operations\AccountingBillsUpdateRequest(
                     id: '123456',
                     rate: 10,
                 ),
-                ledgerAccount: new Components\LinkedLedgerAccountInput(
+                ledgerAccount: new Components\LinkedLedgerAccount(
                     id: '123456',
                     nominalCode: 'N091',
                     code: '453',
@@ -548,7 +548,7 @@ $request = new Operations\AccountingBillsUpdateRequest(
                 code: '120-C',
                 lineNumber: 1,
                 description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
-                type: Components\BillLineItemType::ExpenseAccount,
+                type: Components\LineItemType::ExpenseAccount,
                 taxAmount: 27500,
                 totalAmount: 27500,
                 quantity: 1,
@@ -567,7 +567,7 @@ $request = new Operations\AccountingBillsUpdateRequest(
                     id: '123456',
                     rate: 10,
                 ),
-                ledgerAccount: new Components\LinkedLedgerAccountInput(
+                ledgerAccount: new Components\LinkedLedgerAccount(
                     id: '123456',
                     nominalCode: 'N091',
                     code: '453',
@@ -590,7 +590,7 @@ $request = new Operations\AccountingBillsUpdateRequest(
         taxCode: '1234',
         notes: 'Some notes about this bill.',
         status: Components\BillStatus::Draft,
-        ledgerAccount: new Components\LinkedLedgerAccountInput(
+        ledgerAccount: new Components\LinkedLedgerAccount(
             id: '123456',
             nominalCode: 'N091',
             code: '453',

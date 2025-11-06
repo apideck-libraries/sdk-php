@@ -85,14 +85,14 @@ class BillLineItem
     public ?string $description = null;
 
     /**
-     * Bill Line Item type
+     * Line Item type
      *
-     * @var ?BillLineItemType $type
+     * @var ?LineItemType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BillLineItemType|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LineItemType|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?BillLineItemType $type = null;
+    public ?LineItemType $type = null;
 
     /**
      * Tax amount
@@ -365,7 +365,7 @@ class BillLineItem
      * @param  ?string  $code
      * @param  ?int  $lineNumber
      * @param  ?string  $description
-     * @param  ?BillLineItemType  $type
+     * @param  ?LineItemType  $type
      * @param  ?float  $taxAmount
      * @param  ?float  $totalAmount
      * @param  ?float  $quantity
@@ -397,7 +397,7 @@ class BillLineItem
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRate $taxRate = null, ?array $worktags = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?BillLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $locationId = null, ?string $departmentId = null, ?string $subsidiaryId = null, ?string $categoryId = null, ?string $shippingId = null, ?string $memo = null, ?bool $prepaid = null, ?string $taxApplicableOn = null, ?string $taxRecoverability = null, ?string $taxMethod = null, ?float $retentionAmount = null, ?float $paymentAmount = null, ?LinkedLedgerAccount $ledgerAccount = null, ?LinkedPurchaseOrder $purchaseOrder = null, ?array $trackingCategories = null, ?LinkedCustomer $customer = null, ?Rebilling $rebilling = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(?string $id = null, ?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRate $taxRate = null, ?array $worktags = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?LineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $locationId = null, ?string $departmentId = null, ?string $subsidiaryId = null, ?string $categoryId = null, ?string $shippingId = null, ?string $memo = null, ?bool $prepaid = null, ?string $taxApplicableOn = null, ?string $taxRecoverability = null, ?string $taxMethod = null, ?float $retentionAmount = null, ?float $paymentAmount = null, ?LinkedLedgerAccount $ledgerAccount = null, ?LinkedPurchaseOrder $purchaseOrder = null, ?array $trackingCategories = null, ?LinkedCustomer $customer = null, ?Rebilling $rebilling = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
         $this->rowId = $rowId;

@@ -218,7 +218,7 @@ $request = new Operations\AccountingSuppliersAddRequest(
         ),
         taxNumber: 'US123945459',
         currency: Components\Currency::Usd,
-        account: new Components\LinkedLedgerAccountInput(
+        account: new Components\LinkedLedgerAccount(
             id: '123456',
             nominalCode: 'N091',
             code: '453',
@@ -495,7 +495,7 @@ $request = new Operations\AccountingSuppliersUpdateRequest(
         ),
         taxNumber: 'US123945459',
         currency: Components\Currency::Usd,
-        account: new Components\LinkedLedgerAccountInput(
+        account: new Components\LinkedLedgerAccount(
             id: '123456',
             nominalCode: 'N091',
             code: '453',

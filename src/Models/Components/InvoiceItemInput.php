@@ -158,30 +158,30 @@ class InvoiceItemInput
 
     /**
      *
-     * @var ?LinkedLedgerAccountInput $assetAccount
+     * @var ?LinkedLedgerAccount $assetAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('asset_account')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccountInput|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LinkedLedgerAccountInput $assetAccount = null;
+    public ?LinkedLedgerAccount $assetAccount = null;
 
     /**
      *
-     * @var ?LinkedLedgerAccountInput $incomeAccount
+     * @var ?LinkedLedgerAccount $incomeAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('income_account')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccountInput|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LinkedLedgerAccountInput $incomeAccount = null;
+    public ?LinkedLedgerAccount $incomeAccount = null;
 
     /**
      *
-     * @var ?LinkedLedgerAccountInput $expenseAccount
+     * @var ?LinkedLedgerAccount $expenseAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('expense_account')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccountInput|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LinkedLedgerAccountInput $expenseAccount = null;
+    public ?LinkedLedgerAccount $expenseAccount = null;
 
     /**
      *
@@ -273,9 +273,9 @@ class InvoiceItemInput
      * @param  ?float  $quantity
      * @param  ?float  $unitPrice
      * @param  ?Currency  $currency
-     * @param  ?LinkedLedgerAccountInput  $assetAccount
-     * @param  ?LinkedLedgerAccountInput  $incomeAccount
-     * @param  ?LinkedLedgerAccountInput  $expenseAccount
+     * @param  ?LinkedLedgerAccount  $assetAccount
+     * @param  ?LinkedLedgerAccount  $incomeAccount
+     * @param  ?LinkedLedgerAccount  $expenseAccount
      * @param  ?DeprecatedLinkedTrackingCategory  $trackingCategory
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?bool  $active
@@ -286,7 +286,7 @@ class InvoiceItemInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?InvoiceItemSalesDetails $salesDetails = null, ?InvoiceItemPurchaseDetails $purchaseDetails = null, ?array $passThrough = null, ?string $name = null, ?string $description = null, ?string $displayId = null, ?string $code = null, ?bool $sold = null, ?bool $purchased = null, ?bool $tracked = null, ?bool $taxable = null, ?LocalDate $inventoryDate = null, ?InvoiceItemTypeType $type = null, ?float $quantity = null, ?float $unitPrice = null, ?Currency $currency = null, ?LinkedLedgerAccountInput $assetAccount = null, ?LinkedLedgerAccountInput $incomeAccount = null, ?LinkedLedgerAccountInput $expenseAccount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?bool $active = null, ?string $departmentId = null, ?string $locationId = null, ?string $subsidiaryId = null, ?string $taxScheduleId = null, ?string $rowVersion = null)
+    public function __construct(?InvoiceItemSalesDetails $salesDetails = null, ?InvoiceItemPurchaseDetails $purchaseDetails = null, ?array $passThrough = null, ?string $name = null, ?string $description = null, ?string $displayId = null, ?string $code = null, ?bool $sold = null, ?bool $purchased = null, ?bool $tracked = null, ?bool $taxable = null, ?LocalDate $inventoryDate = null, ?InvoiceItemTypeType $type = null, ?float $quantity = null, ?float $unitPrice = null, ?Currency $currency = null, ?LinkedLedgerAccount $assetAccount = null, ?LinkedLedgerAccount $incomeAccount = null, ?LinkedLedgerAccount $expenseAccount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?bool $active = null, ?string $departmentId = null, ?string $locationId = null, ?string $subsidiaryId = null, ?string $taxScheduleId = null, ?string $rowVersion = null)
     {
         $this->salesDetails = $salesDetails;
         $this->purchaseDetails = $purchaseDetails;

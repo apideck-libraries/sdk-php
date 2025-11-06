@@ -112,8 +112,9 @@ $request = new Operations\AccountingBankAccountsAddRequest(
         name: 'Main Operating Account',
         accountNumber: '123465',
         accountType: Components\AccountingBankAccountAccountType::Checking,
-        ledgerAccount: new Components\LinkedLedgerAccountInput(
+        ledgerAccount: new Components\LinkedLedgerAccount(
             id: '123456',
+            name: 'Bank account',
             nominalCode: 'N091',
             code: '453',
             parentId: '123456',
@@ -265,8 +266,9 @@ $request = new Operations\AccountingBankAccountsUpdateRequest(
         name: 'Main Operating Account',
         accountNumber: '123465',
         accountType: Components\AccountingBankAccountAccountType::Checking,
-        ledgerAccount: new Components\LinkedLedgerAccountInput(
+        ledgerAccount: new Components\LinkedLedgerAccount(
             id: '123456',
+            name: 'Bank account',
             nominalCode: 'N091',
             code: '453',
             parentId: '123456',

@@ -21,6 +21,15 @@ class LinkedTaxRateInput
     public ?string $id = null;
 
     /**
+     * Tax rate code
+     *
+     * @var ?string $code
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('code')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $code = null;
+
+    /**
      * Rate of the tax rate
      *
      * @var ?float $rate
@@ -31,12 +40,14 @@ class LinkedTaxRateInput
 
     /**
      * @param  ?string  $id
+     * @param  ?string  $code
      * @param  ?float  $rate
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?float $rate = null)
+    public function __construct(?string $id = null, ?string $code = null, ?float $rate = null)
     {
         $this->id = $id;
+        $this->code = $code;
         $this->rate = $rate;
     }
 }

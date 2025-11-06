@@ -60,12 +60,12 @@ class AccountingBankAccountInput
 
     /**
      *
-     * @var ?LinkedLedgerAccountInput $ledgerAccount
+     * @var ?LinkedLedgerAccount $ledgerAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('ledger_account')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccountInput|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LinkedLedgerAccountInput $ledgerAccount = null;
+    public ?LinkedLedgerAccount $ledgerAccount = null;
 
     /**
      * The name of the bank or financial institution
@@ -201,7 +201,7 @@ class AccountingBankAccountInput
      * @param  ?string  $displayId
      * @param  ?string  $name
      * @param  ?string  $accountNumber
-     * @param  ?LinkedLedgerAccountInput  $ledgerAccount
+     * @param  ?LinkedLedgerAccount  $ledgerAccount
      * @param  ?string  $bankName
      * @param  ?Currency  $currency
      * @param  ?float  $balance
@@ -218,7 +218,7 @@ class AccountingBankAccountInput
      * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(?AccountingBankAccountAccountType $accountType = null, ?array $customFields = null, ?string $displayId = null, ?string $name = null, ?string $accountNumber = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $bankName = null, ?Currency $currency = null, ?float $balance = null, ?float $availableBalance = null, ?float $overdraftLimit = null, ?string $routingNumber = null, ?string $iban = null, ?string $bic = null, ?string $bsbNumber = null, ?string $branchIdentifier = null, ?string $bankCode = null, ?string $country = null, ?AccountingBankAccountStatus $status = null, ?string $description = null)
+    public function __construct(?AccountingBankAccountAccountType $accountType = null, ?array $customFields = null, ?string $displayId = null, ?string $name = null, ?string $accountNumber = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $bankName = null, ?Currency $currency = null, ?float $balance = null, ?float $availableBalance = null, ?float $overdraftLimit = null, ?string $routingNumber = null, ?string $iban = null, ?string $bic = null, ?string $bsbNumber = null, ?string $branchIdentifier = null, ?string $bankCode = null, ?string $country = null, ?AccountingBankAccountStatus $status = null, ?string $description = null)
     {
         $this->accountType = $accountType;
         $this->customFields = $customFields;

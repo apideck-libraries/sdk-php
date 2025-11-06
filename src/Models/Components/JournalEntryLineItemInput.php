@@ -31,11 +31,11 @@ class JournalEntryLineItemInput
 
     /**
      *
-     * @var ?LinkedLedgerAccountInput $ledgerAccount
+     * @var ?LinkedLedgerAccount $ledgerAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('ledger_account')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccountInput|null')]
-    public ?LinkedLedgerAccountInput $ledgerAccount;
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
+    public ?LinkedLedgerAccount $ledgerAccount;
 
     /**
      * Worktags of the line item. This is currently only supported in Workday.
@@ -153,7 +153,7 @@ class JournalEntryLineItemInput
     /**
      * @param  JournalEntryLineItemType  $type
      * @param  ?LinkedTaxRateInput  $taxRate
-     * @param  ?LinkedLedgerAccountInput  $ledgerAccount
+     * @param  ?LinkedLedgerAccount  $ledgerAccount
      * @param  ?array<?LinkedWorktag>  $worktags
      * @param  ?string  $description
      * @param  ?float  $taxAmount
@@ -168,7 +168,7 @@ class JournalEntryLineItemInput
      * @param  ?int  $lineNumber
      * @phpstan-pure
      */
-    public function __construct(JournalEntryLineItemType $type, ?LinkedTaxRateInput $taxRate = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?array $worktags = null, ?string $description = null, ?float $taxAmount = null, ?float $subTotal = null, ?float $totalAmount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?LinkedCustomerInput $customer = null, ?LinkedSupplierInput $supplier = null, ?string $departmentId = null, ?string $locationId = null, ?int $lineNumber = null)
+    public function __construct(JournalEntryLineItemType $type, ?LinkedTaxRateInput $taxRate = null, ?LinkedLedgerAccount $ledgerAccount = null, ?array $worktags = null, ?string $description = null, ?float $taxAmount = null, ?float $subTotal = null, ?float $totalAmount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?LinkedCustomerInput $customer = null, ?LinkedSupplierInput $supplier = null, ?string $departmentId = null, ?string $locationId = null, ?int $lineNumber = null)
     {
         $this->type = $type;
         $this->taxRate = $taxRate;

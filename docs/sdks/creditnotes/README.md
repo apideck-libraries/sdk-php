@@ -133,7 +133,7 @@ $request = new Operations\AccountingCreditNotesAddRequest(
         dateIssued: Utils\Utils::parseDateTime('2021-05-01T12:00:00.000Z'),
         datePaid: Utils\Utils::parseDateTime('2021-05-01T12:00:00.000Z'),
         type: Components\CreditNoteType::AccountsReceivableCredit,
-        account: new Components\LinkedLedgerAccountInput(
+        account: new Components\LinkedLedgerAccount(
             id: '123456',
             nominalCode: 'N091',
             code: '453',
@@ -174,7 +174,7 @@ $request = new Operations\AccountingCreditNotesAddRequest(
                         name: 'New York',
                     ),
                 ],
-                ledgerAccount: new Components\LinkedLedgerAccountInput(
+                ledgerAccount: new Components\LinkedLedgerAccount(
                     id: '123456',
                     nominalCode: 'N091',
                     code: '453',
@@ -435,7 +435,7 @@ $request = new Operations\AccountingCreditNotesUpdateRequest(
         dateIssued: Utils\Utils::parseDateTime('2021-05-01T12:00:00.000Z'),
         datePaid: Utils\Utils::parseDateTime('2021-05-01T12:00:00.000Z'),
         type: Components\CreditNoteType::AccountsReceivableCredit,
-        account: new Components\LinkedLedgerAccountInput(
+        account: new Components\LinkedLedgerAccount(
             id: '123456',
             nominalCode: 'N091',
             code: '453',
@@ -472,7 +472,7 @@ $request = new Operations\AccountingCreditNotesUpdateRequest(
                         name: 'New York',
                     ),
                 ],
-                ledgerAccount: new Components\LinkedLedgerAccountInput(
+                ledgerAccount: new Components\LinkedLedgerAccount(
                     id: '123456',
                     nominalCode: 'N091',
                     code: '453',

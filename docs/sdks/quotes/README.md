@@ -159,7 +159,7 @@ $request = new Operations\AccountingQuotesAddRequest(
                         parentName: 'New York',
                     ),
                 ],
-                ledgerAccount: new Components\LinkedLedgerAccountInput(
+                ledgerAccount: new Components\LinkedLedgerAccount(
                     id: '123456',
                     nominalCode: 'N091',
                     code: '453',
@@ -436,7 +436,7 @@ $request = new Operations\AccountingQuotesUpdateRequest(
                     rate: 10,
                 ),
                 trackingCategories: null,
-                ledgerAccount: new Components\LinkedLedgerAccountInput(
+                ledgerAccount: new Components\LinkedLedgerAccount(
                     id: '123456',
                     nominalCode: 'N091',
                     code: '453',

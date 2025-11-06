@@ -14,10 +14,10 @@ class AccountingExpensesAddRequest
 {
     /**
      *
-     * @var Components\Expense1Input|Components\Expense2Input|Components\Expense3 $expense
+     * @var Components\ExpenseInput $expense
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\Expense1Input|Components\Expense2Input|Components\Expense3 $expense;
+    public Components\ExpenseInput $expense;
 
     /**
      * ID of the consumer which you want to get or push data from
@@ -52,14 +52,14 @@ class AccountingExpensesAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\Expense1Input|Components\Expense2Input|Components\Expense3  $expense
+     * @param  Components\ExpenseInput  $expense
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @phpstan-pure
      */
-    public function __construct(Components\Expense1Input|Components\Expense2Input|Components\Expense3 $expense, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?bool $raw = false)
+    public function __construct(Components\ExpenseInput $expense, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?bool $raw = false)
     {
         $this->expense = $expense;
         $this->consumerId = $consumerId;

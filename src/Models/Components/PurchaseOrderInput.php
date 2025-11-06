@@ -225,12 +225,12 @@ class PurchaseOrderInput
 
     /**
      *
-     * @var ?LinkedLedgerAccountInput $ledgerAccount
+     * @var ?LinkedLedgerAccount $ledgerAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('ledger_account')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccountInput|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LinkedLedgerAccountInput $ledgerAccount = null;
+    public ?LinkedLedgerAccount $ledgerAccount = null;
 
     /**
      * Optional purchase order template
@@ -402,7 +402,7 @@ class PurchaseOrderInput
      * @param  ?float  $totalTax
      * @param  ?float  $total
      * @param  ?bool  $taxInclusive
-     * @param  ?LinkedLedgerAccountInput  $ledgerAccount
+     * @param  ?LinkedLedgerAccount  $ledgerAccount
      * @param  ?string  $templateId
      * @param  ?float  $discountPercentage
      * @param  ?bool  $accountingByRow
@@ -421,7 +421,7 @@ class PurchaseOrderInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?array $lineItems = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $displayId = null, ?string $poNumber = null, ?string $reference = null, ?LinkedSupplierInput $supplier = null, ?string $subsidiaryId = null, ?string $companyId = null, ?string $departmentId = null, ?PurchaseOrderStatus $status = null, ?LocalDate $issuedDate = null, ?LocalDate $deliveryDate = null, ?LocalDate $expectedArrivalDate = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?bool $taxInclusive = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $templateId = null, ?float $discountPercentage = null, ?bool $accountingByRow = null, ?LocalDate $dueDate = null, ?string $paymentMethod = null, ?string $terms = null, ?PurchaseOrderAmortizationType $amortizationType = null, ?string $taxCode = null, ?string $taxMethod = null, ?string $issuedMethod = null, ?string $issuedEmail = null, ?string $channel = null, ?string $memo = null, ?string $notes = null, ?array $trackingCategories = null, ?string $rowVersion = null)
+    public function __construct(?array $lineItems = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $displayId = null, ?string $poNumber = null, ?string $reference = null, ?LinkedSupplierInput $supplier = null, ?string $subsidiaryId = null, ?string $companyId = null, ?string $departmentId = null, ?PurchaseOrderStatus $status = null, ?LocalDate $issuedDate = null, ?LocalDate $deliveryDate = null, ?LocalDate $expectedArrivalDate = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?bool $taxInclusive = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $templateId = null, ?float $discountPercentage = null, ?bool $accountingByRow = null, ?LocalDate $dueDate = null, ?string $paymentMethod = null, ?string $terms = null, ?PurchaseOrderAmortizationType $amortizationType = null, ?string $taxCode = null, ?string $taxMethod = null, ?string $issuedMethod = null, ?string $issuedEmail = null, ?string $channel = null, ?string $memo = null, ?string $notes = null, ?array $trackingCategories = null, ?string $rowVersion = null)
     {
         $this->lineItems = $lineItems;
         $this->billingAddress = $billingAddress;

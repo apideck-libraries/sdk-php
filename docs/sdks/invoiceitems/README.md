@@ -141,17 +141,17 @@ $request = new Operations\AccountingInvoiceItemsAddRequest(
         ),
         quantity: 1,
         unitPrice: 27500.5,
-        assetAccount: new Components\LinkedLedgerAccountInput(
+        assetAccount: new Components\LinkedLedgerAccount(
             id: '123456',
             nominalCode: 'N091',
             code: '453',
         ),
-        incomeAccount: new Components\LinkedLedgerAccountInput(
+        incomeAccount: new Components\LinkedLedgerAccount(
             id: '123456',
             nominalCode: 'N091',
             code: '453',
         ),
-        expenseAccount: new Components\LinkedLedgerAccountInput(
+        expenseAccount: new Components\LinkedLedgerAccount(
             id: '123456',
             nominalCode: 'N091',
             code: '453',
@@ -340,13 +340,13 @@ $request = new Operations\AccountingInvoiceItemsUpdateRequest(
         ),
         quantity: 1,
         unitPrice: 27500.5,
-        assetAccount: new Components\LinkedLedgerAccountInput(
+        assetAccount: new Components\LinkedLedgerAccount(
             id: '123456',
             nominalCode: 'N091',
             code: '453',
         ),
         incomeAccount: null,
-        expenseAccount: new Components\LinkedLedgerAccountInput(
+        expenseAccount: new Components\LinkedLedgerAccount(
             id: '123456',
             nominalCode: 'N091',
             code: '453',

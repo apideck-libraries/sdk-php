@@ -141,7 +141,7 @@ $request = new Operations\AccountingJournalEntriesAddRequest(
                         name: 'New York',
                     ),
                 ],
-                ledgerAccount: new Components\LinkedLedgerAccountInput(
+                ledgerAccount: new Components\LinkedLedgerAccount(
                     id: '123456',
                     nominalCode: 'N091',
                     code: '453',
@@ -443,7 +443,7 @@ $request = new Operations\AccountingJournalEntriesUpdateRequest(
                         name: 'New York',
                     ),
                 ],
-                ledgerAccount: new Components\LinkedLedgerAccountInput(
+                ledgerAccount: new Components\LinkedLedgerAccount(
                     id: '123456',
                     nominalCode: 'N091',
                     code: '453',

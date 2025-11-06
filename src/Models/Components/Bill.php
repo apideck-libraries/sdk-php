@@ -225,7 +225,7 @@ class Bill
     public ?float $deposit = null;
 
     /**
-     * Sub-total amount, normally before tax.
+     * Subtotal amount, normally before tax.
      *
      * @var ?float $subTotal
      */
@@ -234,7 +234,7 @@ class Bill
     public ?float $subTotal = null;
 
     /**
-     * Total tax amount applied to this bill.
+     * Total tax amount applied to this transaction.
      *
      * @var ?float $totalTax
      */

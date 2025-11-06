@@ -9,9 +9,10 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 
-/** Expense status */
-enum Expense2Status: string
+/** Line Item type */
+enum LineItemType: string
 {
-    case Draft = 'draft';
-    case Posted = 'posted';
+    case ExpenseItem = 'expense_item';
+    case ExpenseAccount = 'expense_account';
+    case Other = 'other';
 }

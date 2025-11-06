@@ -236,12 +236,12 @@ class CreditNoteInput
 
     /**
      *
-     * @var ?LinkedLedgerAccountInput $account
+     * @var ?LinkedLedgerAccount $account
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('account')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccountInput|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LinkedLedgerAccountInput $account = null;
+    public ?LinkedLedgerAccount $account = null;
 
     /**
      * Optional note to be associated with the credit note.
@@ -305,14 +305,14 @@ class CreditNoteInput
      * @param  ?float  $remainingCredit
      * @param  ?string  $reference
      * @param  ?\DateTime  $datePaid
-     * @param  ?LinkedLedgerAccountInput  $account
+     * @param  ?LinkedLedgerAccount  $account
      * @param  ?string  $note
      * @param  ?string  $terms
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(float $totalAmount, ?CreditNoteStatus $status = null, ?\DateTime $dateIssued = null, ?CreditNoteType $type = null, ?array $lineItems = null, ?array $allocations = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?LinkedCustomerInput $customer = null, ?string $companyId = null, ?string $departmentId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $balance = null, ?float $remainingCredit = null, ?string $reference = null, ?\DateTime $datePaid = null, ?LinkedLedgerAccountInput $account = null, ?string $note = null, ?string $terms = null, ?array $trackingCategories = null, ?string $rowVersion = null)
+    public function __construct(float $totalAmount, ?CreditNoteStatus $status = null, ?\DateTime $dateIssued = null, ?CreditNoteType $type = null, ?array $lineItems = null, ?array $allocations = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?LinkedCustomerInput $customer = null, ?string $companyId = null, ?string $departmentId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $balance = null, ?float $remainingCredit = null, ?string $reference = null, ?\DateTime $datePaid = null, ?LinkedLedgerAccount $account = null, ?string $note = null, ?string $terms = null, ?array $trackingCategories = null, ?string $rowVersion = null)
     {
         $this->totalAmount = $totalAmount;
         $this->status = $status;

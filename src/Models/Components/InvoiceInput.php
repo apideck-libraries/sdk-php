@@ -383,12 +383,12 @@ class InvoiceInput
 
     /**
      *
-     * @var ?LinkedLedgerAccountInput $ledgerAccount
+     * @var ?LinkedLedgerAccount $ledgerAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('ledger_account')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccountInput|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LinkedLedgerAccountInput $ledgerAccount = null;
+    public ?LinkedLedgerAccount $ledgerAccount = null;
 
     /**
      * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
@@ -440,11 +440,11 @@ class InvoiceInput
      * @param  ?string  $channel
      * @param  ?string  $language
      * @param  ?bool  $accountingByRow
-     * @param  ?LinkedLedgerAccountInput  $ledgerAccount
+     * @param  ?LinkedLedgerAccount  $ledgerAccount
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?bool $invoiceSent = null, ?array $lineItems = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $displayId = null, ?InvoiceType $type = null, ?string $number = null, ?LinkedCustomerInput $customer = null, ?string $companyId = null, ?string $departmentId = null, ?LocalDate $invoiceDate = null, ?LocalDate $dueDate = null, ?string $terms = null, ?string $poNumber = null, ?string $reference = null, ?InvoiceStatus $status = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?float $total = null, ?float $balance = null, ?float $deposit = null, ?string $customerMemo = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?string $templateId = null, ?string $sourceDocumentUrl = null, ?array $paymentAllocations = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?string $rowVersion = null)
+    public function __construct(?bool $invoiceSent = null, ?array $lineItems = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $displayId = null, ?InvoiceType $type = null, ?string $number = null, ?LinkedCustomerInput $customer = null, ?string $companyId = null, ?string $departmentId = null, ?LocalDate $invoiceDate = null, ?LocalDate $dueDate = null, ?string $terms = null, ?string $poNumber = null, ?string $reference = null, ?InvoiceStatus $status = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?float $total = null, ?float $balance = null, ?float $deposit = null, ?string $customerMemo = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?string $templateId = null, ?string $sourceDocumentUrl = null, ?array $paymentAllocations = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $rowVersion = null)
     {
         $this->invoiceSent = $invoiceSent;
         $this->lineItems = $lineItems;

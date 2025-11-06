@@ -134,12 +134,12 @@ class BillPaymentInput
 
     /**
      *
-     * @var ?LinkedLedgerAccountInput $account
+     * @var ?LinkedLedgerAccount $account
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('account')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccountInput|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LinkedLedgerAccountInput $account = null;
+    public ?LinkedLedgerAccount $account = null;
 
     /**
      * The supplier this entity is linked to.
@@ -229,7 +229,7 @@ class BillPaymentInput
      * @param  ?string  $paymentMethod
      * @param  ?string  $paymentMethodReference
      * @param  ?string  $paymentMethodId
-     * @param  ?LinkedLedgerAccountInput  $account
+     * @param  ?LinkedLedgerAccount  $account
      * @param  ?LinkedSupplierInput  $supplier
      * @param  ?string  $companyId
      * @param  ?bool  $reconciled
@@ -240,7 +240,7 @@ class BillPaymentInput
      * @param  ?string  $displayId
      * @phpstan-pure
      */
-    public function __construct(?float $totalAmount = null, ?\DateTime $transactionDate = null, ?PaymentStatus $status = null, ?BillPaymentType $type = null, ?array $allocations = null, ?array $customFields = null, ?array $passThrough = null, ?Currency $currency = null, ?float $currencyRate = null, ?string $reference = null, ?string $paymentMethod = null, ?string $paymentMethodReference = null, ?string $paymentMethodId = null, ?LinkedLedgerAccountInput $account = null, ?LinkedSupplierInput $supplier = null, ?string $companyId = null, ?bool $reconciled = null, ?string $note = null, ?string $number = null, ?array $trackingCategories = null, ?string $rowVersion = null, ?string $displayId = null)
+    public function __construct(?float $totalAmount = null, ?\DateTime $transactionDate = null, ?PaymentStatus $status = null, ?BillPaymentType $type = null, ?array $allocations = null, ?array $customFields = null, ?array $passThrough = null, ?Currency $currency = null, ?float $currencyRate = null, ?string $reference = null, ?string $paymentMethod = null, ?string $paymentMethodReference = null, ?string $paymentMethodId = null, ?LinkedLedgerAccount $account = null, ?LinkedSupplierInput $supplier = null, ?string $companyId = null, ?bool $reconciled = null, ?string $note = null, ?string $number = null, ?array $trackingCategories = null, ?string $rowVersion = null, ?string $displayId = null)
     {
         $this->totalAmount = $totalAmount;
         $this->transactionDate = $transactionDate;

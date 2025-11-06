@@ -76,14 +76,14 @@ class BillLineItemInput
     public ?string $description = null;
 
     /**
-     * Bill Line Item type
+     * Line Item type
      *
-     * @var ?BillLineItemType $type
+     * @var ?LineItemType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BillLineItemType|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LineItemType|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?BillLineItemType $type = null;
+    public ?LineItemType $type = null;
 
     /**
      * Tax amount
@@ -256,12 +256,12 @@ class BillLineItemInput
 
     /**
      *
-     * @var ?LinkedLedgerAccountInput $ledgerAccount
+     * @var ?LinkedLedgerAccount $ledgerAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('ledger_account')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccountInput|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LinkedLedgerAccountInput $ledgerAccount = null;
+    public ?LinkedLedgerAccount $ledgerAccount = null;
 
     /**
      *
@@ -319,7 +319,7 @@ class BillLineItemInput
      * @param  ?string  $code
      * @param  ?int  $lineNumber
      * @param  ?string  $description
-     * @param  ?BillLineItemType  $type
+     * @param  ?LineItemType  $type
      * @param  ?float  $taxAmount
      * @param  ?float  $totalAmount
      * @param  ?float  $quantity
@@ -339,7 +339,7 @@ class BillLineItemInput
      * @param  ?string  $taxMethod
      * @param  ?float  $retentionAmount
      * @param  ?float  $paymentAmount
-     * @param  ?LinkedLedgerAccountInput  $ledgerAccount
+     * @param  ?LinkedLedgerAccount  $ledgerAccount
      * @param  ?LinkedPurchaseOrder  $purchaseOrder
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?LinkedCustomerInput  $customer
@@ -347,7 +347,7 @@ class BillLineItemInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRateInput $taxRate = null, ?array $worktags = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?BillLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $locationId = null, ?string $departmentId = null, ?string $subsidiaryId = null, ?string $categoryId = null, ?string $shippingId = null, ?string $memo = null, ?bool $prepaid = null, ?string $taxApplicableOn = null, ?string $taxRecoverability = null, ?string $taxMethod = null, ?float $retentionAmount = null, ?float $paymentAmount = null, ?LinkedLedgerAccountInput $ledgerAccount = null, ?LinkedPurchaseOrder $purchaseOrder = null, ?array $trackingCategories = null, ?LinkedCustomerInput $customer = null, ?Rebilling $rebilling = null, ?string $rowVersion = null)
+    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRateInput $taxRate = null, ?array $worktags = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?LineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $locationId = null, ?string $departmentId = null, ?string $subsidiaryId = null, ?string $categoryId = null, ?string $shippingId = null, ?string $memo = null, ?bool $prepaid = null, ?string $taxApplicableOn = null, ?string $taxRecoverability = null, ?string $taxMethod = null, ?float $retentionAmount = null, ?float $paymentAmount = null, ?LinkedLedgerAccount $ledgerAccount = null, ?LinkedPurchaseOrder $purchaseOrder = null, ?array $trackingCategories = null, ?LinkedCustomerInput $customer = null, ?Rebilling $rebilling = null, ?string $rowVersion = null)
     {
         $this->rowId = $rowId;
         $this->item = $item;

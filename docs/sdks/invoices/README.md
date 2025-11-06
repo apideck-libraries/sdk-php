@@ -276,7 +276,7 @@ $request = new Operations\AccountingInvoicesAddRequest(
             bankCode: 'BNH',
             currency: Components\Currency::Usd,
         ),
-        ledgerAccount: new Components\LinkedLedgerAccountInput(
+        ledgerAccount: new Components\LinkedLedgerAccount(
             id: '123456',
             nominalCode: 'N091',
             code: '453',
@@ -520,7 +520,7 @@ $request = new Operations\AccountingInvoicesUpdateRequest(
                         name: 'New York',
                     ),
                 ],
-                ledgerAccount: new Components\LinkedLedgerAccountInput(
+                ledgerAccount: new Components\LinkedLedgerAccount(
                     id: '123456',
                     nominalCode: 'N091',
                     code: '453',
@@ -631,7 +631,7 @@ $request = new Operations\AccountingInvoicesUpdateRequest(
             bankCode: 'BNH',
             currency: Components\Currency::Usd,
         ),
-        ledgerAccount: new Components\LinkedLedgerAccountInput(
+        ledgerAccount: new Components\LinkedLedgerAccount(
             id: '123456',
             nominalCode: 'N091',
             code: '453',
