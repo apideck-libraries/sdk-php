@@ -22,6 +22,15 @@ class SubsidiaryInput
     public ?SubsidiaryStatus $status = null;
 
     /**
+     *
+     * @var ?Address $address
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('address')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Address $address = null;
+
+    /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
      * @var ?array<PassThroughBody> $passThrough
@@ -79,6 +88,7 @@ class SubsidiaryInput
 
     /**
      * @param  ?SubsidiaryStatus  $status
+     * @param  ?Address  $address
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $parentId
      * @param  ?string  $name
@@ -87,9 +97,10 @@ class SubsidiaryInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?SubsidiaryStatus $status = null, ?array $passThrough = null, ?string $parentId = null, ?string $name = null, ?string $displayId = null, ?array $currencies = null, ?string $rowVersion = null)
+    public function __construct(?SubsidiaryStatus $status = null, ?Address $address = null, ?array $passThrough = null, ?string $parentId = null, ?string $name = null, ?string $displayId = null, ?array $currencies = null, ?string $rowVersion = null)
     {
         $this->status = $status;
+        $this->address = $address;
         $this->passThrough = $passThrough;
         $this->parentId = $parentId;
         $this->name = $name;
