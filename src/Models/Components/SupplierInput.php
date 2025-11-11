@@ -244,6 +244,15 @@ class SupplierInput
     public ?string $taxNumber = null;
 
     /**
+     * Whether the entity is subject to taxation
+     *
+     * @var ?bool $taxable
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('taxable')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $taxable = null;
+
+    /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
      * @var ?Currency $currency
@@ -352,6 +361,7 @@ class SupplierInput
      * @param  ?bool  $individual
      * @param  ?string  $notes
      * @param  ?string  $taxNumber
+     * @param  ?bool  $taxable
      * @param  ?Currency  $currency
      * @param  ?LinkedLedgerAccount  $account
      * @param  ?SupplierStatus  $status
@@ -363,7 +373,7 @@ class SupplierInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $taxDetails = null, ?array $taxStatusDetails = null, ?array $passThrough = null, ?string $subsidiaryId = null, ?string $integrationSystemId = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $supplierCategory = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?string $notes = null, ?string $taxNumber = null, ?Currency $currency = null, ?LinkedLedgerAccount $account = null, ?SupplierStatus $status = null, ?string $paymentMethod = null, ?string $terms = null, ?string $channel = null, ?string $issuedMethod = null, ?string $issuedEmail = null, ?string $rowVersion = null)
+    public function __construct(?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $taxDetails = null, ?array $taxStatusDetails = null, ?array $passThrough = null, ?string $subsidiaryId = null, ?string $integrationSystemId = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $supplierCategory = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?string $notes = null, ?string $taxNumber = null, ?bool $taxable = null, ?Currency $currency = null, ?LinkedLedgerAccount $account = null, ?SupplierStatus $status = null, ?string $paymentMethod = null, ?string $terms = null, ?string $channel = null, ?string $issuedMethod = null, ?string $issuedEmail = null, ?string $rowVersion = null)
     {
         $this->addresses = $addresses;
         $this->phoneNumbers = $phoneNumbers;
@@ -390,6 +400,7 @@ class SupplierInput
         $this->individual = $individual;
         $this->notes = $notes;
         $this->taxNumber = $taxNumber;
+        $this->taxable = $taxable;
         $this->currency = $currency;
         $this->account = $account;
         $this->status = $status;
