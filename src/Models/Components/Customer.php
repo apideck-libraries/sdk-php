@@ -232,6 +232,15 @@ class Customer
     public ?string $taxNumber = null;
 
     /**
+     * Whether the entity is subject to taxation
+     *
+     * @var ?bool $taxable
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('taxable')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $taxable = null;
+
+    /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
      * @var ?Currency $currency
@@ -377,6 +386,7 @@ class Customer
      * @param  ?bool  $project
      * @param  ?string  $notes
      * @param  ?string  $taxNumber
+     * @param  ?bool  $taxable
      * @param  ?Currency  $currency
      * @param  ?LinkedLedgerAccount  $account
      * @param  ?LinkedParentCustomer  $parent
@@ -392,7 +402,7 @@ class Customer
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(string $id, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $customerCategory = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?bool $project = null, ?string $notes = null, ?string $taxNumber = null, ?Currency $currency = null, ?LinkedLedgerAccount $account = null, ?LinkedParentCustomer $parent = null, ?CustomerStatusStatus $status = null, ?string $paymentMethod = null, ?string $terms = null, ?string $channel = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null)
+    public function __construct(string $id, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $customerCategory = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?bool $project = null, ?string $notes = null, ?string $taxNumber = null, ?bool $taxable = null, ?Currency $currency = null, ?LinkedLedgerAccount $account = null, ?LinkedParentCustomer $parent = null, ?CustomerStatusStatus $status = null, ?string $paymentMethod = null, ?string $terms = null, ?string $channel = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null)
     {
         $this->id = $id;
         $this->addresses = $addresses;
@@ -418,6 +428,7 @@ class Customer
         $this->project = $project;
         $this->notes = $notes;
         $this->taxNumber = $taxNumber;
+        $this->taxable = $taxable;
         $this->currency = $currency;
         $this->account = $account;
         $this->parent = $parent;
