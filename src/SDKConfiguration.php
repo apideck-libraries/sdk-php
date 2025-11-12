@@ -22,13 +22,13 @@ class SDKConfiguration
 
     public string $language = 'php';
 
-    public string $openapiDocVersion = '10.21.14';
+    public string $openapiDocVersion = '10.21.15';
 
-    public string $sdkVersion = '0.15.4';
+    public string $sdkVersion = '0.15.5';
 
-    public string $genVersion = '2.748.0';
+    public string $genVersion = '2.748.4';
 
-    public string $userAgent = 'speakeasy-sdk/php 0.15.4 2.748.0 10.21.14 apideck-libraries/sdk-php';
+    public string $userAgent = 'speakeasy-sdk/php 0.15.5 2.748.4 10.21.15 apideck-libraries/sdk-php';
     /** @var array<string, array<string, array<string, mixed>>> */
     public ?array $globals = [
         'parameters' => [],
