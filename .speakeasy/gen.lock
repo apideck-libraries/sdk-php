@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: a127b1f3e4fd52b93118790c2603c291
-  docVersion: 10.21.14
-  speakeasyVersion: 1.653.0
-  generationVersion: 2.748.0
-  releaseVersion: 0.15.4
-  configChecksum: 220c514103030222f7d7dcf0d1f7e5c9
+  docChecksum: db29eaf7f3b64d56236d11d01eac1adc
+  docVersion: 10.21.15
+  speakeasyVersion: 1.653.2
+  generationVersion: 2.748.4
+  releaseVersion: 0.15.5
+  configChecksum: 445e8805663aa35cd83ac001f0485d34
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php
   published: true
@@ -14,7 +14,7 @@ features:
   php:
     additionalProperties: 0.1.0
     constsAndDefaults: 0.2.0
-    core: 3.9.2
+    core: 3.9.3
     deepObjectParams: 0.1.0
     deprecations: 2.81.1
     errors: 0.3.0
@@ -18770,4 +18770,3 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes Detected:\n* `apideck->accounting->customers->list()`:  `response.data->[]->taxable` **Added**\n* `apideck->accounting->customers->create()`: \n  *  `request->customer->taxable` **Added**\n* `apideck->accounting->customers->get()`:  `response.data->taxable` **Added**\n* `apideck->accounting->customers->update()`: \n  *  `request->customer->taxable` **Added**\n* `apideck->accounting->suppliers->list()`:  `response.data->[]->taxable` **Added**\n* `apideck->accounting->suppliers->create()`: \n  *  `request->supplier->taxable` **Added**\n* `apideck->accounting->suppliers->get()`:  `response.data->taxable` **Added**\n* `apideck->accounting->suppliers->update()`: \n  *  `request->supplier->taxable` **Added**\n"
