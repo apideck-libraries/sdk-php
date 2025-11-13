@@ -12,7 +12,9 @@ namespace Apideck\Unify\Models\Components;
 /** Operational health status of the connection */
 enum Health: string
 {
+    case Revoked = 'revoked';
     case MissingSettings = 'missing_settings';
+    case NeedsConsent = 'needs_consent';
     case NeedsAuth = 'needs_auth';
     case PendingRefresh = 'pending_refresh';
     case Ok = 'ok';
