@@ -17,6 +17,7 @@ enum InvoiceStatus: string
     case Authorised = 'authorised';
     case PartiallyPaid = 'partially_paid';
     case Paid = 'paid';
+    case Unpaid = 'unpaid';
     case Void = 'void';
     case Credit = 'credit';
     case Deleted = 'deleted';
