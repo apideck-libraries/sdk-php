@@ -96,6 +96,15 @@ class TaxRateInput
     public ?float $effectiveTaxRate = null;
 
     /**
+     * Country code according to ISO 3166-1 alpha-2.
+     *
+     * @var ?string $country
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $country = null;
+
+    /**
      * Not compounded sum of the components of a tax rate
      *
      * @var ?float $totalTaxRate
@@ -188,6 +197,7 @@ class TaxRateInput
      * @param  ?string  $code
      * @param  ?string  $description
      * @param  ?float  $effectiveTaxRate
+     * @param  ?string  $country
      * @param  ?float  $totalTaxRate
      * @param  ?string  $taxPayableAccountId
      * @param  ?string  $taxRemittedAccountId
@@ -199,7 +209,7 @@ class TaxRateInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?array $passThrough = null, ?array $subsidiaries = null, ?array $customFields = null, ?string $id = null, ?string $displayId = null, ?string $code = null, ?string $description = null, ?float $effectiveTaxRate = null, ?float $totalTaxRate = null, ?string $taxPayableAccountId = null, ?string $taxRemittedAccountId = null, ?array $components = null, ?string $type = null, ?string $reportTaxType = null, ?string $originalTaxRateId = null, ?TaxRateStatus $status = null, ?string $rowVersion = null)
+    public function __construct(?string $name = null, ?array $passThrough = null, ?array $subsidiaries = null, ?array $customFields = null, ?string $id = null, ?string $displayId = null, ?string $code = null, ?string $description = null, ?float $effectiveTaxRate = null, ?string $country = null, ?float $totalTaxRate = null, ?string $taxPayableAccountId = null, ?string $taxRemittedAccountId = null, ?array $components = null, ?string $type = null, ?string $reportTaxType = null, ?string $originalTaxRateId = null, ?TaxRateStatus $status = null, ?string $rowVersion = null)
     {
         $this->name = $name;
         $this->passThrough = $passThrough;
@@ -210,6 +220,7 @@ class TaxRateInput
         $this->code = $code;
         $this->description = $description;
         $this->effectiveTaxRate = $effectiveTaxRate;
+        $this->country = $country;
         $this->totalTaxRate = $totalTaxRate;
         $this->taxPayableAccountId = $taxPayableAccountId;
         $this->taxRemittedAccountId = $taxRemittedAccountId;
