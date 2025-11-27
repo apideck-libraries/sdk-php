@@ -44,17 +44,27 @@ class ProfitAndLossFilter
     public ?string $locationId = null;
 
     /**
+     * The accounting method used for the report: cash or accrual.
+     *
+     * @var ?ProfitAndLossFilterAccountingMethod $accountingMethod
+     */
+    #[SpeakeasyMetadata('queryParam:name=accounting_method')]
+    public ?ProfitAndLossFilterAccountingMethod $accountingMethod = null;
+
+    /**
      * @param  ?string  $customerId
      * @param  ?string  $startDate
      * @param  ?string  $endDate
      * @param  ?string  $locationId
+     * @param  ?ProfitAndLossFilterAccountingMethod  $accountingMethod
      * @phpstan-pure
      */
-    public function __construct(?string $customerId = null, ?string $startDate = null, ?string $endDate = null, ?string $locationId = null)
+    public function __construct(?string $customerId = null, ?string $startDate = null, ?string $endDate = null, ?string $locationId = null, ?ProfitAndLossFilterAccountingMethod $accountingMethod = null)
     {
         $this->customerId = $customerId;
         $this->startDate = $startDate;
         $this->endDate = $endDate;
         $this->locationId = $locationId;
+        $this->accountingMethod = $accountingMethod;
     }
 }

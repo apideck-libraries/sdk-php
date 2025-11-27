@@ -53,19 +53,29 @@ class BalanceSheetFilter
     public ?string $locationId = null;
 
     /**
+     * The accounting method used for the report: cash or accrual.
+     *
+     * @var ?AccountingMethod $accountingMethod
+     */
+    #[SpeakeasyMetadata('queryParam:name=accounting_method')]
+    public ?AccountingMethod $accountingMethod = null;
+
+    /**
      * @param  ?string  $startDate
      * @param  ?string  $endDate
      * @param  ?int  $periodCount
      * @param  ?PeriodType  $periodType
      * @param  ?string  $locationId
+     * @param  ?AccountingMethod  $accountingMethod
      * @phpstan-pure
      */
-    public function __construct(?string $startDate = null, ?string $endDate = null, ?int $periodCount = null, ?PeriodType $periodType = null, ?string $locationId = null)
+    public function __construct(?string $startDate = null, ?string $endDate = null, ?int $periodCount = null, ?PeriodType $periodType = null, ?string $locationId = null, ?AccountingMethod $accountingMethod = null)
     {
         $this->startDate = $startDate;
         $this->endDate = $endDate;
         $this->periodCount = $periodCount;
         $this->periodType = $periodType;
         $this->locationId = $locationId;
+        $this->accountingMethod = $accountingMethod;
     }
 }

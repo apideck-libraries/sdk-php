@@ -39,6 +39,7 @@ $request = new Operations\AccountingBankAccountsAllRequest(
     serviceId: 'salesforce',
     filter: new Components\BankAccountsFilter(
         name: 'Main Operating',
+        accountType: Components\BankAccountsFilterAccountType::Checking,
         status: Components\BankAccountsFilterStatus::Active,
     ),
     sort: new Components\BankAccountsSort(),
