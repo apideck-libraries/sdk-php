@@ -40,6 +40,15 @@ class AccountingBankAccount
     public ?array $customFields = null;
 
     /**
+     * The third-party API ID of original entity
+     *
+     * @var ?string $downstreamId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('downstream_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $downstreamId = null;
+
+    /**
      * Display ID for the bank account
      *
      * @var ?string $displayId
@@ -253,6 +262,7 @@ class AccountingBankAccount
      * @param  string  $id
      * @param  ?AccountingBankAccountAccountType  $accountType
      * @param  ?array<CustomField>  $customFields
+     * @param  ?string  $downstreamId
      * @param  ?string  $displayId
      * @param  ?string  $name
      * @param  ?string  $accountNumber
@@ -278,11 +288,12 @@ class AccountingBankAccount
      * @param  ?string  $updatedBy
      * @phpstan-pure
      */
-    public function __construct(string $id, ?AccountingBankAccountAccountType $accountType = null, ?array $customFields = null, ?string $displayId = null, ?string $name = null, ?string $accountNumber = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $bankName = null, ?Currency $currency = null, ?float $balance = null, ?float $availableBalance = null, ?float $overdraftLimit = null, ?string $routingNumber = null, ?string $iban = null, ?string $bic = null, ?string $bsbNumber = null, ?string $branchIdentifier = null, ?string $bankCode = null, ?string $country = null, ?AccountingBankAccountStatus $status = null, ?string $description = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $createdBy = null, ?string $updatedBy = null)
+    public function __construct(string $id, ?AccountingBankAccountAccountType $accountType = null, ?array $customFields = null, ?string $downstreamId = null, ?string $displayId = null, ?string $name = null, ?string $accountNumber = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $bankName = null, ?Currency $currency = null, ?float $balance = null, ?float $availableBalance = null, ?float $overdraftLimit = null, ?string $routingNumber = null, ?string $iban = null, ?string $bic = null, ?string $bsbNumber = null, ?string $branchIdentifier = null, ?string $bankCode = null, ?string $country = null, ?AccountingBankAccountStatus $status = null, ?string $description = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $createdBy = null, ?string $updatedBy = null)
     {
         $this->id = $id;
         $this->accountType = $accountType;
         $this->customFields = $customFields;
+        $this->downstreamId = $downstreamId;
         $this->displayId = $displayId;
         $this->name = $name;
         $this->accountNumber = $accountNumber;

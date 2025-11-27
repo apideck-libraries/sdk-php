@@ -20,6 +20,14 @@ class BankAccountsFilter
     public ?string $name = null;
 
     /**
+     * Filter by account type
+     *
+     * @var ?BankAccountsFilterAccountType $accountType
+     */
+    #[SpeakeasyMetadata('queryParam:name=account_type')]
+    public ?BankAccountsFilterAccountType $accountType = null;
+
+    /**
      * Filter by account status
      *
      * @var ?BankAccountsFilterStatus $status
@@ -29,12 +37,14 @@ class BankAccountsFilter
 
     /**
      * @param  ?string  $name
+     * @param  ?BankAccountsFilterAccountType  $accountType
      * @param  ?BankAccountsFilterStatus  $status
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?BankAccountsFilterStatus $status = null)
+    public function __construct(?string $name = null, ?BankAccountsFilterAccountType $accountType = null, ?BankAccountsFilterStatus $status = null)
     {
         $this->name = $name;
+        $this->accountType = $accountType;
         $this->status = $status;
     }
 }
