@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 5a64228df36ed373024a7e607d7107cf
-  docVersion: 10.21.19
-  speakeasyVersion: 1.662.0
-  generationVersion: 2.763.3
-  releaseVersion: 0.15.13
-  configChecksum: a6c907522df10e86712791a921dde176
+  docChecksum: 82d2a94bf2e121e55493fcc2bc072337
+  docVersion: 10.22.0
+  speakeasyVersion: 1.665.0
+  generationVersion: 2.767.2
+  releaseVersion: 0.16.0
+  configChecksum: 12c9871784e805849292450b0dc6ea24
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php
   published: true
@@ -18776,4 +18776,3 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes Detected:\n* `apideck->accounting->balanceSheet->get()`: \n  *  `request->filter` **Changed**\n* `apideck->accounting->profitAndLoss->get()`: \n  *  `request->filter` **Changed**\n* `apideck->accounting->bankAccounts->list()`: \n  *  `request->filter` **Changed**\n  *  `response.data->[]->downstreamId` **Added**\n* `apideck->accounting->bankAccounts->get()`:  `response.data->downstreamId` **Added**\n"
