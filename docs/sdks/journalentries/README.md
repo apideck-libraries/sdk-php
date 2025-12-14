@@ -1,5 +1,4 @@
-# JournalEntries
-(*accounting->journalEntries*)
+# Accounting.JournalEntries
 
 ## Overview
 
@@ -197,7 +196,7 @@ $request = new Operations\AccountingJournalEntriesAddRequest(
         accountingPeriod: '01-24',
         rowVersion: '1-12345',
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -508,7 +507,7 @@ $request = new Operations\AccountingJournalEntriesUpdateRequest(
         accountingPeriod: '01-24',
         rowVersion: '1-12345',
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',

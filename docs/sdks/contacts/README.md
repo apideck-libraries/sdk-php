@@ -1,5 +1,4 @@
-# Contacts
-(*crm->contacts*)
+# Crm.Contacts
 
 ## Overview
 
@@ -268,7 +267,7 @@ $request = new Operations\CrmContactsAddRequest(
         ],
         emailDomain: 'gmail.com',
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -591,19 +590,19 @@ $request = new Operations\CrmContactsUpdateRequest(
         ],
         emailDomain: 'gmail.com',
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
