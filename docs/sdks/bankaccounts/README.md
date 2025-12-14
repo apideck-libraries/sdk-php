@@ -1,5 +1,4 @@
-# BankAccounts
-(*accounting->bankAccounts*)
+# Accounting.BankAccounts
 
 ## Overview
 
@@ -136,7 +135,7 @@ $request = new Operations\AccountingBankAccountsAddRequest(
         status: Components\AccountingBankAccountStatus::Active,
         description: 'Primary operating account for daily transactions',
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -189,6 +188,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Apideck\Unify;
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
@@ -201,6 +201,9 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingBankAccountsOneRequest(
     id: '<id>',
+    filter: new Components\BankAccountFilter(
+        accountType: Components\BankAccountFilterAccountType::Checking,
+    ),
     serviceId: 'salesforce',
     fields: 'id,updated_at',
 );
@@ -290,7 +293,7 @@ $request = new Operations\AccountingBankAccountsUpdateRequest(
         status: Components\AccountingBankAccountStatus::Active,
         description: 'Primary operating account for daily transactions',
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',

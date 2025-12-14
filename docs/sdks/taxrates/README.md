@@ -1,5 +1,4 @@
-# TaxRates
-(*accounting->taxRates*)
+# Accounting.TaxRates
 
 ## Overview
 
@@ -174,7 +173,7 @@ $request = new Operations\AccountingTaxRatesAddRequest(
             ),
         ],
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -396,13 +395,13 @@ $request = new Operations\AccountingTaxRatesUpdateRequest(
             ),
         ],
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
