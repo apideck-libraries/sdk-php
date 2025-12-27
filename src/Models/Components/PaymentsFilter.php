@@ -33,15 +33,24 @@ class PaymentsFilter
     public ?string $supplierId = null;
 
     /**
+     *
+     * @var ?PaymentsFilterType $type
+     */
+    #[SpeakeasyMetadata('queryParam:name=type')]
+    public ?PaymentsFilterType $type = null;
+
+    /**
      * @param  ?\DateTime  $updatedSince
      * @param  ?string  $invoiceId
      * @param  ?string  $supplierId
+     * @param  ?PaymentsFilterType  $type
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedSince = null, ?string $invoiceId = null, ?string $supplierId = null)
+    public function __construct(?\DateTime $updatedSince = null, ?string $invoiceId = null, ?string $supplierId = null, ?PaymentsFilterType $type = null)
     {
         $this->updatedSince = $updatedSince;
         $this->invoiceId = $invoiceId;
         $this->supplierId = $supplierId;
+        $this->type = $type;
     }
 }

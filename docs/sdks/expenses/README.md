@@ -1,5 +1,4 @@
-# Expenses
-(*accounting->expenses*)
+# Accounting.Expenses
 
 ## Overview
 
@@ -109,7 +108,6 @@ $request = new Operations\AccountingExpensesAddRequest(
         number: 'OIT00546',
         transactionDate: Utils\Utils::parseDateTime('2021-05-01T12:00:00.000Z'),
         accountId: '123456',
-        customerId: '12345',
         supplierId: '12345',
         companyId: '12345',
         departmentId: '12345',
@@ -143,31 +141,29 @@ $request = new Operations\AccountingExpensesAddRequest(
                 customerId: '12345',
                 departmentId: '12345',
                 locationId: '12345',
-                subsidiaryId: '12345',
                 taxRate: new Components\LinkedTaxRateInput(
                     id: '123456',
                     rate: 10,
                 ),
                 description: 'Travel US.',
                 totalAmount: 275,
-                billable: true,
                 lineNumber: 1,
             ),
         ],
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -358,7 +354,6 @@ $request = new Operations\AccountingExpensesUpdateRequest(
         number: 'OIT00546',
         transactionDate: Utils\Utils::parseDateTime('2021-05-01T12:00:00.000Z'),
         accountId: '123456',
-        customerId: '12345',
         supplierId: '12345',
         companyId: '12345',
         departmentId: '12345',
@@ -392,19 +387,17 @@ $request = new Operations\AccountingExpensesUpdateRequest(
                 customerId: '12345',
                 departmentId: '12345',
                 locationId: '12345',
-                subsidiaryId: '12345',
                 taxRate: new Components\LinkedTaxRateInput(
                     id: '123456',
                     rate: 10,
                 ),
                 description: 'Travel US.',
                 totalAmount: 275,
-                billable: true,
                 lineNumber: 1,
             ),
         ],
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',

@@ -41,10 +41,10 @@ class Opportunity
     /**
      * $customFields
      *
-     * @var ?array<CustomField> $customFields
+     * @var ?array<CustomField1|CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -398,7 +398,7 @@ class Opportunity
      * @param  string  $title
      * @param  ?string  $id
      * @param  ?array<string>  $contactIds
-     * @param  ?array<CustomField>  $customFields
+     * @param  ?array<CustomField1|CustomField2>  $customFields
      * @param  ?bool  $deleted
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $primaryContactId

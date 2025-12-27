@@ -48,17 +48,28 @@ class PipelineStages
     public ?int $displayOrder = null;
 
     /**
+     * Whether the Pipeline Stage is archived or not.
+     *
+     * @var ?bool $archived
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('archived')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $archived = null;
+
+    /**
      * @param  ?string  $name
      * @param  ?string  $value
      * @param  ?int  $winProbability
      * @param  ?int  $displayOrder
+     * @param  ?bool  $archived
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?string $value = null, ?int $winProbability = null, ?int $displayOrder = null)
+    public function __construct(?string $name = null, ?string $value = null, ?int $winProbability = null, ?int $displayOrder = null, ?bool $archived = null)
     {
         $this->name = $name;
         $this->value = $value;
         $this->winProbability = $winProbability;
         $this->displayOrder = $displayOrder;
+        $this->archived = $archived;
     }
 }
