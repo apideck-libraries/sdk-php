@@ -60,6 +60,15 @@ class AccountingDepartmentInput
     public ?string $parentId = null;
 
     /**
+     * Id to be displayed.
+     *
+     * @var ?string $displayId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('display_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $displayId = null;
+
+    /**
      * The name of the department.
      *
      * @var ?string $name
@@ -83,17 +92,19 @@ class AccountingDepartmentInput
      * @param  ?string  $code
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $parentId
+     * @param  ?string  $displayId
      * @param  ?string  $name
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?DepartmentStatus $status = null, ?array $subsidiaries = null, ?string $code = null, ?array $passThrough = null, ?string $parentId = null, ?string $name = null, ?string $rowVersion = null)
+    public function __construct(?DepartmentStatus $status = null, ?array $subsidiaries = null, ?string $code = null, ?array $passThrough = null, ?string $parentId = null, ?string $displayId = null, ?string $name = null, ?string $rowVersion = null)
     {
         $this->status = $status;
         $this->subsidiaries = $subsidiaries;
         $this->code = $code;
         $this->passThrough = $passThrough;
         $this->parentId = $parentId;
+        $this->displayId = $displayId;
         $this->name = $name;
         $this->rowVersion = $rowVersion;
     }

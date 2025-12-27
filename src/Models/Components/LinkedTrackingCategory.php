@@ -30,6 +30,15 @@ class LinkedTrackingCategory
     public ?string $parentId = null;
 
     /**
+     * The code of the tracking category.
+     *
+     * @var ?string $code
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('code')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $code = null;
+
+    /**
      * The name of the tracking category.
      *
      * @var ?string $name
@@ -50,14 +59,16 @@ class LinkedTrackingCategory
     /**
      * @param  ?string  $id
      * @param  ?string  $parentId
+     * @param  ?string  $code
      * @param  ?string  $name
      * @param  ?string  $parentName
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $parentId = null, ?string $name = null, ?string $parentName = null)
+    public function __construct(?string $id = null, ?string $parentId = null, ?string $code = null, ?string $name = null, ?string $parentName = null)
     {
         $this->id = $id;
         $this->parentId = $parentId;
+        $this->code = $code;
         $this->name = $name;
         $this->parentName = $parentName;
     }

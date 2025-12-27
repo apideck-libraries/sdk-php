@@ -12,6 +12,15 @@
 string $value = /* values here */
 ```
 
+### `int`
+
+```php
+/**
+* @var int
+*/
+int $value = /* values here */
+```
+
 ### `float`
 
 ```php
@@ -34,16 +43,7 @@ bool $value = /* values here */
 
 ```php
 /**
-* @var array<string, mixed>
-*/
-array $value = /* values here */
-```
-
-### `array`
-
-```php
-/**
-* @var array<string|float|bool|array<string, mixed>|null>
+* @var array<string|int|float>
 */
 array $value = /* values here */
 ```

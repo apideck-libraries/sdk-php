@@ -1,5 +1,4 @@
-# Companies
-(*crm->companies*)
+# Crm.Companies
 
 ## Overview
 
@@ -251,13 +250,13 @@ $request = new Operations\CrmCompaniesAddRequest(
             name: 'Customer Account',
         ),
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -590,13 +589,13 @@ $request = new Operations\CrmCompaniesUpdateRequest(
             name: 'Customer Account',
         ),
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',

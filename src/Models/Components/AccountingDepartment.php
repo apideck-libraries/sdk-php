@@ -69,6 +69,15 @@ class AccountingDepartment
     public ?string $parentId = null;
 
     /**
+     * Id to be displayed.
+     *
+     * @var ?string $displayId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('display_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $displayId = null;
+
+    /**
      * The name of the department.
      *
      * @var ?string $name
@@ -76,6 +85,15 @@ class AccountingDepartment
     #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $name = null;
+
+    /**
+     * The third-party API ID of original entity
+     *
+     * @var ?string $downstreamId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('downstream_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $downstreamId = null;
 
     /**
      * When custom mappings are configured on the resource, the result is included here.
@@ -139,7 +157,9 @@ class AccountingDepartment
      * @param  ?string  $code
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $parentId
+     * @param  ?string  $displayId
      * @param  ?string  $name
+     * @param  ?string  $downstreamId
      * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $rowVersion
      * @param  ?string  $updatedBy
@@ -148,7 +168,7 @@ class AccountingDepartment
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?DepartmentStatus $status = null, ?array $subsidiaries = null, ?string $code = null, ?array $passThrough = null, ?string $parentId = null, ?string $name = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?DepartmentStatus $status = null, ?array $subsidiaries = null, ?string $code = null, ?array $passThrough = null, ?string $parentId = null, ?string $displayId = null, ?string $name = null, ?string $downstreamId = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->status = $status;
@@ -156,7 +176,9 @@ class AccountingDepartment
         $this->code = $code;
         $this->passThrough = $passThrough;
         $this->parentId = $parentId;
+        $this->displayId = $displayId;
         $this->name = $name;
+        $this->downstreamId = $downstreamId;
         $this->customMappings = $customMappings;
         $this->rowVersion = $rowVersion;
         $this->updatedBy = $updatedBy;

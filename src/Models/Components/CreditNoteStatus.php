@@ -14,6 +14,7 @@ enum CreditNoteStatus: string
 {
     case Draft = 'draft';
     case Authorised = 'authorised';
+    case Posted = 'posted';
     case PartiallyPaid = 'partially_paid';
     case Paid = 'paid';
     case Voided = 'voided';

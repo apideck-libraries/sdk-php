@@ -70,6 +70,24 @@ class AccountingLocation
     public ?string $parentId = null;
 
     /**
+     * Id to be displayed.
+     *
+     * @var ?string $displayId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('display_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $displayId = null;
+
+    /**
+     * The third-party API ID of original entity
+     *
+     * @var ?string $downstreamId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('downstream_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $downstreamId = null;
+
+    /**
      * The name of the company.
      *
      * @var ?string $companyName
@@ -149,6 +167,8 @@ class AccountingLocation
      * @param  ?array<SubsidiaryReference>  $subsidiaries
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $parentId
+     * @param  ?string  $displayId
+     * @param  ?string  $downstreamId
      * @param  ?string  $companyName
      * @param  ?string  $displayName
      * @param  ?array<string, mixed>  $customMappings
@@ -159,7 +179,7 @@ class AccountingLocation
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?LocationStatus $status = null, ?array $addresses = null, ?array $subsidiaries = null, ?array $passThrough = null, ?string $parentId = null, ?string $companyName = null, ?string $displayName = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?LocationStatus $status = null, ?array $addresses = null, ?array $subsidiaries = null, ?array $passThrough = null, ?string $parentId = null, ?string $displayId = null, ?string $downstreamId = null, ?string $companyName = null, ?string $displayName = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->status = $status;
@@ -167,6 +187,8 @@ class AccountingLocation
         $this->subsidiaries = $subsidiaries;
         $this->passThrough = $passThrough;
         $this->parentId = $parentId;
+        $this->displayId = $displayId;
+        $this->downstreamId = $downstreamId;
         $this->companyName = $companyName;
         $this->displayName = $displayName;
         $this->customMappings = $customMappings;

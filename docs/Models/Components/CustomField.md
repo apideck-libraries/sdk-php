@@ -1,11 +1,23 @@
 # CustomField
 
 
-## Fields
+## Supported Types
 
-| Field                                                            | Type                                                             | Required                                                         | Description                                                      | Example                                                          |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| `id`                                                             | *string*                                                         | :heavy_check_mark:                                               | Unique identifier for the custom field.                          | 2389328923893298                                                 |
-| `name`                                                           | *?string*                                                        | :heavy_minus_sign:                                               | Name of the custom field.                                        | employee_level                                                   |
-| `description`                                                    | *?string*                                                        | :heavy_minus_sign:                                               | More information about the custom field                          | Employee Level                                                   |
-| `value`                                                          | [string\|float\|bool\|array\|null](../../Models/Components/Value.md) | :heavy_minus_sign:                                               | N/A                                                              |                                                                  |
+### `Components\CustomField1`
+
+```php
+/**
+* @var Components\CustomField1
+*/
+Components\CustomField1 $value = /* values here */
+```
+
+### `Components\CustomField2`
+
+```php
+/**
+* @var Components\CustomField2
+*/
+Components\CustomField2 $value = /* values here */
+```
+
