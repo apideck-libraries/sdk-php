@@ -1,5 +1,4 @@
-# Activities
-(*crm->activities*)
+# Crm.Activities
 
 ## Overview
 
@@ -178,7 +177,7 @@ $request = new Operations\CrmActivitiesAddRequest(
         videoConferenceUrl: 'https://us02web.zoom.us/j/88120759396',
         videoConferenceId: 'zoom:88120759396',
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -400,13 +399,13 @@ $request = new Operations\CrmActivitiesUpdateRequest(
         videoConferenceUrl: 'https://us02web.zoom.us/j/88120759396',
         videoConferenceId: 'zoom:88120759396',
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',

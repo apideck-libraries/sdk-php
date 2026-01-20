@@ -1,5 +1,4 @@
-# Quotes
-(*accounting->quotes*)
+# Accounting.Quotes
 
 ## Overview
 
@@ -165,7 +164,7 @@ $request = new Operations\AccountingQuotesAddRequest(
                     code: '453',
                 ),
                 customFields: [
-                    new Components\CustomField(
+                    new Components\CustomField1(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
@@ -240,7 +239,7 @@ $request = new Operations\AccountingQuotesAddRequest(
         templateId: '123456',
         sourceDocumentUrl: 'https://www.quotesolution.com/quote/123456',
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -442,7 +441,7 @@ $request = new Operations\AccountingQuotesUpdateRequest(
                     code: '453',
                 ),
                 customFields: [
-                    new Components\CustomField(
+                    new Components\CustomField1(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
@@ -517,7 +516,7 @@ $request = new Operations\AccountingQuotesUpdateRequest(
         templateId: '123456',
         sourceDocumentUrl: 'https://www.quotesolution.com/quote/123456',
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',

@@ -33,10 +33,10 @@ class BillInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField> $customFields
+     * @var ?array<CustomField1|CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -96,6 +96,15 @@ class BillInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('company_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $companyId = null;
+
+    /**
+     * The ID of the location
+     *
+     * @var ?string $locationId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('location_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $locationId = null;
 
     /**
      * The ID of the department
@@ -400,13 +409,14 @@ class BillInput
     /**
      * @param  ?array<BillLineItemInput>  $lineItems
      * @param  ?BankAccount  $bankAccount
-     * @param  ?array<CustomField>  $customFields
+     * @param  ?array<CustomField1|CustomField2>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?array<?LinkedAttachment>  $attachments
      * @param  ?string  $displayId
      * @param  ?string  $billNumber
      * @param  ?LinkedSupplierInput  $supplier
      * @param  ?string  $companyId
+     * @param  ?string  $locationId
      * @param  ?string  $departmentId
      * @param  ?Currency  $currency
      * @param  ?float  $currencyRate
@@ -442,7 +452,7 @@ class BillInput
      * @param  ?string  $accountingPeriod
      * @phpstan-pure
      */
-    public function __construct(?array $lineItems = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?array $attachments = null, ?string $displayId = null, ?string $billNumber = null, ?LinkedSupplierInput $supplier = null, ?string $companyId = null, ?string $departmentId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?LocalDate $billDate = null, ?LocalDate $dueDate = null, ?LocalDate $paidDate = null, ?string $poNumber = null, ?string $reference = null, ?string $terms = null, ?float $balance = null, ?float $deposit = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?string $taxCode = null, ?string $notes = null, ?BillStatus $status = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?float $discountPercentage = null, ?string $templateId = null, ?string $approvedBy = null, ?AmortizationType $amortizationType = null, ?string $taxMethod = null, ?bool $documentReceived = null, ?string $sourceDocumentUrl = null, ?array $trackingCategories = null, ?string $rowVersion = null, ?string $accountingPeriod = null)
+    public function __construct(?array $lineItems = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?array $attachments = null, ?string $displayId = null, ?string $billNumber = null, ?LinkedSupplierInput $supplier = null, ?string $companyId = null, ?string $locationId = null, ?string $departmentId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?LocalDate $billDate = null, ?LocalDate $dueDate = null, ?LocalDate $paidDate = null, ?string $poNumber = null, ?string $reference = null, ?string $terms = null, ?float $balance = null, ?float $deposit = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?string $taxCode = null, ?string $notes = null, ?BillStatus $status = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?float $discountPercentage = null, ?string $templateId = null, ?string $approvedBy = null, ?AmortizationType $amortizationType = null, ?string $taxMethod = null, ?bool $documentReceived = null, ?string $sourceDocumentUrl = null, ?array $trackingCategories = null, ?string $rowVersion = null, ?string $accountingPeriod = null)
     {
         $this->lineItems = $lineItems;
         $this->bankAccount = $bankAccount;
@@ -453,6 +463,7 @@ class BillInput
         $this->billNumber = $billNumber;
         $this->supplier = $supplier;
         $this->companyId = $companyId;
+        $this->locationId = $locationId;
         $this->departmentId = $departmentId;
         $this->currency = $currency;
         $this->currencyRate = $currencyRate;

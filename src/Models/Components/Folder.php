@@ -56,6 +56,15 @@ class Folder
     public ?bool $parentFoldersComplete = null;
 
     /**
+     * The third-party API ID of original entity
+     *
+     * @var ?string $downstreamId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('downstream_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $downstreamId = null;
+
+    /**
      * Optional description of the folder
      *
      * @var ?string $description
@@ -81,6 +90,15 @@ class Folder
     #[\Speakeasy\Serializer\Annotation\SerializedName('size')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?int $size = null;
+
+    /**
+     * Whether the current user can download the contents of this folder
+     *
+     * @var ?bool $downloadable
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('downloadable')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $downloadable = null;
 
     /**
      * When custom mappings are configured on the resource, the result is included here.
@@ -134,9 +152,11 @@ class Folder
      * @param  ?string  $id
      * @param  ?Owner  $owner
      * @param  ?bool  $parentFoldersComplete
+     * @param  ?string  $downstreamId
      * @param  ?string  $description
      * @param  ?string  $path
      * @param  ?int  $size
+     * @param  ?bool  $downloadable
      * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy
@@ -144,16 +164,18 @@ class Folder
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(string $name, array $parentFolders, ?string $id = null, ?Owner $owner = null, ?bool $parentFoldersComplete = null, ?string $description = null, ?string $path = null, ?int $size = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(string $name, array $parentFolders, ?string $id = null, ?Owner $owner = null, ?bool $parentFoldersComplete = null, ?string $downstreamId = null, ?string $description = null, ?string $path = null, ?int $size = null, ?bool $downloadable = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->name = $name;
         $this->parentFolders = $parentFolders;
         $this->id = $id;
         $this->owner = $owner;
         $this->parentFoldersComplete = $parentFoldersComplete;
+        $this->downstreamId = $downstreamId;
         $this->description = $description;
         $this->path = $path;
         $this->size = $size;
+        $this->downloadable = $downloadable;
         $this->customMappings = $customMappings;
         $this->updatedBy = $updatedBy;
         $this->createdBy = $createdBy;

@@ -1,5 +1,4 @@
-# Customers
-(*accounting->customers*)
+# Accounting.Customers
 
 ## Overview
 
@@ -239,19 +238,19 @@ $request = new Operations\AccountingCustomersAddRequest(
         paymentMethod: 'cash',
         channel: 'email',
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: null,
             ),
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: null,
             ),
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -544,7 +543,7 @@ $request = new Operations\AccountingCustomersUpdateRequest(
         paymentMethod: 'cash',
         channel: 'email',
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',

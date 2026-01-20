@@ -97,10 +97,10 @@ class CreditNote
     /**
      * $customFields
      *
-     * @var ?array<CustomField> $customFields
+     * @var ?array<CustomField1|CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -141,6 +141,15 @@ class CreditNote
     #[\Speakeasy\Serializer\Annotation\SerializedName('company_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $companyId = null;
+
+    /**
+     * The ID of the location
+     *
+     * @var ?string $locationId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('location_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $locationId = null;
 
     /**
      * The ID of the department
@@ -344,11 +353,12 @@ class CreditNote
      * @param  ?array<Allocation>  $allocations
      * @param  ?Address  $billingAddress
      * @param  ?Address  $shippingAddress
-     * @param  ?array<CustomField>  $customFields
+     * @param  ?array<CustomField1|CustomField2>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $number
      * @param  ?LinkedCustomer  $customer
      * @param  ?string  $companyId
+     * @param  ?string  $locationId
      * @param  ?string  $departmentId
      * @param  ?Currency  $currency
      * @param  ?float  $currencyRate
@@ -372,7 +382,7 @@ class CreditNote
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(string $id, float $totalAmount, ?CreditNoteStatus $status = null, ?\DateTime $dateIssued = null, ?CreditNoteType $type = null, ?array $lineItems = null, ?array $allocations = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?LinkedCustomer $customer = null, ?string $companyId = null, ?string $departmentId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $balance = null, ?float $remainingCredit = null, ?string $reference = null, ?\DateTime $datePaid = null, ?LinkedLedgerAccount $account = null, ?string $note = null, ?string $terms = null, ?array $trackingCategories = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(string $id, float $totalAmount, ?CreditNoteStatus $status = null, ?\DateTime $dateIssued = null, ?CreditNoteType $type = null, ?array $lineItems = null, ?array $allocations = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?LinkedCustomer $customer = null, ?string $companyId = null, ?string $locationId = null, ?string $departmentId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $balance = null, ?float $remainingCredit = null, ?string $reference = null, ?\DateTime $datePaid = null, ?LinkedLedgerAccount $account = null, ?string $note = null, ?string $terms = null, ?array $trackingCategories = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->totalAmount = $totalAmount;
@@ -388,6 +398,7 @@ class CreditNote
         $this->number = $number;
         $this->customer = $customer;
         $this->companyId = $companyId;
+        $this->locationId = $locationId;
         $this->departmentId = $departmentId;
         $this->currency = $currency;
         $this->currencyRate = $currencyRate;

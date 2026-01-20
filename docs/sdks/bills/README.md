@@ -1,5 +1,4 @@
-# Bills
-(*accounting->bills*)
+# Accounting.Bills
 
 ## Overview
 
@@ -235,19 +234,19 @@ $request = new Operations\AccountingBillsAddRequest(
         trackingCategories: null,
         rowVersion: '1-12345',
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -622,13 +621,13 @@ $request = new Operations\AccountingBillsUpdateRequest(
         ],
         rowVersion: '1-12345',
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',

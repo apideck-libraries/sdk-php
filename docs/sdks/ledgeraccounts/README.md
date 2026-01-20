@@ -1,5 +1,4 @@
-# LedgerAccounts
-(*accounting->ledgerAccounts*)
+# Accounting.LedgerAccounts
 
 ## Overview
 
@@ -153,7 +152,7 @@ $request = new Operations\AccountingLedgerAccountsAddRequest(
         subAccount: false,
         lastReconciliationDate: LocalDate::parse('2020-09-30'),
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -364,13 +363,13 @@ $request = new Operations\AccountingLedgerAccountsUpdateRequest(
         subAccount: false,
         lastReconciliationDate: LocalDate::parse('2020-09-30'),
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',

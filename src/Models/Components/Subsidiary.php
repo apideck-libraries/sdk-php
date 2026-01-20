@@ -77,6 +77,15 @@ class Subsidiary
     public ?string $displayId = null;
 
     /**
+     * The third-party API ID of original entity
+     *
+     * @var ?string $downstreamId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('downstream_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $downstreamId = null;
+
+    /**
      * List of currencies supported by this subsidiary
      *
      * @var ?array<?Currency> $currencies
@@ -149,6 +158,7 @@ class Subsidiary
      * @param  ?string  $parentId
      * @param  ?string  $name
      * @param  ?string  $displayId
+     * @param  ?string  $downstreamId
      * @param  ?array<?Currency>  $currencies
      * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $rowVersion
@@ -158,7 +168,7 @@ class Subsidiary
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?SubsidiaryStatus $status = null, ?Address $address = null, ?array $passThrough = null, ?string $parentId = null, ?string $name = null, ?string $displayId = null, ?array $currencies = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?SubsidiaryStatus $status = null, ?Address $address = null, ?array $passThrough = null, ?string $parentId = null, ?string $name = null, ?string $displayId = null, ?string $downstreamId = null, ?array $currencies = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->status = $status;
@@ -167,6 +177,7 @@ class Subsidiary
         $this->parentId = $parentId;
         $this->name = $name;
         $this->displayId = $displayId;
+        $this->downstreamId = $downstreamId;
         $this->currencies = $currencies;
         $this->customMappings = $customMappings;
         $this->rowVersion = $rowVersion;

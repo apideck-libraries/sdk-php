@@ -89,10 +89,10 @@ class CreditNoteInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField> $customFields
+     * @var ?array<CustomField1|CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -133,6 +133,15 @@ class CreditNoteInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('company_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $companyId = null;
+
+    /**
+     * The ID of the location
+     *
+     * @var ?string $locationId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('location_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $locationId = null;
 
     /**
      * The ID of the department
@@ -289,11 +298,12 @@ class CreditNoteInput
      * @param  ?array<AllocationInput>  $allocations
      * @param  ?Address  $billingAddress
      * @param  ?Address  $shippingAddress
-     * @param  ?array<CustomField>  $customFields
+     * @param  ?array<CustomField1|CustomField2>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $number
      * @param  ?LinkedCustomerInput  $customer
      * @param  ?string  $companyId
+     * @param  ?string  $locationId
      * @param  ?string  $departmentId
      * @param  ?Currency  $currency
      * @param  ?float  $currencyRate
@@ -312,7 +322,7 @@ class CreditNoteInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(float $totalAmount, ?CreditNoteStatus $status = null, ?\DateTime $dateIssued = null, ?CreditNoteType $type = null, ?array $lineItems = null, ?array $allocations = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?LinkedCustomerInput $customer = null, ?string $companyId = null, ?string $departmentId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $balance = null, ?float $remainingCredit = null, ?string $reference = null, ?\DateTime $datePaid = null, ?LinkedLedgerAccount $account = null, ?string $note = null, ?string $terms = null, ?array $trackingCategories = null, ?string $rowVersion = null)
+    public function __construct(float $totalAmount, ?CreditNoteStatus $status = null, ?\DateTime $dateIssued = null, ?CreditNoteType $type = null, ?array $lineItems = null, ?array $allocations = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?LinkedCustomerInput $customer = null, ?string $companyId = null, ?string $locationId = null, ?string $departmentId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $balance = null, ?float $remainingCredit = null, ?string $reference = null, ?\DateTime $datePaid = null, ?LinkedLedgerAccount $account = null, ?string $note = null, ?string $terms = null, ?array $trackingCategories = null, ?string $rowVersion = null)
     {
         $this->totalAmount = $totalAmount;
         $this->status = $status;
@@ -327,6 +337,7 @@ class CreditNoteInput
         $this->number = $number;
         $this->customer = $customer;
         $this->companyId = $companyId;
+        $this->locationId = $locationId;
         $this->departmentId = $departmentId;
         $this->currency = $currency;
         $this->currencyRate = $currencyRate;

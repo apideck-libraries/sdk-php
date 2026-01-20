@@ -239,6 +239,15 @@ class InvoiceItemInput
     public ?string $subsidiaryId = null;
 
     /**
+     * ID of the category of the item
+     *
+     * @var ?string $categoryId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('category_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $categoryId = null;
+
+    /**
      * The ID of the tax schedule
      *
      * @var ?string $taxScheduleId
@@ -282,11 +291,12 @@ class InvoiceItemInput
      * @param  ?string  $departmentId
      * @param  ?string  $locationId
      * @param  ?string  $subsidiaryId
+     * @param  ?string  $categoryId
      * @param  ?string  $taxScheduleId
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?InvoiceItemSalesDetails $salesDetails = null, ?InvoiceItemPurchaseDetails $purchaseDetails = null, ?array $passThrough = null, ?string $name = null, ?string $description = null, ?string $displayId = null, ?string $code = null, ?bool $sold = null, ?bool $purchased = null, ?bool $tracked = null, ?bool $taxable = null, ?LocalDate $inventoryDate = null, ?InvoiceItemTypeType $type = null, ?float $quantity = null, ?float $unitPrice = null, ?Currency $currency = null, ?LinkedLedgerAccount $assetAccount = null, ?LinkedLedgerAccount $incomeAccount = null, ?LinkedLedgerAccount $expenseAccount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?bool $active = null, ?string $departmentId = null, ?string $locationId = null, ?string $subsidiaryId = null, ?string $taxScheduleId = null, ?string $rowVersion = null)
+    public function __construct(?InvoiceItemSalesDetails $salesDetails = null, ?InvoiceItemPurchaseDetails $purchaseDetails = null, ?array $passThrough = null, ?string $name = null, ?string $description = null, ?string $displayId = null, ?string $code = null, ?bool $sold = null, ?bool $purchased = null, ?bool $tracked = null, ?bool $taxable = null, ?LocalDate $inventoryDate = null, ?InvoiceItemTypeType $type = null, ?float $quantity = null, ?float $unitPrice = null, ?Currency $currency = null, ?LinkedLedgerAccount $assetAccount = null, ?LinkedLedgerAccount $incomeAccount = null, ?LinkedLedgerAccount $expenseAccount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?bool $active = null, ?string $departmentId = null, ?string $locationId = null, ?string $subsidiaryId = null, ?string $categoryId = null, ?string $taxScheduleId = null, ?string $rowVersion = null)
     {
         $this->salesDetails = $salesDetails;
         $this->purchaseDetails = $purchaseDetails;
@@ -313,6 +323,7 @@ class InvoiceItemInput
         $this->departmentId = $departmentId;
         $this->locationId = $locationId;
         $this->subsidiaryId = $subsidiaryId;
+        $this->categoryId = $categoryId;
         $this->taxScheduleId = $taxScheduleId;
         $this->rowVersion = $rowVersion;
     }

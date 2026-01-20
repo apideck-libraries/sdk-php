@@ -1,5 +1,4 @@
-# Invoices
-(*accounting->invoices*)
+# Accounting.Invoices
 
 ## Overview
 
@@ -182,13 +181,13 @@ $request = new Operations\AccountingInvoicesAddRequest(
                 ],
                 ledgerAccount: null,
                 customFields: [
-                    new Components\CustomField(
+                    new Components\CustomField1(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
                         value: 'Uses Salesforce and Marketo',
                     ),
-                    new Components\CustomField(
+                    new Components\CustomField1(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
@@ -282,19 +281,19 @@ $request = new Operations\AccountingInvoicesAddRequest(
             code: '453',
         ),
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -526,19 +525,19 @@ $request = new Operations\AccountingInvoicesUpdateRequest(
                     code: '453',
                 ),
                 customFields: [
-                    new Components\CustomField(
+                    new Components\CustomField1(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
                         value: null,
                     ),
-                    new Components\CustomField(
+                    new Components\CustomField1(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
                         value: null,
                     ),
-                    new Components\CustomField(
+                    new Components\CustomField1(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
@@ -637,7 +636,7 @@ $request = new Operations\AccountingInvoicesUpdateRequest(
             code: '453',
         ),
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',

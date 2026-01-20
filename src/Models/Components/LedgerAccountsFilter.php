@@ -12,6 +12,14 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class LedgerAccountsFilter
 {
     /**
+     * Filter by ledger account name
+     *
+     * @var ?string $name
+     */
+    #[SpeakeasyMetadata('queryParam:name=name')]
+    public ?string $name = null;
+
+    /**
      *
      * @var ?\DateTime $updatedSince
      */
@@ -27,12 +35,14 @@ class LedgerAccountsFilter
     public ?Classification $classification = null;
 
     /**
+     * @param  ?string  $name
      * @param  ?\DateTime  $updatedSince
      * @param  ?Classification  $classification
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedSince = null, ?Classification $classification = null)
+    public function __construct(?string $name = null, ?\DateTime $updatedSince = null, ?Classification $classification = null)
     {
+        $this->name = $name;
         $this->updatedSince = $updatedSince;
         $this->classification = $classification;
     }
