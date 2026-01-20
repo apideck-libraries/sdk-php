@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace Apideck\Unify\Models\Operations;
 
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Utils\SpeakeasyMetadata;
 class AccountingBankAccountsOneRequest
 {
@@ -18,6 +19,14 @@ class AccountingBankAccountsOneRequest
      */
     #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=id')]
     public string $id;
+
+    /**
+     * Apply filters
+     *
+     * @var ?Components\BankAccountFilter $filter
+     */
+    #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
+    public ?Components\BankAccountFilter $filter = null;
 
     /**
      * ID of the consumer which you want to get or push data from
@@ -61,6 +70,7 @@ class AccountingBankAccountsOneRequest
 
     /**
      * @param  string  $id
+     * @param  ?Components\BankAccountFilter  $filter
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId
@@ -68,9 +78,10 @@ class AccountingBankAccountsOneRequest
      * @param  ?string  $fields
      * @phpstan-pure
      */
-    public function __construct(string $id, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $fields = null, ?bool $raw = false)
+    public function __construct(string $id, ?Components\BankAccountFilter $filter = null, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $fields = null, ?bool $raw = false)
     {
         $this->id = $id;
+        $this->filter = $filter;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;

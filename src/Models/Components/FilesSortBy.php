@@ -12,6 +12,7 @@ namespace Apideck\Unify\Models\Components;
 /** The field on which to sort the Files */
 enum FilesSortBy: string
 {
+    case CreatedAt = 'created_at';
     case UpdatedAt = 'updated_at';
     case Name = 'name';
 }

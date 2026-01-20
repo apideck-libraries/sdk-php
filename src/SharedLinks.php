@@ -223,9 +223,9 @@ class SharedLinks
     }
 
     /**
-     * List SharedLinks
+     * List Shared Links
      *
-     * List SharedLinks
+     * List Shared Links
      *
      * @param  ?Operations\FileStorageSharedLinksAllRequest  $request
      * @return Operations\FileStorageSharedLinksAllResponse
@@ -448,9 +448,9 @@ class SharedLinks
         }
     }
     /**
-     * List SharedLinks
+     * List Shared Links
      *
-     * List SharedLinks
+     * List Shared Links
      *
      * @param  ?Operations\FileStorageSharedLinksAllRequest  $request
      * @return \Generator<Operations\FileStorageSharedLinksAllResponse>

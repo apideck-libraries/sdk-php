@@ -39,15 +39,6 @@ class ExpenseInput
     public ?string $accountId = null;
 
     /**
-     * The ID of the customer this entity is linked to. Used for expenses that should be marked as billable to customers.
-     *
-     * @var ?string $customerId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('customer_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $customerId = null;
-
-    /**
      * The ID of the supplier this entity is linked to. Deprecated, use supplier instead.
      *
      * @var ?string $supplierId
@@ -69,10 +60,10 @@ class ExpenseInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField> $customFields
+     * @var ?array<CustomField1|CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -87,6 +78,15 @@ class ExpenseInput
     public ?array $passThrough = null;
 
     /**
+     * Id to be displayed.
+     *
+     * @var ?string $displayId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('display_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $displayId = null;
+
+    /**
      * Number.
      *
      * @var ?string $number
@@ -96,22 +96,14 @@ class ExpenseInput
     public ?string $number = null;
 
     /**
+     * A flexible account reference that can represent either a ledger account (GL account) or a bank account, depending on the connector's requirements.
      *
-     * @var ?LinkedLedgerAccount $account
+     * @var ?LinkedFinancialAccountInput $account
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('account')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedFinancialAccountInput|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LinkedLedgerAccount $account = null;
-
-    /**
-     *
-     * @var ?LinkedBankAccount $bankAccount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('bank_account')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedBankAccount|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LinkedBankAccount $bankAccount = null;
+    public ?LinkedFinancialAccountInput $account = null;
 
     /**
      * The supplier this entity is linked to.
@@ -133,6 +125,15 @@ class ExpenseInput
     public ?string $companyId = null;
 
     /**
+     *
+     * @var ?LinkedLocationInput $location
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('location')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLocationInput|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedLocationInput $location = null;
+
+    /**
      * The ID of the department
      *
      * @var ?string $departmentId
@@ -140,6 +141,15 @@ class ExpenseInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('department_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $departmentId = null;
+
+    /**
+     *
+     * @var ?LinkedDepartmentInput $department
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('department')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedDepartmentInput|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedDepartmentInput $department = null;
 
     /**
      * The type of payment for the expense.
@@ -226,6 +236,16 @@ class ExpenseInput
     public ?float $totalAmount = null;
 
     /**
+     * A list of linked tracking categories.
+     *
+     * @var ?array<?LinkedTrackingCategory> $trackingCategories
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory|null>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $trackingCategories = null;
+
+    /**
      * Optional reference identifier for the transaction.
      *
      * @var ?string $reference
@@ -266,17 +286,18 @@ class ExpenseInput
      * @param  array<ExpenseLineItemInput>  $lineItems
      * @param  ?\DateTime  $transactionDate
      * @param  ?string  $accountId
-     * @param  ?string  $customerId
      * @param  ?string  $supplierId
      * @param  ?LinkedTaxRateInput  $taxRate
-     * @param  ?array<CustomField>  $customFields
+     * @param  ?array<CustomField1|CustomField2>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?string  $displayId
      * @param  ?string  $number
-     * @param  ?LinkedLedgerAccount  $account
-     * @param  ?LinkedBankAccount  $bankAccount
+     * @param  ?LinkedFinancialAccountInput  $account
      * @param  ?LinkedSupplierInput  $supplier
      * @param  ?string  $companyId
+     * @param  ?LinkedLocationInput  $location
      * @param  ?string  $departmentId
+     * @param  ?LinkedDepartmentInput  $department
      * @param  ?ExpensePaymentType  $paymentType
      * @param  ?Currency  $currency
      * @param  ?float  $currencyRate
@@ -286,28 +307,30 @@ class ExpenseInput
      * @param  ?float  $subTotal
      * @param  ?float  $totalTax
      * @param  ?float  $totalAmount
+     * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?string  $reference
      * @param  ?string  $sourceDocumentUrl
      * @param  ?ExpenseStatus  $status
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(array $lineItems, ?\DateTime $transactionDate = null, ?string $accountId = null, ?string $customerId = null, ?string $supplierId = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?LinkedLedgerAccount $account = null, ?LinkedBankAccount $bankAccount = null, ?LinkedSupplierInput $supplier = null, ?string $companyId = null, ?string $departmentId = null, ?ExpensePaymentType $paymentType = null, ?Currency $currency = null, ?float $currencyRate = null, ?ExpenseType $type = null, ?string $memo = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?float $totalAmount = null, ?string $reference = null, ?string $sourceDocumentUrl = null, ?ExpenseStatus $status = null, ?string $rowVersion = null)
+    public function __construct(array $lineItems, ?\DateTime $transactionDate = null, ?string $accountId = null, ?string $supplierId = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $displayId = null, ?string $number = null, ?LinkedFinancialAccountInput $account = null, ?LinkedSupplierInput $supplier = null, ?string $companyId = null, ?LinkedLocationInput $location = null, ?string $departmentId = null, ?LinkedDepartmentInput $department = null, ?ExpensePaymentType $paymentType = null, ?Currency $currency = null, ?float $currencyRate = null, ?ExpenseType $type = null, ?string $memo = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?float $totalAmount = null, ?array $trackingCategories = null, ?string $reference = null, ?string $sourceDocumentUrl = null, ?ExpenseStatus $status = null, ?string $rowVersion = null)
     {
         $this->lineItems = $lineItems;
         $this->transactionDate = $transactionDate;
         $this->accountId = $accountId;
-        $this->customerId = $customerId;
         $this->supplierId = $supplierId;
         $this->taxRate = $taxRate;
         $this->customFields = $customFields;
         $this->passThrough = $passThrough;
+        $this->displayId = $displayId;
         $this->number = $number;
         $this->account = $account;
-        $this->bankAccount = $bankAccount;
         $this->supplier = $supplier;
         $this->companyId = $companyId;
+        $this->location = $location;
         $this->departmentId = $departmentId;
+        $this->department = $department;
         $this->paymentType = $paymentType;
         $this->currency = $currency;
         $this->currencyRate = $currencyRate;
@@ -317,6 +340,7 @@ class ExpenseInput
         $this->subTotal = $subTotal;
         $this->totalTax = $totalTax;
         $this->totalAmount = $totalAmount;
+        $this->trackingCategories = $trackingCategories;
         $this->reference = $reference;
         $this->sourceDocumentUrl = $sourceDocumentUrl;
         $this->status = $status;

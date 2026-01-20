@@ -1,5 +1,4 @@
-# CreditNotes
-(*accounting->creditNotes*)
+# Accounting.CreditNotes
 
 ## Overview
 
@@ -180,7 +179,7 @@ $request = new Operations\AccountingCreditNotesAddRequest(
                     code: '453',
                 ),
                 customFields: [
-                    new Components\CustomField(
+                    new Components\CustomField1(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
@@ -258,19 +257,19 @@ $request = new Operations\AccountingCreditNotesAddRequest(
             ),
         ],
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -478,19 +477,19 @@ $request = new Operations\AccountingCreditNotesUpdateRequest(
                     code: '453',
                 ),
                 customFields: [
-                    new Components\CustomField(
+                    new Components\CustomField1(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
                         value: 'Uses Salesforce and Marketo',
                     ),
-                    new Components\CustomField(
+                    new Components\CustomField1(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
                         value: 'Uses Salesforce and Marketo',
                     ),
-                    new Components\CustomField(
+                    new Components\CustomField1(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
@@ -577,13 +576,13 @@ $request = new Operations\AccountingCreditNotesUpdateRequest(
             ),
         ],
         customFields: [
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField(
+            new Components\CustomField1(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',

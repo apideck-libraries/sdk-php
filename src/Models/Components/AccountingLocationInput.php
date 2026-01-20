@@ -61,6 +61,15 @@ class AccountingLocationInput
     public ?string $parentId = null;
 
     /**
+     * Id to be displayed.
+     *
+     * @var ?string $displayId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('display_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $displayId = null;
+
+    /**
      * The name of the company.
      *
      * @var ?string $companyName
@@ -93,18 +102,20 @@ class AccountingLocationInput
      * @param  ?array<SubsidiaryReferenceInput>  $subsidiaries
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $parentId
+     * @param  ?string  $displayId
      * @param  ?string  $companyName
      * @param  ?string  $displayName
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?LocationStatus $status = null, ?array $addresses = null, ?array $subsidiaries = null, ?array $passThrough = null, ?string $parentId = null, ?string $companyName = null, ?string $displayName = null, ?string $rowVersion = null)
+    public function __construct(?LocationStatus $status = null, ?array $addresses = null, ?array $subsidiaries = null, ?array $passThrough = null, ?string $parentId = null, ?string $displayId = null, ?string $companyName = null, ?string $displayName = null, ?string $rowVersion = null)
     {
         $this->status = $status;
         $this->addresses = $addresses;
         $this->subsidiaries = $subsidiaries;
         $this->passThrough = $passThrough;
         $this->parentId = $parentId;
+        $this->displayId = $displayId;
         $this->companyName = $companyName;
         $this->displayName = $displayName;
         $this->rowVersion = $rowVersion;

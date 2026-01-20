@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 
-class CustomField
+class CustomField1
 {
     /**
      * Unique identifier for the custom field.

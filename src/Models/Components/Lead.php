@@ -125,6 +125,15 @@ class Lead
     public ?string $companyId = null;
 
     /**
+     * The contact the lead is associated with.
+     *
+     * @var ?string $contactId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('contact_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $contactId = null;
+
+    /**
      * The identifier of the lead.
      *
      * @var ?string $leadId
@@ -235,10 +244,10 @@ class Lead
     /**
      * $customFields
      *
-     * @var ?array<CustomField> $customFields
+     * @var ?array<CustomField1|CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -293,6 +302,7 @@ class Lead
      * @param  ?string  $ownerId
      * @param  ?string  $ownerName
      * @param  ?string  $companyId
+     * @param  ?string  $contactId
      * @param  ?string  $leadId
      * @param  ?string  $leadSource
      * @param  ?string  $firstName
@@ -305,14 +315,14 @@ class Lead
      * @param  ?float  $monetaryAmount
      * @param  ?Currency  $currency
      * @param  ?string  $fax
-     * @param  ?array<CustomField>  $customFields
+     * @param  ?array<CustomField1|CustomField2>  $customFields
      * @param  ?array<string>  $tags
      * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $updatedAt
      * @param  ?string  $createdAt
      * @phpstan-pure
      */
-    public function __construct(string $name, ?string $id = null, ?array $websites = null, ?array $addresses = null, ?array $socialLinks = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $passThrough = null, ?string $companyName = null, ?string $ownerId = null, ?string $ownerName = null, ?string $companyId = null, ?string $leadId = null, ?string $leadSource = null, ?string $firstName = null, ?string $lastName = null, ?string $description = null, ?string $prefix = null, ?string $title = null, ?string $language = null, ?string $status = null, ?float $monetaryAmount = null, ?Currency $currency = null, ?string $fax = null, ?array $customFields = null, ?array $tags = null, ?array $customMappings = null, ?string $updatedAt = null, ?string $createdAt = null)
+    public function __construct(string $name, ?string $id = null, ?array $websites = null, ?array $addresses = null, ?array $socialLinks = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $passThrough = null, ?string $companyName = null, ?string $ownerId = null, ?string $ownerName = null, ?string $companyId = null, ?string $contactId = null, ?string $leadId = null, ?string $leadSource = null, ?string $firstName = null, ?string $lastName = null, ?string $description = null, ?string $prefix = null, ?string $title = null, ?string $language = null, ?string $status = null, ?float $monetaryAmount = null, ?Currency $currency = null, ?string $fax = null, ?array $customFields = null, ?array $tags = null, ?array $customMappings = null, ?string $updatedAt = null, ?string $createdAt = null)
     {
         $this->name = $name;
         $this->id = $id;
@@ -326,6 +336,7 @@ class Lead
         $this->ownerId = $ownerId;
         $this->ownerName = $ownerName;
         $this->companyId = $companyId;
+        $this->contactId = $contactId;
         $this->leadId = $leadId;
         $this->leadSource = $leadSource;
         $this->firstName = $firstName;
