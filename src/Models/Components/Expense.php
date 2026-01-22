@@ -41,7 +41,7 @@ class Expense
      * The unique identifier for the ledger account that this expense should be credited to. Deprecated, use account instead.
      *
      * @var ?string $accountId
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     * @deprecated  field: Deprecated. Use account instead..
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('account_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
@@ -51,7 +51,7 @@ class Expense
      * The ID of the supplier this entity is linked to. Deprecated, use supplier instead.
      *
      * @var ?string $supplierId
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     * @deprecated  field: Deprecated. Use supplier instead..
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('supplier_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]

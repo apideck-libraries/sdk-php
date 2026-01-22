@@ -153,7 +153,7 @@ class Payment
      * Type of accounts receivable account.
      *
      * @var ?string $accountsReceivableAccountType
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     * @deprecated  field: This field is deprecated and may be removed in a future version..
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('accounts_receivable_account_type')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
@@ -163,7 +163,7 @@ class Payment
      * Unique identifier for the account to allocate payment to.
      *
      * @var ?string $accountsReceivableAccountId
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     * @deprecated  field: This field is deprecated and may be removed in a future version..
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('accounts_receivable_account_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
@@ -192,7 +192,7 @@ class Payment
      * The supplier this entity is linked to.
      *
      * @var ?DeprecatedLinkedSupplier $supplier
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     * @deprecated  field: This field is deprecated and may be removed in a future version..
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('supplier')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\DeprecatedLinkedSupplier|null')]

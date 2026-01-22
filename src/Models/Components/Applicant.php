@@ -293,7 +293,7 @@ class Applicant
      * Deprecated: Use application_ids instead. Array of application IDs associated with the applicant.
      *
      * @var ?array<string> $applications
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     * @deprecated  field: Deprecated. Use application_ids instead..
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('applications')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]

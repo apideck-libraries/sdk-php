@@ -25,7 +25,7 @@ class LinkedCustomerInput
      * The name of the customer. Deprecated, use display_name instead.
      *
      * @var ?string $name
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     * @deprecated  field: Deprecated. Use display_name instead..
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]

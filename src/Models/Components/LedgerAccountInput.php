@@ -91,7 +91,7 @@ class LedgerAccountInput
      * The nominal code of the ledger account.
      *
      * @var ?string $nominalCode
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     * @deprecated  field: This field is deprecated and may be removed in a future version..
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('nominal_code')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
