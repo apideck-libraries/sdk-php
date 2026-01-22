@@ -230,7 +230,7 @@ class ContactInput
     /**
      *
      * @var ?string $image
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     * @deprecated  field: This field is deprecated and may be removed in a future version..
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('image')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]

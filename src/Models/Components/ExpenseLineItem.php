@@ -24,7 +24,7 @@ class ExpenseLineItem
      * The unique identifier for the ledger account. Deprecated, use account instead.
      *
      * @var ?string $accountId
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     * @deprecated  field: Deprecated. Use account instead..
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('account_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
@@ -34,7 +34,7 @@ class ExpenseLineItem
      * The ID of the customer this expense item is linked to. Deprecated in favor of `customer`.
      *
      * @var ?string $customerId
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     * @deprecated  field: Deprecated. Use customer instead..
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]

@@ -327,7 +327,7 @@ class Invoice
     /**
      *
      * @var ?DeprecatedLinkedTrackingCategory $trackingCategory
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     * @deprecated  field: This field is deprecated and may be removed in a future version..
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_category')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\DeprecatedLinkedTrackingCategory|null')]
