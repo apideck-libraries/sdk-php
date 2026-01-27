@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 39aae8d40e55105bc1e048ac01f04376
-  docVersion: 10.23.10
-  speakeasyVersion: 1.692.0
-  generationVersion: 2.797.1
-  releaseVersion: 0.17.1
-  configChecksum: c22ab4a722bd708bdd72b8f6ff680150
+  docChecksum: 2aab0c769b29d535b97cfe244da95d30
+  docVersion: 10.23.11
+  speakeasyVersion: 1.698.0
+  generationVersion: 2.801.0
+  releaseVersion: 0.17.2
+  configChecksum: 58ecd4d6680fffe10448ed04a45c8229
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php
   published: true
 persistentEdits:
-  generation_id: 5851baf6-86cd-4269-bddb-49e068510032
-  pristine_commit_hash: c1b31448668bab52287b2ddfe415e97bdf29a80e
-  pristine_tree_hash: c6f4d0f5d5fa712733080be344ae82cf5680d55f
+  generation_id: 40cbed40-0ceb-4d2c-b24c-f7a8f04e032a
+  pristine_commit_hash: 1b02f0f31c772339747d4a56c4d3e25425945d4f
+  pristine_tree_hash: fa2f53d9e7278238363f011af526a888c285d221
 features:
   php:
     additionalProperties: 0.1.0
@@ -1393,8 +1393,8 @@ trackedFiles:
     pristine_git_object: 375e79f62653ff0d49ff1881294c4a543d613dc2
   docs/Models/Components/EcommerceCustomersFilter.md:
     id: 2585e1298ea9
-    last_write_checksum: sha1:e5b828e0146dc73128a2231dbefbd3fdbcb68152
-    pristine_git_object: 8fcdb19f783c84b0ebab244395e9464a3e50431a
+    last_write_checksum: sha1:2874fc9a8b1682675b506a439147e3171e104c08
+    pristine_git_object: 8a4f569ef5c4ad46040b223d86638b364ddd5421
   docs/Models/Components/EcommerceDiscount.md:
     id: ff44f7149a57
     last_write_checksum: sha1:91ba34765570ddf6cc0f1179ea3fda6606dcdca4
@@ -5213,8 +5213,8 @@ trackedFiles:
     pristine_git_object: 57511fe4a4eb00b2c28c9173daf707d31c144d25
   docs/Models/Operations/EcommerceCustomersAllRequest.md:
     id: e090bca2769e
-    last_write_checksum: sha1:602e40140d73cd304cb3f5cd4746d4962aaca2cd
-    pristine_git_object: 76aeafe70b781353e3fe2d167b0ae00143f09971
+    last_write_checksum: sha1:7fba2afced2f14976fd5b172402e028386d210f7
+    pristine_git_object: f06c8a763ad26e4f11974847a888444300557bdc
   docs/Models/Operations/EcommerceCustomersAllResponse.md:
     id: 2b319fad8fdc
     last_write_checksum: sha1:c9c3f3ca47524aaf5a650ab4828e9c26db0b47d0
@@ -8153,8 +8153,8 @@ trackedFiles:
     pristine_git_object: 2d538bd169839f9f3540ba47b5ade1cb79ed6db7
   src/Models/Components/EcommerceCustomersFilter.php:
     id: 12233b36d5bc
-    last_write_checksum: sha1:f55314ba7652fe7313ab4338c28bc3ad19a60246
-    pristine_git_object: 768cb02fda353cc375b9b158877d4273ba95118d
+    last_write_checksum: sha1:e5fc7d689a79c6688698f5ad345ad1907be212b8
+    pristine_git_object: 645df9f208001ce42ccb22bf2f94333b5c95a290
   src/Models/Components/EcommerceDiscount.php:
     id: 0ddcdf438cfc
     last_write_checksum: sha1:ab39e3e3d047ee9d667b87c6090977fc29146404
@@ -12921,8 +12921,8 @@ trackedFiles:
     pristine_git_object: c50da65b5b03a5e42b8d6f92aaa96b83f1480625
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:491f15a7f519c78d69bda37cf7bbb0d8551d22a7
-    pristine_git_object: 97ac747a860c81440ca851d5ca6a6924f55a8274
+    last_write_checksum: sha1:6ff55cfe089d8cf5d4d58af5e17e9304bf111be8
+    pristine_git_object: a13dc31356adeb49cc7f706d3b8781b83989c8f7
   src/Sessions.php:
     id: 7f6ea05b19ca
     last_write_checksum: sha1:acb3d18ba287e1f2c35e371075b433d34842047c
@@ -21733,7 +21733,7 @@ examples:
         query:
           raw: false
           limit: 20
-          filter: {"email": "elon@musk.com", "phone_number": "111-111-1111"}
+          filter: {"email": "elon@musk.com", "phone_number": "111-111-1111", "customer_ids": ["12345", "67890"]}
           pass_through: {"search": "San Francisco"}
           fields: "id,updated_at"
         header:
@@ -28617,6 +28617,7 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: "## Php SDK Changes:\n* `apideck->ecommerce->customers->list()`: \n  *  `request->filter` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md
