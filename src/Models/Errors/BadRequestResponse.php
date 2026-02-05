@@ -68,15 +68,26 @@ class BadRequestResponse
     public ?string $ref = null;
 
     /**
+     * Contains downstream errors returned from the connector. Only present when type_name is ConnectorExecutionError.
+     *
+     * @var ?array<DownstreamErrors> $downstreamErrors
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('downstream_errors')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Errors\DownstreamErrors>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $downstreamErrors = null;
+
+    /**
      * @param  ?float  $statusCode
      * @param  ?string  $error
      * @param  ?string  $typeName
      * @param  ?string  $message
      * @param  string|array<string, mixed>|null  $detail
      * @param  ?string  $ref
+     * @param  ?array<DownstreamErrors>  $downstreamErrors
      * @phpstan-pure
      */
-    public function __construct(?float $statusCode = null, ?string $error = null, ?string $typeName = null, ?string $message = null, string|array|null $detail = null, ?string $ref = null)
+    public function __construct(?float $statusCode = null, ?string $error = null, ?string $typeName = null, ?string $message = null, string|array|null $detail = null, ?string $ref = null, ?array $downstreamErrors = null)
     {
         $this->statusCode = $statusCode;
         $this->error = $error;
@@ -84,6 +95,7 @@ class BadRequestResponse
         $this->message = $message;
         $this->detail = $detail;
         $this->ref = $ref;
+        $this->downstreamErrors = $downstreamErrors;
     }
 
     public function toException(): BadRequestResponseThrowable

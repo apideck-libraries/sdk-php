@@ -124,6 +124,7 @@ $request = new Operations\AccountingProjectsAddRequest(
         completionPercentage: 75.5,
         startDate: LocalDate::parse('2024-01-15'),
         endDate: LocalDate::parse('2024-06-30'),
+        completionDate: LocalDate::parse('2024-08-06'),
         customer: new Components\LinkedCustomerInput(
             id: '12345',
             displayName: 'Windsurf Shop',
@@ -338,6 +339,7 @@ $request = new Operations\AccountingProjectsUpdateRequest(
         completionPercentage: 75.5,
         startDate: LocalDate::parse('2024-01-15'),
         endDate: LocalDate::parse('2024-06-30'),
+        completionDate: LocalDate::parse('2024-08-06'),
         customer: null,
         department: new Components\ProjectDepartment(
             id: 'DEPT-001',
