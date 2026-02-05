@@ -28,13 +28,23 @@ class EcommerceCustomersFilter
     public ?string $phoneNumber = null;
 
     /**
+     * Filter by customer IDs. Specify multiple IDs as a comma-separated string.
+     *
+     * @var ?string $customerIds
+     */
+    #[SpeakeasyMetadata('queryParam:name=customer_ids')]
+    public ?string $customerIds = null;
+
+    /**
      * @param  ?string  $email
      * @param  ?string  $phoneNumber
+     * @param  ?string  $customerIds
      * @phpstan-pure
      */
-    public function __construct(?string $email = null, ?string $phoneNumber = null)
+    public function __construct(?string $email = null, ?string $phoneNumber = null, ?string $customerIds = null)
     {
         $this->email = $email;
         $this->phoneNumber = $phoneNumber;
+        $this->customerIds = $customerIds;
     }
 }

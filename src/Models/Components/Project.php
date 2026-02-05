@@ -161,13 +161,22 @@ class Project
     public ?LocalDate $startDate = null;
 
     /**
-     * Expected or actual end date of the project
+     * Expected or planned end date of the project
      *
      * @var ?LocalDate $endDate
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('end_date')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?LocalDate $endDate = null;
+
+    /**
+     * Actual end date of the project
+     *
+     * @var ?LocalDate $completionDate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('completion_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LocalDate $completionDate = null;
 
     /**
      * The customer this entity is linked to.
@@ -429,6 +438,7 @@ class Project
      * @param  ?float  $completionPercentage
      * @param  ?LocalDate  $startDate
      * @param  ?LocalDate  $endDate
+     * @param  ?LocalDate  $completionDate
      * @param  ?LinkedCustomer  $customer
      * @param  ?ProjectDepartment  $department
      * @param  ?string  $companyId
@@ -457,7 +467,7 @@ class Project
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(string $name, ?string $id = null, ?LinkedTaxRate $taxRate = null, ?array $tags = null, ?array $addresses = null, ?array $customFields = null, ?string $downstreamId = null, ?string $displayId = null, ?string $referenceId = null, ?string $description = null, ?ProjectProjectStatus $status = null, ?bool $active = null, ?ProjectType $projectType = null, ?Priority $priority = null, ?float $completionPercentage = null, ?LocalDate $startDate = null, ?LocalDate $endDate = null, ?LinkedCustomer $customer = null, ?ProjectDepartment $department = null, ?string $companyId = null, ?string $ownerId = null, ?ParentProject $parentProject = null, ?Currency $currency = null, ?float $budgetAmount = null, ?float $approvedAmount = null, ?float $actualAmount = null, ?float $budgetHours = null, ?float $actualHours = null, ?float $hourlyRate = null, ?BillingMethod $billingMethod = null, ?ProjectPhase $phase = null, ?array $trackingCategories = null, ?string $notes = null, ?string $contractNumber = null, ?float $profitMargin = null, ?ScheduleStatus $scheduleStatus = null, ?int $teamSize = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?bool $isBillable = true)
+    public function __construct(string $name, ?string $id = null, ?LinkedTaxRate $taxRate = null, ?array $tags = null, ?array $addresses = null, ?array $customFields = null, ?string $downstreamId = null, ?string $displayId = null, ?string $referenceId = null, ?string $description = null, ?ProjectProjectStatus $status = null, ?bool $active = null, ?ProjectType $projectType = null, ?Priority $priority = null, ?float $completionPercentage = null, ?LocalDate $startDate = null, ?LocalDate $endDate = null, ?LocalDate $completionDate = null, ?LinkedCustomer $customer = null, ?ProjectDepartment $department = null, ?string $companyId = null, ?string $ownerId = null, ?ParentProject $parentProject = null, ?Currency $currency = null, ?float $budgetAmount = null, ?float $approvedAmount = null, ?float $actualAmount = null, ?float $budgetHours = null, ?float $actualHours = null, ?float $hourlyRate = null, ?BillingMethod $billingMethod = null, ?ProjectPhase $phase = null, ?array $trackingCategories = null, ?string $notes = null, ?string $contractNumber = null, ?float $profitMargin = null, ?ScheduleStatus $scheduleStatus = null, ?int $teamSize = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?bool $isBillable = true)
     {
         $this->name = $name;
         $this->id = $id;
@@ -476,6 +486,7 @@ class Project
         $this->completionPercentage = $completionPercentage;
         $this->startDate = $startDate;
         $this->endDate = $endDate;
+        $this->completionDate = $completionDate;
         $this->customer = $customer;
         $this->department = $department;
         $this->companyId = $companyId;
