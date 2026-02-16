@@ -80,7 +80,7 @@ Upload attachment
 
 ### Example Usage
 
-<!-- UsageSnippet language="php" operationID="accounting.attachmentsUpload" method="post" path="/accounting/attachments/{reference_type}/{reference_id}" -->
+<!-- UsageSnippet language="php" operationID="accounting.attachmentsUpload" method="post" path="/accounting/attachments/{reference_type}/{reference_id}" example="basic" -->
 ```php
 declare(strict_types=1);
 
@@ -100,10 +100,10 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingAttachmentsUploadRequest(
     referenceType: Components\AttachmentReferenceType::Invoice,
-    referenceId: '123456',
+    referenceId: '12345',
     xApideckMetadata: '{"name":"document.pdf","description":"Invoice attachment"}',
     serviceId: 'salesforce',
-    requestBody: '0x506D4BD16D',
+    requestBody: '0xF6a0e3a2dC',
 );
 
 $response = $sdk->accounting->attachments->upload(

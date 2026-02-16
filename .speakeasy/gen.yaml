@@ -28,7 +28,7 @@ generation:
     generateNewTests: false
     skipResponseBodyAssertions: false
 php:
-  version: 0.17.2
+  version: 0.17.3
   additionalDependencies:
     autoload: {}
     autoload-dev: {}

@@ -1,0 +1,19 @@
+# ProxyDeleteProxyResponse
+
+
+## Fields
+
+| Field                                                              | Type                                                               | Required                                                           | Description                                                        |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `httpMeta`                                                         | [Components\HTTPMetadata](../../Models/Components/HTTPMetadata.md) | :heavy_check_mark:                                                 | N/A                                                                |
+| `responseJson`                                                     | array<string, *mixed*>                                             | :heavy_minus_sign:                                                 | Ok                                                                 |
+| `responseBinary`                                                   | *?string*                                                          | :heavy_minus_sign:                                                 | Ok                                                                 |
+| `responsePdf`                                                      | *?string*                                                          | :heavy_minus_sign:                                                 | Ok                                                                 |
+| `responseXml`                                                      | *?string*                                                          | :heavy_minus_sign:                                                 | Ok                                                                 |
+| `responseCsv`                                                      | *?string*                                                          | :heavy_minus_sign:                                                 | Ok                                                                 |
+| `responseText`                                                     | *?string*                                                          | :heavy_minus_sign:                                                 | Ok                                                                 |
+| `errorJson`                                                        | array<string, *mixed*>                                             | :heavy_minus_sign:                                                 | Proxy error                                                        |
+| `errorXml`                                                         | *?string*                                                          | :heavy_minus_sign:                                                 | Proxy error                                                        |
+| `errorHtml`                                                        | *?string*                                                          | :heavy_minus_sign:                                                 | Proxy error                                                        |
+| `errorText`                                                        | *?string*                                                          | :heavy_minus_sign:                                                 | Proxy error                                                        |
+| `headers`                                                          | array<string, array<*string*>>                                     | :heavy_check_mark:                                                 | N/A                                                                |

@@ -641,6 +641,15 @@ foreach ($responses as $response) {
 * [list](docs/sdks/collectionusers/README.md#list) - List Users
 * [get](docs/sdks/collectionusers/README.md#get) - Get user
 
+### [Proxy](docs/sdks/proxy/README.md)
+
+* [get](docs/sdks/proxy/README.md#get) - GET
+* [options](docs/sdks/proxy/README.md#options) - OPTIONS
+* [post](docs/sdks/proxy/README.md#post) - POST
+* [put](docs/sdks/proxy/README.md#put) - PUT
+* [patch](docs/sdks/proxy/README.md#patch) - PATCH
+* [delete](docs/sdks/proxy/README.md#delete) - DELETE
+
 ### [Sms.Messages](docs/sdks/messages/README.md)
 
 * [list](docs/sdks/messages/README.md#list) - List Messages

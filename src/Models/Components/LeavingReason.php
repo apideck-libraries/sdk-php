@@ -15,5 +15,6 @@ enum LeavingReason: string
     case Dismissed = 'dismissed';
     case Resigned = 'resigned';
     case Redundancy = 'redundancy';
+    case Retired = 'retired';
     case Other = 'other';
 }

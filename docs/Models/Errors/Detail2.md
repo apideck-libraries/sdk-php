@@ -1,0 +1,10 @@
+# Detail2
+
+
+## Fields
+
+| Field                                                                          | Type                                                                           | Required                                                                       | Description                                                                    | Example                                                                        |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `type`                                                                         | *?string*                                                                      | :heavy_minus_sign:                                                             | Error type identifier                                                          | refresh_token_connector_error                                                  |
+| `message`                                                                      | *?string*                                                                      | :heavy_minus_sign:                                                             | Detailed error message                                                         | Token refresh failed                                                           |
+| `debug`                                                                        | [?Errors\DetailDebug](../../Models/Errors/DetailDebug.md)                      | :heavy_minus_sign:                                                             | Debug information including request/response details and OAuth timing metadata |                                                                                |
