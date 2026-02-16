@@ -36,15 +36,35 @@ class EcommerceCustomersFilter
     public ?string $customerIds = null;
 
     /**
+     * Minimum date the customer was last modified
+     *
+     * @var ?string $updatedSince
+     */
+    #[SpeakeasyMetadata('queryParam:name=updated_since')]
+    public ?string $updatedSince = null;
+
+    /**
+     * Minimum date the customer was created
+     *
+     * @var ?string $createdSince
+     */
+    #[SpeakeasyMetadata('queryParam:name=created_since')]
+    public ?string $createdSince = null;
+
+    /**
      * @param  ?string  $email
      * @param  ?string  $phoneNumber
      * @param  ?string  $customerIds
+     * @param  ?string  $updatedSince
+     * @param  ?string  $createdSince
      * @phpstan-pure
      */
-    public function __construct(?string $email = null, ?string $phoneNumber = null, ?string $customerIds = null)
+    public function __construct(?string $email = null, ?string $phoneNumber = null, ?string $customerIds = null, ?string $updatedSince = null, ?string $createdSince = null)
     {
         $this->email = $email;
         $this->phoneNumber = $phoneNumber;
         $this->customerIds = $customerIds;
+        $this->updatedSince = $updatedSince;
+        $this->createdSince = $createdSince;
     }
 }

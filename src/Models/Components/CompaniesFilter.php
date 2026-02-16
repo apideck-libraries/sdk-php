@@ -20,11 +20,29 @@ class CompaniesFilter
     public ?string $name = null;
 
     /**
+     *
+     * @var ?\DateTime $updatedSince
+     */
+    #[SpeakeasyMetadata('queryParam:name=updated_since,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $updatedSince = null;
+
+    /**
+     *
+     * @var ?\DateTime $createdSince
+     */
+    #[SpeakeasyMetadata('queryParam:name=created_since,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $createdSince = null;
+
+    /**
      * @param  ?string  $name
+     * @param  ?\DateTime  $updatedSince
+     * @param  ?\DateTime  $createdSince
      * @phpstan-pure
      */
-    public function __construct(?string $name = null)
+    public function __construct(?string $name = null, ?\DateTime $updatedSince = null, ?\DateTime $createdSince = null)
     {
         $this->name = $name;
+        $this->updatedSince = $updatedSince;
+        $this->createdSince = $createdSince;
     }
 }

@@ -41,6 +41,8 @@ class Apideck
 
     public Connector $connector;
 
+    public Proxy $proxy;
+
     public Vault $vault;
 
     public Webhook $webhook;
@@ -70,6 +72,7 @@ class Apideck
         $this->sms = new Sms($this->sdkConfiguration);
         $this->issueTracking = new IssueTracking($this->sdkConfiguration);
         $this->connector = new Connector($this->sdkConfiguration);
+        $this->proxy = new Proxy($this->sdkConfiguration);
         $this->vault = new Vault($this->sdkConfiguration);
         $this->webhook = new Webhook($this->sdkConfiguration);
         $this->initHooks();

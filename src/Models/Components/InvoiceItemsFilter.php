@@ -12,6 +12,13 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class InvoiceItemsFilter
 {
     /**
+     *
+     * @var ?\DateTime $updatedSince
+     */
+    #[SpeakeasyMetadata('queryParam:name=updated_since,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $updatedSince = null;
+
+    /**
      * Name of Invoice Items to search for
      *
      * @var ?string $name
@@ -36,13 +43,15 @@ class InvoiceItemsFilter
     public ?TransactionType $transactionType = null;
 
     /**
+     * @param  ?\DateTime  $updatedSince
      * @param  ?string  $name
      * @param  ?InvoiceItemType  $type
      * @param  ?TransactionType  $transactionType
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?InvoiceItemType $type = null, ?TransactionType $transactionType = null)
+    public function __construct(?\DateTime $updatedSince = null, ?string $name = null, ?InvoiceItemType $type = null, ?TransactionType $transactionType = null)
     {
+        $this->updatedSince = $updatedSince;
         $this->name = $name;
         $this->type = $type;
         $this->transactionType = $transactionType;

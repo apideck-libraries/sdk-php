@@ -68,6 +68,20 @@ class ContactsFilter
     public ?string $ownerId = null;
 
     /**
+     *
+     * @var ?\DateTime $updatedSince
+     */
+    #[SpeakeasyMetadata('queryParam:name=updated_since,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $updatedSince = null;
+
+    /**
+     *
+     * @var ?\DateTime $createdSince
+     */
+    #[SpeakeasyMetadata('queryParam:name=created_since,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $createdSince = null;
+
+    /**
      * @param  ?string  $name
      * @param  ?string  $firstName
      * @param  ?string  $lastName
@@ -75,9 +89,11 @@ class ContactsFilter
      * @param  ?string  $phoneNumber
      * @param  ?string  $companyId
      * @param  ?string  $ownerId
+     * @param  ?\DateTime  $updatedSince
+     * @param  ?\DateTime  $createdSince
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $phoneNumber = null, ?string $companyId = null, ?string $ownerId = null)
+    public function __construct(?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $phoneNumber = null, ?string $companyId = null, ?string $ownerId = null, ?\DateTime $updatedSince = null, ?\DateTime $createdSince = null)
     {
         $this->name = $name;
         $this->firstName = $firstName;
@@ -86,5 +102,7 @@ class ContactsFilter
         $this->phoneNumber = $phoneNumber;
         $this->companyId = $companyId;
         $this->ownerId = $ownerId;
+        $this->updatedSince = $updatedSince;
+        $this->createdSince = $createdSince;
     }
 }
