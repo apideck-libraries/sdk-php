@@ -52,11 +52,11 @@ class Employees
      *
      * Create Employee
      *
-     * @param  Operations\HrisEmployeesAddRequest  $request
-     * @return Operations\HrisEmployeesAddResponse
+     * @param  Operations\AccountingEmployeesAddRequest  $request
+     * @return Operations\AccountingEmployeesAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
-    public function create(Operations\HrisEmployeesAddRequest $request, ?Options $options = null): Operations\HrisEmployeesAddResponse
+    public function create(Operations\AccountingEmployeesAddRequest $request, ?Options $options = null): Operations\AccountingEmployeesAddResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -87,16 +87,16 @@ class Employees
             ];
         }
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/hris/employees');
+        $url = Utils\Utils::generateUrl($baseUrl, '/accounting/employees');
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'employee', 'json');
+        $body = Utils\Utils::serializeRequestBody($request, 'accountingEmployee', 'json');
         if ($body === null) {
             throw new \Exception('Request body is required');
         }
         $httpOptions = array_merge_recursive($httpOptions, $body);
 
-        $qp = Utils\Utils::getQueryParams(Operations\HrisEmployeesAddRequest::class, $request, $urlOverride, $this->sdkConfiguration->globals);
+        $qp = Utils\Utils::getQueryParams(Operations\AccountingEmployeesAddRequest::class, $request, $urlOverride, $this->sdkConfiguration->globals);
         $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request, $this->sdkConfiguration->globals));
         if (! array_key_exists('headers', $httpOptions)) {
             $httpOptions['headers'] = [];
@@ -104,7 +104,7 @@ class Employees
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'hris.employeesAdd', null, $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.employeesAdd', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -128,13 +128,13 @@ class Employees
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\CreateEmployeeResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\HrisEmployeesAddResponse(
+                $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\CreateAccountingEmployeeResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\AccountingEmployeesAddResponse(
                     httpMeta: new Components\HTTPMetadata(
                         response: $httpResponse,
                         request: $httpRequest
                     ),
-                    createEmployeeResponse: $obj
+                    createAccountingEmployeeResponse: $obj
                 );
 
                 return $response;
@@ -207,7 +207,7 @@ class Employees
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
                 $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\UnexpectedErrorResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\HrisEmployeesAddResponse(
+                $response = new Operations\AccountingEmployeesAddResponse(
                     httpMeta: new Components\HTTPMetadata(
                         response: $httpResponse,
                         request: $httpRequest
@@ -225,13 +225,13 @@ class Employees
     /**
      * List Employees
      *
-     * Apideck operates as a stateless Unified API, which means that the list endpoint only provides a portion of the employee model. This is due to the fact that most HRIS systems do not readily provide all data in every call. However, you can access the complete employee model through an employee detail call.
+     * List Employees
      *
-     * @param  ?Operations\HrisEmployeesAllRequest  $request
-     * @return Operations\HrisEmployeesAllResponse
+     * @param  ?Operations\AccountingEmployeesAllRequest  $request
+     * @return Operations\AccountingEmployeesAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
-    private function listIndividual(?Operations\HrisEmployeesAllRequest $request = null, ?Options $options = null): Operations\HrisEmployeesAllResponse
+    private function listIndividual(?Operations\AccountingEmployeesAllRequest $request = null, ?Options $options = null): Operations\AccountingEmployeesAllResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -262,11 +262,11 @@ class Employees
             ];
         }
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/hris/employees');
+        $url = Utils\Utils::generateUrl($baseUrl, '/accounting/employees');
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
 
-        $qp = Utils\Utils::getQueryParams(Operations\HrisEmployeesAllRequest::class, $request, $urlOverride, $this->sdkConfiguration->globals);
+        $qp = Utils\Utils::getQueryParams(Operations\AccountingEmployeesAllRequest::class, $request, $urlOverride, $this->sdkConfiguration->globals);
         $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request, $this->sdkConfiguration->globals));
         if (! array_key_exists('headers', $httpOptions)) {
             $httpOptions['headers'] = [];
@@ -274,7 +274,7 @@ class Employees
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'hris.employeesAll', null, $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.employeesAll', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -298,17 +298,17 @@ class Employees
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\GetEmployeesResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\HrisEmployeesAllResponse(
+                $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\GetAccountingEmployeesResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\AccountingEmployeesAllResponse(
                     httpMeta: new Components\HTTPMetadata(
                         response: $httpResponse,
                         request: $httpRequest
                     ),
-                    getEmployeesResponse: $obj
+                    getAccountingEmployeesResponse: $obj
                 );
                 $sdk = $this;
 
-                $response->next = function () use ($sdk, $responseData, $request): ?Operations\HrisEmployeesAllResponse {
+                $response->next = function () use ($sdk, $responseData, $request): ?Operations\AccountingEmployeesAllResponse {
                     $jsonObject = new \JsonPath\JsonObject($responseData);
                     $nextCursor = $jsonObject->get('$.meta.cursors.next');
                     if ($nextCursor == null) {
@@ -321,17 +321,15 @@ class Employees
                     }
 
                     return $sdk->listIndividual(
-                        request: new Operations\HrisEmployeesAllRequest(
+                        request: new Operations\AccountingEmployeesAllRequest(
                             raw: $request != null ? $request->raw : null,
                             consumerId: $request != null ? $request->consumerId : null,
                             appId: $request != null ? $request->appId : null,
                             serviceId: $request != null ? $request->serviceId : null,
                             cursor: $nextCursor,
                             limit: $request != null ? $request->limit : null,
-                            filter: $request != null ? $request->filter : null,
-                            sort: $request != null ? $request->sort : null,
-                            passThrough: $request != null ? $request->passThrough : null,
                             fields: $request != null ? $request->fields : null,
+                            filter: $request != null ? $request->filter : null,
                         ),
                     );
                 };
@@ -407,7 +405,7 @@ class Employees
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
                 $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\UnexpectedErrorResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\HrisEmployeesAllResponse(
+                $response = new Operations\AccountingEmployeesAllResponse(
                     httpMeta: new Components\HTTPMetadata(
                         response: $httpResponse,
                         request: $httpRequest
@@ -416,7 +414,7 @@ class Employees
                 );
                 $sdk = $this;
 
-                $response->next = function () use ($sdk, $responseData, $request): ?Operations\HrisEmployeesAllResponse {
+                $response->next = function () use ($sdk, $responseData, $request): ?Operations\AccountingEmployeesAllResponse {
                     $jsonObject = new \JsonPath\JsonObject($responseData);
                     $nextCursor = $jsonObject->get('$.meta.cursors.next');
                     if ($nextCursor == null) {
@@ -429,17 +427,15 @@ class Employees
                     }
 
                     return $sdk->listIndividual(
-                        request: new Operations\HrisEmployeesAllRequest(
+                        request: new Operations\AccountingEmployeesAllRequest(
                             raw: $request != null ? $request->raw : null,
                             consumerId: $request != null ? $request->consumerId : null,
                             appId: $request != null ? $request->appId : null,
                             serviceId: $request != null ? $request->serviceId : null,
                             cursor: $nextCursor,
                             limit: $request != null ? $request->limit : null,
-                            filter: $request != null ? $request->filter : null,
-                            sort: $request != null ? $request->sort : null,
-                            passThrough: $request != null ? $request->passThrough : null,
                             fields: $request != null ? $request->fields : null,
+                            filter: $request != null ? $request->filter : null,
                         ),
                     );
                 };
@@ -454,13 +450,13 @@ class Employees
     /**
      * List Employees
      *
-     * Apideck operates as a stateless Unified API, which means that the list endpoint only provides a portion of the employee model. This is due to the fact that most HRIS systems do not readily provide all data in every call. However, you can access the complete employee model through an employee detail call.
+     * List Employees
      *
-     * @param  ?Operations\HrisEmployeesAllRequest  $request
-     * @return \Generator<Operations\HrisEmployeesAllResponse>
+     * @param  ?Operations\AccountingEmployeesAllRequest  $request
+     * @return \Generator<Operations\AccountingEmployeesAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
-    public function list(?Operations\HrisEmployeesAllRequest $request = null, ?Options $options = null): \Generator
+    public function list(?Operations\AccountingEmployeesAllRequest $request = null, ?Options $options = null): \Generator
     {
         $res = $this->listIndividual($request, $options);
         while ($res !== null) {
@@ -474,11 +470,11 @@ class Employees
      *
      * Delete Employee
      *
-     * @param  Operations\HrisEmployeesDeleteRequest  $request
-     * @return Operations\HrisEmployeesDeleteResponse
+     * @param  Operations\AccountingEmployeesDeleteRequest  $request
+     * @return Operations\AccountingEmployeesDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
-    public function delete(Operations\HrisEmployeesDeleteRequest $request, ?Options $options = null): Operations\HrisEmployeesDeleteResponse
+    public function delete(Operations\AccountingEmployeesDeleteRequest $request, ?Options $options = null): Operations\AccountingEmployeesDeleteResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -509,11 +505,11 @@ class Employees
             ];
         }
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/hris/employees/{id}', Operations\HrisEmployeesDeleteRequest::class, $request, $this->sdkConfiguration->globals);
+        $url = Utils\Utils::generateUrl($baseUrl, '/accounting/employees/{id}', Operations\AccountingEmployeesDeleteRequest::class, $request, $this->sdkConfiguration->globals);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
 
-        $qp = Utils\Utils::getQueryParams(Operations\HrisEmployeesDeleteRequest::class, $request, $urlOverride, $this->sdkConfiguration->globals);
+        $qp = Utils\Utils::getQueryParams(Operations\AccountingEmployeesDeleteRequest::class, $request, $urlOverride, $this->sdkConfiguration->globals);
         $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request, $this->sdkConfiguration->globals));
         if (! array_key_exists('headers', $httpOptions)) {
             $httpOptions['headers'] = [];
@@ -521,7 +517,7 @@ class Employees
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('DELETE', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'hris.employeesDelete', null, $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.employeesDelete', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -545,13 +541,13 @@ class Employees
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\DeleteEmployeeResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\HrisEmployeesDeleteResponse(
+                $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\DeleteAccountingEmployeeResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\AccountingEmployeesDeleteResponse(
                     httpMeta: new Components\HTTPMetadata(
                         response: $httpResponse,
                         request: $httpRequest
                     ),
-                    deleteEmployeeResponse: $obj
+                    deleteAccountingEmployeeResponse: $obj
                 );
 
                 return $response;
@@ -624,7 +620,7 @@ class Employees
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
                 $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\UnexpectedErrorResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\HrisEmployeesDeleteResponse(
+                $response = new Operations\AccountingEmployeesDeleteResponse(
                     httpMeta: new Components\HTTPMetadata(
                         response: $httpResponse,
                         request: $httpRequest
@@ -644,11 +640,11 @@ class Employees
      *
      * Get Employee
      *
-     * @param  Operations\HrisEmployeesOneRequest  $request
-     * @return Operations\HrisEmployeesOneResponse
+     * @param  Operations\AccountingEmployeesOneRequest  $request
+     * @return Operations\AccountingEmployeesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
-    public function get(Operations\HrisEmployeesOneRequest $request, ?Options $options = null): Operations\HrisEmployeesOneResponse
+    public function get(Operations\AccountingEmployeesOneRequest $request, ?Options $options = null): Operations\AccountingEmployeesOneResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -679,11 +675,11 @@ class Employees
             ];
         }
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/hris/employees/{id}', Operations\HrisEmployeesOneRequest::class, $request, $this->sdkConfiguration->globals);
+        $url = Utils\Utils::generateUrl($baseUrl, '/accounting/employees/{id}', Operations\AccountingEmployeesOneRequest::class, $request, $this->sdkConfiguration->globals);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
 
-        $qp = Utils\Utils::getQueryParams(Operations\HrisEmployeesOneRequest::class, $request, $urlOverride, $this->sdkConfiguration->globals);
+        $qp = Utils\Utils::getQueryParams(Operations\AccountingEmployeesOneRequest::class, $request, $urlOverride, $this->sdkConfiguration->globals);
         $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request, $this->sdkConfiguration->globals));
         if (! array_key_exists('headers', $httpOptions)) {
             $httpOptions['headers'] = [];
@@ -691,7 +687,7 @@ class Employees
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'hris.employeesOne', null, $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.employeesOne', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -715,13 +711,13 @@ class Employees
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\GetEmployeeResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\HrisEmployeesOneResponse(
+                $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\GetAccountingEmployeeResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\AccountingEmployeesOneResponse(
                     httpMeta: new Components\HTTPMetadata(
                         response: $httpResponse,
                         request: $httpRequest
                     ),
-                    getEmployeeResponse: $obj
+                    getAccountingEmployeeResponse: $obj
                 );
 
                 return $response;
@@ -794,7 +790,7 @@ class Employees
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
                 $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\UnexpectedErrorResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\HrisEmployeesOneResponse(
+                $response = new Operations\AccountingEmployeesOneResponse(
                     httpMeta: new Components\HTTPMetadata(
                         response: $httpResponse,
                         request: $httpRequest
@@ -814,11 +810,11 @@ class Employees
      *
      * Update Employee
      *
-     * @param  Operations\HrisEmployeesUpdateRequest  $request
-     * @return Operations\HrisEmployeesUpdateResponse
+     * @param  Operations\AccountingEmployeesUpdateRequest  $request
+     * @return Operations\AccountingEmployeesUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
-    public function update(Operations\HrisEmployeesUpdateRequest $request, ?Options $options = null): Operations\HrisEmployeesUpdateResponse
+    public function update(Operations\AccountingEmployeesUpdateRequest $request, ?Options $options = null): Operations\AccountingEmployeesUpdateResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -849,16 +845,16 @@ class Employees
             ];
         }
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/hris/employees/{id}', Operations\HrisEmployeesUpdateRequest::class, $request, $this->sdkConfiguration->globals);
+        $url = Utils\Utils::generateUrl($baseUrl, '/accounting/employees/{id}', Operations\AccountingEmployeesUpdateRequest::class, $request, $this->sdkConfiguration->globals);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'employee', 'json');
+        $body = Utils\Utils::serializeRequestBody($request, 'accountingEmployee', 'json');
         if ($body === null) {
             throw new \Exception('Request body is required');
         }
         $httpOptions = array_merge_recursive($httpOptions, $body);
 
-        $qp = Utils\Utils::getQueryParams(Operations\HrisEmployeesUpdateRequest::class, $request, $urlOverride, $this->sdkConfiguration->globals);
+        $qp = Utils\Utils::getQueryParams(Operations\AccountingEmployeesUpdateRequest::class, $request, $urlOverride, $this->sdkConfiguration->globals);
         $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request, $this->sdkConfiguration->globals));
         if (! array_key_exists('headers', $httpOptions)) {
             $httpOptions['headers'] = [];
@@ -866,7 +862,7 @@ class Employees
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('PATCH', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'hris.employeesUpdate', null, $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'accounting.employeesUpdate', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -890,13 +886,13 @@ class Employees
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\UpdateEmployeeResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\HrisEmployeesUpdateResponse(
+                $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\UpdateAccountingEmployeeResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\AccountingEmployeesUpdateResponse(
                     httpMeta: new Components\HTTPMetadata(
                         response: $httpResponse,
                         request: $httpRequest
                     ),
-                    updateEmployeeResponse: $obj
+                    updateAccountingEmployeeResponse: $obj
                 );
 
                 return $response;
@@ -969,7 +965,7 @@ class Employees
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
                 $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\UnexpectedErrorResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\HrisEmployeesUpdateResponse(
+                $response = new Operations\AccountingEmployeesUpdateResponse(
                     httpMeta: new Components\HTTPMetadata(
                         response: $httpResponse,
                         request: $httpRequest
