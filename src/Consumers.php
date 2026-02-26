@@ -318,7 +318,7 @@ class Consumers
                 );
                 $sdk = $this;
 
-                $response->next = function () use ($sdk, $responseData, $appId, $limit): ?Operations\VaultConsumersAllResponse {
+                $response->next = function () use ($sdk, $responseData, $request): ?Operations\VaultConsumersAllResponse {
                     $jsonObject = new \JsonPath\JsonObject($responseData);
                     $nextCursor = $jsonObject->get('$.meta.cursors.next');
                     if ($nextCursor == null) {
@@ -331,9 +331,9 @@ class Consumers
                     }
 
                     return $sdk->listIndividual(
-                        appId: $appId,
+                        appId: $request != null ? $request->appId : null,
                         cursor: $nextCursor,
-                        limit: $limit,
+                        limit: $request != null ? $request->limit : null,
                     );
                 };
 
@@ -417,7 +417,7 @@ class Consumers
                 );
                 $sdk = $this;
 
-                $response->next = function () use ($sdk, $responseData, $appId, $limit): ?Operations\VaultConsumersAllResponse {
+                $response->next = function () use ($sdk, $responseData, $request): ?Operations\VaultConsumersAllResponse {
                     $jsonObject = new \JsonPath\JsonObject($responseData);
                     $nextCursor = $jsonObject->get('$.meta.cursors.next');
                     if ($nextCursor == null) {
@@ -430,9 +430,9 @@ class Consumers
                     }
 
                     return $sdk->listIndividual(
-                        appId: $appId,
+                        appId: $request != null ? $request->appId : null,
                         cursor: $nextCursor,
-                        limit: $limit,
+                        limit: $request != null ? $request->limit : null,
                     );
                 };
 

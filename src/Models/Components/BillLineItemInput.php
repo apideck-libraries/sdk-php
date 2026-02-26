@@ -58,7 +58,7 @@ class BillLineItemInput
     public ?string $code = null;
 
     /**
-     * Line number in the invoice
+     * Line number of the resource
      *
      * @var ?int $lineNumber
      */

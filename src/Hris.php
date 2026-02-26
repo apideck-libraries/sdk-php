@@ -13,7 +13,7 @@ namespace Apideck\Unify;
 class Hris
 {
     private SDKConfiguration $sdkConfiguration;
-    public Employees $employees;
+    public ApideckEmployees $employees;
 
     public ApideckCompanies $companies;
 
@@ -33,7 +33,7 @@ class Hris
     public function __construct(public SDKConfiguration $sdkConfig)
     {
         $this->sdkConfiguration = $sdkConfig;
-        $this->employees = new Employees($this->sdkConfiguration);
+        $this->employees = new ApideckEmployees($this->sdkConfiguration);
         $this->companies = new ApideckCompanies($this->sdkConfiguration);
         $this->departments = new ApideckDepartments($this->sdkConfiguration);
         $this->payrolls = new Payrolls($this->sdkConfiguration);

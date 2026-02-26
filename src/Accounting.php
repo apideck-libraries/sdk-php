@@ -71,6 +71,12 @@ class Accounting
 
     public Projects $projects;
 
+    public Employees $employees;
+
+    public ExpenseCategories $expenseCategories;
+
+    public ExpenseReports $expenseReports;
+
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
@@ -106,6 +112,9 @@ class Accounting
         $this->categories = new Categories($this->sdkConfiguration);
         $this->quotes = new Quotes($this->sdkConfiguration);
         $this->projects = new Projects($this->sdkConfiguration);
+        $this->employees = new Employees($this->sdkConfiguration);
+        $this->expenseCategories = new ExpenseCategories($this->sdkConfiguration);
+        $this->expenseReports = new ExpenseReports($this->sdkConfiguration);
     }
     /**
      * @param  string  $baseUrl

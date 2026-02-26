@@ -1,0 +1,10 @@
+# AccountingExpenseReportsOneResponse
+
+
+## Fields
+
+| Field                                                                                       | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                  | [Components\HTTPMetadata](../../Models/Components/HTTPMetadata.md)                          | :heavy_check_mark:                                                                          | N/A                                                                                         |
+| `getExpenseReportResponse`                                                                  | [?Components\GetExpenseReportResponse](../../Models/Components/GetExpenseReportResponse.md) | :heavy_minus_sign:                                                                          | Expense Reports                                                                             |
+| `unexpectedErrorResponse`                                                                   | [?Components\UnexpectedErrorResponse](../../Models/Components/UnexpectedErrorResponse.md)   | :heavy_minus_sign:                                                                          | Unexpected error                                                                            |
