@@ -322,7 +322,7 @@ class Webhooks
                 );
                 $sdk = $this;
 
-                $response->next = function () use ($sdk, $responseData, $appId, $limit): ?Operations\WebhookWebhooksAllResponse {
+                $response->next = function () use ($sdk, $responseData, $request): ?Operations\WebhookWebhooksAllResponse {
                     $jsonObject = new \JsonPath\JsonObject($responseData);
                     $nextCursor = $jsonObject->get('$.meta.cursors.next');
                     if ($nextCursor == null) {
@@ -335,9 +335,9 @@ class Webhooks
                     }
 
                     return $sdk->listIndividual(
-                        appId: $appId,
+                        appId: $request != null ? $request->appId : null,
                         cursor: $nextCursor,
-                        limit: $limit,
+                        limit: $request != null ? $request->limit : null,
                     );
                 };
 
@@ -421,7 +421,7 @@ class Webhooks
                 );
                 $sdk = $this;
 
-                $response->next = function () use ($sdk, $responseData, $appId, $limit): ?Operations\WebhookWebhooksAllResponse {
+                $response->next = function () use ($sdk, $responseData, $request): ?Operations\WebhookWebhooksAllResponse {
                     $jsonObject = new \JsonPath\JsonObject($responseData);
                     $nextCursor = $jsonObject->get('$.meta.cursors.next');
                     if ($nextCursor == null) {
@@ -434,9 +434,9 @@ class Webhooks
                     }
 
                     return $sdk->listIndividual(
-                        appId: $appId,
+                        appId: $request != null ? $request->appId : null,
                         cursor: $nextCursor,
-                        limit: $limit,
+                        limit: $request != null ? $request->limit : null,
                     );
                 };
 

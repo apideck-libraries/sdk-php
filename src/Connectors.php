@@ -142,7 +142,7 @@ class Connectors
                 );
                 $sdk = $this;
 
-                $response->next = function () use ($sdk, $responseData, $appId, $limit, $filter): ?Operations\ConnectorConnectorsAllResponse {
+                $response->next = function () use ($sdk, $responseData, $request): ?Operations\ConnectorConnectorsAllResponse {
                     $jsonObject = new \JsonPath\JsonObject($responseData);
                     $nextCursor = $jsonObject->get('$.meta.cursors.next');
                     if ($nextCursor == null) {
@@ -155,10 +155,10 @@ class Connectors
                     }
 
                     return $sdk->listIndividual(
-                        appId: $appId,
+                        appId: $request != null ? $request->appId : null,
                         cursor: $nextCursor,
-                        limit: $limit,
-                        filter: $filter,
+                        limit: $request != null ? $request->limit : null,
+                        filter: $request != null ? $request->filter : null,
                     );
                 };
 
@@ -220,7 +220,7 @@ class Connectors
                 );
                 $sdk = $this;
 
-                $response->next = function () use ($sdk, $responseData, $appId, $limit, $filter): ?Operations\ConnectorConnectorsAllResponse {
+                $response->next = function () use ($sdk, $responseData, $request): ?Operations\ConnectorConnectorsAllResponse {
                     $jsonObject = new \JsonPath\JsonObject($responseData);
                     $nextCursor = $jsonObject->get('$.meta.cursors.next');
                     if ($nextCursor == null) {
@@ -233,10 +233,10 @@ class Connectors
                     }
 
                     return $sdk->listIndividual(
-                        appId: $appId,
+                        appId: $request != null ? $request->appId : null,
                         cursor: $nextCursor,
-                        limit: $limit,
-                        filter: $filter,
+                        limit: $request != null ? $request->limit : null,
+                        filter: $request != null ? $request->filter : null,
                     );
                 };
 
