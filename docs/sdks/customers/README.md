@@ -37,6 +37,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingCustomersAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     filter: new Components\CustomersFilter(
         companyName: 'SpaceX',
         displayName: 'Elon Musk',
@@ -116,6 +117,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingCustomersAddRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     customer: new Components\CustomerInput(
         displayId: 'EMP00101',
         displayName: 'Windsurf Shop',
@@ -340,6 +342,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingCustomersOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
 );
 

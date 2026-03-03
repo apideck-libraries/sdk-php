@@ -37,6 +37,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingPurchaseOrdersAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     passThrough: [
         'search' => 'San Francisco',
     ],
@@ -110,6 +111,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingPurchaseOrdersAddRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     purchaseOrder: new Components\PurchaseOrderInput(
         poNumber: '90000117',
         reference: '123456',
@@ -486,6 +488,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingPurchaseOrdersOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
 );
 
 $response = $sdk->accounting->purchaseOrders->get(
@@ -546,6 +549,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingPurchaseOrdersUpdateRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     purchaseOrder: new Components\PurchaseOrderInput(
         poNumber: '90000117',
         reference: '123456',
@@ -862,6 +866,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingPurchaseOrdersDeleteRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
 );
 
 $response = $sdk->accounting->purchaseOrders->delete(

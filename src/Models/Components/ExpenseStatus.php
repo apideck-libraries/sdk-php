@@ -14,4 +14,5 @@ enum ExpenseStatus: string
 {
     case Draft = 'draft';
     case Posted = 'posted';
+    case Voided = 'voided';
 }

@@ -32,6 +32,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingBalanceSheetOneRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     passThrough: [
         'search' => 'San Francisco',
     ],

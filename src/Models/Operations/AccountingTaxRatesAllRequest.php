@@ -37,6 +37,14 @@ class AccountingTaxRatesAllRequest
     public ?string $serviceId = null;
 
     /**
+     * The ID of the company to scope requests to. For connectors that support multi-company, this overrides the default company configured in connection settings.
+     *
+     * @var ?string $companyId
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-apideck-company-id')]
+    public ?string $companyId = null;
+
+    /**
      * Apply filters
      *
      * @var ?Components\TaxRatesFilter $filter
@@ -89,6 +97,7 @@ class AccountingTaxRatesAllRequest
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId
+     * @param  ?string  $companyId
      * @param  ?int  $limit
      * @param  ?Components\TaxRatesFilter  $filter
      * @param  ?array<string, mixed>  $passThrough
@@ -96,11 +105,12 @@ class AccountingTaxRatesAllRequest
      * @param  ?string  $fields
      * @phpstan-pure
      */
-    public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?Components\TaxRatesFilter $filter = null, ?array $passThrough = null, ?string $cursor = null, ?string $fields = null, ?bool $raw = false, ?int $limit = 20)
+    public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $companyId = null, ?Components\TaxRatesFilter $filter = null, ?array $passThrough = null, ?string $cursor = null, ?string $fields = null, ?bool $raw = false, ?int $limit = 20)
     {
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
+        $this->companyId = $companyId;
         $this->filter = $filter;
         $this->passThrough = $passThrough;
         $this->cursor = $cursor;

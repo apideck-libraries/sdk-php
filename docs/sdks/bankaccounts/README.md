@@ -36,6 +36,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingBankAccountsAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     filter: new Components\BankAccountsFilter(
         name: 'Main Operating',
         accountType: Components\BankAccountsFilterAccountType::Checking,
@@ -205,6 +206,7 @@ $request = new Operations\AccountingBankAccountsOneRequest(
         accountType: Components\BankAccountFilterAccountType::Checking,
     ),
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
 );
 

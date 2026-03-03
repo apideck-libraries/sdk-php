@@ -33,6 +33,8 @@ class Accounting
 
     public CompanyInfo $companyInfo;
 
+    public Companies $companies;
+
     public BalanceSheet $balanceSheet;
 
     public ProfitAndLoss $profitAndLoss;
@@ -93,6 +95,7 @@ class Accounting
         $this->suppliers = new Suppliers($this->sdkConfiguration);
         $this->payments = new Payments($this->sdkConfiguration);
         $this->companyInfo = new CompanyInfo($this->sdkConfiguration);
+        $this->companies = new Companies($this->sdkConfiguration);
         $this->balanceSheet = new BalanceSheet($this->sdkConfiguration);
         $this->profitAndLoss = new ProfitAndLoss($this->sdkConfiguration);
         $this->journalEntries = new JournalEntries($this->sdkConfiguration);

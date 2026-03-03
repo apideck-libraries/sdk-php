@@ -35,6 +35,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingTrackingCategoriesAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     passThrough: [
         'search' => 'San Francisco',
     ],
@@ -100,6 +101,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingTrackingCategoriesAddRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     trackingCategory: new Components\TrackingCategoryInput(
         parentId: '12345',
         name: 'Department',
@@ -225,6 +227,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingTrackingCategoriesOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
 );
 
@@ -285,6 +288,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingTrackingCategoriesUpdateRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     trackingCategory: new Components\TrackingCategoryInput(
         parentId: '12345',
         name: 'Department',
@@ -373,6 +377,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingTrackingCategoriesDeleteRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
 );
 
 $response = $sdk->accounting->trackingCategories->delete(

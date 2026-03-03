@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Operations;
 
 use Apideck\Unify\Utils\SpeakeasyMetadata;
-class HrisCompaniesAllRequest
+class HrisCompaniesAll2Request
 {
     /**
      * ID of the consumer which you want to get or push data from

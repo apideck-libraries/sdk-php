@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Operations;
 
 use Apideck\Unify\Models\Components;
-class HrisCompaniesAllResponse
+class AccountingCompaniesAllResponse
 {
     /**
      *
@@ -22,9 +22,9 @@ class HrisCompaniesAllResponse
     /**
      * Companies
      *
-     * @var ?Components\GetHrisCompaniesResponse $getHrisCompaniesResponse
+     * @var ?Components\GetCompaniesResponse $getCompaniesResponse
      */
-    public ?Components\GetHrisCompaniesResponse $getHrisCompaniesResponse = null;
+    public ?Components\GetCompaniesResponse $getCompaniesResponse = null;
 
     /**
      * Unexpected error
@@ -34,27 +34,27 @@ class HrisCompaniesAllResponse
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @var \Closure(string): ?HrisCompaniesAllResponse $next
+     * @var \Closure(string): ?AccountingCompaniesAllResponse $next
      */
     public \Closure $next;
     /**
      * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetHrisCompaniesResponse  $getHrisCompaniesResponse
+     * @param  ?Components\GetCompaniesResponse  $getCompaniesResponse
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetHrisCompaniesResponse $getHrisCompaniesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetCompaniesResponse $getCompaniesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {
         $this->httpMeta = $httpMeta;
-        $this->getHrisCompaniesResponse = $getHrisCompaniesResponse;
+        $this->getCompaniesResponse = $getCompaniesResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }
     /**
      * @param  string  $name
      * @param  array<mixed>  $args
-     * @return ?HrisCompaniesAllResponse
+     * @return ?AccountingCompaniesAllResponse
      */
-    public function __call($name, $args): ?HrisCompaniesAllResponse
+    public function __call($name, $args): ?AccountingCompaniesAllResponse
     {
         if ($name === 'next') {
             return call_user_func_array($this->next, $args);
