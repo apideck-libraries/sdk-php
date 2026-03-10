@@ -12,14 +12,6 @@ use Brick\DateTime\LocalDate;
 class ExpenseReportLineItemInput
 {
     /**
-     * The amount of the expense line item.
-     *
-     * @var float $amount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('amount')]
-    public float $amount;
-
-    /**
      * The expense category this entity is linked to.
      *
      * @var ?LinkedExpenseCategory $expenseCategory
@@ -30,6 +22,15 @@ class ExpenseReportLineItemInput
     public ?LinkedExpenseCategory $expenseCategory = null;
 
     /**
+     * The amount of the expense line item.
+     *
+     * @var ?float $amount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('amount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $amount = null;
+
+    /**
      *
      * @var ?LinkedTaxRateInput $taxRate
      */
@@ -37,6 +38,16 @@ class ExpenseReportLineItemInput
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRateInput|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?LinkedTaxRateInput $taxRate = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * Line number of the resource
@@ -184,9 +195,10 @@ class ExpenseReportLineItemInput
     public ?Currency $currency = null;
 
     /**
-     * @param  float  $amount
      * @param  ?LinkedExpenseCategory  $expenseCategory
+     * @param  ?float  $amount
      * @param  ?LinkedTaxRateInput  $taxRate
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?int  $lineNumber
      * @param  ?LinkedLedgerAccount  $account
      * @param  ?string  $description
@@ -205,11 +217,12 @@ class ExpenseReportLineItemInput
      * @param  ?Currency  $currency
      * @phpstan-pure
      */
-    public function __construct(float $amount, ?LinkedExpenseCategory $expenseCategory = null, ?LinkedTaxRateInput $taxRate = null, ?int $lineNumber = null, ?LinkedLedgerAccount $account = null, ?string $description = null, ?float $quantity = null, ?float $unitPrice = null, ?float $taxAmount = null, ?float $totalAmount = null, ?LocalDate $transactionDate = null, ?bool $billable = null, ?bool $reimbursable = null, ?LinkedCustomerInput $customer = null, ?LinkedDepartmentInput $department = null, ?LinkedLocationInput $location = null, ?array $trackingCategories = null, ?string $receiptUrl = null, ?Currency $currency = null)
+    public function __construct(?LinkedExpenseCategory $expenseCategory = null, ?float $amount = null, ?LinkedTaxRateInput $taxRate = null, ?array $additionalProperties = null, ?int $lineNumber = null, ?LinkedLedgerAccount $account = null, ?string $description = null, ?float $quantity = null, ?float $unitPrice = null, ?float $taxAmount = null, ?float $totalAmount = null, ?LocalDate $transactionDate = null, ?bool $billable = null, ?bool $reimbursable = null, ?LinkedCustomerInput $customer = null, ?LinkedDepartmentInput $department = null, ?LinkedLocationInput $location = null, ?array $trackingCategories = null, ?string $receiptUrl = null, ?Currency $currency = null)
     {
-        $this->amount = $amount;
         $this->expenseCategory = $expenseCategory;
+        $this->amount = $amount;
         $this->taxRate = $taxRate;
+        $this->additionalProperties = $additionalProperties;
         $this->lineNumber = $lineNumber;
         $this->account = $account;
         $this->description = $description;

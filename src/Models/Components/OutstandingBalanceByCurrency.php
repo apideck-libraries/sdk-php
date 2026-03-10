@@ -31,6 +31,16 @@ class OutstandingBalanceByCurrency
     public ?array $balancesByPeriod = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
      * @var ?Currency $currency
@@ -43,13 +53,15 @@ class OutstandingBalanceByCurrency
     /**
      * @param  ?float  $totalAmount
      * @param  ?array<BalanceByPeriod>  $balancesByPeriod
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?Currency  $currency
      * @phpstan-pure
      */
-    public function __construct(?float $totalAmount = null, ?array $balancesByPeriod = null, ?Currency $currency = null)
+    public function __construct(?float $totalAmount = null, ?array $balancesByPeriod = null, ?array $additionalProperties = null, ?Currency $currency = null)
     {
         $this->totalAmount = $totalAmount;
         $this->balancesByPeriod = $balancesByPeriod;
+        $this->additionalProperties = $additionalProperties;
         $this->currency = $currency;
     }
 }

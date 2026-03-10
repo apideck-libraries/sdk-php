@@ -38,6 +38,16 @@ class GetConsentRecordsResponse
     public array $data;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * Raw response from the integration when raw=true query param is provided
      *
      * @var ?array<string, mixed> $raw
@@ -51,14 +61,16 @@ class GetConsentRecordsResponse
      * @param  int  $statusCode
      * @param  string  $status
      * @param  array<ConsentRecord>  $data
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */
-    public function __construct(int $statusCode, string $status, array $data, ?array $raw = null)
+    public function __construct(int $statusCode, string $status, array $data, ?array $additionalProperties = null, ?array $raw = null)
     {
         $this->statusCode = $statusCode;
         $this->status = $status;
         $this->data = $data;
+        $this->additionalProperties = $additionalProperties;
         $this->raw = $raw;
     }
 }

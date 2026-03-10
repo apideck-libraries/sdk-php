@@ -14,18 +14,20 @@ class DriveGroup
     /**
      * A unique identifier for an object.
      *
-     * @var string $id
+     * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public string $id;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
 
     /**
      * The name of the drive group
      *
-     * @var string $name
+     * @var ?string $name
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    public string $name;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $name = null;
 
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
@@ -36,6 +38,16 @@ class DriveGroup
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * The display name of the drive group
@@ -102,9 +114,10 @@ class DriveGroup
     public ?\DateTime $createdAt = null;
 
     /**
-     * @param  string  $id
-     * @param  string  $name
+     * @param  ?string  $id
+     * @param  ?string  $name
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $displayName
      * @param  ?string  $description
      * @param  ?array<string, mixed>  $customMappings
@@ -114,11 +127,12 @@ class DriveGroup
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, ?array $passThrough = null, ?string $displayName = null, ?string $description = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?string $name = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $displayName = null, ?string $description = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->name = $name;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->displayName = $displayName;
         $this->description = $description;
         $this->customMappings = $customMappings;

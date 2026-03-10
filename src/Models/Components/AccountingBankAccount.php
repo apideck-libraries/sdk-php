@@ -14,10 +14,11 @@ class AccountingBankAccount
     /**
      * A unique identifier for an object.
      *
-     * @var string $id
+     * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public string $id;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
 
     /**
      * The type of bank account
@@ -32,12 +33,22 @@ class AccountingBankAccount
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * The third-party API ID of original entity
@@ -259,9 +270,10 @@ class AccountingBankAccount
     public ?string $updatedBy = null;
 
     /**
-     * @param  string  $id
+     * @param  ?string  $id
      * @param  ?AccountingBankAccountAccountType  $accountType
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $downstreamId
      * @param  ?string  $displayId
      * @param  ?string  $name
@@ -288,11 +300,12 @@ class AccountingBankAccount
      * @param  ?string  $updatedBy
      * @phpstan-pure
      */
-    public function __construct(string $id, ?AccountingBankAccountAccountType $accountType = null, ?array $customFields = null, ?string $downstreamId = null, ?string $displayId = null, ?string $name = null, ?string $accountNumber = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $bankName = null, ?Currency $currency = null, ?float $balance = null, ?float $availableBalance = null, ?float $overdraftLimit = null, ?string $routingNumber = null, ?string $iban = null, ?string $bic = null, ?string $bsbNumber = null, ?string $branchIdentifier = null, ?string $bankCode = null, ?string $country = null, ?AccountingBankAccountStatus $status = null, ?string $description = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $createdBy = null, ?string $updatedBy = null)
+    public function __construct(?string $id = null, ?AccountingBankAccountAccountType $accountType = null, ?array $customFields = null, ?array $additionalProperties = null, ?string $downstreamId = null, ?string $displayId = null, ?string $name = null, ?string $accountNumber = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $bankName = null, ?Currency $currency = null, ?float $balance = null, ?float $availableBalance = null, ?float $overdraftLimit = null, ?string $routingNumber = null, ?string $iban = null, ?string $bic = null, ?string $bsbNumber = null, ?string $branchIdentifier = null, ?string $bankCode = null, ?string $country = null, ?AccountingBankAccountStatus $status = null, ?string $description = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $createdBy = null, ?string $updatedBy = null)
     {
         $this->id = $id;
         $this->accountType = $accountType;
         $this->customFields = $customFields;
+        $this->additionalProperties = $additionalProperties;
         $this->downstreamId = $downstreamId;
         $this->displayId = $displayId;
         $this->name = $name;

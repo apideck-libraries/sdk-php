@@ -49,6 +49,16 @@ class TimeOffRequest
     public ?string $policyType = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * ID of the employee
      *
      * @var ?string $employeeId
@@ -210,6 +220,7 @@ class TimeOffRequest
      * @param  ?Notes  $notes
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $policyType
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $employeeId
      * @param  ?string  $policyId
      * @param  ?TimeOffRequestStatusStatus  $status
@@ -229,12 +240,13 @@ class TimeOffRequest
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?Notes $notes = null, ?array $passThrough = null, ?string $policyType = null, ?string $employeeId = null, ?string $policyId = null, ?TimeOffRequestStatusStatus $status = null, ?string $description = null, ?string $startDate = null, ?string $endDate = null, ?string $requestDate = null, ?RequestType $requestType = null, ?string $approvalDate = null, ?Units $units = null, ?float $amount = null, ?string $dayPart = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?Notes $notes = null, ?array $passThrough = null, ?string $policyType = null, ?array $additionalProperties = null, ?string $employeeId = null, ?string $policyId = null, ?TimeOffRequestStatusStatus $status = null, ?string $description = null, ?string $startDate = null, ?string $endDate = null, ?string $requestDate = null, ?RequestType $requestType = null, ?string $approvalDate = null, ?Units $units = null, ?float $amount = null, ?string $dayPart = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->notes = $notes;
         $this->passThrough = $passThrough;
         $this->policyType = $policyType;
+        $this->additionalProperties = $additionalProperties;
         $this->employeeId = $employeeId;
         $this->policyId = $policyId;
         $this->status = $status;

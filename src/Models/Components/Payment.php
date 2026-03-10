@@ -14,26 +14,11 @@ class Payment
     /**
      * A unique identifier for an object.
      *
-     * @var string $id
+     * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public string $id;
-
-    /**
-     * The total amount of the transaction or record
-     *
-     * @var ?float $totalAmount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('total_amount')]
-    public ?float $totalAmount;
-
-    /**
-     * The date of the transaction - YYYY:MM::DDThh:mm:ss.sTZD
-     *
-     * @var ?\DateTime $transactionDate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('transaction_date')]
-    public ?\DateTime $transactionDate;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
 
     /**
      * Status of payment
@@ -68,10 +53,10 @@ class Payment
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -84,6 +69,16 @@ class Payment
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * The third-party API ID of original entity
@@ -112,6 +107,15 @@ class Payment
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency_rate')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $currencyRate = null;
+
+    /**
+     * The total amount of the transaction or record
+     *
+     * @var ?float $totalAmount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('total_amount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $totalAmount = null;
 
     /**
      * Optional transaction reference message ie: Debit remittance detail.
@@ -177,6 +181,15 @@ class Payment
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?LinkedLedgerAccount $account = null;
+
+    /**
+     * The date of the transaction - YYYY:MM::DDThh:mm:ss.sTZD
+     *
+     * @var ?\DateTime $transactionDate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('transaction_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?\DateTime $transactionDate = null;
 
     /**
      * The customer this entity is linked to.
@@ -310,17 +323,17 @@ class Payment
     public ?\DateTime $updatedAt = null;
 
     /**
-     * @param  string  $id
-     * @param  ?float  $totalAmount
-     * @param  ?\DateTime  $transactionDate
+     * @param  ?string  $id
      * @param  ?PaymentStatus  $status
      * @param  ?PaymentType  $type
      * @param  ?array<Allocation>  $allocations
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $downstreamId
      * @param  ?Currency  $currency
      * @param  ?float  $currencyRate
+     * @param  ?float  $totalAmount
      * @param  ?string  $reference
      * @param  ?string  $paymentMethod
      * @param  ?string  $paymentMethodReference
@@ -328,6 +341,7 @@ class Payment
      * @param  ?string  $accountsReceivableAccountType
      * @param  ?string  $accountsReceivableAccountId
      * @param  ?LinkedLedgerAccount  $account
+     * @param  ?\DateTime  $transactionDate
      * @param  ?LinkedCustomer  $customer
      * @param  ?DeprecatedLinkedSupplier  $supplier
      * @param  ?string  $companyId
@@ -344,19 +358,19 @@ class Payment
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, ?float $totalAmount = null, ?\DateTime $transactionDate = null, ?PaymentStatus $status = null, ?PaymentType $type = null, ?array $allocations = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?Currency $currency = null, ?float $currencyRate = null, ?string $reference = null, ?string $paymentMethod = null, ?string $paymentMethodReference = null, ?string $paymentMethodId = null, ?string $accountsReceivableAccountType = null, ?string $accountsReceivableAccountId = null, ?LinkedLedgerAccount $account = null, ?LinkedCustomer $customer = null, ?DeprecatedLinkedSupplier $supplier = null, ?string $companyId = null, ?bool $reconciled = null, ?string $note = null, ?string $number = null, ?array $trackingCategories = null, ?string $rowVersion = null, ?string $displayId = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(?string $id = null, ?PaymentStatus $status = null, ?PaymentType $type = null, ?array $allocations = null, ?array $customFields = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $downstreamId = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $totalAmount = null, ?string $reference = null, ?string $paymentMethod = null, ?string $paymentMethodReference = null, ?string $paymentMethodId = null, ?string $accountsReceivableAccountType = null, ?string $accountsReceivableAccountId = null, ?LinkedLedgerAccount $account = null, ?\DateTime $transactionDate = null, ?LinkedCustomer $customer = null, ?DeprecatedLinkedSupplier $supplier = null, ?string $companyId = null, ?bool $reconciled = null, ?string $note = null, ?string $number = null, ?array $trackingCategories = null, ?string $rowVersion = null, ?string $displayId = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
-        $this->totalAmount = $totalAmount;
-        $this->transactionDate = $transactionDate;
         $this->status = $status;
         $this->type = $type;
         $this->allocations = $allocations;
         $this->customFields = $customFields;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->downstreamId = $downstreamId;
         $this->currency = $currency;
         $this->currencyRate = $currencyRate;
+        $this->totalAmount = $totalAmount;
         $this->reference = $reference;
         $this->paymentMethod = $paymentMethod;
         $this->paymentMethodReference = $paymentMethodReference;
@@ -364,6 +378,7 @@ class Payment
         $this->accountsReceivableAccountType = $accountsReceivableAccountType;
         $this->accountsReceivableAccountId = $accountsReceivableAccountId;
         $this->account = $account;
+        $this->transactionDate = $transactionDate;
         $this->customer = $customer;
         $this->supplier = $supplier;
         $this->companyId = $companyId;

@@ -14,10 +14,11 @@ class Ticket
     /**
      * A unique identifier for an object.
      *
-     * @var string $id
+     * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public string $id;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
 
     /**
      * $assignees
@@ -48,6 +49,16 @@ class Ticket
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * The ticket's parent ID
@@ -169,10 +180,11 @@ class Ticket
     public ?array $customMappings = null;
 
     /**
-     * @param  string  $id
+     * @param  ?string  $id
      * @param  ?array<Assignee>  $assignees
      * @param  ?array<CollectionTag>  $tags
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $parentId
      * @param  ?string  $collectionId
      * @param  ?string  $type
@@ -188,12 +200,13 @@ class Ticket
      * @param  ?array<string, mixed>  $customMappings
      * @phpstan-pure
      */
-    public function __construct(string $id, ?array $assignees = null, ?array $tags = null, ?array $passThrough = null, ?string $parentId = null, ?string $collectionId = null, ?string $type = null, ?string $subject = null, ?string $description = null, ?string $status = null, ?TicketPriority $priority = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $createdBy = null, ?\DateTime $dueDate = null, ?\DateTime $completedAt = null, ?array $customMappings = null)
+    public function __construct(?string $id = null, ?array $assignees = null, ?array $tags = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $parentId = null, ?string $collectionId = null, ?string $type = null, ?string $subject = null, ?string $description = null, ?string $status = null, ?TicketPriority $priority = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $createdBy = null, ?\DateTime $dueDate = null, ?\DateTime $completedAt = null, ?array $customMappings = null)
     {
         $this->id = $id;
         $this->assignees = $assignees;
         $this->tags = $tags;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->parentId = $parentId;
         $this->collectionId = $collectionId;
         $this->type = $type;

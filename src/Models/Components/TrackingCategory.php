@@ -60,6 +60,16 @@ class TrackingCategory
     public ?array $subsidiaries = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * A unique identifier for an object.
      *
      * @var ?string $parentId
@@ -147,6 +157,7 @@ class TrackingCategory
      * @param  ?TrackingCategoryStatus  $status
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?array<TrackingCategorySubsidiaries>  $subsidiaries
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $parentId
      * @param  ?string  $parentName
      * @param  ?string  $code
@@ -158,13 +169,14 @@ class TrackingCategory
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?TrackingCategoryStatus $status = null, ?array $passThrough = null, ?array $subsidiaries = null, ?string $parentId = null, ?string $parentName = null, ?string $code = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?string $name = null, ?TrackingCategoryStatus $status = null, ?array $passThrough = null, ?array $subsidiaries = null, ?array $additionalProperties = null, ?string $parentId = null, ?string $parentName = null, ?string $code = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->name = $name;
         $this->status = $status;
         $this->passThrough = $passThrough;
         $this->subsidiaries = $subsidiaries;
+        $this->additionalProperties = $additionalProperties;
         $this->parentId = $parentId;
         $this->parentName = $parentName;
         $this->code = $code;

@@ -14,26 +14,28 @@ class ConsentRecordInput
     /**
      * Whether consent was granted (true) or denied/revoked (false)
      *
-     * @var bool $granted
+     * @var ?bool $granted
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('granted')]
-    public bool $granted;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $granted = null;
 
     /**
      * Data scopes resource configuration that can be either detailed field permissions or a wildcard
      *
-     * @var array<string, array<string, DataScopesResources1>>|DataScopesResources2 $resources
+     * @var array<string, array<string, DataScopesResources1>>|DataScopesResources2|null $resources
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('resources')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, array<string, \Apideck\Unify\Models\Components\DataScopesResources1>>|\Apideck\Unify\Models\Components\DataScopesResources2')]
-    public array|DataScopesResources2 $resources;
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, array<string, \Apideck\Unify\Models\Components\DataScopesResources1>>|\Apideck\Unify\Models\Components\DataScopesResources2|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public array|DataScopesResources2|null $resources = null;
 
     /**
-     * @param  bool  $granted
-     * @param  array<string, array<string, DataScopesResources1>>|DataScopesResources2  $resources
+     * @param  ?bool  $granted
+     * @param  array<string, array<string, DataScopesResources1>>|DataScopesResources2|null  $resources
      * @phpstan-pure
      */
-    public function __construct(bool $granted, array|DataScopesResources2 $resources)
+    public function __construct(?bool $granted = null, array|DataScopesResources2|null $resources = null)
     {
         $this->granted = $granted;
         $this->resources = $resources;

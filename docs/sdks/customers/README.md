@@ -37,6 +37,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingCustomersAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     filter: new Components\CustomersFilter(
         companyName: 'SpaceX',
         displayName: 'Elon Musk',
@@ -116,6 +117,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingCustomersAddRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     customer: new Components\CustomerInput(
         displayId: 'EMP00101',
         displayName: 'Windsurf Shop',
@@ -238,19 +240,19 @@ $request = new Operations\AccountingCustomersAddRequest(
         paymentMethod: 'cash',
         channel: 'email',
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: null,
             ),
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: null,
             ),
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -340,6 +342,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingCustomersOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
 );
 
@@ -543,7 +546,7 @@ $request = new Operations\AccountingCustomersUpdateRequest(
         paymentMethod: 'cash',
         channel: 'email',
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',

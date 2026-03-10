@@ -12,6 +12,16 @@ namespace Apideck\Unify\Models\Components;
 class SubsidiaryReferenceInput
 {
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * The name of the company.
      *
      * @var ?string $name
@@ -21,11 +31,13 @@ class SubsidiaryReferenceInput
     public ?string $name = null;
 
     /**
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $name
      * @phpstan-pure
      */
-    public function __construct(?string $name = null)
+    public function __construct(?array $additionalProperties = null, ?string $name = null)
     {
+        $this->additionalProperties = $additionalProperties;
         $this->name = $name;
     }
 }

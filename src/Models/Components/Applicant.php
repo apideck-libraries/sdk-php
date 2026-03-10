@@ -67,10 +67,10 @@ class Applicant
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -179,6 +179,16 @@ class Applicant
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * A formal salutation for the person. For example, 'Mr', 'Mrs'
@@ -458,7 +468,7 @@ class Applicant
      * @param  ?string  $coverLetter
      * @param  ?string  $headline
      * @param  ?array<Email>  $emails
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<PhoneNumber>  $phoneNumbers
      * @param  ?array<Address>  $addresses
      * @param  ?array<Websites>  $websites
@@ -471,6 +481,7 @@ class Applicant
      * @param  ?bool  $anonymized
      * @param  ?string  $cvUrl
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $salutation
      * @param  ?string  $firstName
      * @param  ?string  $lastName
@@ -503,7 +514,7 @@ class Applicant
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?string $type = null, ?string $coverLetter = null, ?string $headline = null, ?array $emails = null, ?array $customFields = null, ?array $phoneNumbers = null, ?array $addresses = null, ?array $websites = null, ?array $socialLinks = null, ?string $stageId = null, ?string $recruiterId = null, ?string $coordinatorId = null, ?string $sourceId = null, ?bool $confidential = null, ?bool $anonymized = null, ?string $cvUrl = null, ?array $passThrough = null, ?string $salutation = null, ?string $firstName = null, ?string $lastName = null, ?string $middleName = null, ?string $initials = null, ?LocalDate $birthday = null, ?ApplicantGender $gender = null, ?string $socialSecurityNumber = null, ?string $jobUrl = null, ?string $photoUrl = null, ?string $title = null, ?array $applicationIds = null, ?array $applications = null, ?array $followers = null, ?array $sources = null, ?array $tags = null, ?bool $archived = null, ?\DateTime $lastInteractionAt = null, ?string $ownerId = null, ?string $sourcedBy = null, ?string $recordUrl = null, ?\DateTime $rejectedAt = null, ?array $customMappings = null, ?bool $deleted = null, ?string $deletedBy = null, ?\DateTime $deletedAt = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?string $name = null, ?string $type = null, ?string $coverLetter = null, ?string $headline = null, ?array $emails = null, ?array $customFields = null, ?array $phoneNumbers = null, ?array $addresses = null, ?array $websites = null, ?array $socialLinks = null, ?string $stageId = null, ?string $recruiterId = null, ?string $coordinatorId = null, ?string $sourceId = null, ?bool $confidential = null, ?bool $anonymized = null, ?string $cvUrl = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $salutation = null, ?string $firstName = null, ?string $lastName = null, ?string $middleName = null, ?string $initials = null, ?LocalDate $birthday = null, ?ApplicantGender $gender = null, ?string $socialSecurityNumber = null, ?string $jobUrl = null, ?string $photoUrl = null, ?string $title = null, ?array $applicationIds = null, ?array $applications = null, ?array $followers = null, ?array $sources = null, ?array $tags = null, ?bool $archived = null, ?\DateTime $lastInteractionAt = null, ?string $ownerId = null, ?string $sourcedBy = null, ?string $recordUrl = null, ?\DateTime $rejectedAt = null, ?array $customMappings = null, ?bool $deleted = null, ?string $deletedBy = null, ?\DateTime $deletedAt = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -524,6 +535,7 @@ class Applicant
         $this->anonymized = $anonymized;
         $this->cvUrl = $cvUrl;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->salutation = $salutation;
         $this->firstName = $firstName;
         $this->lastName = $lastName;

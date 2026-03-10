@@ -24,12 +24,22 @@ class AccountingBankAccountInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * Display ID for the bank account
@@ -197,7 +207,8 @@ class AccountingBankAccountInput
 
     /**
      * @param  ?AccountingBankAccountAccountType  $accountType
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $displayId
      * @param  ?string  $name
      * @param  ?string  $accountNumber
@@ -218,10 +229,11 @@ class AccountingBankAccountInput
      * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(?AccountingBankAccountAccountType $accountType = null, ?array $customFields = null, ?string $displayId = null, ?string $name = null, ?string $accountNumber = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $bankName = null, ?Currency $currency = null, ?float $balance = null, ?float $availableBalance = null, ?float $overdraftLimit = null, ?string $routingNumber = null, ?string $iban = null, ?string $bic = null, ?string $bsbNumber = null, ?string $branchIdentifier = null, ?string $bankCode = null, ?string $country = null, ?AccountingBankAccountStatus $status = null, ?string $description = null)
+    public function __construct(?AccountingBankAccountAccountType $accountType = null, ?array $customFields = null, ?array $additionalProperties = null, ?string $displayId = null, ?string $name = null, ?string $accountNumber = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $bankName = null, ?Currency $currency = null, ?float $balance = null, ?float $availableBalance = null, ?float $overdraftLimit = null, ?string $routingNumber = null, ?string $iban = null, ?string $bic = null, ?string $bsbNumber = null, ?string $branchIdentifier = null, ?string $bankCode = null, ?string $country = null, ?AccountingBankAccountStatus $status = null, ?string $description = null)
     {
         $this->accountType = $accountType;
         $this->customFields = $customFields;
+        $this->additionalProperties = $additionalProperties;
         $this->displayId = $displayId;
         $this->name = $name;
         $this->accountNumber = $accountNumber;

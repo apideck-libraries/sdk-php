@@ -12,6 +12,16 @@ namespace Apideck\Unify\Models\Components;
 class PipelineStages
 {
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * The name of the Pipeline Stage.
      *
      * @var ?string $name
@@ -57,6 +67,7 @@ class PipelineStages
     public ?bool $archived = null;
 
     /**
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $name
      * @param  ?string  $value
      * @param  ?int  $winProbability
@@ -64,8 +75,9 @@ class PipelineStages
      * @param  ?bool  $archived
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?string $value = null, ?int $winProbability = null, ?int $displayOrder = null, ?bool $archived = null)
+    public function __construct(?array $additionalProperties = null, ?string $name = null, ?string $value = null, ?int $winProbability = null, ?int $displayOrder = null, ?bool $archived = null)
     {
+        $this->additionalProperties = $additionalProperties;
         $this->name = $name;
         $this->value = $value;
         $this->winProbability = $winProbability;

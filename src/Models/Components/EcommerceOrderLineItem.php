@@ -23,14 +23,6 @@ class EcommerceOrderLineItem
     public ?array $options = null;
 
     /**
-     * The quantity of the product or variant associated with the line item.
-     *
-     * @var ?string $quantity
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('quantity')]
-    public ?string $quantity;
-
-    /**
      * $discounts
      *
      * @var ?array<EcommerceDiscount> $discounts
@@ -93,6 +85,15 @@ class EcommerceOrderLineItem
     #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $description = null;
+
+    /**
+     * The quantity of the product or variant associated with the line item.
+     *
+     * @var ?string $quantity
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('quantity')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $quantity = null;
 
     /**
      * The unit price of the product or variant associated with the line item.
@@ -168,7 +169,6 @@ class EcommerceOrderLineItem
 
     /**
      * @param  ?array<Options>  $options
-     * @param  ?string  $quantity
      * @param  ?array<EcommerceDiscount>  $discounts
      * @param  ?string  $id
      * @param  ?string  $productId
@@ -176,6 +176,7 @@ class EcommerceOrderLineItem
      * @param  ?string  $sku
      * @param  ?string  $name
      * @param  ?string  $description
+     * @param  ?string  $quantity
      * @param  ?string  $unitPrice
      * @param  ?string  $taxRate
      * @param  ?string  $taxAmount
@@ -186,10 +187,9 @@ class EcommerceOrderLineItem
      * @param  ?string  $totalAmount
      * @phpstan-pure
      */
-    public function __construct(?array $options = null, ?string $quantity = null, ?array $discounts = null, ?string $id = null, ?string $productId = null, ?string $variantId = null, ?string $sku = null, ?string $name = null, ?string $description = null, ?string $unitPrice = null, ?string $taxRate = null, ?string $taxAmount = null, ?bool $isRefunded = null, ?string $refundedAmount = null, ?string $refundedQuantity = null, ?string $subTotal = null, ?string $totalAmount = null)
+    public function __construct(?array $options = null, ?array $discounts = null, ?string $id = null, ?string $productId = null, ?string $variantId = null, ?string $sku = null, ?string $name = null, ?string $description = null, ?string $quantity = null, ?string $unitPrice = null, ?string $taxRate = null, ?string $taxAmount = null, ?bool $isRefunded = null, ?string $refundedAmount = null, ?string $refundedQuantity = null, ?string $subTotal = null, ?string $totalAmount = null)
     {
         $this->options = $options;
-        $this->quantity = $quantity;
         $this->discounts = $discounts;
         $this->id = $id;
         $this->productId = $productId;
@@ -197,6 +197,7 @@ class EcommerceOrderLineItem
         $this->sku = $sku;
         $this->name = $name;
         $this->description = $description;
+        $this->quantity = $quantity;
         $this->unitPrice = $unitPrice;
         $this->taxRate = $taxRate;
         $this->taxAmount = $taxAmount;

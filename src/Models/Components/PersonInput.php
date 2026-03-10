@@ -12,6 +12,16 @@ use Brick\DateTime\LocalDate;
 class PersonInput
 {
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * The first name of the person.
      *
      * @var ?string $firstName
@@ -76,6 +86,7 @@ class PersonInput
     public ?LocalDate $deceasedOn = null;
 
     /**
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $firstName
      * @param  ?string  $lastName
      * @param  ?string  $middleName
@@ -85,8 +96,9 @@ class PersonInput
      * @param  ?LocalDate  $deceasedOn
      * @phpstan-pure
      */
-    public function __construct(?string $firstName = null, ?string $lastName = null, ?string $middleName = null, ?Gender $gender = null, ?string $initials = null, ?LocalDate $birthday = null, ?LocalDate $deceasedOn = null)
+    public function __construct(?array $additionalProperties = null, ?string $firstName = null, ?string $lastName = null, ?string $middleName = null, ?Gender $gender = null, ?string $initials = null, ?LocalDate $birthday = null, ?LocalDate $deceasedOn = null)
     {
+        $this->additionalProperties = $additionalProperties;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->middleName = $middleName;

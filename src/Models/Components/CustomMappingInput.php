@@ -21,11 +21,23 @@ class CustomMappingInput
     public ?string $value = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * @param  ?string  $value
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(?string $value = null)
+    public function __construct(?string $value = null, ?array $additionalProperties = null)
     {
         $this->value = $value;
+        $this->additionalProperties = $additionalProperties;
     }
 }

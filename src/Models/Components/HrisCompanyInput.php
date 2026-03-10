@@ -13,13 +13,6 @@ class HrisCompanyInput
 {
     /**
      *
-     * @var ?string $legalName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('legal_name')]
-    public ?string $legalName;
-
-    /**
-     *
      * @var ?HrisCompanyStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
@@ -78,6 +71,24 @@ class HrisCompanyInput
     public ?array $passThrough = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
+     *
+     * @var ?string $legalName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('legal_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $legalName = null;
+
+    /**
      *
      * @var ?string $displayName
      */
@@ -121,13 +132,14 @@ class HrisCompanyInput
     public ?string $debtorId = null;
 
     /**
-     * @param  ?string  $legalName
      * @param  ?HrisCompanyStatus  $status
      * @param  ?array<Address>  $addresses
      * @param  ?array<PhoneNumber>  $phoneNumbers
      * @param  ?array<Email>  $emails
      * @param  ?array<Website>  $websites
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
+     * @param  ?string  $legalName
      * @param  ?string  $displayName
      * @param  ?string  $subdomain
      * @param  ?string  $companyNumber
@@ -135,15 +147,16 @@ class HrisCompanyInput
      * @param  ?string  $debtorId
      * @phpstan-pure
      */
-    public function __construct(?string $legalName = null, ?HrisCompanyStatus $status = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $passThrough = null, ?string $displayName = null, ?string $subdomain = null, ?string $companyNumber = null, ?Currency $currency = null, ?string $debtorId = null)
+    public function __construct(?HrisCompanyStatus $status = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $legalName = null, ?string $displayName = null, ?string $subdomain = null, ?string $companyNumber = null, ?Currency $currency = null, ?string $debtorId = null)
     {
-        $this->legalName = $legalName;
         $this->status = $status;
         $this->addresses = $addresses;
         $this->phoneNumbers = $phoneNumbers;
         $this->emails = $emails;
         $this->websites = $websites;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
+        $this->legalName = $legalName;
         $this->displayName = $displayName;
         $this->subdomain = $subdomain;
         $this->companyNumber = $companyNumber;

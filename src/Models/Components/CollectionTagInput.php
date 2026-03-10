@@ -12,19 +12,32 @@ namespace Apideck\Unify\Models\Components;
 class CollectionTagInput
 {
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * A unique identifier for an object.
      *
      * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public ?string $id;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
 
     /**
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $id
      * @phpstan-pure
      */
-    public function __construct(?string $id = null)
+    public function __construct(?array $additionalProperties = null, ?string $id = null)
     {
+        $this->additionalProperties = $additionalProperties;
         $this->id = $id;
     }
 }

@@ -68,6 +68,16 @@ class CustomObject
     public ?array $passThrough = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * The name of the custom object
      *
      * @var ?string $name
@@ -101,12 +111,13 @@ class CustomObject
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $name
      * @param  ?string  $updatedAt
      * @param  ?string  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $ownerId = null, ?array $fields = null, ?string $updatedBy = null, ?string $createdBy = null, ?array $passThrough = null, ?string $name = null, ?string $updatedAt = null, ?string $createdAt = null)
+    public function __construct(?string $id = null, ?string $ownerId = null, ?array $fields = null, ?string $updatedBy = null, ?string $createdBy = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $name = null, ?string $updatedAt = null, ?string $createdAt = null)
     {
         $this->id = $id;
         $this->ownerId = $ownerId;
@@ -114,6 +125,7 @@ class CustomObject
         $this->updatedBy = $updatedBy;
         $this->createdBy = $createdBy;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->name = $name;
         $this->updatedAt = $updatedAt;
         $this->createdAt = $createdAt;

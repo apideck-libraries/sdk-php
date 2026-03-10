@@ -73,10 +73,10 @@ class SupplierInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -127,6 +127,16 @@ class SupplierInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('integration_system_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $integrationSystemId = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * Display ID
@@ -300,6 +310,15 @@ class SupplierInput
     public ?string $terms = null;
 
     /**
+     * The ID of the payment terms
+     *
+     * @var ?string $termsId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('terms_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $termsId = null;
+
+    /**
      * The channel through which the transaction is processed.
      *
      * @var ?string $channel
@@ -342,12 +361,13 @@ class SupplierInput
      * @param  ?array<Website>  $websites
      * @param  ?array<BankAccount>  $bankAccounts
      * @param  ?LinkedTaxRateInput  $taxRate
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<?LinkedTaxDetail>  $taxDetails
      * @param  ?array<?LinkedTaxStatusDetail>  $taxStatusDetails
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $subsidiaryId
      * @param  ?string  $integrationSystemId
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $displayId
      * @param  ?string  $displayName
      * @param  ?string  $companyName
@@ -367,13 +387,14 @@ class SupplierInput
      * @param  ?SupplierStatus  $status
      * @param  ?string  $paymentMethod
      * @param  ?string  $terms
+     * @param  ?string  $termsId
      * @param  ?string  $channel
      * @param  ?string  $issuedMethod
      * @param  ?string  $issuedEmail
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $taxDetails = null, ?array $taxStatusDetails = null, ?array $passThrough = null, ?string $subsidiaryId = null, ?string $integrationSystemId = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $supplierCategory = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?string $notes = null, ?string $taxNumber = null, ?bool $taxable = null, ?Currency $currency = null, ?LinkedLedgerAccount $account = null, ?SupplierStatus $status = null, ?string $paymentMethod = null, ?string $terms = null, ?string $channel = null, ?string $issuedMethod = null, ?string $issuedEmail = null, ?string $rowVersion = null)
+    public function __construct(?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $taxDetails = null, ?array $taxStatusDetails = null, ?array $passThrough = null, ?string $subsidiaryId = null, ?string $integrationSystemId = null, ?array $additionalProperties = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $supplierCategory = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?string $notes = null, ?string $taxNumber = null, ?bool $taxable = null, ?Currency $currency = null, ?LinkedLedgerAccount $account = null, ?SupplierStatus $status = null, ?string $paymentMethod = null, ?string $terms = null, ?string $termsId = null, ?string $channel = null, ?string $issuedMethod = null, ?string $issuedEmail = null, ?string $rowVersion = null)
     {
         $this->addresses = $addresses;
         $this->phoneNumbers = $phoneNumbers;
@@ -387,6 +408,7 @@ class SupplierInput
         $this->passThrough = $passThrough;
         $this->subsidiaryId = $subsidiaryId;
         $this->integrationSystemId = $integrationSystemId;
+        $this->additionalProperties = $additionalProperties;
         $this->displayId = $displayId;
         $this->displayName = $displayName;
         $this->companyName = $companyName;
@@ -406,6 +428,7 @@ class SupplierInput
         $this->status = $status;
         $this->paymentMethod = $paymentMethod;
         $this->terms = $terms;
+        $this->termsId = $termsId;
         $this->channel = $channel;
         $this->issuedMethod = $issuedMethod;
         $this->issuedEmail = $issuedEmail;

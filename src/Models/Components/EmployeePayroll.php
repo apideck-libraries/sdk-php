@@ -12,46 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class EmployeePayroll
 {
     /**
-     * A unique identifier for an object.
-     *
-     * @var ?string $id
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public ?string $id;
-
-    /**
-     * Whether or not the payroll has been successfully processed. Note that processed payrolls cannot be updated.
-     *
-     * @var ?bool $processed
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('processed')]
-    public ?bool $processed;
-
-    /**
-     * The date on which employees will be paid for the payroll.
-     *
-     * @var ?string $checkDate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('check_date')]
-    public ?string $checkDate;
-
-    /**
-     * The start date, inclusive, of the pay period.
-     *
-     * @var ?string $startDate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('start_date')]
-    public ?string $startDate;
-
-    /**
-     * The end date, inclusive, of the pay period.
-     *
-     * @var ?string $endDate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('end_date')]
-    public ?string $endDate;
-
-    /**
      * The overview of the payroll totals.
      *
      * @var ?PayrollTotals $totals
@@ -72,6 +32,25 @@ class EmployeePayroll
     public ?array $compensations = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
+     * A unique identifier for an object.
+     *
+     * @var ?string $id
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
+
+    /**
      * ID of the employee
      *
      * @var ?string $employeeId
@@ -90,6 +69,15 @@ class EmployeePayroll
     public ?string $companyId = null;
 
     /**
+     * Whether or not the payroll has been successfully processed. Note that processed payrolls cannot be updated.
+     *
+     * @var ?bool $processed
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('processed')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $processed = null;
+
+    /**
      * The date the payroll was processed.
      *
      * @var ?string $processedDate
@@ -99,29 +87,58 @@ class EmployeePayroll
     public ?string $processedDate = null;
 
     /**
+     * The date on which employees will be paid for the payroll.
+     *
+     * @var ?string $checkDate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('check_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $checkDate = null;
+
+    /**
+     * The start date, inclusive, of the pay period.
+     *
+     * @var ?string $startDate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('start_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $startDate = null;
+
+    /**
+     * The end date, inclusive, of the pay period.
+     *
+     * @var ?string $endDate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('end_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $endDate = null;
+
+    /**
+     * @param  ?PayrollTotals  $totals
+     * @param  ?array<Compensation>  $compensations
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $id
+     * @param  ?string  $employeeId
+     * @param  ?string  $companyId
      * @param  ?bool  $processed
+     * @param  ?string  $processedDate
      * @param  ?string  $checkDate
      * @param  ?string  $startDate
      * @param  ?string  $endDate
-     * @param  ?PayrollTotals  $totals
-     * @param  ?array<Compensation>  $compensations
-     * @param  ?string  $employeeId
-     * @param  ?string  $companyId
-     * @param  ?string  $processedDate
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?bool $processed = null, ?string $checkDate = null, ?string $startDate = null, ?string $endDate = null, ?PayrollTotals $totals = null, ?array $compensations = null, ?string $employeeId = null, ?string $companyId = null, ?string $processedDate = null)
+    public function __construct(?PayrollTotals $totals = null, ?array $compensations = null, ?array $additionalProperties = null, ?string $id = null, ?string $employeeId = null, ?string $companyId = null, ?bool $processed = null, ?string $processedDate = null, ?string $checkDate = null, ?string $startDate = null, ?string $endDate = null)
     {
+        $this->totals = $totals;
+        $this->compensations = $compensations;
+        $this->additionalProperties = $additionalProperties;
         $this->id = $id;
+        $this->employeeId = $employeeId;
+        $this->companyId = $companyId;
         $this->processed = $processed;
+        $this->processedDate = $processedDate;
         $this->checkDate = $checkDate;
         $this->startDate = $startDate;
         $this->endDate = $endDate;
-        $this->totals = $totals;
-        $this->compensations = $compensations;
-        $this->employeeId = $employeeId;
-        $this->companyId = $companyId;
-        $this->processedDate = $processedDate;
     }
 }

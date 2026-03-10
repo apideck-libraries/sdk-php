@@ -37,6 +37,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingBillPaymentsAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     filter: new Components\PaymentsFilter(
         updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
         invoiceId: '123',
@@ -111,6 +112,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingBillPaymentsAddRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     billPayment: new Components\BillPaymentInput(
         currency: Components\Currency::Usd,
         currencyRate: 0.69,
@@ -188,19 +190,19 @@ $request = new Operations\AccountingBillPaymentsAddRequest(
             ),
         ],
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -299,6 +301,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingBillPaymentsOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
 );
 
@@ -432,7 +435,7 @@ $request = new Operations\AccountingBillPaymentsUpdateRequest(
         number: '123456',
         trackingCategories: null,
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',

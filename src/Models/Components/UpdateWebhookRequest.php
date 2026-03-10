@@ -41,6 +41,16 @@ class UpdateWebhookRequest
     public ?array $events = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * A description of the object.
      *
      * @var ?string $description
@@ -53,14 +63,16 @@ class UpdateWebhookRequest
      * @param  ?Status  $status
      * @param  ?string  $deliveryUrl
      * @param  ?array<WebhookEventType>  $events
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(?Status $status = null, ?string $deliveryUrl = null, ?array $events = null, ?string $description = null)
+    public function __construct(?Status $status = null, ?string $deliveryUrl = null, ?array $events = null, ?array $additionalProperties = null, ?string $description = null)
     {
         $this->status = $status;
         $this->deliveryUrl = $deliveryUrl;
         $this->events = $events;
+        $this->additionalProperties = $additionalProperties;
         $this->description = $description;
     }
 }

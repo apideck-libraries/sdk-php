@@ -76,6 +76,16 @@ class BalanceByTransaction
     public ?string $transactionNumber = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * @param  ?string  $transactionId
      * @param  ?LocalDate  $transactionDate
      * @param  ?BalanceByTransactionTransactionType  $transactionType
@@ -83,9 +93,10 @@ class BalanceByTransaction
      * @param  ?float  $originalAmount
      * @param  ?float  $outstandingBalance
      * @param  ?string  $transactionNumber
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(?string $transactionId = null, ?LocalDate $transactionDate = null, ?BalanceByTransactionTransactionType $transactionType = null, ?LocalDate $dueDate = null, ?float $originalAmount = null, ?float $outstandingBalance = null, ?string $transactionNumber = null)
+    public function __construct(?string $transactionId = null, ?LocalDate $transactionDate = null, ?BalanceByTransactionTransactionType $transactionType = null, ?LocalDate $dueDate = null, ?float $originalAmount = null, ?float $outstandingBalance = null, ?string $transactionNumber = null, ?array $additionalProperties = null)
     {
         $this->transactionId = $transactionId;
         $this->transactionDate = $transactionDate;
@@ -94,5 +105,6 @@ class BalanceByTransaction
         $this->originalAmount = $originalAmount;
         $this->outstandingBalance = $outstandingBalance;
         $this->transactionNumber = $transactionNumber;
+        $this->additionalProperties = $additionalProperties;
     }
 }

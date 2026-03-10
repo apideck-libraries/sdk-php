@@ -9,15 +9,26 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 
-class CustomField1
+class CustomField
 {
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
     /**
      * Unique identifier for the custom field.
      *
      * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public ?string $id;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
 
     /**
      * Name of the custom field.
@@ -47,14 +58,16 @@ class CustomField1
     public string|float|bool|array|null $value = null;
 
     /**
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $id
      * @param  ?string  $name
      * @param  ?string  $description
      * @param  string|float|bool|array<string, mixed>|array<string|float|bool|array<string, mixed>|null>|null  $value
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?string $description = null, string|float|bool|array|null $value = null)
+    public function __construct(?array $additionalProperties = null, ?string $id = null, ?string $name = null, ?string $description = null, string|float|bool|array|null $value = null)
     {
+        $this->additionalProperties = $additionalProperties;
         $this->id = $id;
         $this->name = $name;
         $this->description = $description;

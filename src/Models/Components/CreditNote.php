@@ -14,18 +14,20 @@ class CreditNote
     /**
      * Unique identifier representing the entity
      *
-     * @var string $id
+     * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public string $id;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
 
     /**
      * Amount of transaction
      *
-     * @var float $totalAmount
+     * @var ?float $totalAmount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('total_amount')]
-    public float $totalAmount;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $totalAmount = null;
 
     /**
      * Status of credit notes
@@ -97,10 +99,10 @@ class CreditNote
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -113,6 +115,16 @@ class CreditNote
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * Credit note number.
@@ -279,6 +291,15 @@ class CreditNote
     public ?string $terms = null;
 
     /**
+     * The ID of the payment terms
+     *
+     * @var ?string $termsId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('terms_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $termsId = null;
+
+    /**
      * A list of linked tracking categories.
      *
      * @var ?array<?LinkedTrackingCategory> $trackingCategories
@@ -344,8 +365,8 @@ class CreditNote
     public ?\DateTime $createdAt = null;
 
     /**
-     * @param  string  $id
-     * @param  float  $totalAmount
+     * @param  ?string  $id
+     * @param  ?float  $totalAmount
      * @param  ?CreditNoteStatus  $status
      * @param  ?\DateTime  $dateIssued
      * @param  ?CreditNoteType  $type
@@ -353,8 +374,9 @@ class CreditNote
      * @param  ?array<Allocation>  $allocations
      * @param  ?Address  $billingAddress
      * @param  ?Address  $shippingAddress
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $number
      * @param  ?LinkedCustomer  $customer
      * @param  ?string  $companyId
@@ -373,6 +395,7 @@ class CreditNote
      * @param  ?LinkedLedgerAccount  $account
      * @param  ?string  $note
      * @param  ?string  $terms
+     * @param  ?string  $termsId
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $rowVersion
@@ -382,7 +405,7 @@ class CreditNote
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(string $id, float $totalAmount, ?CreditNoteStatus $status = null, ?\DateTime $dateIssued = null, ?CreditNoteType $type = null, ?array $lineItems = null, ?array $allocations = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?LinkedCustomer $customer = null, ?string $companyId = null, ?string $locationId = null, ?string $departmentId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $balance = null, ?float $remainingCredit = null, ?string $reference = null, ?\DateTime $datePaid = null, ?LinkedLedgerAccount $account = null, ?string $note = null, ?string $terms = null, ?array $trackingCategories = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?float $totalAmount = null, ?CreditNoteStatus $status = null, ?\DateTime $dateIssued = null, ?CreditNoteType $type = null, ?array $lineItems = null, ?array $allocations = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?array $customFields = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $number = null, ?LinkedCustomer $customer = null, ?string $companyId = null, ?string $locationId = null, ?string $departmentId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $balance = null, ?float $remainingCredit = null, ?string $reference = null, ?\DateTime $datePaid = null, ?LinkedLedgerAccount $account = null, ?string $note = null, ?string $terms = null, ?string $termsId = null, ?array $trackingCategories = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->totalAmount = $totalAmount;
@@ -395,6 +418,7 @@ class CreditNote
         $this->shippingAddress = $shippingAddress;
         $this->customFields = $customFields;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->number = $number;
         $this->customer = $customer;
         $this->companyId = $companyId;
@@ -413,6 +437,7 @@ class CreditNote
         $this->account = $account;
         $this->note = $note;
         $this->terms = $terms;
+        $this->termsId = $termsId;
         $this->trackingCategories = $trackingCategories;
         $this->customMappings = $customMappings;
         $this->rowVersion = $rowVersion;

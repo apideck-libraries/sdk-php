@@ -22,6 +22,16 @@ class CollectionTicketCommentInput
     public ?array $passThrough = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * Body of the comment
      *
      * @var ?string $body
@@ -32,12 +42,14 @@ class CollectionTicketCommentInput
 
     /**
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $body
      * @phpstan-pure
      */
-    public function __construct(?array $passThrough = null, ?string $body = null)
+    public function __construct(?array $passThrough = null, ?array $additionalProperties = null, ?string $body = null)
     {
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->body = $body;
     }
 }

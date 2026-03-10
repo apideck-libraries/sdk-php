@@ -40,6 +40,16 @@ class LinkedFinancialAccount
     public ?string $name = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * The type of account being referenced. Use `ledger_account` for GL accounts from the chart of accounts, or `bank_account` for bank account entities. When not specified, the connector will use its default behavior.
      *
      * @var ?LinkedFinancialAccountAccountType $type
@@ -80,17 +90,19 @@ class LinkedFinancialAccount
      * @param  ?string  $id
      * @param  ?string  $code
      * @param  ?string  $name
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?LinkedFinancialAccountAccountType  $type
      * @param  ?string  $displayId
      * @param  ?string  $accountNumber
      * @param  ?string  $downstreamId
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $code = null, ?string $name = null, ?LinkedFinancialAccountAccountType $type = null, ?string $displayId = null, ?string $accountNumber = null, ?string $downstreamId = null)
+    public function __construct(?string $id = null, ?string $code = null, ?string $name = null, ?array $additionalProperties = null, ?LinkedFinancialAccountAccountType $type = null, ?string $displayId = null, ?string $accountNumber = null, ?string $downstreamId = null)
     {
         $this->id = $id;
         $this->code = $code;
         $this->name = $name;
+        $this->additionalProperties = $additionalProperties;
         $this->type = $type;
         $this->displayId = $displayId;
         $this->accountNumber = $accountNumber;

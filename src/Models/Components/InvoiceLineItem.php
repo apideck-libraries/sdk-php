@@ -51,12 +51,22 @@ class InvoiceLineItem
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * A unique identifier for an object.
@@ -333,7 +343,8 @@ class InvoiceLineItem
      * @param  ?LinkedInvoiceItem  $item
      * @param  ?array<?LinkedWorktag>  $worktags
      * @param  ?LinkedTaxRate  $taxRate
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $id
      * @param  ?string  $code
      * @param  ?int  $lineNumber
@@ -366,13 +377,14 @@ class InvoiceLineItem
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?array $worktags = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?string $id = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?InvoiceLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?LocalDate $serviceDate = null, ?string $categoryId = null, ?string $locationId = null, ?string $departmentId = null, ?string $subsidiaryId = null, ?string $shippingId = null, ?string $memo = null, ?bool $prepaid = null, ?string $taxApplicableOn = null, ?string $taxRecoverability = null, ?string $taxMethod = null, ?array $trackingCategories = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?array $worktags = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?array $additionalProperties = null, ?string $id = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?InvoiceLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?LocalDate $serviceDate = null, ?string $categoryId = null, ?string $locationId = null, ?string $departmentId = null, ?string $subsidiaryId = null, ?string $shippingId = null, ?string $memo = null, ?bool $prepaid = null, ?string $taxApplicableOn = null, ?string $taxRecoverability = null, ?string $taxMethod = null, ?array $trackingCategories = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->rowId = $rowId;
         $this->item = $item;
         $this->worktags = $worktags;
         $this->taxRate = $taxRate;
         $this->customFields = $customFields;
+        $this->additionalProperties = $additionalProperties;
         $this->id = $id;
         $this->code = $code;
         $this->lineNumber = $lineNumber;

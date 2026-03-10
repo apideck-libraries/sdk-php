@@ -40,6 +40,16 @@ class Attachment
     public ?array $passThrough = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * The display id of the file
      *
      * @var ?string $displayId
@@ -133,6 +143,7 @@ class Attachment
      * @param  ?string  $id
      * @param  ?AttachmentReference  $reference
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $displayId
      * @param  ?string  $name
      * @param  ?string  $mimeType
@@ -145,11 +156,12 @@ class Attachment
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?AttachmentReference $reference = null, ?array $passThrough = null, ?string $displayId = null, ?string $name = null, ?string $mimeType = null, ?int $size = null, ?string $description = null, ?string $parentFolderId = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?AttachmentReference $reference = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $displayId = null, ?string $name = null, ?string $mimeType = null, ?int $size = null, ?string $description = null, ?string $parentFolderId = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->reference = $reference;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->displayId = $displayId;
         $this->name = $name;
         $this->mimeType = $mimeType;

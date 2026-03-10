@@ -37,6 +37,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingJournalEntriesAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     filter: new Components\JournalEntriesFilter(
         updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
     ),
@@ -110,6 +111,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingJournalEntriesAddRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     journalEntry: new Components\JournalEntryInput(
         title: 'Purchase Invoice-Inventory (USD): 2019/02/01 Batch Summary Entry',
         currencyRate: 0.69,
@@ -196,7 +198,7 @@ $request = new Operations\AccountingJournalEntriesAddRequest(
         accountingPeriod: '01-24',
         rowVersion: '1-12345',
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -351,6 +353,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingJournalEntriesOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
 );
 
@@ -412,6 +415,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingJournalEntriesUpdateRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     journalEntry: new Components\JournalEntryInput(
         title: 'Purchase Invoice-Inventory (USD): 2019/02/01 Batch Summary Entry',
         currencyRate: 0.69,
@@ -507,7 +511,7 @@ $request = new Operations\AccountingJournalEntriesUpdateRequest(
         accountingPeriod: '01-24',
         rowVersion: '1-12345',
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -617,6 +621,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingJournalEntriesDeleteRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
 );
 
 $response = $sdk->accounting->journalEntries->delete(

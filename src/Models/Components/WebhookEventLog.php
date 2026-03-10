@@ -167,6 +167,16 @@ class WebhookEventLog
     public ?array $attempts = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * @param  ?string  $id
      * @param  ?int  $statusCode
      * @param  ?bool  $success
@@ -184,9 +194,10 @@ class WebhookEventLog
      * @param  ?string  $responseBody
      * @param  ?bool  $retryScheduled
      * @param  ?array<Attempts>  $attempts
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?int $statusCode = null, ?bool $success = null, ?string $applicationId = null, ?string $consumerId = null, ?UnifiedApiId $unifiedApi = null, ?WebhookEventLogService $service = null, ?string $endpoint = null, ?string $eventType = null, ?float $executionAttempt = null, ?string $httpMethod = null, ?string $timestamp = null, ?string $entityType = null, ?string $requestBody = null, ?string $responseBody = null, ?bool $retryScheduled = null, ?array $attempts = null)
+    public function __construct(?string $id = null, ?int $statusCode = null, ?bool $success = null, ?string $applicationId = null, ?string $consumerId = null, ?UnifiedApiId $unifiedApi = null, ?WebhookEventLogService $service = null, ?string $endpoint = null, ?string $eventType = null, ?float $executionAttempt = null, ?string $httpMethod = null, ?string $timestamp = null, ?string $entityType = null, ?string $requestBody = null, ?string $responseBody = null, ?bool $retryScheduled = null, ?array $attempts = null, ?array $additionalProperties = null)
     {
         $this->id = $id;
         $this->statusCode = $statusCode;
@@ -205,5 +216,6 @@ class WebhookEventLog
         $this->responseBody = $responseBody;
         $this->retryScheduled = $retryScheduled;
         $this->attempts = $attempts;
+        $this->additionalProperties = $additionalProperties;
     }
 }

@@ -18,7 +18,8 @@ class TrackingItem
      * @var ?string $provider
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('provider')]
-    public ?string $provider;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $provider = null;
 
     /**
      *  The tracking number associated with the shipment, which can be used to track the progress of the delivery.
@@ -26,7 +27,8 @@ class TrackingItem
      * @var ?string $number
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('number')]
-    public ?string $number;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $number = null;
 
     /**
      * The URL of the carrier's tracking page, which can be used to view detailed information about the shipment's progress.

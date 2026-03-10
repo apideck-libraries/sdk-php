@@ -12,23 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class Folder
 {
     /**
-     * The name of the folder
-     *
-     * @var string $name
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    public string $name;
-
-    /**
-     * The parent folders of the file, starting from the root
-     *
-     * @var array<LinkedFolder> $parentFolders
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_folders')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedFolder>')]
-    public array $parentFolders;
-
-    /**
      * A unique identifier for an object.
      *
      * @var ?string $id
@@ -36,6 +19,15 @@ class Folder
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
+
+    /**
+     * The name of the folder
+     *
+     * @var ?string $name
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $name = null;
 
     /**
      *
@@ -47,6 +39,16 @@ class Folder
     public ?Owner $owner = null;
 
     /**
+     * The parent folders of the file, starting from the root
+     *
+     * @var ?array<LinkedFolder> $parentFolders
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_folders')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedFolder>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $parentFolders = null;
+
+    /**
      * Whether the list of parent folder is complete. Some connectors only return the direct parent of a folder
      *
      * @var ?bool $parentFoldersComplete
@@ -54,6 +56,16 @@ class Folder
     #[\Speakeasy\Serializer\Annotation\SerializedName('parent_folders_complete')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $parentFoldersComplete = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * The third-party API ID of original entity
@@ -147,11 +159,12 @@ class Folder
     public ?\DateTime $createdAt = null;
 
     /**
-     * @param  string  $name
-     * @param  array<LinkedFolder>  $parentFolders
      * @param  ?string  $id
+     * @param  ?string  $name
      * @param  ?Owner  $owner
+     * @param  ?array<LinkedFolder>  $parentFolders
      * @param  ?bool  $parentFoldersComplete
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $downstreamId
      * @param  ?string  $description
      * @param  ?string  $path
@@ -164,13 +177,14 @@ class Folder
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(string $name, array $parentFolders, ?string $id = null, ?Owner $owner = null, ?bool $parentFoldersComplete = null, ?string $downstreamId = null, ?string $description = null, ?string $path = null, ?int $size = null, ?bool $downloadable = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?string $name = null, ?Owner $owner = null, ?array $parentFolders = null, ?bool $parentFoldersComplete = null, ?array $additionalProperties = null, ?string $downstreamId = null, ?string $description = null, ?string $path = null, ?int $size = null, ?bool $downloadable = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
-        $this->name = $name;
-        $this->parentFolders = $parentFolders;
         $this->id = $id;
+        $this->name = $name;
         $this->owner = $owner;
+        $this->parentFolders = $parentFolders;
         $this->parentFoldersComplete = $parentFoldersComplete;
+        $this->additionalProperties = $additionalProperties;
         $this->downstreamId = $downstreamId;
         $this->description = $description;
         $this->path = $path;

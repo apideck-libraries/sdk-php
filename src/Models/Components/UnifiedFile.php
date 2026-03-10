@@ -14,27 +14,11 @@ class UnifiedFile
     /**
      * A unique identifier for an object.
      *
-     * @var string $id
+     * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public string $id;
-
-    /**
-     * The name of the file
-     *
-     * @var ?string $name
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    public ?string $name;
-
-    /**
-     * The type of resource. Could be file, folder or url
-     *
-     * @var ?FileType $type
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\FileType|null')]
-    public ?FileType $type;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
 
     /**
      * Whether the current user can download this file
@@ -93,6 +77,16 @@ class UnifiedFile
     public ?bool $exportable = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * The third-party API ID of original entity
      *
      * @var ?string $downstreamId
@@ -102,6 +96,15 @@ class UnifiedFile
     public ?string $downstreamId = null;
 
     /**
+     * The name of the file
+     *
+     * @var ?string $name
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $name = null;
+
+    /**
      * Optional description of the file
      *
      * @var ?string $description
@@ -109,6 +112,16 @@ class UnifiedFile
     #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $description = null;
+
+    /**
+     * The type of resource. Could be file, folder or url
+     *
+     * @var ?FileType $type
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\FileType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?FileType $type = null;
 
     /**
      * The full path of the file or folder (includes the file name)
@@ -194,17 +207,18 @@ class UnifiedFile
     public ?\DateTime $createdAt = null;
 
     /**
-     * @param  string  $id
-     * @param  ?string  $name
-     * @param  ?FileType  $type
+     * @param  ?string  $id
      * @param  ?bool  $downloadable
      * @param  ?Owner  $owner
      * @param  ?array<LinkedFolder>  $parentFolders
      * @param  ?bool  $parentFoldersComplete
      * @param  ?Permissions  $permissions
      * @param  ?bool  $exportable
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $downstreamId
+     * @param  ?string  $name
      * @param  ?string  $description
+     * @param  ?FileType  $type
      * @param  ?string  $path
      * @param  ?string  $mimeType
      * @param  ?int  $size
@@ -216,19 +230,20 @@ class UnifiedFile
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(string $id, ?string $name = null, ?FileType $type = null, ?bool $downloadable = null, ?Owner $owner = null, ?array $parentFolders = null, ?bool $parentFoldersComplete = null, ?Permissions $permissions = null, ?bool $exportable = null, ?string $downstreamId = null, ?string $description = null, ?string $path = null, ?string $mimeType = null, ?int $size = null, ?array $exportFormats = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?bool $downloadable = null, ?Owner $owner = null, ?array $parentFolders = null, ?bool $parentFoldersComplete = null, ?Permissions $permissions = null, ?bool $exportable = null, ?array $additionalProperties = null, ?string $downstreamId = null, ?string $name = null, ?string $description = null, ?FileType $type = null, ?string $path = null, ?string $mimeType = null, ?int $size = null, ?array $exportFormats = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
-        $this->name = $name;
-        $this->type = $type;
         $this->downloadable = $downloadable;
         $this->owner = $owner;
         $this->parentFolders = $parentFolders;
         $this->parentFoldersComplete = $parentFoldersComplete;
         $this->permissions = $permissions;
         $this->exportable = $exportable;
+        $this->additionalProperties = $additionalProperties;
         $this->downstreamId = $downstreamId;
+        $this->name = $name;
         $this->description = $description;
+        $this->type = $type;
         $this->path = $path;
         $this->mimeType = $mimeType;
         $this->size = $size;

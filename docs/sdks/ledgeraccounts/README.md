@@ -37,6 +37,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingLedgerAccountsAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     filter: new Components\LedgerAccountsFilter(
         updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
     ),
@@ -110,6 +111,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingLedgerAccountsAddRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     ledgerAccount: new Components\LedgerAccountInput(
         displayId: '1-12345',
         code: '453',
@@ -152,7 +154,7 @@ $request = new Operations\AccountingLedgerAccountsAddRequest(
         subAccount: false,
         lastReconciliationDate: LocalDate::parse('2020-09-30'),
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -260,6 +262,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingLedgerAccountsOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
 );
 
@@ -321,6 +324,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingLedgerAccountsUpdateRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     ledgerAccount: new Components\LedgerAccountInput(
         displayId: '1-12345',
         code: '453',
@@ -363,13 +367,13 @@ $request = new Operations\AccountingLedgerAccountsUpdateRequest(
         subAccount: false,
         lastReconciliationDate: LocalDate::parse('2020-09-30'),
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -459,6 +463,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingLedgerAccountsDeleteRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
 );
 
 $response = $sdk->accounting->ledgerAccounts->delete(

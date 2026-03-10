@@ -37,6 +37,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingPurchaseOrdersAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     passThrough: [
         'search' => 'San Francisco',
     ],
@@ -110,6 +111,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingPurchaseOrdersAddRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     purchaseOrder: new Components\PurchaseOrderInput(
         poNumber: '90000117',
         reference: '123456',
@@ -193,7 +195,7 @@ $request = new Operations\AccountingPurchaseOrdersAddRequest(
                     code: '453',
                 ),
                 customFields: [
-                    new Components\CustomField1(
+                    new Components\CustomField(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
@@ -239,7 +241,7 @@ $request = new Operations\AccountingPurchaseOrdersAddRequest(
                     code: '453',
                 ),
                 customFields: [
-                    new Components\CustomField1(
+                    new Components\CustomField(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
@@ -285,7 +287,7 @@ $request = new Operations\AccountingPurchaseOrdersAddRequest(
                     code: '453',
                 ),
                 customFields: [
-                    new Components\CustomField1(
+                    new Components\CustomField(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
@@ -354,7 +356,7 @@ $request = new Operations\AccountingPurchaseOrdersAddRequest(
             ),
         ],
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -486,6 +488,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingPurchaseOrdersOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
 );
 
 $response = $sdk->accounting->purchaseOrders->get(
@@ -546,6 +549,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingPurchaseOrdersUpdateRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     purchaseOrder: new Components\PurchaseOrderInput(
         poNumber: '90000117',
         reference: '123456',
@@ -624,19 +628,19 @@ $request = new Operations\AccountingPurchaseOrdersUpdateRequest(
                     code: '453',
                 ),
                 customFields: [
-                    new Components\CustomField1(
+                    new Components\CustomField(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
                         value: 'Uses Salesforce and Marketo',
                     ),
-                    new Components\CustomField1(
+                    new Components\CustomField(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
                         value: 'Uses Salesforce and Marketo',
                     ),
-                    new Components\CustomField1(
+                    new Components\CustomField(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
@@ -677,19 +681,19 @@ $request = new Operations\AccountingPurchaseOrdersUpdateRequest(
                     code: '453',
                 ),
                 customFields: [
-                    new Components\CustomField1(
+                    new Components\CustomField(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
                         value: 'Uses Salesforce and Marketo',
                     ),
-                    new Components\CustomField1(
+                    new Components\CustomField(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
                         value: 'Uses Salesforce and Marketo',
                     ),
-                    new Components\CustomField1(
+                    new Components\CustomField(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
@@ -758,13 +762,13 @@ $request = new Operations\AccountingPurchaseOrdersUpdateRequest(
             ),
         ],
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -862,6 +866,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingPurchaseOrdersDeleteRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
 );
 
 $response = $sdk->accounting->purchaseOrders->delete(

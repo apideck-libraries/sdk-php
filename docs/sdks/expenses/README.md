@@ -37,6 +37,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingExpensesAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     filter: new Components\ExpensesFilter(
         updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
         status: Components\ExpensesFilterStatus::Draft,
@@ -104,6 +105,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingExpensesAddRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     expense: new Components\ExpenseInput(
         number: 'OIT00546',
         transactionDate: Utils\Utils::parseDateTime('2021-05-01T12:00:00.000Z'),
@@ -148,22 +150,26 @@ $request = new Operations\AccountingExpensesAddRequest(
                 description: 'Travel US.',
                 totalAmount: 275,
                 lineNumber: 1,
+                additionalProperties: [
+                    'subsidiary_id' => '12345',
+                    'billable' => true,
+                ],
             ),
         ],
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -231,6 +237,9 @@ $request = new Operations\AccountingExpensesAddRequest(
                 ],
             ),
         ],
+        additionalProperties: [
+            'customer_id' => '12345',
+        ],
     ),
 );
 
@@ -290,6 +299,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingExpensesOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
 );
 
 $response = $sdk->accounting->expenses->get(
@@ -394,10 +404,14 @@ $request = new Operations\AccountingExpensesUpdateRequest(
                 description: 'Travel US.',
                 totalAmount: 275,
                 lineNumber: 1,
+                additionalProperties: [
+                    'subsidiary_id' => '12345',
+                    'billable' => true,
+                ],
             ),
         ],
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -445,6 +459,9 @@ $request = new Operations\AccountingExpensesUpdateRequest(
                     ),
                 ],
             ),
+        ],
+        additionalProperties: [
+            'customer_id' => '12345',
         ],
     ),
 );

@@ -14,47 +14,63 @@ class Schedule
     /**
      * A unique identifier for an object.
      *
-     * @var string $id
+     * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public string $id;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
 
     /**
      * The start date, inclusive, of the schedule period.
      *
-     * @var string $startDate
+     * @var ?string $startDate
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('start_date')]
-    public string $startDate;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $startDate = null;
 
     /**
      * The end date, inclusive, of the schedule period.
      *
-     * @var string $endDate
+     * @var ?string $endDate
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('end_date')]
-    public string $endDate;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $endDate = null;
 
     /**
      *
-     * @var WorkPattern $workPattern
+     * @var ?WorkPattern $workPattern
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('work_pattern')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\WorkPattern')]
-    public WorkPattern $workPattern;
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\WorkPattern|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?WorkPattern $workPattern = null;
 
     /**
-     * @param  string  $id
-     * @param  string  $startDate
-     * @param  string  $endDate
-     * @param  WorkPattern  $workPattern
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
+     * @param  ?string  $id
+     * @param  ?string  $startDate
+     * @param  ?string  $endDate
+     * @param  ?WorkPattern  $workPattern
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(string $id, string $startDate, string $endDate, WorkPattern $workPattern)
+    public function __construct(?string $id = null, ?string $startDate = null, ?string $endDate = null, ?WorkPattern $workPattern = null, ?array $additionalProperties = null)
     {
         $this->id = $id;
         $this->startDate = $startDate;
         $this->endDate = $endDate;
         $this->workPattern = $workPattern;
+        $this->additionalProperties = $additionalProperties;
     }
 }

@@ -32,6 +32,16 @@ class CustomObjectSchemaInput
     public ?array $passThrough = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * The name of the custom object schema
      *
      * @var ?string $name
@@ -70,16 +80,18 @@ class CustomObjectSchemaInput
     /**
      * @param  ?array<Fields>  $fields
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $name
      * @param  ?string  $description
      * @param  ?bool  $visible
      * @param  ?bool  $active
      * @phpstan-pure
      */
-    public function __construct(?array $fields = null, ?array $passThrough = null, ?string $name = null, ?string $description = null, ?bool $visible = null, ?bool $active = null)
+    public function __construct(?array $fields = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $name = null, ?string $description = null, ?bool $visible = null, ?bool $active = null)
     {
         $this->fields = $fields;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->name = $name;
         $this->description = $description;
         $this->visible = $visible;

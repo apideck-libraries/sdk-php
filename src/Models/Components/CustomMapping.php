@@ -66,6 +66,16 @@ class CustomMapping
     public ?bool $customField = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * Target Field description
      *
      * @var ?string $description
@@ -99,12 +109,13 @@ class CustomMapping
      * @param  ?string  $key
      * @param  ?bool  $required
      * @param  ?bool  $customField
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $description
      * @param  ?string  $consumerId
      * @param  ?string  $example
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $label = null, ?string $value = null, ?string $key = null, ?bool $required = null, ?bool $customField = null, ?string $description = null, ?string $consumerId = null, ?string $example = null)
+    public function __construct(?string $id = null, ?string $label = null, ?string $value = null, ?string $key = null, ?bool $required = null, ?bool $customField = null, ?array $additionalProperties = null, ?string $description = null, ?string $consumerId = null, ?string $example = null)
     {
         $this->id = $id;
         $this->label = $label;
@@ -112,6 +123,7 @@ class CustomMapping
         $this->key = $key;
         $this->required = $required;
         $this->customField = $customField;
+        $this->additionalProperties = $additionalProperties;
         $this->description = $description;
         $this->consumerId = $consumerId;
         $this->example = $example;

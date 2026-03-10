@@ -14,10 +14,11 @@ class BankFeedAccount
     /**
      * A unique identifier for an object.
      *
-     * @var string $id
+     * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public string $id;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
 
     /**
      * Type of the bank account.
@@ -78,12 +79,22 @@ class BankFeedAccount
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
@@ -151,14 +162,15 @@ class BankFeedAccount
     public ?string $createdBy = null;
 
     /**
-     * @param  string  $id
+     * @param  ?string  $id
      * @param  ?BankAccountType  $bankAccountType
      * @param  ?string  $sourceAccountId
      * @param  ?string  $targetAccountId
      * @param  ?string  $targetAccountName
      * @param  ?string  $targetAccountNumber
      * @param  ?FeedStatus  $feedStatus
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?Currency  $currency
      * @param  ?string  $country
      * @param  ?array<string, mixed>  $customMappings
@@ -168,7 +180,7 @@ class BankFeedAccount
      * @param  ?string  $createdBy
      * @phpstan-pure
      */
-    public function __construct(string $id, ?BankAccountType $bankAccountType = null, ?string $sourceAccountId = null, ?string $targetAccountId = null, ?string $targetAccountName = null, ?string $targetAccountNumber = null, ?FeedStatus $feedStatus = null, ?array $customFields = null, ?Currency $currency = null, ?string $country = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $updatedBy = null, ?string $createdBy = null)
+    public function __construct(?string $id = null, ?BankAccountType $bankAccountType = null, ?string $sourceAccountId = null, ?string $targetAccountId = null, ?string $targetAccountName = null, ?string $targetAccountNumber = null, ?FeedStatus $feedStatus = null, ?array $customFields = null, ?array $additionalProperties = null, ?Currency $currency = null, ?string $country = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $updatedBy = null, ?string $createdBy = null)
     {
         $this->id = $id;
         $this->bankAccountType = $bankAccountType;
@@ -178,6 +190,7 @@ class BankFeedAccount
         $this->targetAccountNumber = $targetAccountNumber;
         $this->feedStatus = $feedStatus;
         $this->customFields = $customFields;
+        $this->additionalProperties = $additionalProperties;
         $this->currency = $currency;
         $this->country = $country;
         $this->customMappings = $customMappings;

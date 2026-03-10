@@ -60,6 +60,16 @@ class Category
     public ?array $passThrough = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * Display ID of the category
      *
      * @var ?string $displayId
@@ -129,6 +139,7 @@ class Category
      * @param  ?CategoryType  $type
      * @param  ?CategoryStatus  $status
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $displayId
      * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $rowVersion
@@ -138,13 +149,14 @@ class Category
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?CategoryType $type = null, ?CategoryStatus $status = null, ?array $passThrough = null, ?string $displayId = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?string $name = null, ?CategoryType $type = null, ?CategoryStatus $status = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $displayId = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->name = $name;
         $this->type = $type;
         $this->status = $status;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->displayId = $displayId;
         $this->customMappings = $customMappings;
         $this->rowVersion = $rowVersion;

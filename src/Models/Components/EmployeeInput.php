@@ -91,10 +91,10 @@ class EmployeeInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -136,6 +136,16 @@ class EmployeeInput
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * A unique identifier for an object.
@@ -585,11 +595,12 @@ class EmployeeInput
      * @param  ?array<Address>  $addresses
      * @param  ?array<PhoneNumber>  $phoneNumbers
      * @param  ?array<Email>  $emails
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<SocialLink>  $socialLinks
      * @param  ?array<BankAccount2>  $bankAccounts
      * @param  ?ProbationPeriod  $probationPeriod
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $id
      * @param  ?string  $firstName
      * @param  ?string  $lastName
@@ -640,7 +651,7 @@ class EmployeeInput
      * @param  ?bool  $deleted
      * @phpstan-pure
      */
-    public function __construct(?PersonInput $partner = null, ?EmploymentRole $employmentRole = null, ?Manager $manager = null, ?array $languages = null, ?array $nationalities = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $customFields = null, ?array $socialLinks = null, ?array $bankAccounts = null, ?ProbationPeriod $probationPeriod = null, ?array $passThrough = null, ?string $id = null, ?string $firstName = null, ?string $lastName = null, ?string $middleName = null, ?string $displayName = null, ?string $preferredName = null, ?string $initials = null, ?string $salutation = null, ?string $title = null, ?string $maritalStatus = null, ?string $division = null, ?string $divisionId = null, ?string $department = null, ?string $departmentId = null, ?string $departmentName = null, ?Team $team = null, ?string $companyId = null, ?string $companyName = null, ?string $employmentStartDate = null, ?string $employmentEndDate = null, ?LeavingReason $leavingReason = null, ?string $employeeNumber = null, ?EmploymentStatus $employmentStatus = null, ?string $ethnicity = null, ?array $directReports = null, ?string $socialSecurityNumber = null, ?LocalDate $birthday = null, ?LocalDate $deceasedOn = null, ?string $countryOfBirth = null, ?string $description = null, ?Gender $gender = null, ?string $pronouns = null, ?string $preferredLanguage = null, ?string $photoUrl = null, ?string $timezone = null, ?string $source = null, ?string $sourceId = null, ?string $recordUrl = null, ?array $jobs = null, ?array $compensations = null, ?bool $worksRemote = null, ?string $taxCode = null, ?string $taxId = null, ?string $dietaryPreference = null, ?array $foodAllergies = null, ?array $tags = null, ?string $rowVersion = null, ?bool $deleted = null)
+    public function __construct(?PersonInput $partner = null, ?EmploymentRole $employmentRole = null, ?Manager $manager = null, ?array $languages = null, ?array $nationalities = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $customFields = null, ?array $socialLinks = null, ?array $bankAccounts = null, ?ProbationPeriod $probationPeriod = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $id = null, ?string $firstName = null, ?string $lastName = null, ?string $middleName = null, ?string $displayName = null, ?string $preferredName = null, ?string $initials = null, ?string $salutation = null, ?string $title = null, ?string $maritalStatus = null, ?string $division = null, ?string $divisionId = null, ?string $department = null, ?string $departmentId = null, ?string $departmentName = null, ?Team $team = null, ?string $companyId = null, ?string $companyName = null, ?string $employmentStartDate = null, ?string $employmentEndDate = null, ?LeavingReason $leavingReason = null, ?string $employeeNumber = null, ?EmploymentStatus $employmentStatus = null, ?string $ethnicity = null, ?array $directReports = null, ?string $socialSecurityNumber = null, ?LocalDate $birthday = null, ?LocalDate $deceasedOn = null, ?string $countryOfBirth = null, ?string $description = null, ?Gender $gender = null, ?string $pronouns = null, ?string $preferredLanguage = null, ?string $photoUrl = null, ?string $timezone = null, ?string $source = null, ?string $sourceId = null, ?string $recordUrl = null, ?array $jobs = null, ?array $compensations = null, ?bool $worksRemote = null, ?string $taxCode = null, ?string $taxId = null, ?string $dietaryPreference = null, ?array $foodAllergies = null, ?array $tags = null, ?string $rowVersion = null, ?bool $deleted = null)
     {
         $this->partner = $partner;
         $this->employmentRole = $employmentRole;
@@ -655,6 +666,7 @@ class EmployeeInput
         $this->bankAccounts = $bankAccounts;
         $this->probationPeriod = $probationPeriod;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->id = $id;
         $this->firstName = $firstName;
         $this->lastName = $lastName;

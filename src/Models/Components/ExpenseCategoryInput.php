@@ -14,10 +14,11 @@ class ExpenseCategoryInput
     /**
      * The name of the expense category.
      *
-     * @var string $name
+     * @var ?string $name
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    public string $name;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $name = null;
 
     /**
      *
@@ -37,6 +38,16 @@ class ExpenseCategoryInput
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * Id to be displayed.
@@ -121,9 +132,10 @@ class ExpenseCategoryInput
     public ?string $rowVersion = null;
 
     /**
-     * @param  string  $name
+     * @param  ?string  $name
      * @param  ?LinkedTaxRateInput  $taxRate
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $displayId
      * @param  ?string  $code
      * @param  ?string  $description
@@ -135,11 +147,12 @@ class ExpenseCategoryInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(string $name, ?LinkedTaxRateInput $taxRate = null, ?array $passThrough = null, ?string $displayId = null, ?string $code = null, ?string $description = null, ?ExpenseCategoryStatus $status = null, ?LinkedLedgerAccount $account = null, ?LinkedLedgerAccount $offsetAccount = null, ?bool $rateRequired = null, ?float $defaultRate = null, ?string $rowVersion = null)
+    public function __construct(?string $name = null, ?LinkedTaxRateInput $taxRate = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $displayId = null, ?string $code = null, ?string $description = null, ?ExpenseCategoryStatus $status = null, ?LinkedLedgerAccount $account = null, ?LinkedLedgerAccount $offsetAccount = null, ?bool $rateRequired = null, ?float $defaultRate = null, ?string $rowVersion = null)
     {
         $this->name = $name;
         $this->taxRate = $taxRate;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->displayId = $displayId;
         $this->code = $code;
         $this->description = $description;

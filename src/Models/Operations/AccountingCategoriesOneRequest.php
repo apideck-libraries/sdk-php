@@ -45,6 +45,14 @@ class AccountingCategoriesOneRequest
     public ?string $serviceId = null;
 
     /**
+     * The ID of the company to scope requests to. For connectors that support multi-company, this overrides the default company configured in connection settings.
+     *
+     * @var ?string $companyId
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-apideck-company-id')]
+    public ?string $companyId = null;
+
+    /**
      * Apply filters
      *
      * @var ?Components\CategoriesFilter $filter
@@ -73,17 +81,19 @@ class AccountingCategoriesOneRequest
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId
+     * @param  ?string  $companyId
      * @param  ?bool  $raw
      * @param  ?Components\CategoriesFilter  $filter
      * @param  ?string  $fields
      * @phpstan-pure
      */
-    public function __construct(string $id, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?Components\CategoriesFilter $filter = null, ?string $fields = null, ?bool $raw = false)
+    public function __construct(string $id, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $companyId = null, ?Components\CategoriesFilter $filter = null, ?string $fields = null, ?bool $raw = false)
     {
         $this->id = $id;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
+        $this->companyId = $companyId;
         $this->filter = $filter;
         $this->fields = $fields;
         $this->raw = $raw;

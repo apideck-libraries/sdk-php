@@ -12,11 +12,6 @@ namespace Apideck\Unify\Models\Components;
 enum ExpensesFilterStatus: string
 {
     case Draft = 'draft';
-    case PendingApproval = 'pending_approval';
-    case Approved = 'approved';
     case Posted = 'posted';
     case Voided = 'voided';
-    case Rejected = 'rejected';
-    case Deleted = 'deleted';
-    case Other = 'other';
 }

@@ -29,13 +29,25 @@ class ExtendPaths
     public mixed $value;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * @param  string  $path
      * @param  mixed  $value
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(string $path, mixed $value)
+    public function __construct(string $path, mixed $value, ?array $additionalProperties = null)
     {
         $this->path = $path;
         $this->value = $value;
+        $this->additionalProperties = $additionalProperties;
     }
 }

@@ -21,6 +21,16 @@ class LinkedLedgerAccount
     public ?string $id = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * The name of the account.
      *
      * @var ?string $name
@@ -67,6 +77,7 @@ class LinkedLedgerAccount
 
     /**
      * @param  ?string  $id
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $name
      * @param  ?string  $nominalCode
      * @param  ?string  $code
@@ -74,9 +85,10 @@ class LinkedLedgerAccount
      * @param  ?string  $displayId
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?string $nominalCode = null, ?string $code = null, ?string $parentId = null, ?string $displayId = null)
+    public function __construct(?string $id = null, ?array $additionalProperties = null, ?string $name = null, ?string $nominalCode = null, ?string $code = null, ?string $parentId = null, ?string $displayId = null)
     {
         $this->id = $id;
+        $this->additionalProperties = $additionalProperties;
         $this->name = $name;
         $this->nominalCode = $nominalCode;
         $this->code = $code;

@@ -135,6 +135,16 @@ class CompanyInfo
     public ?TrackingCategoriesMode $trackingCategoriesMode = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * The name of the company.
      *
      * @var ?string $companyName
@@ -248,6 +258,7 @@ class CompanyInfo
      * @param  ?array<Email>  $emails
      * @param  ?bool  $trackingCategoriesEnabled
      * @param  ?TrackingCategoriesMode  $trackingCategoriesMode
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $companyName
      * @param  ?string  $country
      * @param  ?string  $salesTaxNumber
@@ -261,7 +272,7 @@ class CompanyInfo
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?CompanyStatus $status = null, ?string $legalName = null, ?bool $automatedSalesTax = null, ?bool $salesTaxEnabled = null, ?TaxRate $defaultSalesTax = null, ?TheStartMonthOfFiscalYear $fiscalYearStartMonth = null, ?LocalDate $companyStartDate = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?bool $trackingCategoriesEnabled = null, ?TrackingCategoriesMode $trackingCategoriesMode = null, ?string $companyName = null, ?string $country = null, ?string $salesTaxNumber = null, ?Currency $currency = null, ?string $language = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?CompanyStatus $status = null, ?string $legalName = null, ?bool $automatedSalesTax = null, ?bool $salesTaxEnabled = null, ?TaxRate $defaultSalesTax = null, ?TheStartMonthOfFiscalYear $fiscalYearStartMonth = null, ?LocalDate $companyStartDate = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?bool $trackingCategoriesEnabled = null, ?TrackingCategoriesMode $trackingCategoriesMode = null, ?array $additionalProperties = null, ?string $companyName = null, ?string $country = null, ?string $salesTaxNumber = null, ?Currency $currency = null, ?string $language = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->status = $status;
@@ -276,6 +287,7 @@ class CompanyInfo
         $this->emails = $emails;
         $this->trackingCategoriesEnabled = $trackingCategoriesEnabled;
         $this->trackingCategoriesMode = $trackingCategoriesMode;
+        $this->additionalProperties = $additionalProperties;
         $this->companyName = $companyName;
         $this->country = $country;
         $this->salesTaxNumber = $salesTaxNumber;

@@ -37,6 +37,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingPaymentsAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     filter: new Components\PaymentsFilter(
         updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
         invoiceId: '123',
@@ -111,6 +112,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingPaymentsAddRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     payment: new Components\PaymentInput(
         currency: Components\Currency::Usd,
         currencyRate: 0.69,
@@ -164,7 +166,7 @@ $request = new Operations\AccountingPaymentsAddRequest(
             ),
         ],
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -255,6 +257,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingPaymentsOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
 );
 
@@ -316,6 +319,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingPaymentsUpdateRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     payment: new Components\PaymentInput(
         currency: Components\Currency::Usd,
         currencyRate: 0.69,
@@ -368,13 +372,13 @@ $request = new Operations\AccountingPaymentsUpdateRequest(
             ),
         ],
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -457,6 +461,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingPaymentsDeleteRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
 );
 
 $response = $sdk->accounting->payments->delete(

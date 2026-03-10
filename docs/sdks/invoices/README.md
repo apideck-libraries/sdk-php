@@ -37,6 +37,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingInvoicesAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     filter: new Components\InvoicesFilter(
         updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
         createdSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
@@ -113,6 +114,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingInvoicesAddRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     invoice: new Components\InvoiceInput(
         type: Components\InvoiceType::Service,
         number: 'OIT00546',
@@ -181,13 +183,13 @@ $request = new Operations\AccountingInvoicesAddRequest(
                 ],
                 ledgerAccount: null,
                 customFields: [
-                    new Components\CustomField1(
+                    new Components\CustomField(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
                         value: 'Uses Salesforce and Marketo',
                     ),
-                    new Components\CustomField1(
+                    new Components\CustomField(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
@@ -281,19 +283,19 @@ $request = new Operations\AccountingInvoicesAddRequest(
             code: '453',
         ),
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -383,6 +385,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingInvoicesOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
 );
 
@@ -525,19 +528,19 @@ $request = new Operations\AccountingInvoicesUpdateRequest(
                     code: '453',
                 ),
                 customFields: [
-                    new Components\CustomField1(
+                    new Components\CustomField(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
                         value: null,
                     ),
-                    new Components\CustomField1(
+                    new Components\CustomField(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
                         value: null,
                     ),
-                    new Components\CustomField1(
+                    new Components\CustomField(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
@@ -636,7 +639,7 @@ $request = new Operations\AccountingInvoicesUpdateRequest(
             code: '453',
         ),
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',

@@ -61,6 +61,16 @@ class AccountingLocation
     public ?array $passThrough = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * A unique identifier for an object.
      *
      * @var ?string $parentId
@@ -166,6 +176,7 @@ class AccountingLocation
      * @param  ?array<Address>  $addresses
      * @param  ?array<SubsidiaryReference>  $subsidiaries
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $parentId
      * @param  ?string  $displayId
      * @param  ?string  $downstreamId
@@ -179,13 +190,14 @@ class AccountingLocation
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?LocationStatus $status = null, ?array $addresses = null, ?array $subsidiaries = null, ?array $passThrough = null, ?string $parentId = null, ?string $displayId = null, ?string $downstreamId = null, ?string $companyName = null, ?string $displayName = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?LocationStatus $status = null, ?array $addresses = null, ?array $subsidiaries = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $parentId = null, ?string $displayId = null, ?string $downstreamId = null, ?string $companyName = null, ?string $displayName = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->status = $status;
         $this->addresses = $addresses;
         $this->subsidiaries = $subsidiaries;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->parentId = $parentId;
         $this->displayId = $displayId;
         $this->downstreamId = $downstreamId;

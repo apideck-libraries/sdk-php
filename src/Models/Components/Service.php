@@ -29,13 +29,25 @@ class Service
     public string $name;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * @param  string  $id
      * @param  string  $name
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name)
+    public function __construct(string $id, string $name, ?array $additionalProperties = null)
     {
         $this->id = $id;
         $this->name = $name;
+        $this->additionalProperties = $additionalProperties;
     }
 }

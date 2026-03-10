@@ -70,10 +70,10 @@ class LedgerAccountInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -86,6 +86,16 @@ class LedgerAccountInput
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * The nominal code of the ledger account.
@@ -259,8 +269,9 @@ class LedgerAccountInput
      * @param  ?BankAccount  $bankAccount
      * @param  ?ParentAccount  $parentAccount
      * @param  ?array<LedgerAccountSubsidiaries>  $subsidiaries
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $nominalCode
      * @param  ?string  $code
      * @param  ?LedgerAccountClassification  $classification
@@ -281,7 +292,7 @@ class LedgerAccountInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?string $displayId = null, ?LedgerAccountType $type = null, ?LinkedTaxRateInput $taxRate = null, ?BankAccount $bankAccount = null, ?ParentAccount $parentAccount = null, ?array $subsidiaries = null, ?array $customFields = null, ?array $passThrough = null, ?string $nominalCode = null, ?string $code = null, ?LedgerAccountClassification $classification = null, ?string $subType = null, ?string $name = null, ?string $fullyQualifiedName = null, ?string $description = null, ?float $openingBalance = null, ?float $currentBalance = null, ?Currency $currency = null, ?string $taxType = null, ?float $level = null, ?bool $active = null, ?AccountStatus $status = null, ?bool $header = null, ?bool $subAccount = null, ?LocalDate $lastReconciliationDate = null, ?string $rowVersion = null)
+    public function __construct(?string $displayId = null, ?LedgerAccountType $type = null, ?LinkedTaxRateInput $taxRate = null, ?BankAccount $bankAccount = null, ?ParentAccount $parentAccount = null, ?array $subsidiaries = null, ?array $customFields = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $nominalCode = null, ?string $code = null, ?LedgerAccountClassification $classification = null, ?string $subType = null, ?string $name = null, ?string $fullyQualifiedName = null, ?string $description = null, ?float $openingBalance = null, ?float $currentBalance = null, ?Currency $currency = null, ?string $taxType = null, ?float $level = null, ?bool $active = null, ?AccountStatus $status = null, ?bool $header = null, ?bool $subAccount = null, ?LocalDate $lastReconciliationDate = null, ?string $rowVersion = null)
     {
         $this->displayId = $displayId;
         $this->type = $type;
@@ -291,6 +302,7 @@ class LedgerAccountInput
         $this->subsidiaries = $subsidiaries;
         $this->customFields = $customFields;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->nominalCode = $nominalCode;
         $this->code = $code;
         $this->classification = $classification;

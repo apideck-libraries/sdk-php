@@ -70,12 +70,22 @@ class BankFeedAccountInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
@@ -103,12 +113,13 @@ class BankFeedAccountInput
      * @param  ?string  $targetAccountName
      * @param  ?string  $targetAccountNumber
      * @param  ?FeedStatus  $feedStatus
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?Currency  $currency
      * @param  ?string  $country
      * @phpstan-pure
      */
-    public function __construct(?BankAccountType $bankAccountType = null, ?string $sourceAccountId = null, ?string $targetAccountId = null, ?string $targetAccountName = null, ?string $targetAccountNumber = null, ?FeedStatus $feedStatus = null, ?array $customFields = null, ?Currency $currency = null, ?string $country = null)
+    public function __construct(?BankAccountType $bankAccountType = null, ?string $sourceAccountId = null, ?string $targetAccountId = null, ?string $targetAccountName = null, ?string $targetAccountNumber = null, ?FeedStatus $feedStatus = null, ?array $customFields = null, ?array $additionalProperties = null, ?Currency $currency = null, ?string $country = null)
     {
         $this->bankAccountType = $bankAccountType;
         $this->sourceAccountId = $sourceAccountId;
@@ -117,6 +128,7 @@ class BankFeedAccountInput
         $this->targetAccountNumber = $targetAccountNumber;
         $this->feedStatus = $feedStatus;
         $this->customFields = $customFields;
+        $this->additionalProperties = $additionalProperties;
         $this->currency = $currency;
         $this->country = $country;
     }

@@ -14,18 +14,31 @@ class BalanceSheet
     /**
      * $reports
      *
-     * @var array<Reports> $reports
+     * @var ?array<Reports> $reports
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('reports')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Reports>')]
-    public array $reports;
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Reports>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $reports = null;
 
     /**
-     * @param  array<Reports>  $reports
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
+     * @param  ?array<Reports>  $reports
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(array $reports)
+    public function __construct(?array $reports = null, ?array $additionalProperties = null)
     {
         $this->reports = $reports;
+        $this->additionalProperties = $additionalProperties;
     }
 }

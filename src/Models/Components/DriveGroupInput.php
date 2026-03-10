@@ -14,10 +14,11 @@ class DriveGroupInput
     /**
      * The name of the drive group
      *
-     * @var string $name
+     * @var ?string $name
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    public string $name;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $name = null;
 
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
@@ -28,6 +29,16 @@ class DriveGroupInput
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * The display name of the drive group
@@ -48,16 +59,18 @@ class DriveGroupInput
     public ?string $description = null;
 
     /**
-     * @param  string  $name
+     * @param  ?string  $name
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $displayName
      * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(string $name, ?array $passThrough = null, ?string $displayName = null, ?string $description = null)
+    public function __construct(?string $name = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $displayName = null, ?string $description = null)
     {
         $this->name = $name;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->displayName = $displayName;
         $this->description = $description;
     }

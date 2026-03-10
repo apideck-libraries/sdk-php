@@ -15,10 +15,11 @@ class LinkedParentCustomer
     /**
      * The parent ID of the customer this entity is linked to.
      *
-     * @var string $id
+     * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public string $id;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
 
     /**
      * The name of the parent customer.
@@ -30,11 +31,11 @@ class LinkedParentCustomer
     public ?string $name = null;
 
     /**
-     * @param  string  $id
+     * @param  ?string  $id
      * @param  ?string  $name
      * @phpstan-pure
      */
-    public function __construct(string $id, ?string $name = null)
+    public function __construct(?string $id = null, ?string $name = null)
     {
         $this->id = $id;
         $this->name = $name;

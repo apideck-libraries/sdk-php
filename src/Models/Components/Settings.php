@@ -36,6 +36,16 @@ class Settings
     public ?array $allowActions = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * A boolean that controls the display of the configurable resources for an integration. When set to true, the resource configuration options will be hidden and not shown to the user. When set to false, the resource configuration options will be displayed to the user.
      *
      * @var ?bool $hideResourceSettings
@@ -128,12 +138,14 @@ class Settings
      * @param  ?bool  $autoRedirect
      * @param  ?bool  $hideGuides
      * @param  ?array<AllowActions>  $allowActions
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(?array $unifiedApis = null, ?array $allowActions = null, ?bool $hideResourceSettings = false, ?bool $sandboxMode = false, ?bool $isolationMode = false, ?string $sessionLength = '1h', ?bool $showLogs = true, ?bool $showSuggestions = false, ?bool $showSidebar = true, ?bool $autoRedirect = false, ?bool $hideGuides = false)
+    public function __construct(?array $unifiedApis = null, ?array $allowActions = null, ?array $additionalProperties = null, ?bool $hideResourceSettings = false, ?bool $sandboxMode = false, ?bool $isolationMode = false, ?string $sessionLength = '1h', ?bool $showLogs = true, ?bool $showSuggestions = false, ?bool $showSidebar = true, ?bool $autoRedirect = false, ?bool $hideGuides = false)
     {
         $this->unifiedApis = $unifiedApis;
         $this->allowActions = $allowActions;
+        $this->additionalProperties = $additionalProperties;
         $this->hideResourceSettings = $hideResourceSettings;
         $this->sandboxMode = $sandboxMode;
         $this->isolationMode = $isolationMode;

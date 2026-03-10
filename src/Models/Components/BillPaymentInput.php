@@ -12,22 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class BillPaymentInput
 {
     /**
-     * The total amount of the transaction or record
-     *
-     * @var ?float $totalAmount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('total_amount')]
-    public ?float $totalAmount;
-
-    /**
-     * The date of the transaction - YYYY:MM::DDThh:mm:ss.sTZD
-     *
-     * @var ?\DateTime $transactionDate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('transaction_date')]
-    public ?\DateTime $transactionDate;
-
-    /**
      * Status of payment
      *
      * @var ?PaymentStatus $status
@@ -60,10 +44,10 @@ class BillPaymentInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -76,6 +60,16 @@ class BillPaymentInput
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
@@ -95,6 +89,15 @@ class BillPaymentInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency_rate')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $currencyRate = null;
+
+    /**
+     * The total amount of the transaction or record
+     *
+     * @var ?float $totalAmount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('total_amount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $totalAmount = null;
 
     /**
      * Optional transaction reference message ie: Debit remittance detail.
@@ -140,6 +143,15 @@ class BillPaymentInput
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?LinkedLedgerAccount $account = null;
+
+    /**
+     * The date of the transaction - YYYY:MM::DDThh:mm:ss.sTZD
+     *
+     * @var ?\DateTime $transactionDate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('transaction_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?\DateTime $transactionDate = null;
 
     /**
      * The supplier this entity is linked to.
@@ -216,20 +228,21 @@ class BillPaymentInput
     public ?string $displayId = null;
 
     /**
-     * @param  ?float  $totalAmount
-     * @param  ?\DateTime  $transactionDate
      * @param  ?PaymentStatus  $status
      * @param  ?BillPaymentType  $type
      * @param  ?array<BillPaymentAllocations>  $allocations
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?Currency  $currency
      * @param  ?float  $currencyRate
+     * @param  ?float  $totalAmount
      * @param  ?string  $reference
      * @param  ?string  $paymentMethod
      * @param  ?string  $paymentMethodReference
      * @param  ?string  $paymentMethodId
      * @param  ?LinkedLedgerAccount  $account
+     * @param  ?\DateTime  $transactionDate
      * @param  ?LinkedSupplierInput  $supplier
      * @param  ?string  $companyId
      * @param  ?bool  $reconciled
@@ -240,22 +253,23 @@ class BillPaymentInput
      * @param  ?string  $displayId
      * @phpstan-pure
      */
-    public function __construct(?float $totalAmount = null, ?\DateTime $transactionDate = null, ?PaymentStatus $status = null, ?BillPaymentType $type = null, ?array $allocations = null, ?array $customFields = null, ?array $passThrough = null, ?Currency $currency = null, ?float $currencyRate = null, ?string $reference = null, ?string $paymentMethod = null, ?string $paymentMethodReference = null, ?string $paymentMethodId = null, ?LinkedLedgerAccount $account = null, ?LinkedSupplierInput $supplier = null, ?string $companyId = null, ?bool $reconciled = null, ?string $note = null, ?string $number = null, ?array $trackingCategories = null, ?string $rowVersion = null, ?string $displayId = null)
+    public function __construct(?PaymentStatus $status = null, ?BillPaymentType $type = null, ?array $allocations = null, ?array $customFields = null, ?array $passThrough = null, ?array $additionalProperties = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $totalAmount = null, ?string $reference = null, ?string $paymentMethod = null, ?string $paymentMethodReference = null, ?string $paymentMethodId = null, ?LinkedLedgerAccount $account = null, ?\DateTime $transactionDate = null, ?LinkedSupplierInput $supplier = null, ?string $companyId = null, ?bool $reconciled = null, ?string $note = null, ?string $number = null, ?array $trackingCategories = null, ?string $rowVersion = null, ?string $displayId = null)
     {
-        $this->totalAmount = $totalAmount;
-        $this->transactionDate = $transactionDate;
         $this->status = $status;
         $this->type = $type;
         $this->allocations = $allocations;
         $this->customFields = $customFields;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->currency = $currency;
         $this->currencyRate = $currencyRate;
+        $this->totalAmount = $totalAmount;
         $this->reference = $reference;
         $this->paymentMethod = $paymentMethod;
         $this->paymentMethodReference = $paymentMethodReference;
         $this->paymentMethodId = $paymentMethodId;
         $this->account = $account;
+        $this->transactionDate = $transactionDate;
         $this->supplier = $supplier;
         $this->companyId = $companyId;
         $this->reconciled = $reconciled;

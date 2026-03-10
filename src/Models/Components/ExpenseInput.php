@@ -12,23 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class ExpenseInput
 {
     /**
-     * Expense line items linked to this expense.
-     *
-     * @var array<ExpenseLineItemInput> $lineItems
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ExpenseLineItemInput>')]
-    public array $lineItems;
-
-    /**
-     * The date of the transaction - YYYY:MM::DDThh:mm:ss.sTZD
-     *
-     * @var ?\DateTime $transactionDate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('transaction_date')]
-    public ?\DateTime $transactionDate;
-
-    /**
      * The unique identifier for the ledger account that this expense should be credited to. Deprecated, use account instead.
      *
      * @var ?string $accountId
@@ -58,12 +41,22 @@ class ExpenseInput
     public ?LinkedTaxRateInput $taxRate = null;
 
     /**
+     * Expense line items linked to this expense.
+     *
+     * @var ?array<ExpenseLineItemInput> $lineItems
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ExpenseLineItemInput>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $lineItems = null;
+
+    /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -76,6 +69,16 @@ class ExpenseInput
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * Id to be displayed.
@@ -94,6 +97,15 @@ class ExpenseInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('number')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $number = null;
+
+    /**
+     * The date of the transaction - YYYY:MM::DDThh:mm:ss.sTZD
+     *
+     * @var ?\DateTime $transactionDate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('transaction_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?\DateTime $transactionDate = null;
 
     /**
      * A flexible account reference that can represent either a ledger account (GL account) or a bank account, depending on the connector's requirements.
@@ -283,15 +295,16 @@ class ExpenseInput
     public ?string $rowVersion = null;
 
     /**
-     * @param  array<ExpenseLineItemInput>  $lineItems
-     * @param  ?\DateTime  $transactionDate
      * @param  ?string  $accountId
      * @param  ?string  $supplierId
      * @param  ?LinkedTaxRateInput  $taxRate
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<ExpenseLineItemInput>  $lineItems
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $displayId
      * @param  ?string  $number
+     * @param  ?\DateTime  $transactionDate
      * @param  ?LinkedFinancialAccountInput  $account
      * @param  ?LinkedSupplierInput  $supplier
      * @param  ?string  $companyId
@@ -314,17 +327,18 @@ class ExpenseInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(array $lineItems, ?\DateTime $transactionDate = null, ?string $accountId = null, ?string $supplierId = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $displayId = null, ?string $number = null, ?LinkedFinancialAccountInput $account = null, ?LinkedSupplierInput $supplier = null, ?string $companyId = null, ?LinkedLocationInput $location = null, ?string $departmentId = null, ?LinkedDepartmentInput $department = null, ?ExpensePaymentType $paymentType = null, ?Currency $currency = null, ?float $currencyRate = null, ?ExpenseType $type = null, ?string $memo = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?float $totalAmount = null, ?array $trackingCategories = null, ?string $reference = null, ?string $sourceDocumentUrl = null, ?ExpenseStatus $status = null, ?string $rowVersion = null)
+    public function __construct(?string $accountId = null, ?string $supplierId = null, ?LinkedTaxRateInput $taxRate = null, ?array $lineItems = null, ?array $customFields = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $displayId = null, ?string $number = null, ?\DateTime $transactionDate = null, ?LinkedFinancialAccountInput $account = null, ?LinkedSupplierInput $supplier = null, ?string $companyId = null, ?LinkedLocationInput $location = null, ?string $departmentId = null, ?LinkedDepartmentInput $department = null, ?ExpensePaymentType $paymentType = null, ?Currency $currency = null, ?float $currencyRate = null, ?ExpenseType $type = null, ?string $memo = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?float $totalAmount = null, ?array $trackingCategories = null, ?string $reference = null, ?string $sourceDocumentUrl = null, ?ExpenseStatus $status = null, ?string $rowVersion = null)
     {
-        $this->lineItems = $lineItems;
-        $this->transactionDate = $transactionDate;
         $this->accountId = $accountId;
         $this->supplierId = $supplierId;
         $this->taxRate = $taxRate;
+        $this->lineItems = $lineItems;
         $this->customFields = $customFields;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->displayId = $displayId;
         $this->number = $number;
+        $this->transactionDate = $transactionDate;
         $this->account = $account;
         $this->supplier = $supplier;
         $this->companyId = $companyId;

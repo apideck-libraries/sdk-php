@@ -14,44 +14,48 @@ class ConsentRecord
     /**
      * Unique identifier for this consent record
      *
-     * @var string $id
+     * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public string $id;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
 
     /**
      * ISO timestamp when consent was recorded
      *
-     * @var string $createdAt
+     * @var ?string $createdAt
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
-    public string $createdAt;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $createdAt = null;
 
     /**
      * Whether consent was granted (true) or denied/revoked (false)
      *
-     * @var bool $granted
+     * @var ?bool $granted
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('granted')]
-    public bool $granted;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $granted = null;
 
     /**
      * Data scopes resource configuration that can be either detailed field permissions or a wildcard
      *
-     * @var array<string, array<string, DataScopesResources1>>|DataScopesResources2 $resources
+     * @var array<string, array<string, DataScopesResources1>>|DataScopesResources2|null $resources
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('resources')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, array<string, \Apideck\Unify\Models\Components\DataScopesResources1>>|\Apideck\Unify\Models\Components\DataScopesResources2')]
-    public array|DataScopesResources2 $resources;
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, array<string, \Apideck\Unify\Models\Components\DataScopesResources1>>|\Apideck\Unify\Models\Components\DataScopesResources2|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public array|DataScopesResources2|null $resources = null;
 
     /**
-     * @param  string  $id
-     * @param  string  $createdAt
-     * @param  bool  $granted
-     * @param  array<string, array<string, DataScopesResources1>>|DataScopesResources2  $resources
+     * @param  ?string  $id
+     * @param  ?string  $createdAt
+     * @param  ?bool  $granted
+     * @param  array<string, array<string, DataScopesResources1>>|DataScopesResources2|null  $resources
      * @phpstan-pure
      */
-    public function __construct(string $id, string $createdAt, bool $granted, array|DataScopesResources2 $resources)
+    public function __construct(?string $id = null, ?string $createdAt = null, ?bool $granted = null, array|DataScopesResources2|null $resources = null)
     {
         $this->id = $id;
         $this->createdAt = $createdAt;

@@ -12,32 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class ProfitAndLoss
 {
     /**
-     * The name of the report
-     *
-     * @var string $reportName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('report_name')]
-    public string $reportName;
-
-    /**
-     * The operating income accounts
-     *
-     * @var Income $income
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('income')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Income')]
-    public Income $income;
-
-    /**
-     * The operating expenses accounts
-     *
-     * @var Expenses $expenses
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('expenses')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Expenses')]
-    public Expenses $expenses;
-
-    /**
      * A unique identifier for an object.
      *
      * @var ?string $id
@@ -45,6 +19,15 @@ class ProfitAndLoss
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
+
+    /**
+     * The name of the report
+     *
+     * @var ?string $reportName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('report_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $reportName = null;
 
     /**
      * The start date of the report
@@ -65,6 +48,16 @@ class ProfitAndLoss
     public ?string $endDate = null;
 
     /**
+     * The operating income accounts
+     *
+     * @var ?Income $income
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('income')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Income|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Income $income = null;
+
+    /**
      * The cost of goods sold accounts
      *
      * @var ?CostOfGoodsSold $costOfGoodsSold
@@ -73,6 +66,16 @@ class ProfitAndLoss
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CostOfGoodsSold|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?CostOfGoodsSold $costOfGoodsSold = null;
+
+    /**
+     * The operating expenses accounts
+     *
+     * @var ?Expenses $expenses
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('expenses')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Expenses|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Expenses $expenses = null;
 
     /**
      * The other income accounts
@@ -141,6 +144,16 @@ class ProfitAndLoss
     public ?string $customer = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
      * @var ?Currency $currency
@@ -161,13 +174,13 @@ class ProfitAndLoss
     public ?array $customMappings = null;
 
     /**
-     * @param  string  $reportName
-     * @param  Income  $income
-     * @param  Expenses  $expenses
      * @param  ?string  $id
+     * @param  ?string  $reportName
      * @param  ?string  $startDate
      * @param  ?string  $endDate
+     * @param  ?Income  $income
      * @param  ?CostOfGoodsSold  $costOfGoodsSold
+     * @param  ?Expenses  $expenses
      * @param  ?OtherIncome  $otherIncome
      * @param  ?OtherExpenses  $otherExpenses
      * @param  ?UncategorizedAccounts  $uncategorizedAccounts
@@ -175,19 +188,20 @@ class ProfitAndLoss
      * @param  ?ProfitAndLossIndicator  $netOperatingIncome
      * @param  ?ProfitAndLossIndicator  $netIncome
      * @param  ?string  $customer
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?Currency  $currency
      * @param  ?array<string, mixed>  $customMappings
      * @phpstan-pure
      */
-    public function __construct(string $reportName, Income $income, Expenses $expenses, ?string $id = null, ?string $startDate = null, ?string $endDate = null, ?CostOfGoodsSold $costOfGoodsSold = null, ?OtherIncome $otherIncome = null, ?OtherExpenses $otherExpenses = null, ?UncategorizedAccounts $uncategorizedAccounts = null, ?ProfitAndLossIndicator $grossProfit = null, ?ProfitAndLossIndicator $netOperatingIncome = null, ?ProfitAndLossIndicator $netIncome = null, ?string $customer = null, ?Currency $currency = null, ?array $customMappings = null)
+    public function __construct(?string $id = null, ?string $reportName = null, ?string $startDate = null, ?string $endDate = null, ?Income $income = null, ?CostOfGoodsSold $costOfGoodsSold = null, ?Expenses $expenses = null, ?OtherIncome $otherIncome = null, ?OtherExpenses $otherExpenses = null, ?UncategorizedAccounts $uncategorizedAccounts = null, ?ProfitAndLossIndicator $grossProfit = null, ?ProfitAndLossIndicator $netOperatingIncome = null, ?ProfitAndLossIndicator $netIncome = null, ?string $customer = null, ?array $additionalProperties = null, ?Currency $currency = null, ?array $customMappings = null)
     {
-        $this->reportName = $reportName;
-        $this->income = $income;
-        $this->expenses = $expenses;
         $this->id = $id;
+        $this->reportName = $reportName;
         $this->startDate = $startDate;
         $this->endDate = $endDate;
+        $this->income = $income;
         $this->costOfGoodsSold = $costOfGoodsSold;
+        $this->expenses = $expenses;
         $this->otherIncome = $otherIncome;
         $this->otherExpenses = $otherExpenses;
         $this->uncategorizedAccounts = $uncategorizedAccounts;
@@ -195,6 +209,7 @@ class ProfitAndLoss
         $this->netOperatingIncome = $netOperatingIncome;
         $this->netIncome = $netIncome;
         $this->customer = $customer;
+        $this->additionalProperties = $additionalProperties;
         $this->currency = $currency;
         $this->customMappings = $customMappings;
     }

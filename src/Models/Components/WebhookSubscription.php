@@ -59,19 +59,31 @@ class WebhookSubscription
     public ?string $createdAt = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * @param  ?string  $downstreamId
      * @param  ?array<string>  $unifyEventTypes
      * @param  ?array<string>  $downstreamEventTypes
      * @param  ?string  $executeUrl
      * @param  ?string  $createdAt
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(?string $downstreamId = null, ?array $unifyEventTypes = null, ?array $downstreamEventTypes = null, ?string $executeUrl = null, ?string $createdAt = null)
+    public function __construct(?string $downstreamId = null, ?array $unifyEventTypes = null, ?array $downstreamEventTypes = null, ?string $executeUrl = null, ?string $createdAt = null, ?array $additionalProperties = null)
     {
         $this->downstreamId = $downstreamId;
         $this->unifyEventTypes = $unifyEventTypes;
         $this->downstreamEventTypes = $downstreamEventTypes;
         $this->executeUrl = $executeUrl;
         $this->createdAt = $createdAt;
+        $this->additionalProperties = $additionalProperties;
     }
 }

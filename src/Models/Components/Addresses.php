@@ -21,6 +21,16 @@ class Addresses
     public ?EcommerceCustomerType $type = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * A unique identifier for an object.
      *
      * @var ?string $id
@@ -85,6 +95,7 @@ class Addresses
 
     /**
      * @param  ?EcommerceCustomerType  $type
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $id
      * @param  ?string  $line1
      * @param  ?string  $line2
@@ -94,9 +105,10 @@ class Addresses
      * @param  ?string  $country
      * @phpstan-pure
      */
-    public function __construct(?EcommerceCustomerType $type = null, ?string $id = null, ?string $line1 = null, ?string $line2 = null, ?string $city = null, ?string $state = null, ?string $postalCode = null, ?string $country = null)
+    public function __construct(?EcommerceCustomerType $type = null, ?array $additionalProperties = null, ?string $id = null, ?string $line1 = null, ?string $line2 = null, ?string $city = null, ?string $state = null, ?string $postalCode = null, ?string $country = null)
     {
         $this->type = $type;
+        $this->additionalProperties = $additionalProperties;
         $this->id = $id;
         $this->line1 = $line1;
         $this->line2 = $line2;

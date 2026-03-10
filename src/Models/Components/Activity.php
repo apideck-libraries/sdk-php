@@ -21,15 +21,6 @@ class Activity
     public ?string $id = null;
 
     /**
-     * The type of the activity
-     *
-     * @var ?ActivityType $type
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ActivityType|null')]
-    public ?ActivityType $type;
-
-    /**
      *
      * @var ?Address $locationAddress
      */
@@ -50,10 +41,10 @@ class Activity
     /**
      * Custom fields of the activity
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -76,6 +67,16 @@ class Activity
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * The third-party API ID of original entity
@@ -229,6 +230,16 @@ class Activity
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_object_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $customObjectId = null;
+
+    /**
+     * The type of the activity
+     *
+     * @var ?ActivityType $type
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ActivityType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ActivityType $type = null;
 
     /**
      * The title of the activity
@@ -485,12 +496,12 @@ class Activity
 
     /**
      * @param  ?string  $id
-     * @param  ?ActivityType  $type
      * @param  ?Address  $locationAddress
      * @param  ?bool  $recurrent
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<ActivityAttendee>  $attendees
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $downstreamId
      * @param  ?string  $activityDatetime
      * @param  ?int  $durationSeconds
@@ -508,6 +519,7 @@ class Activity
      * @param  ?string  $productId
      * @param  ?string  $solutionId
      * @param  ?string  $customObjectId
+     * @param  ?ActivityType  $type
      * @param  ?string  $title
      * @param  ?string  $description
      * @param  ?string  $note
@@ -538,15 +550,15 @@ class Activity
      * @param  ?string  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?ActivityType $type = null, ?Address $locationAddress = null, ?bool $recurrent = null, ?array $customFields = null, ?array $attendees = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $activityDatetime = null, ?int $durationSeconds = null, ?string $userId = null, ?string $accountId = null, ?string $contactId = null, ?string $companyId = null, ?string $opportunityId = null, ?string $leadId = null, ?string $ownerId = null, ?string $campaignId = null, ?string $caseId = null, ?string $assetId = null, ?string $contractId = null, ?string $productId = null, ?string $solutionId = null, ?string $customObjectId = null, ?string $title = null, ?string $description = null, ?string $note = null, ?string $location = null, ?bool $allDayEvent = null, ?bool $private = null, ?bool $groupEvent = null, ?string $eventSubType = null, ?string $groupEventType = null, ?bool $child = null, ?bool $archived = null, ?bool $deleted = null, ?ShowAs $showAs = null, ?bool $done = null, ?string $startDatetime = null, ?string $endDatetime = null, ?int $durationMinutes = null, ?string $activityDate = null, ?string $endDate = null, ?string $reminderDatetime = null, ?bool $reminderSet = null, ?string $videoConferenceUrl = null, ?string $videoConferenceId = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?string $updatedAt = null, ?string $createdAt = null)
+    public function __construct(?string $id = null, ?Address $locationAddress = null, ?bool $recurrent = null, ?array $customFields = null, ?array $attendees = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $downstreamId = null, ?string $activityDatetime = null, ?int $durationSeconds = null, ?string $userId = null, ?string $accountId = null, ?string $contactId = null, ?string $companyId = null, ?string $opportunityId = null, ?string $leadId = null, ?string $ownerId = null, ?string $campaignId = null, ?string $caseId = null, ?string $assetId = null, ?string $contractId = null, ?string $productId = null, ?string $solutionId = null, ?string $customObjectId = null, ?ActivityType $type = null, ?string $title = null, ?string $description = null, ?string $note = null, ?string $location = null, ?bool $allDayEvent = null, ?bool $private = null, ?bool $groupEvent = null, ?string $eventSubType = null, ?string $groupEventType = null, ?bool $child = null, ?bool $archived = null, ?bool $deleted = null, ?ShowAs $showAs = null, ?bool $done = null, ?string $startDatetime = null, ?string $endDatetime = null, ?int $durationMinutes = null, ?string $activityDate = null, ?string $endDate = null, ?string $reminderDatetime = null, ?bool $reminderSet = null, ?string $videoConferenceUrl = null, ?string $videoConferenceId = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?string $updatedAt = null, ?string $createdAt = null)
     {
         $this->id = $id;
-        $this->type = $type;
         $this->locationAddress = $locationAddress;
         $this->recurrent = $recurrent;
         $this->customFields = $customFields;
         $this->attendees = $attendees;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->downstreamId = $downstreamId;
         $this->activityDatetime = $activityDatetime;
         $this->durationSeconds = $durationSeconds;
@@ -564,6 +576,7 @@ class Activity
         $this->productId = $productId;
         $this->solutionId = $solutionId;
         $this->customObjectId = $customObjectId;
+        $this->type = $type;
         $this->title = $title;
         $this->description = $description;
         $this->note = $note;

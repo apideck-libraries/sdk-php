@@ -22,20 +22,6 @@ class Application
 
     /**
      *
-     * @var ?string $applicantId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('applicant_id')]
-    public ?string $applicantId;
-
-    /**
-     *
-     * @var ?string $jobId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('job_id')]
-    public ?string $jobId;
-
-    /**
-     *
      * @var ?Stage $stage
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('stage')]
@@ -52,6 +38,32 @@ class Application
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
+     *
+     * @var ?string $applicantId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('applicant_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $applicantId = null;
+
+    /**
+     *
+     * @var ?string $jobId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('job_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $jobId = null;
 
     /**
      *
@@ -110,10 +122,11 @@ class Application
 
     /**
      * @param  ?string  $id
-     * @param  ?string  $applicantId
-     * @param  ?string  $jobId
      * @param  ?Stage  $stage
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
+     * @param  ?string  $applicantId
+     * @param  ?string  $jobId
      * @param  ?ApplicationStatus  $status
      * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $updatedBy
@@ -122,13 +135,14 @@ class Application
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $applicantId = null, ?string $jobId = null, ?Stage $stage = null, ?array $passThrough = null, ?ApplicationStatus $status = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?Stage $stage = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $applicantId = null, ?string $jobId = null, ?ApplicationStatus $status = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
-        $this->applicantId = $applicantId;
-        $this->jobId = $jobId;
         $this->stage = $stage;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
+        $this->applicantId = $applicantId;
+        $this->jobId = $jobId;
         $this->status = $status;
         $this->customMappings = $customMappings;
         $this->updatedBy = $updatedBy;

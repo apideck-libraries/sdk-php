@@ -93,6 +93,16 @@ class Reports
     public ?BalanceSheetUncategorizedItemsAccount $uncategorizedItems = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
      * @var ?Currency $currency
@@ -158,6 +168,7 @@ class Reports
      * @param  ?string  $startDate
      * @param  ?float  $netAssets
      * @param  ?BalanceSheetUncategorizedItemsAccount  $uncategorizedItems
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?Currency  $currency
      * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $updatedBy
@@ -166,7 +177,7 @@ class Reports
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(string $endDate, BalanceSheetAssetsAccount $assets, BalanceSheetLiabilitiesAccount $liabilities, BalanceSheetEquityAccount $equity, ?string $id = null, ?string $reportName = null, ?string $startDate = null, ?float $netAssets = null, ?BalanceSheetUncategorizedItemsAccount $uncategorizedItems = null, ?Currency $currency = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(string $endDate, BalanceSheetAssetsAccount $assets, BalanceSheetLiabilitiesAccount $liabilities, BalanceSheetEquityAccount $equity, ?string $id = null, ?string $reportName = null, ?string $startDate = null, ?float $netAssets = null, ?BalanceSheetUncategorizedItemsAccount $uncategorizedItems = null, ?array $additionalProperties = null, ?Currency $currency = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->endDate = $endDate;
         $this->assets = $assets;
@@ -177,6 +188,7 @@ class Reports
         $this->startDate = $startDate;
         $this->netAssets = $netAssets;
         $this->uncategorizedItems = $uncategorizedItems;
+        $this->additionalProperties = $additionalProperties;
         $this->currency = $currency;
         $this->customMappings = $customMappings;
         $this->updatedBy = $updatedBy;

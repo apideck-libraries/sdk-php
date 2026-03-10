@@ -12,6 +12,16 @@ namespace Apideck\Unify\Models\Components;
 class ActivityAttendeeInput
 {
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * Full name of the attendee
      *
      * @var ?string $name
@@ -94,6 +104,7 @@ class ActivityAttendeeInput
     public ?ActivityAttendeeStatus $status = null;
 
     /**
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $name
      * @param  ?string  $firstName
      * @param  ?string  $middleName
@@ -105,8 +116,9 @@ class ActivityAttendeeInput
      * @param  ?ActivityAttendeeStatus  $status
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $prefix = null, ?string $suffix = null, ?string $emailAddress = null, ?bool $isOrganizer = null, ?ActivityAttendeeStatus $status = null)
+    public function __construct(?array $additionalProperties = null, ?string $name = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $prefix = null, ?string $suffix = null, ?string $emailAddress = null, ?bool $isOrganizer = null, ?ActivityAttendeeStatus $status = null)
     {
+        $this->additionalProperties = $additionalProperties;
         $this->name = $name;
         $this->firstName = $firstName;
         $this->middleName = $middleName;

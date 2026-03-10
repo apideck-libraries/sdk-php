@@ -48,15 +48,15 @@ class ApideckCompanies
     }
 
     /**
-     * Create Company
+     * Create company
      *
-     * Create Company
+     * Create company
      *
-     * @param  Operations\HrisCompaniesAddRequest  $request
-     * @return Operations\HrisCompaniesAddResponse
+     * @param  Operations\CrmCompaniesAddRequest  $request
+     * @return Operations\CrmCompaniesAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
-    public function create(Operations\HrisCompaniesAddRequest $request, ?Options $options = null): Operations\HrisCompaniesAddResponse
+    public function create(Operations\CrmCompaniesAddRequest $request, ?Options $options = null): Operations\CrmCompaniesAddResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -87,16 +87,16 @@ class ApideckCompanies
             ];
         }
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/hris/companies');
+        $url = Utils\Utils::generateUrl($baseUrl, '/crm/companies');
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'hrisCompany', 'json');
+        $body = Utils\Utils::serializeRequestBody($request, 'company1', 'json');
         if ($body === null) {
             throw new \Exception('Request body is required');
         }
         $httpOptions = array_merge_recursive($httpOptions, $body);
 
-        $qp = Utils\Utils::getQueryParams(Operations\HrisCompaniesAddRequest::class, $request, $urlOverride, $this->sdkConfiguration->globals);
+        $qp = Utils\Utils::getQueryParams(Operations\CrmCompaniesAddRequest::class, $request, $urlOverride, $this->sdkConfiguration->globals);
         $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request, $this->sdkConfiguration->globals));
         if (! array_key_exists('headers', $httpOptions)) {
             $httpOptions['headers'] = [];
@@ -104,7 +104,7 @@ class ApideckCompanies
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'hris.companiesAdd', null, $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'crm.companiesAdd', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -128,13 +128,13 @@ class ApideckCompanies
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\CreateHrisCompanyResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\HrisCompaniesAddResponse(
+                $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\CreateCompanyResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\CrmCompaniesAddResponse(
                     httpMeta: new Components\HTTPMetadata(
                         response: $httpResponse,
                         request: $httpRequest
                     ),
-                    createHrisCompanyResponse: $obj
+                    createCompanyResponse: $obj
                 );
 
                 return $response;
@@ -207,7 +207,7 @@ class ApideckCompanies
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
                 $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\UnexpectedErrorResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\HrisCompaniesAddResponse(
+                $response = new Operations\CrmCompaniesAddResponse(
                     httpMeta: new Components\HTTPMetadata(
                         response: $httpResponse,
                         request: $httpRequest
@@ -223,15 +223,15 @@ class ApideckCompanies
     }
 
     /**
-     * List Companies
+     * List companies
      *
-     * List Companies
+     * List companies
      *
-     * @param  ?Operations\HrisCompaniesAllRequest  $request
-     * @return Operations\HrisCompaniesAllResponse
+     * @param  ?Operations\CrmCompaniesAllRequest  $request
+     * @return Operations\CrmCompaniesAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
-    private function listIndividual(?Operations\HrisCompaniesAllRequest $request = null, ?Options $options = null): Operations\HrisCompaniesAllResponse
+    private function listIndividual(?Operations\CrmCompaniesAllRequest $request = null, ?Options $options = null): Operations\CrmCompaniesAllResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -262,11 +262,11 @@ class ApideckCompanies
             ];
         }
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/hris/companies');
+        $url = Utils\Utils::generateUrl($baseUrl, '/crm/companies');
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
 
-        $qp = Utils\Utils::getQueryParams(Operations\HrisCompaniesAllRequest::class, $request, $urlOverride, $this->sdkConfiguration->globals);
+        $qp = Utils\Utils::getQueryParams(Operations\CrmCompaniesAllRequest::class, $request, $urlOverride, $this->sdkConfiguration->globals);
         $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request, $this->sdkConfiguration->globals));
         if (! array_key_exists('headers', $httpOptions)) {
             $httpOptions['headers'] = [];
@@ -274,7 +274,7 @@ class ApideckCompanies
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'hris.companiesAll', null, $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'crm.companiesAll', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -298,17 +298,17 @@ class ApideckCompanies
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\GetHrisCompaniesResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\HrisCompaniesAllResponse(
+                $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\GetCompaniesResponse1', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\CrmCompaniesAllResponse(
                     httpMeta: new Components\HTTPMetadata(
                         response: $httpResponse,
                         request: $httpRequest
                     ),
-                    getHrisCompaniesResponse: $obj
+                    getCompaniesResponse1: $obj
                 );
                 $sdk = $this;
 
-                $response->next = function () use ($sdk, $responseData, $request): ?Operations\HrisCompaniesAllResponse {
+                $response->next = function () use ($sdk, $responseData, $request): ?Operations\CrmCompaniesAllResponse {
                     $jsonObject = new \JsonPath\JsonObject($responseData);
                     $nextCursor = $jsonObject->get('$.meta.cursors.next');
                     if ($nextCursor == null) {
@@ -321,13 +321,15 @@ class ApideckCompanies
                     }
 
                     return $sdk->listIndividual(
-                        request: new Operations\HrisCompaniesAllRequest(
+                        request: new Operations\CrmCompaniesAllRequest(
                             raw: $request != null ? $request->raw : null,
                             consumerId: $request != null ? $request->consumerId : null,
                             appId: $request != null ? $request->appId : null,
                             serviceId: $request != null ? $request->serviceId : null,
                             cursor: $nextCursor,
                             limit: $request != null ? $request->limit : null,
+                            filter: $request != null ? $request->filter : null,
+                            sort: $request != null ? $request->sort : null,
                             passThrough: $request != null ? $request->passThrough : null,
                             fields: $request != null ? $request->fields : null,
                         ),
@@ -405,7 +407,7 @@ class ApideckCompanies
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
                 $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\UnexpectedErrorResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\HrisCompaniesAllResponse(
+                $response = new Operations\CrmCompaniesAllResponse(
                     httpMeta: new Components\HTTPMetadata(
                         response: $httpResponse,
                         request: $httpRequest
@@ -414,7 +416,7 @@ class ApideckCompanies
                 );
                 $sdk = $this;
 
-                $response->next = function () use ($sdk, $responseData, $request): ?Operations\HrisCompaniesAllResponse {
+                $response->next = function () use ($sdk, $responseData, $request): ?Operations\CrmCompaniesAllResponse {
                     $jsonObject = new \JsonPath\JsonObject($responseData);
                     $nextCursor = $jsonObject->get('$.meta.cursors.next');
                     if ($nextCursor == null) {
@@ -427,13 +429,15 @@ class ApideckCompanies
                     }
 
                     return $sdk->listIndividual(
-                        request: new Operations\HrisCompaniesAllRequest(
+                        request: new Operations\CrmCompaniesAllRequest(
                             raw: $request != null ? $request->raw : null,
                             consumerId: $request != null ? $request->consumerId : null,
                             appId: $request != null ? $request->appId : null,
                             serviceId: $request != null ? $request->serviceId : null,
                             cursor: $nextCursor,
                             limit: $request != null ? $request->limit : null,
+                            filter: $request != null ? $request->filter : null,
+                            sort: $request != null ? $request->sort : null,
                             passThrough: $request != null ? $request->passThrough : null,
                             fields: $request != null ? $request->fields : null,
                         ),
@@ -448,15 +452,15 @@ class ApideckCompanies
         }
     }
     /**
-     * List Companies
+     * List companies
      *
-     * List Companies
+     * List companies
      *
-     * @param  ?Operations\HrisCompaniesAllRequest  $request
-     * @return \Generator<Operations\HrisCompaniesAllResponse>
+     * @param  ?Operations\CrmCompaniesAllRequest  $request
+     * @return \Generator<Operations\CrmCompaniesAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
-    public function list(?Operations\HrisCompaniesAllRequest $request = null, ?Options $options = null): \Generator
+    public function list(?Operations\CrmCompaniesAllRequest $request = null, ?Options $options = null): \Generator
     {
         $res = $this->listIndividual($request, $options);
         while ($res !== null) {
@@ -466,15 +470,15 @@ class ApideckCompanies
     }
 
     /**
-     * Delete Company
+     * Delete company
      *
-     * Delete Company
+     * Delete company
      *
-     * @param  Operations\HrisCompaniesDeleteRequest  $request
-     * @return Operations\HrisCompaniesDeleteResponse
+     * @param  Operations\CrmCompaniesDeleteRequest  $request
+     * @return Operations\CrmCompaniesDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
-    public function delete(Operations\HrisCompaniesDeleteRequest $request, ?Options $options = null): Operations\HrisCompaniesDeleteResponse
+    public function delete(Operations\CrmCompaniesDeleteRequest $request, ?Options $options = null): Operations\CrmCompaniesDeleteResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -505,11 +509,11 @@ class ApideckCompanies
             ];
         }
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/hris/companies/{id}', Operations\HrisCompaniesDeleteRequest::class, $request, $this->sdkConfiguration->globals);
+        $url = Utils\Utils::generateUrl($baseUrl, '/crm/companies/{id}', Operations\CrmCompaniesDeleteRequest::class, $request, $this->sdkConfiguration->globals);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
 
-        $qp = Utils\Utils::getQueryParams(Operations\HrisCompaniesDeleteRequest::class, $request, $urlOverride, $this->sdkConfiguration->globals);
+        $qp = Utils\Utils::getQueryParams(Operations\CrmCompaniesDeleteRequest::class, $request, $urlOverride, $this->sdkConfiguration->globals);
         $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request, $this->sdkConfiguration->globals));
         if (! array_key_exists('headers', $httpOptions)) {
             $httpOptions['headers'] = [];
@@ -517,7 +521,7 @@ class ApideckCompanies
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('DELETE', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'hris.companiesDelete', null, $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'crm.companiesDelete', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -541,13 +545,13 @@ class ApideckCompanies
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\DeleteHrisCompanyResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\HrisCompaniesDeleteResponse(
+                $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\DeleteCompanyResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\CrmCompaniesDeleteResponse(
                     httpMeta: new Components\HTTPMetadata(
                         response: $httpResponse,
                         request: $httpRequest
                     ),
-                    deleteHrisCompanyResponse: $obj
+                    deleteCompanyResponse: $obj
                 );
 
                 return $response;
@@ -620,7 +624,7 @@ class ApideckCompanies
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
                 $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\UnexpectedErrorResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\HrisCompaniesDeleteResponse(
+                $response = new Operations\CrmCompaniesDeleteResponse(
                     httpMeta: new Components\HTTPMetadata(
                         response: $httpResponse,
                         request: $httpRequest
@@ -636,15 +640,15 @@ class ApideckCompanies
     }
 
     /**
-     * Get Company
+     * Get company
      *
-     * Get Company
+     * Get company
      *
-     * @param  Operations\HrisCompaniesOneRequest  $request
-     * @return Operations\HrisCompaniesOneResponse
+     * @param  Operations\CrmCompaniesOneRequest  $request
+     * @return Operations\CrmCompaniesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
-    public function get(Operations\HrisCompaniesOneRequest $request, ?Options $options = null): Operations\HrisCompaniesOneResponse
+    public function get(Operations\CrmCompaniesOneRequest $request, ?Options $options = null): Operations\CrmCompaniesOneResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -675,11 +679,11 @@ class ApideckCompanies
             ];
         }
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/hris/companies/{id}', Operations\HrisCompaniesOneRequest::class, $request, $this->sdkConfiguration->globals);
+        $url = Utils\Utils::generateUrl($baseUrl, '/crm/companies/{id}', Operations\CrmCompaniesOneRequest::class, $request, $this->sdkConfiguration->globals);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
 
-        $qp = Utils\Utils::getQueryParams(Operations\HrisCompaniesOneRequest::class, $request, $urlOverride, $this->sdkConfiguration->globals);
+        $qp = Utils\Utils::getQueryParams(Operations\CrmCompaniesOneRequest::class, $request, $urlOverride, $this->sdkConfiguration->globals);
         $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request, $this->sdkConfiguration->globals));
         if (! array_key_exists('headers', $httpOptions)) {
             $httpOptions['headers'] = [];
@@ -687,7 +691,7 @@ class ApideckCompanies
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'hris.companiesOne', null, $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'crm.companiesOne', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -711,13 +715,13 @@ class ApideckCompanies
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\GetHrisCompanyResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\HrisCompaniesOneResponse(
+                $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\GetCompanyResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\CrmCompaniesOneResponse(
                     httpMeta: new Components\HTTPMetadata(
                         response: $httpResponse,
                         request: $httpRequest
                     ),
-                    getHrisCompanyResponse: $obj
+                    getCompanyResponse: $obj
                 );
 
                 return $response;
@@ -790,7 +794,7 @@ class ApideckCompanies
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
                 $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\UnexpectedErrorResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\HrisCompaniesOneResponse(
+                $response = new Operations\CrmCompaniesOneResponse(
                     httpMeta: new Components\HTTPMetadata(
                         response: $httpResponse,
                         request: $httpRequest
@@ -806,15 +810,15 @@ class ApideckCompanies
     }
 
     /**
-     * Update Company
+     * Update company
      *
-     * Update Company
+     * Update company
      *
-     * @param  Operations\HrisCompaniesUpdateRequest  $request
-     * @return Operations\HrisCompaniesUpdateResponse
+     * @param  Operations\CrmCompaniesUpdateRequest  $request
+     * @return Operations\CrmCompaniesUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
-    public function update(Operations\HrisCompaniesUpdateRequest $request, ?Options $options = null): Operations\HrisCompaniesUpdateResponse
+    public function update(Operations\CrmCompaniesUpdateRequest $request, ?Options $options = null): Operations\CrmCompaniesUpdateResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -845,16 +849,16 @@ class ApideckCompanies
             ];
         }
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/hris/companies/{id}', Operations\HrisCompaniesUpdateRequest::class, $request, $this->sdkConfiguration->globals);
+        $url = Utils\Utils::generateUrl($baseUrl, '/crm/companies/{id}', Operations\CrmCompaniesUpdateRequest::class, $request, $this->sdkConfiguration->globals);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'hrisCompany', 'json');
+        $body = Utils\Utils::serializeRequestBody($request, 'company1', 'json');
         if ($body === null) {
             throw new \Exception('Request body is required');
         }
         $httpOptions = array_merge_recursive($httpOptions, $body);
 
-        $qp = Utils\Utils::getQueryParams(Operations\HrisCompaniesUpdateRequest::class, $request, $urlOverride, $this->sdkConfiguration->globals);
+        $qp = Utils\Utils::getQueryParams(Operations\CrmCompaniesUpdateRequest::class, $request, $urlOverride, $this->sdkConfiguration->globals);
         $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request, $this->sdkConfiguration->globals));
         if (! array_key_exists('headers', $httpOptions)) {
             $httpOptions['headers'] = [];
@@ -862,7 +866,7 @@ class ApideckCompanies
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('PATCH', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'hris.companiesUpdate', null, $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'crm.companiesUpdate', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -886,13 +890,13 @@ class ApideckCompanies
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\UpdateHrisCompanyResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\HrisCompaniesUpdateResponse(
+                $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\UpdateCompanyResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\CrmCompaniesUpdateResponse(
                     httpMeta: new Components\HTTPMetadata(
                         response: $httpResponse,
                         request: $httpRequest
                     ),
-                    updateHrisCompanyResponse: $obj
+                    updateCompanyResponse: $obj
                 );
 
                 return $response;
@@ -965,7 +969,7 @@ class ApideckCompanies
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
                 $obj = $serializer->deserialize($responseData, '\Apideck\Unify\Models\Components\UnexpectedErrorResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\HrisCompaniesUpdateResponse(
+                $response = new Operations\CrmCompaniesUpdateResponse(
                     httpMeta: new Components\HTTPMetadata(
                         response: $httpResponse,
                         request: $httpRequest

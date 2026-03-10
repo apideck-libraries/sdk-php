@@ -35,6 +35,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingSubsidiariesAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
 );
 
@@ -97,6 +98,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingSubsidiariesAddRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     subsidiary: new Components\SubsidiaryInput(
         parentId: '12345',
         name: 'SpaceX',
@@ -202,6 +204,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingSubsidiariesOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
 );
 
@@ -262,6 +265,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingSubsidiariesUpdateRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     subsidiary: new Components\SubsidiaryInput(
         parentId: '12345',
         name: 'SpaceX',
@@ -349,6 +353,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingSubsidiariesDeleteRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
 );
 
 $response = $sdk->accounting->subsidiaries->delete(

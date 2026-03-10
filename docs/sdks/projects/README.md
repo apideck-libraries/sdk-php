@@ -37,6 +37,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingProjectsAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     filter: new Components\ProjectsFilter(
         name: 'Website Redesign',
         status: Components\ProjectStatus::Active,
@@ -112,6 +113,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingProjectsAddRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     project: new Components\ProjectInput(
         name: 'Website Redesign Project',
         displayId: 'PROJ-001',
@@ -200,7 +202,7 @@ $request = new Operations\AccountingProjectsAddRequest(
         ],
         teamSize: 8,
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -267,6 +269,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingProjectsOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
 );
 
 $response = $sdk->accounting->projects->get(
@@ -327,6 +330,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingProjectsUpdateRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     project: new Components\ProjectInput(
         name: 'Website Redesign Project',
         displayId: 'PROJ-001',
@@ -411,7 +415,7 @@ $request = new Operations\AccountingProjectsUpdateRequest(
         ],
         teamSize: 8,
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -478,6 +482,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingProjectsDeleteRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
 );
 
 $response = $sdk->accounting->projects->delete(

@@ -30,13 +30,25 @@ class AttachmentReference
     public ?string $id = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * @param  ?AttachmentReferenceType  $type
      * @param  ?string  $id
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(?AttachmentReferenceType $type = null, ?string $id = null)
+    public function __construct(?AttachmentReferenceType $type = null, ?string $id = null, ?array $additionalProperties = null)
     {
         $this->type = $type;
         $this->id = $id;
+        $this->additionalProperties = $additionalProperties;
     }
 }

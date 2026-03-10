@@ -82,6 +82,16 @@ class ContactInput
     public ?array $passThrough = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * Full name of the contact.
      *
      * @var ?string $name
@@ -310,10 +320,10 @@ class ContactInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -335,6 +345,7 @@ class ContactInput
      * @param  ?array<Email>  $emails
      * @param  ?array<string>  $opportunityIds
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $name
      * @param  ?string  $ownerId
      * @param  ?ContactType  $type
@@ -360,11 +371,11 @@ class ContactInput
      * @param  ?string  $status
      * @param  ?bool  $active
      * @param  ?string  $emailDomain
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<string>  $tags
      * @phpstan-pure
      */
-    public function __construct(?array $websites = null, ?array $addresses = null, ?array $socialLinks = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $opportunityIds = null, ?array $passThrough = null, ?string $name = null, ?string $ownerId = null, ?ContactType $type = null, ?string $companyId = null, ?string $companyName = null, ?string $leadId = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $prefix = null, ?string $suffix = null, ?string $title = null, ?string $department = null, ?string $language = null, ?ContactGender $gender = null, ?string $birthday = null, ?string $image = null, ?string $photoUrl = null, ?string $leadSource = null, ?string $fax = null, ?string $description = null, ?float $currentBalance = null, ?string $status = null, ?bool $active = null, ?string $emailDomain = null, ?array $customFields = null, ?array $tags = null)
+    public function __construct(?array $websites = null, ?array $addresses = null, ?array $socialLinks = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $opportunityIds = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $name = null, ?string $ownerId = null, ?ContactType $type = null, ?string $companyId = null, ?string $companyName = null, ?string $leadId = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $prefix = null, ?string $suffix = null, ?string $title = null, ?string $department = null, ?string $language = null, ?ContactGender $gender = null, ?string $birthday = null, ?string $image = null, ?string $photoUrl = null, ?string $leadSource = null, ?string $fax = null, ?string $description = null, ?float $currentBalance = null, ?string $status = null, ?bool $active = null, ?string $emailDomain = null, ?array $customFields = null, ?array $tags = null)
     {
         $this->websites = $websites;
         $this->addresses = $addresses;
@@ -373,6 +384,7 @@ class ContactInput
         $this->emails = $emails;
         $this->opportunityIds = $opportunityIds;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->name = $name;
         $this->ownerId = $ownerId;
         $this->type = $type;

@@ -12,6 +12,16 @@ namespace Apideck\Unify\Models\Components;
 class LinkedTaxRateInput
 {
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * The ID of the object.
      *
      * @var ?string $id
@@ -39,13 +49,15 @@ class LinkedTaxRateInput
     public ?float $rate = null;
 
     /**
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $id
      * @param  ?string  $code
      * @param  ?float  $rate
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $code = null, ?float $rate = null)
+    public function __construct(?array $additionalProperties = null, ?string $id = null, ?string $code = null, ?float $rate = null)
     {
+        $this->additionalProperties = $additionalProperties;
         $this->id = $id;
         $this->code = $code;
         $this->rate = $rate;

@@ -28,13 +28,25 @@ class UpdateConsentRequest
     public bool $granted;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * @param  array<string, array<string, One>>|Two  $resources
      * @param  bool  $granted
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(array|Two $resources, bool $granted)
+    public function __construct(array|Two $resources, bool $granted, ?array $additionalProperties = null)
     {
         $this->resources = $resources;
         $this->granted = $granted;
+        $this->additionalProperties = $additionalProperties;
     }
 }

@@ -31,6 +31,16 @@ class CollectionTicketComment
     public ?array $passThrough = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * Body of the comment
      *
      * @var ?string $body
@@ -79,6 +89,7 @@ class CollectionTicketComment
     /**
      * @param  ?string  $id
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $body
      * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $createdBy
@@ -86,10 +97,11 @@ class CollectionTicketComment
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?array $passThrough = null, ?string $body = null, ?array $customMappings = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $body = null, ?array $customMappings = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->body = $body;
         $this->customMappings = $customMappings;
         $this->createdBy = $createdBy;

@@ -13,20 +13,6 @@ class ApplicationInput
 {
     /**
      *
-     * @var ?string $applicantId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('applicant_id')]
-    public ?string $applicantId;
-
-    /**
-     *
-     * @var ?string $jobId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('job_id')]
-    public ?string $jobId;
-
-    /**
-     *
      * @var ?Stage $stage
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('stage')]
@@ -45,6 +31,32 @@ class ApplicationInput
     public ?array $passThrough = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
+     *
+     * @var ?string $applicantId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('applicant_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $applicantId = null;
+
+    /**
+     *
+     * @var ?string $jobId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('job_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $jobId = null;
+
+    /**
      *
      * @var ?ApplicationStatus $status
      */
@@ -54,19 +66,21 @@ class ApplicationInput
     public ?ApplicationStatus $status = null;
 
     /**
-     * @param  ?string  $applicantId
-     * @param  ?string  $jobId
      * @param  ?Stage  $stage
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
+     * @param  ?string  $applicantId
+     * @param  ?string  $jobId
      * @param  ?ApplicationStatus  $status
      * @phpstan-pure
      */
-    public function __construct(?string $applicantId = null, ?string $jobId = null, ?Stage $stage = null, ?array $passThrough = null, ?ApplicationStatus $status = null)
+    public function __construct(?Stage $stage = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $applicantId = null, ?string $jobId = null, ?ApplicationStatus $status = null)
     {
-        $this->applicantId = $applicantId;
-        $this->jobId = $jobId;
         $this->stage = $stage;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
+        $this->applicantId = $applicantId;
+        $this->jobId = $jobId;
         $this->status = $status;
     }
 }

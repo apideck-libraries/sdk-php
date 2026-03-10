@@ -40,6 +40,16 @@ class CustomFieldFinder
     public ?string $finder = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * Custom Field name to use as a label if provided
      *
      * @var ?string $name
@@ -61,15 +71,17 @@ class CustomFieldFinder
      * @param  ?string  $id
      * @param  mixed  $value
      * @param  ?string  $finder
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $name
      * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, mixed $value = null, ?string $finder = null, ?string $name = null, ?string $description = null)
+    public function __construct(?string $id = null, mixed $value = null, ?string $finder = null, ?array $additionalProperties = null, ?string $name = null, ?string $description = null)
     {
         $this->id = $id;
         $this->value = $value;
         $this->finder = $finder;
+        $this->additionalProperties = $additionalProperties;
         $this->name = $name;
         $this->description = $description;
     }

@@ -33,10 +33,10 @@ class BillInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -59,6 +59,16 @@ class BillInput
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedAttachment|null>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $attachments = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * Id to be displayed.
@@ -196,6 +206,15 @@ class BillInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('terms')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $terms = null;
+
+    /**
+     * The ID of the payment terms
+     *
+     * @var ?string $termsId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('terms_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $termsId = null;
 
     /**
      * Balance of bill due.
@@ -409,9 +428,10 @@ class BillInput
     /**
      * @param  ?array<BillLineItemInput>  $lineItems
      * @param  ?BankAccount  $bankAccount
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?array<?LinkedAttachment>  $attachments
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $displayId
      * @param  ?string  $billNumber
      * @param  ?LinkedSupplierInput  $supplier
@@ -427,6 +447,7 @@ class BillInput
      * @param  ?string  $poNumber
      * @param  ?string  $reference
      * @param  ?string  $terms
+     * @param  ?string  $termsId
      * @param  ?float  $balance
      * @param  ?float  $deposit
      * @param  ?float  $subTotal
@@ -452,13 +473,14 @@ class BillInput
      * @param  ?string  $accountingPeriod
      * @phpstan-pure
      */
-    public function __construct(?array $lineItems = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?array $attachments = null, ?string $displayId = null, ?string $billNumber = null, ?LinkedSupplierInput $supplier = null, ?string $companyId = null, ?string $locationId = null, ?string $departmentId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?LocalDate $billDate = null, ?LocalDate $dueDate = null, ?LocalDate $paidDate = null, ?string $poNumber = null, ?string $reference = null, ?string $terms = null, ?float $balance = null, ?float $deposit = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?string $taxCode = null, ?string $notes = null, ?BillStatus $status = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?float $discountPercentage = null, ?string $templateId = null, ?string $approvedBy = null, ?AmortizationType $amortizationType = null, ?string $taxMethod = null, ?bool $documentReceived = null, ?string $sourceDocumentUrl = null, ?array $trackingCategories = null, ?string $rowVersion = null, ?string $accountingPeriod = null)
+    public function __construct(?array $lineItems = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?array $attachments = null, ?array $additionalProperties = null, ?string $displayId = null, ?string $billNumber = null, ?LinkedSupplierInput $supplier = null, ?string $companyId = null, ?string $locationId = null, ?string $departmentId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?LocalDate $billDate = null, ?LocalDate $dueDate = null, ?LocalDate $paidDate = null, ?string $poNumber = null, ?string $reference = null, ?string $terms = null, ?string $termsId = null, ?float $balance = null, ?float $deposit = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?string $taxCode = null, ?string $notes = null, ?BillStatus $status = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?float $discountPercentage = null, ?string $templateId = null, ?string $approvedBy = null, ?AmortizationType $amortizationType = null, ?string $taxMethod = null, ?bool $documentReceived = null, ?string $sourceDocumentUrl = null, ?array $trackingCategories = null, ?string $rowVersion = null, ?string $accountingPeriod = null)
     {
         $this->lineItems = $lineItems;
         $this->bankAccount = $bankAccount;
         $this->customFields = $customFields;
         $this->passThrough = $passThrough;
         $this->attachments = $attachments;
+        $this->additionalProperties = $additionalProperties;
         $this->displayId = $displayId;
         $this->billNumber = $billNumber;
         $this->supplier = $supplier;
@@ -474,6 +496,7 @@ class BillInput
         $this->poNumber = $poNumber;
         $this->reference = $reference;
         $this->terms = $terms;
+        $this->termsId = $termsId;
         $this->balance = $balance;
         $this->deposit = $deposit;
         $this->subTotal = $subTotal;

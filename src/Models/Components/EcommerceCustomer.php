@@ -14,10 +14,11 @@ class EcommerceCustomer
     /**
      * A unique identifier for an object.
      *
-     * @var string $id
+     * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public string $id;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
 
     /**
      * An array of addresses for the customer.
@@ -38,6 +39,16 @@ class EcommerceCustomer
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedEcommerceOrder>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $orders = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * Full name of the customer
@@ -144,9 +155,10 @@ class EcommerceCustomer
     public ?\DateTime $updatedAt = null;
 
     /**
-     * @param  string  $id
+     * @param  ?string  $id
      * @param  ?array<Addresses>  $addresses
      * @param  ?array<LinkedEcommerceOrder>  $orders
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $name
      * @param  ?string  $firstName
      * @param  ?string  $lastName
@@ -160,11 +172,12 @@ class EcommerceCustomer
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, ?array $addresses = null, ?array $orders = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $companyName = null, ?CustomerStatus $status = null, ?Currency $currency = null, ?array $emails = null, ?array $phoneNumbers = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(?string $id = null, ?array $addresses = null, ?array $orders = null, ?array $additionalProperties = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $companyName = null, ?CustomerStatus $status = null, ?Currency $currency = null, ?array $emails = null, ?array $phoneNumbers = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
         $this->addresses = $addresses;
         $this->orders = $orders;
+        $this->additionalProperties = $additionalProperties;
         $this->name = $name;
         $this->firstName = $firstName;
         $this->lastName = $lastName;

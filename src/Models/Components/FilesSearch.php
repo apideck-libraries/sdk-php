@@ -14,10 +14,11 @@ class FilesSearch
     /**
      * The query to search for. May match across multiple fields.
      *
-     * @var string $query
+     * @var ?string $query
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('query')]
-    public string $query;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $query = null;
 
     /**
      * ID of the drive to filter on
@@ -39,15 +40,27 @@ class FilesSearch
     public ?array $passThrough = null;
 
     /**
-     * @param  string  $query
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
+     * @param  ?string  $query
      * @param  ?string  $driveId
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(string $query, ?string $driveId = null, ?array $passThrough = null)
+    public function __construct(?string $query = null, ?string $driveId = null, ?array $passThrough = null, ?array $additionalProperties = null)
     {
         $this->query = $query;
         $this->driveId = $driveId;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
     }
 }

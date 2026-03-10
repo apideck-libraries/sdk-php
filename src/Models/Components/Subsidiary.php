@@ -50,6 +50,16 @@ class Subsidiary
     public ?array $passThrough = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * A unique identifier for an object.
      *
      * @var ?string $parentId
@@ -155,6 +165,7 @@ class Subsidiary
      * @param  ?SubsidiaryStatus  $status
      * @param  ?Address  $address
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $parentId
      * @param  ?string  $name
      * @param  ?string  $displayId
@@ -168,12 +179,13 @@ class Subsidiary
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?SubsidiaryStatus $status = null, ?Address $address = null, ?array $passThrough = null, ?string $parentId = null, ?string $name = null, ?string $displayId = null, ?string $downstreamId = null, ?array $currencies = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?SubsidiaryStatus $status = null, ?Address $address = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $parentId = null, ?string $name = null, ?string $displayId = null, ?string $downstreamId = null, ?array $currencies = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->status = $status;
         $this->address = $address;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->parentId = $parentId;
         $this->name = $name;
         $this->displayId = $displayId;

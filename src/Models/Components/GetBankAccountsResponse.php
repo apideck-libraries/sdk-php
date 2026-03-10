@@ -85,6 +85,16 @@ class GetBankAccountsResponse
     public ?Links $links = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * @param  int  $statusCode
      * @param  string  $status
      * @param  array<AccountingBankAccount>  $data
@@ -93,9 +103,10 @@ class GetBankAccountsResponse
      * @param  ?string  $operation
      * @param  ?Meta  $meta
      * @param  ?Links  $links
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(int $statusCode, string $status, array $data, ?string $service = null, ?string $resource = null, ?string $operation = null, ?Meta $meta = null, ?Links $links = null)
+    public function __construct(int $statusCode, string $status, array $data, ?string $service = null, ?string $resource = null, ?string $operation = null, ?Meta $meta = null, ?Links $links = null, ?array $additionalProperties = null)
     {
         $this->statusCode = $statusCode;
         $this->status = $status;
@@ -105,5 +116,6 @@ class GetBankAccountsResponse
         $this->operation = $operation;
         $this->meta = $meta;
         $this->links = $links;
+        $this->additionalProperties = $additionalProperties;
     }
 }

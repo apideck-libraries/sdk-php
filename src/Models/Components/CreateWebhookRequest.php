@@ -47,6 +47,16 @@ class CreateWebhookRequest
     public array $events;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * A description of the object.
      *
      * @var ?string $description
@@ -60,15 +70,17 @@ class CreateWebhookRequest
      * @param  Status  $status
      * @param  string  $deliveryUrl
      * @param  array<WebhookEventType>  $events
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(UnifiedApiId $unifiedApi, Status $status, string $deliveryUrl, array $events, ?string $description = null)
+    public function __construct(UnifiedApiId $unifiedApi, Status $status, string $deliveryUrl, array $events, ?array $additionalProperties = null, ?string $description = null)
     {
         $this->unifiedApi = $unifiedApi;
         $this->status = $status;
         $this->deliveryUrl = $deliveryUrl;
         $this->events = $events;
+        $this->additionalProperties = $additionalProperties;
         $this->description = $description;
     }
 }

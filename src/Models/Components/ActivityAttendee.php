@@ -12,6 +12,16 @@ namespace Apideck\Unify\Models\Components;
 class ActivityAttendee
 {
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * Unique identifier for the attendee
      *
      * @var ?string $id
@@ -139,6 +149,7 @@ class ActivityAttendee
     public ?\DateTime $createdAt = null;
 
     /**
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $id
      * @param  ?string  $name
      * @param  ?string  $firstName
@@ -155,8 +166,9 @@ class ActivityAttendee
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $prefix = null, ?string $suffix = null, ?string $emailAddress = null, ?bool $isOrganizer = null, ?ActivityAttendeeStatus $status = null, ?string $userId = null, ?string $contactId = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?array $additionalProperties = null, ?string $id = null, ?string $name = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $prefix = null, ?string $suffix = null, ?string $emailAddress = null, ?bool $isOrganizer = null, ?ActivityAttendeeStatus $status = null, ?string $userId = null, ?string $contactId = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
+        $this->additionalProperties = $additionalProperties;
         $this->id = $id;
         $this->name = $name;
         $this->firstName = $firstName;

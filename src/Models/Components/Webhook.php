@@ -12,55 +12,32 @@ namespace Apideck\Unify\Models\Components;
 class Webhook
 {
     /**
-     * Name of Apideck Unified API
-     *
-     * @var UnifiedApiId $unifiedApi
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('unified_api')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\UnifiedApiId')]
-    public UnifiedApiId $unifiedApi;
-
-    /**
-     * The status of the webhook.
-     *
-     * @var Status $status
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Status')]
-    public Status $status;
-
-    /**
-     * The delivery url of the webhook endpoint.
-     *
-     * @var string $deliveryUrl
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('delivery_url')]
-    public string $deliveryUrl;
-
-    /**
-     * The Unify Base URL events from connectors will be sent to after service id is appended.
-     *
-     * @var string $executeBaseUrl
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('execute_base_url')]
-    public string $executeBaseUrl;
-
-    /**
-     * The list of subscribed events for this webhook. [`*`] indicates that all events are enabled.
-     *
-     * @var array<WebhookEventType> $events
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('events')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\WebhookEventType>')]
-    public array $events;
-
-    /**
      *
      * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
+
+    /**
+     * Name of Apideck Unified API
+     *
+     * @var ?UnifiedApiId $unifiedApi
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('unified_api')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\UnifiedApiId|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?UnifiedApiId $unifiedApi = null;
+
+    /**
+     * The status of the webhook.
+     *
+     * @var ?Status $status
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Status|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Status $status = null;
 
     /**
      * Indicates why the webhook has been disabled. `retry_limit`: webhook reached its retry limit. `usage_limit`: account is over its usage limit. `delivery_url_validation_failed`: delivery URL failed validation during webhook creation or update.
@@ -71,6 +48,44 @@ class Webhook
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\DisabledReason|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?DisabledReason $disabledReason = null;
+
+    /**
+     * The delivery url of the webhook endpoint.
+     *
+     * @var ?string $deliveryUrl
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('delivery_url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $deliveryUrl = null;
+
+    /**
+     * The Unify Base URL events from connectors will be sent to after service id is appended.
+     *
+     * @var ?string $executeBaseUrl
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('execute_base_url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $executeBaseUrl = null;
+
+    /**
+     * The list of subscribed events for this webhook. [`*`] indicates that all events are enabled.
+     *
+     * @var ?array<WebhookEventType> $events
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('events')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\WebhookEventType>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $events = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * A description of the object.
@@ -100,27 +115,29 @@ class Webhook
     public ?\DateTime $createdAt = null;
 
     /**
-     * @param  UnifiedApiId  $unifiedApi
-     * @param  Status  $status
-     * @param  string  $deliveryUrl
-     * @param  string  $executeBaseUrl
-     * @param  array<WebhookEventType>  $events
      * @param  ?string  $id
+     * @param  ?UnifiedApiId  $unifiedApi
+     * @param  ?Status  $status
      * @param  ?DisabledReason  $disabledReason
+     * @param  ?string  $deliveryUrl
+     * @param  ?string  $executeBaseUrl
+     * @param  ?array<WebhookEventType>  $events
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $description
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(UnifiedApiId $unifiedApi, Status $status, string $deliveryUrl, string $executeBaseUrl, array $events, ?string $id = null, ?DisabledReason $disabledReason = null, ?string $description = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?UnifiedApiId $unifiedApi = null, ?Status $status = null, ?DisabledReason $disabledReason = null, ?string $deliveryUrl = null, ?string $executeBaseUrl = null, ?array $events = null, ?array $additionalProperties = null, ?string $description = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
+        $this->id = $id;
         $this->unifiedApi = $unifiedApi;
         $this->status = $status;
+        $this->disabledReason = $disabledReason;
         $this->deliveryUrl = $deliveryUrl;
         $this->executeBaseUrl = $executeBaseUrl;
         $this->events = $events;
-        $this->id = $id;
-        $this->disabledReason = $disabledReason;
+        $this->additionalProperties = $additionalProperties;
         $this->description = $description;
         $this->updatedAt = $updatedAt;
         $this->createdAt = $createdAt;

@@ -54,10 +54,10 @@ class AccountingEmployeeInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -70,6 +70,16 @@ class AccountingEmployeeInput
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * Id to be displayed.
@@ -251,8 +261,9 @@ class AccountingEmployeeInput
      * @param  ?AccountingEmployeeManager  $manager
      * @param  ?array<Address>  $addresses
      * @param  ?array<PhoneNumber>  $phoneNumbers
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $displayId
      * @param  ?string  $firstName
      * @param  ?string  $lastName
@@ -274,7 +285,7 @@ class AccountingEmployeeInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?array $emails = null, ?AccountingEmployeeManager $manager = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $customFields = null, ?array $passThrough = null, ?string $displayId = null, ?string $firstName = null, ?string $lastName = null, ?string $displayName = null, ?string $employeeNumber = null, ?string $jobTitle = null, ?EmployeeStatus $status = null, ?bool $isContractor = null, ?LinkedDepartmentInput $department = null, ?LinkedLocationInput $location = null, ?LocalDate $hireDate = null, ?LocalDate $terminationDate = null, ?Gender $gender = null, ?LocalDate $birthDate = null, ?LinkedSubsidiaryInput $subsidiary = null, ?array $trackingCategories = null, ?Currency $currency = null, ?string $notes = null, ?string $rowVersion = null)
+    public function __construct(?array $emails = null, ?AccountingEmployeeManager $manager = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $customFields = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $displayId = null, ?string $firstName = null, ?string $lastName = null, ?string $displayName = null, ?string $employeeNumber = null, ?string $jobTitle = null, ?EmployeeStatus $status = null, ?bool $isContractor = null, ?LinkedDepartmentInput $department = null, ?LinkedLocationInput $location = null, ?LocalDate $hireDate = null, ?LocalDate $terminationDate = null, ?Gender $gender = null, ?LocalDate $birthDate = null, ?LinkedSubsidiaryInput $subsidiary = null, ?array $trackingCategories = null, ?Currency $currency = null, ?string $notes = null, ?string $rowVersion = null)
     {
         $this->emails = $emails;
         $this->manager = $manager;
@@ -282,6 +293,7 @@ class AccountingEmployeeInput
         $this->phoneNumbers = $phoneNumbers;
         $this->customFields = $customFields;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->displayId = $displayId;
         $this->firstName = $firstName;
         $this->lastName = $lastName;

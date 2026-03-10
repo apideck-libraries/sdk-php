@@ -51,6 +51,16 @@ class TrackingCategoryInput
     public ?array $subsidiaries = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * A unique identifier for an object.
      *
      * @var ?string $parentId
@@ -91,18 +101,20 @@ class TrackingCategoryInput
      * @param  ?TrackingCategoryStatus  $status
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?array<TrackingCategorySubsidiaries>  $subsidiaries
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $parentId
      * @param  ?string  $parentName
      * @param  ?string  $code
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?TrackingCategoryStatus $status = null, ?array $passThrough = null, ?array $subsidiaries = null, ?string $parentId = null, ?string $parentName = null, ?string $code = null, ?string $rowVersion = null)
+    public function __construct(?string $name = null, ?TrackingCategoryStatus $status = null, ?array $passThrough = null, ?array $subsidiaries = null, ?array $additionalProperties = null, ?string $parentId = null, ?string $parentName = null, ?string $code = null, ?string $rowVersion = null)
     {
         $this->name = $name;
         $this->status = $status;
         $this->passThrough = $passThrough;
         $this->subsidiaries = $subsidiaries;
+        $this->additionalProperties = $additionalProperties;
         $this->parentId = $parentId;
         $this->parentName = $parentName;
         $this->code = $code;

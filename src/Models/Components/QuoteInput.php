@@ -51,10 +51,10 @@ class QuoteInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -67,6 +67,16 @@ class QuoteInput
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * Quote number.
@@ -140,6 +150,15 @@ class QuoteInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('terms')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $terms = null;
+
+    /**
+     * The ID of the payment terms
+     *
+     * @var ?string $termsId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('terms_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $termsId = null;
 
     /**
      * Optional reference identifier for the transaction.
@@ -293,8 +312,9 @@ class QuoteInput
      * @param  ?array<QuoteLineItemInput>  $lineItems
      * @param  ?Address  $billingAddress
      * @param  ?Address  $shippingAddress
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $number
      * @param  ?LinkedCustomerInput  $customer
      * @param  ?string  $salesOrderId
@@ -303,6 +323,7 @@ class QuoteInput
      * @param  ?LocalDate  $quoteDate
      * @param  ?LocalDate  $expiryDate
      * @param  ?string  $terms
+     * @param  ?string  $termsId
      * @param  ?string  $reference
      * @param  ?QuoteStatus  $status
      * @param  ?Currency  $currency
@@ -321,7 +342,7 @@ class QuoteInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?string $projectId = null, ?array $lineItems = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?LinkedCustomerInput $customer = null, ?string $salesOrderId = null, ?string $companyId = null, ?string $departmentId = null, ?LocalDate $quoteDate = null, ?LocalDate $expiryDate = null, ?string $terms = null, ?string $reference = null, ?QuoteStatus $status = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?float $total = null, ?string $customerMemo = null, ?array $trackingCategories = null, ?string $templateId = null, ?string $sourceDocumentUrl = null, ?string $rowVersion = null)
+    public function __construct(?string $projectId = null, ?array $lineItems = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?array $customFields = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $number = null, ?LinkedCustomerInput $customer = null, ?string $salesOrderId = null, ?string $companyId = null, ?string $departmentId = null, ?LocalDate $quoteDate = null, ?LocalDate $expiryDate = null, ?string $terms = null, ?string $termsId = null, ?string $reference = null, ?QuoteStatus $status = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?float $total = null, ?string $customerMemo = null, ?array $trackingCategories = null, ?string $templateId = null, ?string $sourceDocumentUrl = null, ?string $rowVersion = null)
     {
         $this->projectId = $projectId;
         $this->lineItems = $lineItems;
@@ -329,6 +350,7 @@ class QuoteInput
         $this->shippingAddress = $shippingAddress;
         $this->customFields = $customFields;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->number = $number;
         $this->customer = $customer;
         $this->salesOrderId = $salesOrderId;
@@ -337,6 +359,7 @@ class QuoteInput
         $this->quoteDate = $quoteDate;
         $this->expiryDate = $expiryDate;
         $this->terms = $terms;
+        $this->termsId = $termsId;
         $this->reference = $reference;
         $this->status = $status;
         $this->currency = $currency;

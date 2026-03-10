@@ -12,15 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class User
 {
     /**
-     * $emails
-     *
-     * @var array<Email> $emails
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('emails')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Email>')]
-    public array $emails;
-
-    /**
      * The unique identifier for the user
      *
      * @var ?string $id
@@ -48,6 +39,16 @@ class User
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PhoneNumber>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $phoneNumbers = null;
+
+    /**
+     * $emails
+     *
+     * @var ?array<Email> $emails
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('emails')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Email>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $emails = null;
 
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
@@ -206,10 +207,10 @@ class User
     public ?string $createdAt = null;
 
     /**
-     * @param  array<Email>  $emails
      * @param  ?string  $id
      * @param  ?array<Address>  $addresses
      * @param  ?array<PhoneNumber>  $phoneNumbers
+     * @param  ?array<Email>  $emails
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $parentId
      * @param  ?string  $username
@@ -229,12 +230,12 @@ class User
      * @param  ?string  $createdAt
      * @phpstan-pure
      */
-    public function __construct(array $emails, ?string $id = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $passThrough = null, ?string $parentId = null, ?string $username = null, ?string $firstName = null, ?string $lastName = null, ?string $title = null, ?string $division = null, ?string $department = null, ?string $companyName = null, ?string $employeeNumber = null, ?string $description = null, ?string $image = null, ?string $language = null, ?string $status = null, ?array $customMappings = null, ?string $updatedAt = null, ?string $createdAt = null)
+    public function __construct(?string $id = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $passThrough = null, ?string $parentId = null, ?string $username = null, ?string $firstName = null, ?string $lastName = null, ?string $title = null, ?string $division = null, ?string $department = null, ?string $companyName = null, ?string $employeeNumber = null, ?string $description = null, ?string $image = null, ?string $language = null, ?string $status = null, ?array $customMappings = null, ?string $updatedAt = null, ?string $createdAt = null)
     {
-        $this->emails = $emails;
         $this->id = $id;
         $this->addresses = $addresses;
         $this->phoneNumbers = $phoneNumbers;
+        $this->emails = $emails;
         $this->passThrough = $passThrough;
         $this->parentId = $parentId;
         $this->username = $username;

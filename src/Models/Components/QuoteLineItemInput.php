@@ -41,12 +41,22 @@ class QuoteLineItemInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * A unique identifier for an object.
@@ -223,7 +233,8 @@ class QuoteLineItemInput
      * @param  ?string  $rowId
      * @param  ?LinkedInvoiceItem  $item
      * @param  ?LinkedTaxRateInput  $taxRate
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $id
      * @param  ?string  $code
      * @param  ?int  $lineNumber
@@ -245,12 +256,13 @@ class QuoteLineItemInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?string $id = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?QuoteLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?LocalDate $serviceDate = null, ?string $categoryId = null, ?string $locationId = null, ?string $departmentId = null, ?array $trackingCategories = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $rowVersion = null)
+    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $additionalProperties = null, ?string $id = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?QuoteLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?LocalDate $serviceDate = null, ?string $categoryId = null, ?string $locationId = null, ?string $departmentId = null, ?array $trackingCategories = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $rowVersion = null)
     {
         $this->rowId = $rowId;
         $this->item = $item;
         $this->taxRate = $taxRate;
         $this->customFields = $customFields;
+        $this->additionalProperties = $additionalProperties;
         $this->id = $id;
         $this->code = $code;
         $this->lineNumber = $lineNumber;

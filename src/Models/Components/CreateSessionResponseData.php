@@ -26,13 +26,25 @@ class CreateSessionResponseData
     public string $sessionToken;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * @param  string  $sessionUri
      * @param  string  $sessionToken
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(string $sessionUri, string $sessionToken)
+    public function __construct(string $sessionUri, string $sessionToken, ?array $additionalProperties = null)
     {
         $this->sessionUri = $sessionUri;
         $this->sessionToken = $sessionToken;
+        $this->additionalProperties = $additionalProperties;
     }
 }

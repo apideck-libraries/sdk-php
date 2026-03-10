@@ -5,4 +5,5 @@
 
 | Field                                                           | Type                                                            | Required                                                        | Description                                                     |
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| `reports`                                                       | array<[Components\Reports](../../Models/Components/Reports.md)> | :heavy_check_mark:                                              | N/A                                                             |
+| `reports`                                                       | array<[Components\Reports](../../Models/Components/Reports.md)> | :heavy_minus_sign:                                              | N/A                                                             |
+| `additionalProperties`                                          | array<string, *mixed*>                                          | :heavy_minus_sign:                                              | N/A                                                             |

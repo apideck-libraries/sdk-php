@@ -36,6 +36,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingDepartmentsAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
     filter: new Components\AccountingDepartmentsFilter(
         subsidiary: '1',
@@ -101,6 +102,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingDepartmentsAddRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     accountingDepartment: new Components\AccountingDepartmentInput(
         parentId: '12345',
         name: 'Sales',
@@ -192,6 +194,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingDepartmentsOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
 );
 

@@ -12,14 +12,6 @@ use Brick\DateTime\LocalDate;
 class ExpenseReportLineItem
 {
     /**
-     * The amount of the expense line item.
-     *
-     * @var float $amount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('amount')]
-    public float $amount;
-
-    /**
      * A unique identifier for an object.
      *
      * @var ?string $id
@@ -39,6 +31,15 @@ class ExpenseReportLineItem
     public ?LinkedExpenseCategory $expenseCategory = null;
 
     /**
+     * The amount of the expense line item.
+     *
+     * @var ?float $amount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('amount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $amount = null;
+
+    /**
      *
      * @var ?LinkedTaxRate $taxRate
      */
@@ -46,6 +47,16 @@ class ExpenseReportLineItem
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRate|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?LinkedTaxRate $taxRate = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * Line number of the resource
@@ -229,10 +240,11 @@ class ExpenseReportLineItem
     public ?\DateTime $createdAt = null;
 
     /**
-     * @param  float  $amount
      * @param  ?string  $id
      * @param  ?LinkedExpenseCategory  $expenseCategory
+     * @param  ?float  $amount
      * @param  ?LinkedTaxRate  $taxRate
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?int  $lineNumber
      * @param  ?LinkedLedgerAccount  $account
      * @param  ?string  $description
@@ -255,12 +267,13 @@ class ExpenseReportLineItem
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(float $amount, ?string $id = null, ?LinkedExpenseCategory $expenseCategory = null, ?LinkedTaxRate $taxRate = null, ?int $lineNumber = null, ?LinkedLedgerAccount $account = null, ?string $description = null, ?float $quantity = null, ?float $unitPrice = null, ?float $taxAmount = null, ?float $totalAmount = null, ?LocalDate $transactionDate = null, ?bool $billable = null, ?bool $reimbursable = null, ?LinkedCustomer $customer = null, ?LinkedDepartment $department = null, ?LinkedLocation $location = null, ?array $trackingCategories = null, ?string $receiptUrl = null, ?Currency $currency = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?LinkedExpenseCategory $expenseCategory = null, ?float $amount = null, ?LinkedTaxRate $taxRate = null, ?array $additionalProperties = null, ?int $lineNumber = null, ?LinkedLedgerAccount $account = null, ?string $description = null, ?float $quantity = null, ?float $unitPrice = null, ?float $taxAmount = null, ?float $totalAmount = null, ?LocalDate $transactionDate = null, ?bool $billable = null, ?bool $reimbursable = null, ?LinkedCustomer $customer = null, ?LinkedDepartment $department = null, ?LinkedLocation $location = null, ?array $trackingCategories = null, ?string $receiptUrl = null, ?Currency $currency = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
-        $this->amount = $amount;
         $this->id = $id;
         $this->expenseCategory = $expenseCategory;
+        $this->amount = $amount;
         $this->taxRate = $taxRate;
+        $this->additionalProperties = $additionalProperties;
         $this->lineNumber = $lineNumber;
         $this->account = $account;
         $this->description = $description;

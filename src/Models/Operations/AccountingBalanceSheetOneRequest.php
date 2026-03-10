@@ -37,6 +37,14 @@ class AccountingBalanceSheetOneRequest
     public ?string $serviceId = null;
 
     /**
+     * The ID of the company to scope requests to. For connectors that support multi-company, this overrides the default company configured in connection settings.
+     *
+     * @var ?string $companyId
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-apideck-company-id')]
+    public ?string $companyId = null;
+
+    /**
      * Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
      *
      * @var ?array<string, mixed> $passThrough
@@ -64,16 +72,18 @@ class AccountingBalanceSheetOneRequest
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId
+     * @param  ?string  $companyId
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?Components\BalanceSheetFilter  $filter
      * @param  ?bool  $raw
      * @phpstan-pure
      */
-    public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?array $passThrough = null, ?Components\BalanceSheetFilter $filter = null, ?bool $raw = false)
+    public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $companyId = null, ?array $passThrough = null, ?Components\BalanceSheetFilter $filter = null, ?bool $raw = false)
     {
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
+        $this->companyId = $companyId;
         $this->passThrough = $passThrough;
         $this->filter = $filter;
         $this->raw = $raw;

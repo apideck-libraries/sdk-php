@@ -35,6 +35,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingQuotesAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
 );
 
 $responses = $sdk->accounting->quotes->list(
@@ -97,6 +98,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingQuotesAddRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     quote: new Components\QuoteInput(
         number: 'QT00546',
         customer: new Components\LinkedCustomerInput(
@@ -111,6 +113,7 @@ $request = new Operations\AccountingQuotesAddRequest(
         quoteDate: LocalDate::parse('2020-09-30'),
         expiryDate: LocalDate::parse('2020-10-30'),
         terms: 'Valid for 30 days',
+        termsId: '12345',
         reference: 'INV-2024-001',
         status: Components\QuoteStatus::Draft,
         currency: Components\Currency::Usd,
@@ -164,7 +167,7 @@ $request = new Operations\AccountingQuotesAddRequest(
                     code: '453',
                 ),
                 customFields: [
-                    new Components\CustomField1(
+                    new Components\CustomField(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
@@ -239,7 +242,7 @@ $request = new Operations\AccountingQuotesAddRequest(
         templateId: '123456',
         sourceDocumentUrl: 'https://www.quotesolution.com/quote/123456',
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -321,6 +324,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingQuotesOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
 );
 
 $response = $sdk->accounting->quotes->get(
@@ -381,6 +385,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingQuotesUpdateRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     quote: new Components\QuoteInput(
         number: 'QT00546',
         customer: new Components\LinkedCustomerInput(
@@ -395,6 +400,7 @@ $request = new Operations\AccountingQuotesUpdateRequest(
         quoteDate: LocalDate::parse('2020-09-30'),
         expiryDate: LocalDate::parse('2020-10-30'),
         terms: 'Valid for 30 days',
+        termsId: '12345',
         reference: 'INV-2024-001',
         status: Components\QuoteStatus::Draft,
         currency: Components\Currency::Usd,
@@ -441,7 +447,7 @@ $request = new Operations\AccountingQuotesUpdateRequest(
                     code: '453',
                 ),
                 customFields: [
-                    new Components\CustomField1(
+                    new Components\CustomField(
                         id: '2389328923893298',
                         name: 'employee_level',
                         description: 'Employee Level',
@@ -516,7 +522,7 @@ $request = new Operations\AccountingQuotesUpdateRequest(
         templateId: '123456',
         sourceDocumentUrl: 'https://www.quotesolution.com/quote/123456',
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -598,6 +604,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingQuotesDeleteRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
 );
 
 $response = $sdk->accounting->quotes->delete(

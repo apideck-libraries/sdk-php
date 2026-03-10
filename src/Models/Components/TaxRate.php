@@ -43,12 +43,22 @@ class TaxRate
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * ID assigned to identify this tax rate.
@@ -237,7 +247,8 @@ class TaxRate
      * @param  ?string  $name
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?array<Subsidiaries>  $subsidiaries
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $id
      * @param  ?string  $displayId
      * @param  ?string  $code
@@ -260,12 +271,13 @@ class TaxRate
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?array $passThrough = null, ?array $subsidiaries = null, ?array $customFields = null, ?string $id = null, ?string $displayId = null, ?string $code = null, ?string $description = null, ?float $effectiveTaxRate = null, ?string $country = null, ?float $totalTaxRate = null, ?string $taxPayableAccountId = null, ?string $taxRemittedAccountId = null, ?array $components = null, ?string $type = null, ?string $reportTaxType = null, ?string $originalTaxRateId = null, ?TaxRateStatus $status = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $name = null, ?array $passThrough = null, ?array $subsidiaries = null, ?array $customFields = null, ?array $additionalProperties = null, ?string $id = null, ?string $displayId = null, ?string $code = null, ?string $description = null, ?float $effectiveTaxRate = null, ?string $country = null, ?float $totalTaxRate = null, ?string $taxPayableAccountId = null, ?string $taxRemittedAccountId = null, ?array $components = null, ?string $type = null, ?string $reportTaxType = null, ?string $originalTaxRateId = null, ?TaxRateStatus $status = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->name = $name;
         $this->passThrough = $passThrough;
         $this->subsidiaries = $subsidiaries;
         $this->customFields = $customFields;
+        $this->additionalProperties = $additionalProperties;
         $this->id = $id;
         $this->displayId = $displayId;
         $this->code = $code;

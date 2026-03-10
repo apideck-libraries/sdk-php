@@ -14,10 +14,21 @@ class PhoneNumber
     /**
      * The phone number
      *
-     * @var string $number
+     * @var ?string $number
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('number')]
-    public string $number;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $number = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * Unique identifier of the phone number
@@ -66,7 +77,8 @@ class PhoneNumber
     public ?PhoneNumberType $type = null;
 
     /**
-     * @param  string  $number
+     * @param  ?string  $number
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $id
      * @param  ?string  $countryCode
      * @param  ?string  $areaCode
@@ -74,9 +86,10 @@ class PhoneNumber
      * @param  ?PhoneNumberType  $type
      * @phpstan-pure
      */
-    public function __construct(string $number, ?string $id = null, ?string $countryCode = null, ?string $areaCode = null, ?string $extension = null, ?PhoneNumberType $type = null)
+    public function __construct(?string $number = null, ?array $additionalProperties = null, ?string $id = null, ?string $countryCode = null, ?string $areaCode = null, ?string $extension = null, ?PhoneNumberType $type = null)
     {
         $this->number = $number;
+        $this->additionalProperties = $additionalProperties;
         $this->id = $id;
         $this->countryCode = $countryCode;
         $this->areaCode = $areaCode;

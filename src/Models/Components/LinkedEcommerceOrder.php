@@ -22,6 +22,16 @@ class LinkedEcommerceOrder
     public ?string $id = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * The total amount of the order.
      *
      * @var ?string $total
@@ -42,13 +52,15 @@ class LinkedEcommerceOrder
 
     /**
      * @param  ?string  $id
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $total
      * @param  ?EcommerceOrderStatus  $status
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $total = null, ?EcommerceOrderStatus $status = null)
+    public function __construct(?string $id = null, ?array $additionalProperties = null, ?string $total = null, ?EcommerceOrderStatus $status = null)
     {
         $this->id = $id;
+        $this->additionalProperties = $additionalProperties;
         $this->total = $total;
         $this->status = $status;
     }

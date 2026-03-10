@@ -42,6 +42,16 @@ class TicketInput
     public ?array $passThrough = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * The ticket's parent ID
      *
      * @var ?string $parentId
@@ -109,6 +119,7 @@ class TicketInput
      * @param  ?array<AssigneeInput>  $assignees
      * @param  ?array<CollectionTagInput>  $tags
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $parentId
      * @param  ?string  $type
      * @param  ?string  $subject
@@ -118,11 +129,12 @@ class TicketInput
      * @param  ?\DateTime  $dueDate
      * @phpstan-pure
      */
-    public function __construct(?array $assignees = null, ?array $tags = null, ?array $passThrough = null, ?string $parentId = null, ?string $type = null, ?string $subject = null, ?string $description = null, ?string $status = null, ?TicketPriority $priority = null, ?\DateTime $dueDate = null)
+    public function __construct(?array $assignees = null, ?array $tags = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $parentId = null, ?string $type = null, ?string $subject = null, ?string $description = null, ?string $status = null, ?TicketPriority $priority = null, ?\DateTime $dueDate = null)
     {
         $this->assignees = $assignees;
         $this->tags = $tags;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->parentId = $parentId;
         $this->type = $type;
         $this->subject = $subject;

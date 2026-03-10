@@ -22,6 +22,16 @@ class DepartmentInput
     public ?array $passThrough = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * Department name
      *
      * @var ?string $name
@@ -48,14 +58,16 @@ class DepartmentInput
 
     /**
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $name
      * @param  ?string  $code
      * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(?array $passThrough = null, ?string $name = null, ?string $code = null, ?string $description = null)
+    public function __construct(?array $passThrough = null, ?array $additionalProperties = null, ?string $name = null, ?string $code = null, ?string $description = null)
     {
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->name = $name;
         $this->code = $code;
         $this->description = $description;

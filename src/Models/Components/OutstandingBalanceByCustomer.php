@@ -40,15 +40,27 @@ class OutstandingBalanceByCustomer
     public ?array $outstandingBalancesByCurrency = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * @param  ?string  $customerId
      * @param  ?string  $customerName
      * @param  ?array<OutstandingBalanceByCurrency>  $outstandingBalancesByCurrency
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(?string $customerId = null, ?string $customerName = null, ?array $outstandingBalancesByCurrency = null)
+    public function __construct(?string $customerId = null, ?string $customerName = null, ?array $outstandingBalancesByCurrency = null, ?array $additionalProperties = null)
     {
         $this->customerId = $customerId;
         $this->customerName = $customerName;
         $this->outstandingBalancesByCurrency = $outstandingBalancesByCurrency;
+        $this->additionalProperties = $additionalProperties;
     }
 }

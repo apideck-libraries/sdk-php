@@ -20,6 +20,16 @@ class Websites
     public string $url;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * Unique identifier for the website
      *
      * @var ?string $id
@@ -40,13 +50,15 @@ class Websites
 
     /**
      * @param  string  $url
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $id
      * @param  ?ApplicantType  $type
      * @phpstan-pure
      */
-    public function __construct(string $url, ?string $id = null, ?ApplicantType $type = null)
+    public function __construct(string $url, ?array $additionalProperties = null, ?string $id = null, ?ApplicantType $type = null)
     {
         $this->url = $url;
+        $this->additionalProperties = $additionalProperties;
         $this->id = $id;
         $this->type = $type;
     }

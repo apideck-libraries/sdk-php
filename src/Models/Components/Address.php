@@ -12,6 +12,16 @@ namespace Apideck\Unify\Models\Components;
 class Address
 {
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * Unique identifier for the address.
      *
      * @var ?string $id
@@ -238,6 +248,7 @@ class Address
     public ?string $rowVersion = null;
 
     /**
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $id
      * @param  ?Type  $type
      * @param  ?string  $string
@@ -265,8 +276,9 @@ class Address
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?Type $type = null, ?string $string = null, ?string $name = null, ?string $line1 = null, ?string $line2 = null, ?string $line3 = null, ?string $line4 = null, ?string $line5 = null, ?string $streetNumber = null, ?string $city = null, ?string $state = null, ?string $postalCode = null, ?string $country = null, ?string $latitude = null, ?string $longitude = null, ?string $county = null, ?string $contactName = null, ?string $salutation = null, ?string $phoneNumber = null, ?string $fax = null, ?string $email = null, ?string $website = null, ?string $notes = null, ?string $rowVersion = null)
+    public function __construct(?array $additionalProperties = null, ?string $id = null, ?Type $type = null, ?string $string = null, ?string $name = null, ?string $line1 = null, ?string $line2 = null, ?string $line3 = null, ?string $line4 = null, ?string $line5 = null, ?string $streetNumber = null, ?string $city = null, ?string $state = null, ?string $postalCode = null, ?string $country = null, ?string $latitude = null, ?string $longitude = null, ?string $county = null, ?string $contactName = null, ?string $salutation = null, ?string $phoneNumber = null, ?string $fax = null, ?string $email = null, ?string $website = null, ?string $notes = null, ?string $rowVersion = null)
     {
+        $this->additionalProperties = $additionalProperties;
         $this->id = $id;
         $this->type = $type;
         $this->string = $string;

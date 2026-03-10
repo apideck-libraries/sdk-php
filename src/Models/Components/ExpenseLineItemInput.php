@@ -41,14 +41,6 @@ class ExpenseLineItemInput
     public ?LinkedTaxRateInput $taxRate = null;
 
     /**
-     * The total amount of the expense line item.
-     *
-     * @var ?float $totalAmount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('total_amount')]
-    public ?float $totalAmount;
-
-    /**
      *
      * @var ?LinkedInvoiceItem $item
      */
@@ -56,6 +48,16 @@ class ExpenseLineItemInput
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedInvoiceItem|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?LinkedInvoiceItem $item = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * A list of linked tracking categories.
@@ -142,6 +144,15 @@ class ExpenseLineItemInput
     public ?LineItemType $type = null;
 
     /**
+     * The total amount of the expense line item.
+     *
+     * @var ?float $totalAmount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('total_amount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $totalAmount = null;
+
+    /**
      * Tax amount
      *
      * @var ?float $taxAmount
@@ -189,8 +200,8 @@ class ExpenseLineItemInput
      * @param  ?string  $accountId
      * @param  ?string  $customerId
      * @param  ?LinkedTaxRateInput  $taxRate
-     * @param  ?float  $totalAmount
      * @param  ?LinkedInvoiceItem  $item
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?LinkedLedgerAccount  $account
      * @param  ?LinkedCustomerInput  $customer
@@ -200,6 +211,7 @@ class ExpenseLineItemInput
      * @param  ?LinkedLocationInput  $location
      * @param  ?string  $description
      * @param  ?LineItemType  $type
+     * @param  ?float  $totalAmount
      * @param  ?float  $taxAmount
      * @param  ?float  $quantity
      * @param  ?float  $unitPrice
@@ -207,13 +219,13 @@ class ExpenseLineItemInput
      * @param  ?Rebilling  $rebilling
      * @phpstan-pure
      */
-    public function __construct(?string $accountId = null, ?string $customerId = null, ?LinkedTaxRateInput $taxRate = null, ?float $totalAmount = null, ?LinkedInvoiceItem $item = null, ?array $trackingCategories = null, ?LinkedLedgerAccount $account = null, ?LinkedCustomerInput $customer = null, ?string $departmentId = null, ?LinkedDepartmentInput $department = null, ?string $locationId = null, ?LinkedLocationInput $location = null, ?string $description = null, ?LineItemType $type = null, ?float $taxAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?int $lineNumber = null, ?Rebilling $rebilling = null)
+    public function __construct(?string $accountId = null, ?string $customerId = null, ?LinkedTaxRateInput $taxRate = null, ?LinkedInvoiceItem $item = null, ?array $additionalProperties = null, ?array $trackingCategories = null, ?LinkedLedgerAccount $account = null, ?LinkedCustomerInput $customer = null, ?string $departmentId = null, ?LinkedDepartmentInput $department = null, ?string $locationId = null, ?LinkedLocationInput $location = null, ?string $description = null, ?LineItemType $type = null, ?float $totalAmount = null, ?float $taxAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?int $lineNumber = null, ?Rebilling $rebilling = null)
     {
         $this->accountId = $accountId;
         $this->customerId = $customerId;
         $this->taxRate = $taxRate;
-        $this->totalAmount = $totalAmount;
         $this->item = $item;
+        $this->additionalProperties = $additionalProperties;
         $this->trackingCategories = $trackingCategories;
         $this->account = $account;
         $this->customer = $customer;
@@ -223,6 +235,7 @@ class ExpenseLineItemInput
         $this->location = $location;
         $this->description = $description;
         $this->type = $type;
+        $this->totalAmount = $totalAmount;
         $this->taxAmount = $taxAmount;
         $this->quantity = $quantity;
         $this->unitPrice = $unitPrice;

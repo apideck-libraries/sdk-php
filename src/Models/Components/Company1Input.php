@@ -12,14 +12,6 @@ use Brick\DateTime\LocalDate;
 class Company1Input
 {
     /**
-     * Name of the company
-     *
-     * @var ?string $name
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    public ?string $name;
-
-    /**
      * $bankAccounts
      *
      * @var ?array<BankAccount1> $bankAccounts
@@ -91,10 +83,10 @@ class Company1Input
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -107,6 +99,25 @@ class Company1Input
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
+     * Name of the company
+     *
+     * @var ?string $name
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $name = null;
 
     /**
      * Owner ID
@@ -309,7 +320,6 @@ class Company1Input
     public ?LocalDate $birthday = null;
 
     /**
-     * @param  ?string  $name
      * @param  ?array<BankAccount1>  $bankAccounts
      * @param  ?array<Website>  $websites
      * @param  ?array<Address>  $addresses
@@ -317,8 +327,10 @@ class Company1Input
      * @param  ?array<PhoneNumber>  $phoneNumbers
      * @param  ?array<Email>  $emails
      * @param  ?CompanyRowType  $rowType
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
+     * @param  ?string  $name
      * @param  ?string  $ownerId
      * @param  ?string  $image
      * @param  ?string  $description
@@ -343,9 +355,8 @@ class Company1Input
      * @param  ?LocalDate  $birthday
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?array $bankAccounts = null, ?array $websites = null, ?array $addresses = null, ?array $socialLinks = null, ?array $phoneNumbers = null, ?array $emails = null, ?CompanyRowType $rowType = null, ?array $customFields = null, ?array $passThrough = null, ?string $ownerId = null, ?string $image = null, ?string $description = null, ?string $vatNumber = null, ?Currency $currency = null, ?string $status = null, ?string $fax = null, ?string $annualRevenue = null, ?string $numberOfEmployees = null, ?string $industry = null, ?string $ownership = null, ?string $salesTaxNumber = null, ?string $payeeNumber = null, ?string $abnOrTfn = null, ?string $abnBranch = null, ?string $acn = null, ?string $firstName = null, ?string $lastName = null, ?array $tags = null, ?bool $readOnly = null, ?string $salutation = null, ?LocalDate $birthday = null)
+    public function __construct(?array $bankAccounts = null, ?array $websites = null, ?array $addresses = null, ?array $socialLinks = null, ?array $phoneNumbers = null, ?array $emails = null, ?CompanyRowType $rowType = null, ?array $customFields = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $name = null, ?string $ownerId = null, ?string $image = null, ?string $description = null, ?string $vatNumber = null, ?Currency $currency = null, ?string $status = null, ?string $fax = null, ?string $annualRevenue = null, ?string $numberOfEmployees = null, ?string $industry = null, ?string $ownership = null, ?string $salesTaxNumber = null, ?string $payeeNumber = null, ?string $abnOrTfn = null, ?string $abnBranch = null, ?string $acn = null, ?string $firstName = null, ?string $lastName = null, ?array $tags = null, ?bool $readOnly = null, ?string $salutation = null, ?LocalDate $birthday = null)
     {
-        $this->name = $name;
         $this->bankAccounts = $bankAccounts;
         $this->websites = $websites;
         $this->addresses = $addresses;
@@ -355,6 +366,8 @@ class Company1Input
         $this->rowType = $rowType;
         $this->customFields = $customFields;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
+        $this->name = $name;
         $this->ownerId = $ownerId;
         $this->image = $image;
         $this->description = $description;

@@ -65,15 +65,26 @@ class DeleteBankAccountResponse
     public ?string $operation = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * @param  int  $statusCode
      * @param  string  $status
      * @param  UnifiedId  $data
      * @param  ?string  $service
      * @param  ?string  $resource
      * @param  ?string  $operation
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(int $statusCode, string $status, UnifiedId $data, ?string $service = null, ?string $resource = null, ?string $operation = null)
+    public function __construct(int $statusCode, string $status, UnifiedId $data, ?string $service = null, ?string $resource = null, ?string $operation = null, ?array $additionalProperties = null)
     {
         $this->statusCode = $statusCode;
         $this->status = $status;
@@ -81,5 +92,6 @@ class DeleteBankAccountResponse
         $this->service = $service;
         $this->resource = $resource;
         $this->operation = $operation;
+        $this->additionalProperties = $additionalProperties;
     }
 }

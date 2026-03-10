@@ -12,12 +12,14 @@ namespace Apideck\Unify\Models\Components;
 class Email
 {
     /**
-     * Email address
+     * $additionalProperties
      *
-     * @var ?string $email
+     * @var ?array<string, mixed> $additionalProperties
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
-    public ?string $email;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * Unique identifier for the email address
@@ -27,6 +29,15 @@ class Email
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
+
+    /**
+     * Email address
+     *
+     * @var ?string $email
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $email = null;
 
     /**
      * Email type
@@ -39,15 +50,17 @@ class Email
     public ?EmailType $type = null;
 
     /**
-     * @param  ?string  $email
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $id
+     * @param  ?string  $email
      * @param  ?EmailType  $type
      * @phpstan-pure
      */
-    public function __construct(?string $email = null, ?string $id = null, ?EmailType $type = null)
+    public function __construct(?array $additionalProperties = null, ?string $id = null, ?string $email = null, ?EmailType $type = null)
     {
-        $this->email = $email;
+        $this->additionalProperties = $additionalProperties;
         $this->id = $id;
+        $this->email = $email;
         $this->type = $type;
     }
 }

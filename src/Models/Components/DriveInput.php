@@ -14,10 +14,11 @@ class DriveInput
     /**
      * The name of the drive
      *
-     * @var string $name
+     * @var ?string $name
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    public string $name;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $name = null;
 
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
@@ -30,6 +31,16 @@ class DriveInput
     public ?array $passThrough = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * A description of the object.
      *
      * @var ?string $description
@@ -39,15 +50,17 @@ class DriveInput
     public ?string $description = null;
 
     /**
-     * @param  string  $name
+     * @param  ?string  $name
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(string $name, ?array $passThrough = null, ?string $description = null)
+    public function __construct(?string $name = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $description = null)
     {
         $this->name = $name;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->description = $description;
     }
 }

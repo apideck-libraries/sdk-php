@@ -22,6 +22,16 @@ class NoteInput
     public ?array $passThrough = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * The title of the note
      *
      * @var ?string $title
@@ -104,6 +114,7 @@ class NoteInput
 
     /**
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $title
      * @param  ?string  $content
      * @param  ?string  $ownerId
@@ -115,9 +126,10 @@ class NoteInput
      * @param  ?bool  $active
      * @phpstan-pure
      */
-    public function __construct(?array $passThrough = null, ?string $title = null, ?string $content = null, ?string $ownerId = null, ?string $contactId = null, ?string $companyId = null, ?string $opportunityId = null, ?string $activityId = null, ?string $leadId = null, ?bool $active = null)
+    public function __construct(?array $passThrough = null, ?array $additionalProperties = null, ?string $title = null, ?string $content = null, ?string $ownerId = null, ?string $contactId = null, ?string $companyId = null, ?string $opportunityId = null, ?string $activityId = null, ?string $leadId = null, ?bool $active = null)
     {
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->title = $title;
         $this->content = $content;
         $this->ownerId = $ownerId;

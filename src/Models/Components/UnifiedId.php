@@ -15,16 +15,17 @@ class UnifiedId
     /**
      * The unique identifier of the resource
      *
-     * @var string $id
+     * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public string $id;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
 
     /**
-     * @param  string  $id
+     * @param  ?string  $id
      * @phpstan-pure
      */
-    public function __construct(string $id)
+    public function __construct(?string $id = null)
     {
         $this->id = $id;
     }

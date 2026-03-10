@@ -12,12 +12,23 @@ namespace Apideck\Unify\Models\Components;
 class Compensation
 {
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * A unique identifier for an object.
      *
      * @var ?string $employeeId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('employee_id')]
-    public ?string $employeeId;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $employeeId = null;
 
     /**
      * The employee's net pay. Only available when payroll has been processed
@@ -68,6 +79,7 @@ class Compensation
     public ?array $benefits = null;
 
     /**
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $employeeId
      * @param  ?float  $netPay
      * @param  ?float  $grossPay
@@ -76,8 +88,9 @@ class Compensation
      * @param  ?array<Benefit>  $benefits
      * @phpstan-pure
      */
-    public function __construct(?string $employeeId = null, ?float $netPay = null, ?float $grossPay = null, ?array $taxes = null, ?array $deductions = null, ?array $benefits = null)
+    public function __construct(?array $additionalProperties = null, ?string $employeeId = null, ?float $netPay = null, ?float $grossPay = null, ?array $taxes = null, ?array $deductions = null, ?array $benefits = null)
     {
+        $this->additionalProperties = $additionalProperties;
         $this->employeeId = $employeeId;
         $this->netPay = $netPay;
         $this->grossPay = $grossPay;

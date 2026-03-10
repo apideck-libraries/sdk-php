@@ -14,10 +14,11 @@ class BankFeedStatement
     /**
      * A unique identifier for an object.
      *
-     * @var string $id
+     * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public string $id;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
 
     /**
      * The ID of the bank feed account this statement belongs to.
@@ -105,6 +106,16 @@ class BankFeedStatement
     public ?array $transactions = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * The date and time when the object was created.
      *
      * @var ?\DateTime $createdAt
@@ -141,7 +152,7 @@ class BankFeedStatement
     public ?string $updatedBy = null;
 
     /**
-     * @param  string  $id
+     * @param  ?string  $id
      * @param  ?string  $bankFeedAccountId
      * @param  ?StatementStatus  $status
      * @param  ?\DateTime  $startDate
@@ -151,13 +162,14 @@ class BankFeedStatement
      * @param  ?float  $endBalance
      * @param  ?CreditOrDebit  $endBalanceCreditOrDebit
      * @param  ?array<Transactions>  $transactions
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?\DateTime  $createdAt
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt
      * @param  ?string  $updatedBy
      * @phpstan-pure
      */
-    public function __construct(string $id, ?string $bankFeedAccountId = null, ?StatementStatus $status = null, ?\DateTime $startDate = null, ?\DateTime $endDate = null, ?float $startBalance = null, ?CreditOrDebit $startBalanceCreditOrDebit = null, ?float $endBalance = null, ?CreditOrDebit $endBalanceCreditOrDebit = null, ?array $transactions = null, ?\DateTime $createdAt = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?string $updatedBy = null)
+    public function __construct(?string $id = null, ?string $bankFeedAccountId = null, ?StatementStatus $status = null, ?\DateTime $startDate = null, ?\DateTime $endDate = null, ?float $startBalance = null, ?CreditOrDebit $startBalanceCreditOrDebit = null, ?float $endBalance = null, ?CreditOrDebit $endBalanceCreditOrDebit = null, ?array $transactions = null, ?array $additionalProperties = null, ?\DateTime $createdAt = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?string $updatedBy = null)
     {
         $this->id = $id;
         $this->bankFeedAccountId = $bankFeedAccountId;
@@ -169,6 +181,7 @@ class BankFeedStatement
         $this->endBalance = $endBalance;
         $this->endBalanceCreditOrDebit = $endBalanceCreditOrDebit;
         $this->transactions = $transactions;
+        $this->additionalProperties = $additionalProperties;
         $this->createdAt = $createdAt;
         $this->createdBy = $createdBy;
         $this->updatedAt = $updatedAt;

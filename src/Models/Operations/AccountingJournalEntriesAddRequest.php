@@ -44,6 +44,14 @@ class AccountingJournalEntriesAddRequest
     public ?string $serviceId = null;
 
     /**
+     * The ID of the company to scope requests to. For connectors that support multi-company, this overrides the default company configured in connection settings.
+     *
+     * @var ?string $companyId
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-apideck-company-id')]
+    public ?string $companyId = null;
+
+    /**
      * Include raw response. Mostly used for debugging purposes
      *
      * @var ?bool $raw
@@ -57,14 +65,16 @@ class AccountingJournalEntriesAddRequest
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId
+     * @param  ?string  $companyId
      * @phpstan-pure
      */
-    public function __construct(Components\JournalEntryInput $journalEntry, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?bool $raw = false)
+    public function __construct(Components\JournalEntryInput $journalEntry, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $companyId = null, ?bool $raw = false)
     {
         $this->journalEntry = $journalEntry;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
+        $this->companyId = $companyId;
         $this->raw = $raw;
     }
 }

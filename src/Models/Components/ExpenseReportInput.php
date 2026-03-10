@@ -14,36 +14,30 @@ class ExpenseReportInput
     /**
      * The employee who submitted the expense report.
      *
-     * @var ExpenseReportEmployee $employee
+     * @var ?ExpenseReportEmployee $employee
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('employee')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ExpenseReportEmployee')]
-    public ExpenseReportEmployee $employee;
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ExpenseReportEmployee|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ExpenseReportEmployee $employee = null;
 
     /**
      * Expense line items linked to this expense report.
      *
-     * @var array<ExpenseReportLineItemInput> $lineItems
+     * @var ?array<ExpenseReportLineItemInput> $lineItems
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ExpenseReportLineItemInput>')]
-    public array $lineItems;
-
-    /**
-     * The date of the transaction - YYYY:MM::DDThh:mm:ss.sTZD
-     *
-     * @var ?\DateTime $transactionDate
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('transaction_date')]
-    public ?\DateTime $transactionDate;
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ExpenseReportLineItemInput>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $lineItems = null;
 
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -56,6 +50,16 @@ class ExpenseReportInput
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * Id to be displayed.
@@ -93,6 +97,15 @@ class ExpenseReportInput
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ExpenseReportStatus|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?ExpenseReportStatus $status = null;
+
+    /**
+     * The date of the transaction - YYYY:MM::DDThh:mm:ss.sTZD
+     *
+     * @var ?\DateTime $transactionDate
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('transaction_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?\DateTime $transactionDate = null;
 
     /**
      * The date the expense report was posted to the general ledger.
@@ -261,15 +274,16 @@ class ExpenseReportInput
     public ?string $rowVersion = null;
 
     /**
-     * @param  ExpenseReportEmployee  $employee
-     * @param  array<ExpenseReportLineItemInput>  $lineItems
-     * @param  ?\DateTime  $transactionDate
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?ExpenseReportEmployee  $employee
+     * @param  ?array<ExpenseReportLineItemInput>  $lineItems
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $displayId
      * @param  ?string  $number
      * @param  ?string  $title
      * @param  ?ExpenseReportStatus  $status
+     * @param  ?\DateTime  $transactionDate
      * @param  ?LocalDate  $postingDate
      * @param  ?LocalDate  $dueDate
      * @param  ?Currency  $currency
@@ -290,17 +304,18 @@ class ExpenseReportInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(ExpenseReportEmployee $employee, array $lineItems, ?\DateTime $transactionDate = null, ?array $customFields = null, ?array $passThrough = null, ?string $displayId = null, ?string $number = null, ?string $title = null, ?ExpenseReportStatus $status = null, ?LocalDate $postingDate = null, ?LocalDate $dueDate = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $subTotal = null, ?float $totalTax = null, ?float $totalAmount = null, ?float $reimbursableAmount = null, ?string $memo = null, ?LinkedDepartmentInput $department = null, ?LinkedLocationInput $location = null, ?LinkedLedgerAccount $account = null, ?AccountingPeriod $accountingPeriod = null, ?LinkedSubsidiaryInput $subsidiary = null, ?array $trackingCategories = null, ?bool $taxInclusive = null, ?ApprovedBy $approvedBy = null, ?string $rowVersion = null)
+    public function __construct(?ExpenseReportEmployee $employee = null, ?array $lineItems = null, ?array $customFields = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $displayId = null, ?string $number = null, ?string $title = null, ?ExpenseReportStatus $status = null, ?\DateTime $transactionDate = null, ?LocalDate $postingDate = null, ?LocalDate $dueDate = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $subTotal = null, ?float $totalTax = null, ?float $totalAmount = null, ?float $reimbursableAmount = null, ?string $memo = null, ?LinkedDepartmentInput $department = null, ?LinkedLocationInput $location = null, ?LinkedLedgerAccount $account = null, ?AccountingPeriod $accountingPeriod = null, ?LinkedSubsidiaryInput $subsidiary = null, ?array $trackingCategories = null, ?bool $taxInclusive = null, ?ApprovedBy $approvedBy = null, ?string $rowVersion = null)
     {
         $this->employee = $employee;
         $this->lineItems = $lineItems;
-        $this->transactionDate = $transactionDate;
         $this->customFields = $customFields;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->displayId = $displayId;
         $this->number = $number;
         $this->title = $title;
         $this->status = $status;
+        $this->transactionDate = $transactionDate;
         $this->postingDate = $postingDate;
         $this->dueDate = $dueDate;
         $this->currency = $currency;

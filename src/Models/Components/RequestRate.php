@@ -38,15 +38,27 @@ class RequestRate
     public Unit $unit;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * @param  int  $rate
      * @param  int  $size
      * @param  Unit  $unit
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(int $rate, int $size, Unit $unit)
+    public function __construct(int $rate, int $size, Unit $unit, ?array $additionalProperties = null)
     {
         $this->rate = $rate;
         $this->size = $size;
         $this->unit = $unit;
+        $this->additionalProperties = $additionalProperties;
     }
 }

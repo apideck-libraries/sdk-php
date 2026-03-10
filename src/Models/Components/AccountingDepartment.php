@@ -60,6 +60,16 @@ class AccountingDepartment
     public ?array $passThrough = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * A unique identifier for an object.
      *
      * @var ?string $parentId
@@ -156,6 +166,7 @@ class AccountingDepartment
      * @param  ?array<SubsidiaryReference>  $subsidiaries
      * @param  ?string  $code
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $parentId
      * @param  ?string  $displayId
      * @param  ?string  $name
@@ -168,13 +179,14 @@ class AccountingDepartment
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?DepartmentStatus $status = null, ?array $subsidiaries = null, ?string $code = null, ?array $passThrough = null, ?string $parentId = null, ?string $displayId = null, ?string $name = null, ?string $downstreamId = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?DepartmentStatus $status = null, ?array $subsidiaries = null, ?string $code = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $parentId = null, ?string $displayId = null, ?string $name = null, ?string $downstreamId = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->status = $status;
         $this->subsidiaries = $subsidiaries;
         $this->code = $code;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->parentId = $parentId;
         $this->displayId = $displayId;
         $this->name = $name;

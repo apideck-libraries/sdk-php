@@ -37,6 +37,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingSuppliersAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     filter: new Components\SuppliersFilter(
         companyName: 'SpaceX',
         displayName: 'Elon Musk',
@@ -114,6 +115,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingSuppliersAddRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     supplier: new Components\SupplierInput(
         displayId: 'EMP00101',
         displayName: 'Windsurf Shop',
@@ -226,13 +228,13 @@ $request = new Operations\AccountingSuppliersAddRequest(
         paymentMethod: 'cash',
         channel: 'email',
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -328,6 +330,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingSuppliersOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
 );
 
@@ -388,6 +391,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingSuppliersUpdateRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     supplier: new Components\SupplierInput(
         displayId: 'EMP00101',
         displayName: 'Windsurf Shop',
@@ -503,13 +507,13 @@ $request = new Operations\AccountingSuppliersUpdateRequest(
         paymentMethod: 'cash',
         channel: 'email',
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -592,6 +596,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingSuppliersDeleteRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
 );
 
 $response = $sdk->accounting->suppliers->delete(

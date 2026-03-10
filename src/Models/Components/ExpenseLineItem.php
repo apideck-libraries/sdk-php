@@ -50,14 +50,6 @@ class ExpenseLineItem
     public ?LinkedTaxRate $taxRate = null;
 
     /**
-     * The total amount of the expense line item.
-     *
-     * @var ?float $totalAmount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('total_amount')]
-    public ?float $totalAmount;
-
-    /**
      *
      * @var ?LinkedInvoiceItem $item
      */
@@ -65,6 +57,16 @@ class ExpenseLineItem
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedInvoiceItem|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?LinkedInvoiceItem $item = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * A list of linked tracking categories.
@@ -151,6 +153,15 @@ class ExpenseLineItem
     public ?LineItemType $type = null;
 
     /**
+     * The total amount of the expense line item.
+     *
+     * @var ?float $totalAmount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('total_amount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $totalAmount = null;
+
+    /**
      * Tax amount
      *
      * @var ?float $taxAmount
@@ -199,8 +210,8 @@ class ExpenseLineItem
      * @param  ?string  $accountId
      * @param  ?string  $customerId
      * @param  ?LinkedTaxRate  $taxRate
-     * @param  ?float  $totalAmount
      * @param  ?LinkedInvoiceItem  $item
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?LinkedLedgerAccount  $account
      * @param  ?LinkedCustomer  $customer
@@ -210,6 +221,7 @@ class ExpenseLineItem
      * @param  ?LinkedLocation  $location
      * @param  ?string  $description
      * @param  ?LineItemType  $type
+     * @param  ?float  $totalAmount
      * @param  ?float  $taxAmount
      * @param  ?float  $quantity
      * @param  ?float  $unitPrice
@@ -217,14 +229,14 @@ class ExpenseLineItem
      * @param  ?Rebilling  $rebilling
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $accountId = null, ?string $customerId = null, ?LinkedTaxRate $taxRate = null, ?float $totalAmount = null, ?LinkedInvoiceItem $item = null, ?array $trackingCategories = null, ?LinkedLedgerAccount $account = null, ?LinkedCustomer $customer = null, ?string $departmentId = null, ?LinkedDepartment $department = null, ?string $locationId = null, ?LinkedLocation $location = null, ?string $description = null, ?LineItemType $type = null, ?float $taxAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?int $lineNumber = null, ?Rebilling $rebilling = null)
+    public function __construct(?string $id = null, ?string $accountId = null, ?string $customerId = null, ?LinkedTaxRate $taxRate = null, ?LinkedInvoiceItem $item = null, ?array $additionalProperties = null, ?array $trackingCategories = null, ?LinkedLedgerAccount $account = null, ?LinkedCustomer $customer = null, ?string $departmentId = null, ?LinkedDepartment $department = null, ?string $locationId = null, ?LinkedLocation $location = null, ?string $description = null, ?LineItemType $type = null, ?float $totalAmount = null, ?float $taxAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?int $lineNumber = null, ?Rebilling $rebilling = null)
     {
         $this->id = $id;
         $this->accountId = $accountId;
         $this->customerId = $customerId;
         $this->taxRate = $taxRate;
-        $this->totalAmount = $totalAmount;
         $this->item = $item;
+        $this->additionalProperties = $additionalProperties;
         $this->trackingCategories = $trackingCategories;
         $this->account = $account;
         $this->customer = $customer;
@@ -234,6 +246,7 @@ class ExpenseLineItem
         $this->location = $location;
         $this->description = $description;
         $this->type = $type;
+        $this->totalAmount = $totalAmount;
         $this->taxAmount = $taxAmount;
         $this->quantity = $quantity;
         $this->unitPrice = $unitPrice;

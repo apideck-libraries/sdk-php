@@ -39,15 +39,27 @@ class CopyFolderRequest
     public ?array $passThrough = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * @param  string  $parentFolderId
      * @param  ?string  $name
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(string $parentFolderId, ?string $name = null, ?array $passThrough = null)
+    public function __construct(string $parentFolderId, ?string $name = null, ?array $passThrough = null, ?array $additionalProperties = null)
     {
         $this->parentFolderId = $parentFolderId;
         $this->name = $name;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
     }
 }

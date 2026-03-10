@@ -13,6 +13,16 @@ namespace Apideck\Unify\Models\Components;
 class LinkedEcommerceCustomer
 {
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * The ID of the customer this entity is linked to.
      *
      * @var ?string $id
@@ -78,6 +88,7 @@ class LinkedEcommerceCustomer
     public ?array $emails = null;
 
     /**
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $id
      * @param  ?string  $name
      * @param  ?string  $firstName
@@ -87,8 +98,9 @@ class LinkedEcommerceCustomer
      * @param  ?array<Email>  $emails
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $companyName = null, ?array $phoneNumbers = null, ?array $emails = null)
+    public function __construct(?array $additionalProperties = null, ?string $id = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $companyName = null, ?array $phoneNumbers = null, ?array $emails = null)
     {
+        $this->additionalProperties = $additionalProperties;
         $this->id = $id;
         $this->name = $name;
         $this->firstName = $firstName;

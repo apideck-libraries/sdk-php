@@ -32,13 +32,25 @@ class VirtualWebhooks
     public ?array $resources = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * @param  RequestRate  $requestRate
      * @param  ?array<string, WebhookSupportResources>  $resources
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(RequestRate $requestRate, ?array $resources = null)
+    public function __construct(RequestRate $requestRate, ?array $resources = null, ?array $additionalProperties = null)
     {
         $this->requestRate = $requestRate;
         $this->resources = $resources;
+        $this->additionalProperties = $additionalProperties;
     }
 }

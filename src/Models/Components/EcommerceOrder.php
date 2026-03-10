@@ -14,10 +14,11 @@ class EcommerceOrder
     /**
      * A unique identifier for an object.
      *
-     * @var string $id
+     * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public string $id;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
 
     /**
      * $discounts
@@ -88,6 +89,16 @@ class EcommerceOrder
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceOrderRefund>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $refunds = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * Order number, if any.
@@ -248,7 +259,7 @@ class EcommerceOrder
     public ?\DateTime $updatedAt = null;
 
     /**
-     * @param  string  $id
+     * @param  ?string  $id
      * @param  ?array<EcommerceDiscount>  $discounts
      * @param  ?LinkedEcommerceCustomer  $customer
      * @param  ?EcommerceAddress  $billingAddress
@@ -256,6 +267,7 @@ class EcommerceOrder
      * @param  ?array<TrackingItem>  $tracking
      * @param  ?array<EcommerceOrderLineItem>  $lineItems
      * @param  ?array<EcommerceOrderRefund>  $refunds
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $orderNumber
      * @param  ?Currency  $currency
      * @param  ?string  $subTotal
@@ -275,7 +287,7 @@ class EcommerceOrder
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, ?array $discounts = null, ?LinkedEcommerceCustomer $customer = null, ?EcommerceAddress $billingAddress = null, ?EcommerceAddress $shippingAddress = null, ?array $tracking = null, ?array $lineItems = null, ?array $refunds = null, ?string $orderNumber = null, ?Currency $currency = null, ?string $subTotal = null, ?string $shippingCost = null, ?string $couponDiscount = null, ?string $totalDiscount = null, ?string $totalTax = null, ?string $totalAmount = null, ?string $refundedAmount = null, ?EcommerceOrderStatus $status = null, ?EcommerceOrderPaymentStatus $paymentStatus = null, ?FulfillmentStatus $fulfillmentStatus = null, ?string $paymentMethod = null, ?string $note = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(?string $id = null, ?array $discounts = null, ?LinkedEcommerceCustomer $customer = null, ?EcommerceAddress $billingAddress = null, ?EcommerceAddress $shippingAddress = null, ?array $tracking = null, ?array $lineItems = null, ?array $refunds = null, ?array $additionalProperties = null, ?string $orderNumber = null, ?Currency $currency = null, ?string $subTotal = null, ?string $shippingCost = null, ?string $couponDiscount = null, ?string $totalDiscount = null, ?string $totalTax = null, ?string $totalAmount = null, ?string $refundedAmount = null, ?EcommerceOrderStatus $status = null, ?EcommerceOrderPaymentStatus $paymentStatus = null, ?FulfillmentStatus $fulfillmentStatus = null, ?string $paymentMethod = null, ?string $note = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
         $this->discounts = $discounts;
@@ -285,6 +297,7 @@ class EcommerceOrder
         $this->tracking = $tracking;
         $this->lineItems = $lineItems;
         $this->refunds = $refunds;
+        $this->additionalProperties = $additionalProperties;
         $this->orderNumber = $orderNumber;
         $this->currency = $currency;
         $this->subTotal = $subTotal;

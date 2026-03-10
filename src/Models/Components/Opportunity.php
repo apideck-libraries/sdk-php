@@ -12,14 +12,6 @@ use Brick\DateTime\LocalDate;
 class Opportunity
 {
     /**
-     * The title or name of the opportunity.
-     *
-     * @var string $title
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('title')]
-    public string $title;
-
-    /**
      * A unique identifier for the opportunity.
      *
      * @var ?string $id
@@ -27,6 +19,15 @@ class Opportunity
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
+
+    /**
+     * The title or name of the opportunity.
+     *
+     * @var ?string $title
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('title')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $title = null;
 
     /**
      * An array of unique identifiers of all contacts associated with the opportunity.
@@ -41,10 +42,10 @@ class Opportunity
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -66,6 +67,16 @@ class Opportunity
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * The unique identifier of the primary contact associated with the opportunity.
@@ -395,12 +406,13 @@ class Opportunity
     public ?\DateTime $createdAt = null;
 
     /**
-     * @param  string  $title
      * @param  ?string  $id
+     * @param  ?string  $title
      * @param  ?array<string>  $contactIds
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
      * @param  ?bool  $deleted
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $primaryContactId
      * @param  ?string  $description
      * @param  ?string  $type
@@ -439,14 +451,15 @@ class Opportunity
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(string $title, ?string $id = null, ?array $contactIds = null, ?array $customFields = null, ?bool $deleted = null, ?array $passThrough = null, ?string $primaryContactId = null, ?string $description = null, ?string $type = null, ?float $monetaryAmount = null, ?Currency $currency = null, ?float $winProbability = null, ?float $expectedRevenue = null, ?LocalDate $closeDate = null, ?string $lossReasonId = null, ?string $lossReason = null, ?string $wonReasonId = null, ?string $wonReason = null, ?string $pipelineId = null, ?string $pipelineStageId = null, ?string $sourceId = null, ?string $leadId = null, ?string $leadSource = null, ?string $contactId = null, ?string $companyId = null, ?string $companyName = null, ?string $ownerId = null, ?string $priority = null, ?string $status = null, ?string $statusId = null, ?array $tags = null, ?float $interactionCount = null, ?\DateTime $stageLastChangedAt = null, ?string $lastActivityAt = null, ?\DateTime $dateStageChanged = null, ?\DateTime $dateLastContacted = null, ?\DateTime $dateLeadCreated = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?string $title = null, ?array $contactIds = null, ?array $customFields = null, ?bool $deleted = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $primaryContactId = null, ?string $description = null, ?string $type = null, ?float $monetaryAmount = null, ?Currency $currency = null, ?float $winProbability = null, ?float $expectedRevenue = null, ?LocalDate $closeDate = null, ?string $lossReasonId = null, ?string $lossReason = null, ?string $wonReasonId = null, ?string $wonReason = null, ?string $pipelineId = null, ?string $pipelineStageId = null, ?string $sourceId = null, ?string $leadId = null, ?string $leadSource = null, ?string $contactId = null, ?string $companyId = null, ?string $companyName = null, ?string $ownerId = null, ?string $priority = null, ?string $status = null, ?string $statusId = null, ?array $tags = null, ?float $interactionCount = null, ?\DateTime $stageLastChangedAt = null, ?string $lastActivityAt = null, ?\DateTime $dateStageChanged = null, ?\DateTime $dateLastContacted = null, ?\DateTime $dateLeadCreated = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
-        $this->title = $title;
         $this->id = $id;
+        $this->title = $title;
         $this->contactIds = $contactIds;
         $this->customFields = $customFields;
         $this->deleted = $deleted;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->primaryContactId = $primaryContactId;
         $this->description = $description;
         $this->type = $type;

@@ -12,6 +12,16 @@ namespace Apideck\Unify\Models\Components;
 class Stages
 {
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * The unique identifier of the Pipeline Stage.
      *
      * @var ?string $id
@@ -84,6 +94,7 @@ class Stages
     public ?\DateTime $updatedAt = null;
 
     /**
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $id
      * @param  ?string  $name
      * @param  ?string  $value
@@ -94,8 +105,9 @@ class Stages
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?string $value = null, ?int $winProbability = null, ?int $displayOrder = null, ?bool $archived = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(?array $additionalProperties = null, ?string $id = null, ?string $name = null, ?string $value = null, ?int $winProbability = null, ?int $displayOrder = null, ?bool $archived = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
+        $this->additionalProperties = $additionalProperties;
         $this->id = $id;
         $this->name = $name;
         $this->value = $value;

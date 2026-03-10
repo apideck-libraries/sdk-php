@@ -97,6 +97,16 @@ class BankFeedStatementInput
     public ?array $transactions = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * @param  ?string  $bankFeedAccountId
      * @param  ?StatementStatus  $status
      * @param  ?\DateTime  $startDate
@@ -106,9 +116,10 @@ class BankFeedStatementInput
      * @param  ?float  $endBalance
      * @param  ?CreditOrDebit  $endBalanceCreditOrDebit
      * @param  ?array<Transactions>  $transactions
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(?string $bankFeedAccountId = null, ?StatementStatus $status = null, ?\DateTime $startDate = null, ?\DateTime $endDate = null, ?float $startBalance = null, ?CreditOrDebit $startBalanceCreditOrDebit = null, ?float $endBalance = null, ?CreditOrDebit $endBalanceCreditOrDebit = null, ?array $transactions = null)
+    public function __construct(?string $bankFeedAccountId = null, ?StatementStatus $status = null, ?\DateTime $startDate = null, ?\DateTime $endDate = null, ?float $startBalance = null, ?CreditOrDebit $startBalanceCreditOrDebit = null, ?float $endBalance = null, ?CreditOrDebit $endBalanceCreditOrDebit = null, ?array $transactions = null, ?array $additionalProperties = null)
     {
         $this->bankFeedAccountId = $bankFeedAccountId;
         $this->status = $status;
@@ -119,5 +130,6 @@ class BankFeedStatementInput
         $this->endBalance = $endBalance;
         $this->endBalanceCreditOrDebit = $endBalanceCreditOrDebit;
         $this->transactions = $transactions;
+        $this->additionalProperties = $additionalProperties;
     }
 }

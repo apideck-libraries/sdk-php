@@ -13,30 +13,6 @@ class FormFieldOptionGroup
 {
     /**
      *
-     * @var string $label
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('label')]
-    public string $label;
-
-    /**
-     * $options
-     *
-     * @var array<SimpleFormFieldOption> $options
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\SimpleFormFieldOption>')]
-    public array $options;
-
-    /**
-     *
-     * @var FormFieldOptionGroupOptionType $optionType
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('option_type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\FormFieldOptionGroupOptionType')]
-    public FormFieldOptionGroupOptionType $optionType;
-
-    /**
-     *
      * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
@@ -44,17 +20,44 @@ class FormFieldOptionGroup
     public ?string $id = null;
 
     /**
-     * @param  string  $label
-     * @param  array<SimpleFormFieldOption>  $options
-     * @param  FormFieldOptionGroupOptionType  $optionType
+     *
+     * @var ?string $label
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('label')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $label = null;
+
+    /**
+     * $options
+     *
+     * @var ?array<SimpleFormFieldOption> $options
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\SimpleFormFieldOption>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $options = null;
+
+    /**
+     *
+     * @var ?FormFieldOptionGroupOptionType $optionType
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('option_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\FormFieldOptionGroupOptionType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?FormFieldOptionGroupOptionType $optionType = null;
+
+    /**
      * @param  ?string  $id
+     * @param  ?string  $label
+     * @param  ?array<SimpleFormFieldOption>  $options
+     * @param  ?FormFieldOptionGroupOptionType  $optionType
      * @phpstan-pure
      */
-    public function __construct(string $label, array $options, FormFieldOptionGroupOptionType $optionType, ?string $id = null)
+    public function __construct(?string $id = null, ?string $label = null, ?array $options = null, ?FormFieldOptionGroupOptionType $optionType = null)
     {
+        $this->id = $id;
         $this->label = $label;
         $this->options = $options;
         $this->optionType = $optionType;
-        $this->id = $id;
     }
 }

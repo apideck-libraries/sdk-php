@@ -14,11 +14,12 @@ class JournalEntryLineItemInput
     /**
      * Debit entries are considered positive, and credit entries are considered negative.
      *
-     * @var JournalEntryLineItemType $type
+     * @var ?JournalEntryLineItemType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\JournalEntryLineItemType')]
-    public JournalEntryLineItemType $type;
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\JournalEntryLineItemType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?JournalEntryLineItemType $type = null;
 
     /**
      *
@@ -30,14 +31,6 @@ class JournalEntryLineItemInput
     public ?LinkedTaxRateInput $taxRate = null;
 
     /**
-     *
-     * @var ?LinkedLedgerAccount $ledgerAccount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('ledger_account')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
-    public ?LinkedLedgerAccount $ledgerAccount;
-
-    /**
      * Worktags of the line item. This is currently only supported in Workday.
      *
      * @var ?array<?LinkedWorktag> $worktags
@@ -46,6 +39,16 @@ class JournalEntryLineItemInput
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedWorktag|null>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $worktags = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * User defined description
@@ -104,6 +107,15 @@ class JournalEntryLineItemInput
     public ?array $trackingCategories = null;
 
     /**
+     *
+     * @var ?LinkedLedgerAccount $ledgerAccount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ledger_account')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedLedgerAccount $ledgerAccount = null;
+
+    /**
      * The customer this entity is linked to.
      *
      * @var ?LinkedCustomerInput $customer
@@ -151,16 +163,17 @@ class JournalEntryLineItemInput
     public ?int $lineNumber = null;
 
     /**
-     * @param  JournalEntryLineItemType  $type
+     * @param  ?JournalEntryLineItemType  $type
      * @param  ?LinkedTaxRateInput  $taxRate
-     * @param  ?LinkedLedgerAccount  $ledgerAccount
      * @param  ?array<?LinkedWorktag>  $worktags
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $description
      * @param  ?float  $taxAmount
      * @param  ?float  $subTotal
      * @param  ?float  $totalAmount
      * @param  ?DeprecatedLinkedTrackingCategory  $trackingCategory
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
+     * @param  ?LinkedLedgerAccount  $ledgerAccount
      * @param  ?LinkedCustomerInput  $customer
      * @param  ?LinkedSupplierInput  $supplier
      * @param  ?string  $departmentId
@@ -168,18 +181,19 @@ class JournalEntryLineItemInput
      * @param  ?int  $lineNumber
      * @phpstan-pure
      */
-    public function __construct(JournalEntryLineItemType $type, ?LinkedTaxRateInput $taxRate = null, ?LinkedLedgerAccount $ledgerAccount = null, ?array $worktags = null, ?string $description = null, ?float $taxAmount = null, ?float $subTotal = null, ?float $totalAmount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?LinkedCustomerInput $customer = null, ?LinkedSupplierInput $supplier = null, ?string $departmentId = null, ?string $locationId = null, ?int $lineNumber = null)
+    public function __construct(?JournalEntryLineItemType $type = null, ?LinkedTaxRateInput $taxRate = null, ?array $worktags = null, ?array $additionalProperties = null, ?string $description = null, ?float $taxAmount = null, ?float $subTotal = null, ?float $totalAmount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?LinkedLedgerAccount $ledgerAccount = null, ?LinkedCustomerInput $customer = null, ?LinkedSupplierInput $supplier = null, ?string $departmentId = null, ?string $locationId = null, ?int $lineNumber = null)
     {
         $this->type = $type;
         $this->taxRate = $taxRate;
-        $this->ledgerAccount = $ledgerAccount;
         $this->worktags = $worktags;
+        $this->additionalProperties = $additionalProperties;
         $this->description = $description;
         $this->taxAmount = $taxAmount;
         $this->subTotal = $subTotal;
         $this->totalAmount = $totalAmount;
         $this->trackingCategory = $trackingCategory;
         $this->trackingCategories = $trackingCategories;
+        $this->ledgerAccount = $ledgerAccount;
         $this->customer = $customer;
         $this->supplier = $supplier;
         $this->departmentId = $departmentId;

@@ -63,10 +63,10 @@ class AccountingEmployee
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -79,6 +79,16 @@ class AccountingEmployee
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * The third-party API ID of original entity
@@ -298,8 +308,9 @@ class AccountingEmployee
      * @param  ?AccountingEmployeeManager  $manager
      * @param  ?array<Address>  $addresses
      * @param  ?array<PhoneNumber>  $phoneNumbers
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $downstreamId
      * @param  ?string  $displayId
      * @param  ?string  $firstName
@@ -325,7 +336,7 @@ class AccountingEmployee
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?array $emails = null, ?AccountingEmployeeManager $manager = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $displayId = null, ?string $firstName = null, ?string $lastName = null, ?string $displayName = null, ?string $employeeNumber = null, ?string $jobTitle = null, ?EmployeeStatus $status = null, ?bool $isContractor = null, ?LinkedDepartment $department = null, ?LinkedLocation $location = null, ?LocalDate $hireDate = null, ?LocalDate $terminationDate = null, ?Gender $gender = null, ?LocalDate $birthDate = null, ?LinkedSubsidiary $subsidiary = null, ?array $trackingCategories = null, ?Currency $currency = null, ?string $notes = null, ?array $customMappings = null, ?string $rowVersion = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?array $emails = null, ?AccountingEmployeeManager $manager = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $customFields = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $downstreamId = null, ?string $displayId = null, ?string $firstName = null, ?string $lastName = null, ?string $displayName = null, ?string $employeeNumber = null, ?string $jobTitle = null, ?EmployeeStatus $status = null, ?bool $isContractor = null, ?LinkedDepartment $department = null, ?LinkedLocation $location = null, ?LocalDate $hireDate = null, ?LocalDate $terminationDate = null, ?Gender $gender = null, ?LocalDate $birthDate = null, ?LinkedSubsidiary $subsidiary = null, ?array $trackingCategories = null, ?Currency $currency = null, ?string $notes = null, ?array $customMappings = null, ?string $rowVersion = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->emails = $emails;
@@ -334,6 +345,7 @@ class AccountingEmployee
         $this->phoneNumbers = $phoneNumbers;
         $this->customFields = $customFields;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->downstreamId = $downstreamId;
         $this->displayId = $displayId;
         $this->firstName = $firstName;

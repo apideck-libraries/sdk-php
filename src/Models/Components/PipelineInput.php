@@ -12,14 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class PipelineInput
 {
     /**
-     * The name of the Pipeline.
-     *
-     * @var string $name
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    public string $name;
-
-    /**
      * The unique identifier of the Pipeline.
      *
      * @var ?string $id
@@ -27,6 +19,15 @@ class PipelineInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
+
+    /**
+     * The name of the Pipeline.
+     *
+     * @var ?string $name
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $name = null;
 
     /**
      * Whether the Pipeline is archived or not.
@@ -76,6 +77,16 @@ class PipelineInput
     public ?array $passThrough = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
      * @var ?Currency $currency
@@ -95,26 +106,28 @@ class PipelineInput
     public ?int $displayOrder = null;
 
     /**
-     * @param  string  $name
      * @param  ?string  $id
+     * @param  ?string  $name
      * @param  ?bool  $archived
      * @param  ?bool  $active
      * @param  ?bool  $winProbabilityEnabled
      * @param  ?array<PipelineStages>  $stages
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?Currency  $currency
      * @param  ?int  $displayOrder
      * @phpstan-pure
      */
-    public function __construct(string $name, ?string $id = null, ?bool $archived = null, ?bool $active = null, ?bool $winProbabilityEnabled = null, ?array $stages = null, ?array $passThrough = null, ?Currency $currency = null, ?int $displayOrder = null)
+    public function __construct(?string $id = null, ?string $name = null, ?bool $archived = null, ?bool $active = null, ?bool $winProbabilityEnabled = null, ?array $stages = null, ?array $passThrough = null, ?array $additionalProperties = null, ?Currency $currency = null, ?int $displayOrder = null)
     {
-        $this->name = $name;
         $this->id = $id;
+        $this->name = $name;
         $this->archived = $archived;
         $this->active = $active;
         $this->winProbabilityEnabled = $winProbabilityEnabled;
         $this->stages = $stages;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->currency = $currency;
         $this->displayOrder = $displayOrder;
     }

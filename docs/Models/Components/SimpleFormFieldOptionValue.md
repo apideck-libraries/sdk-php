@@ -1,4 +1,4 @@
-# CustomFieldValue25
+# SimpleFormFieldOptionValue
 
 
 ## Supported Types
@@ -10,6 +10,15 @@
 * @var string
 */
 string $value = /* values here */
+```
+
+### `int`
+
+```php
+/**
+* @var int
+*/
+int $value = /* values here */
 ```
 
 ### `float`
@@ -34,7 +43,7 @@ bool $value = /* values here */
 
 ```php
 /**
-* @var array<string, mixed>
+* @var array<string|int|float>
 */
 array $value = /* values here */
 ```

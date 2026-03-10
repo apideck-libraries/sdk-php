@@ -31,6 +31,16 @@ class SharedLink
     public ?array $passThrough = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * The URL that can be used to view the file.
      *
      * @var ?string $url
@@ -96,6 +106,7 @@ class SharedLink
     /**
      * @param  ?SharedLinkTarget  $target
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $url
      * @param  ?string  $downloadUrl
      * @param  ?Scope  $scope
@@ -105,10 +116,11 @@ class SharedLink
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?SharedLinkTarget $target = null, ?array $passThrough = null, ?string $url = null, ?string $downloadUrl = null, ?Scope $scope = null, ?bool $passwordProtected = null, ?\DateTime $expiresAt = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?SharedLinkTarget $target = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $url = null, ?string $downloadUrl = null, ?Scope $scope = null, ?bool $passwordProtected = null, ?\DateTime $expiresAt = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->target = $target;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->url = $url;
         $this->downloadUrl = $downloadUrl;
         $this->scope = $scope;

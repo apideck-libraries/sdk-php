@@ -12,14 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class ExpenseCategory
 {
     /**
-     * The name of the expense category.
-     *
-     * @var string $name
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    public string $name;
-
-    /**
      * A unique identifier for an object.
      *
      * @var ?string $id
@@ -27,6 +19,15 @@ class ExpenseCategory
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
+
+    /**
+     * The name of the expense category.
+     *
+     * @var ?string $name
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $name = null;
 
     /**
      *
@@ -46,6 +47,16 @@ class ExpenseCategory
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * Id to be displayed.
@@ -185,10 +196,11 @@ class ExpenseCategory
     public ?\DateTime $createdAt = null;
 
     /**
-     * @param  string  $name
      * @param  ?string  $id
+     * @param  ?string  $name
      * @param  ?LinkedTaxRate  $taxRate
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $displayId
      * @param  ?string  $code
      * @param  ?string  $description
@@ -206,12 +218,13 @@ class ExpenseCategory
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(string $name, ?string $id = null, ?LinkedTaxRate $taxRate = null, ?array $passThrough = null, ?string $displayId = null, ?string $code = null, ?string $description = null, ?ExpenseCategoryStatus $status = null, ?LinkedLedgerAccount $account = null, ?LinkedLedgerAccount $offsetAccount = null, ?bool $rateRequired = null, ?float $defaultRate = null, ?array $customMappings = null, ?string $downstreamId = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?string $name = null, ?LinkedTaxRate $taxRate = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $displayId = null, ?string $code = null, ?string $description = null, ?ExpenseCategoryStatus $status = null, ?LinkedLedgerAccount $account = null, ?LinkedLedgerAccount $offsetAccount = null, ?bool $rateRequired = null, ?float $defaultRate = null, ?array $customMappings = null, ?string $downstreamId = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
-        $this->name = $name;
         $this->id = $id;
+        $this->name = $name;
         $this->taxRate = $taxRate;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->displayId = $displayId;
         $this->code = $code;
         $this->description = $description;

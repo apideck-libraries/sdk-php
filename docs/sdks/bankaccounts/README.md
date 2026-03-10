@@ -36,6 +36,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingBankAccountsAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     filter: new Components\BankAccountsFilter(
         name: 'Main Operating',
         accountType: Components\BankAccountsFilterAccountType::Checking,
@@ -135,7 +136,7 @@ $request = new Operations\AccountingBankAccountsAddRequest(
         status: Components\AccountingBankAccountStatus::Active,
         description: 'Primary operating account for daily transactions',
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -205,6 +206,7 @@ $request = new Operations\AccountingBankAccountsOneRequest(
         accountType: Components\BankAccountFilterAccountType::Checking,
     ),
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
 );
 
@@ -293,7 +295,7 @@ $request = new Operations\AccountingBankAccountsUpdateRequest(
         status: Components\AccountingBankAccountStatus::Active,
         description: 'Primary operating account for daily transactions',
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',

@@ -21,6 +21,16 @@ class Credentials
     public ?string $accessToken = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * The refresh token can be used to obtain a new access token.
      *
      * @var ?string $refreshToken
@@ -49,14 +59,16 @@ class Credentials
 
     /**
      * @param  ?string  $accessToken
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $refreshToken
      * @param  ?\DateTime  $issuedAt
      * @param  ?int  $expiresIn
      * @phpstan-pure
      */
-    public function __construct(?string $accessToken = null, ?string $refreshToken = null, ?\DateTime $issuedAt = null, ?int $expiresIn = null)
+    public function __construct(?string $accessToken = null, ?array $additionalProperties = null, ?string $refreshToken = null, ?\DateTime $issuedAt = null, ?int $expiresIn = null)
     {
         $this->accessToken = $accessToken;
+        $this->additionalProperties = $additionalProperties;
         $this->refreshToken = $refreshToken;
         $this->issuedAt = $issuedAt;
         $this->expiresIn = $expiresIn;

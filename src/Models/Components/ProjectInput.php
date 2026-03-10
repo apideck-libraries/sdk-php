@@ -14,10 +14,11 @@ class ProjectInput
     /**
      * Name of the project
      *
-     * @var string $name
+     * @var ?string $name
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    public string $name;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $name = null;
 
     /**
      *
@@ -51,12 +52,22 @@ class ProjectInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * User-friendly project identifier
@@ -349,11 +360,12 @@ class ProjectInput
     public ?bool $isBillable = null;
 
     /**
-     * @param  string  $name
+     * @param  ?string  $name
      * @param  ?LinkedTaxRateInput  $taxRate
      * @param  ?array<string>  $tags
      * @param  ?array<Address>  $addresses
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $displayId
      * @param  ?string  $referenceId
      * @param  ?string  $description
@@ -387,13 +399,14 @@ class ProjectInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(string $name, ?LinkedTaxRateInput $taxRate = null, ?array $tags = null, ?array $addresses = null, ?array $customFields = null, ?string $displayId = null, ?string $referenceId = null, ?string $description = null, ?ProjectProjectStatus $status = null, ?bool $active = null, ?ProjectType $projectType = null, ?Priority $priority = null, ?float $completionPercentage = null, ?LocalDate $startDate = null, ?LocalDate $endDate = null, ?LocalDate $completionDate = null, ?LinkedCustomerInput $customer = null, ?ProjectDepartment $department = null, ?string $companyId = null, ?string $ownerId = null, ?ParentProject $parentProject = null, ?Currency $currency = null, ?float $budgetAmount = null, ?float $approvedAmount = null, ?float $budgetHours = null, ?float $hourlyRate = null, ?BillingMethod $billingMethod = null, ?ProjectPhase $phase = null, ?array $trackingCategories = null, ?string $notes = null, ?string $contractNumber = null, ?float $profitMargin = null, ?ScheduleStatus $scheduleStatus = null, ?int $teamSize = null, ?string $rowVersion = null, ?bool $isBillable = true)
+    public function __construct(?string $name = null, ?LinkedTaxRateInput $taxRate = null, ?array $tags = null, ?array $addresses = null, ?array $customFields = null, ?array $additionalProperties = null, ?string $displayId = null, ?string $referenceId = null, ?string $description = null, ?ProjectProjectStatus $status = null, ?bool $active = null, ?ProjectType $projectType = null, ?Priority $priority = null, ?float $completionPercentage = null, ?LocalDate $startDate = null, ?LocalDate $endDate = null, ?LocalDate $completionDate = null, ?LinkedCustomerInput $customer = null, ?ProjectDepartment $department = null, ?string $companyId = null, ?string $ownerId = null, ?ParentProject $parentProject = null, ?Currency $currency = null, ?float $budgetAmount = null, ?float $approvedAmount = null, ?float $budgetHours = null, ?float $hourlyRate = null, ?BillingMethod $billingMethod = null, ?ProjectPhase $phase = null, ?array $trackingCategories = null, ?string $notes = null, ?string $contractNumber = null, ?float $profitMargin = null, ?ScheduleStatus $scheduleStatus = null, ?int $teamSize = null, ?string $rowVersion = null, ?bool $isBillable = true)
     {
         $this->name = $name;
         $this->taxRate = $taxRate;
         $this->tags = $tags;
         $this->addresses = $addresses;
         $this->customFields = $customFields;
+        $this->additionalProperties = $additionalProperties;
         $this->displayId = $displayId;
         $this->referenceId = $referenceId;
         $this->description = $description;

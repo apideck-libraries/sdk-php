@@ -12,6 +12,16 @@ namespace Apideck\Unify\Models\Components;
 class CollectionUser
 {
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * A unique identifier for an object.
      *
      * @var ?string $id
@@ -94,6 +104,7 @@ class CollectionUser
     public ?\DateTime $createdAt = null;
 
     /**
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $id
      * @param  ?string  $name
      * @param  ?string  $firstName
@@ -105,8 +116,9 @@ class CollectionUser
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $photoUrl = null, ?array $customMappings = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?array $additionalProperties = null, ?string $id = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $photoUrl = null, ?array $customMappings = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
+        $this->additionalProperties = $additionalProperties;
         $this->id = $id;
         $this->name = $name;
         $this->firstName = $firstName;

@@ -58,6 +58,16 @@ class BillLineItem
     public ?array $worktags = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * User defined item code
      *
      * @var ?string $code
@@ -362,6 +372,7 @@ class BillLineItem
      * @param  ?LinkedInvoiceItem  $item
      * @param  ?LinkedTaxRate  $taxRate
      * @param  ?array<?LinkedWorktag>  $worktags
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $code
      * @param  ?int  $lineNumber
      * @param  ?string  $description
@@ -397,13 +408,14 @@ class BillLineItem
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRate $taxRate = null, ?array $worktags = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?LineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $locationId = null, ?string $departmentId = null, ?string $subsidiaryId = null, ?string $categoryId = null, ?string $shippingId = null, ?string $memo = null, ?bool $prepaid = null, ?string $taxApplicableOn = null, ?string $taxRecoverability = null, ?string $taxMethod = null, ?float $retentionAmount = null, ?float $paymentAmount = null, ?LinkedLedgerAccount $ledgerAccount = null, ?LinkedPurchaseOrder $purchaseOrder = null, ?array $trackingCategories = null, ?LinkedCustomer $customer = null, ?Rebilling $rebilling = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(?string $id = null, ?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRate $taxRate = null, ?array $worktags = null, ?array $additionalProperties = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?LineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $locationId = null, ?string $departmentId = null, ?string $subsidiaryId = null, ?string $categoryId = null, ?string $shippingId = null, ?string $memo = null, ?bool $prepaid = null, ?string $taxApplicableOn = null, ?string $taxRecoverability = null, ?string $taxMethod = null, ?float $retentionAmount = null, ?float $paymentAmount = null, ?LinkedLedgerAccount $ledgerAccount = null, ?LinkedPurchaseOrder $purchaseOrder = null, ?array $trackingCategories = null, ?LinkedCustomer $customer = null, ?Rebilling $rebilling = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
         $this->rowId = $rowId;
         $this->item = $item;
         $this->taxRate = $taxRate;
         $this->worktags = $worktags;
+        $this->additionalProperties = $additionalProperties;
         $this->code = $code;
         $this->lineNumber = $lineNumber;
         $this->description = $description;

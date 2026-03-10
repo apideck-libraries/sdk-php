@@ -14,10 +14,11 @@ class LinkedFolder
     /**
      * A unique identifier for an object.
      *
-     * @var string $id
+     * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public string $id;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
 
     /**
      * The name of the folder
@@ -29,11 +30,11 @@ class LinkedFolder
     public ?string $name = null;
 
     /**
-     * @param  string  $id
+     * @param  ?string  $id
      * @param  ?string  $name
      * @phpstan-pure
      */
-    public function __construct(string $id, ?string $name = null)
+    public function __construct(?string $id = null, ?string $name = null)
     {
         $this->id = $id;
         $this->name = $name;

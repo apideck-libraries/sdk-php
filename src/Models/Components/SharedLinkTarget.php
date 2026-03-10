@@ -14,10 +14,21 @@ class SharedLinkTarget
     /**
      * A unique identifier for an object.
      *
-     * @var string $id
+     * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public string $id;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * The name of the file
@@ -39,14 +50,16 @@ class SharedLinkTarget
     public ?FileType $type = null;
 
     /**
-     * @param  string  $id
+     * @param  ?string  $id
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $name
      * @param  ?FileType  $type
      * @phpstan-pure
      */
-    public function __construct(string $id, ?string $name = null, ?FileType $type = null)
+    public function __construct(?string $id = null, ?array $additionalProperties = null, ?string $name = null, ?FileType $type = null)
     {
         $this->id = $id;
+        $this->additionalProperties = $additionalProperties;
         $this->name = $name;
         $this->type = $type;
     }

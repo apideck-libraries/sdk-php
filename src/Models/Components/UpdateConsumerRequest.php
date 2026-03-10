@@ -22,11 +22,23 @@ class UpdateConsumerRequest
     public ?ConsumerMetadata $metadata = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * @param  ?ConsumerMetadata  $metadata
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(?ConsumerMetadata $metadata = null)
+    public function __construct(?ConsumerMetadata $metadata = null, ?array $additionalProperties = null)
     {
         $this->metadata = $metadata;
+        $this->additionalProperties = $additionalProperties;
     }
 }

@@ -57,6 +57,16 @@ class UploadSession
     public ?string $uploadedByteRange = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      *
      * @var ?\DateTime $expiresAt
      */
@@ -70,16 +80,18 @@ class UploadSession
      * @param  ?float  $partSize
      * @param  ?bool  $parallelUploadSupported
      * @param  ?string  $uploadedByteRange
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?\DateTime  $expiresAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?bool $success = null, ?float $partSize = null, ?bool $parallelUploadSupported = null, ?string $uploadedByteRange = null, ?\DateTime $expiresAt = null)
+    public function __construct(?string $id = null, ?bool $success = null, ?float $partSize = null, ?bool $parallelUploadSupported = null, ?string $uploadedByteRange = null, ?array $additionalProperties = null, ?\DateTime $expiresAt = null)
     {
         $this->id = $id;
         $this->success = $success;
         $this->partSize = $partSize;
         $this->parallelUploadSupported = $parallelUploadSupported;
         $this->uploadedByteRange = $uploadedByteRange;
+        $this->additionalProperties = $additionalProperties;
         $this->expiresAt = $expiresAt;
     }
 }

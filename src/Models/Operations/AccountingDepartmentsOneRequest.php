@@ -44,6 +44,14 @@ class AccountingDepartmentsOneRequest
     public ?string $serviceId = null;
 
     /**
+     * The ID of the company to scope requests to. For connectors that support multi-company, this overrides the default company configured in connection settings.
+     *
+     * @var ?string $companyId
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-apideck-company-id')]
+    public ?string $companyId = null;
+
+    /**
      * The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
      *
      * @var ?string $fields
@@ -64,16 +72,18 @@ class AccountingDepartmentsOneRequest
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId
+     * @param  ?string  $companyId
      * @param  ?bool  $raw
      * @param  ?string  $fields
      * @phpstan-pure
      */
-    public function __construct(string $id, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $fields = null, ?bool $raw = false)
+    public function __construct(string $id, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $companyId = null, ?string $fields = null, ?bool $raw = false)
     {
         $this->id = $id;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
+        $this->companyId = $companyId;
         $this->fields = $fields;
         $this->raw = $raw;
     }

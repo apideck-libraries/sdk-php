@@ -12,15 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class ActivityInput
 {
     /**
-     * The type of the activity
-     *
-     * @var ?ActivityType $type
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ActivityType|null')]
-    public ?ActivityType $type;
-
-    /**
      *
      * @var ?Address $locationAddress
      */
@@ -41,10 +32,10 @@ class ActivityInput
     /**
      * Custom fields of the activity
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -67,6 +58,16 @@ class ActivityInput
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * The date and time of the activity
@@ -211,6 +212,16 @@ class ActivityInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_object_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $customObjectId = null;
+
+    /**
+     * The type of the activity
+     *
+     * @var ?ActivityType $type
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ActivityType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ActivityType $type = null;
 
     /**
      * The title of the activity
@@ -411,12 +422,12 @@ class ActivityInput
     public ?string $videoConferenceId = null;
 
     /**
-     * @param  ?ActivityType  $type
      * @param  ?Address  $locationAddress
      * @param  ?bool  $recurrent
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<ActivityAttendeeInput>  $attendees
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $activityDatetime
      * @param  ?int  $durationSeconds
      * @param  ?string  $userId
@@ -433,6 +444,7 @@ class ActivityInput
      * @param  ?string  $productId
      * @param  ?string  $solutionId
      * @param  ?string  $customObjectId
+     * @param  ?ActivityType  $type
      * @param  ?string  $title
      * @param  ?string  $description
      * @param  ?string  $note
@@ -457,14 +469,14 @@ class ActivityInput
      * @param  ?string  $videoConferenceId
      * @phpstan-pure
      */
-    public function __construct(?ActivityType $type = null, ?Address $locationAddress = null, ?bool $recurrent = null, ?array $customFields = null, ?array $attendees = null, ?array $passThrough = null, ?string $activityDatetime = null, ?int $durationSeconds = null, ?string $userId = null, ?string $accountId = null, ?string $contactId = null, ?string $companyId = null, ?string $opportunityId = null, ?string $leadId = null, ?string $ownerId = null, ?string $campaignId = null, ?string $caseId = null, ?string $assetId = null, ?string $contractId = null, ?string $productId = null, ?string $solutionId = null, ?string $customObjectId = null, ?string $title = null, ?string $description = null, ?string $note = null, ?string $location = null, ?bool $allDayEvent = null, ?bool $private = null, ?bool $groupEvent = null, ?string $eventSubType = null, ?string $groupEventType = null, ?bool $child = null, ?bool $archived = null, ?bool $deleted = null, ?ShowAs $showAs = null, ?bool $done = null, ?string $startDatetime = null, ?string $endDatetime = null, ?string $activityDate = null, ?string $endDate = null, ?string $reminderDatetime = null, ?bool $reminderSet = null, ?string $videoConferenceUrl = null, ?string $videoConferenceId = null)
+    public function __construct(?Address $locationAddress = null, ?bool $recurrent = null, ?array $customFields = null, ?array $attendees = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $activityDatetime = null, ?int $durationSeconds = null, ?string $userId = null, ?string $accountId = null, ?string $contactId = null, ?string $companyId = null, ?string $opportunityId = null, ?string $leadId = null, ?string $ownerId = null, ?string $campaignId = null, ?string $caseId = null, ?string $assetId = null, ?string $contractId = null, ?string $productId = null, ?string $solutionId = null, ?string $customObjectId = null, ?ActivityType $type = null, ?string $title = null, ?string $description = null, ?string $note = null, ?string $location = null, ?bool $allDayEvent = null, ?bool $private = null, ?bool $groupEvent = null, ?string $eventSubType = null, ?string $groupEventType = null, ?bool $child = null, ?bool $archived = null, ?bool $deleted = null, ?ShowAs $showAs = null, ?bool $done = null, ?string $startDatetime = null, ?string $endDatetime = null, ?string $activityDate = null, ?string $endDate = null, ?string $reminderDatetime = null, ?bool $reminderSet = null, ?string $videoConferenceUrl = null, ?string $videoConferenceId = null)
     {
-        $this->type = $type;
         $this->locationAddress = $locationAddress;
         $this->recurrent = $recurrent;
         $this->customFields = $customFields;
         $this->attendees = $attendees;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->activityDatetime = $activityDatetime;
         $this->durationSeconds = $durationSeconds;
         $this->userId = $userId;
@@ -481,6 +493,7 @@ class ActivityInput
         $this->productId = $productId;
         $this->solutionId = $solutionId;
         $this->customObjectId = $customObjectId;
+        $this->type = $type;
         $this->title = $title;
         $this->description = $description;
         $this->note = $note;

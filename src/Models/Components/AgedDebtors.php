@@ -40,6 +40,16 @@ class AgedDebtors
     public ?array $outstandingBalances = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * Number of aging periods shown in the report.
      *
      * @var ?int $periodCount
@@ -63,13 +73,15 @@ class AgedDebtors
      * @param  ?int  $periodCount
      * @param  ?int  $periodLength
      * @param  ?array<OutstandingBalanceByCustomer>  $outstandingBalances
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $reportGeneratedAt = null, ?LocalDate $reportAsOfDate = null, ?array $outstandingBalances = null, ?int $periodCount = 4, ?int $periodLength = 30)
+    public function __construct(?\DateTime $reportGeneratedAt = null, ?LocalDate $reportAsOfDate = null, ?array $outstandingBalances = null, ?array $additionalProperties = null, ?int $periodCount = 4, ?int $periodLength = 30)
     {
         $this->reportGeneratedAt = $reportGeneratedAt;
         $this->reportAsOfDate = $reportAsOfDate;
         $this->outstandingBalances = $outstandingBalances;
+        $this->additionalProperties = $additionalProperties;
         $this->periodCount = $periodCount;
         $this->periodLength = $periodLength;
     }

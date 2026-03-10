@@ -60,10 +60,10 @@ class PurchaseOrder
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -76,6 +76,16 @@ class PurchaseOrder
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passThrough = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * The third-party API ID of original entity
@@ -314,6 +324,15 @@ class PurchaseOrder
     public ?string $terms = null;
 
     /**
+     * The ID of the payment terms
+     *
+     * @var ?string $termsId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('terms_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $termsId = null;
+
+    /**
      * Type of amortization
      *
      * @var ?PurchaseOrderAmortizationType $amortizationType
@@ -457,8 +476,9 @@ class PurchaseOrder
      * @param  ?Address  $billingAddress
      * @param  ?Address  $shippingAddress
      * @param  ?BankAccount  $bankAccount
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $downstreamId
      * @param  ?string  $displayId
      * @param  ?string  $poNumber
@@ -485,6 +505,7 @@ class PurchaseOrder
      * @param  ?LocalDate  $dueDate
      * @param  ?string  $paymentMethod
      * @param  ?string  $terms
+     * @param  ?string  $termsId
      * @param  ?PurchaseOrderAmortizationType  $amortizationType
      * @param  ?string  $taxCode
      * @param  ?string  $taxMethod
@@ -502,7 +523,7 @@ class PurchaseOrder
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?array $lineItems = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $displayId = null, ?string $poNumber = null, ?string $reference = null, ?LinkedSupplier $supplier = null, ?string $subsidiaryId = null, ?string $companyId = null, ?string $locationId = null, ?string $departmentId = null, ?PurchaseOrderStatus $status = null, ?LocalDate $issuedDate = null, ?LocalDate $deliveryDate = null, ?LocalDate $expectedArrivalDate = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?bool $taxInclusive = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $templateId = null, ?float $discountPercentage = null, ?bool $accountingByRow = null, ?LocalDate $dueDate = null, ?string $paymentMethod = null, ?string $terms = null, ?PurchaseOrderAmortizationType $amortizationType = null, ?string $taxCode = null, ?string $taxMethod = null, ?string $issuedMethod = null, ?string $issuedEmail = null, ?string $channel = null, ?string $memo = null, ?string $notes = null, ?array $trackingCategories = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?array $lineItems = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?array $additionalProperties = null, ?string $downstreamId = null, ?string $displayId = null, ?string $poNumber = null, ?string $reference = null, ?LinkedSupplier $supplier = null, ?string $subsidiaryId = null, ?string $companyId = null, ?string $locationId = null, ?string $departmentId = null, ?PurchaseOrderStatus $status = null, ?LocalDate $issuedDate = null, ?LocalDate $deliveryDate = null, ?LocalDate $expectedArrivalDate = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?bool $taxInclusive = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $templateId = null, ?float $discountPercentage = null, ?bool $accountingByRow = null, ?LocalDate $dueDate = null, ?string $paymentMethod = null, ?string $terms = null, ?string $termsId = null, ?PurchaseOrderAmortizationType $amortizationType = null, ?string $taxCode = null, ?string $taxMethod = null, ?string $issuedMethod = null, ?string $issuedEmail = null, ?string $channel = null, ?string $memo = null, ?string $notes = null, ?array $trackingCategories = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->lineItems = $lineItems;
@@ -511,6 +532,7 @@ class PurchaseOrder
         $this->bankAccount = $bankAccount;
         $this->customFields = $customFields;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->downstreamId = $downstreamId;
         $this->displayId = $displayId;
         $this->poNumber = $poNumber;
@@ -537,6 +559,7 @@ class PurchaseOrder
         $this->dueDate = $dueDate;
         $this->paymentMethod = $paymentMethod;
         $this->terms = $terms;
+        $this->termsId = $termsId;
         $this->amortizationType = $amortizationType;
         $this->taxCode = $taxCode;
         $this->taxMethod = $taxMethod;

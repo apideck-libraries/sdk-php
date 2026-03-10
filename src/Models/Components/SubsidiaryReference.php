@@ -21,6 +21,16 @@ class SubsidiaryReference
     public ?string $id = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * The name of the company.
      *
      * @var ?string $name
@@ -31,12 +41,14 @@ class SubsidiaryReference
 
     /**
      * @param  ?string  $id
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $name
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null)
+    public function __construct(?string $id = null, ?array $additionalProperties = null, ?string $name = null)
     {
         $this->id = $id;
+        $this->additionalProperties = $additionalProperties;
         $this->name = $name;
     }
 }

@@ -14,10 +14,21 @@ class Collection
     /**
      * A unique identifier for an object.
      *
-     * @var string $id
+     * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public string $id;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * The collections's parent ID
@@ -84,7 +95,8 @@ class Collection
     public ?\DateTime $createdAt = null;
 
     /**
-     * @param  string  $id
+     * @param  ?string  $id
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $parentId
      * @param  ?string  $type
      * @param  ?string  $name
@@ -94,9 +106,10 @@ class Collection
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(string $id, ?string $parentId = null, ?string $type = null, ?string $name = null, ?string $description = null, ?array $customMappings = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?array $additionalProperties = null, ?string $parentId = null, ?string $type = null, ?string $name = null, ?string $description = null, ?array $customMappings = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
+        $this->additionalProperties = $additionalProperties;
         $this->parentId = $parentId;
         $this->type = $type;
         $this->name = $name;

@@ -31,6 +31,16 @@ class BalanceByPeriod
     public ?array $balancesByTransaction = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * The starting date of the period. If not provided, it represents the oldest period, where all transactions due before the specified `end_date` are included.
      *
      * @var ?LocalDate $startDate
@@ -51,14 +61,16 @@ class BalanceByPeriod
     /**
      * @param  ?float  $totalAmount
      * @param  ?array<BalanceByTransaction>  $balancesByTransaction
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?LocalDate  $startDate
      * @param  ?LocalDate  $endDate
      * @phpstan-pure
      */
-    public function __construct(?float $totalAmount = null, ?array $balancesByTransaction = null, ?LocalDate $startDate = null, ?LocalDate $endDate = null)
+    public function __construct(?float $totalAmount = null, ?array $balancesByTransaction = null, ?array $additionalProperties = null, ?LocalDate $startDate = null, ?LocalDate $endDate = null)
     {
         $this->totalAmount = $totalAmount;
         $this->balancesByTransaction = $balancesByTransaction;
+        $this->additionalProperties = $additionalProperties;
         $this->startDate = $startDate;
         $this->endDate = $endDate;
     }

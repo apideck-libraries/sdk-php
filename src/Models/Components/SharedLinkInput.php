@@ -12,14 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class SharedLinkInput
 {
     /**
-     * The ID of the file or folder to link.
-     *
-     * @var ?string $targetId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('target_id')]
-    public ?string $targetId;
-
-    /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
      * @var ?array<PassThroughBody> $passThrough
@@ -30,6 +22,16 @@ class SharedLinkInput
     public ?array $passThrough = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * The URL that can be used to download the file.
      *
      * @var ?string $downloadUrl
@@ -37,6 +39,15 @@ class SharedLinkInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('download_url')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $downloadUrl = null;
+
+    /**
+     * The ID of the file or folder to link.
+     *
+     * @var ?string $targetId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('target_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $targetId = null;
 
     /**
      * The scope of the shared link.
@@ -58,18 +69,20 @@ class SharedLinkInput
     public ?string $password = null;
 
     /**
-     * @param  ?string  $targetId
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $downloadUrl
+     * @param  ?string  $targetId
      * @param  ?Scope  $scope
      * @param  ?string  $password
      * @phpstan-pure
      */
-    public function __construct(?string $targetId = null, ?array $passThrough = null, ?string $downloadUrl = null, ?Scope $scope = null, ?string $password = null)
+    public function __construct(?array $passThrough = null, ?array $additionalProperties = null, ?string $downloadUrl = null, ?string $targetId = null, ?Scope $scope = null, ?string $password = null)
     {
-        $this->targetId = $targetId;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->downloadUrl = $downloadUrl;
+        $this->targetId = $targetId;
         $this->scope = $scope;
         $this->password = $password;
     }

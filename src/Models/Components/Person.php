@@ -12,6 +12,16 @@ use Brick\DateTime\LocalDate;
 class Person
 {
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * A unique identifier for an object.
      *
      * @var ?string $id
@@ -95,6 +105,7 @@ class Person
     public ?array $customMappings = null;
 
     /**
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $id
      * @param  ?string  $firstName
      * @param  ?string  $lastName
@@ -106,8 +117,9 @@ class Person
      * @param  ?array<string, mixed>  $customMappings
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $firstName = null, ?string $lastName = null, ?string $middleName = null, ?Gender $gender = null, ?string $initials = null, ?LocalDate $birthday = null, ?LocalDate $deceasedOn = null, ?array $customMappings = null)
+    public function __construct(?array $additionalProperties = null, ?string $id = null, ?string $firstName = null, ?string $lastName = null, ?string $middleName = null, ?Gender $gender = null, ?string $initials = null, ?LocalDate $birthday = null, ?LocalDate $deceasedOn = null, ?array $customMappings = null)
     {
+        $this->additionalProperties = $additionalProperties;
         $this->id = $id;
         $this->firstName = $firstName;
         $this->lastName = $lastName;

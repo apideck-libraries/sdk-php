@@ -14,10 +14,11 @@ class Supplier
     /**
      * A unique identifier for an object.
      *
-     * @var string $id
+     * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public string $id;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
 
     /**
      * $addresses
@@ -81,10 +82,10 @@ class Supplier
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<CustomField> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -135,6 +136,16 @@ class Supplier
     #[\Speakeasy\Serializer\Annotation\SerializedName('integration_system_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $integrationSystemId = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * The third-party API ID of original entity
@@ -317,6 +328,15 @@ class Supplier
     public ?string $terms = null;
 
     /**
+     * The ID of the payment terms
+     *
+     * @var ?string $termsId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('terms_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $termsId = null;
+
+    /**
      * The channel through which the transaction is processed.
      *
      * @var ?string $channel
@@ -399,19 +419,20 @@ class Supplier
     public ?string $rowVersion = null;
 
     /**
-     * @param  string  $id
+     * @param  ?string  $id
      * @param  ?array<Address>  $addresses
      * @param  ?array<PhoneNumber>  $phoneNumbers
      * @param  ?array<Email>  $emails
      * @param  ?array<Website>  $websites
      * @param  ?array<BankAccount>  $bankAccounts
      * @param  ?LinkedTaxRate  $taxRate
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<CustomField>  $customFields
      * @param  ?array<?LinkedTaxDetail>  $taxDetails
      * @param  ?array<?LinkedTaxStatusDetail>  $taxStatusDetails
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $subsidiaryId
      * @param  ?string  $integrationSystemId
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $downstreamId
      * @param  ?string  $displayId
      * @param  ?string  $displayName
@@ -432,6 +453,7 @@ class Supplier
      * @param  ?SupplierStatus  $status
      * @param  ?string  $paymentMethod
      * @param  ?string  $terms
+     * @param  ?string  $termsId
      * @param  ?string  $channel
      * @param  ?string  $issuedMethod
      * @param  ?string  $issuedEmail
@@ -443,7 +465,7 @@ class Supplier
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(string $id, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?array $taxDetails = null, ?array $taxStatusDetails = null, ?array $passThrough = null, ?string $subsidiaryId = null, ?string $integrationSystemId = null, ?string $downstreamId = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $supplierCategory = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?string $notes = null, ?string $taxNumber = null, ?bool $taxable = null, ?Currency $currency = null, ?LinkedLedgerAccount $account = null, ?SupplierStatus $status = null, ?string $paymentMethod = null, ?string $terms = null, ?string $channel = null, ?string $issuedMethod = null, ?string $issuedEmail = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null)
+    public function __construct(?string $id = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?array $taxDetails = null, ?array $taxStatusDetails = null, ?array $passThrough = null, ?string $subsidiaryId = null, ?string $integrationSystemId = null, ?array $additionalProperties = null, ?string $downstreamId = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $supplierCategory = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?string $notes = null, ?string $taxNumber = null, ?bool $taxable = null, ?Currency $currency = null, ?LinkedLedgerAccount $account = null, ?SupplierStatus $status = null, ?string $paymentMethod = null, ?string $terms = null, ?string $termsId = null, ?string $channel = null, ?string $issuedMethod = null, ?string $issuedEmail = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null)
     {
         $this->id = $id;
         $this->addresses = $addresses;
@@ -458,6 +480,7 @@ class Supplier
         $this->passThrough = $passThrough;
         $this->subsidiaryId = $subsidiaryId;
         $this->integrationSystemId = $integrationSystemId;
+        $this->additionalProperties = $additionalProperties;
         $this->downstreamId = $downstreamId;
         $this->displayId = $displayId;
         $this->displayName = $displayName;
@@ -478,6 +501,7 @@ class Supplier
         $this->status = $status;
         $this->paymentMethod = $paymentMethod;
         $this->terms = $terms;
+        $this->termsId = $termsId;
         $this->channel = $channel;
         $this->issuedMethod = $issuedMethod;
         $this->issuedEmail = $issuedEmail;

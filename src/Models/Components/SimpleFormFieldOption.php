@@ -13,18 +13,11 @@ class SimpleFormFieldOption
 {
     /**
      *
-     * @var string $label
+     * @var ?string $label
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('label')]
-    public string $label;
-
-    /**
-     *
-     * @var OptionType $optionType
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('option_type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\OptionType')]
-    public OptionType $optionType;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $label = null;
 
     /**
      *
@@ -36,15 +29,24 @@ class SimpleFormFieldOption
     public string|int|float|bool|array|null $value = null;
 
     /**
-     * @param  string  $label
-     * @param  OptionType  $optionType
+     *
+     * @var ?OptionType $optionType
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('option_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\OptionType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?OptionType $optionType = null;
+
+    /**
+     * @param  ?string  $label
      * @param  string|int|float|bool|array<string|int|float>|null  $value
+     * @param  ?OptionType  $optionType
      * @phpstan-pure
      */
-    public function __construct(string $label, OptionType $optionType, string|int|float|bool|array|null $value = null)
+    public function __construct(?string $label = null, string|int|float|bool|array|null $value = null, ?OptionType $optionType = null)
     {
         $this->label = $label;
-        $this->optionType = $optionType;
         $this->value = $value;
+        $this->optionType = $optionType;
     }
 }

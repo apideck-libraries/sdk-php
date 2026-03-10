@@ -49,17 +49,29 @@ class PassThroughBody
     public ?array $extendPaths = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * @param  string  $serviceId
      * @param  ?string  $operationId
      * @param  ?array<string, mixed>  $extendObject
      * @param  ?array<ExtendPaths>  $extendPaths
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(string $serviceId, ?string $operationId = null, ?array $extendObject = null, ?array $extendPaths = null)
+    public function __construct(string $serviceId, ?string $operationId = null, ?array $extendObject = null, ?array $extendPaths = null, ?array $additionalProperties = null)
     {
         $this->serviceId = $serviceId;
         $this->operationId = $operationId;
         $this->extendObject = $extendObject;
         $this->extendPaths = $extendPaths;
+        $this->additionalProperties = $additionalProperties;
     }
 }

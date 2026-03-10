@@ -14,10 +14,11 @@ class Consumer
     /**
      * Unique consumer identifier. You can freely choose a consumer ID yourself. Most of the time, this is an ID of your internal data model that represents a user or account in your system (for example account:12345). If the consumer doesn't exist yet, Vault will upsert a consumer based on your ID.
      *
-     * @var string $consumerId
+     * @var ?string $consumerId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('consumer_id')]
-    public string $consumerId;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $consumerId = null;
 
     /**
      * ID of your Apideck Application
@@ -100,7 +101,7 @@ class Consumer
     public ?string $requestCountUpdated = null;
 
     /**
-     * @param  string  $consumerId
+     * @param  ?string  $consumerId
      * @param  ?string  $applicationId
      * @param  ?ConsumerMetadata  $metadata
      * @param  ?array<ConsumerConnection>  $connections
@@ -112,7 +113,7 @@ class Consumer
      * @param  ?string  $requestCountUpdated
      * @phpstan-pure
      */
-    public function __construct(string $consumerId, ?string $applicationId = null, ?ConsumerMetadata $metadata = null, ?array $connections = null, ?array $services = null, ?float $aggregatedRequestCount = null, ?RequestCountAllocation $requestCounts = null, ?string $created = null, ?string $modified = null, ?string $requestCountUpdated = null)
+    public function __construct(?string $consumerId = null, ?string $applicationId = null, ?ConsumerMetadata $metadata = null, ?array $connections = null, ?array $services = null, ?float $aggregatedRequestCount = null, ?RequestCountAllocation $requestCounts = null, ?string $created = null, ?string $modified = null, ?string $requestCountUpdated = null)
     {
         $this->consumerId = $consumerId;
         $this->applicationId = $applicationId;

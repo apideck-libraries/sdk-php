@@ -14,26 +14,20 @@ class MessageInput
     /**
      * The phone number that initiated the message.
      *
-     * @var string $from
+     * @var ?string $from
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('from')]
-    public string $from;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $from = null;
 
     /**
      * The phone number that received the message.
      *
-     * @var string $to
+     * @var ?string $to
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('to')]
-    public string $to;
-
-    /**
-     * The message text.
-     *
-     * @var string $body
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('body')]
-    public string $body;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $to = null;
 
     /**
      *
@@ -42,6 +36,15 @@ class MessageInput
     #[\Speakeasy\Serializer\Annotation\SerializedName('subject')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $subject = null;
+
+    /**
+     * The message text.
+     *
+     * @var ?string $body
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('body')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $body = null;
 
     /**
      * Set to sms for SMS messages and mms for MMS messages.
@@ -100,29 +103,41 @@ class MessageInput
     public ?array $passThrough = null;
 
     /**
-     * @param  string  $from
-     * @param  string  $to
-     * @param  string  $body
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
+     * @param  ?string  $from
+     * @param  ?string  $to
      * @param  ?string  $subject
+     * @param  ?string  $body
      * @param  ?MessageType  $type
      * @param  ?\DateTime  $scheduledAt
      * @param  ?string  $webhookUrl
      * @param  ?string  $reference
      * @param  ?string  $messagingServiceId
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(string $from, string $to, string $body, ?string $subject = null, ?MessageType $type = null, ?\DateTime $scheduledAt = null, ?string $webhookUrl = null, ?string $reference = null, ?string $messagingServiceId = null, ?array $passThrough = null)
+    public function __construct(?string $from = null, ?string $to = null, ?string $subject = null, ?string $body = null, ?MessageType $type = null, ?\DateTime $scheduledAt = null, ?string $webhookUrl = null, ?string $reference = null, ?string $messagingServiceId = null, ?array $passThrough = null, ?array $additionalProperties = null)
     {
         $this->from = $from;
         $this->to = $to;
-        $this->body = $body;
         $this->subject = $subject;
+        $this->body = $body;
         $this->type = $type;
         $this->scheduledAt = $scheduledAt;
         $this->webhookUrl = $webhookUrl;
         $this->reference = $reference;
         $this->messagingServiceId = $messagingServiceId;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
     }
 }

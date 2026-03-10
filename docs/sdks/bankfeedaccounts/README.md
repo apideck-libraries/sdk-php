@@ -35,6 +35,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingBankFeedAccountsAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     passThrough: [
         'search' => 'San Francisco',
     ],
@@ -110,19 +111,19 @@ $request = new Operations\AccountingBankFeedAccountsAddRequest(
         feedStatus: Components\FeedStatus::Pending,
         country: 'US',
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
@@ -188,6 +189,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingBankFeedAccountsOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
 );
 
@@ -258,13 +260,13 @@ $request = new Operations\AccountingBankFeedAccountsUpdateRequest(
         feedStatus: Components\FeedStatus::Pending,
         country: 'US',
         customFields: [
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',
                 value: 'Uses Salesforce and Marketo',
             ),
-            new Components\CustomField1(
+            new Components\CustomField(
                 id: '2389328923893298',
                 name: 'employee_level',
                 description: 'Employee Level',

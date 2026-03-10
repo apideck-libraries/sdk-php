@@ -14,10 +14,11 @@ class EcommerceProduct
     /**
      * A unique identifier for an object.
      *
-     * @var string $id
+     * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public string $id;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
 
     /**
      * An array of options for the product.
@@ -58,6 +59,16 @@ class EcommerceProduct
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceProductCategories>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $categories = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * The name of the product as it should be displayed to customers.
@@ -171,11 +182,12 @@ class EcommerceProduct
     public ?\DateTime $updatedAt = null;
 
     /**
-     * @param  string  $id
+     * @param  ?string  $id
      * @param  ?array<EcommerceProductOptions>  $options
      * @param  ?array<Variants>  $variants
      * @param  ?array<?string>  $tags
      * @param  ?array<EcommerceProductCategories>  $categories
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $name
      * @param  ?string  $description
      * @param  ?ProductStatus  $status
@@ -190,13 +202,14 @@ class EcommerceProduct
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, ?array $options = null, ?array $variants = null, ?array $tags = null, ?array $categories = null, ?string $name = null, ?string $description = null, ?ProductStatus $status = null, ?string $price = null, ?string $sku = null, ?string $inventoryQuantity = null, ?array $images = null, ?string $weight = null, ?string $weightUnit = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(?string $id = null, ?array $options = null, ?array $variants = null, ?array $tags = null, ?array $categories = null, ?array $additionalProperties = null, ?string $name = null, ?string $description = null, ?ProductStatus $status = null, ?string $price = null, ?string $sku = null, ?string $inventoryQuantity = null, ?array $images = null, ?string $weight = null, ?string $weightUnit = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
         $this->options = $options;
         $this->variants = $variants;
         $this->tags = $tags;
         $this->categories = $categories;
+        $this->additionalProperties = $additionalProperties;
         $this->name = $name;
         $this->description = $description;
         $this->status = $status;

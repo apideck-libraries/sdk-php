@@ -55,19 +55,31 @@ class CreateUploadSessionRequest
     public ?array $passThrough = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * @param  string  $name
      * @param  string  $parentFolderId
      * @param  ?string  $driveId
      * @param  ?int  $size
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(string $name, string $parentFolderId, ?string $driveId = null, ?int $size = null, ?array $passThrough = null)
+    public function __construct(string $name, string $parentFolderId, ?string $driveId = null, ?int $size = null, ?array $passThrough = null, ?array $additionalProperties = null)
     {
         $this->name = $name;
         $this->parentFolderId = $parentFolderId;
         $this->driveId = $driveId;
         $this->size = $size;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
     }
 }

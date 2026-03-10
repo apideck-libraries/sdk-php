@@ -12,30 +12,6 @@ namespace Apideck\Unify\Models\Components;
 class Message
 {
     /**
-     * The phone number that initiated the message.
-     *
-     * @var string $from
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('from')]
-    public string $from;
-
-    /**
-     * The phone number that received the message.
-     *
-     * @var string $to
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('to')]
-    public string $to;
-
-    /**
-     * The message text.
-     *
-     * @var string $body
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('body')]
-    public string $body;
-
-    /**
      * A unique identifier for an object.
      *
      * @var ?string $id
@@ -45,12 +21,39 @@ class Message
     public ?string $id = null;
 
     /**
+     * The phone number that initiated the message.
+     *
+     * @var ?string $from
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('from')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $from = null;
+
+    /**
+     * The phone number that received the message.
+     *
+     * @var ?string $to
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('to')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $to = null;
+
+    /**
      *
      * @var ?string $subject
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subject')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $subject = null;
+
+    /**
+     * The message text.
+     *
+     * @var ?string $body
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('body')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $body = null;
 
     /**
      * Set to sms for SMS messages and mms for MMS messages.
@@ -176,6 +179,16 @@ class Message
     public ?array $passThrough = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * When custom mappings are configured on the resource, the result is included here.
      *
      * @var ?array<string, mixed> $customMappings
@@ -222,11 +235,11 @@ class Message
     public ?\DateTime $createdAt = null;
 
     /**
-     * @param  string  $from
-     * @param  string  $to
-     * @param  string  $body
      * @param  ?string  $id
+     * @param  ?string  $from
+     * @param  ?string  $to
      * @param  ?string  $subject
+     * @param  ?string  $body
      * @param  ?MessageType  $type
      * @param  ?int  $numberOfUnits
      * @param  ?int  $numberOfMediaFiles
@@ -240,6 +253,7 @@ class Message
      * @param  ?Error  $error
      * @param  ?string  $messagingServiceId
      * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy
@@ -247,13 +261,13 @@ class Message
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(string $from, string $to, string $body, ?string $id = null, ?string $subject = null, ?MessageType $type = null, ?int $numberOfUnits = null, ?int $numberOfMediaFiles = null, ?Direction $direction = null, ?MessageStatus $status = null, ?\DateTime $scheduledAt = null, ?\DateTime $sentAt = null, ?string $webhookUrl = null, ?string $reference = null, ?Price $price = null, ?Error $error = null, ?string $messagingServiceId = null, ?array $passThrough = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?string $from = null, ?string $to = null, ?string $subject = null, ?string $body = null, ?MessageType $type = null, ?int $numberOfUnits = null, ?int $numberOfMediaFiles = null, ?Direction $direction = null, ?MessageStatus $status = null, ?\DateTime $scheduledAt = null, ?\DateTime $sentAt = null, ?string $webhookUrl = null, ?string $reference = null, ?Price $price = null, ?Error $error = null, ?string $messagingServiceId = null, ?array $passThrough = null, ?array $additionalProperties = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
+        $this->id = $id;
         $this->from = $from;
         $this->to = $to;
-        $this->body = $body;
-        $this->id = $id;
         $this->subject = $subject;
+        $this->body = $body;
         $this->type = $type;
         $this->numberOfUnits = $numberOfUnits;
         $this->numberOfMediaFiles = $numberOfMediaFiles;
@@ -267,6 +281,7 @@ class Message
         $this->error = $error;
         $this->messagingServiceId = $messagingServiceId;
         $this->passThrough = $passThrough;
+        $this->additionalProperties = $additionalProperties;
         $this->customMappings = $customMappings;
         $this->updatedBy = $updatedBy;
         $this->createdBy = $createdBy;

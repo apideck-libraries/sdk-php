@@ -61,19 +61,31 @@ class Session
     public ?array $customConsumerSettings = null;
 
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * @param  ?ConsumerMetadata  $consumerMetadata
      * @param  ?string  $redirectUri
      * @param  ?Settings  $settings
      * @param  ?Theme  $theme
      * @param  ?array<string, mixed>  $customConsumerSettings
+     * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */
-    public function __construct(?ConsumerMetadata $consumerMetadata = null, ?string $redirectUri = null, ?Settings $settings = null, ?Theme $theme = null, ?array $customConsumerSettings = null)
+    public function __construct(?ConsumerMetadata $consumerMetadata = null, ?string $redirectUri = null, ?Settings $settings = null, ?Theme $theme = null, ?array $customConsumerSettings = null, ?array $additionalProperties = null)
     {
         $this->consumerMetadata = $consumerMetadata;
         $this->redirectUri = $redirectUri;
         $this->settings = $settings;
         $this->theme = $theme;
         $this->customConsumerSettings = $customConsumerSettings;
+        $this->additionalProperties = $additionalProperties;
     }
 }

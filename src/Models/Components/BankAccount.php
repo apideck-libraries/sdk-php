@@ -12,6 +12,16 @@ namespace Apideck\Unify\Models\Components;
 class BankAccount
 {
     /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
+
+    /**
      * The name of the bank or financial institution
      *
      * @var ?string $bankName
@@ -122,6 +132,7 @@ class BankAccount
     public ?string $country = null;
 
     /**
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $bankName
      * @param  ?string  $accountNumber
      * @param  ?string  $accountName
@@ -136,8 +147,9 @@ class BankAccount
      * @param  ?string  $country
      * @phpstan-pure
      */
-    public function __construct(?string $bankName = null, ?string $accountNumber = null, ?string $accountName = null, ?AccountType $accountType = null, ?string $iban = null, ?string $bic = null, ?string $routingNumber = null, ?string $bsbNumber = null, ?string $branchIdentifier = null, ?string $bankCode = null, ?Currency $currency = null, ?string $country = null)
+    public function __construct(?array $additionalProperties = null, ?string $bankName = null, ?string $accountNumber = null, ?string $accountName = null, ?AccountType $accountType = null, ?string $iban = null, ?string $bic = null, ?string $routingNumber = null, ?string $bsbNumber = null, ?string $branchIdentifier = null, ?string $bankCode = null, ?Currency $currency = null, ?string $country = null)
     {
+        $this->additionalProperties = $additionalProperties;
         $this->bankName = $bankName;
         $this->accountNumber = $accountNumber;
         $this->accountName = $accountName;

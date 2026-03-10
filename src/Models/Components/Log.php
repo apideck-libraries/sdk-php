@@ -14,157 +14,177 @@ class Log
     /**
      * Indicates if the request was made via REST or Graphql endpoint.
      *
-     * @var string $apiStyle
+     * @var ?string $apiStyle
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('api_style')]
-    public string $apiStyle;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $apiStyle = null;
 
     /**
      * The Apideck base URL the request was made to.
      *
-     * @var string $baseUrl
+     * @var ?string $baseUrl
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('base_url')]
-    public string $baseUrl;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $baseUrl = null;
 
     /**
      * Indicates whether or not this is a child or parent request.
      *
-     * @var bool $childRequest
+     * @var ?bool $childRequest
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('child_request')]
-    public bool $childRequest;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $childRequest = null;
 
     /**
      * The consumer Id associated with the request.
      *
-     * @var string $consumerId
+     * @var ?string $consumerId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('consumer_id')]
-    public string $consumerId;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $consumerId = null;
 
     /**
      * The entire execution time in milliseconds it took to call the Apideck service provider.
      *
-     * @var float $duration
+     * @var ?float $duration
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('duration')]
-    public float $duration;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $duration = null;
 
     /**
      * The entire execution time in milliseconds it took to make the request.
      *
-     * @var int $execution
+     * @var ?int $execution
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('execution')]
-    public int $execution;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?int $execution = null;
 
     /**
      * When request is a parent request, this indicates if there are child requests associated.
      *
-     * @var bool $hasChildren
+     * @var ?bool $hasChildren
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('has_children')]
-    public bool $hasChildren;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $hasChildren = null;
 
     /**
      * HTTP Method of request.
      *
-     * @var string $httpMethod
+     * @var ?string $httpMethod
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('http_method')]
-    public string $httpMethod;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $httpMethod = null;
 
     /**
      * UUID acting as Request Identifier.
      *
-     * @var string $id
+     * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public string $id;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
 
     /**
      * Latency added by making this request via Unified Api.
      *
-     * @var float $latency
+     * @var ?float $latency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('latency')]
-    public float $latency;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $latency = null;
 
     /**
      * The request as defined in OpenApi Spec.
      *
-     * @var Operation $operation
+     * @var ?Operation $operation
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('operation')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Operation')]
-    public Operation $operation;
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Operation|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Operation $operation = null;
 
     /**
      * The path component of the URI the request was made to.
      *
-     * @var string $path
+     * @var ?string $path
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('path')]
-    public string $path;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $path = null;
 
     /**
      * Indicates whether the request was made using Apidecks sandbox credentials or not.
      *
-     * @var bool $sandbox
+     * @var ?bool $sandbox
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('sandbox')]
-    public bool $sandbox;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $sandbox = null;
 
     /**
      * Apideck service provider associated with request.
      *
-     * @var Service $service
+     * @var ?Service $service
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('service')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Service')]
-    public Service $service;
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Service|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Service $service = null;
 
     /**
      * HTTP Status code that was returned.
      *
-     * @var int $statusCode
+     * @var ?int $statusCode
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status_code')]
-    public int $statusCode;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?int $statusCode = null;
 
     /**
      * Whether or not the request was successful.
      *
-     * @var bool $success
+     * @var ?bool $success
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('success')]
-    public bool $success;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $success = null;
 
     /**
      * ISO Date and time when the request was made.
      *
-     * @var string $timestamp
+     * @var ?string $timestamp
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('timestamp')]
-    public string $timestamp;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $timestamp = null;
 
     /**
      * Which Unified Api request was made to.
      *
-     * @var UnifiedApi $unifiedApi
+     * @var ?UnifiedApi $unifiedApi
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('unified_api')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\UnifiedApi')]
-    public UnifiedApi $unifiedApi;
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\UnifiedApi|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?UnifiedApi $unifiedApi = null;
 
     /**
-     * When request is a child request, this UUID indicates it's parent request.
+     * $additionalProperties
      *
-     * @var ?string $parentId
+     * @var ?array<string, mixed> $additionalProperties
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_id')]
-    public ?string $parentId;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * If error occurred, this is brief explanation
@@ -176,6 +196,15 @@ class Log
     public ?string $errorMessage = null;
 
     /**
+     * When request is a child request, this UUID indicates it's parent request.
+     *
+     * @var ?string $parentId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $parentId = null;
+
+    /**
      * The IP address of the source of the request.
      *
      * @var ?string $sourceIp
@@ -185,30 +214,31 @@ class Log
     public ?string $sourceIp = null;
 
     /**
-     * @param  string  $apiStyle
-     * @param  string  $baseUrl
-     * @param  bool  $childRequest
-     * @param  string  $consumerId
-     * @param  float  $duration
-     * @param  int  $execution
-     * @param  bool  $hasChildren
-     * @param  string  $httpMethod
-     * @param  string  $id
-     * @param  float  $latency
-     * @param  Operation  $operation
-     * @param  string  $path
-     * @param  bool  $sandbox
-     * @param  Service  $service
-     * @param  int  $statusCode
-     * @param  bool  $success
-     * @param  string  $timestamp
-     * @param  UnifiedApi  $unifiedApi
-     * @param  ?string  $parentId
+     * @param  ?string  $apiStyle
+     * @param  ?string  $baseUrl
+     * @param  ?bool  $childRequest
+     * @param  ?string  $consumerId
+     * @param  ?float  $duration
+     * @param  ?int  $execution
+     * @param  ?bool  $hasChildren
+     * @param  ?string  $httpMethod
+     * @param  ?string  $id
+     * @param  ?float  $latency
+     * @param  ?Operation  $operation
+     * @param  ?string  $path
+     * @param  ?bool  $sandbox
+     * @param  ?Service  $service
+     * @param  ?int  $statusCode
+     * @param  ?bool  $success
+     * @param  ?string  $timestamp
+     * @param  ?UnifiedApi  $unifiedApi
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $errorMessage
+     * @param  ?string  $parentId
      * @param  ?string  $sourceIp
      * @phpstan-pure
      */
-    public function __construct(string $apiStyle, string $baseUrl, bool $childRequest, string $consumerId, float $duration, int $execution, bool $hasChildren, string $httpMethod, string $id, float $latency, Operation $operation, string $path, bool $sandbox, Service $service, int $statusCode, bool $success, string $timestamp, UnifiedApi $unifiedApi, ?string $parentId = null, ?string $errorMessage = null, ?string $sourceIp = null)
+    public function __construct(?string $apiStyle = null, ?string $baseUrl = null, ?bool $childRequest = null, ?string $consumerId = null, ?float $duration = null, ?int $execution = null, ?bool $hasChildren = null, ?string $httpMethod = null, ?string $id = null, ?float $latency = null, ?Operation $operation = null, ?string $path = null, ?bool $sandbox = null, ?Service $service = null, ?int $statusCode = null, ?bool $success = null, ?string $timestamp = null, ?UnifiedApi $unifiedApi = null, ?array $additionalProperties = null, ?string $errorMessage = null, ?string $parentId = null, ?string $sourceIp = null)
     {
         $this->apiStyle = $apiStyle;
         $this->baseUrl = $baseUrl;
@@ -228,8 +258,9 @@ class Log
         $this->success = $success;
         $this->timestamp = $timestamp;
         $this->unifiedApi = $unifiedApi;
-        $this->parentId = $parentId;
+        $this->additionalProperties = $additionalProperties;
         $this->errorMessage = $errorMessage;
+        $this->parentId = $parentId;
         $this->sourceIp = $sourceIp;
     }
 }

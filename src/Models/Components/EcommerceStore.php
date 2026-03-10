@@ -14,10 +14,21 @@ class EcommerceStore
     /**
      * A unique identifier for an object.
      *
-     * @var string $id
+     * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public string $id;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
+
+    /**
+     * $additionalProperties
+     *
+     * @var ?array<string, mixed> $additionalProperties
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additionalProperties')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalProperties = null;
 
     /**
      * The store's name
@@ -75,7 +86,8 @@ class EcommerceStore
     public ?\DateTime $updatedAt = null;
 
     /**
-     * @param  string  $id
+     * @param  ?string  $id
+     * @param  ?array<string, mixed>  $additionalProperties
      * @param  ?string  $name
      * @param  ?string  $storeUrl
      * @param  ?string  $adminUrl
@@ -84,9 +96,10 @@ class EcommerceStore
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, ?string $name = null, ?string $storeUrl = null, ?string $adminUrl = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(?string $id = null, ?array $additionalProperties = null, ?string $name = null, ?string $storeUrl = null, ?string $adminUrl = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
+        $this->additionalProperties = $additionalProperties;
         $this->name = $name;
         $this->storeUrl = $storeUrl;
         $this->adminUrl = $adminUrl;
