@@ -36,6 +36,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingLocationsAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
     filter: new Components\AccountingLocationsFilter(
         subsidiary: '1',
@@ -101,6 +102,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingLocationsAddRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     accountingLocation: new Components\AccountingLocationInput(
         parentId: '12345',
         companyName: 'SpaceX',
@@ -217,6 +219,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingLocationsOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
 );
 
@@ -277,6 +280,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingLocationsUpdateRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     accountingLocation: new Components\AccountingLocationInput(
         parentId: '12345',
         companyName: 'SpaceX',
@@ -464,6 +468,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingLocationsDeleteRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
 );
 
 $response = $sdk->accounting->locations->delete(

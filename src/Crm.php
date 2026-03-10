@@ -13,7 +13,7 @@ namespace Apideck\Unify;
 class Crm
 {
     private SDKConfiguration $sdkConfiguration;
-    public Companies $companies;
+    public ApideckCompanies $companies;
 
     public Contacts $contacts;
 
@@ -39,7 +39,7 @@ class Crm
     public function __construct(public SDKConfiguration $sdkConfig)
     {
         $this->sdkConfiguration = $sdkConfig;
-        $this->companies = new Companies($this->sdkConfiguration);
+        $this->companies = new ApideckCompanies($this->sdkConfiguration);
         $this->contacts = new Contacts($this->sdkConfiguration);
         $this->opportunities = new Opportunities($this->sdkConfiguration);
         $this->leads = new Leads($this->sdkConfiguration);

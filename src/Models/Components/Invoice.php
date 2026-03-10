@@ -188,6 +188,15 @@ class Invoice
     public ?string $terms = null;
 
     /**
+     * The ID of the payment terms
+     *
+     * @var ?string $termsId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('terms_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $termsId = null;
+
+    /**
      * A PO Number uniquely identifies a purchase order and is generally defined by the buyer. The buyer will match the PO number in the invoice to the Purchase Order.
      *
      * @var ?string $poNumber
@@ -492,6 +501,7 @@ class Invoice
      * @param  ?LocalDate  $invoiceDate
      * @param  ?LocalDate  $dueDate
      * @param  ?string  $terms
+     * @param  ?string  $termsId
      * @param  ?string  $poNumber
      * @param  ?string  $reference
      * @param  ?InvoiceStatus  $status
@@ -525,7 +535,7 @@ class Invoice
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?bool $invoiceSent = null, ?array $lineItems = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $displayId = null, ?InvoiceType $type = null, ?string $number = null, ?LinkedCustomer $customer = null, ?string $companyId = null, ?string $locationId = null, ?string $departmentId = null, ?LocalDate $invoiceDate = null, ?LocalDate $dueDate = null, ?string $terms = null, ?string $poNumber = null, ?string $reference = null, ?InvoiceStatus $status = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?float $total = null, ?float $balance = null, ?float $deposit = null, ?string $customerMemo = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?string $templateId = null, ?string $sourceDocumentUrl = null, ?array $paymentAllocations = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?LinkedLedgerAccount $ledgerAccount = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?bool $invoiceSent = null, ?array $lineItems = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $displayId = null, ?InvoiceType $type = null, ?string $number = null, ?LinkedCustomer $customer = null, ?string $companyId = null, ?string $locationId = null, ?string $departmentId = null, ?LocalDate $invoiceDate = null, ?LocalDate $dueDate = null, ?string $terms = null, ?string $termsId = null, ?string $poNumber = null, ?string $reference = null, ?InvoiceStatus $status = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?float $total = null, ?float $balance = null, ?float $deposit = null, ?string $customerMemo = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?string $templateId = null, ?string $sourceDocumentUrl = null, ?array $paymentAllocations = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?LinkedLedgerAccount $ledgerAccount = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->invoiceSent = $invoiceSent;
@@ -546,6 +556,7 @@ class Invoice
         $this->invoiceDate = $invoiceDate;
         $this->dueDate = $dueDate;
         $this->terms = $terms;
+        $this->termsId = $termsId;
         $this->poNumber = $poNumber;
         $this->reference = $reference;
         $this->status = $status;

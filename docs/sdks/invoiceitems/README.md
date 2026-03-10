@@ -36,6 +36,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingInvoiceItemsAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     filter: new Components\InvoiceItemsFilter(
         name: 'Widgets Large',
         type: Components\InvoiceItemType::Service,
@@ -110,6 +111,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingInvoiceItemsAddRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     invoiceItem: new Components\InvoiceItemInput(
         name: 'Model Y',
         description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',
@@ -245,6 +247,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingInvoiceItemsOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
     filter: new Components\InvoiceItemFilter(
         type: Components\InvoiceItemFilterInvoiceItemType::Service,

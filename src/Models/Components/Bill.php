@@ -216,6 +216,15 @@ class Bill
     public ?string $terms = null;
 
     /**
+     * The ID of the payment terms
+     *
+     * @var ?string $termsId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('terms_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $termsId = null;
+
+    /**
      * Balance of bill due.
      *
      * @var ?float $balance
@@ -493,6 +502,7 @@ class Bill
      * @param  ?string  $poNumber
      * @param  ?string  $reference
      * @param  ?string  $terms
+     * @param  ?string  $termsId
      * @param  ?float  $balance
      * @param  ?float  $deposit
      * @param  ?float  $subTotal
@@ -523,7 +533,7 @@ class Bill
      * @param  ?string  $accountingPeriod
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?array $lineItems = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?array $attachments = null, ?string $downstreamId = null, ?string $displayId = null, ?string $billNumber = null, ?LinkedSupplier $supplier = null, ?string $companyId = null, ?string $locationId = null, ?string $departmentId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?LocalDate $billDate = null, ?LocalDate $dueDate = null, ?LocalDate $paidDate = null, ?string $poNumber = null, ?string $reference = null, ?string $terms = null, ?float $balance = null, ?float $deposit = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?string $taxCode = null, ?string $notes = null, ?BillStatus $status = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?float $discountPercentage = null, ?string $templateId = null, ?string $approvedBy = null, ?AmortizationType $amortizationType = null, ?string $taxMethod = null, ?bool $documentReceived = null, ?string $sourceDocumentUrl = null, ?array $trackingCategories = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null, ?array $customMappings = null, ?string $accountingPeriod = null)
+    public function __construct(?string $id = null, ?array $lineItems = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?array $attachments = null, ?string $downstreamId = null, ?string $displayId = null, ?string $billNumber = null, ?LinkedSupplier $supplier = null, ?string $companyId = null, ?string $locationId = null, ?string $departmentId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?LocalDate $billDate = null, ?LocalDate $dueDate = null, ?LocalDate $paidDate = null, ?string $poNumber = null, ?string $reference = null, ?string $terms = null, ?string $termsId = null, ?float $balance = null, ?float $deposit = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?string $taxCode = null, ?string $notes = null, ?BillStatus $status = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?float $discountPercentage = null, ?string $templateId = null, ?string $approvedBy = null, ?AmortizationType $amortizationType = null, ?string $taxMethod = null, ?bool $documentReceived = null, ?string $sourceDocumentUrl = null, ?array $trackingCategories = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null, ?array $customMappings = null, ?string $accountingPeriod = null)
     {
         $this->id = $id;
         $this->lineItems = $lineItems;
@@ -547,6 +557,7 @@ class Bill
         $this->poNumber = $poNumber;
         $this->reference = $reference;
         $this->terms = $terms;
+        $this->termsId = $termsId;
         $this->balance = $balance;
         $this->deposit = $deposit;
         $this->subTotal = $subTotal;

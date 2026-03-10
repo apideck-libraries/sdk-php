@@ -231,12 +231,13 @@ class Consumers
      *
      *
      * @param  ?string  $appId
+     * @param  ?Components\ConsumersFilter  $filter
      * @param  ?string  $cursor
      * @param  ?int  $limit
      * @return Operations\VaultConsumersAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
-    private function listIndividual(?string $appId = null, ?string $cursor = null, ?int $limit = null, ?Options $options = null): Operations\VaultConsumersAllResponse
+    private function listIndividual(?string $appId = null, ?Components\ConsumersFilter $filter = null, ?string $cursor = null, ?int $limit = null, ?Options $options = null): Operations\VaultConsumersAllResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -268,6 +269,7 @@ class Consumers
         }
         $request = new Operations\VaultConsumersAllRequest(
             appId: $appId,
+            filter: $filter,
             cursor: $cursor,
             limit: $limit,
         );
@@ -332,6 +334,7 @@ class Consumers
 
                     return $sdk->listIndividual(
                         appId: $request != null ? $request->appId : null,
+                        filter: $request != null ? $request->filter : null,
                         cursor: $nextCursor,
                         limit: $request != null ? $request->limit : null,
                     );
@@ -431,6 +434,7 @@ class Consumers
 
                     return $sdk->listIndividual(
                         appId: $request != null ? $request->appId : null,
+                        filter: $request != null ? $request->filter : null,
                         cursor: $nextCursor,
                         limit: $request != null ? $request->limit : null,
                     );
@@ -450,14 +454,15 @@ class Consumers
      *
      *
      * @param  ?string  $appId
+     * @param  ?Components\ConsumersFilter  $filter
      * @param  ?string  $cursor
      * @param  ?int  $limit
      * @return \Generator<Operations\VaultConsumersAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
-    public function list(?string $appId = null, ?string $cursor = null, ?int $limit = null, ?Options $options = null): \Generator
+    public function list(?string $appId = null, ?Components\ConsumersFilter $filter = null, ?string $cursor = null, ?int $limit = null, ?Options $options = null): \Generator
     {
-        $res = $this->listIndividual($appId, $cursor, $limit, $options);
+        $res = $this->listIndividual($appId, $filter, $cursor, $limit, $options);
         while ($res !== null) {
             yield $res;
             $res = $res->next($res);

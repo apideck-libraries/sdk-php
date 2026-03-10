@@ -169,6 +169,15 @@ class Quote
     public ?string $terms = null;
 
     /**
+     * The ID of the payment terms
+     *
+     * @var ?string $termsId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('terms_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $termsId = null;
+
+    /**
      * Optional reference identifier for the transaction.
      *
      * @var ?string $reference
@@ -369,6 +378,7 @@ class Quote
      * @param  ?LocalDate  $quoteDate
      * @param  ?LocalDate  $expiryDate
      * @param  ?string  $terms
+     * @param  ?string  $termsId
      * @param  ?string  $reference
      * @param  ?QuoteStatus  $status
      * @param  ?Currency  $currency
@@ -391,7 +401,7 @@ class Quote
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $invoiceId = null, ?string $projectId = null, ?array $lineItems = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $number = null, ?LinkedCustomer $customer = null, ?string $salesOrderId = null, ?string $companyId = null, ?string $departmentId = null, ?LocalDate $quoteDate = null, ?LocalDate $expiryDate = null, ?string $terms = null, ?string $reference = null, ?QuoteStatus $status = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?float $total = null, ?string $customerMemo = null, ?array $trackingCategories = null, ?string $templateId = null, ?string $sourceDocumentUrl = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?string $invoiceId = null, ?string $projectId = null, ?array $lineItems = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $number = null, ?LinkedCustomer $customer = null, ?string $salesOrderId = null, ?string $companyId = null, ?string $departmentId = null, ?LocalDate $quoteDate = null, ?LocalDate $expiryDate = null, ?string $terms = null, ?string $termsId = null, ?string $reference = null, ?QuoteStatus $status = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?float $total = null, ?string $customerMemo = null, ?array $trackingCategories = null, ?string $templateId = null, ?string $sourceDocumentUrl = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->invoiceId = $invoiceId;
@@ -410,6 +420,7 @@ class Quote
         $this->quoteDate = $quoteDate;
         $this->expiryDate = $expiryDate;
         $this->terms = $terms;
+        $this->termsId = $termsId;
         $this->reference = $reference;
         $this->status = $status;
         $this->currency = $currency;
