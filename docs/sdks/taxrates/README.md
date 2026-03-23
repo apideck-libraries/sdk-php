@@ -37,6 +37,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingTaxRatesAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     filter: new Components\TaxRatesFilter(
         assets: true,
         equity: true,
@@ -109,6 +110,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingTaxRatesAddRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     taxRate: new Components\TaxRateInput(
         id: '1234',
         name: 'GST on Purchases',
@@ -240,6 +242,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingTaxRatesOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
 );
 
@@ -300,6 +303,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingTaxRatesUpdateRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     taxRate: new Components\TaxRateInput(
         id: '1234',
         name: 'GST on Purchases',
@@ -467,6 +471,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingTaxRatesDeleteRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
 );
 
 $response = $sdk->accounting->taxRates->delete(

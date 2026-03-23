@@ -36,6 +36,14 @@ class AccountingSubsidiariesAllRequest
     public ?string $serviceId = null;
 
     /**
+     * The ID of the company to scope requests to. For connectors that support multi-company, this overrides the default company configured in connection settings.
+     *
+     * @var ?string $companyId
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-apideck-company-id')]
+    public ?string $companyId = null;
+
+    /**
      * Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
      *
      * @var ?string $cursor
@@ -72,16 +80,18 @@ class AccountingSubsidiariesAllRequest
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId
+     * @param  ?string  $companyId
      * @param  ?int  $limit
      * @param  ?string  $cursor
      * @param  ?string  $fields
      * @phpstan-pure
      */
-    public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $cursor = null, ?string $fields = null, ?bool $raw = false, ?int $limit = 20)
+    public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $companyId = null, ?string $cursor = null, ?string $fields = null, ?bool $raw = false, ?int $limit = 20)
     {
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
+        $this->companyId = $companyId;
         $this->cursor = $cursor;
         $this->fields = $fields;
         $this->raw = $raw;

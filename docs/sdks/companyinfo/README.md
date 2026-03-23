@@ -31,6 +31,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingCompanyInfoOneRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
 );
 

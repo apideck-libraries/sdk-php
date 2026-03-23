@@ -15,7 +15,7 @@ class Hris
     private SDKConfiguration $sdkConfiguration;
     public ApideckEmployees $employees;
 
-    public ApideckCompanies $companies;
+    public ApideckHrisCompanies $companies;
 
     public ApideckDepartments $departments;
 
@@ -34,7 +34,7 @@ class Hris
     {
         $this->sdkConfiguration = $sdkConfig;
         $this->employees = new ApideckEmployees($this->sdkConfiguration);
-        $this->companies = new ApideckCompanies($this->sdkConfiguration);
+        $this->companies = new ApideckHrisCompanies($this->sdkConfiguration);
         $this->departments = new ApideckDepartments($this->sdkConfiguration);
         $this->payrolls = new Payrolls($this->sdkConfiguration);
         $this->employeePayrolls = new EmployeePayrolls($this->sdkConfiguration);

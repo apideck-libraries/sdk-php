@@ -37,6 +37,14 @@ class AccountingExpensesAllRequest
     public ?string $serviceId = null;
 
     /**
+     * The ID of the company to scope requests to. For connectors that support multi-company, this overrides the default company configured in connection settings.
+     *
+     * @var ?string $companyId
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-apideck-company-id')]
+    public ?string $companyId = null;
+
+    /**
      * Apply filters
      *
      * @var ?Components\ExpensesFilter $filter
@@ -73,16 +81,18 @@ class AccountingExpensesAllRequest
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId
+     * @param  ?string  $companyId
      * @param  ?int  $limit
      * @param  ?Components\ExpensesFilter  $filter
      * @param  ?string  $cursor
      * @phpstan-pure
      */
-    public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?Components\ExpensesFilter $filter = null, ?string $cursor = null, ?bool $raw = false, ?int $limit = 20)
+    public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $companyId = null, ?Components\ExpensesFilter $filter = null, ?string $cursor = null, ?bool $raw = false, ?int $limit = 20)
     {
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
+        $this->companyId = $companyId;
         $this->filter = $filter;
         $this->cursor = $cursor;
         $this->raw = $raw;

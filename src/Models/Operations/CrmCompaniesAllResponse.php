@@ -22,9 +22,9 @@ class CrmCompaniesAllResponse
     /**
      * Companies
      *
-     * @var ?Components\GetCompaniesResponse $getCompaniesResponse
+     * @var ?Components\GetCompaniesResponse1 $getCompaniesResponse1
      */
-    public ?Components\GetCompaniesResponse $getCompaniesResponse = null;
+    public ?Components\GetCompaniesResponse1 $getCompaniesResponse1 = null;
 
     /**
      * Unexpected error
@@ -39,14 +39,14 @@ class CrmCompaniesAllResponse
     public \Closure $next;
     /**
      * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetCompaniesResponse  $getCompaniesResponse
+     * @param  ?Components\GetCompaniesResponse1  $getCompaniesResponse1
      * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetCompaniesResponse $getCompaniesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetCompaniesResponse1 $getCompaniesResponse1 = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
     {
         $this->httpMeta = $httpMeta;
-        $this->getCompaniesResponse = $getCompaniesResponse;
+        $this->getCompaniesResponse1 = $getCompaniesResponse1;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }
     /**

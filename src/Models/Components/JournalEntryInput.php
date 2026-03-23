@@ -125,9 +125,10 @@ class JournalEntryInput
     public ?string $journalSymbol = null;
 
     /**
-     * The specific category of tax associated with a transaction like sales or purchase
+     * Deprecated — use line_items[].tax_type for per-line tax applicability. Kept as fallback: applies to all lines that do not set their own tax_type.
      *
      * @var ?string $taxType
+     * @deprecated  field: Deprecated — use line_items[]..
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tax_type')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]

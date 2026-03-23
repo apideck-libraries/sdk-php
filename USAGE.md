@@ -18,6 +18,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingTaxRatesAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     filter: new Components\TaxRatesFilter(
         assets: true,
         equity: true,

@@ -71,6 +71,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingTaxRatesAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     filter: new Components\TaxRatesFilter(
         assets: true,
         equity: true,
@@ -128,6 +129,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingTaxRatesAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     filter: new Components\TaxRatesFilter(
         assets: true,
         equity: true,
@@ -224,6 +226,10 @@ foreach ($responses as $response) {
 
 * [list](docs/sdks/categories/README.md#list) - List Categories
 * [get](docs/sdks/categories/README.md#get) - Get Category
+
+### [Accounting.Companies](docs/sdks/companies/README.md)
+
+* [list](docs/sdks/companies/README.md#list) - List companies
 
 ### [Accounting.CompanyInfo](docs/sdks/companyinfo/README.md)
 
@@ -361,6 +367,14 @@ foreach ($responses as $response) {
 * [update](docs/sdks/quotes/README.md#update) - Update Quote
 * [delete](docs/sdks/quotes/README.md#delete) - Delete Quote
 
+### [Accounting.Refunds](docs/sdks/refunds/README.md)
+
+* [list](docs/sdks/refunds/README.md#list) - List Refunds
+* [create](docs/sdks/refunds/README.md#create) - Create Refund
+* [get](docs/sdks/refunds/README.md#get) - Get Refund
+* [update](docs/sdks/refunds/README.md#update) - Update Refund
+* [delete](docs/sdks/refunds/README.md#delete) - Delete Refund
+
 ### [Accounting.Subsidiaries](docs/sdks/subsidiaries/README.md)
 
 * [list](docs/sdks/subsidiaries/README.md#list) - List Subsidiaries
@@ -412,7 +426,10 @@ foreach ($responses as $response) {
 ### [Ats.Jobs](docs/sdks/jobs/README.md)
 
 * [list](docs/sdks/jobs/README.md#list) - List Jobs
+* [create](docs/sdks/jobs/README.md#create) - Create Job
 * [get](docs/sdks/jobs/README.md#get) - Get Job
+* [update](docs/sdks/jobs/README.md#update) - Update Job
+* [delete](docs/sdks/jobs/README.md#delete) - Delete Job
 
 ### [Connector.ApiResourceCoverage](docs/sdks/apiresourcecoverage/README.md)
 
@@ -448,13 +465,13 @@ foreach ($responses as $response) {
 * [update](docs/sdks/activities/README.md#update) - Update activity
 * [delete](docs/sdks/activities/README.md#delete) - Delete activity
 
-### [Crm.Companies](docs/sdks/companies/README.md)
+### [Crm.Companies](docs/sdks/apideckcompanies/README.md)
 
-* [list](docs/sdks/companies/README.md#list) - List companies
-* [create](docs/sdks/companies/README.md#create) - Create company
-* [get](docs/sdks/companies/README.md#get) - Get company
-* [update](docs/sdks/companies/README.md#update) - Update company
-* [delete](docs/sdks/companies/README.md#delete) - Delete company
+* [list](docs/sdks/apideckcompanies/README.md#list) - List companies
+* [create](docs/sdks/apideckcompanies/README.md#create) - Create company
+* [get](docs/sdks/apideckcompanies/README.md#get) - Get company
+* [update](docs/sdks/apideckcompanies/README.md#update) - Update company
+* [delete](docs/sdks/apideckcompanies/README.md#delete) - Delete company
 
 ### [Crm.Contacts](docs/sdks/contacts/README.md)
 
@@ -589,13 +606,13 @@ foreach ($responses as $response) {
 * [delete](docs/sdks/uploadsessions/README.md#delete) - Abort Upload Session
 * [finish](docs/sdks/uploadsessions/README.md#finish) - Finish Upload Session
 
-### [Hris.Companies](docs/sdks/apideckcompanies/README.md)
+### [Hris.Companies](docs/sdks/apideckhriscompanies/README.md)
 
-* [list](docs/sdks/apideckcompanies/README.md#list) - List Companies
-* [create](docs/sdks/apideckcompanies/README.md#create) - Create Company
-* [get](docs/sdks/apideckcompanies/README.md#get) - Get Company
-* [update](docs/sdks/apideckcompanies/README.md#update) - Update Company
-* [delete](docs/sdks/apideckcompanies/README.md#delete) - Delete Company
+* [list](docs/sdks/apideckhriscompanies/README.md#list) - List Companies
+* [create](docs/sdks/apideckhriscompanies/README.md#create) - Create Company
+* [get](docs/sdks/apideckhriscompanies/README.md#get) - Get Company
+* [update](docs/sdks/apideckhriscompanies/README.md#update) - Update Company
+* [delete](docs/sdks/apideckhriscompanies/README.md#delete) - Delete Company
 
 ### [Hris.Departments](docs/sdks/apideckdepartments/README.md)
 
@@ -785,6 +802,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingTaxRatesAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     filter: new Components\TaxRatesFilter(
         assets: true,
         equity: true,
@@ -837,6 +855,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingTaxRatesAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     filter: new Components\TaxRatesFilter(
         assets: true,
         equity: true,
@@ -900,6 +919,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingTaxRatesAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     filter: new Components\TaxRatesFilter(
         assets: true,
         equity: true,
@@ -973,6 +993,7 @@ $sdk = Unify\Apideck::builder()
 try {
     $request = new Operations\AccountingTaxRatesAllRequest(
         serviceId: 'salesforce',
+        companyId: '12345',
         filter: new Components\TaxRatesFilter(
             assets: true,
             equity: true,
@@ -1043,6 +1064,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingTaxRatesAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     filter: new Components\TaxRatesFilter(
         assets: true,
         equity: true,

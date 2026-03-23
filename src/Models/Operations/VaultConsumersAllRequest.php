@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace Apideck\Unify\Models\Operations;
 
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Utils\SpeakeasyMetadata;
 class VaultConsumersAllRequest
 {
@@ -18,6 +19,14 @@ class VaultConsumersAllRequest
      */
     #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-apideck-app-id')]
     public ?string $appId = null;
+
+    /**
+     * Filter results
+     *
+     * @var ?Components\ConsumersFilter $filter
+     */
+    #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
+    public ?Components\ConsumersFilter $filter = null;
 
     /**
      * Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
@@ -37,13 +46,15 @@ class VaultConsumersAllRequest
 
     /**
      * @param  ?string  $appId
+     * @param  ?Components\ConsumersFilter  $filter
      * @param  ?int  $limit
      * @param  ?string  $cursor
      * @phpstan-pure
      */
-    public function __construct(?string $appId = null, ?string $cursor = null, ?int $limit = 20)
+    public function __construct(?string $appId = null, ?Components\ConsumersFilter $filter = null, ?string $cursor = null, ?int $limit = 20)
     {
         $this->appId = $appId;
+        $this->filter = $filter;
         $this->cursor = $cursor;
         $this->limit = $limit;
     }

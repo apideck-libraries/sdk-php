@@ -37,6 +37,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingExpensesAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     filter: new Components\ExpensesFilter(
         updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
         status: Components\ExpensesFilterStatus::Draft,
@@ -104,6 +105,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingExpensesAddRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     expense: new Components\ExpenseInput(
         number: 'OIT00546',
         transactionDate: Utils\Utils::parseDateTime('2021-05-01T12:00:00.000Z'),
@@ -290,6 +292,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingExpensesOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
 );
 
 $response = $sdk->accounting->expenses->get(
