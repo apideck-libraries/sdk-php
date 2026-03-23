@@ -52,6 +52,15 @@ class AccountingEmployeeInput
     public ?array $phoneNumbers = null;
 
     /**
+     *
+     * @var ?BankAccount $bankAccount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('bank_account')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BankAccount|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?BankAccount $bankAccount = null;
+
+    /**
      * $customFields
      *
      * @var ?array<CustomField1|CustomField2> $customFields
@@ -251,6 +260,7 @@ class AccountingEmployeeInput
      * @param  ?AccountingEmployeeManager  $manager
      * @param  ?array<Address>  $addresses
      * @param  ?array<PhoneNumber>  $phoneNumbers
+     * @param  ?BankAccount  $bankAccount
      * @param  ?array<CustomField1|CustomField2>  $customFields
      * @param  ?array<PassThroughBody>  $passThrough
      * @param  ?string  $displayId
@@ -274,12 +284,13 @@ class AccountingEmployeeInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?array $emails = null, ?AccountingEmployeeManager $manager = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $customFields = null, ?array $passThrough = null, ?string $displayId = null, ?string $firstName = null, ?string $lastName = null, ?string $displayName = null, ?string $employeeNumber = null, ?string $jobTitle = null, ?EmployeeStatus $status = null, ?bool $isContractor = null, ?LinkedDepartmentInput $department = null, ?LinkedLocationInput $location = null, ?LocalDate $hireDate = null, ?LocalDate $terminationDate = null, ?Gender $gender = null, ?LocalDate $birthDate = null, ?LinkedSubsidiaryInput $subsidiary = null, ?array $trackingCategories = null, ?Currency $currency = null, ?string $notes = null, ?string $rowVersion = null)
+    public function __construct(?array $emails = null, ?AccountingEmployeeManager $manager = null, ?array $addresses = null, ?array $phoneNumbers = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $displayId = null, ?string $firstName = null, ?string $lastName = null, ?string $displayName = null, ?string $employeeNumber = null, ?string $jobTitle = null, ?EmployeeStatus $status = null, ?bool $isContractor = null, ?LinkedDepartmentInput $department = null, ?LinkedLocationInput $location = null, ?LocalDate $hireDate = null, ?LocalDate $terminationDate = null, ?Gender $gender = null, ?LocalDate $birthDate = null, ?LinkedSubsidiaryInput $subsidiary = null, ?array $trackingCategories = null, ?Currency $currency = null, ?string $notes = null, ?string $rowVersion = null)
     {
         $this->emails = $emails;
         $this->manager = $manager;
         $this->addresses = $addresses;
         $this->phoneNumbers = $phoneNumbers;
+        $this->bankAccount = $bankAccount;
         $this->customFields = $customFields;
         $this->passThrough = $passThrough;
         $this->displayId = $displayId;

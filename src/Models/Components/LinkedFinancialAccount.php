@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 
-/** LinkedFinancialAccount - A flexible account reference that can represent either a ledger account (GL account) or a bank account, depending on the connector's requirements. */
+/** LinkedFinancialAccount - A flexible account reference that can represent a ledger account (GL account), a bank account, or an employee payable account, depending on the connector's requirements. */
 class LinkedFinancialAccount
 {
     /**

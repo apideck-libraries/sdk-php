@@ -87,6 +87,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Apideck\Unify;
+use Apideck\Unify\Models\Components;
 
 $sdk = Unify\Apideck::builder()
     ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
@@ -95,10 +96,15 @@ $sdk = Unify\Apideck::builder()
     )
     ->build();
 
-
+$filter = new Components\ConsumersFilter(
+    consumerId: 'test-consumer',
+    search: 'john',
+);
 
 $responses = $sdk->vault->consumers->list(
+    filter: $filter,
     limit: 20
+
 );
 
 
@@ -114,6 +120,7 @@ foreach ($responses as $response) {
 | Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      | Example                                                                                                          |
 | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | `appId`                                                                                                          | *?string*                                                                                                        | :heavy_minus_sign:                                                                                               | The ID of your Unify application                                                                                 | dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX                                                                          |
+| `filter`                                                                                                         | [?Components\ConsumersFilter](../../Models/Components/ConsumersFilter.md)                                        | :heavy_minus_sign:                                                                                               | Filter results                                                                                                   |                                                                                                                  |
 | `cursor`                                                                                                         | *?string*                                                                                                        | :heavy_minus_sign:                                                                                               | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. |                                                                                                                  |
 | `limit`                                                                                                          | *?int*                                                                                                           | :heavy_minus_sign:                                                                                               | Number of results to return. Minimum 1, Maximum 200, Default 20                                                  |                                                                                                                  |
 

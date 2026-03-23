@@ -37,6 +37,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingCreditNotesAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     filter: new Components\CreditNotesFilter(
         updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
     ),
@@ -110,6 +111,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingCreditNotesAddRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     creditNote: new Components\CreditNoteInput(
         number: 'OIT00546',
         customer: new Components\LinkedCustomerInput(
@@ -351,6 +353,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingCreditNotesOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
 );
 

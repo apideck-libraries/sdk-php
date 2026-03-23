@@ -33,6 +33,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingCategoriesAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
     filter: new Components\CategoriesFilter(
         type: Components\CategoriesFilterType::Expense,
@@ -99,6 +100,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingCategoriesOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
     filter: new Components\CategoriesFilter(
         type: Components\CategoriesFilterType::Expense,

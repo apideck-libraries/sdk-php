@@ -14,4 +14,5 @@ enum LinkedFinancialAccountAccountType: string
 {
     case LedgerAccount = 'ledger_account';
     case BankAccount = 'bank_account';
+    case Employee = 'employee';
 }

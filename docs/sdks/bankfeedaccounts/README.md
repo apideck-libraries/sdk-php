@@ -35,6 +35,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingBankFeedAccountsAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     passThrough: [
         'search' => 'San Francisco',
     ],
@@ -188,6 +189,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingBankFeedAccountsOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
 );
 

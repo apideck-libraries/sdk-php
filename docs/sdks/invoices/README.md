@@ -37,6 +37,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingInvoicesAllRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     filter: new Components\InvoicesFilter(
         updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
         createdSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
@@ -113,6 +114,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingInvoicesAddRequest(
     serviceId: 'salesforce',
+    companyId: '12345',
     invoice: new Components\InvoiceInput(
         type: Components\InvoiceType::Service,
         number: 'OIT00546',
@@ -383,6 +385,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingInvoicesOneRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
 );
 

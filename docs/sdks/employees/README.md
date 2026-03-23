@@ -191,6 +191,20 @@ $request = new Operations\AccountingEmployeesAddRequest(
                 type: Components\PhoneNumberType::Primary,
             ),
         ],
+        bankAccount: new Components\BankAccount(
+            bankName: 'Chase Bank',
+            accountNumber: '123465',
+            accountName: 'Main Operating Account',
+            accountType: Components\AccountType::CreditCard,
+            iban: 'GB33BUKB20201555555555',
+            bic: 'CHASUS33',
+            routingNumber: '021000021',
+            bsbNumber: '062-001',
+            branchIdentifier: '001',
+            bankCode: 'BNH',
+            currency: Components\Currency::Usd,
+            country: 'US',
+        ),
         customFields: [
             new Components\CustomField1(
                 id: '2389328923893298',
@@ -422,6 +436,20 @@ $request = new Operations\AccountingEmployeesUpdateRequest(
                 type: Components\PhoneNumberType::Primary,
             ),
         ],
+        bankAccount: new Components\BankAccount(
+            bankName: 'Chase Bank',
+            accountNumber: '123465',
+            accountName: 'Main Operating Account',
+            accountType: Components\AccountType::CreditCard,
+            iban: 'GB33BUKB20201555555555',
+            bic: 'CHASUS33',
+            routingNumber: '021000021',
+            bsbNumber: '062-001',
+            branchIdentifier: '001',
+            bankCode: 'BNH',
+            currency: Components\Currency::Usd,
+            country: 'US',
+        ),
         customFields: [
             new Components\CustomField1(
                 id: '2389328923893298',

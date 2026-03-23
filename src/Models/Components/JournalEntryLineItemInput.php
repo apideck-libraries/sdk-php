@@ -14,11 +14,11 @@ class JournalEntryLineItemInput
     /**
      * Debit entries are considered positive, and credit entries are considered negative.
      *
-     * @var JournalEntryLineItemType $type
+     * @var ?JournalEntryLineItemType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\JournalEntryLineItemType')]
-    public JournalEntryLineItemType $type;
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\JournalEntryLineItemType|null')]
+    public ?JournalEntryLineItemType $type;
 
     /**
      *
@@ -84,6 +84,16 @@ class JournalEntryLineItemInput
     public ?float $totalAmount = null;
 
     /**
+     * The tax applicability of this line item. Overrides the root-level tax_type for this line.
+     *
+     * @var ?TaxType $taxType
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\TaxType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?TaxType $taxType = null;
+
+    /**
      *
      * @var ?DeprecatedLinkedTrackingCategory $trackingCategory
      * @deprecated  field: This field is deprecated and may be removed in a future version..
@@ -124,6 +134,16 @@ class JournalEntryLineItemInput
     public ?LinkedSupplierInput $supplier = null;
 
     /**
+     * The employee this entity is linked to.
+     *
+     * @var ?LinkedEmployee $employee
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('employee')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedEmployee|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedEmployee $employee = null;
+
+    /**
      * The ID of the department
      *
      * @var ?string $departmentId
@@ -151,7 +171,7 @@ class JournalEntryLineItemInput
     public ?int $lineNumber = null;
 
     /**
-     * @param  JournalEntryLineItemType  $type
+     * @param  ?JournalEntryLineItemType  $type
      * @param  ?LinkedTaxRateInput  $taxRate
      * @param  ?LinkedLedgerAccount  $ledgerAccount
      * @param  ?array<?LinkedWorktag>  $worktags
@@ -159,16 +179,18 @@ class JournalEntryLineItemInput
      * @param  ?float  $taxAmount
      * @param  ?float  $subTotal
      * @param  ?float  $totalAmount
+     * @param  ?TaxType  $taxType
      * @param  ?DeprecatedLinkedTrackingCategory  $trackingCategory
      * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
      * @param  ?LinkedCustomerInput  $customer
      * @param  ?LinkedSupplierInput  $supplier
+     * @param  ?LinkedEmployee  $employee
      * @param  ?string  $departmentId
      * @param  ?string  $locationId
      * @param  ?int  $lineNumber
      * @phpstan-pure
      */
-    public function __construct(JournalEntryLineItemType $type, ?LinkedTaxRateInput $taxRate = null, ?LinkedLedgerAccount $ledgerAccount = null, ?array $worktags = null, ?string $description = null, ?float $taxAmount = null, ?float $subTotal = null, ?float $totalAmount = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?LinkedCustomerInput $customer = null, ?LinkedSupplierInput $supplier = null, ?string $departmentId = null, ?string $locationId = null, ?int $lineNumber = null)
+    public function __construct(?JournalEntryLineItemType $type = null, ?LinkedTaxRateInput $taxRate = null, ?LinkedLedgerAccount $ledgerAccount = null, ?array $worktags = null, ?string $description = null, ?float $taxAmount = null, ?float $subTotal = null, ?float $totalAmount = null, ?TaxType $taxType = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?LinkedCustomerInput $customer = null, ?LinkedSupplierInput $supplier = null, ?LinkedEmployee $employee = null, ?string $departmentId = null, ?string $locationId = null, ?int $lineNumber = null)
     {
         $this->type = $type;
         $this->taxRate = $taxRate;
@@ -178,10 +200,12 @@ class JournalEntryLineItemInput
         $this->taxAmount = $taxAmount;
         $this->subTotal = $subTotal;
         $this->totalAmount = $totalAmount;
+        $this->taxType = $taxType;
         $this->trackingCategory = $trackingCategory;
         $this->trackingCategories = $trackingCategories;
         $this->customer = $customer;
         $this->supplier = $supplier;
+        $this->employee = $employee;
         $this->departmentId = $departmentId;
         $this->locationId = $locationId;
         $this->lineNumber = $lineNumber;

@@ -38,6 +38,7 @@ $request = new Operations\AccountingAttachmentsAllRequest(
     referenceType: Components\AttachmentReferenceType::Invoice,
     referenceId: '123456',
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
 );
 
@@ -166,6 +167,7 @@ $request = new Operations\AccountingAttachmentsOneRequest(
     referenceId: '123456',
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
 );
 
@@ -289,6 +291,7 @@ $request = new Operations\AccountingAttachmentsDownloadRequest(
     referenceId: '123456',
     id: '<id>',
     serviceId: 'salesforce',
+    companyId: '12345',
     fields: 'id,updated_at',
 );
 
