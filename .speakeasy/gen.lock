@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 135473acf19662d9c8e7b8f99c7c1760
-  docVersion: 10.24.9
+  docChecksum: aaccfaf769a5ef00ecc6f004f8f0a38e
+  docVersion: 10.24.10
   speakeasyVersion: 1.759.3
   generationVersion: 2.869.25
-  releaseVersion: 0.18.1
-  configChecksum: 5fa0e9f7532f944567eb5a35e92a15d7
+  releaseVersion: 0.18.2
+  configChecksum: de55e4f3fc6c2684fbcf1c6d75e06a35
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: 161816ed-48fa-4f94-976e-583f28ac03a0
-  pristine_commit_hash: 87f540c24148d00efeadf7e4384b642bd1989408
-  pristine_tree_hash: c1cf2620f808cf9509632fa5d7d55ffb8baf29ac
+  generation_id: c77615db-8a6c-4467-a99a-954f8f538da9
+  pristine_commit_hash: 3c559797d1a9c094acfa1d6b2adc9d8938481f83
+  pristine_tree_hash: 1cd4b2be77a10759759937d39033cab18325ddf0
 features:
   php:
     additionalProperties: 0.1.0
@@ -603,6 +603,10 @@ trackedFiles:
     id: 2edaad29dd96
     last_write_checksum: sha1:ea9e02a2b3ee50107b628572ef0bf3b753d237a8
     pristine_git_object: 7bfddb442ea2d529fd056007eea1e61cbe207881
+  docs/Models/Components/ConnectionHealth.md:
+    id: 7d81e15b2f89
+    last_write_checksum: sha1:0c415163bce05bf540cd857c9aab7640031310ef
+    pristine_git_object: 72212517367c9295708d1f3673704662ae328b77
   docs/Models/Components/ConnectionImportData.md:
     id: 5cb1dbefa003
     last_write_checksum: sha1:7cf2cb0642b572fe6223aace84d0ea5f6ffd5e14
@@ -685,8 +689,8 @@ trackedFiles:
     pristine_git_object: c9a90d88bf171e06b0340189cdc6c085d7e30693
   docs/Models/Components/ConsumerConnection.md:
     id: 7923dbd5b1c6
-    last_write_checksum: sha1:37ed351ee8ce951f959f1dafb5cde94c71fdb947
-    pristine_git_object: 640eb38c9524121904104f2a30e9566c7aaa54a8
+    last_write_checksum: sha1:1acc702316fef136960fb780f149801ef4433af5
+    pristine_git_object: 8fd48c79b0fbc78615b7b016a41bfc99d65d469e
   docs/Models/Components/ConsumerMetadata.md:
     id: f01c56b7b09e
     last_write_checksum: sha1:01a042e75c48021a098c1098be8ebbca0950b02f
@@ -3837,8 +3841,8 @@ trackedFiles:
     pristine_git_object: 0b7c1484210eb1a1e5413c67143bc1f0e4dd6202
   docs/Models/Components/WebhookEventType.md:
     id: 234a36136da0
-    last_write_checksum: sha1:2afee552f4cd06d57d2ae063598cd834a1d9d373
-    pristine_git_object: 3df387c09657e557ab7b1708d4e8da6d346c1579
+    last_write_checksum: sha1:af55ae342ecdf95f3f004ebd2026fc610c2daacf
+    pristine_git_object: ee56cceb470dfc2d47444fbf0921606fd86d6b85
   docs/Models/Components/WebhookSubscription.md:
     id: f2c87de13dad
     last_write_checksum: sha1:6597f4643a7e3821b6f7e9a5ffc0dab713589913
@@ -7971,6 +7975,10 @@ trackedFiles:
     id: e5409d2764ec
     last_write_checksum: sha1:b92724793f8fc8259977d259b02e31430921ed58
     pristine_git_object: 6dc66beb91f7f68196d388d5a96e57dcba4f4d30
+  src/Models/Components/ConnectionHealth.php:
+    id: 5ec807a1bdf9
+    last_write_checksum: sha1:e3e9bb3957b2406ef01303ad0553a59561e8233f
+    pristine_git_object: 9270b3c33d2220f6506f00648c1166c10f7f1821
   src/Models/Components/ConnectionImportData.php:
     id: 8e2a74004b8c
     last_write_checksum: sha1:0e3047a1865bd7626b5a537d8cff6478bd69a0da
@@ -8049,8 +8057,8 @@ trackedFiles:
     pristine_git_object: 1a04d8af5d15352cf369b8fae809c3a0bcc58db4
   src/Models/Components/ConsumerConnection.php:
     id: 1a65e7b6c083
-    last_write_checksum: sha1:b882817355d556b77fe08288f7fe8c09a2d4b5b6
-    pristine_git_object: 225610661673e582a1894d756b6a311ece9971ab
+    last_write_checksum: sha1:255d059cbbbd05811b5a44b30958900148b777a0
+    pristine_git_object: f9259425e0cf7e108be56c3e76b22e6ea08a5a26
   src/Models/Components/ConsumerMetadata.php:
     id: b84fd0a928cc
     last_write_checksum: sha1:e27c6eac6734c665e073b60ff101ab17d6efc49e
@@ -11153,8 +11161,8 @@ trackedFiles:
     pristine_git_object: 2a6e8b749dda537dcbb4bb99f7ecf7886a65882b
   src/Models/Components/WebhookEventType.php:
     id: aa6707ce7d20
-    last_write_checksum: sha1:220b6a1e9d1079e27efe95b986aac9b02024f283
-    pristine_git_object: c1a9fb06ea4f69dd543dce73084822272f2f3aaa
+    last_write_checksum: sha1:8cc4da63c1ebf031c34d448c35441a65e01b13ca
+    pristine_git_object: 666ca663e9ae0a9a1d487045e3089a1c1c255d0a
   src/Models/Components/WebhookSubscription.php:
     id: 0842240c30d4
     last_write_checksum: sha1:3ba085278eacacd9c83388a50d9ecb64627862af
@@ -14041,8 +14049,8 @@ trackedFiles:
     pristine_git_object: e8f7b6e0e6440d90087f7e629d83cc7ced572c4f
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:7fe03a07fb61f727ccdeda9c4fb1ff1fc410eea0
-    pristine_git_object: 438fda290974d366518c7cede96600f517e4e5d7
+    last_write_checksum: sha1:7f7d91b259a6dabeb6e1e1743861c0a839290789
+    pristine_git_object: 475c9ab3d5a2f3cd86e029bc8d2eb18446e2a971
   src/Sessions.php:
     id: 7f6ea05b19ca
     last_write_checksum: sha1:acb3d18ba287e1f2c35e371075b433d34842047c
@@ -30628,6 +30636,7 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: "## Php SDK Changes:\n* `apideck->webhook->webhooks->list()`:  `response.data[]->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->create()`: \n  *  `request.createWebhookRequest->events[]` **Changed**\n  *  `response.data->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->get()`:  `response.data->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->update()`: \n  *  `request.updateWebhookRequest->events[]` **Changed**\n  *  `response.data->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->delete()`:  `response.data->events[]` **Changed** (Breaking ⚠️)\n* `apideck->vault->consumers->create()`:  `response.data->connections[]` **Changed**\n* `apideck->vault->consumers->get()`:  `response.data->connections[]` **Changed**\n* `apideck->vault->consumers->update()`:  `response.data->connections[]` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md
