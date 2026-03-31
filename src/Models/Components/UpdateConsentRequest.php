@@ -13,7 +13,7 @@ class UpdateConsentRequest
 {
     /**
      *
-     * @var array<string, array<string, One>>|Two $resources
+     * @var array<string, array<string, \Apideck\Unify\Models\Components\One>>|\Apideck\Unify\Models\Components\Two $resources
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('resources')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, array<string, \Apideck\Unify\Models\Components\One>>|\Apideck\Unify\Models\Components\Two')]
@@ -28,7 +28,7 @@ class UpdateConsentRequest
     public bool $granted;
 
     /**
-     * @param  array<string, array<string, One>>|Two  $resources
+     * @param  array<string, array<string, \Apideck\Unify\Models\Components\One>>|\Apideck\Unify\Models\Components\Two  $resources
      * @param  bool  $granted
      * @phpstan-pure
      */

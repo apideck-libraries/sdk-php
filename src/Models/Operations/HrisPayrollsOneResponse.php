@@ -13,7 +13,7 @@ class HrisPayrollsOneResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class HrisPayrollsOneResponse
     /**
      * Payrolls
      *
-     * @var ?Components\GetPayrollResponse $getPayrollResponse
+     * @var ?\Apideck\Unify\Models\Components\GetPayrollResponse $getPayrollResponse
      */
     public ?Components\GetPayrollResponse $getPayrollResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetPayrollResponse  $getPayrollResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetPayrollResponse  $getPayrollResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetPayrollResponse $getPayrollResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

@@ -94,7 +94,7 @@ class Log
     /**
      * The request as defined in OpenApi Spec.
      *
-     * @var Operation $operation
+     * @var \Apideck\Unify\Models\Components\Operation $operation
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('operation')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Operation')]
@@ -119,7 +119,7 @@ class Log
     /**
      * Apideck service provider associated with request.
      *
-     * @var Service $service
+     * @var \Apideck\Unify\Models\Components\Service $service
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('service')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Service')]
@@ -152,7 +152,7 @@ class Log
     /**
      * Which Unified Api request was made to.
      *
-     * @var UnifiedApi $unifiedApi
+     * @var \Apideck\Unify\Models\Components\UnifiedApi $unifiedApi
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('unified_api')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\UnifiedApi')]
@@ -195,14 +195,14 @@ class Log
      * @param  string  $httpMethod
      * @param  string  $id
      * @param  float  $latency
-     * @param  Operation  $operation
+     * @param  \Apideck\Unify\Models\Components\Operation  $operation
      * @param  string  $path
      * @param  bool  $sandbox
-     * @param  Service  $service
+     * @param  \Apideck\Unify\Models\Components\Service  $service
      * @param  int  $statusCode
      * @param  bool  $success
      * @param  string  $timestamp
-     * @param  UnifiedApi  $unifiedApi
+     * @param  \Apideck\Unify\Models\Components\UnifiedApi  $unifiedApi
      * @param  ?string  $parentId
      * @param  ?string  $errorMessage
      * @param  ?string  $sourceIp

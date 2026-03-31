@@ -22,7 +22,7 @@ class FileStorageFoldersUpdateRequest
 
     /**
      *
-     * @var Components\UpdateFolderRequest $updateFolderRequest
+     * @var \Apideck\Unify\Models\Components\UpdateFolderRequest $updateFolderRequest
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\UpdateFolderRequest $updateFolderRequest;
@@ -61,7 +61,7 @@ class FileStorageFoldersUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\UpdateFolderRequest  $updateFolderRequest
+     * @param  \Apideck\Unify\Models\Components\UpdateFolderRequest  $updateFolderRequest
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

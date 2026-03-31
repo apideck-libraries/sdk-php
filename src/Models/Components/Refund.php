@@ -30,7 +30,7 @@ class Refund
     /**
      * Status of refund. Maps to: QBO (limited status), NetSuite CashRefund status, Sage Intacct state (draft/posted/voided), Zoho Books vis_state.
      *
-     * @var ?RefundStatus $status
+     * @var ?\Apideck\Unify\Models\Components\RefundStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\RefundStatus|null')]
@@ -40,7 +40,7 @@ class Refund
     /**
      * Type of refund. `refund_receipt` for itemized refunds with product/service lines and payment (QBO RefundReceipt, NetSuite CashRefund). `cash_refund` for cash-out refunds with GL distribution or allocations (Sage Intacct). `credit_note_refund` for refunds applied against a credit note (Zoho Books).
      *
-     * @var ?RefundType $type
+     * @var ?\Apideck\Unify\Models\Components\RefundType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\RefundType|null')]
@@ -50,7 +50,7 @@ class Refund
     /**
      * Line items for itemized refunds (type: refund_receipt). Used when the refund includes product/service details with quantities and pricing. Supported by QBO RefundReceipt and NetSuite CashRefund.
      *
-     * @var ?array<InvoiceLineItem> $lineItems
+     * @var ?array<\Apideck\Unify\Models\Components\InvoiceLineItem> $lineItems
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\InvoiceLineItem>|null')]
@@ -60,7 +60,7 @@ class Refund
     /**
      * Allocations linking refund to existing documents (invoices, credit notes, overpayments). Used for credit_note_refund and cash_refund types where the refund is applied against prior transactions. Supported by Sage Intacct and Zoho Books.
      *
-     * @var ?array<Allocation> $allocations
+     * @var ?array<\Apideck\Unify\Models\Components\Allocation> $allocations
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('allocations')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Allocation>|null')]
@@ -69,7 +69,7 @@ class Refund
 
     /**
      *
-     * @var ?Address $billingAddress
+     * @var ?\Apideck\Unify\Models\Components\Address $billingAddress
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('billing_address')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
@@ -78,7 +78,7 @@ class Refund
 
     /**
      *
-     * @var ?Address $shippingAddress
+     * @var ?\Apideck\Unify\Models\Components\Address $shippingAddress
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('shipping_address')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
@@ -88,7 +88,7 @@ class Refund
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -98,7 +98,7 @@ class Refund
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -117,7 +117,7 @@ class Refund
     /**
      * The customer this entity is linked to.
      *
-     * @var ?LinkedCustomer $customer
+     * @var ?\Apideck\Unify\Models\Components\LinkedCustomer $customer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedCustomer|null')]
@@ -136,7 +136,7 @@ class Refund
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -217,7 +217,7 @@ class Refund
 
     /**
      *
-     * @var ?LinkedLedgerAccount $account
+     * @var ?\Apideck\Unify\Models\Components\LinkedLedgerAccount $account
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
@@ -280,7 +280,7 @@ class Refund
 
     /**
      *
-     * @var ?LinkedDepartment $department
+     * @var ?\Apideck\Unify\Models\Components\LinkedDepartment $department
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('department')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedDepartment|null')]
@@ -289,7 +289,7 @@ class Refund
 
     /**
      *
-     * @var ?LinkedLocation $location
+     * @var ?\Apideck\Unify\Models\Components\LinkedLocation $location
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('location')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLocation|null')]
@@ -299,7 +299,7 @@ class Refund
     /**
      * A list of linked tracking categories.
      *
-     * @var ?array<?LinkedTrackingCategory> $trackingCategories
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory> $trackingCategories
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory|null>|null')]
@@ -364,18 +364,18 @@ class Refund
     /**
      * @param  string  $id
      * @param  ?float  $totalAmount
-     * @param  ?RefundStatus  $status
-     * @param  ?RefundType  $type
-     * @param  ?array<InvoiceLineItem>  $lineItems
-     * @param  ?array<Allocation>  $allocations
-     * @param  ?Address  $billingAddress
-     * @param  ?Address  $shippingAddress
-     * @param  ?array<CustomField1|CustomField2>  $customFields
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?\Apideck\Unify\Models\Components\RefundStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\RefundType  $type
+     * @param  ?array<\Apideck\Unify\Models\Components\InvoiceLineItem>  $lineItems
+     * @param  ?array<\Apideck\Unify\Models\Components\Allocation>  $allocations
+     * @param  ?\Apideck\Unify\Models\Components\Address  $billingAddress
+     * @param  ?\Apideck\Unify\Models\Components\Address  $shippingAddress
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $number
-     * @param  ?LinkedCustomer  $customer
+     * @param  ?\Apideck\Unify\Models\Components\LinkedCustomer  $customer
      * @param  ?string  $companyId
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?float  $currencyRate
      * @param  ?bool  $taxInclusive
      * @param  ?float  $subTotal
@@ -384,16 +384,16 @@ class Refund
      * @param  ?string  $paymentMethod
      * @param  ?string  $paymentMethodReference
      * @param  ?string  $paymentMethodId
-     * @param  ?LinkedLedgerAccount  $account
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $account
      * @param  ?string  $taxCode
      * @param  ?float  $discountPercentage
      * @param  ?float  $discountAmount
      * @param  ?string  $note
      * @param  ?string  $customerMemo
      * @param  ?string  $reference
-     * @param  ?LinkedDepartment  $department
-     * @param  ?LinkedLocation  $location
-     * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
+     * @param  ?\Apideck\Unify\Models\Components\LinkedDepartment  $department
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLocation  $location
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory>  $trackingCategories
      * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $rowVersion
      * @param  ?string  $updatedBy

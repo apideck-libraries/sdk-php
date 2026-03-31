@@ -54,7 +54,7 @@ class GetCreditNoteResponse
 
     /**
      *
-     * @var CreditNote $data
+     * @var \Apideck\Unify\Models\Components\CreditNote $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CreditNote')]
@@ -76,7 +76,7 @@ class GetCreditNoteResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  CreditNote  $data
+     * @param  \Apideck\Unify\Models\Components\CreditNote  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

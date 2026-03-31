@@ -22,7 +22,7 @@ class BankAccountsFilter
     /**
      * Filter by account type
      *
-     * @var ?BankAccountsFilterAccountType $accountType
+     * @var ?\Apideck\Unify\Models\Components\BankAccountsFilterAccountType $accountType
      */
     #[SpeakeasyMetadata('queryParam:name=account_type')]
     public ?BankAccountsFilterAccountType $accountType = null;
@@ -30,15 +30,15 @@ class BankAccountsFilter
     /**
      * Filter by account status
      *
-     * @var ?BankAccountsFilterStatus $status
+     * @var ?\Apideck\Unify\Models\Components\BankAccountsFilterStatus $status
      */
     #[SpeakeasyMetadata('queryParam:name=status')]
     public ?BankAccountsFilterStatus $status = null;
 
     /**
      * @param  ?string  $name
-     * @param  ?BankAccountsFilterAccountType  $accountType
-     * @param  ?BankAccountsFilterStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\BankAccountsFilterAccountType  $accountType
+     * @param  ?\Apideck\Unify\Models\Components\BankAccountsFilterStatus  $status
      * @phpstan-pure
      */
     public function __construct(?string $name = null, ?BankAccountsFilterAccountType $accountType = null, ?BankAccountsFilterStatus $status = null)

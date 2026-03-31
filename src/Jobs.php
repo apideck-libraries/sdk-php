@@ -52,8 +52,8 @@ class Jobs
      *
      * Create Job
      *
-     * @param  Operations\AtsJobsAddRequest  $request
-     * @return Operations\AtsJobsAddResponse
+     * @param  \Apideck\Unify\Models\Operations\AtsJobsAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AtsJobsAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\AtsJobsAddRequest $request, ?Options $options = null): Operations\AtsJobsAddResponse
@@ -227,8 +227,8 @@ class Jobs
      *
      * List Jobs
      *
-     * @param  ?Operations\AtsJobsAllRequest  $request
-     * @return Operations\AtsJobsAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AtsJobsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AtsJobsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AtsJobsAllRequest $request = null, ?Options $options = null): Operations\AtsJobsAllResponse
@@ -452,8 +452,8 @@ class Jobs
      *
      * List Jobs
      *
-     * @param  ?Operations\AtsJobsAllRequest  $request
-     * @return \Generator<Operations\AtsJobsAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AtsJobsAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AtsJobsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AtsJobsAllRequest $request = null, ?Options $options = null): \Generator
@@ -470,8 +470,8 @@ class Jobs
      *
      * Delete Job
      *
-     * @param  Operations\AtsJobsDeleteRequest  $request
-     * @return Operations\AtsJobsDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\AtsJobsDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AtsJobsDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\AtsJobsDeleteRequest $request, ?Options $options = null): Operations\AtsJobsDeleteResponse
@@ -640,8 +640,8 @@ class Jobs
      *
      * Get Job
      *
-     * @param  Operations\AtsJobsOneRequest  $request
-     * @return Operations\AtsJobsOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AtsJobsOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AtsJobsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AtsJobsOneRequest $request, ?Options $options = null): Operations\AtsJobsOneResponse
@@ -810,8 +810,8 @@ class Jobs
      *
      * Update Job
      *
-     * @param  Operations\AtsJobsUpdateRequest  $request
-     * @return Operations\AtsJobsUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\AtsJobsUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AtsJobsUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\AtsJobsUpdateRequest $request, ?Options $options = null): Operations\AtsJobsUpdateResponse

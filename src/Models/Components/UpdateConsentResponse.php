@@ -30,7 +30,7 @@ class UpdateConsentResponse
 
     /**
      *
-     * @var ConsentRecord $data
+     * @var \Apideck\Unify\Models\Components\ConsentRecord $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConsentRecord')]
@@ -49,7 +49,7 @@ class UpdateConsentResponse
     /**
      * @param  int  $statusCode
      * @param  string  $status
-     * @param  ConsentRecord  $data
+     * @param  \Apideck\Unify\Models\Components\ConsentRecord  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

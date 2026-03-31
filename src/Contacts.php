@@ -52,8 +52,8 @@ class Contacts
      *
      * Create contact
      *
-     * @param  Operations\CrmContactsAddRequest  $request
-     * @return Operations\CrmContactsAddResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmContactsAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmContactsAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\CrmContactsAddRequest $request, ?Options $options = null): Operations\CrmContactsAddResponse
@@ -227,8 +227,8 @@ class Contacts
      *
      * List contacts
      *
-     * @param  ?Operations\CrmContactsAllRequest  $request
-     * @return Operations\CrmContactsAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\CrmContactsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmContactsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\CrmContactsAllRequest $request = null, ?Options $options = null): Operations\CrmContactsAllResponse
@@ -456,8 +456,8 @@ class Contacts
      *
      * List contacts
      *
-     * @param  ?Operations\CrmContactsAllRequest  $request
-     * @return \Generator<Operations\CrmContactsAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\CrmContactsAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\CrmContactsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\CrmContactsAllRequest $request = null, ?Options $options = null): \Generator
@@ -474,8 +474,8 @@ class Contacts
      *
      * Delete contact
      *
-     * @param  Operations\CrmContactsDeleteRequest  $request
-     * @return Operations\CrmContactsDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmContactsDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmContactsDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\CrmContactsDeleteRequest $request, ?Options $options = null): Operations\CrmContactsDeleteResponse
@@ -644,8 +644,8 @@ class Contacts
      *
      * Get contact
      *
-     * @param  Operations\CrmContactsOneRequest  $request
-     * @return Operations\CrmContactsOneResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmContactsOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmContactsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\CrmContactsOneRequest $request, ?Options $options = null): Operations\CrmContactsOneResponse
@@ -814,8 +814,8 @@ class Contacts
      *
      * Update contact
      *
-     * @param  Operations\CrmContactsUpdateRequest  $request
-     * @return Operations\CrmContactsUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmContactsUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmContactsUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\CrmContactsUpdateRequest $request, ?Options $options = null): Operations\CrmContactsUpdateResponse

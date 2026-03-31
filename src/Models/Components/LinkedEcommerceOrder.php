@@ -33,7 +33,7 @@ class LinkedEcommerceOrder
     /**
      * Current status of the order.
      *
-     * @var ?EcommerceOrderStatus $status
+     * @var ?\Apideck\Unify\Models\Components\EcommerceOrderStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EcommerceOrderStatus|null')]
@@ -43,7 +43,7 @@ class LinkedEcommerceOrder
     /**
      * @param  ?string  $id
      * @param  ?string  $total
-     * @param  ?EcommerceOrderStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\EcommerceOrderStatus  $status
      * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $total = null, ?EcommerceOrderStatus $status = null)

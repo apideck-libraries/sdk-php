@@ -55,7 +55,7 @@ class GetProjectsResponse
     /**
      * $data
      *
-     * @var array<Project> $data
+     * @var array<\Apideck\Unify\Models\Components\Project> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Project>')]
@@ -64,7 +64,7 @@ class GetProjectsResponse
     /**
      * Response metadata
      *
-     * @var ?Meta $meta
+     * @var ?\Apideck\Unify\Models\Components\Meta $meta
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('meta')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Meta|null')]
@@ -74,7 +74,7 @@ class GetProjectsResponse
     /**
      * Links to navigate to previous or next pages through the API
      *
-     * @var ?Links $links
+     * @var ?\Apideck\Unify\Models\Components\Links $links
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('links')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Links|null')]
@@ -87,9 +87,9 @@ class GetProjectsResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  array<Project>  $data
-     * @param  ?Meta  $meta
-     * @param  ?Links  $links
+     * @param  array<\Apideck\Unify\Models\Components\Project>  $data
+     * @param  ?\Apideck\Unify\Models\Components\Meta  $meta
+     * @param  ?\Apideck\Unify\Models\Components\Links  $links
      * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, array $data, ?Meta $meta = null, ?Links $links = null)

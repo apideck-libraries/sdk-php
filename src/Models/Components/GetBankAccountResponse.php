@@ -30,7 +30,7 @@ class GetBankAccountResponse
 
     /**
      *
-     * @var AccountingBankAccount $data
+     * @var \Apideck\Unify\Models\Components\AccountingBankAccount $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\AccountingBankAccount')]
@@ -66,7 +66,7 @@ class GetBankAccountResponse
     /**
      * @param  int  $statusCode
      * @param  string  $status
-     * @param  AccountingBankAccount  $data
+     * @param  \Apideck\Unify\Models\Components\AccountingBankAccount  $data
      * @param  ?string  $service
      * @param  ?string  $resource
      * @param  ?string  $operation

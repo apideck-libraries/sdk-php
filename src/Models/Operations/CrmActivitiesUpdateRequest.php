@@ -22,7 +22,7 @@ class CrmActivitiesUpdateRequest
 
     /**
      *
-     * @var Components\ActivityInput $activity
+     * @var \Apideck\Unify\Models\Components\ActivityInput $activity
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\ActivityInput $activity;
@@ -61,7 +61,7 @@ class CrmActivitiesUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\ActivityInput  $activity
+     * @param  \Apideck\Unify\Models\Components\ActivityInput  $activity
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

@@ -14,7 +14,7 @@ class InvoicesSort
     /**
      * The field on which to sort the Invoices
      *
-     * @var ?InvoicesSortBy $by
+     * @var ?\Apideck\Unify\Models\Components\InvoicesSortBy $by
      */
     #[SpeakeasyMetadata('queryParam:name=by')]
     public ?InvoicesSortBy $by = null;
@@ -22,14 +22,14 @@ class InvoicesSort
     /**
      * The direction in which to sort the results
      *
-     * @var ?SortDirection $direction
+     * @var ?\Apideck\Unify\Models\Components\SortDirection $direction
      */
     #[SpeakeasyMetadata('queryParam:name=direction')]
     public ?SortDirection $direction = null;
 
     /**
-     * @param  ?InvoicesSortBy  $by
-     * @param  ?SortDirection  $direction
+     * @param  ?\Apideck\Unify\Models\Components\InvoicesSortBy  $by
+     * @param  ?\Apideck\Unify\Models\Components\SortDirection  $direction
      * @phpstan-pure
      */
     public function __construct(?InvoicesSortBy $by = null, ?SortDirection $direction = SortDirection::Asc)

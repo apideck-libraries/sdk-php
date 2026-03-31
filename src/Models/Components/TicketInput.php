@@ -14,7 +14,7 @@ class TicketInput
     /**
      * $assignees
      *
-     * @var ?array<AssigneeInput> $assignees
+     * @var ?array<\Apideck\Unify\Models\Components\AssigneeInput> $assignees
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('assignees')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\AssigneeInput>|null')]
@@ -24,7 +24,7 @@ class TicketInput
     /**
      * $tags
      *
-     * @var ?array<CollectionTagInput> $tags
+     * @var ?array<\Apideck\Unify\Models\Components\CollectionTagInput> $tags
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tags')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CollectionTagInput>|null')]
@@ -34,7 +34,7 @@ class TicketInput
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -89,7 +89,7 @@ class TicketInput
     /**
      * Priority of the ticket
      *
-     * @var ?TicketPriority $priority
+     * @var ?\Apideck\Unify\Models\Components\TicketPriority $priority
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('priority')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\TicketPriority|null')]
@@ -106,15 +106,15 @@ class TicketInput
     public ?\DateTime $dueDate = null;
 
     /**
-     * @param  ?array<AssigneeInput>  $assignees
-     * @param  ?array<CollectionTagInput>  $tags
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<\Apideck\Unify\Models\Components\AssigneeInput>  $assignees
+     * @param  ?array<\Apideck\Unify\Models\Components\CollectionTagInput>  $tags
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $parentId
      * @param  ?string  $type
      * @param  ?string  $subject
      * @param  ?string  $description
      * @param  ?string  $status
-     * @param  ?TicketPriority  $priority
+     * @param  ?\Apideck\Unify\Models\Components\TicketPriority  $priority
      * @param  ?\DateTime  $dueDate
      * @phpstan-pure
      */

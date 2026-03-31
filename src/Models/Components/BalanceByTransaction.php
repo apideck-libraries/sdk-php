@@ -32,7 +32,7 @@ class BalanceByTransaction
     /**
      * Type of the transaction.
      *
-     * @var ?BalanceByTransactionTransactionType $transactionType
+     * @var ?\Apideck\Unify\Models\Components\BalanceByTransactionTransactionType $transactionType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('transaction_type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BalanceByTransactionTransactionType|null')]
@@ -78,7 +78,7 @@ class BalanceByTransaction
     /**
      * @param  ?string  $transactionId
      * @param  ?LocalDate  $transactionDate
-     * @param  ?BalanceByTransactionTransactionType  $transactionType
+     * @param  ?\Apideck\Unify\Models\Components\BalanceByTransactionTransactionType  $transactionType
      * @param  ?LocalDate  $dueDate
      * @param  ?float  $originalAmount
      * @param  ?float  $outstandingBalance

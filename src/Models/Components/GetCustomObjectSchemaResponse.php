@@ -54,7 +54,7 @@ class GetCustomObjectSchemaResponse
 
     /**
      *
-     * @var CustomObjectSchema $data
+     * @var \Apideck\Unify\Models\Components\CustomObjectSchema $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomObjectSchema')]
@@ -76,7 +76,7 @@ class GetCustomObjectSchemaResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  CustomObjectSchema  $data
+     * @param  \Apideck\Unify\Models\Components\CustomObjectSchema  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

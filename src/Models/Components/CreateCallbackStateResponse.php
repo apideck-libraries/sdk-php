@@ -30,7 +30,7 @@ class CreateCallbackStateResponse
 
     /**
      *
-     * @var CreateCallbackStateResponseData $data
+     * @var \Apideck\Unify\Models\Components\CreateCallbackStateResponseData $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CreateCallbackStateResponseData')]
@@ -49,7 +49,7 @@ class CreateCallbackStateResponse
     /**
      * @param  int  $statusCode
      * @param  string  $status
-     * @param  CreateCallbackStateResponseData  $data
+     * @param  \Apideck\Unify\Models\Components\CreateCallbackStateResponseData  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

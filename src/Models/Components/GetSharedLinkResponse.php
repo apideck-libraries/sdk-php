@@ -54,7 +54,7 @@ class GetSharedLinkResponse
 
     /**
      *
-     * @var SharedLink $data
+     * @var \Apideck\Unify\Models\Components\SharedLink $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\SharedLink')]
@@ -76,7 +76,7 @@ class GetSharedLinkResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  SharedLink  $data
+     * @param  \Apideck\Unify\Models\Components\SharedLink  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

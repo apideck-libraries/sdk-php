@@ -13,7 +13,7 @@ class AccountingBankFeedStatementsAddResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class AccountingBankFeedStatementsAddResponse
     /**
      * Bank Feed Statements
      *
-     * @var ?Components\CreateBankFeedStatementResponse $createBankFeedStatementResponse
+     * @var ?\Apideck\Unify\Models\Components\CreateBankFeedStatementResponse $createBankFeedStatementResponse
      */
     public ?Components\CreateBankFeedStatementResponse $createBankFeedStatementResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\CreateBankFeedStatementResponse  $createBankFeedStatementResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\CreateBankFeedStatementResponse  $createBankFeedStatementResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateBankFeedStatementResponse $createBankFeedStatementResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

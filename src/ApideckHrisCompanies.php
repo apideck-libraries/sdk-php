@@ -52,8 +52,8 @@ class ApideckHrisCompanies
      *
      * Create Company
      *
-     * @param  Operations\HrisCompaniesAddRequest  $request
-     * @return Operations\HrisCompaniesAddResponse
+     * @param  \Apideck\Unify\Models\Operations\HrisCompaniesAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\HrisCompaniesAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\HrisCompaniesAddRequest $request, ?Options $options = null): Operations\HrisCompaniesAddResponse
@@ -227,8 +227,8 @@ class ApideckHrisCompanies
      *
      * List Companies
      *
-     * @param  ?Operations\HrisCompaniesAllRequest  $request
-     * @return Operations\HrisCompaniesAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\HrisCompaniesAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\HrisCompaniesAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\HrisCompaniesAllRequest $request = null, ?Options $options = null): Operations\HrisCompaniesAllResponse
@@ -452,8 +452,8 @@ class ApideckHrisCompanies
      *
      * List Companies
      *
-     * @param  ?Operations\HrisCompaniesAllRequest  $request
-     * @return \Generator<Operations\HrisCompaniesAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\HrisCompaniesAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\HrisCompaniesAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\HrisCompaniesAllRequest $request = null, ?Options $options = null): \Generator
@@ -470,8 +470,8 @@ class ApideckHrisCompanies
      *
      * Delete Company
      *
-     * @param  Operations\HrisCompaniesDeleteRequest  $request
-     * @return Operations\HrisCompaniesDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\HrisCompaniesDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\HrisCompaniesDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\HrisCompaniesDeleteRequest $request, ?Options $options = null): Operations\HrisCompaniesDeleteResponse
@@ -640,8 +640,8 @@ class ApideckHrisCompanies
      *
      * Get Company
      *
-     * @param  Operations\HrisCompaniesOneRequest  $request
-     * @return Operations\HrisCompaniesOneResponse
+     * @param  \Apideck\Unify\Models\Operations\HrisCompaniesOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\HrisCompaniesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\HrisCompaniesOneRequest $request, ?Options $options = null): Operations\HrisCompaniesOneResponse
@@ -810,8 +810,8 @@ class ApideckHrisCompanies
      *
      * Update Company
      *
-     * @param  Operations\HrisCompaniesUpdateRequest  $request
-     * @return Operations\HrisCompaniesUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\HrisCompaniesUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\HrisCompaniesUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\HrisCompaniesUpdateRequest $request, ?Options $options = null): Operations\HrisCompaniesUpdateResponse

@@ -14,7 +14,7 @@ class UpdateWebhookRequest
     /**
      * The status of the webhook.
      *
-     * @var ?Status $status
+     * @var ?\Apideck\Unify\Models\Components\Status $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Status|null')]
@@ -33,7 +33,7 @@ class UpdateWebhookRequest
     /**
      * The list of subscribed events for this webhook. [`*`] indicates that all events are enabled.
      *
-     * @var ?array<WebhookEventType> $events
+     * @var ?array<\Apideck\Unify\Models\Components\WebhookEventType> $events
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('events')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\WebhookEventType>|null')]
@@ -50,9 +50,9 @@ class UpdateWebhookRequest
     public ?string $description = null;
 
     /**
-     * @param  ?Status  $status
+     * @param  ?\Apideck\Unify\Models\Components\Status  $status
      * @param  ?string  $deliveryUrl
-     * @param  ?array<WebhookEventType>  $events
+     * @param  ?array<\Apideck\Unify\Models\Components\WebhookEventType>  $events
      * @param  ?string  $description
      * @phpstan-pure
      */

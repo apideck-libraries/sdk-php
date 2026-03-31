@@ -22,7 +22,7 @@ class ConnectionDefaults
     /**
      * $options
      *
-     * @var ?array<SimpleFormFieldOption|FormFieldOptionGroup> $options
+     * @var ?array<\Apideck\Unify\Models\Components\SimpleFormFieldOption|\Apideck\Unify\Models\Components\FormFieldOptionGroup> $options
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\SimpleFormFieldOption|\Apideck\Unify\Models\Components\FormFieldOptionGroup>|null')]
@@ -40,7 +40,7 @@ class ConnectionDefaults
 
     /**
      * @param  ?string  $id
-     * @param  ?array<SimpleFormFieldOption|FormFieldOptionGroup>  $options
+     * @param  ?array<\Apideck\Unify\Models\Components\SimpleFormFieldOption|\Apideck\Unify\Models\Components\FormFieldOptionGroup>  $options
      * @param  string|int|float|bool|array<string|int|float>|null  $value
      * @phpstan-pure
      */

@@ -20,14 +20,14 @@ class JournalEntriesFilter
 
     /**
      *
-     * @var ?JournalEntriesFilterStatus $status
+     * @var ?\Apideck\Unify\Models\Components\JournalEntriesFilterStatus $status
      */
     #[SpeakeasyMetadata('queryParam:name=status')]
     public ?JournalEntriesFilterStatus $status = null;
 
     /**
      * @param  ?\DateTime  $updatedSince
-     * @param  ?JournalEntriesFilterStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\JournalEntriesFilterStatus  $status
      * @phpstan-pure
      */
     public function __construct(?\DateTime $updatedSince = null, ?JournalEntriesFilterStatus $status = null)

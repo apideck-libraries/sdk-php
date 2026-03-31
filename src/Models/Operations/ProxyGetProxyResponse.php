@@ -13,7 +13,7 @@ class ProxyGetProxyResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -97,7 +97,7 @@ class ProxyGetProxyResponse
     public ?string $errorText = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
      * @param  array<string, array<string>>  $headers
      * @param  ?array<string, mixed>  $responseJson
      * @param  ?string  $responseBinary

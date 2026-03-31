@@ -50,7 +50,7 @@ class Person
     /**
      * The gender represents the gender identity of a person.
      *
-     * @var ?Gender $gender
+     * @var ?\Apideck\Unify\Models\Components\Gender $gender
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('gender')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Gender|null')]
@@ -99,7 +99,7 @@ class Person
      * @param  ?string  $firstName
      * @param  ?string  $lastName
      * @param  ?string  $middleName
-     * @param  ?Gender  $gender
+     * @param  ?\Apideck\Unify\Models\Components\Gender  $gender
      * @param  ?string  $initials
      * @param  ?LocalDate  $birthday
      * @param  ?LocalDate  $deceasedOn

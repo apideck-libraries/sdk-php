@@ -22,7 +22,7 @@ class EcommerceOrder
     /**
      * $discounts
      *
-     * @var ?array<EcommerceDiscount> $discounts
+     * @var ?array<\Apideck\Unify\Models\Components\EcommerceDiscount> $discounts
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('discounts')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceDiscount>|null')]
@@ -32,7 +32,7 @@ class EcommerceOrder
     /**
      * The customer this entity is linked to.
      *
-     * @var ?LinkedEcommerceCustomer $customer
+     * @var ?\Apideck\Unify\Models\Components\LinkedEcommerceCustomer $customer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedEcommerceCustomer|null')]
@@ -42,7 +42,7 @@ class EcommerceOrder
     /**
      * An object representing a shipping or billing address.
      *
-     * @var ?EcommerceAddress $billingAddress
+     * @var ?\Apideck\Unify\Models\Components\EcommerceAddress $billingAddress
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('billing_address')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EcommerceAddress|null')]
@@ -52,7 +52,7 @@ class EcommerceOrder
     /**
      * An object representing a shipping or billing address.
      *
-     * @var ?EcommerceAddress $shippingAddress
+     * @var ?\Apideck\Unify\Models\Components\EcommerceAddress $shippingAddress
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('shipping_address')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EcommerceAddress|null')]
@@ -62,7 +62,7 @@ class EcommerceOrder
     /**
      * $tracking
      *
-     * @var ?array<TrackingItem> $tracking
+     * @var ?array<\Apideck\Unify\Models\Components\TrackingItem> $tracking
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\TrackingItem>|null')]
@@ -72,7 +72,7 @@ class EcommerceOrder
     /**
      * $lineItems
      *
-     * @var ?array<EcommerceOrderLineItem> $lineItems
+     * @var ?array<\Apideck\Unify\Models\Components\EcommerceOrderLineItem> $lineItems
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceOrderLineItem>|null')]
@@ -82,7 +82,7 @@ class EcommerceOrder
     /**
      * $refunds
      *
-     * @var ?array<EcommerceOrderRefund> $refunds
+     * @var ?array<\Apideck\Unify\Models\Components\EcommerceOrderRefund> $refunds
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('refunds')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceOrderRefund>|null')]
@@ -101,7 +101,7 @@ class EcommerceOrder
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -174,7 +174,7 @@ class EcommerceOrder
     /**
      * Current status of the order.
      *
-     * @var ?EcommerceOrderStatus $status
+     * @var ?\Apideck\Unify\Models\Components\EcommerceOrderStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EcommerceOrderStatus|null')]
@@ -184,7 +184,7 @@ class EcommerceOrder
     /**
      * Current payment status of the order.
      *
-     * @var ?EcommerceOrderPaymentStatus $paymentStatus
+     * @var ?\Apideck\Unify\Models\Components\EcommerceOrderPaymentStatus $paymentStatus
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('payment_status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EcommerceOrderPaymentStatus|null')]
@@ -194,7 +194,7 @@ class EcommerceOrder
     /**
      * Current fulfillment status of the order.
      *
-     * @var ?FulfillmentStatus $fulfillmentStatus
+     * @var ?\Apideck\Unify\Models\Components\FulfillmentStatus $fulfillmentStatus
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('fulfillment_status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\FulfillmentStatus|null')]
@@ -249,15 +249,15 @@ class EcommerceOrder
 
     /**
      * @param  string  $id
-     * @param  ?array<EcommerceDiscount>  $discounts
-     * @param  ?LinkedEcommerceCustomer  $customer
-     * @param  ?EcommerceAddress  $billingAddress
-     * @param  ?EcommerceAddress  $shippingAddress
-     * @param  ?array<TrackingItem>  $tracking
-     * @param  ?array<EcommerceOrderLineItem>  $lineItems
-     * @param  ?array<EcommerceOrderRefund>  $refunds
+     * @param  ?array<\Apideck\Unify\Models\Components\EcommerceDiscount>  $discounts
+     * @param  ?\Apideck\Unify\Models\Components\LinkedEcommerceCustomer  $customer
+     * @param  ?\Apideck\Unify\Models\Components\EcommerceAddress  $billingAddress
+     * @param  ?\Apideck\Unify\Models\Components\EcommerceAddress  $shippingAddress
+     * @param  ?array<\Apideck\Unify\Models\Components\TrackingItem>  $tracking
+     * @param  ?array<\Apideck\Unify\Models\Components\EcommerceOrderLineItem>  $lineItems
+     * @param  ?array<\Apideck\Unify\Models\Components\EcommerceOrderRefund>  $refunds
      * @param  ?string  $orderNumber
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?string  $subTotal
      * @param  ?string  $shippingCost
      * @param  ?string  $couponDiscount
@@ -265,9 +265,9 @@ class EcommerceOrder
      * @param  ?string  $totalTax
      * @param  ?string  $totalAmount
      * @param  ?string  $refundedAmount
-     * @param  ?EcommerceOrderStatus  $status
-     * @param  ?EcommerceOrderPaymentStatus  $paymentStatus
-     * @param  ?FulfillmentStatus  $fulfillmentStatus
+     * @param  ?\Apideck\Unify\Models\Components\EcommerceOrderStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\EcommerceOrderPaymentStatus  $paymentStatus
+     * @param  ?\Apideck\Unify\Models\Components\FulfillmentStatus  $fulfillmentStatus
      * @param  ?string  $paymentMethod
      * @param  ?string  $note
      * @param  ?array<string, mixed>  $customMappings

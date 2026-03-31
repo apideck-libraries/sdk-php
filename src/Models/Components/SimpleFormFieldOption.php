@@ -20,7 +20,7 @@ class SimpleFormFieldOption
 
     /**
      *
-     * @var OptionType $optionType
+     * @var \Apideck\Unify\Models\Components\OptionType $optionType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('option_type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\OptionType')]
@@ -37,7 +37,7 @@ class SimpleFormFieldOption
 
     /**
      * @param  string  $label
-     * @param  OptionType  $optionType
+     * @param  \Apideck\Unify\Models\Components\OptionType  $optionType
      * @param  string|int|float|bool|array<string|int|float>|null  $value
      * @phpstan-pure
      */

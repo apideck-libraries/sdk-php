@@ -58,7 +58,7 @@ class Pipeline
     /**
      * The Pipeline Stages.
      *
-     * @var ?array<Stages> $stages
+     * @var ?array<\Apideck\Unify\Models\Components\Stages> $stages
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('stages')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Stages>|null')]
@@ -68,7 +68,7 @@ class Pipeline
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -78,7 +78,7 @@ class Pipeline
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -118,9 +118,9 @@ class Pipeline
      * @param  ?bool  $archived
      * @param  ?bool  $active
      * @param  ?bool  $winProbabilityEnabled
-     * @param  ?array<Stages>  $stages
-     * @param  ?array<PassThroughBody>  $passThrough
-     * @param  ?Currency  $currency
+     * @param  ?array<\Apideck\Unify\Models\Components\Stages>  $stages
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?int  $displayOrder
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt

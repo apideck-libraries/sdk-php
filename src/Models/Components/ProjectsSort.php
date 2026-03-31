@@ -14,7 +14,7 @@ class ProjectsSort
     /**
      * The field to sort by
      *
-     * @var ?ProjectsSortSortBy $by
+     * @var ?\Apideck\Unify\Models\Components\ProjectsSortSortBy $by
      */
     #[SpeakeasyMetadata('queryParam:name=by')]
     public ?ProjectsSortSortBy $by = null;
@@ -22,14 +22,14 @@ class ProjectsSort
     /**
      * The direction in which to sort the results
      *
-     * @var ?SortDirection $direction
+     * @var ?\Apideck\Unify\Models\Components\SortDirection $direction
      */
     #[SpeakeasyMetadata('queryParam:name=direction')]
     public ?SortDirection $direction = null;
 
     /**
-     * @param  ?ProjectsSortSortBy  $by
-     * @param  ?SortDirection  $direction
+     * @param  ?\Apideck\Unify\Models\Components\ProjectsSortSortBy  $by
+     * @param  ?\Apideck\Unify\Models\Components\SortDirection  $direction
      * @phpstan-pure
      */
     public function __construct(?ProjectsSortSortBy $by = null, ?SortDirection $direction = SortDirection::Asc)

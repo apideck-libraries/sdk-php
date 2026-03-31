@@ -14,7 +14,7 @@ class ExpenseReportInput
     /**
      * The employee who submitted the expense report.
      *
-     * @var ExpenseReportEmployee $employee
+     * @var \Apideck\Unify\Models\Components\ExpenseReportEmployee $employee
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('employee')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ExpenseReportEmployee')]
@@ -23,7 +23,7 @@ class ExpenseReportInput
     /**
      * Expense line items linked to this expense report.
      *
-     * @var array<ExpenseReportLineItemInput> $lineItems
+     * @var array<\Apideck\Unify\Models\Components\ExpenseReportLineItemInput> $lineItems
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ExpenseReportLineItemInput>')]
@@ -40,7 +40,7 @@ class ExpenseReportInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -50,7 +50,7 @@ class ExpenseReportInput
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -87,7 +87,7 @@ class ExpenseReportInput
     /**
      * The status of the expense report.
      *
-     * @var ?ExpenseReportStatus $status
+     * @var ?\Apideck\Unify\Models\Components\ExpenseReportStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ExpenseReportStatus|null')]
@@ -115,7 +115,7 @@ class ExpenseReportInput
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -178,7 +178,7 @@ class ExpenseReportInput
 
     /**
      *
-     * @var ?LinkedDepartmentInput $department
+     * @var ?\Apideck\Unify\Models\Components\LinkedDepartmentInput $department
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('department')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedDepartmentInput|null')]
@@ -187,7 +187,7 @@ class ExpenseReportInput
 
     /**
      *
-     * @var ?LinkedLocationInput $location
+     * @var ?\Apideck\Unify\Models\Components\LinkedLocationInput $location
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('location')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLocationInput|null')]
@@ -196,7 +196,7 @@ class ExpenseReportInput
 
     /**
      *
-     * @var ?LinkedLedgerAccount $account
+     * @var ?\Apideck\Unify\Models\Components\LinkedLedgerAccount $account
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
@@ -206,7 +206,7 @@ class ExpenseReportInput
     /**
      * The accounting period the expense report is posted to.
      *
-     * @var ?AccountingPeriod $accountingPeriod
+     * @var ?\Apideck\Unify\Models\Components\AccountingPeriod $accountingPeriod
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('accounting_period')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\AccountingPeriod|null')]
@@ -215,7 +215,7 @@ class ExpenseReportInput
 
     /**
      *
-     * @var ?LinkedSubsidiaryInput $subsidiary
+     * @var ?\Apideck\Unify\Models\Components\LinkedSubsidiaryInput $subsidiary
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiary')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedSubsidiaryInput|null')]
@@ -225,7 +225,7 @@ class ExpenseReportInput
     /**
      * A list of linked tracking categories.
      *
-     * @var ?array<?LinkedTrackingCategory> $trackingCategories
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory> $trackingCategories
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory|null>|null')]
@@ -244,7 +244,7 @@ class ExpenseReportInput
     /**
      * The person who approved the expense report.
      *
-     * @var ?ApprovedBy $approvedBy
+     * @var ?\Apideck\Unify\Models\Components\ApprovedBy $approvedBy
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('approved_by')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ApprovedBy|null')]
@@ -261,32 +261,32 @@ class ExpenseReportInput
     public ?string $rowVersion = null;
 
     /**
-     * @param  ExpenseReportEmployee  $employee
-     * @param  array<ExpenseReportLineItemInput>  $lineItems
+     * @param  \Apideck\Unify\Models\Components\ExpenseReportEmployee  $employee
+     * @param  array<\Apideck\Unify\Models\Components\ExpenseReportLineItemInput>  $lineItems
      * @param  ?\DateTime  $transactionDate
-     * @param  ?array<CustomField1|CustomField2>  $customFields
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $displayId
      * @param  ?string  $number
      * @param  ?string  $title
-     * @param  ?ExpenseReportStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\ExpenseReportStatus  $status
      * @param  ?LocalDate  $postingDate
      * @param  ?LocalDate  $dueDate
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?float  $currencyRate
      * @param  ?float  $subTotal
      * @param  ?float  $totalTax
      * @param  ?float  $totalAmount
      * @param  ?float  $reimbursableAmount
      * @param  ?string  $memo
-     * @param  ?LinkedDepartmentInput  $department
-     * @param  ?LinkedLocationInput  $location
-     * @param  ?LinkedLedgerAccount  $account
-     * @param  ?AccountingPeriod  $accountingPeriod
-     * @param  ?LinkedSubsidiaryInput  $subsidiary
-     * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
+     * @param  ?\Apideck\Unify\Models\Components\LinkedDepartmentInput  $department
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLocationInput  $location
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $account
+     * @param  ?\Apideck\Unify\Models\Components\AccountingPeriod  $accountingPeriod
+     * @param  ?\Apideck\Unify\Models\Components\LinkedSubsidiaryInput  $subsidiary
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory>  $trackingCategories
      * @param  ?bool  $taxInclusive
-     * @param  ?ApprovedBy  $approvedBy
+     * @param  ?\Apideck\Unify\Models\Components\ApprovedBy  $approvedBy
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */

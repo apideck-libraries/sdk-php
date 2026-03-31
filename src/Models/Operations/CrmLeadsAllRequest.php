@@ -39,7 +39,7 @@ class CrmLeadsAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\LeadsFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\LeadsFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\LeadsFilter $filter = null;
@@ -47,7 +47,7 @@ class CrmLeadsAllRequest
     /**
      * Apply sorting
      *
-     * @var ?Components\LeadsSort $sort
+     * @var ?\Apideck\Unify\Models\Components\LeadsSort $sort
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=sort')]
     public ?Components\LeadsSort $sort = null;
@@ -98,8 +98,8 @@ class CrmLeadsAllRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?int  $limit
-     * @param  ?Components\LeadsFilter  $filter
-     * @param  ?Components\LeadsSort  $sort
+     * @param  ?\Apideck\Unify\Models\Components\LeadsFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\LeadsSort  $sort
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields

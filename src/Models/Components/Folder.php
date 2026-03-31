@@ -22,7 +22,7 @@ class Folder
     /**
      * The parent folders of the file, starting from the root
      *
-     * @var array<LinkedFolder> $parentFolders
+     * @var array<\Apideck\Unify\Models\Components\LinkedFolder> $parentFolders
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('parent_folders')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedFolder>')]
@@ -39,7 +39,7 @@ class Folder
 
     /**
      *
-     * @var ?Owner $owner
+     * @var ?\Apideck\Unify\Models\Components\Owner $owner
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('owner')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Owner|null')]
@@ -148,9 +148,9 @@ class Folder
 
     /**
      * @param  string  $name
-     * @param  array<LinkedFolder>  $parentFolders
+     * @param  array<\Apideck\Unify\Models\Components\LinkedFolder>  $parentFolders
      * @param  ?string  $id
-     * @param  ?Owner  $owner
+     * @param  ?\Apideck\Unify\Models\Components\Owner  $owner
      * @param  ?bool  $parentFoldersComplete
      * @param  ?string  $downstreamId
      * @param  ?string  $description

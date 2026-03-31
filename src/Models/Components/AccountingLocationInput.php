@@ -14,7 +14,7 @@ class AccountingLocationInput
     /**
      * Based on the status some functionality is enabled or disabled.
      *
-     * @var ?LocationStatus $status
+     * @var ?\Apideck\Unify\Models\Components\LocationStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LocationStatus|null')]
@@ -24,7 +24,7 @@ class AccountingLocationInput
     /**
      * $addresses
      *
-     * @var ?array<Address> $addresses
+     * @var ?array<\Apideck\Unify\Models\Components\Address> $addresses
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('addresses')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Address>|null')]
@@ -34,7 +34,7 @@ class AccountingLocationInput
     /**
      * $subsidiaries
      *
-     * @var ?array<SubsidiaryReferenceInput> $subsidiaries
+     * @var ?array<\Apideck\Unify\Models\Components\SubsidiaryReferenceInput> $subsidiaries
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiaries')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\SubsidiaryReferenceInput>|null')]
@@ -44,7 +44,7 @@ class AccountingLocationInput
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -97,10 +97,10 @@ class AccountingLocationInput
     public ?string $rowVersion = null;
 
     /**
-     * @param  ?LocationStatus  $status
-     * @param  ?array<Address>  $addresses
-     * @param  ?array<SubsidiaryReferenceInput>  $subsidiaries
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?\Apideck\Unify\Models\Components\LocationStatus  $status
+     * @param  ?array<\Apideck\Unify\Models\Components\Address>  $addresses
+     * @param  ?array<\Apideck\Unify\Models\Components\SubsidiaryReferenceInput>  $subsidiaries
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $parentId
      * @param  ?string  $displayId
      * @param  ?string  $companyName

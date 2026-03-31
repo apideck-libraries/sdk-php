@@ -29,7 +29,7 @@ class ConnectorSetting
 
     /**
      *
-     * @var ?ConnectorSettingType $type
+     * @var ?\Apideck\Unify\Models\Components\ConnectorSettingType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConnectorSettingType|null')]
@@ -39,7 +39,7 @@ class ConnectorSetting
     /**
      * @param  ?string  $id
      * @param  ?string  $label
-     * @param  ?ConnectorSettingType  $type
+     * @param  ?\Apideck\Unify\Models\Components\ConnectorSettingType  $type
      * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $label = null, ?ConnectorSettingType $type = null)

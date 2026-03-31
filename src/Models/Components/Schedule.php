@@ -37,7 +37,7 @@ class Schedule
 
     /**
      *
-     * @var WorkPattern $workPattern
+     * @var \Apideck\Unify\Models\Components\WorkPattern $workPattern
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('work_pattern')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\WorkPattern')]
@@ -47,7 +47,7 @@ class Schedule
      * @param  string  $id
      * @param  string  $startDate
      * @param  string  $endDate
-     * @param  WorkPattern  $workPattern
+     * @param  \Apideck\Unify\Models\Components\WorkPattern  $workPattern
      * @phpstan-pure
      */
     public function __construct(string $id, string $startDate, string $endDate, WorkPattern $workPattern)

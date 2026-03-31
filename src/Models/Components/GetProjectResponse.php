@@ -54,7 +54,7 @@ class GetProjectResponse
 
     /**
      *
-     * @var Project $data
+     * @var \Apideck\Unify\Models\Components\Project $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Project')]
@@ -66,7 +66,7 @@ class GetProjectResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Project  $data
+     * @param  \Apideck\Unify\Models\Components\Project  $data
      * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, Project $data)

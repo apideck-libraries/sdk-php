@@ -32,7 +32,7 @@ class Category
     /**
      * The type of the category.
      *
-     * @var ?CategoryType $type
+     * @var ?\Apideck\Unify\Models\Components\CategoryType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CategoryType|null')]
@@ -42,7 +42,7 @@ class Category
     /**
      * Based on the status some functionality is enabled or disabled.
      *
-     * @var ?CategoryStatus $status
+     * @var ?\Apideck\Unify\Models\Components\CategoryStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CategoryStatus|null')]
@@ -52,7 +52,7 @@ class Category
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -126,9 +126,9 @@ class Category
     /**
      * @param  ?string  $id
      * @param  ?string  $name
-     * @param  ?CategoryType  $type
-     * @param  ?CategoryStatus  $status
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?\Apideck\Unify\Models\Components\CategoryType  $type
+     * @param  ?\Apideck\Unify\Models\Components\CategoryStatus  $status
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $displayId
      * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $rowVersion

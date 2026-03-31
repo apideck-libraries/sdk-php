@@ -32,7 +32,7 @@ class DataScopes
     /**
      * Data scopes resource configuration that can be either detailed field permissions or a wildcard
      *
-     * @var array<string, array<string, DataScopesResources1>>|DataScopesResources2|null $resources
+     * @var array<string, array<string, \Apideck\Unify\Models\Components\DataScopesResources1>>|\Apideck\Unify\Models\Components\DataScopesResources2|null $resources
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('resources')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, array<string, \Apideck\Unify\Models\Components\DataScopesResources1>>|\Apideck\Unify\Models\Components\DataScopesResources2|null')]
@@ -42,7 +42,7 @@ class DataScopes
     /**
      * @param  ?bool  $enabled
      * @param  ?string  $updatedAt
-     * @param  array<string, array<string, DataScopesResources1>>|DataScopesResources2|null  $resources
+     * @param  array<string, array<string, \Apideck\Unify\Models\Components\DataScopesResources1>>|\Apideck\Unify\Models\Components\DataScopesResources2|null  $resources
      * @phpstan-pure
      */
     public function __construct(?bool $enabled = null, ?string $updatedAt = null, array|DataScopesResources2|null $resources = null)

@@ -22,7 +22,7 @@ class CreateConsumerRequest
     /**
      * The metadata of the consumer. This is used to display the consumer in the sidebar. This is optional, but recommended.
      *
-     * @var ?ConsumerMetadata $metadata
+     * @var ?\Apideck\Unify\Models\Components\ConsumerMetadata $metadata
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConsumerMetadata|null')]
@@ -31,7 +31,7 @@ class CreateConsumerRequest
 
     /**
      * @param  string  $consumerId
-     * @param  ?ConsumerMetadata  $metadata
+     * @param  ?\Apideck\Unify\Models\Components\ConsumerMetadata  $metadata
      * @phpstan-pure
      */
     public function __construct(string $consumerId, ?ConsumerMetadata $metadata = null)

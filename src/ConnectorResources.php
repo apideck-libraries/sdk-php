@@ -55,8 +55,8 @@ class ConnectorResources
      * @param  string  $id
      * @param  string  $resourceId
      * @param  ?string  $appId
-     * @param  ?Components\UnifiedApiId  $unifiedApi
-     * @return Operations\ConnectorConnectorResourcesOneResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnifiedApiId  $unifiedApi
+     * @return \Apideck\Unify\Models\Operations\ConnectorConnectorResourcesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(string $id, string $resourceId, ?string $appId = null, ?Components\UnifiedApiId $unifiedApi = null, ?Options $options = null): Operations\ConnectorConnectorResourcesOneResponse

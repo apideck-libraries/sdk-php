@@ -22,7 +22,7 @@ class ProfitAndLoss
     /**
      * The operating income accounts
      *
-     * @var Income $income
+     * @var \Apideck\Unify\Models\Components\Income $income
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('income')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Income')]
@@ -31,7 +31,7 @@ class ProfitAndLoss
     /**
      * The operating expenses accounts
      *
-     * @var Expenses $expenses
+     * @var \Apideck\Unify\Models\Components\Expenses $expenses
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('expenses')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Expenses')]
@@ -67,7 +67,7 @@ class ProfitAndLoss
     /**
      * The cost of goods sold accounts
      *
-     * @var ?CostOfGoodsSold $costOfGoodsSold
+     * @var ?\Apideck\Unify\Models\Components\CostOfGoodsSold $costOfGoodsSold
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('cost_of_goods_sold')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CostOfGoodsSold|null')]
@@ -77,7 +77,7 @@ class ProfitAndLoss
     /**
      * The other income accounts
      *
-     * @var ?OtherIncome $otherIncome
+     * @var ?\Apideck\Unify\Models\Components\OtherIncome $otherIncome
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('other_income')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\OtherIncome|null')]
@@ -87,7 +87,7 @@ class ProfitAndLoss
     /**
      * The other expenses accounts
      *
-     * @var ?OtherExpenses $otherExpenses
+     * @var ?\Apideck\Unify\Models\Components\OtherExpenses $otherExpenses
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('other_expenses')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\OtherExpenses|null')]
@@ -97,7 +97,7 @@ class ProfitAndLoss
     /**
      * The accounts not categorized in the other sections
      *
-     * @var ?UncategorizedAccounts $uncategorizedAccounts
+     * @var ?\Apideck\Unify\Models\Components\UncategorizedAccounts $uncategorizedAccounts
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('uncategorized_accounts')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\UncategorizedAccounts|null')]
@@ -106,7 +106,7 @@ class ProfitAndLoss
 
     /**
      *
-     * @var ?ProfitAndLossIndicator $grossProfit
+     * @var ?\Apideck\Unify\Models\Components\ProfitAndLossIndicator $grossProfit
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('gross_profit')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ProfitAndLossIndicator|null')]
@@ -115,7 +115,7 @@ class ProfitAndLoss
 
     /**
      *
-     * @var ?ProfitAndLossIndicator $netOperatingIncome
+     * @var ?\Apideck\Unify\Models\Components\ProfitAndLossIndicator $netOperatingIncome
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('net_operating_income')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ProfitAndLossIndicator|null')]
@@ -124,7 +124,7 @@ class ProfitAndLoss
 
     /**
      *
-     * @var ?ProfitAndLossIndicator $netIncome
+     * @var ?\Apideck\Unify\Models\Components\ProfitAndLossIndicator $netIncome
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('net_income')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ProfitAndLossIndicator|null')]
@@ -143,7 +143,7 @@ class ProfitAndLoss
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -162,20 +162,20 @@ class ProfitAndLoss
 
     /**
      * @param  string  $reportName
-     * @param  Income  $income
-     * @param  Expenses  $expenses
+     * @param  \Apideck\Unify\Models\Components\Income  $income
+     * @param  \Apideck\Unify\Models\Components\Expenses  $expenses
      * @param  ?string  $id
      * @param  ?string  $startDate
      * @param  ?string  $endDate
-     * @param  ?CostOfGoodsSold  $costOfGoodsSold
-     * @param  ?OtherIncome  $otherIncome
-     * @param  ?OtherExpenses  $otherExpenses
-     * @param  ?UncategorizedAccounts  $uncategorizedAccounts
-     * @param  ?ProfitAndLossIndicator  $grossProfit
-     * @param  ?ProfitAndLossIndicator  $netOperatingIncome
-     * @param  ?ProfitAndLossIndicator  $netIncome
+     * @param  ?\Apideck\Unify\Models\Components\CostOfGoodsSold  $costOfGoodsSold
+     * @param  ?\Apideck\Unify\Models\Components\OtherIncome  $otherIncome
+     * @param  ?\Apideck\Unify\Models\Components\OtherExpenses  $otherExpenses
+     * @param  ?\Apideck\Unify\Models\Components\UncategorizedAccounts  $uncategorizedAccounts
+     * @param  ?\Apideck\Unify\Models\Components\ProfitAndLossIndicator  $grossProfit
+     * @param  ?\Apideck\Unify\Models\Components\ProfitAndLossIndicator  $netOperatingIncome
+     * @param  ?\Apideck\Unify\Models\Components\ProfitAndLossIndicator  $netIncome
      * @param  ?string  $customer
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?array<string, mixed>  $customMappings
      * @phpstan-pure
      */

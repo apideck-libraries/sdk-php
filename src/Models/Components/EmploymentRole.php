@@ -14,7 +14,7 @@ class EmploymentRole
     /**
      * The type of employment relationship the employee has with the organization.
      *
-     * @var ?EmploymentType $type
+     * @var ?\Apideck\Unify\Models\Components\EmploymentType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EmploymentType|null')]
@@ -24,7 +24,7 @@ class EmploymentRole
     /**
      * The work schedule of the employee.
      *
-     * @var ?EmploymentSubType $subType
+     * @var ?\Apideck\Unify\Models\Components\EmploymentSubType $subType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('sub_type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EmploymentSubType|null')]
@@ -32,8 +32,8 @@ class EmploymentRole
     public ?EmploymentSubType $subType = null;
 
     /**
-     * @param  ?EmploymentType  $type
-     * @param  ?EmploymentSubType  $subType
+     * @param  ?\Apideck\Unify\Models\Components\EmploymentType  $type
+     * @param  ?\Apideck\Unify\Models\Components\EmploymentSubType  $subType
      * @phpstan-pure
      */
     public function __construct(?EmploymentType $type = null, ?EmploymentSubType $subType = null)

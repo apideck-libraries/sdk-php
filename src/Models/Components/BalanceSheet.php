@@ -14,14 +14,14 @@ class BalanceSheet
     /**
      * $reports
      *
-     * @var array<Reports> $reports
+     * @var array<\Apideck\Unify\Models\Components\Reports> $reports
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('reports')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Reports>')]
     public array $reports;
 
     /**
-     * @param  array<Reports>  $reports
+     * @param  array<\Apideck\Unify\Models\Components\Reports>  $reports
      * @phpstan-pure
      */
     public function __construct(array $reports)

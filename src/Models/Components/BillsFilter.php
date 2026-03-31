@@ -21,14 +21,14 @@ class BillsFilter
     /**
      * Filter by bill status
      *
-     * @var ?BillsFilterStatus $status
+     * @var ?\Apideck\Unify\Models\Components\BillsFilterStatus $status
      */
     #[SpeakeasyMetadata('queryParam:name=status')]
     public ?BillsFilterStatus $status = null;
 
     /**
      * @param  ?\DateTime  $updatedSince
-     * @param  ?BillsFilterStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\BillsFilterStatus  $status
      * @phpstan-pure
      */
     public function __construct(?\DateTime $updatedSince = null, ?BillsFilterStatus $status = null)

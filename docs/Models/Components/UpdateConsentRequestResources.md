@@ -7,7 +7,7 @@
 
 ```php
 /**
-* @var array<string, array<string, Components\One>>
+* @var array<string, array<string, \Apideck\Unify\Models\Components\One>>
 */
 array $value = /* values here */
 ```
@@ -16,7 +16,7 @@ array $value = /* values here */
 
 ```php
 /**
-* @var Components\Two
+* @var \Apideck\Unify\Models\Components\Two
 */
 Components\Two $value = /* values here */
 ```

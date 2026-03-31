@@ -14,7 +14,7 @@ class AccountingCustomersAddRequest
 {
     /**
      *
-     * @var Components\CustomerInput $customer
+     * @var \Apideck\Unify\Models\Components\CustomerInput $customer
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\CustomerInput $customer;
@@ -60,7 +60,7 @@ class AccountingCustomersAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\CustomerInput  $customer
+     * @param  \Apideck\Unify\Models\Components\CustomerInput  $customer
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

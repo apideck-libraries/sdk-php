@@ -18,7 +18,7 @@ class DeprecatedLinkedSupplierInput
 {
     /**
      *
-     * @var ?Address $address
+     * @var ?\Apideck\Unify\Models\Components\Address $address
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('address')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
@@ -35,7 +35,7 @@ class DeprecatedLinkedSupplierInput
     public ?string $displayName = null;
 
     /**
-     * @param  ?Address  $address
+     * @param  ?\Apideck\Unify\Models\Components\Address  $address
      * @param  ?string  $displayName
      * @phpstan-pure
      */

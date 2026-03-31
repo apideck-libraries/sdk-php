@@ -20,14 +20,14 @@ class AccountingEmployeesFilter
 
     /**
      *
-     * @var ?AccountingEmployeesFilterStatus $status
+     * @var ?\Apideck\Unify\Models\Components\AccountingEmployeesFilterStatus $status
      */
     #[SpeakeasyMetadata('queryParam:name=status')]
     public ?AccountingEmployeesFilterStatus $status = null;
 
     /**
      * @param  ?\DateTime  $updatedSince
-     * @param  ?AccountingEmployeesFilterStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\AccountingEmployeesFilterStatus  $status
      * @phpstan-pure
      */
     public function __construct(?\DateTime $updatedSince = null, ?AccountingEmployeesFilterStatus $status = null)

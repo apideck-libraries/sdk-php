@@ -14,13 +14,13 @@ class ApisFilter
     /**
      * Status of the API. APIs with status live or beta are callable.
      *
-     * @var ?ApiStatus $status
+     * @var ?\Apideck\Unify\Models\Components\ApiStatus $status
      */
     #[SpeakeasyMetadata('queryParam:name=status')]
     public ?ApiStatus $status = null;
 
     /**
-     * @param  ?ApiStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\ApiStatus  $status
      * @phpstan-pure
      */
     public function __construct(?ApiStatus $status = null)

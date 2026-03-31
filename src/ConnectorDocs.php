@@ -55,7 +55,7 @@ class ConnectorDocs
      * @param  string  $id
      * @param  string  $docId
      * @param  ?string  $appId
-     * @return Operations\ConnectorConnectorDocsOneResponse
+     * @return \Apideck\Unify\Models\Operations\ConnectorConnectorDocsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(string $id, string $docId, ?string $appId = null, ?Options $options = null): Operations\ConnectorConnectorDocsOneResponse

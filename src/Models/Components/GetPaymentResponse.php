@@ -54,7 +54,7 @@ class GetPaymentResponse
 
     /**
      *
-     * @var Payment $data
+     * @var \Apideck\Unify\Models\Components\Payment $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Payment')]
@@ -76,7 +76,7 @@ class GetPaymentResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Payment  $data
+     * @param  \Apideck\Unify\Models\Components\Payment  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

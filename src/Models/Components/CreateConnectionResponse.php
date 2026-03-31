@@ -30,7 +30,7 @@ class CreateConnectionResponse
 
     /**
      *
-     * @var Connection $data
+     * @var \Apideck\Unify\Models\Components\Connection $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Connection')]
@@ -49,7 +49,7 @@ class CreateConnectionResponse
     /**
      * @param  int  $statusCode
      * @param  string  $status
-     * @param  Connection  $data
+     * @param  \Apideck\Unify\Models\Components\Connection  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

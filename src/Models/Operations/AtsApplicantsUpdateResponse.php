@@ -13,7 +13,7 @@ class AtsApplicantsUpdateResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class AtsApplicantsUpdateResponse
     /**
      * Applicants
      *
-     * @var ?Components\UpdateApplicantResponse $updateApplicantResponse
+     * @var ?\Apideck\Unify\Models\Components\UpdateApplicantResponse $updateApplicantResponse
      */
     public ?Components\UpdateApplicantResponse $updateApplicantResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\UpdateApplicantResponse  $updateApplicantResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\UpdateApplicantResponse  $updateApplicantResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UpdateApplicantResponse $updateApplicantResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

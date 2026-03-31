@@ -52,8 +52,8 @@ class Suppliers
      *
      * Create Supplier
      *
-     * @param  Operations\AccountingSuppliersAddRequest  $request
-     * @return Operations\AccountingSuppliersAddResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingSuppliersAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingSuppliersAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\AccountingSuppliersAddRequest $request, ?Options $options = null): Operations\AccountingSuppliersAddResponse
@@ -227,8 +227,8 @@ class Suppliers
      *
      * List Suppliers
      *
-     * @param  ?Operations\AccountingSuppliersAllRequest  $request
-     * @return Operations\AccountingSuppliersAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingSuppliersAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingSuppliersAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AccountingSuppliersAllRequest $request = null, ?Options $options = null): Operations\AccountingSuppliersAllResponse
@@ -458,8 +458,8 @@ class Suppliers
      *
      * List Suppliers
      *
-     * @param  ?Operations\AccountingSuppliersAllRequest  $request
-     * @return \Generator<Operations\AccountingSuppliersAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingSuppliersAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AccountingSuppliersAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AccountingSuppliersAllRequest $request = null, ?Options $options = null): \Generator
@@ -476,8 +476,8 @@ class Suppliers
      *
      * Delete Supplier
      *
-     * @param  Operations\AccountingSuppliersDeleteRequest  $request
-     * @return Operations\AccountingSuppliersDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingSuppliersDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingSuppliersDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\AccountingSuppliersDeleteRequest $request, ?Options $options = null): Operations\AccountingSuppliersDeleteResponse
@@ -646,8 +646,8 @@ class Suppliers
      *
      * Get Supplier
      *
-     * @param  Operations\AccountingSuppliersOneRequest  $request
-     * @return Operations\AccountingSuppliersOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingSuppliersOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingSuppliersOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AccountingSuppliersOneRequest $request, ?Options $options = null): Operations\AccountingSuppliersOneResponse
@@ -816,8 +816,8 @@ class Suppliers
      *
      * Update Supplier
      *
-     * @param  Operations\AccountingSuppliersUpdateRequest  $request
-     * @return Operations\AccountingSuppliersUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingSuppliersUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingSuppliersUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\AccountingSuppliersUpdateRequest $request, ?Options $options = null): Operations\AccountingSuppliersUpdateResponse

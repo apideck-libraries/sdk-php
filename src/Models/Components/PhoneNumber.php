@@ -58,7 +58,7 @@ class PhoneNumber
     /**
      * The type of phone number
      *
-     * @var ?PhoneNumberType $type
+     * @var ?\Apideck\Unify\Models\Components\PhoneNumberType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\PhoneNumberType|null')]
@@ -71,7 +71,7 @@ class PhoneNumber
      * @param  ?string  $countryCode
      * @param  ?string  $areaCode
      * @param  ?string  $extension
-     * @param  ?PhoneNumberType  $type
+     * @param  ?\Apideck\Unify\Models\Components\PhoneNumberType  $type
      * @phpstan-pure
      */
     public function __construct(string $number, ?string $id = null, ?string $countryCode = null, ?string $areaCode = null, ?string $extension = null, ?PhoneNumberType $type = null)

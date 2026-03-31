@@ -13,7 +13,7 @@ class AccountingExpenseReportsAddResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class AccountingExpenseReportsAddResponse
     /**
      * Expense Reports
      *
-     * @var ?Components\CreateExpenseReportResponse $createExpenseReportResponse
+     * @var ?\Apideck\Unify\Models\Components\CreateExpenseReportResponse $createExpenseReportResponse
      */
     public ?Components\CreateExpenseReportResponse $createExpenseReportResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\CreateExpenseReportResponse  $createExpenseReportResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\CreateExpenseReportResponse  $createExpenseReportResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateExpenseReportResponse $createExpenseReportResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

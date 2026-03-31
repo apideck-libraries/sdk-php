@@ -30,7 +30,7 @@ class UnifiedFile
     /**
      * The type of resource. Could be file, folder or url
      *
-     * @var ?FileType $type
+     * @var ?\Apideck\Unify\Models\Components\FileType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\FileType|null')]
@@ -47,7 +47,7 @@ class UnifiedFile
 
     /**
      *
-     * @var ?Owner $owner
+     * @var ?\Apideck\Unify\Models\Components\Owner $owner
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('owner')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Owner|null')]
@@ -57,7 +57,7 @@ class UnifiedFile
     /**
      * The parent folders of the file, starting from the root
      *
-     * @var ?array<LinkedFolder> $parentFolders
+     * @var ?array<\Apideck\Unify\Models\Components\LinkedFolder> $parentFolders
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('parent_folders')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedFolder>|null')]
@@ -76,7 +76,7 @@ class UnifiedFile
     /**
      * Permissions the current user has on this file.
      *
-     * @var ?Permissions $permissions
+     * @var ?\Apideck\Unify\Models\Components\Permissions $permissions
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('permissions')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Permissions|null')]
@@ -196,12 +196,12 @@ class UnifiedFile
     /**
      * @param  string  $id
      * @param  ?string  $name
-     * @param  ?FileType  $type
+     * @param  ?\Apideck\Unify\Models\Components\FileType  $type
      * @param  ?bool  $downloadable
-     * @param  ?Owner  $owner
-     * @param  ?array<LinkedFolder>  $parentFolders
+     * @param  ?\Apideck\Unify\Models\Components\Owner  $owner
+     * @param  ?array<\Apideck\Unify\Models\Components\LinkedFolder>  $parentFolders
      * @param  ?bool  $parentFoldersComplete
-     * @param  ?Permissions  $permissions
+     * @param  ?\Apideck\Unify\Models\Components\Permissions  $permissions
      * @param  ?bool  $exportable
      * @param  ?string  $downstreamId
      * @param  ?string  $description

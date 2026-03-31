@@ -22,7 +22,7 @@ class CrmContactsUpdateRequest
 
     /**
      *
-     * @var Components\ContactInput $contact
+     * @var \Apideck\Unify\Models\Components\ContactInput $contact
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\ContactInput $contact;
@@ -61,7 +61,7 @@ class CrmContactsUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\ContactInput  $contact
+     * @param  \Apideck\Unify\Models\Components\ContactInput  $contact
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

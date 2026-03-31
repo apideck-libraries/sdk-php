@@ -14,7 +14,7 @@ class UnifiedApis
     /**
      * Name of Apideck Unified API
      *
-     * @var ?UnifiedApiId $id
+     * @var ?\Apideck\Unify\Models\Components\UnifiedApiId $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\UnifiedApiId|null')]
@@ -42,7 +42,7 @@ class UnifiedApis
     /**
      * $oauthScopes
      *
-     * @var ?array<ConnectorOauthScopes> $oauthScopes
+     * @var ?array<\Apideck\Unify\Models\Components\ConnectorOauthScopes> $oauthScopes
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('oauth_scopes')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ConnectorOauthScopes>|null')]
@@ -52,7 +52,7 @@ class UnifiedApis
     /**
      * List of resources that are supported on the connector.
      *
-     * @var ?array<LinkedConnectorResource> $supportedResources
+     * @var ?array<\Apideck\Unify\Models\Components\LinkedConnectorResource> $supportedResources
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('supported_resources')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedConnectorResource>|null')]
@@ -72,7 +72,7 @@ class UnifiedApis
     /**
      * List of events that are supported on the connector for this Unified API.
      *
-     * @var ?array<ConnectorEvent> $supportedEvents
+     * @var ?array<\Apideck\Unify\Models\Components\ConnectorEvent> $supportedEvents
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('supported_events')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ConnectorEvent>|null')]
@@ -80,13 +80,13 @@ class UnifiedApis
     public ?array $supportedEvents = null;
 
     /**
-     * @param  ?UnifiedApiId  $id
+     * @param  ?\Apideck\Unify\Models\Components\UnifiedApiId  $id
      * @param  ?string  $name
      * @param  ?bool  $authOnly
-     * @param  ?array<ConnectorOauthScopes>  $oauthScopes
-     * @param  ?array<LinkedConnectorResource>  $supportedResources
+     * @param  ?array<\Apideck\Unify\Models\Components\ConnectorOauthScopes>  $oauthScopes
+     * @param  ?array<\Apideck\Unify\Models\Components\LinkedConnectorResource>  $supportedResources
      * @param  ?array<string>  $downstreamUnsupportedResources
-     * @param  ?array<ConnectorEvent>  $supportedEvents
+     * @param  ?array<\Apideck\Unify\Models\Components\ConnectorEvent>  $supportedEvents
      * @phpstan-pure
      */
     public function __construct(?UnifiedApiId $id = null, ?string $name = null, ?bool $authOnly = null, ?array $oauthScopes = null, ?array $supportedResources = null, ?array $downstreamUnsupportedResources = null, ?array $supportedEvents = null)

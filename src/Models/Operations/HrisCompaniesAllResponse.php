@@ -13,7 +13,7 @@ class HrisCompaniesAllResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,14 +22,14 @@ class HrisCompaniesAllResponse
     /**
      * Companies
      *
-     * @var ?Components\GetHrisCompaniesResponse $getHrisCompaniesResponse
+     * @var ?\Apideck\Unify\Models\Components\GetHrisCompaniesResponse $getHrisCompaniesResponse
      */
     public ?Components\GetHrisCompaniesResponse $getHrisCompaniesResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
@@ -38,9 +38,9 @@ class HrisCompaniesAllResponse
      */
     public \Closure $next;
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetHrisCompaniesResponse  $getHrisCompaniesResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetHrisCompaniesResponse  $getHrisCompaniesResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetHrisCompaniesResponse $getHrisCompaniesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

@@ -14,7 +14,7 @@ class BillsSort
     /**
      * The field on which to sort the Bills
      *
-     * @var ?By $by
+     * @var ?\Apideck\Unify\Models\Components\By $by
      */
     #[SpeakeasyMetadata('queryParam:name=by')]
     public ?By $by = null;
@@ -22,14 +22,14 @@ class BillsSort
     /**
      * The direction in which to sort the results
      *
-     * @var ?SortDirection $direction
+     * @var ?\Apideck\Unify\Models\Components\SortDirection $direction
      */
     #[SpeakeasyMetadata('queryParam:name=direction')]
     public ?SortDirection $direction = null;
 
     /**
-     * @param  ?By  $by
-     * @param  ?SortDirection  $direction
+     * @param  ?\Apideck\Unify\Models\Components\By  $by
+     * @param  ?\Apideck\Unify\Models\Components\SortDirection  $direction
      * @phpstan-pure
      */
     public function __construct(?By $by = null, ?SortDirection $direction = SortDirection::Asc)

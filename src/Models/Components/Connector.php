@@ -32,7 +32,7 @@ class Connector
     /**
      * Status of the connector. Connectors with status live or beta are callable.
      *
-     * @var ?ConnectorStatus $status
+     * @var ?\Apideck\Unify\Models\Components\ConnectorStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConnectorStatus|null')]
@@ -96,7 +96,7 @@ class Connector
     /**
      * Type of authorization used by the connector
      *
-     * @var ?ConnectorAuthType $authType
+     * @var ?\Apideck\Unify\Models\Components\ConnectorAuthType $authType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('auth_type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConnectorAuthType|null')]
@@ -124,7 +124,7 @@ class Connector
     /**
      * OAuth grant type used by the connector. More info: https://oauth.net/2/grant-types
      *
-     * @var ?ConnectorOauthGrantType $oauthGrantType
+     * @var ?\Apideck\Unify\Models\Components\ConnectorOauthGrantType $oauthGrantType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('oauth_grant_type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConnectorOauthGrantType|null')]
@@ -134,7 +134,7 @@ class Connector
     /**
      * Location of the OAuth client credentials. For most connectors the OAuth client credentials are stored on integration and managed by the application owner. For others they are stored on connection and managed by the consumer in Vault.
      *
-     * @var ?OauthCredentialsSource $oauthCredentialsSource
+     * @var ?\Apideck\Unify\Models\Components\OauthCredentialsSource $oauthCredentialsSource
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('oauth_credentials_source')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\OauthCredentialsSource|null')]
@@ -144,7 +144,7 @@ class Connector
     /**
      * List of OAuth Scopes available for this connector.
      *
-     * @var ?array<OauthScopes> $oauthScopes
+     * @var ?array<\Apideck\Unify\Models\Components\OauthScopes> $oauthScopes
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('oauth_scopes')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\OauthScopes>|null')]
@@ -172,7 +172,7 @@ class Connector
     /**
      * $settings
      *
-     * @var ?array<ConnectorSetting> $settings
+     * @var ?array<\Apideck\Unify\Models\Components\ConnectorSetting> $settings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('settings')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ConnectorSetting>|null')]
@@ -191,7 +191,7 @@ class Connector
     /**
      * List of Unified APIs that feature this connector.
      *
-     * @var ?array<UnifiedApis> $unifiedApis
+     * @var ?array<\Apideck\Unify\Models\Components\UnifiedApis> $unifiedApis
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('unified_apis')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\UnifiedApis>|null')]
@@ -201,7 +201,7 @@ class Connector
     /**
      * List of resources that are supported on the connector.
      *
-     * @var ?array<LinkedConnectorResource> $supportedResources
+     * @var ?array<\Apideck\Unify\Models\Components\LinkedConnectorResource> $supportedResources
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('supported_resources')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedConnectorResource>|null')]
@@ -221,7 +221,7 @@ class Connector
     /**
      * List of events that are supported on the connector across all Unified APIs.
      *
-     * @var ?array<ConnectorEvent> $supportedEvents
+     * @var ?array<\Apideck\Unify\Models\Components\ConnectorEvent> $supportedEvents
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('supported_events')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ConnectorEvent>|null')]
@@ -231,7 +231,7 @@ class Connector
     /**
      * How webhooks are supported for the connector. Sometimes the connector natively supports webhooks, other times Apideck virtualizes them based on polling.
      *
-     * @var ?WebhookSupport $webhookSupport
+     * @var ?\Apideck\Unify\Models\Components\WebhookSupport $webhookSupport
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('webhook_support')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\WebhookSupport|null')]
@@ -241,7 +241,7 @@ class Connector
     /**
      * When a connector has schema_support, a call can be made to retrieve a json schema that describes a downstream resource.
      *
-     * @var ?SchemaSupport $schemaSupport
+     * @var ?\Apideck\Unify\Models\Components\SchemaSupport $schemaSupport
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('schema_support')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\SchemaSupport|null')]
@@ -251,7 +251,7 @@ class Connector
     /**
      * $docs
      *
-     * @var ?array<ConnectorDoc> $docs
+     * @var ?array<\Apideck\Unify\Models\Components\ConnectorDoc> $docs
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('docs')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ConnectorDoc>|null')]
@@ -260,7 +260,7 @@ class Connector
 
     /**
      *
-     * @var ?TlsSupport $tlsSupport
+     * @var ?\Apideck\Unify\Models\Components\TlsSupport $tlsSupport
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tls_support')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\TlsSupport|null')]
@@ -279,31 +279,31 @@ class Connector
     /**
      * @param  ?string  $id
      * @param  ?string  $name
-     * @param  ?ConnectorStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\ConnectorStatus  $status
      * @param  ?string  $iconUrl
      * @param  ?string  $logoUrl
      * @param  ?string  $websiteUrl
      * @param  ?string  $signupUrl
      * @param  ?string  $partnerSignupUrl
      * @param  ?bool  $freeTrialAvailable
-     * @param  ?ConnectorAuthType  $authType
+     * @param  ?\Apideck\Unify\Models\Components\ConnectorAuthType  $authType
      * @param  ?bool  $authOnly
      * @param  ?bool  $blindMapped
-     * @param  ?ConnectorOauthGrantType  $oauthGrantType
-     * @param  ?OauthCredentialsSource  $oauthCredentialsSource
-     * @param  ?array<OauthScopes>  $oauthScopes
+     * @param  ?\Apideck\Unify\Models\Components\ConnectorOauthGrantType  $oauthGrantType
+     * @param  ?\Apideck\Unify\Models\Components\OauthCredentialsSource  $oauthCredentialsSource
+     * @param  ?array<\Apideck\Unify\Models\Components\OauthScopes>  $oauthScopes
      * @param  ?bool  $customScopes
      * @param  ?bool  $hasSandboxCredentials
-     * @param  ?array<ConnectorSetting>  $settings
+     * @param  ?array<\Apideck\Unify\Models\Components\ConnectorSetting>  $settings
      * @param  ?string  $serviceId
-     * @param  ?array<UnifiedApis>  $unifiedApis
-     * @param  ?array<LinkedConnectorResource>  $supportedResources
+     * @param  ?array<\Apideck\Unify\Models\Components\UnifiedApis>  $unifiedApis
+     * @param  ?array<\Apideck\Unify\Models\Components\LinkedConnectorResource>  $supportedResources
      * @param  ?array<string>  $configurableResources
-     * @param  ?array<ConnectorEvent>  $supportedEvents
-     * @param  ?WebhookSupport  $webhookSupport
-     * @param  ?SchemaSupport  $schemaSupport
-     * @param  ?array<ConnectorDoc>  $docs
-     * @param  ?TlsSupport  $tlsSupport
+     * @param  ?array<\Apideck\Unify\Models\Components\ConnectorEvent>  $supportedEvents
+     * @param  ?\Apideck\Unify\Models\Components\WebhookSupport  $webhookSupport
+     * @param  ?\Apideck\Unify\Models\Components\SchemaSupport  $schemaSupport
+     * @param  ?array<\Apideck\Unify\Models\Components\ConnectorDoc>  $docs
+     * @param  ?\Apideck\Unify\Models\Components\TlsSupport  $tlsSupport
      * @param  ?string  $description
      * @phpstan-pure
      */

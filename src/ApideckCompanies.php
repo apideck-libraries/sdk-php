@@ -52,8 +52,8 @@ class ApideckCompanies
      *
      * Create company
      *
-     * @param  Operations\CrmCompaniesAddRequest  $request
-     * @return Operations\CrmCompaniesAddResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmCompaniesAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmCompaniesAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\CrmCompaniesAddRequest $request, ?Options $options = null): Operations\CrmCompaniesAddResponse
@@ -227,8 +227,8 @@ class ApideckCompanies
      *
      * List companies
      *
-     * @param  ?Operations\CrmCompaniesAllRequest  $request
-     * @return Operations\CrmCompaniesAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\CrmCompaniesAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmCompaniesAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\CrmCompaniesAllRequest $request = null, ?Options $options = null): Operations\CrmCompaniesAllResponse
@@ -456,8 +456,8 @@ class ApideckCompanies
      *
      * List companies
      *
-     * @param  ?Operations\CrmCompaniesAllRequest  $request
-     * @return \Generator<Operations\CrmCompaniesAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\CrmCompaniesAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\CrmCompaniesAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\CrmCompaniesAllRequest $request = null, ?Options $options = null): \Generator
@@ -474,8 +474,8 @@ class ApideckCompanies
      *
      * Delete company
      *
-     * @param  Operations\CrmCompaniesDeleteRequest  $request
-     * @return Operations\CrmCompaniesDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmCompaniesDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmCompaniesDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\CrmCompaniesDeleteRequest $request, ?Options $options = null): Operations\CrmCompaniesDeleteResponse
@@ -644,8 +644,8 @@ class ApideckCompanies
      *
      * Get company
      *
-     * @param  Operations\CrmCompaniesOneRequest  $request
-     * @return Operations\CrmCompaniesOneResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmCompaniesOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmCompaniesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\CrmCompaniesOneRequest $request, ?Options $options = null): Operations\CrmCompaniesOneResponse
@@ -814,8 +814,8 @@ class ApideckCompanies
      *
      * Update company
      *
-     * @param  Operations\CrmCompaniesUpdateRequest  $request
-     * @return Operations\CrmCompaniesUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmCompaniesUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmCompaniesUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\CrmCompaniesUpdateRequest $request, ?Options $options = null): Operations\CrmCompaniesUpdateResponse

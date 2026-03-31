@@ -52,8 +52,8 @@ class ApideckEmployees
      *
      * Create Employee
      *
-     * @param  Operations\HrisEmployeesAddRequest  $request
-     * @return Operations\HrisEmployeesAddResponse
+     * @param  \Apideck\Unify\Models\Operations\HrisEmployeesAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\HrisEmployeesAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\HrisEmployeesAddRequest $request, ?Options $options = null): Operations\HrisEmployeesAddResponse
@@ -227,8 +227,8 @@ class ApideckEmployees
      *
      * Apideck operates as a stateless Unified API, which means that the list endpoint only provides a portion of the employee model. This is due to the fact that most HRIS systems do not readily provide all data in every call. However, you can access the complete employee model through an employee detail call.
      *
-     * @param  ?Operations\HrisEmployeesAllRequest  $request
-     * @return Operations\HrisEmployeesAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\HrisEmployeesAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\HrisEmployeesAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\HrisEmployeesAllRequest $request = null, ?Options $options = null): Operations\HrisEmployeesAllResponse
@@ -456,8 +456,8 @@ class ApideckEmployees
      *
      * Apideck operates as a stateless Unified API, which means that the list endpoint only provides a portion of the employee model. This is due to the fact that most HRIS systems do not readily provide all data in every call. However, you can access the complete employee model through an employee detail call.
      *
-     * @param  ?Operations\HrisEmployeesAllRequest  $request
-     * @return \Generator<Operations\HrisEmployeesAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\HrisEmployeesAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\HrisEmployeesAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\HrisEmployeesAllRequest $request = null, ?Options $options = null): \Generator
@@ -474,8 +474,8 @@ class ApideckEmployees
      *
      * Delete Employee
      *
-     * @param  Operations\HrisEmployeesDeleteRequest  $request
-     * @return Operations\HrisEmployeesDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\HrisEmployeesDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\HrisEmployeesDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\HrisEmployeesDeleteRequest $request, ?Options $options = null): Operations\HrisEmployeesDeleteResponse
@@ -644,8 +644,8 @@ class ApideckEmployees
      *
      * Get Employee
      *
-     * @param  Operations\HrisEmployeesOneRequest  $request
-     * @return Operations\HrisEmployeesOneResponse
+     * @param  \Apideck\Unify\Models\Operations\HrisEmployeesOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\HrisEmployeesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\HrisEmployeesOneRequest $request, ?Options $options = null): Operations\HrisEmployeesOneResponse
@@ -814,8 +814,8 @@ class ApideckEmployees
      *
      * Update Employee
      *
-     * @param  Operations\HrisEmployeesUpdateRequest  $request
-     * @return Operations\HrisEmployeesUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\HrisEmployeesUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\HrisEmployeesUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\HrisEmployeesUpdateRequest $request, ?Options $options = null): Operations\HrisEmployeesUpdateResponse

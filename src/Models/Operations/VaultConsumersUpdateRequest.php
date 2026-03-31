@@ -22,7 +22,7 @@ class VaultConsumersUpdateRequest
 
     /**
      *
-     * @var Components\UpdateConsumerRequest $updateConsumerRequest
+     * @var \Apideck\Unify\Models\Components\UpdateConsumerRequest $updateConsumerRequest
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\UpdateConsumerRequest $updateConsumerRequest;
@@ -37,7 +37,7 @@ class VaultConsumersUpdateRequest
 
     /**
      * @param  string  $consumerId
-     * @param  Components\UpdateConsumerRequest  $updateConsumerRequest
+     * @param  \Apideck\Unify\Models\Components\UpdateConsumerRequest  $updateConsumerRequest
      * @param  ?string  $appId
      * @phpstan-pure
      */

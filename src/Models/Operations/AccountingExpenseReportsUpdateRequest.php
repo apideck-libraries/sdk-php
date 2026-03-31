@@ -22,7 +22,7 @@ class AccountingExpenseReportsUpdateRequest
 
     /**
      *
-     * @var Components\ExpenseReportInput $expenseReport
+     * @var \Apideck\Unify\Models\Components\ExpenseReportInput $expenseReport
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\ExpenseReportInput $expenseReport;
@@ -61,7 +61,7 @@ class AccountingExpenseReportsUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\ExpenseReportInput  $expenseReport
+     * @param  \Apideck\Unify\Models\Components\ExpenseReportInput  $expenseReport
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

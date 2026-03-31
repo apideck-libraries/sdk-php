@@ -54,7 +54,7 @@ class GetInvoiceResponse
 
     /**
      *
-     * @var Invoice $data
+     * @var \Apideck\Unify\Models\Components\Invoice $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Invoice')]
@@ -76,7 +76,7 @@ class GetInvoiceResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Invoice  $data
+     * @param  \Apideck\Unify\Models\Components\Invoice  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

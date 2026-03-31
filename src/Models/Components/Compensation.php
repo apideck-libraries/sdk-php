@@ -40,7 +40,7 @@ class Compensation
     /**
      * An array of employer and employee taxes for the pay period.
      *
-     * @var ?array<Tax> $taxes
+     * @var ?array<\Apideck\Unify\Models\Components\Tax> $taxes
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('taxes')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Tax>|null')]
@@ -50,7 +50,7 @@ class Compensation
     /**
      * An array of employee deductions for the pay period.
      *
-     * @var ?array<Deduction> $deductions
+     * @var ?array<\Apideck\Unify\Models\Components\Deduction> $deductions
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('deductions')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Deduction>|null')]
@@ -60,7 +60,7 @@ class Compensation
     /**
      * An array of employee benefits for the pay period.
      *
-     * @var ?array<Benefit> $benefits
+     * @var ?array<\Apideck\Unify\Models\Components\Benefit> $benefits
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('benefits')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Benefit>|null')]
@@ -71,9 +71,9 @@ class Compensation
      * @param  ?string  $employeeId
      * @param  ?float  $netPay
      * @param  ?float  $grossPay
-     * @param  ?array<Tax>  $taxes
-     * @param  ?array<Deduction>  $deductions
-     * @param  ?array<Benefit>  $benefits
+     * @param  ?array<\Apideck\Unify\Models\Components\Tax>  $taxes
+     * @param  ?array<\Apideck\Unify\Models\Components\Deduction>  $deductions
+     * @param  ?array<\Apideck\Unify\Models\Components\Benefit>  $benefits
      * @phpstan-pure
      */
     public function __construct(?string $employeeId = null, ?float $netPay = null, ?float $grossPay = null, ?array $taxes = null, ?array $deductions = null, ?array $benefits = null)

@@ -13,7 +13,7 @@ class AccountingExpensesDeleteResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class AccountingExpensesDeleteResponse
     /**
      * Expenses
      *
-     * @var ?Components\DeleteExpenseResponse $deleteExpenseResponse
+     * @var ?\Apideck\Unify\Models\Components\DeleteExpenseResponse $deleteExpenseResponse
      */
     public ?Components\DeleteExpenseResponse $deleteExpenseResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\DeleteExpenseResponse  $deleteExpenseResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\DeleteExpenseResponse  $deleteExpenseResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteExpenseResponse $deleteExpenseResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

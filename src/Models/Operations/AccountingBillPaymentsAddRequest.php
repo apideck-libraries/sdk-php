@@ -14,7 +14,7 @@ class AccountingBillPaymentsAddRequest
 {
     /**
      *
-     * @var Components\BillPaymentInput $billPayment
+     * @var \Apideck\Unify\Models\Components\BillPaymentInput $billPayment
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\BillPaymentInput $billPayment;
@@ -60,7 +60,7 @@ class AccountingBillPaymentsAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\BillPaymentInput  $billPayment
+     * @param  \Apideck\Unify\Models\Components\BillPaymentInput  $billPayment
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

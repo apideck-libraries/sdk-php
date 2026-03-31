@@ -32,7 +32,7 @@ class LedgerAccount
     /**
      * The type of account.
      *
-     * @var ?LedgerAccountType $type
+     * @var ?\Apideck\Unify\Models\Components\LedgerAccountType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LedgerAccountType|null')]
@@ -41,7 +41,7 @@ class LedgerAccount
 
     /**
      *
-     * @var ?LinkedTaxRate $taxRate
+     * @var ?\Apideck\Unify\Models\Components\LinkedTaxRate $taxRate
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRate|null')]
@@ -50,7 +50,7 @@ class LedgerAccount
 
     /**
      *
-     * @var ?BankAccount $bankAccount
+     * @var ?\Apideck\Unify\Models\Components\BankAccount $bankAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('bank_account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BankAccount|null')]
@@ -60,7 +60,7 @@ class LedgerAccount
     /**
      * The categories of the account.
      *
-     * @var ?array<Categories> $categories
+     * @var ?array<\Apideck\Unify\Models\Components\Categories> $categories
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('categories')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Categories>|null')]
@@ -69,7 +69,7 @@ class LedgerAccount
 
     /**
      *
-     * @var ?ParentAccount $parentAccount
+     * @var ?\Apideck\Unify\Models\Components\ParentAccount $parentAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('parent_account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ParentAccount|null')]
@@ -79,7 +79,7 @@ class LedgerAccount
     /**
      * The sub accounts of the account.
      *
-     * @var ?array<SubAccounts> $subAccounts
+     * @var ?array<\Apideck\Unify\Models\Components\SubAccounts> $subAccounts
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('sub_accounts')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\SubAccounts>|null')]
@@ -89,7 +89,7 @@ class LedgerAccount
     /**
      * The subsidiaries the account belongs to.
      *
-     * @var ?array<LedgerAccountSubsidiaries> $subsidiaries
+     * @var ?array<\Apideck\Unify\Models\Components\LedgerAccountSubsidiaries> $subsidiaries
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiaries')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LedgerAccountSubsidiaries>|null')]
@@ -99,7 +99,7 @@ class LedgerAccount
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -109,7 +109,7 @@ class LedgerAccount
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -138,7 +138,7 @@ class LedgerAccount
     /**
      * The classification of account.
      *
-     * @var ?LedgerAccountClassification $classification
+     * @var ?\Apideck\Unify\Models\Components\LedgerAccountClassification $classification
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('classification')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LedgerAccountClassification|null')]
@@ -202,7 +202,7 @@ class LedgerAccount
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -238,7 +238,7 @@ class LedgerAccount
     /**
      * The status of the account.
      *
-     * @var ?AccountStatus $status
+     * @var ?\Apideck\Unify\Models\Components\AccountStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\AccountStatus|null')]
@@ -330,29 +330,29 @@ class LedgerAccount
     /**
      * @param  ?string  $id
      * @param  ?string  $displayId
-     * @param  ?LedgerAccountType  $type
-     * @param  ?LinkedTaxRate  $taxRate
-     * @param  ?BankAccount  $bankAccount
-     * @param  ?array<Categories>  $categories
-     * @param  ?ParentAccount  $parentAccount
-     * @param  ?array<SubAccounts>  $subAccounts
-     * @param  ?array<LedgerAccountSubsidiaries>  $subsidiaries
-     * @param  ?array<CustomField1|CustomField2>  $customFields
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?\Apideck\Unify\Models\Components\LedgerAccountType  $type
+     * @param  ?\Apideck\Unify\Models\Components\LinkedTaxRate  $taxRate
+     * @param  ?\Apideck\Unify\Models\Components\BankAccount  $bankAccount
+     * @param  ?array<\Apideck\Unify\Models\Components\Categories>  $categories
+     * @param  ?\Apideck\Unify\Models\Components\ParentAccount  $parentAccount
+     * @param  ?array<\Apideck\Unify\Models\Components\SubAccounts>  $subAccounts
+     * @param  ?array<\Apideck\Unify\Models\Components\LedgerAccountSubsidiaries>  $subsidiaries
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $nominalCode
      * @param  ?string  $code
-     * @param  ?LedgerAccountClassification  $classification
+     * @param  ?\Apideck\Unify\Models\Components\LedgerAccountClassification  $classification
      * @param  ?string  $subType
      * @param  ?string  $name
      * @param  ?string  $fullyQualifiedName
      * @param  ?string  $description
      * @param  ?float  $openingBalance
      * @param  ?float  $currentBalance
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?string  $taxType
      * @param  ?float  $level
      * @param  ?bool  $active
-     * @param  ?AccountStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\AccountStatus  $status
      * @param  ?bool  $header
      * @param  ?bool  $subAccount
      * @param  ?LocalDate  $lastReconciliationDate

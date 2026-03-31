@@ -56,7 +56,7 @@ class ConnectionConsents
      * @param  string  $unifiedApi
      * @param  ?string  $consumerId
      * @param  ?string  $appId
-     * @return Operations\VaultConnectionConsentsAllResponse
+     * @return \Apideck\Unify\Models\Operations\VaultConnectionConsentsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(string $serviceId, string $unifiedApi, ?string $consumerId = null, ?string $appId = null, ?Options $options = null): Operations\VaultConnectionConsentsAllResponse

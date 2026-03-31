@@ -58,8 +58,8 @@ class ValidateConnection
      *   - If a refresh token flow was performed and successful, the new access token will then be used for subsequent API requests.
      *
      *
-     * @param  Operations\VaultValidateConnectionStateRequest  $request
-     * @return Operations\VaultValidateConnectionStateResponse
+     * @param  \Apideck\Unify\Models\Operations\VaultValidateConnectionStateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\VaultValidateConnectionStateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function state(Operations\VaultValidateConnectionStateRequest $request, ?Options $options = null): Operations\VaultValidateConnectionStateResponse

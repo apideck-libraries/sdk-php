@@ -14,7 +14,7 @@ class CreditNotesSort
     /**
      * The field on which to sort the Customers
      *
-     * @var ?CreditNotesSortBy $by
+     * @var ?\Apideck\Unify\Models\Components\CreditNotesSortBy $by
      */
     #[SpeakeasyMetadata('queryParam:name=by')]
     public ?CreditNotesSortBy $by = null;
@@ -22,14 +22,14 @@ class CreditNotesSort
     /**
      * The direction in which to sort the results
      *
-     * @var ?SortDirection $direction
+     * @var ?\Apideck\Unify\Models\Components\SortDirection $direction
      */
     #[SpeakeasyMetadata('queryParam:name=direction')]
     public ?SortDirection $direction = null;
 
     /**
-     * @param  ?CreditNotesSortBy  $by
-     * @param  ?SortDirection  $direction
+     * @param  ?\Apideck\Unify\Models\Components\CreditNotesSortBy  $by
+     * @param  ?\Apideck\Unify\Models\Components\SortDirection  $direction
      * @phpstan-pure
      */
     public function __construct(?CreditNotesSortBy $by = null, ?SortDirection $direction = SortDirection::Asc)

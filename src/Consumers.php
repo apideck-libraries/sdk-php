@@ -52,9 +52,9 @@ class Consumers
      *
      * Create a consumer
      *
-     * @param  Components\CreateConsumerRequest  $createConsumerRequest
+     * @param  \Apideck\Unify\Models\Components\CreateConsumerRequest  $createConsumerRequest
      * @param  ?string  $appId
-     * @return Operations\VaultConsumersAddResponse
+     * @return \Apideck\Unify\Models\Operations\VaultConsumersAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Components\CreateConsumerRequest $createConsumerRequest, ?string $appId = null, ?Options $options = null): Operations\VaultConsumersAddResponse
@@ -231,10 +231,10 @@ class Consumers
      *
      *
      * @param  ?string  $appId
-     * @param  ?Components\ConsumersFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\ConsumersFilter  $filter
      * @param  ?string  $cursor
      * @param  ?int  $limit
-     * @return Operations\VaultConsumersAllResponse
+     * @return \Apideck\Unify\Models\Operations\VaultConsumersAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?string $appId = null, ?Components\ConsumersFilter $filter = null, ?string $cursor = null, ?int $limit = null, ?Options $options = null): Operations\VaultConsumersAllResponse
@@ -454,10 +454,10 @@ class Consumers
      *
      *
      * @param  ?string  $appId
-     * @param  ?Components\ConsumersFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\ConsumersFilter  $filter
      * @param  ?string  $cursor
      * @param  ?int  $limit
-     * @return \Generator<Operations\VaultConsumersAllResponse>
+     * @return \Generator<\Apideck\Unify\Models\Operations\VaultConsumersAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?string $appId = null, ?Components\ConsumersFilter $filter = null, ?string $cursor = null, ?int $limit = null, ?Options $options = null): \Generator
@@ -476,7 +476,7 @@ class Consumers
      *
      * @param  string  $consumerId
      * @param  ?string  $appId
-     * @return Operations\VaultConsumersDeleteResponse
+     * @return \Apideck\Unify\Models\Operations\VaultConsumersDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(string $consumerId, ?string $appId = null, ?Options $options = null): Operations\VaultConsumersDeleteResponse
@@ -649,7 +649,7 @@ class Consumers
      *
      * @param  string  $consumerId
      * @param  ?string  $appId
-     * @return Operations\VaultConsumersOneResponse
+     * @return \Apideck\Unify\Models\Operations\VaultConsumersOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(string $consumerId, ?string $appId = null, ?Options $options = null): Operations\VaultConsumersOneResponse
@@ -819,10 +819,10 @@ class Consumers
      *
      * Update consumer metadata such as name and email.
      *
-     * @param  Components\UpdateConsumerRequest  $updateConsumerRequest
+     * @param  \Apideck\Unify\Models\Components\UpdateConsumerRequest  $updateConsumerRequest
      * @param  string  $consumerId
      * @param  ?string  $appId
-     * @return Operations\VaultConsumersUpdateResponse
+     * @return \Apideck\Unify\Models\Operations\VaultConsumersUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Components\UpdateConsumerRequest $updateConsumerRequest, string $consumerId, ?string $appId = null, ?Options $options = null): Operations\VaultConsumersUpdateResponse

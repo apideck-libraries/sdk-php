@@ -47,7 +47,7 @@ class AccountingLocationsAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\AccountingLocationsFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\AccountingLocationsFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\AccountingLocationsFilter $filter = null;
@@ -91,7 +91,7 @@ class AccountingLocationsAllRequest
      * @param  ?string  $serviceId
      * @param  ?string  $companyId
      * @param  ?int  $limit
-     * @param  ?Components\AccountingLocationsFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\AccountingLocationsFilter  $filter
      * @param  ?string  $cursor
      * @param  ?string  $fields
      * @phpstan-pure

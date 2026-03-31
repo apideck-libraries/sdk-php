@@ -14,7 +14,7 @@ class Variants
     /**
      * $options
      *
-     * @var ?array<EcommerceProductVariantsOptions> $options
+     * @var ?array<\Apideck\Unify\Models\Components\EcommerceProductVariantsOptions> $options
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceProductVariantsOptions>|null')]
@@ -24,7 +24,7 @@ class Variants
     /**
      * $images
      *
-     * @var ?array<EcommerceProductImages> $images
+     * @var ?array<\Apideck\Unify\Models\Components\EcommerceProductImages> $images
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('images')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceProductImages>|null')]
@@ -95,8 +95,8 @@ class Variants
     public ?string $weightUnit = null;
 
     /**
-     * @param  ?array<EcommerceProductVariantsOptions>  $options
-     * @param  ?array<EcommerceProductImages>  $images
+     * @param  ?array<\Apideck\Unify\Models\Components\EcommerceProductVariantsOptions>  $options
+     * @param  ?array<\Apideck\Unify\Models\Components\EcommerceProductImages>  $images
      * @param  ?string  $id
      * @param  ?string  $name
      * @param  ?string  $price

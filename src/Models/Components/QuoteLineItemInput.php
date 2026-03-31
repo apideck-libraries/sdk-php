@@ -22,7 +22,7 @@ class QuoteLineItemInput
 
     /**
      *
-     * @var ?LinkedInvoiceItem $item
+     * @var ?\Apideck\Unify\Models\Components\LinkedInvoiceItem $item
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('item')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedInvoiceItem|null')]
@@ -31,7 +31,7 @@ class QuoteLineItemInput
 
     /**
      *
-     * @var ?LinkedTaxRateInput $taxRate
+     * @var ?\Apideck\Unify\Models\Components\LinkedTaxRateInput $taxRate
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRateInput|null')]
@@ -41,7 +41,7 @@ class QuoteLineItemInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -87,7 +87,7 @@ class QuoteLineItemInput
     /**
      * Item type
      *
-     * @var ?QuoteLineItemType $type
+     * @var ?\Apideck\Unify\Models\Components\QuoteLineItemType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\QuoteLineItemType|null')]
@@ -194,7 +194,7 @@ class QuoteLineItemInput
     /**
      * A list of linked tracking categories.
      *
-     * @var ?array<?LinkedTrackingCategory> $trackingCategories
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory> $trackingCategories
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory|null>|null')]
@@ -203,7 +203,7 @@ class QuoteLineItemInput
 
     /**
      *
-     * @var ?LinkedLedgerAccount $ledgerAccount
+     * @var ?\Apideck\Unify\Models\Components\LinkedLedgerAccount $ledgerAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('ledger_account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
@@ -221,14 +221,14 @@ class QuoteLineItemInput
 
     /**
      * @param  ?string  $rowId
-     * @param  ?LinkedInvoiceItem  $item
-     * @param  ?LinkedTaxRateInput  $taxRate
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?\Apideck\Unify\Models\Components\LinkedInvoiceItem  $item
+     * @param  ?\Apideck\Unify\Models\Components\LinkedTaxRateInput  $taxRate
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
      * @param  ?string  $id
      * @param  ?string  $code
      * @param  ?int  $lineNumber
      * @param  ?string  $description
-     * @param  ?QuoteLineItemType  $type
+     * @param  ?\Apideck\Unify\Models\Components\QuoteLineItemType  $type
      * @param  ?float  $taxAmount
      * @param  ?float  $totalAmount
      * @param  ?float  $quantity
@@ -240,8 +240,8 @@ class QuoteLineItemInput
      * @param  ?string  $categoryId
      * @param  ?string  $locationId
      * @param  ?string  $departmentId
-     * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
-     * @param  ?LinkedLedgerAccount  $ledgerAccount
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory>  $trackingCategories
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $ledgerAccount
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */

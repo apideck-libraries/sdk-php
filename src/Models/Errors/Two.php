@@ -32,7 +32,7 @@ class Two
     /**
      * Debug information including request/response details and OAuth timing metadata
      *
-     * @var ?Debug $debug
+     * @var ?\Apideck\Unify\Models\Errors\Debug $debug
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('debug')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Errors\Debug|null')]
@@ -52,7 +52,7 @@ class Two
     /**
      * @param  ?string  $type
      * @param  ?string  $message
-     * @param  ?Debug  $debug
+     * @param  ?\Apideck\Unify\Models\Errors\Debug  $debug
      * @param  ?array<string, mixed>  $additionalProperties
      * @phpstan-pure
      */

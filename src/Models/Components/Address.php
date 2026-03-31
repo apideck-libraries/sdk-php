@@ -23,7 +23,7 @@ class Address
     /**
      * The type of address.
      *
-     * @var ?Type $type
+     * @var ?\Apideck\Unify\Models\Components\Type $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Type|null')]
@@ -239,7 +239,7 @@ class Address
 
     /**
      * @param  ?string  $id
-     * @param  ?Type  $type
+     * @param  ?\Apideck\Unify\Models\Components\Type  $type
      * @param  ?string  $string
      * @param  ?string  $name
      * @param  ?string  $line1

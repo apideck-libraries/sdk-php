@@ -52,8 +52,8 @@ class Quotes
      *
      * Create Quote
      *
-     * @param  Operations\AccountingQuotesAddRequest  $request
-     * @return Operations\AccountingQuotesAddResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingQuotesAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingQuotesAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\AccountingQuotesAddRequest $request, ?Options $options = null): Operations\AccountingQuotesAddResponse
@@ -227,8 +227,8 @@ class Quotes
      *
      * List Quotes
      *
-     * @param  ?Operations\AccountingQuotesAllRequest  $request
-     * @return Operations\AccountingQuotesAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingQuotesAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingQuotesAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AccountingQuotesAllRequest $request = null, ?Options $options = null): Operations\AccountingQuotesAllResponse
@@ -450,8 +450,8 @@ class Quotes
      *
      * List Quotes
      *
-     * @param  ?Operations\AccountingQuotesAllRequest  $request
-     * @return \Generator<Operations\AccountingQuotesAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingQuotesAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AccountingQuotesAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AccountingQuotesAllRequest $request = null, ?Options $options = null): \Generator
@@ -468,8 +468,8 @@ class Quotes
      *
      * Delete Quote
      *
-     * @param  Operations\AccountingQuotesDeleteRequest  $request
-     * @return Operations\AccountingQuotesDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingQuotesDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingQuotesDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\AccountingQuotesDeleteRequest $request, ?Options $options = null): Operations\AccountingQuotesDeleteResponse
@@ -638,8 +638,8 @@ class Quotes
      *
      * Get Quote
      *
-     * @param  Operations\AccountingQuotesOneRequest  $request
-     * @return Operations\AccountingQuotesOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingQuotesOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingQuotesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AccountingQuotesOneRequest $request, ?Options $options = null): Operations\AccountingQuotesOneResponse
@@ -808,8 +808,8 @@ class Quotes
      *
      * Update Quote
      *
-     * @param  Operations\AccountingQuotesUpdateRequest  $request
-     * @return Operations\AccountingQuotesUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingQuotesUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingQuotesUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\AccountingQuotesUpdateRequest $request, ?Options $options = null): Operations\AccountingQuotesUpdateResponse

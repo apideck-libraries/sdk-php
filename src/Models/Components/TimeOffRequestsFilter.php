@@ -46,7 +46,7 @@ class TimeOffRequestsFilter
     /**
      * Time off request status to filter on
      *
-     * @var ?TimeOffRequestStatus $timeOffRequestStatus
+     * @var ?\Apideck\Unify\Models\Components\TimeOffRequestStatus $timeOffRequestStatus
      */
     #[SpeakeasyMetadata('queryParam:name=time_off_request_status')]
     public ?TimeOffRequestStatus $timeOffRequestStatus = null;
@@ -64,7 +64,7 @@ class TimeOffRequestsFilter
      * @param  ?string  $endDate
      * @param  ?string  $updatedSince
      * @param  ?string  $employeeId
-     * @param  ?TimeOffRequestStatus  $timeOffRequestStatus
+     * @param  ?\Apideck\Unify\Models\Components\TimeOffRequestStatus  $timeOffRequestStatus
      * @param  ?string  $companyId
      * @phpstan-pure
      */

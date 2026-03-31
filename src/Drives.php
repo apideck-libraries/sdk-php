@@ -52,8 +52,8 @@ class Drives
      *
      * Create Drive
      *
-     * @param  Operations\FileStorageDrivesAddRequest  $request
-     * @return Operations\FileStorageDrivesAddResponse
+     * @param  \Apideck\Unify\Models\Operations\FileStorageDrivesAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageDrivesAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\FileStorageDrivesAddRequest $request, ?Options $options = null): Operations\FileStorageDrivesAddResponse
@@ -227,8 +227,8 @@ class Drives
      *
      * List Drives
      *
-     * @param  ?Operations\FileStorageDrivesAllRequest  $request
-     * @return Operations\FileStorageDrivesAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\FileStorageDrivesAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageDrivesAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\FileStorageDrivesAllRequest $request = null, ?Options $options = null): Operations\FileStorageDrivesAllResponse
@@ -452,8 +452,8 @@ class Drives
      *
      * List Drives
      *
-     * @param  ?Operations\FileStorageDrivesAllRequest  $request
-     * @return \Generator<Operations\FileStorageDrivesAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\FileStorageDrivesAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\FileStorageDrivesAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\FileStorageDrivesAllRequest $request = null, ?Options $options = null): \Generator
@@ -470,8 +470,8 @@ class Drives
      *
      * Delete Drive
      *
-     * @param  Operations\FileStorageDrivesDeleteRequest  $request
-     * @return Operations\FileStorageDrivesDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\FileStorageDrivesDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageDrivesDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\FileStorageDrivesDeleteRequest $request, ?Options $options = null): Operations\FileStorageDrivesDeleteResponse
@@ -640,8 +640,8 @@ class Drives
      *
      * Get Drive
      *
-     * @param  Operations\FileStorageDrivesOneRequest  $request
-     * @return Operations\FileStorageDrivesOneResponse
+     * @param  \Apideck\Unify\Models\Operations\FileStorageDrivesOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageDrivesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\FileStorageDrivesOneRequest $request, ?Options $options = null): Operations\FileStorageDrivesOneResponse
@@ -810,8 +810,8 @@ class Drives
      *
      * Update Drive
      *
-     * @param  Operations\FileStorageDrivesUpdateRequest  $request
-     * @return Operations\FileStorageDrivesUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\FileStorageDrivesUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageDrivesUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\FileStorageDrivesUpdateRequest $request, ?Options $options = null): Operations\FileStorageDrivesUpdateResponse

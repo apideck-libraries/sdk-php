@@ -14,7 +14,7 @@ class CrmCustomObjectSchemasAddRequest
 {
     /**
      *
-     * @var Components\CustomObjectSchemaInput $customObjectSchema
+     * @var \Apideck\Unify\Models\Components\CustomObjectSchemaInput $customObjectSchema
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\CustomObjectSchemaInput $customObjectSchema;
@@ -52,7 +52,7 @@ class CrmCustomObjectSchemasAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\CustomObjectSchemaInput  $customObjectSchema
+     * @param  \Apideck\Unify\Models\Components\CustomObjectSchemaInput  $customObjectSchema
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

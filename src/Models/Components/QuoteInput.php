@@ -23,7 +23,7 @@ class QuoteInput
     /**
      * $lineItems
      *
-     * @var ?array<QuoteLineItemInput> $lineItems
+     * @var ?array<\Apideck\Unify\Models\Components\QuoteLineItemInput> $lineItems
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\QuoteLineItemInput>|null')]
@@ -32,7 +32,7 @@ class QuoteInput
 
     /**
      *
-     * @var ?Address $billingAddress
+     * @var ?\Apideck\Unify\Models\Components\Address $billingAddress
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('billing_address')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
@@ -41,7 +41,7 @@ class QuoteInput
 
     /**
      *
-     * @var ?Address $shippingAddress
+     * @var ?\Apideck\Unify\Models\Components\Address $shippingAddress
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('shipping_address')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
@@ -51,7 +51,7 @@ class QuoteInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -61,7 +61,7 @@ class QuoteInput
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -80,7 +80,7 @@ class QuoteInput
     /**
      * The customer this entity is linked to.
      *
-     * @var ?LinkedCustomerInput $customer
+     * @var ?\Apideck\Unify\Models\Components\LinkedCustomerInput $customer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedCustomerInput|null')]
@@ -162,7 +162,7 @@ class QuoteInput
     /**
      * Quote status
      *
-     * @var ?QuoteStatus $status
+     * @var ?\Apideck\Unify\Models\Components\QuoteStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\QuoteStatus|null')]
@@ -172,7 +172,7 @@ class QuoteInput
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -263,7 +263,7 @@ class QuoteInput
     /**
      * A list of linked tracking categories.
      *
-     * @var ?array<?LinkedTrackingCategory> $trackingCategories
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory> $trackingCategories
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory|null>|null')]
@@ -299,13 +299,13 @@ class QuoteInput
 
     /**
      * @param  ?string  $projectId
-     * @param  ?array<QuoteLineItemInput>  $lineItems
-     * @param  ?Address  $billingAddress
-     * @param  ?Address  $shippingAddress
-     * @param  ?array<CustomField1|CustomField2>  $customFields
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<\Apideck\Unify\Models\Components\QuoteLineItemInput>  $lineItems
+     * @param  ?\Apideck\Unify\Models\Components\Address  $billingAddress
+     * @param  ?\Apideck\Unify\Models\Components\Address  $shippingAddress
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $number
-     * @param  ?LinkedCustomerInput  $customer
+     * @param  ?\Apideck\Unify\Models\Components\LinkedCustomerInput  $customer
      * @param  ?string  $salesOrderId
      * @param  ?string  $companyId
      * @param  ?string  $departmentId
@@ -314,8 +314,8 @@ class QuoteInput
      * @param  ?string  $terms
      * @param  ?string  $termsId
      * @param  ?string  $reference
-     * @param  ?QuoteStatus  $status
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\QuoteStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?float  $currencyRate
      * @param  ?bool  $taxInclusive
      * @param  ?float  $subTotal
@@ -325,7 +325,7 @@ class QuoteInput
      * @param  ?float  $discountAmount
      * @param  ?float  $total
      * @param  ?string  $customerMemo
-     * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory>  $trackingCategories
      * @param  ?string  $templateId
      * @param  ?string  $sourceDocumentUrl
      * @param  ?string  $rowVersion

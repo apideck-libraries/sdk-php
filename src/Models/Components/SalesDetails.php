@@ -13,7 +13,7 @@ class SalesDetails
 {
     /**
      *
-     * @var ?LinkedTaxRate $taxRate
+     * @var ?\Apideck\Unify\Models\Components\LinkedTaxRate $taxRate
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRate|null')]
@@ -47,7 +47,7 @@ class SalesDetails
     public ?bool $taxInclusive = null;
 
     /**
-     * @param  ?LinkedTaxRate  $taxRate
+     * @param  ?\Apideck\Unify\Models\Components\LinkedTaxRate  $taxRate
      * @param  ?float  $unitPrice
      * @param  ?string  $unitOfMeasure
      * @param  ?bool  $taxInclusive

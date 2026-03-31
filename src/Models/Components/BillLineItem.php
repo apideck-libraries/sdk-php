@@ -31,7 +31,7 @@ class BillLineItem
 
     /**
      *
-     * @var ?LinkedInvoiceItem $item
+     * @var ?\Apideck\Unify\Models\Components\LinkedInvoiceItem $item
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('item')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedInvoiceItem|null')]
@@ -40,7 +40,7 @@ class BillLineItem
 
     /**
      *
-     * @var ?LinkedTaxRate $taxRate
+     * @var ?\Apideck\Unify\Models\Components\LinkedTaxRate $taxRate
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRate|null')]
@@ -50,7 +50,7 @@ class BillLineItem
     /**
      * A list of linked worktags. This is only supported for Workday.
      *
-     * @var ?array<?LinkedWorktag> $worktags
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedWorktag> $worktags
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('worktags')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedWorktag|null>|null')]
@@ -87,7 +87,7 @@ class BillLineItem
     /**
      * Line Item type
      *
-     * @var ?LineItemType $type
+     * @var ?\Apideck\Unify\Models\Components\LineItemType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LineItemType|null')]
@@ -265,7 +265,7 @@ class BillLineItem
 
     /**
      *
-     * @var ?LinkedLedgerAccount $ledgerAccount
+     * @var ?\Apideck\Unify\Models\Components\LinkedLedgerAccount $ledgerAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('ledger_account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
@@ -274,7 +274,7 @@ class BillLineItem
 
     /**
      *
-     * @var ?LinkedPurchaseOrder $purchaseOrder
+     * @var ?\Apideck\Unify\Models\Components\LinkedPurchaseOrder $purchaseOrder
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('purchase_order')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedPurchaseOrder|null')]
@@ -284,7 +284,7 @@ class BillLineItem
     /**
      * A list of linked tracking categories.
      *
-     * @var ?array<?LinkedTrackingCategory> $trackingCategories
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory> $trackingCategories
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory|null>|null')]
@@ -294,7 +294,7 @@ class BillLineItem
     /**
      * The customer this entity is linked to.
      *
-     * @var ?LinkedCustomer $customer
+     * @var ?\Apideck\Unify\Models\Components\LinkedCustomer $customer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedCustomer|null')]
@@ -304,7 +304,7 @@ class BillLineItem
     /**
      * Rebilling metadata for this line item.
      *
-     * @var ?Rebilling $rebilling
+     * @var ?\Apideck\Unify\Models\Components\Rebilling $rebilling
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('rebilling')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Rebilling|null')]
@@ -359,13 +359,13 @@ class BillLineItem
     /**
      * @param  ?string  $id
      * @param  ?string  $rowId
-     * @param  ?LinkedInvoiceItem  $item
-     * @param  ?LinkedTaxRate  $taxRate
-     * @param  ?array<?LinkedWorktag>  $worktags
+     * @param  ?\Apideck\Unify\Models\Components\LinkedInvoiceItem  $item
+     * @param  ?\Apideck\Unify\Models\Components\LinkedTaxRate  $taxRate
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedWorktag>  $worktags
      * @param  ?string  $code
      * @param  ?int  $lineNumber
      * @param  ?string  $description
-     * @param  ?LineItemType  $type
+     * @param  ?\Apideck\Unify\Models\Components\LineItemType  $type
      * @param  ?float  $taxAmount
      * @param  ?float  $totalAmount
      * @param  ?float  $quantity
@@ -385,11 +385,11 @@ class BillLineItem
      * @param  ?string  $taxMethod
      * @param  ?float  $retentionAmount
      * @param  ?float  $paymentAmount
-     * @param  ?LinkedLedgerAccount  $ledgerAccount
-     * @param  ?LinkedPurchaseOrder  $purchaseOrder
-     * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
-     * @param  ?LinkedCustomer  $customer
-     * @param  ?Rebilling  $rebilling
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $ledgerAccount
+     * @param  ?\Apideck\Unify\Models\Components\LinkedPurchaseOrder  $purchaseOrder
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory>  $trackingCategories
+     * @param  ?\Apideck\Unify\Models\Components\LinkedCustomer  $customer
+     * @param  ?\Apideck\Unify\Models\Components\Rebilling  $rebilling
      * @param  ?string  $rowVersion
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy

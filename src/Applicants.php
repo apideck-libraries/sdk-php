@@ -52,8 +52,8 @@ class Applicants
      *
      * Create Applicant
      *
-     * @param  Operations\AtsApplicantsAddRequest  $request
-     * @return Operations\AtsApplicantsAddResponse
+     * @param  \Apideck\Unify\Models\Operations\AtsApplicantsAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AtsApplicantsAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\AtsApplicantsAddRequest $request, ?Options $options = null): Operations\AtsApplicantsAddResponse
@@ -227,8 +227,8 @@ class Applicants
      *
      * List Applicants
      *
-     * @param  ?Operations\AtsApplicantsAllRequest  $request
-     * @return Operations\AtsApplicantsAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AtsApplicantsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AtsApplicantsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AtsApplicantsAllRequest $request = null, ?Options $options = null): Operations\AtsApplicantsAllResponse
@@ -454,8 +454,8 @@ class Applicants
      *
      * List Applicants
      *
-     * @param  ?Operations\AtsApplicantsAllRequest  $request
-     * @return \Generator<Operations\AtsApplicantsAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AtsApplicantsAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AtsApplicantsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AtsApplicantsAllRequest $request = null, ?Options $options = null): \Generator
@@ -472,8 +472,8 @@ class Applicants
      *
      * Delete Applicant
      *
-     * @param  Operations\AtsApplicantsDeleteRequest  $request
-     * @return Operations\AtsApplicantsDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\AtsApplicantsDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AtsApplicantsDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\AtsApplicantsDeleteRequest $request, ?Options $options = null): Operations\AtsApplicantsDeleteResponse
@@ -642,8 +642,8 @@ class Applicants
      *
      * Get Applicant
      *
-     * @param  Operations\AtsApplicantsOneRequest  $request
-     * @return Operations\AtsApplicantsOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AtsApplicantsOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AtsApplicantsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AtsApplicantsOneRequest $request, ?Options $options = null): Operations\AtsApplicantsOneResponse
@@ -812,8 +812,8 @@ class Applicants
      *
      * Update Applicant
      *
-     * @param  Operations\AtsApplicantsUpdateRequest  $request
-     * @return Operations\AtsApplicantsUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\AtsApplicantsUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AtsApplicantsUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\AtsApplicantsUpdateRequest $request, ?Options $options = null): Operations\AtsApplicantsUpdateResponse

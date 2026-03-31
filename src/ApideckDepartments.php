@@ -52,8 +52,8 @@ class ApideckDepartments
      *
      * Create Department
      *
-     * @param  Operations\HrisDepartmentsAddRequest  $request
-     * @return Operations\HrisDepartmentsAddResponse
+     * @param  \Apideck\Unify\Models\Operations\HrisDepartmentsAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\HrisDepartmentsAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\HrisDepartmentsAddRequest $request, ?Options $options = null): Operations\HrisDepartmentsAddResponse
@@ -227,8 +227,8 @@ class ApideckDepartments
      *
      * List Departments
      *
-     * @param  ?Operations\HrisDepartmentsAllRequest  $request
-     * @return Operations\HrisDepartmentsAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\HrisDepartmentsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\HrisDepartmentsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\HrisDepartmentsAllRequest $request = null, ?Options $options = null): Operations\HrisDepartmentsAllResponse
@@ -452,8 +452,8 @@ class ApideckDepartments
      *
      * List Departments
      *
-     * @param  ?Operations\HrisDepartmentsAllRequest  $request
-     * @return \Generator<Operations\HrisDepartmentsAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\HrisDepartmentsAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\HrisDepartmentsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\HrisDepartmentsAllRequest $request = null, ?Options $options = null): \Generator
@@ -470,8 +470,8 @@ class ApideckDepartments
      *
      * Delete Department
      *
-     * @param  Operations\HrisDepartmentsDeleteRequest  $request
-     * @return Operations\HrisDepartmentsDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\HrisDepartmentsDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\HrisDepartmentsDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\HrisDepartmentsDeleteRequest $request, ?Options $options = null): Operations\HrisDepartmentsDeleteResponse
@@ -640,8 +640,8 @@ class ApideckDepartments
      *
      * Get Department
      *
-     * @param  Operations\HrisDepartmentsOneRequest  $request
-     * @return Operations\HrisDepartmentsOneResponse
+     * @param  \Apideck\Unify\Models\Operations\HrisDepartmentsOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\HrisDepartmentsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\HrisDepartmentsOneRequest $request, ?Options $options = null): Operations\HrisDepartmentsOneResponse
@@ -810,8 +810,8 @@ class ApideckDepartments
      *
      * Update Department
      *
-     * @param  Operations\HrisDepartmentsUpdateRequest  $request
-     * @return Operations\HrisDepartmentsUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\HrisDepartmentsUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\HrisDepartmentsUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\HrisDepartmentsUpdateRequest $request, ?Options $options = null): Operations\HrisDepartmentsUpdateResponse

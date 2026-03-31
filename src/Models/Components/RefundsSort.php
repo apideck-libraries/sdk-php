@@ -14,7 +14,7 @@ class RefundsSort
     /**
      * The field on which to sort the Refunds
      *
-     * @var ?RefundsSortBy $by
+     * @var ?\Apideck\Unify\Models\Components\RefundsSortBy $by
      */
     #[SpeakeasyMetadata('queryParam:name=by')]
     public ?RefundsSortBy $by = null;
@@ -22,14 +22,14 @@ class RefundsSort
     /**
      * The direction in which to sort the results
      *
-     * @var ?SortDirection $direction
+     * @var ?\Apideck\Unify\Models\Components\SortDirection $direction
      */
     #[SpeakeasyMetadata('queryParam:name=direction')]
     public ?SortDirection $direction = null;
 
     /**
-     * @param  ?RefundsSortBy  $by
-     * @param  ?SortDirection  $direction
+     * @param  ?\Apideck\Unify\Models\Components\RefundsSortBy  $by
+     * @param  ?\Apideck\Unify\Models\Components\SortDirection  $direction
      * @phpstan-pure
      */
     public function __construct(?RefundsSortBy $by = null, ?SortDirection $direction = SortDirection::Asc)

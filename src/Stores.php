@@ -52,8 +52,8 @@ class Stores
      *
      * Get Store
      *
-     * @param  ?Operations\EcommerceStoresOneRequest  $request
-     * @return Operations\EcommerceStoresOneResponse
+     * @param  ?\Apideck\Unify\Models\Operations\EcommerceStoresOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\EcommerceStoresOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(?Operations\EcommerceStoresOneRequest $request = null, ?Options $options = null): Operations\EcommerceStoresOneResponse

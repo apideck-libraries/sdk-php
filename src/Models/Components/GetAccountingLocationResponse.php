@@ -54,7 +54,7 @@ class GetAccountingLocationResponse
 
     /**
      *
-     * @var AccountingLocation $data
+     * @var \Apideck\Unify\Models\Components\AccountingLocation $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\AccountingLocation')]
@@ -76,7 +76,7 @@ class GetAccountingLocationResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  AccountingLocation  $data
+     * @param  \Apideck\Unify\Models\Components\AccountingLocation  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

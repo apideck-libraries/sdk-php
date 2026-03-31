@@ -70,7 +70,7 @@ class BadRequestResponse
     /**
      * Contains downstream errors returned from the connector. Only present when type_name is ConnectorExecutionError.
      *
-     * @var ?array<DownstreamErrors> $downstreamErrors
+     * @var ?array<\Apideck\Unify\Models\Errors\DownstreamErrors> $downstreamErrors
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('downstream_errors')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Errors\DownstreamErrors>|null')]
@@ -84,7 +84,7 @@ class BadRequestResponse
      * @param  ?string  $message
      * @param  string|array<string, mixed>|null  $detail
      * @param  ?string  $ref
-     * @param  ?array<DownstreamErrors>  $downstreamErrors
+     * @param  ?array<\Apideck\Unify\Models\Errors\DownstreamErrors>  $downstreamErrors
      * @phpstan-pure
      */
     public function __construct(?float $statusCode = null, ?string $error = null, ?string $typeName = null, ?string $message = null, string|array|null $detail = null, ?string $ref = null, ?array $downstreamErrors = null)

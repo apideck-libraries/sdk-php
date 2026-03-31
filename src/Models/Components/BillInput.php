@@ -14,7 +14,7 @@ class BillInput
     /**
      * $lineItems
      *
-     * @var ?array<BillLineItemInput> $lineItems
+     * @var ?array<\Apideck\Unify\Models\Components\BillLineItemInput> $lineItems
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\BillLineItemInput>|null')]
@@ -23,7 +23,7 @@ class BillInput
 
     /**
      *
-     * @var ?BankAccount $bankAccount
+     * @var ?\Apideck\Unify\Models\Components\BankAccount $bankAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('bank_account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BankAccount|null')]
@@ -33,7 +33,7 @@ class BillInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -43,7 +43,7 @@ class BillInput
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -53,7 +53,7 @@ class BillInput
     /**
      * $attachments
      *
-     * @var ?array<?LinkedAttachment> $attachments
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedAttachment> $attachments
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('attachments')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedAttachment|null>|null')]
@@ -81,7 +81,7 @@ class BillInput
     /**
      * The supplier this entity is linked to.
      *
-     * @var ?LinkedSupplierInput $supplier
+     * @var ?\Apideck\Unify\Models\Components\LinkedSupplierInput $supplier
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('supplier')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedSupplierInput|null')]
@@ -118,7 +118,7 @@ class BillInput
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -271,7 +271,7 @@ class BillInput
     /**
      * Invoice status
      *
-     * @var ?BillStatus $status
+     * @var ?\Apideck\Unify\Models\Components\BillStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BillStatus|null')]
@@ -280,7 +280,7 @@ class BillInput
 
     /**
      *
-     * @var ?LinkedLedgerAccount $ledgerAccount
+     * @var ?\Apideck\Unify\Models\Components\LinkedLedgerAccount $ledgerAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('ledger_account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
@@ -353,7 +353,7 @@ class BillInput
     /**
      * Type of amortization
      *
-     * @var ?AmortizationType $amortizationType
+     * @var ?\Apideck\Unify\Models\Components\AmortizationType $amortizationType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('amortization_type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\AmortizationType|null')]
@@ -390,7 +390,7 @@ class BillInput
     /**
      * A list of linked tracking categories.
      *
-     * @var ?array<?LinkedTrackingCategory> $trackingCategories
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory> $trackingCategories
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory|null>|null')]
@@ -416,18 +416,18 @@ class BillInput
     public ?string $accountingPeriod = null;
 
     /**
-     * @param  ?array<BillLineItemInput>  $lineItems
-     * @param  ?BankAccount  $bankAccount
-     * @param  ?array<CustomField1|CustomField2>  $customFields
-     * @param  ?array<PassThroughBody>  $passThrough
-     * @param  ?array<?LinkedAttachment>  $attachments
+     * @param  ?array<\Apideck\Unify\Models\Components\BillLineItemInput>  $lineItems
+     * @param  ?\Apideck\Unify\Models\Components\BankAccount  $bankAccount
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedAttachment>  $attachments
      * @param  ?string  $displayId
      * @param  ?string  $billNumber
-     * @param  ?LinkedSupplierInput  $supplier
+     * @param  ?\Apideck\Unify\Models\Components\LinkedSupplierInput  $supplier
      * @param  ?string  $companyId
      * @param  ?string  $locationId
      * @param  ?string  $departmentId
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?float  $currencyRate
      * @param  ?bool  $taxInclusive
      * @param  ?LocalDate  $billDate
@@ -444,8 +444,8 @@ class BillInput
      * @param  ?float  $total
      * @param  ?string  $taxCode
      * @param  ?string  $notes
-     * @param  ?BillStatus  $status
-     * @param  ?LinkedLedgerAccount  $ledgerAccount
+     * @param  ?\Apideck\Unify\Models\Components\BillStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $ledgerAccount
      * @param  ?string  $paymentMethod
      * @param  ?string  $channel
      * @param  ?string  $language
@@ -453,11 +453,11 @@ class BillInput
      * @param  ?float  $discountPercentage
      * @param  ?string  $templateId
      * @param  ?string  $approvedBy
-     * @param  ?AmortizationType  $amortizationType
+     * @param  ?\Apideck\Unify\Models\Components\AmortizationType  $amortizationType
      * @param  ?string  $taxMethod
      * @param  ?bool  $documentReceived
      * @param  ?string  $sourceDocumentUrl
-     * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory>  $trackingCategories
      * @param  ?string  $rowVersion
      * @param  ?string  $accountingPeriod
      * @phpstan-pure

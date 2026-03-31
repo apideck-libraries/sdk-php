@@ -41,7 +41,7 @@ class EmployeeCompensation
     /**
      * Unit of measurement for employee compensation.
      *
-     * @var ?PaymentUnit $paymentUnit
+     * @var ?\Apideck\Unify\Models\Components\PaymentUnit $paymentUnit
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('payment_unit')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\PaymentUnit|null')]
@@ -51,7 +51,7 @@ class EmployeeCompensation
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -61,7 +61,7 @@ class EmployeeCompensation
     /**
      * The FLSA status for this compensation.
      *
-     * @var ?FlsaStatus $flsaStatus
+     * @var ?\Apideck\Unify\Models\Components\FlsaStatus $flsaStatus
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('flsa_status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\FlsaStatus|null')]
@@ -80,7 +80,7 @@ class EmployeeCompensation
     /**
      * Frequency of employee compensation.
      *
-     * @var ?PaymentFrequency $paymentFrequency
+     * @var ?\Apideck\Unify\Models\Components\PaymentFrequency $paymentFrequency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('payment_frequency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\PaymentFrequency|null')]
@@ -91,11 +91,11 @@ class EmployeeCompensation
      * @param  ?string  $id
      * @param  ?string  $jobId
      * @param  ?float  $rate
-     * @param  ?PaymentUnit  $paymentUnit
-     * @param  ?Currency  $currency
-     * @param  ?FlsaStatus  $flsaStatus
+     * @param  ?\Apideck\Unify\Models\Components\PaymentUnit  $paymentUnit
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\FlsaStatus  $flsaStatus
      * @param  ?string  $effectiveDate
-     * @param  ?PaymentFrequency  $paymentFrequency
+     * @param  ?\Apideck\Unify\Models\Components\PaymentFrequency  $paymentFrequency
      * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $jobId = null, ?float $rate = null, ?PaymentUnit $paymentUnit = null, ?Currency $currency = null, ?FlsaStatus $flsaStatus = null, ?string $effectiveDate = null, ?PaymentFrequency $paymentFrequency = null)

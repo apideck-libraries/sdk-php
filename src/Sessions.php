@@ -56,10 +56,10 @@ class Sessions
      * Note: This is a short lived token that will expire after 1 hour (TTL: 3600).
      *
      *
-     * @param  ?Components\Session  $session
+     * @param  ?\Apideck\Unify\Models\Components\Session  $session
      * @param  ?string  $consumerId
      * @param  ?string  $appId
-     * @return Operations\VaultSessionsCreateResponse
+     * @return \Apideck\Unify\Models\Operations\VaultSessionsCreateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(?Components\Session $session = null, ?string $consumerId = null, ?string $appId = null, ?Options $options = null): Operations\VaultSessionsCreateResponse

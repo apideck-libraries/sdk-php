@@ -29,7 +29,7 @@ class Fields
 
     /**
      *
-     * @var ?CustomObjectSchemaType $type
+     * @var ?\Apideck\Unify\Models\Components\CustomObjectSchemaType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomObjectSchemaType|null')]
@@ -55,7 +55,7 @@ class Fields
     /**
      * Options for select and multiselect types
      *
-     * @var ?array<CustomObjectSchemaOptions> $options
+     * @var ?array<\Apideck\Unify\Models\Components\CustomObjectSchemaOptions> $options
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomObjectSchemaOptions>|null')]
@@ -74,10 +74,10 @@ class Fields
     /**
      * @param  ?string  $id
      * @param  ?string  $name
-     * @param  ?CustomObjectSchemaType  $type
+     * @param  ?\Apideck\Unify\Models\Components\CustomObjectSchemaType  $type
      * @param  ?bool  $required
      * @param  ?string  $description
-     * @param  ?array<CustomObjectSchemaOptions>  $options
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomObjectSchemaOptions>  $options
      * @param  ?string  $defaultValue
      * @phpstan-pure
      */

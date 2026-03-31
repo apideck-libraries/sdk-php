@@ -31,7 +31,7 @@ class Lead
     /**
      * $websites
      *
-     * @var ?array<Website> $websites
+     * @var ?array<\Apideck\Unify\Models\Components\Website> $websites
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('websites')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Website>|null')]
@@ -41,7 +41,7 @@ class Lead
     /**
      * $addresses
      *
-     * @var ?array<Address> $addresses
+     * @var ?array<\Apideck\Unify\Models\Components\Address> $addresses
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('addresses')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Address>|null')]
@@ -51,7 +51,7 @@ class Lead
     /**
      * $socialLinks
      *
-     * @var ?array<SocialLink> $socialLinks
+     * @var ?array<\Apideck\Unify\Models\Components\SocialLink> $socialLinks
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('social_links')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\SocialLink>|null')]
@@ -61,7 +61,7 @@ class Lead
     /**
      * $phoneNumbers
      *
-     * @var ?array<PhoneNumber> $phoneNumbers
+     * @var ?array<\Apideck\Unify\Models\Components\PhoneNumber> $phoneNumbers
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('phone_numbers')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PhoneNumber>|null')]
@@ -71,7 +71,7 @@ class Lead
     /**
      * $emails
      *
-     * @var ?array<Email> $emails
+     * @var ?array<\Apideck\Unify\Models\Components\Email> $emails
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('emails')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Email>|null')]
@@ -81,7 +81,7 @@ class Lead
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -225,7 +225,7 @@ class Lead
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -244,7 +244,7 @@ class Lead
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -292,12 +292,12 @@ class Lead
     /**
      * @param  string  $name
      * @param  ?string  $id
-     * @param  ?array<Website>  $websites
-     * @param  ?array<Address>  $addresses
-     * @param  ?array<SocialLink>  $socialLinks
-     * @param  ?array<PhoneNumber>  $phoneNumbers
-     * @param  ?array<Email>  $emails
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<\Apideck\Unify\Models\Components\Website>  $websites
+     * @param  ?array<\Apideck\Unify\Models\Components\Address>  $addresses
+     * @param  ?array<\Apideck\Unify\Models\Components\SocialLink>  $socialLinks
+     * @param  ?array<\Apideck\Unify\Models\Components\PhoneNumber>  $phoneNumbers
+     * @param  ?array<\Apideck\Unify\Models\Components\Email>  $emails
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $companyName
      * @param  ?string  $ownerId
      * @param  ?string  $ownerName
@@ -313,9 +313,9 @@ class Lead
      * @param  ?string  $language
      * @param  ?string  $status
      * @param  ?float  $monetaryAmount
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?string  $fax
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
      * @param  ?array<string>  $tags
      * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $updatedAt

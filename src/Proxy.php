@@ -54,8 +54,8 @@ class Proxy
      * **Note**: Vault will proxy all data to the downstream URL and method/verb in the headers.
      *
      *
-     * @param  Operations\ProxyDeleteProxyRequest  $request
-     * @return Operations\ProxyDeleteProxyResponse
+     * @param  \Apideck\Unify\Models\Operations\ProxyDeleteProxyRequest  $request
+     * @return \Apideck\Unify\Models\Operations\ProxyDeleteProxyResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\ProxyDeleteProxyRequest $request, ?Options $options = null): Operations\ProxyDeleteProxyResponse
@@ -275,8 +275,8 @@ class Proxy
      * **Note**: Vault will proxy all data to the downstream URL and method/verb in the headers.
      *
      *
-     * @param  Operations\ProxyGetProxyRequest  $request
-     * @return Operations\ProxyGetProxyResponse
+     * @param  \Apideck\Unify\Models\Operations\ProxyGetProxyRequest  $request
+     * @return \Apideck\Unify\Models\Operations\ProxyGetProxyResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\ProxyGetProxyRequest $request, ?Options $options = null): Operations\ProxyGetProxyResponse
@@ -496,8 +496,8 @@ class Proxy
      * **Note**: Vault will proxy all data to the downstream URL and method/verb in the headers.
      *
      *
-     * @param  Operations\ProxyOptionsProxyRequest  $request
-     * @return Operations\ProxyOptionsProxyResponse
+     * @param  \Apideck\Unify\Models\Operations\ProxyOptionsProxyRequest  $request
+     * @return \Apideck\Unify\Models\Operations\ProxyOptionsProxyResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function options(Operations\ProxyOptionsProxyRequest $request, ?Options $options = null): Operations\ProxyOptionsProxyResponse
@@ -717,8 +717,8 @@ class Proxy
      * **Note**: Vault will proxy all data to the downstream URL and method/verb in the headers.
      *
      *
-     * @param  Operations\ProxyPatchProxyRequest  $request
-     * @return Operations\ProxyPatchProxyResponse
+     * @param  \Apideck\Unify\Models\Operations\ProxyPatchProxyRequest  $request
+     * @return \Apideck\Unify\Models\Operations\ProxyPatchProxyResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function patch(Operations\ProxyPatchProxyRequest $request, ?Options $options = null): Operations\ProxyPatchProxyResponse
@@ -942,8 +942,8 @@ class Proxy
      * **Note**: Vault will proxy all data to the downstream URL and method/verb in the headers.
      *
      *
-     * @param  Operations\ProxyPostProxyRequest  $request
-     * @return Operations\ProxyPostProxyResponse
+     * @param  \Apideck\Unify\Models\Operations\ProxyPostProxyRequest  $request
+     * @return \Apideck\Unify\Models\Operations\ProxyPostProxyResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function post(Operations\ProxyPostProxyRequest $request, ?Options $options = null): Operations\ProxyPostProxyResponse
@@ -1167,8 +1167,8 @@ class Proxy
      * **Note**: Vault will proxy all data to the downstream URL and method/verb in the headers.
      *
      *
-     * @param  Operations\ProxyPutProxyRequest  $request
-     * @return Operations\ProxyPutProxyResponse
+     * @param  \Apideck\Unify\Models\Operations\ProxyPutProxyRequest  $request
+     * @return \Apideck\Unify\Models\Operations\ProxyPutProxyResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function put(Operations\ProxyPutProxyRequest $request, ?Options $options = null): Operations\ProxyPutProxyResponse

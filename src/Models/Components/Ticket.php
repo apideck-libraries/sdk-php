@@ -22,7 +22,7 @@ class Ticket
     /**
      * $assignees
      *
-     * @var ?array<Assignee> $assignees
+     * @var ?array<\Apideck\Unify\Models\Components\Assignee> $assignees
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('assignees')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Assignee>|null')]
@@ -32,7 +32,7 @@ class Ticket
     /**
      * $tags
      *
-     * @var ?array<CollectionTag> $tags
+     * @var ?array<\Apideck\Unify\Models\Components\CollectionTag> $tags
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tags')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CollectionTag>|null')]
@@ -42,7 +42,7 @@ class Ticket
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -106,7 +106,7 @@ class Ticket
     /**
      * Priority of the ticket
      *
-     * @var ?TicketPriority $priority
+     * @var ?\Apideck\Unify\Models\Components\TicketPriority $priority
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('priority')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\TicketPriority|null')]
@@ -170,16 +170,16 @@ class Ticket
 
     /**
      * @param  string  $id
-     * @param  ?array<Assignee>  $assignees
-     * @param  ?array<CollectionTag>  $tags
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<\Apideck\Unify\Models\Components\Assignee>  $assignees
+     * @param  ?array<\Apideck\Unify\Models\Components\CollectionTag>  $tags
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $parentId
      * @param  ?string  $collectionId
      * @param  ?string  $type
      * @param  ?string  $subject
      * @param  ?string  $description
      * @param  ?string  $status
-     * @param  ?TicketPriority  $priority
+     * @param  ?\Apideck\Unify\Models\Components\TicketPriority  $priority
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
      * @param  ?string  $createdBy

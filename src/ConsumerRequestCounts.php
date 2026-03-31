@@ -57,7 +57,7 @@ class ConsumerRequestCounts
      * @param  string  $startDatetime
      * @param  string  $endDatetime
      * @param  ?string  $appId
-     * @return Operations\VaultConsumerRequestCountsAllResponse
+     * @return \Apideck\Unify\Models\Operations\VaultConsumerRequestCountsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(string $consumerId, string $startDatetime, string $endDatetime, ?string $appId = null, ?Options $options = null): Operations\VaultConsumerRequestCountsAllResponse

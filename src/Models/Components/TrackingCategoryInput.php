@@ -23,7 +23,7 @@ class TrackingCategoryInput
     /**
      * Based on the status some functionality is enabled or disabled.
      *
-     * @var ?TrackingCategoryStatus $status
+     * @var ?\Apideck\Unify\Models\Components\TrackingCategoryStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\TrackingCategoryStatus|null')]
@@ -33,7 +33,7 @@ class TrackingCategoryInput
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -43,7 +43,7 @@ class TrackingCategoryInput
     /**
      * The subsidiaries the account belongs to.
      *
-     * @var ?array<TrackingCategorySubsidiaries> $subsidiaries
+     * @var ?array<\Apideck\Unify\Models\Components\TrackingCategorySubsidiaries> $subsidiaries
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiaries')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\TrackingCategorySubsidiaries>|null')]
@@ -88,9 +88,9 @@ class TrackingCategoryInput
 
     /**
      * @param  ?string  $name
-     * @param  ?TrackingCategoryStatus  $status
-     * @param  ?array<PassThroughBody>  $passThrough
-     * @param  ?array<TrackingCategorySubsidiaries>  $subsidiaries
+     * @param  ?\Apideck\Unify\Models\Components\TrackingCategoryStatus  $status
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
+     * @param  ?array<\Apideck\Unify\Models\Components\TrackingCategorySubsidiaries>  $subsidiaries
      * @param  ?string  $parentId
      * @param  ?string  $parentName
      * @param  ?string  $code

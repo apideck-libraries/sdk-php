@@ -52,8 +52,8 @@ class Employees
      *
      * Create Employee
      *
-     * @param  Operations\AccountingEmployeesAddRequest  $request
-     * @return Operations\AccountingEmployeesAddResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingEmployeesAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingEmployeesAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\AccountingEmployeesAddRequest $request, ?Options $options = null): Operations\AccountingEmployeesAddResponse
@@ -227,8 +227,8 @@ class Employees
      *
      * List Employees
      *
-     * @param  ?Operations\AccountingEmployeesAllRequest  $request
-     * @return Operations\AccountingEmployeesAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingEmployeesAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingEmployeesAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AccountingEmployeesAllRequest $request = null, ?Options $options = null): Operations\AccountingEmployeesAllResponse
@@ -452,8 +452,8 @@ class Employees
      *
      * List Employees
      *
-     * @param  ?Operations\AccountingEmployeesAllRequest  $request
-     * @return \Generator<Operations\AccountingEmployeesAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingEmployeesAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AccountingEmployeesAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AccountingEmployeesAllRequest $request = null, ?Options $options = null): \Generator
@@ -470,8 +470,8 @@ class Employees
      *
      * Delete Employee
      *
-     * @param  Operations\AccountingEmployeesDeleteRequest  $request
-     * @return Operations\AccountingEmployeesDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingEmployeesDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingEmployeesDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\AccountingEmployeesDeleteRequest $request, ?Options $options = null): Operations\AccountingEmployeesDeleteResponse
@@ -640,8 +640,8 @@ class Employees
      *
      * Get Employee
      *
-     * @param  Operations\AccountingEmployeesOneRequest  $request
-     * @return Operations\AccountingEmployeesOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingEmployeesOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingEmployeesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AccountingEmployeesOneRequest $request, ?Options $options = null): Operations\AccountingEmployeesOneResponse
@@ -810,8 +810,8 @@ class Employees
      *
      * Update Employee
      *
-     * @param  Operations\AccountingEmployeesUpdateRequest  $request
-     * @return Operations\AccountingEmployeesUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingEmployeesUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingEmployeesUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\AccountingEmployeesUpdateRequest $request, ?Options $options = null): Operations\AccountingEmployeesUpdateResponse

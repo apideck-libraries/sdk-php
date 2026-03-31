@@ -22,7 +22,7 @@ class FileStorageDrivesUpdateRequest
 
     /**
      *
-     * @var Components\DriveInput $drive
+     * @var \Apideck\Unify\Models\Components\DriveInput $drive
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\DriveInput $drive;
@@ -61,7 +61,7 @@ class FileStorageDrivesUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\DriveInput  $drive
+     * @param  \Apideck\Unify\Models\Components\DriveInput  $drive
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

@@ -13,7 +13,7 @@ class FileStorageFoldersUpdateResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class FileStorageFoldersUpdateResponse
     /**
      * Folders
      *
-     * @var ?Components\UpdateFolderResponse $updateFolderResponse
+     * @var ?\Apideck\Unify\Models\Components\UpdateFolderResponse $updateFolderResponse
      */
     public ?Components\UpdateFolderResponse $updateFolderResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\UpdateFolderResponse  $updateFolderResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\UpdateFolderResponse  $updateFolderResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UpdateFolderResponse $updateFolderResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

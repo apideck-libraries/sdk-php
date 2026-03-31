@@ -13,7 +13,7 @@ class Defaults
 {
     /**
      *
-     * @var ?Target $target
+     * @var ?\Apideck\Unify\Models\Components\Target $target
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('target')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Target|null')]
@@ -31,7 +31,7 @@ class Defaults
     /**
      * $options
      *
-     * @var ?array<SimpleFormFieldOption|FormFieldOptionGroup> $options
+     * @var ?array<\Apideck\Unify\Models\Components\SimpleFormFieldOption|\Apideck\Unify\Models\Components\FormFieldOptionGroup> $options
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\SimpleFormFieldOption|\Apideck\Unify\Models\Components\FormFieldOptionGroup>|null')]
@@ -48,9 +48,9 @@ class Defaults
     public string|int|float|bool|array|null $value = null;
 
     /**
-     * @param  ?Target  $target
+     * @param  ?\Apideck\Unify\Models\Components\Target  $target
      * @param  ?string  $id
-     * @param  ?array<SimpleFormFieldOption|FormFieldOptionGroup>  $options
+     * @param  ?array<\Apideck\Unify\Models\Components\SimpleFormFieldOption|\Apideck\Unify\Models\Components\FormFieldOptionGroup>  $options
      * @param  string|int|float|bool|array<string|int|float>|null  $value
      * @phpstan-pure
      */

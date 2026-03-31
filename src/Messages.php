@@ -52,8 +52,8 @@ class Messages
      *
      * Create Message
      *
-     * @param  Operations\SmsMessagesAddRequest  $request
-     * @return Operations\SmsMessagesAddResponse
+     * @param  \Apideck\Unify\Models\Operations\SmsMessagesAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\SmsMessagesAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\SmsMessagesAddRequest $request, ?Options $options = null): Operations\SmsMessagesAddResponse
@@ -227,8 +227,8 @@ class Messages
      *
      * List Messages
      *
-     * @param  ?Operations\SmsMessagesAllRequest  $request
-     * @return Operations\SmsMessagesAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\SmsMessagesAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\SmsMessagesAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\SmsMessagesAllRequest $request = null, ?Options $options = null): Operations\SmsMessagesAllResponse
@@ -450,8 +450,8 @@ class Messages
      *
      * List Messages
      *
-     * @param  ?Operations\SmsMessagesAllRequest  $request
-     * @return \Generator<Operations\SmsMessagesAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\SmsMessagesAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\SmsMessagesAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\SmsMessagesAllRequest $request = null, ?Options $options = null): \Generator
@@ -468,8 +468,8 @@ class Messages
      *
      * Delete Message
      *
-     * @param  Operations\SmsMessagesDeleteRequest  $request
-     * @return Operations\SmsMessagesDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\SmsMessagesDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\SmsMessagesDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\SmsMessagesDeleteRequest $request, ?Options $options = null): Operations\SmsMessagesDeleteResponse
@@ -638,8 +638,8 @@ class Messages
      *
      * Get Message
      *
-     * @param  Operations\SmsMessagesOneRequest  $request
-     * @return Operations\SmsMessagesOneResponse
+     * @param  \Apideck\Unify\Models\Operations\SmsMessagesOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\SmsMessagesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\SmsMessagesOneRequest $request, ?Options $options = null): Operations\SmsMessagesOneResponse
@@ -808,8 +808,8 @@ class Messages
      *
      * Update Message
      *
-     * @param  Operations\SmsMessagesUpdateRequest  $request
-     * @return Operations\SmsMessagesUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\SmsMessagesUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\SmsMessagesUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\SmsMessagesUpdateRequest $request, ?Options $options = null): Operations\SmsMessagesUpdateResponse

@@ -52,8 +52,8 @@ class Leads
      *
      * Create lead
      *
-     * @param  Operations\CrmLeadsAddRequest  $request
-     * @return Operations\CrmLeadsAddResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmLeadsAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmLeadsAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\CrmLeadsAddRequest $request, ?Options $options = null): Operations\CrmLeadsAddResponse
@@ -227,8 +227,8 @@ class Leads
      *
      * List leads
      *
-     * @param  ?Operations\CrmLeadsAllRequest  $request
-     * @return Operations\CrmLeadsAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\CrmLeadsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmLeadsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\CrmLeadsAllRequest $request = null, ?Options $options = null): Operations\CrmLeadsAllResponse
@@ -456,8 +456,8 @@ class Leads
      *
      * List leads
      *
-     * @param  ?Operations\CrmLeadsAllRequest  $request
-     * @return \Generator<Operations\CrmLeadsAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\CrmLeadsAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\CrmLeadsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\CrmLeadsAllRequest $request = null, ?Options $options = null): \Generator
@@ -474,8 +474,8 @@ class Leads
      *
      * Delete lead
      *
-     * @param  Operations\CrmLeadsDeleteRequest  $request
-     * @return Operations\CrmLeadsDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmLeadsDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmLeadsDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\CrmLeadsDeleteRequest $request, ?Options $options = null): Operations\CrmLeadsDeleteResponse
@@ -644,8 +644,8 @@ class Leads
      *
      * Get lead
      *
-     * @param  Operations\CrmLeadsOneRequest  $request
-     * @return Operations\CrmLeadsOneResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmLeadsOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmLeadsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\CrmLeadsOneRequest $request, ?Options $options = null): Operations\CrmLeadsOneResponse
@@ -814,8 +814,8 @@ class Leads
      *
      * Update lead
      *
-     * @param  Operations\CrmLeadsUpdateRequest  $request
-     * @return Operations\CrmLeadsUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmLeadsUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmLeadsUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\CrmLeadsUpdateRequest $request, ?Options $options = null): Operations\CrmLeadsUpdateResponse

@@ -14,7 +14,7 @@ class ConnectorsFilter
     /**
      * Name of Apideck Unified API
      *
-     * @var ?UnifiedApiId $unifiedApi
+     * @var ?\Apideck\Unify\Models\Components\UnifiedApiId $unifiedApi
      */
     #[SpeakeasyMetadata('queryParam:name=unified_api')]
     public ?UnifiedApiId $unifiedApi = null;
@@ -22,14 +22,14 @@ class ConnectorsFilter
     /**
      * Status of the connector. Connectors with status live or beta are callable.
      *
-     * @var ?ConnectorStatus $status
+     * @var ?\Apideck\Unify\Models\Components\ConnectorStatus $status
      */
     #[SpeakeasyMetadata('queryParam:name=status')]
     public ?ConnectorStatus $status = null;
 
     /**
-     * @param  ?UnifiedApiId  $unifiedApi
-     * @param  ?ConnectorStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\UnifiedApiId  $unifiedApi
+     * @param  ?\Apideck\Unify\Models\Components\ConnectorStatus  $status
      * @phpstan-pure
      */
     public function __construct(?UnifiedApiId $unifiedApi = null, ?ConnectorStatus $status = null)

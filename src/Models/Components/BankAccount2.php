@@ -41,7 +41,7 @@ class BankAccount2
     /**
      * The type of bank account.
      *
-     * @var ?BankAccount2AccountType $accountType
+     * @var ?\Apideck\Unify\Models\Components\BankAccount2AccountType $accountType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('account_type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BankAccount2AccountType|null')]
@@ -105,7 +105,7 @@ class BankAccount2
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -125,14 +125,14 @@ class BankAccount2
      * @param  ?string  $bankName
      * @param  ?string  $accountNumber
      * @param  ?string  $accountName
-     * @param  ?BankAccount2AccountType  $accountType
+     * @param  ?\Apideck\Unify\Models\Components\BankAccount2AccountType  $accountType
      * @param  ?string  $iban
      * @param  ?string  $bic
      * @param  ?string  $routingNumber
      * @param  ?string  $bsbNumber
      * @param  ?string  $branchIdentifier
      * @param  ?string  $bankCode
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?string  $country
      * @phpstan-pure
      */

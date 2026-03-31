@@ -41,7 +41,7 @@ class PassThroughBody
     /**
      * Array of objects for structured data modifications via paths.
      *
-     * @var ?array<ExtendPaths> $extendPaths
+     * @var ?array<\Apideck\Unify\Models\Components\ExtendPaths> $extendPaths
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('extend_paths')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ExtendPaths>|null')]
@@ -52,7 +52,7 @@ class PassThroughBody
      * @param  string  $serviceId
      * @param  ?string  $operationId
      * @param  ?array<string, mixed>  $extendObject
-     * @param  ?array<ExtendPaths>  $extendPaths
+     * @param  ?array<\Apideck\Unify\Models\Components\ExtendPaths>  $extendPaths
      * @phpstan-pure
      */
     public function __construct(string $serviceId, ?string $operationId = null, ?array $extendObject = null, ?array $extendPaths = null)

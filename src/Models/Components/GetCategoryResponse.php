@@ -54,7 +54,7 @@ class GetCategoryResponse
 
     /**
      *
-     * @var Category $data
+     * @var \Apideck\Unify\Models\Components\Category $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Category')]
@@ -76,7 +76,7 @@ class GetCategoryResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Category  $data
+     * @param  \Apideck\Unify\Models\Components\Category  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

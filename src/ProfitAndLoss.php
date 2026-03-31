@@ -52,8 +52,8 @@ class ProfitAndLoss
      *
      * Get Profit and Loss
      *
-     * @param  ?Operations\AccountingProfitAndLossOneRequest  $request
-     * @return Operations\AccountingProfitAndLossOneResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingProfitAndLossOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingProfitAndLossOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(?Operations\AccountingProfitAndLossOneRequest $request = null, ?Options $options = null): Operations\AccountingProfitAndLossOneResponse

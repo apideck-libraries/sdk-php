@@ -55,7 +55,7 @@ class DeleteProjectResponse
     /**
      * A object containing a unique identifier for the resource that was created, updated, or deleted.
      *
-     * @var UnifiedId $data
+     * @var \Apideck\Unify\Models\Components\UnifiedId $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\UnifiedId')]
@@ -67,7 +67,7 @@ class DeleteProjectResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  UnifiedId  $data
+     * @param  \Apideck\Unify\Models\Components\UnifiedId  $data
      * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, UnifiedId $data)

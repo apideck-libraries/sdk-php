@@ -23,7 +23,7 @@ class VaultConsumersAllRequest
     /**
      * Filter results
      *
-     * @var ?Components\ConsumersFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\ConsumersFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\ConsumersFilter $filter = null;
@@ -46,7 +46,7 @@ class VaultConsumersAllRequest
 
     /**
      * @param  ?string  $appId
-     * @param  ?Components\ConsumersFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\ConsumersFilter  $filter
      * @param  ?int  $limit
      * @param  ?string  $cursor
      * @phpstan-pure

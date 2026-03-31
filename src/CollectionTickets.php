@@ -52,8 +52,8 @@ class CollectionTickets
      *
      * Create Ticket
      *
-     * @param  Operations\IssueTrackingCollectionTicketsAddRequest  $request
-     * @return Operations\IssueTrackingCollectionTicketsAddResponse
+     * @param  \Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketsAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketsAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\IssueTrackingCollectionTicketsAddRequest $request, ?Options $options = null): Operations\IssueTrackingCollectionTicketsAddResponse
@@ -227,8 +227,8 @@ class CollectionTickets
      *
      * List Tickets
      *
-     * @param  Operations\IssueTrackingCollectionTicketsAllRequest  $request
-     * @return Operations\IssueTrackingCollectionTicketsAllResponse
+     * @param  \Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(Operations\IssueTrackingCollectionTicketsAllRequest $request, ?Options $options = null): Operations\IssueTrackingCollectionTicketsAllResponse
@@ -458,8 +458,8 @@ class CollectionTickets
      *
      * List Tickets
      *
-     * @param  Operations\IssueTrackingCollectionTicketsAllRequest  $request
-     * @return \Generator<Operations\IssueTrackingCollectionTicketsAllResponse>
+     * @param  \Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketsAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(Operations\IssueTrackingCollectionTicketsAllRequest $request, ?Options $options = null): \Generator
@@ -476,8 +476,8 @@ class CollectionTickets
      *
      * Delete Ticket
      *
-     * @param  Operations\IssueTrackingCollectionTicketsDeleteRequest  $request
-     * @return Operations\IssueTrackingCollectionTicketsDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketsDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketsDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\IssueTrackingCollectionTicketsDeleteRequest $request, ?Options $options = null): Operations\IssueTrackingCollectionTicketsDeleteResponse
@@ -646,8 +646,8 @@ class CollectionTickets
      *
      * Get Ticket
      *
-     * @param  Operations\IssueTrackingCollectionTicketsOneRequest  $request
-     * @return Operations\IssueTrackingCollectionTicketsOneResponse
+     * @param  \Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketsOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\IssueTrackingCollectionTicketsOneRequest $request, ?Options $options = null): Operations\IssueTrackingCollectionTicketsOneResponse
@@ -816,8 +816,8 @@ class CollectionTickets
      *
      * Update Ticket
      *
-     * @param  Operations\IssueTrackingCollectionTicketsUpdateRequest  $request
-     * @return Operations\IssueTrackingCollectionTicketsUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketsUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketsUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\IssueTrackingCollectionTicketsUpdateRequest $request, ?Options $options = null): Operations\IssueTrackingCollectionTicketsUpdateResponse

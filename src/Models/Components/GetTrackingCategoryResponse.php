@@ -54,7 +54,7 @@ class GetTrackingCategoryResponse
 
     /**
      *
-     * @var TrackingCategory $data
+     * @var \Apideck\Unify\Models\Components\TrackingCategory $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\TrackingCategory')]
@@ -76,7 +76,7 @@ class GetTrackingCategoryResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  TrackingCategory  $data
+     * @param  \Apideck\Unify\Models\Components\TrackingCategory  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

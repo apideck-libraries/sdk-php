@@ -30,7 +30,7 @@ class ValidateConnectionStateResponse
 
     /**
      *
-     * @var ValidateConnectionStateResponseData $data
+     * @var \Apideck\Unify\Models\Components\ValidateConnectionStateResponseData $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ValidateConnectionStateResponseData')]
@@ -49,7 +49,7 @@ class ValidateConnectionStateResponse
     /**
      * @param  int  $statusCode
      * @param  string  $status
-     * @param  ValidateConnectionStateResponseData  $data
+     * @param  \Apideck\Unify\Models\Components\ValidateConnectionStateResponseData  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

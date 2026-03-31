@@ -52,8 +52,8 @@ class Notes
      *
      * Create note
      *
-     * @param  Operations\CrmNotesAddRequest  $request
-     * @return Operations\CrmNotesAddResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmNotesAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmNotesAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\CrmNotesAddRequest $request, ?Options $options = null): Operations\CrmNotesAddResponse
@@ -227,8 +227,8 @@ class Notes
      *
      * List notes
      *
-     * @param  ?Operations\CrmNotesAllRequest  $request
-     * @return Operations\CrmNotesAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\CrmNotesAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmNotesAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\CrmNotesAllRequest $request = null, ?Options $options = null): Operations\CrmNotesAllResponse
@@ -452,8 +452,8 @@ class Notes
      *
      * List notes
      *
-     * @param  ?Operations\CrmNotesAllRequest  $request
-     * @return \Generator<Operations\CrmNotesAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\CrmNotesAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\CrmNotesAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\CrmNotesAllRequest $request = null, ?Options $options = null): \Generator
@@ -470,8 +470,8 @@ class Notes
      *
      * Delete note
      *
-     * @param  Operations\CrmNotesDeleteRequest  $request
-     * @return Operations\CrmNotesDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmNotesDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmNotesDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\CrmNotesDeleteRequest $request, ?Options $options = null): Operations\CrmNotesDeleteResponse
@@ -640,8 +640,8 @@ class Notes
      *
      * Get note
      *
-     * @param  Operations\CrmNotesOneRequest  $request
-     * @return Operations\CrmNotesOneResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmNotesOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmNotesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\CrmNotesOneRequest $request, ?Options $options = null): Operations\CrmNotesOneResponse
@@ -810,8 +810,8 @@ class Notes
      *
      * Update note
      *
-     * @param  Operations\CrmNotesUpdateRequest  $request
-     * @return Operations\CrmNotesUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmNotesUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmNotesUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\CrmNotesUpdateRequest $request, ?Options $options = null): Operations\CrmNotesUpdateResponse

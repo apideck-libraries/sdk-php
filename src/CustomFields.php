@@ -53,8 +53,8 @@ class CustomFields
      * This endpoint returns an custom fields on a connection resource.
      *
      *
-     * @param  Operations\VaultCustomFieldsAllRequest  $request
-     * @return Operations\VaultCustomFieldsAllResponse
+     * @param  \Apideck\Unify\Models\Operations\VaultCustomFieldsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\VaultCustomFieldsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(Operations\VaultCustomFieldsAllRequest $request, ?Options $options = null): Operations\VaultCustomFieldsAllResponse

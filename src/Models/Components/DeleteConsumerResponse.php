@@ -30,7 +30,7 @@ class DeleteConsumerResponse
 
     /**
      *
-     * @var DeleteConsumerResponseData $data
+     * @var \Apideck\Unify\Models\Components\DeleteConsumerResponseData $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\DeleteConsumerResponseData')]
@@ -49,7 +49,7 @@ class DeleteConsumerResponse
     /**
      * @param  int  $statusCode
      * @param  string  $status
-     * @param  DeleteConsumerResponseData  $data
+     * @param  \Apideck\Unify\Models\Components\DeleteConsumerResponseData  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

@@ -39,7 +39,7 @@ class CrmContactsAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\ContactsFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\ContactsFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\ContactsFilter $filter = null;
@@ -47,7 +47,7 @@ class CrmContactsAllRequest
     /**
      * Apply sorting
      *
-     * @var ?Components\ContactsSort $sort
+     * @var ?\Apideck\Unify\Models\Components\ContactsSort $sort
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=sort')]
     public ?Components\ContactsSort $sort = null;
@@ -98,8 +98,8 @@ class CrmContactsAllRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?int  $limit
-     * @param  ?Components\ContactsFilter  $filter
-     * @param  ?Components\ContactsSort  $sort
+     * @param  ?\Apideck\Unify\Models\Components\ContactsFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\ContactsSort  $sort
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields

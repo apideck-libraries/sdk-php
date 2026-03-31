@@ -52,8 +52,8 @@ class Customers
      *
      * Create Customer
      *
-     * @param  Operations\AccountingCustomersAddRequest  $request
-     * @return Operations\AccountingCustomersAddResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingCustomersAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingCustomersAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\AccountingCustomersAddRequest $request, ?Options $options = null): Operations\AccountingCustomersAddResponse
@@ -227,8 +227,8 @@ class Customers
      *
      * List Customers
      *
-     * @param  ?Operations\AccountingCustomersAllRequest  $request
-     * @return Operations\AccountingCustomersAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingCustomersAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingCustomersAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AccountingCustomersAllRequest $request = null, ?Options $options = null): Operations\AccountingCustomersAllResponse
@@ -458,8 +458,8 @@ class Customers
      *
      * List Customers
      *
-     * @param  ?Operations\AccountingCustomersAllRequest  $request
-     * @return \Generator<Operations\AccountingCustomersAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingCustomersAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AccountingCustomersAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AccountingCustomersAllRequest $request = null, ?Options $options = null): \Generator
@@ -476,8 +476,8 @@ class Customers
      *
      * Delete Customer
      *
-     * @param  Operations\AccountingCustomersDeleteRequest  $request
-     * @return Operations\AccountingCustomersDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingCustomersDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingCustomersDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\AccountingCustomersDeleteRequest $request, ?Options $options = null): Operations\AccountingCustomersDeleteResponse
@@ -646,8 +646,8 @@ class Customers
      *
      * Get Customer
      *
-     * @param  Operations\AccountingCustomersOneRequest  $request
-     * @return Operations\AccountingCustomersOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingCustomersOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingCustomersOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AccountingCustomersOneRequest $request, ?Options $options = null): Operations\AccountingCustomersOneResponse
@@ -816,8 +816,8 @@ class Customers
      *
      * Update Customer
      *
-     * @param  Operations\AccountingCustomersUpdateRequest  $request
-     * @return Operations\AccountingCustomersUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingCustomersUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingCustomersUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\AccountingCustomersUpdateRequest $request, ?Options $options = null): Operations\AccountingCustomersUpdateResponse

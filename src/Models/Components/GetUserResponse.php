@@ -54,7 +54,7 @@ class GetUserResponse
 
     /**
      *
-     * @var User $data
+     * @var \Apideck\Unify\Models\Components\User $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\User')]
@@ -76,7 +76,7 @@ class GetUserResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  User  $data
+     * @param  \Apideck\Unify\Models\Components\User  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

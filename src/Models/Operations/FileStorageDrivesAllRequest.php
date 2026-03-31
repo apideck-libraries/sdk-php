@@ -39,7 +39,7 @@ class FileStorageDrivesAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\DrivesFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\DrivesFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\DrivesFilter $filter = null;
@@ -82,7 +82,7 @@ class FileStorageDrivesAllRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?int  $limit
-     * @param  ?Components\DrivesFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\DrivesFilter  $filter
      * @param  ?string  $cursor
      * @param  ?string  $fields
      * @phpstan-pure

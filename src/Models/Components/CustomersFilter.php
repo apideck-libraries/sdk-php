@@ -69,7 +69,7 @@ class CustomersFilter
     /**
      * Status of customer to filter on
      *
-     * @var ?CustomersFilterStatus $status
+     * @var ?\Apideck\Unify\Models\Components\CustomersFilterStatus $status
      */
     #[SpeakeasyMetadata('queryParam:name=status')]
     public ?CustomersFilterStatus $status = null;
@@ -82,7 +82,7 @@ class CustomersFilter
      * @param  ?string  $email
      * @param  ?\DateTime  $updatedSince
      * @param  ?string  $supplierId
-     * @param  ?CustomersFilterStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\CustomersFilterStatus  $status
      * @phpstan-pure
      */
     public function __construct(?string $companyName = null, ?string $displayName = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?\DateTime $updatedSince = null, ?string $supplierId = null, ?CustomersFilterStatus $status = null)

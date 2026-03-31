@@ -95,7 +95,7 @@ class ActivityAttendee
     /**
      * Status of the attendee
      *
-     * @var ?ActivityAttendeeStatus $status
+     * @var ?\Apideck\Unify\Models\Components\ActivityAttendeeStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ActivityAttendeeStatus|null')]
@@ -148,7 +148,7 @@ class ActivityAttendee
      * @param  ?string  $suffix
      * @param  ?string  $emailAddress
      * @param  ?bool  $isOrganizer
-     * @param  ?ActivityAttendeeStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\ActivityAttendeeStatus  $status
      * @param  ?string  $userId
      * @param  ?string  $contactId
      * @param  ?\DateTime  $updatedAt

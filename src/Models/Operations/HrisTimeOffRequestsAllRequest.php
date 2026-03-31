@@ -39,7 +39,7 @@ class HrisTimeOffRequestsAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\TimeOffRequestsFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\TimeOffRequestsFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\TimeOffRequestsFilter $filter = null;
@@ -90,7 +90,7 @@ class HrisTimeOffRequestsAllRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?int  $limit
-     * @param  ?Components\TimeOffRequestsFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\TimeOffRequestsFilter  $filter
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields

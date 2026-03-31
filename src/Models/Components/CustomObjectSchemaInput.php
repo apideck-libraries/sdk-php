@@ -14,7 +14,7 @@ class CustomObjectSchemaInput
     /**
      * The fields defined in the schema
      *
-     * @var ?array<Fields> $fields
+     * @var ?array<\Apideck\Unify\Models\Components\Fields> $fields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Fields>|null')]
@@ -24,7 +24,7 @@ class CustomObjectSchemaInput
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -68,8 +68,8 @@ class CustomObjectSchemaInput
     public ?bool $active = null;
 
     /**
-     * @param  ?array<Fields>  $fields
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<\Apideck\Unify\Models\Components\Fields>  $fields
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $name
      * @param  ?string  $description
      * @param  ?bool  $visible

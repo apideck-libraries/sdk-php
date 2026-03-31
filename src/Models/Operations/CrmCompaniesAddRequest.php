@@ -14,7 +14,7 @@ class CrmCompaniesAddRequest
 {
     /**
      *
-     * @var Components\Company1Input $company1
+     * @var \Apideck\Unify\Models\Components\Company1Input $company1
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\Company1Input $company1;
@@ -52,7 +52,7 @@ class CrmCompaniesAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\Company1Input  $company1
+     * @param  \Apideck\Unify\Models\Components\Company1Input  $company1
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

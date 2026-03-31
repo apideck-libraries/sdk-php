@@ -14,7 +14,7 @@ class FilesSort
     /**
      * The field on which to sort the Files
      *
-     * @var ?FilesSortBy $by
+     * @var ?\Apideck\Unify\Models\Components\FilesSortBy $by
      */
     #[SpeakeasyMetadata('queryParam:name=by')]
     public ?FilesSortBy $by = null;
@@ -22,14 +22,14 @@ class FilesSort
     /**
      * The direction in which to sort the results
      *
-     * @var ?SortDirection $direction
+     * @var ?\Apideck\Unify\Models\Components\SortDirection $direction
      */
     #[SpeakeasyMetadata('queryParam:name=direction')]
     public ?SortDirection $direction = null;
 
     /**
-     * @param  ?FilesSortBy  $by
-     * @param  ?SortDirection  $direction
+     * @param  ?\Apideck\Unify\Models\Components\FilesSortBy  $by
+     * @param  ?\Apideck\Unify\Models\Components\SortDirection  $direction
      * @phpstan-pure
      */
     public function __construct(?FilesSortBy $by = null, ?SortDirection $direction = SortDirection::Asc)

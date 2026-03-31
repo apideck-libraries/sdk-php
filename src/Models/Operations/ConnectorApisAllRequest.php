@@ -23,7 +23,7 @@ class ConnectorApisAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\ApisFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\ApisFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\ApisFilter $filter = null;
@@ -47,7 +47,7 @@ class ConnectorApisAllRequest
     /**
      * @param  ?string  $appId
      * @param  ?int  $limit
-     * @param  ?Components\ApisFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\ApisFilter  $filter
      * @param  ?string  $cursor
      * @phpstan-pure
      */

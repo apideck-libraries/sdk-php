@@ -52,8 +52,8 @@ class Departments
      *
      * Create Department
      *
-     * @param  Operations\AccountingDepartmentsAddRequest  $request
-     * @return Operations\AccountingDepartmentsAddResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingDepartmentsAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingDepartmentsAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\AccountingDepartmentsAddRequest $request, ?Options $options = null): Operations\AccountingDepartmentsAddResponse
@@ -227,8 +227,8 @@ class Departments
      *
      * List Departments
      *
-     * @param  ?Operations\AccountingDepartmentsAllRequest  $request
-     * @return Operations\AccountingDepartmentsAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingDepartmentsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingDepartmentsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AccountingDepartmentsAllRequest $request = null, ?Options $options = null): Operations\AccountingDepartmentsAllResponse
@@ -454,8 +454,8 @@ class Departments
      *
      * List Departments
      *
-     * @param  ?Operations\AccountingDepartmentsAllRequest  $request
-     * @return \Generator<Operations\AccountingDepartmentsAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingDepartmentsAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AccountingDepartmentsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AccountingDepartmentsAllRequest $request = null, ?Options $options = null): \Generator
@@ -472,8 +472,8 @@ class Departments
      *
      * Delete Department
      *
-     * @param  Operations\AccountingDepartmentsDeleteRequest  $request
-     * @return Operations\AccountingDepartmentsDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingDepartmentsDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingDepartmentsDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\AccountingDepartmentsDeleteRequest $request, ?Options $options = null): Operations\AccountingDepartmentsDeleteResponse
@@ -642,8 +642,8 @@ class Departments
      *
      * Get Department
      *
-     * @param  Operations\AccountingDepartmentsOneRequest  $request
-     * @return Operations\AccountingDepartmentsOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingDepartmentsOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingDepartmentsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AccountingDepartmentsOneRequest $request, ?Options $options = null): Operations\AccountingDepartmentsOneResponse
@@ -812,8 +812,8 @@ class Departments
      *
      * Update Department
      *
-     * @param  Operations\AccountingDepartmentsUpdateRequest  $request
-     * @return Operations\AccountingDepartmentsUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingDepartmentsUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingDepartmentsUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\AccountingDepartmentsUpdateRequest $request, ?Options $options = null): Operations\AccountingDepartmentsUpdateResponse

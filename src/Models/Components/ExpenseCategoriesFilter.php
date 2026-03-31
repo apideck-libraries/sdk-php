@@ -20,14 +20,14 @@ class ExpenseCategoriesFilter
 
     /**
      *
-     * @var ?ExpenseCategoriesFilterStatus $status
+     * @var ?\Apideck\Unify\Models\Components\ExpenseCategoriesFilterStatus $status
      */
     #[SpeakeasyMetadata('queryParam:name=status')]
     public ?ExpenseCategoriesFilterStatus $status = null;
 
     /**
      * @param  ?\DateTime  $updatedSince
-     * @param  ?ExpenseCategoriesFilterStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\ExpenseCategoriesFilterStatus  $status
      * @phpstan-pure
      */
     public function __construct(?\DateTime $updatedSince = null, ?ExpenseCategoriesFilterStatus $status = null)

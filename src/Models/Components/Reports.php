@@ -22,7 +22,7 @@ class Reports
     /**
      * A balance sheet assets account represents the financial position of a company at a specific point in time.
      *
-     * @var BalanceSheetAssetsAccount $assets
+     * @var \Apideck\Unify\Models\Components\BalanceSheetAssetsAccount $assets
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('assets')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BalanceSheetAssetsAccount')]
@@ -31,7 +31,7 @@ class Reports
     /**
      * A balance sheet liabilities account represents the financial position of a company at a specific point in time.
      *
-     * @var BalanceSheetLiabilitiesAccount $liabilities
+     * @var \Apideck\Unify\Models\Components\BalanceSheetLiabilitiesAccount $liabilities
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('liabilities')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BalanceSheetLiabilitiesAccount')]
@@ -40,7 +40,7 @@ class Reports
     /**
      * A balance sheet equity account represents the financial position of a company at a specific point in time.
      *
-     * @var BalanceSheetEquityAccount $equity
+     * @var \Apideck\Unify\Models\Components\BalanceSheetEquityAccount $equity
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('equity')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BalanceSheetEquityAccount')]
@@ -85,7 +85,7 @@ class Reports
     /**
      * A balance sheet uncategorized items account represents the financial position of a company at a specific point in time.
      *
-     * @var ?BalanceSheetUncategorizedItemsAccount $uncategorizedItems
+     * @var ?\Apideck\Unify\Models\Components\BalanceSheetUncategorizedItemsAccount $uncategorizedItems
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('uncategorized_items')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BalanceSheetUncategorizedItemsAccount|null')]
@@ -95,7 +95,7 @@ class Reports
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -150,15 +150,15 @@ class Reports
 
     /**
      * @param  string  $endDate
-     * @param  BalanceSheetAssetsAccount  $assets
-     * @param  BalanceSheetLiabilitiesAccount  $liabilities
-     * @param  BalanceSheetEquityAccount  $equity
+     * @param  \Apideck\Unify\Models\Components\BalanceSheetAssetsAccount  $assets
+     * @param  \Apideck\Unify\Models\Components\BalanceSheetLiabilitiesAccount  $liabilities
+     * @param  \Apideck\Unify\Models\Components\BalanceSheetEquityAccount  $equity
      * @param  ?string  $id
      * @param  ?string  $reportName
      * @param  ?string  $startDate
      * @param  ?float  $netAssets
-     * @param  ?BalanceSheetUncategorizedItemsAccount  $uncategorizedItems
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\BalanceSheetUncategorizedItemsAccount  $uncategorizedItems
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy

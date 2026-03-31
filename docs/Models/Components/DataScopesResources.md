@@ -9,7 +9,7 @@ Data scopes resource configuration that can be either detailed field permissions
 
 ```php
 /**
-* @var array<string, array<string, Components\DataScopesResources1>>
+* @var array<string, array<string, \Apideck\Unify\Models\Components\DataScopesResources1>>
 */
 array $value = /* values here */
 ```
@@ -18,7 +18,7 @@ array $value = /* values here */
 
 ```php
 /**
-* @var Components\DataScopesResources2
+* @var \Apideck\Unify\Models\Components\DataScopesResources2
 */
 Components\DataScopesResources2 $value = /* values here */
 ```

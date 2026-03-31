@@ -52,8 +52,8 @@ class CustomObjects
      *
      * Create custom object
      *
-     * @param  Operations\CrmCustomObjectsAddRequest  $request
-     * @return Operations\CrmCustomObjectsAddResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmCustomObjectsAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmCustomObjectsAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\CrmCustomObjectsAddRequest $request, ?Options $options = null): Operations\CrmCustomObjectsAddResponse
@@ -227,8 +227,8 @@ class CustomObjects
      *
      * List custom objects
      *
-     * @param  Operations\CrmCustomObjectsAllRequest  $request
-     * @return Operations\CrmCustomObjectsAllResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmCustomObjectsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmCustomObjectsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(Operations\CrmCustomObjectsAllRequest $request, ?Options $options = null): Operations\CrmCustomObjectsAllResponse
@@ -454,8 +454,8 @@ class CustomObjects
      *
      * List custom objects
      *
-     * @param  Operations\CrmCustomObjectsAllRequest  $request
-     * @return \Generator<Operations\CrmCustomObjectsAllResponse>
+     * @param  \Apideck\Unify\Models\Operations\CrmCustomObjectsAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\CrmCustomObjectsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(Operations\CrmCustomObjectsAllRequest $request, ?Options $options = null): \Generator
@@ -472,8 +472,8 @@ class CustomObjects
      *
      * Delete custom object
      *
-     * @param  Operations\CrmCustomObjectsDeleteRequest  $request
-     * @return Operations\CrmCustomObjectsDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmCustomObjectsDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmCustomObjectsDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\CrmCustomObjectsDeleteRequest $request, ?Options $options = null): Operations\CrmCustomObjectsDeleteResponse
@@ -642,8 +642,8 @@ class CustomObjects
      *
      * Get custom object
      *
-     * @param  Operations\CrmCustomObjectsOneRequest  $request
-     * @return Operations\CrmCustomObjectsOneResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmCustomObjectsOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmCustomObjectsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\CrmCustomObjectsOneRequest $request, ?Options $options = null): Operations\CrmCustomObjectsOneResponse
@@ -812,8 +812,8 @@ class CustomObjects
      *
      * Update custom object
      *
-     * @param  Operations\CrmCustomObjectsUpdateRequest  $request
-     * @return Operations\CrmCustomObjectsUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmCustomObjectsUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmCustomObjectsUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\CrmCustomObjectsUpdateRequest $request, ?Options $options = null): Operations\CrmCustomObjectsUpdateResponse

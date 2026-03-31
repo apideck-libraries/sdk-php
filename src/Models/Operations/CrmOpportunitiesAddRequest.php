@@ -14,7 +14,7 @@ class CrmOpportunitiesAddRequest
 {
     /**
      *
-     * @var Components\OpportunityInput $opportunity
+     * @var \Apideck\Unify\Models\Components\OpportunityInput $opportunity
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\OpportunityInput $opportunity;
@@ -52,7 +52,7 @@ class CrmOpportunitiesAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\OpportunityInput  $opportunity
+     * @param  \Apideck\Unify\Models\Components\OpportunityInput  $opportunity
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

@@ -14,7 +14,7 @@ class AccountingQuotesAddRequest
 {
     /**
      *
-     * @var Components\QuoteInput $quote
+     * @var \Apideck\Unify\Models\Components\QuoteInput $quote
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\QuoteInput $quote;
@@ -60,7 +60,7 @@ class AccountingQuotesAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\QuoteInput  $quote
+     * @param  \Apideck\Unify\Models\Components\QuoteInput  $quote
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

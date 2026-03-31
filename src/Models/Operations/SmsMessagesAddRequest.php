@@ -14,7 +14,7 @@ class SmsMessagesAddRequest
 {
     /**
      *
-     * @var Components\MessageInput $message
+     * @var \Apideck\Unify\Models\Components\MessageInput $message
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\MessageInput $message;
@@ -52,7 +52,7 @@ class SmsMessagesAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\MessageInput  $message
+     * @param  \Apideck\Unify\Models\Components\MessageInput  $message
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

@@ -13,7 +13,7 @@ class WorkPattern
 {
     /**
      *
-     * @var ?OddWeeks $oddWeeks
+     * @var ?\Apideck\Unify\Models\Components\OddWeeks $oddWeeks
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('odd_weeks')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\OddWeeks|null')]
@@ -22,7 +22,7 @@ class WorkPattern
 
     /**
      *
-     * @var ?EvenWeeks $evenWeeks
+     * @var ?\Apideck\Unify\Models\Components\EvenWeeks $evenWeeks
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('even_weeks')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EvenWeeks|null')]
@@ -30,8 +30,8 @@ class WorkPattern
     public ?EvenWeeks $evenWeeks = null;
 
     /**
-     * @param  ?OddWeeks  $oddWeeks
-     * @param  ?EvenWeeks  $evenWeeks
+     * @param  ?\Apideck\Unify\Models\Components\OddWeeks  $oddWeeks
+     * @param  ?\Apideck\Unify\Models\Components\EvenWeeks  $evenWeeks
      * @phpstan-pure
      */
     public function __construct(?OddWeeks $oddWeeks = null, ?EvenWeeks $evenWeeks = null)

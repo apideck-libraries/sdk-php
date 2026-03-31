@@ -45,7 +45,7 @@ class VaultValidateConnectionStateRequest
 
     /**
      *
-     * @var ?VaultValidateConnectionStateRequestBody $requestBody
+     * @var ?\Apideck\Unify\Models\Operations\VaultValidateConnectionStateRequestBody $requestBody
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public ?VaultValidateConnectionStateRequestBody $requestBody = null;
@@ -55,7 +55,7 @@ class VaultValidateConnectionStateRequest
      * @param  string  $unifiedApi
      * @param  ?string  $consumerId
      * @param  ?string  $appId
-     * @param  ?VaultValidateConnectionStateRequestBody  $requestBody
+     * @param  ?\Apideck\Unify\Models\Operations\VaultValidateConnectionStateRequestBody  $requestBody
      * @phpstan-pure
      */
     public function __construct(string $serviceId, string $unifiedApi, ?string $consumerId = null, ?string $appId = null, ?VaultValidateConnectionStateRequestBody $requestBody = null)

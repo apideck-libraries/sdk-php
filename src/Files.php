@@ -52,8 +52,8 @@ class Files
      *
      * List Files
      *
-     * @param  ?Operations\FileStorageFilesAllRequest  $request
-     * @return Operations\FileStorageFilesAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\FileStorageFilesAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageFilesAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\FileStorageFilesAllRequest $request = null, ?Options $options = null): Operations\FileStorageFilesAllResponse
@@ -281,8 +281,8 @@ class Files
      *
      * List Files
      *
-     * @param  ?Operations\FileStorageFilesAllRequest  $request
-     * @return \Generator<Operations\FileStorageFilesAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\FileStorageFilesAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\FileStorageFilesAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\FileStorageFilesAllRequest $request = null, ?Options $options = null): \Generator
@@ -299,8 +299,8 @@ class Files
      *
      * Delete File
      *
-     * @param  Operations\FileStorageFilesDeleteRequest  $request
-     * @return Operations\FileStorageFilesDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\FileStorageFilesDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageFilesDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\FileStorageFilesDeleteRequest $request, ?Options $options = null): Operations\FileStorageFilesDeleteResponse
@@ -469,8 +469,8 @@ class Files
      *
      * Download File
      *
-     * @param  Operations\FileStorageFilesDownloadRequest  $request
-     * @return Operations\FileStorageFilesDownloadResponse
+     * @param  \Apideck\Unify\Models\Operations\FileStorageFilesDownloadRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageFilesDownloadResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function download(Operations\FileStorageFilesDownloadRequest $request, ?Options $options = null): Operations\FileStorageFilesDownloadResponse
@@ -636,8 +636,8 @@ class Files
      *
      * Export File
      *
-     * @param  Operations\FileStorageFilesExportRequest  $request
-     * @return Operations\FileStorageFilesExportResponse
+     * @param  \Apideck\Unify\Models\Operations\FileStorageFilesExportRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageFilesExportResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function export(Operations\FileStorageFilesExportRequest $request, ?Options $options = null): Operations\FileStorageFilesExportResponse
@@ -803,8 +803,8 @@ class Files
      *
      * Get File
      *
-     * @param  Operations\FileStorageFilesOneRequest  $request
-     * @return Operations\FileStorageFilesOneResponse
+     * @param  \Apideck\Unify\Models\Operations\FileStorageFilesOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageFilesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\FileStorageFilesOneRequest $request, ?Options $options = null): Operations\FileStorageFilesOneResponse
@@ -973,8 +973,8 @@ class Files
      *
      * Search Files
      *
-     * @param  Operations\FileStorageFilesSearchRequest  $request
-     * @return Operations\FileStorageFilesSearchResponse
+     * @param  \Apideck\Unify\Models\Operations\FileStorageFilesSearchRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageFilesSearchResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function search(Operations\FileStorageFilesSearchRequest $request, ?Options $options = null): Operations\FileStorageFilesSearchResponse
@@ -1148,8 +1148,8 @@ class Files
      *
      * Rename or move File
      *
-     * @param  Operations\FileStorageFilesUpdateRequest  $request
-     * @return Operations\FileStorageFilesUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\FileStorageFilesUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageFilesUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\FileStorageFilesUpdateRequest $request, ?Options $options = null): Operations\FileStorageFilesUpdateResponse

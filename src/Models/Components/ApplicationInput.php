@@ -27,7 +27,7 @@ class ApplicationInput
 
     /**
      *
-     * @var ?Stage $stage
+     * @var ?\Apideck\Unify\Models\Components\Stage $stage
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('stage')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Stage|null')]
@@ -37,7 +37,7 @@ class ApplicationInput
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -46,7 +46,7 @@ class ApplicationInput
 
     /**
      *
-     * @var ?ApplicationStatus $status
+     * @var ?\Apideck\Unify\Models\Components\ApplicationStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ApplicationStatus|null')]
@@ -56,9 +56,9 @@ class ApplicationInput
     /**
      * @param  ?string  $applicantId
      * @param  ?string  $jobId
-     * @param  ?Stage  $stage
-     * @param  ?array<PassThroughBody>  $passThrough
-     * @param  ?ApplicationStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\Stage  $stage
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
+     * @param  ?\Apideck\Unify\Models\Components\ApplicationStatus  $status
      * @phpstan-pure
      */
     public function __construct(?string $applicantId = null, ?string $jobId = null, ?Stage $stage = null, ?array $passThrough = null, ?ApplicationStatus $status = null)

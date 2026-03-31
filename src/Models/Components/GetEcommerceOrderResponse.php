@@ -54,7 +54,7 @@ class GetEcommerceOrderResponse
 
     /**
      *
-     * @var EcommerceOrder $data
+     * @var \Apideck\Unify\Models\Components\EcommerceOrder $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EcommerceOrder')]
@@ -76,7 +76,7 @@ class GetEcommerceOrderResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  EcommerceOrder  $data
+     * @param  \Apideck\Unify\Models\Components\EcommerceOrder  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

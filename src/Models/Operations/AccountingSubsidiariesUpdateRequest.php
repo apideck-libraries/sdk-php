@@ -22,7 +22,7 @@ class AccountingSubsidiariesUpdateRequest
 
     /**
      *
-     * @var Components\SubsidiaryInput $subsidiary
+     * @var \Apideck\Unify\Models\Components\SubsidiaryInput $subsidiary
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\SubsidiaryInput $subsidiary;
@@ -69,7 +69,7 @@ class AccountingSubsidiariesUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\SubsidiaryInput  $subsidiary
+     * @param  \Apideck\Unify\Models\Components\SubsidiaryInput  $subsidiary
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

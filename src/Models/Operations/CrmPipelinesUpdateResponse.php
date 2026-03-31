@@ -13,7 +13,7 @@ class CrmPipelinesUpdateResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class CrmPipelinesUpdateResponse
     /**
      * Pipeline updated
      *
-     * @var ?Components\UpdatePipelineResponse $updatePipelineResponse
+     * @var ?\Apideck\Unify\Models\Components\UpdatePipelineResponse $updatePipelineResponse
      */
     public ?Components\UpdatePipelineResponse $updatePipelineResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\UpdatePipelineResponse  $updatePipelineResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\UpdatePipelineResponse  $updatePipelineResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UpdatePipelineResponse $updatePipelineResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

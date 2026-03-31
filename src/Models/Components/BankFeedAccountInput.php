@@ -14,7 +14,7 @@ class BankFeedAccountInput
     /**
      * Type of the bank account.
      *
-     * @var ?BankAccountType $bankAccountType
+     * @var ?\Apideck\Unify\Models\Components\BankAccountType $bankAccountType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('bank_account_type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BankAccountType|null')]
@@ -60,7 +60,7 @@ class BankFeedAccountInput
     /**
      * Current status of the bank feed.
      *
-     * @var ?FeedStatus $feedStatus
+     * @var ?\Apideck\Unify\Models\Components\FeedStatus $feedStatus
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('feed_status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\FeedStatus|null')]
@@ -70,7 +70,7 @@ class BankFeedAccountInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -80,7 +80,7 @@ class BankFeedAccountInput
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -97,14 +97,14 @@ class BankFeedAccountInput
     public ?string $country = null;
 
     /**
-     * @param  ?BankAccountType  $bankAccountType
+     * @param  ?\Apideck\Unify\Models\Components\BankAccountType  $bankAccountType
      * @param  ?string  $sourceAccountId
      * @param  ?string  $targetAccountId
      * @param  ?string  $targetAccountName
      * @param  ?string  $targetAccountNumber
-     * @param  ?FeedStatus  $feedStatus
-     * @param  ?array<CustomField1|CustomField2>  $customFields
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\FeedStatus  $feedStatus
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?string  $country
      * @phpstan-pure
      */

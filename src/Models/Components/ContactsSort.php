@@ -14,7 +14,7 @@ class ContactsSort
     /**
      * The field on which to sort the Contacts
      *
-     * @var ?ContactsSortBy $by
+     * @var ?\Apideck\Unify\Models\Components\ContactsSortBy $by
      */
     #[SpeakeasyMetadata('queryParam:name=by')]
     public ?ContactsSortBy $by = null;
@@ -22,14 +22,14 @@ class ContactsSort
     /**
      * The direction in which to sort the results
      *
-     * @var ?SortDirection $direction
+     * @var ?\Apideck\Unify\Models\Components\SortDirection $direction
      */
     #[SpeakeasyMetadata('queryParam:name=direction')]
     public ?SortDirection $direction = null;
 
     /**
-     * @param  ?ContactsSortBy  $by
-     * @param  ?SortDirection  $direction
+     * @param  ?\Apideck\Unify\Models\Components\ContactsSortBy  $by
+     * @param  ?\Apideck\Unify\Models\Components\SortDirection  $direction
      * @phpstan-pure
      */
     public function __construct(?ContactsSortBy $by = null, ?SortDirection $direction = SortDirection::Asc)

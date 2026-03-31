@@ -57,9 +57,9 @@ class Webhooks
      * **Important**: Always check the `status` and `disabled_reason` fields in the response to ensure the webhook is active.
      *
      *
-     * @param  Components\CreateWebhookRequest  $createWebhookRequest
+     * @param  \Apideck\Unify\Models\Components\CreateWebhookRequest  $createWebhookRequest
      * @param  ?string  $appId
-     * @return Operations\WebhookWebhooksAddResponse
+     * @return \Apideck\Unify\Models\Operations\WebhookWebhooksAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Components\CreateWebhookRequest $createWebhookRequest, ?string $appId = null, ?Options $options = null): Operations\WebhookWebhooksAddResponse
@@ -237,7 +237,7 @@ class Webhooks
      * @param  ?string  $appId
      * @param  ?string  $cursor
      * @param  ?int  $limit
-     * @return Operations\WebhookWebhooksAllResponse
+     * @return \Apideck\Unify\Models\Operations\WebhookWebhooksAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?string $appId = null, ?string $cursor = null, ?int $limit = null, ?Options $options = null): Operations\WebhookWebhooksAllResponse
@@ -455,7 +455,7 @@ class Webhooks
      * @param  ?string  $appId
      * @param  ?string  $cursor
      * @param  ?int  $limit
-     * @return \Generator<Operations\WebhookWebhooksAllResponse>
+     * @return \Generator<\Apideck\Unify\Models\Operations\WebhookWebhooksAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?string $appId = null, ?string $cursor = null, ?int $limit = null, ?Options $options = null): \Generator
@@ -474,7 +474,7 @@ class Webhooks
      *
      * @param  string  $id
      * @param  ?string  $appId
-     * @return Operations\WebhookWebhooksDeleteResponse
+     * @return \Apideck\Unify\Models\Operations\WebhookWebhooksDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(string $id, ?string $appId = null, ?Options $options = null): Operations\WebhookWebhooksDeleteResponse
@@ -646,7 +646,7 @@ class Webhooks
      *
      * @param  string  $id
      * @param  ?string  $appId
-     * @return Operations\WebhookWebhooksOneResponse
+     * @return \Apideck\Unify\Models\Operations\WebhookWebhooksOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(string $id, ?string $appId = null, ?Options $options = null): Operations\WebhookWebhooksOneResponse
@@ -821,10 +821,10 @@ class Webhooks
      * **Important**: Always check the `status` and `disabled_reason` fields in the response to ensure the webhook is active.
      *
      *
-     * @param  Components\UpdateWebhookRequest  $updateWebhookRequest
+     * @param  \Apideck\Unify\Models\Components\UpdateWebhookRequest  $updateWebhookRequest
      * @param  string  $id
      * @param  ?string  $appId
-     * @return Operations\WebhookWebhooksUpdateResponse
+     * @return \Apideck\Unify\Models\Operations\WebhookWebhooksUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Components\UpdateWebhookRequest $updateWebhookRequest, string $id, ?string $appId = null, ?Options $options = null): Operations\WebhookWebhooksUpdateResponse

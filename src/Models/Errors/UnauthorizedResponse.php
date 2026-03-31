@@ -51,7 +51,7 @@ class UnauthorizedResponse
     /**
      * Contains parameter or domain specific information related to the error and why it occurred.
      *
-     * @var string|Two|null $detail
+     * @var string|\Apideck\Unify\Models\Errors\Two|null $detail
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('detail')]
     #[\Speakeasy\Serializer\Annotation\Type('string|\Apideck\Unify\Models\Errors\Two|null')]
@@ -72,7 +72,7 @@ class UnauthorizedResponse
      * @param  ?string  $error
      * @param  ?string  $typeName
      * @param  ?string  $message
-     * @param  string|Two|null  $detail
+     * @param  string|\Apideck\Unify\Models\Errors\Two|null  $detail
      * @param  ?string  $ref
      * @phpstan-pure
      */

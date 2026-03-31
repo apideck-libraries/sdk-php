@@ -31,7 +31,7 @@ class GetBankAccountsResponse
     /**
      * $data
      *
-     * @var array<AccountingBankAccount> $data
+     * @var array<\Apideck\Unify\Models\Components\AccountingBankAccount> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\AccountingBankAccount>')]
@@ -67,7 +67,7 @@ class GetBankAccountsResponse
     /**
      * Response metadata
      *
-     * @var ?Meta $meta
+     * @var ?\Apideck\Unify\Models\Components\Meta $meta
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('meta')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Meta|null')]
@@ -77,7 +77,7 @@ class GetBankAccountsResponse
     /**
      * Links to navigate to previous or next pages through the API
      *
-     * @var ?Links $links
+     * @var ?\Apideck\Unify\Models\Components\Links $links
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('links')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Links|null')]
@@ -87,12 +87,12 @@ class GetBankAccountsResponse
     /**
      * @param  int  $statusCode
      * @param  string  $status
-     * @param  array<AccountingBankAccount>  $data
+     * @param  array<\Apideck\Unify\Models\Components\AccountingBankAccount>  $data
      * @param  ?string  $service
      * @param  ?string  $resource
      * @param  ?string  $operation
-     * @param  ?Meta  $meta
-     * @param  ?Links  $links
+     * @param  ?\Apideck\Unify\Models\Components\Meta  $meta
+     * @param  ?\Apideck\Unify\Models\Components\Links  $links
      * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, array $data, ?string $service = null, ?string $resource = null, ?string $operation = null, ?Meta $meta = null, ?Links $links = null)

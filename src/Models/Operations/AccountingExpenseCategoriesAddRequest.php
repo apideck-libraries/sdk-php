@@ -14,7 +14,7 @@ class AccountingExpenseCategoriesAddRequest
 {
     /**
      *
-     * @var Components\ExpenseCategoryInput $expenseCategory
+     * @var \Apideck\Unify\Models\Components\ExpenseCategoryInput $expenseCategory
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\ExpenseCategoryInput $expenseCategory;
@@ -52,7 +52,7 @@ class AccountingExpenseCategoriesAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\ExpenseCategoryInput  $expenseCategory
+     * @param  \Apideck\Unify\Models\Components\ExpenseCategoryInput  $expenseCategory
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

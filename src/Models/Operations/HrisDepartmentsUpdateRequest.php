@@ -22,7 +22,7 @@ class HrisDepartmentsUpdateRequest
 
     /**
      *
-     * @var Components\DepartmentInput $department
+     * @var \Apideck\Unify\Models\Components\DepartmentInput $department
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\DepartmentInput $department;
@@ -61,7 +61,7 @@ class HrisDepartmentsUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\DepartmentInput  $department
+     * @param  \Apideck\Unify\Models\Components\DepartmentInput  $department
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

@@ -22,7 +22,7 @@ class ConnectionConfiguration
     /**
      * $defaults
      *
-     * @var ?array<ConnectionDefaults> $defaults
+     * @var ?array<\Apideck\Unify\Models\Components\ConnectionDefaults> $defaults
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('defaults')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ConnectionDefaults>|null')]
@@ -31,7 +31,7 @@ class ConnectionConfiguration
 
     /**
      * @param  ?string  $resource
-     * @param  ?array<ConnectionDefaults>  $defaults
+     * @param  ?array<\Apideck\Unify\Models\Components\ConnectionDefaults>  $defaults
      * @phpstan-pure
      */
     public function __construct(?string $resource = null, ?array $defaults = null)

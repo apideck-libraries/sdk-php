@@ -14,7 +14,7 @@ class ContactInput
     /**
      * $websites
      *
-     * @var ?array<Website> $websites
+     * @var ?array<\Apideck\Unify\Models\Components\Website> $websites
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('websites')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Website>|null')]
@@ -24,7 +24,7 @@ class ContactInput
     /**
      * $addresses
      *
-     * @var ?array<Address> $addresses
+     * @var ?array<\Apideck\Unify\Models\Components\Address> $addresses
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('addresses')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Address>|null')]
@@ -34,7 +34,7 @@ class ContactInput
     /**
      * $socialLinks
      *
-     * @var ?array<SocialLink> $socialLinks
+     * @var ?array<\Apideck\Unify\Models\Components\SocialLink> $socialLinks
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('social_links')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\SocialLink>|null')]
@@ -44,7 +44,7 @@ class ContactInput
     /**
      * $phoneNumbers
      *
-     * @var ?array<PhoneNumber> $phoneNumbers
+     * @var ?array<\Apideck\Unify\Models\Components\PhoneNumber> $phoneNumbers
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('phone_numbers')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PhoneNumber>|null')]
@@ -54,7 +54,7 @@ class ContactInput
     /**
      * $emails
      *
-     * @var ?array<Email> $emails
+     * @var ?array<\Apideck\Unify\Models\Components\Email> $emails
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('emails')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Email>|null')]
@@ -74,7 +74,7 @@ class ContactInput
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -102,7 +102,7 @@ class ContactInput
     /**
      * The type of the contact.
      *
-     * @var ?ContactType $type
+     * @var ?\Apideck\Unify\Models\Components\ContactType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ContactType|null')]
@@ -211,7 +211,7 @@ class ContactInput
     /**
      * The gender of the contact.
      *
-     * @var ?ContactGender $gender
+     * @var ?\Apideck\Unify\Models\Components\ContactGender $gender
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('gender')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ContactGender|null')]
@@ -310,7 +310,7 @@ class ContactInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -328,16 +328,16 @@ class ContactInput
     public ?array $tags = null;
 
     /**
-     * @param  ?array<Website>  $websites
-     * @param  ?array<Address>  $addresses
-     * @param  ?array<SocialLink>  $socialLinks
-     * @param  ?array<PhoneNumber>  $phoneNumbers
-     * @param  ?array<Email>  $emails
+     * @param  ?array<\Apideck\Unify\Models\Components\Website>  $websites
+     * @param  ?array<\Apideck\Unify\Models\Components\Address>  $addresses
+     * @param  ?array<\Apideck\Unify\Models\Components\SocialLink>  $socialLinks
+     * @param  ?array<\Apideck\Unify\Models\Components\PhoneNumber>  $phoneNumbers
+     * @param  ?array<\Apideck\Unify\Models\Components\Email>  $emails
      * @param  ?array<string>  $opportunityIds
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $name
      * @param  ?string  $ownerId
-     * @param  ?ContactType  $type
+     * @param  ?\Apideck\Unify\Models\Components\ContactType  $type
      * @param  ?string  $companyId
      * @param  ?string  $companyName
      * @param  ?string  $leadId
@@ -349,7 +349,7 @@ class ContactInput
      * @param  ?string  $title
      * @param  ?string  $department
      * @param  ?string  $language
-     * @param  ?ContactGender  $gender
+     * @param  ?\Apideck\Unify\Models\Components\ContactGender  $gender
      * @param  ?string  $birthday
      * @param  ?string  $image
      * @param  ?string  $photoUrl
@@ -360,7 +360,7 @@ class ContactInput
      * @param  ?string  $status
      * @param  ?bool  $active
      * @param  ?string  $emailDomain
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
      * @param  ?array<string>  $tags
      * @phpstan-pure
      */

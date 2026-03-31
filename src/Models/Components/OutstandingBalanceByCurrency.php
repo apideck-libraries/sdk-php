@@ -23,7 +23,7 @@ class OutstandingBalanceByCurrency
     /**
      * $balancesByPeriod
      *
-     * @var ?array<BalanceByPeriod> $balancesByPeriod
+     * @var ?array<\Apideck\Unify\Models\Components\BalanceByPeriod> $balancesByPeriod
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('balances_by_period')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\BalanceByPeriod>|null')]
@@ -33,7 +33,7 @@ class OutstandingBalanceByCurrency
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -42,8 +42,8 @@ class OutstandingBalanceByCurrency
 
     /**
      * @param  ?float  $totalAmount
-     * @param  ?array<BalanceByPeriod>  $balancesByPeriod
-     * @param  ?Currency  $currency
+     * @param  ?array<\Apideck\Unify\Models\Components\BalanceByPeriod>  $balancesByPeriod
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @phpstan-pure
      */
     public function __construct(?float $totalAmount = null, ?array $balancesByPeriod = null, ?Currency $currency = null)

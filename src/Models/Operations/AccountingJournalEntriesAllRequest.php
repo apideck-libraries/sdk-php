@@ -47,7 +47,7 @@ class AccountingJournalEntriesAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\JournalEntriesFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\JournalEntriesFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\JournalEntriesFilter $filter = null;
@@ -55,7 +55,7 @@ class AccountingJournalEntriesAllRequest
     /**
      * Apply sorting
      *
-     * @var ?Components\JournalEntriesSort $sort
+     * @var ?\Apideck\Unify\Models\Components\JournalEntriesSort $sort
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=sort')]
     public ?Components\JournalEntriesSort $sort = null;
@@ -107,8 +107,8 @@ class AccountingJournalEntriesAllRequest
      * @param  ?string  $serviceId
      * @param  ?string  $companyId
      * @param  ?int  $limit
-     * @param  ?Components\JournalEntriesFilter  $filter
-     * @param  ?Components\JournalEntriesSort  $sort
+     * @param  ?\Apideck\Unify\Models\Components\JournalEntriesFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\JournalEntriesSort  $sort
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields

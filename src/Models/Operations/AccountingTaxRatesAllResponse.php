@@ -13,7 +13,7 @@ class AccountingTaxRatesAllResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,14 +22,14 @@ class AccountingTaxRatesAllResponse
     /**
      * TaxRates
      *
-     * @var ?Components\GetTaxRatesResponse $getTaxRatesResponse
+     * @var ?\Apideck\Unify\Models\Components\GetTaxRatesResponse $getTaxRatesResponse
      */
     public ?Components\GetTaxRatesResponse $getTaxRatesResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
@@ -38,9 +38,9 @@ class AccountingTaxRatesAllResponse
      */
     public \Closure $next;
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetTaxRatesResponse  $getTaxRatesResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetTaxRatesResponse  $getTaxRatesResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetTaxRatesResponse $getTaxRatesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

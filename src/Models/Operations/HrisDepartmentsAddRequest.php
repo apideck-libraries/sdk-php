@@ -14,7 +14,7 @@ class HrisDepartmentsAddRequest
 {
     /**
      *
-     * @var Components\DepartmentInput $department
+     * @var \Apideck\Unify\Models\Components\DepartmentInput $department
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\DepartmentInput $department;
@@ -52,7 +52,7 @@ class HrisDepartmentsAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\DepartmentInput  $department
+     * @param  \Apideck\Unify\Models\Components\DepartmentInput  $department
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

@@ -32,7 +32,7 @@ class AgedCreditors
     /**
      * $outstandingBalances
      *
-     * @var ?array<OutstandingBalanceBySupplier> $outstandingBalances
+     * @var ?array<\Apideck\Unify\Models\Components\OutstandingBalanceBySupplier> $outstandingBalances
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('outstanding_balances')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\OutstandingBalanceBySupplier>|null')]
@@ -62,7 +62,7 @@ class AgedCreditors
      * @param  ?LocalDate  $reportAsOfDate
      * @param  ?int  $periodCount
      * @param  ?int  $periodLength
-     * @param  ?array<OutstandingBalanceBySupplier>  $outstandingBalances
+     * @param  ?array<\Apideck\Unify\Models\Components\OutstandingBalanceBySupplier>  $outstandingBalances
      * @phpstan-pure
      */
     public function __construct(?\DateTime $reportGeneratedAt = null, ?LocalDate $reportAsOfDate = null, ?array $outstandingBalances = null, ?int $periodCount = 4, ?int $periodLength = 30)

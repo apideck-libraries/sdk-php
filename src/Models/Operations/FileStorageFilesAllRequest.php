@@ -39,7 +39,7 @@ class FileStorageFilesAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\FilesFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\FilesFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\FilesFilter $filter = null;
@@ -47,7 +47,7 @@ class FileStorageFilesAllRequest
     /**
      * Apply sorting
      *
-     * @var ?Components\FilesSort $sort
+     * @var ?\Apideck\Unify\Models\Components\FilesSort $sort
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=sort')]
     public ?Components\FilesSort $sort = null;
@@ -98,8 +98,8 @@ class FileStorageFilesAllRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?int  $limit
-     * @param  ?Components\FilesFilter  $filter
-     * @param  ?Components\FilesSort  $sort
+     * @param  ?\Apideck\Unify\Models\Components\FilesFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\FilesSort  $sort
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields

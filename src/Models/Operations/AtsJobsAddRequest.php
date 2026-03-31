@@ -14,7 +14,7 @@ class AtsJobsAddRequest
 {
     /**
      *
-     * @var Components\JobInput $job
+     * @var \Apideck\Unify\Models\Components\JobInput $job
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\JobInput $job;
@@ -52,7 +52,7 @@ class AtsJobsAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\JobInput  $job
+     * @param  \Apideck\Unify\Models\Components\JobInput  $job
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

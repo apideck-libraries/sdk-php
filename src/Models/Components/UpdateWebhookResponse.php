@@ -30,7 +30,7 @@ class UpdateWebhookResponse
 
     /**
      *
-     * @var Webhook $data
+     * @var \Apideck\Unify\Models\Components\Webhook $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Webhook')]
@@ -49,7 +49,7 @@ class UpdateWebhookResponse
     /**
      * @param  int  $statusCode
      * @param  string  $status
-     * @param  Webhook  $data
+     * @param  \Apideck\Unify\Models\Components\Webhook  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

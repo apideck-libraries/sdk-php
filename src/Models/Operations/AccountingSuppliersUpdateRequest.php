@@ -22,7 +22,7 @@ class AccountingSuppliersUpdateRequest
 
     /**
      *
-     * @var Components\SupplierInput $supplier
+     * @var \Apideck\Unify\Models\Components\SupplierInput $supplier
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\SupplierInput $supplier;
@@ -69,7 +69,7 @@ class AccountingSuppliersUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\SupplierInput  $supplier
+     * @param  \Apideck\Unify\Models\Components\SupplierInput  $supplier
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

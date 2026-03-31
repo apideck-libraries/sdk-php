@@ -52,8 +52,8 @@ class DriveGroups
      *
      * Create DriveGroup
      *
-     * @param  Operations\FileStorageDriveGroupsAddRequest  $request
-     * @return Operations\FileStorageDriveGroupsAddResponse
+     * @param  \Apideck\Unify\Models\Operations\FileStorageDriveGroupsAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageDriveGroupsAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\FileStorageDriveGroupsAddRequest $request, ?Options $options = null): Operations\FileStorageDriveGroupsAddResponse
@@ -227,8 +227,8 @@ class DriveGroups
      *
      * List DriveGroups
      *
-     * @param  ?Operations\FileStorageDriveGroupsAllRequest  $request
-     * @return Operations\FileStorageDriveGroupsAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\FileStorageDriveGroupsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageDriveGroupsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\FileStorageDriveGroupsAllRequest $request = null, ?Options $options = null): Operations\FileStorageDriveGroupsAllResponse
@@ -454,8 +454,8 @@ class DriveGroups
      *
      * List DriveGroups
      *
-     * @param  ?Operations\FileStorageDriveGroupsAllRequest  $request
-     * @return \Generator<Operations\FileStorageDriveGroupsAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\FileStorageDriveGroupsAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\FileStorageDriveGroupsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\FileStorageDriveGroupsAllRequest $request = null, ?Options $options = null): \Generator
@@ -472,8 +472,8 @@ class DriveGroups
      *
      * Delete DriveGroup
      *
-     * @param  Operations\FileStorageDriveGroupsDeleteRequest  $request
-     * @return Operations\FileStorageDriveGroupsDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\FileStorageDriveGroupsDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageDriveGroupsDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\FileStorageDriveGroupsDeleteRequest $request, ?Options $options = null): Operations\FileStorageDriveGroupsDeleteResponse
@@ -642,8 +642,8 @@ class DriveGroups
      *
      * Get DriveGroup
      *
-     * @param  Operations\FileStorageDriveGroupsOneRequest  $request
-     * @return Operations\FileStorageDriveGroupsOneResponse
+     * @param  \Apideck\Unify\Models\Operations\FileStorageDriveGroupsOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageDriveGroupsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\FileStorageDriveGroupsOneRequest $request, ?Options $options = null): Operations\FileStorageDriveGroupsOneResponse
@@ -812,8 +812,8 @@ class DriveGroups
      *
      * Update DriveGroup
      *
-     * @param  Operations\FileStorageDriveGroupsUpdateRequest  $request
-     * @return Operations\FileStorageDriveGroupsUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\FileStorageDriveGroupsUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageDriveGroupsUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\FileStorageDriveGroupsUpdateRequest $request, ?Options $options = null): Operations\FileStorageDriveGroupsUpdateResponse

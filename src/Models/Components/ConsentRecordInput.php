@@ -22,7 +22,7 @@ class ConsentRecordInput
     /**
      * Data scopes resource configuration that can be either detailed field permissions or a wildcard
      *
-     * @var array<string, array<string, DataScopesResources1>>|DataScopesResources2 $resources
+     * @var array<string, array<string, \Apideck\Unify\Models\Components\DataScopesResources1>>|\Apideck\Unify\Models\Components\DataScopesResources2 $resources
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('resources')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, array<string, \Apideck\Unify\Models\Components\DataScopesResources1>>|\Apideck\Unify\Models\Components\DataScopesResources2')]
@@ -30,7 +30,7 @@ class ConsentRecordInput
 
     /**
      * @param  bool  $granted
-     * @param  array<string, array<string, DataScopesResources1>>|DataScopesResources2  $resources
+     * @param  array<string, array<string, \Apideck\Unify\Models\Components\DataScopesResources1>>|\Apideck\Unify\Models\Components\DataScopesResources2  $resources
      * @phpstan-pure
      */
     public function __construct(bool $granted, array|DataScopesResources2 $resources)

@@ -46,7 +46,7 @@ class ProfitAndLossFilter
     /**
      * The accounting method used for the report: cash or accrual.
      *
-     * @var ?ProfitAndLossFilterAccountingMethod $accountingMethod
+     * @var ?\Apideck\Unify\Models\Components\ProfitAndLossFilterAccountingMethod $accountingMethod
      */
     #[SpeakeasyMetadata('queryParam:name=accounting_method')]
     public ?ProfitAndLossFilterAccountingMethod $accountingMethod = null;
@@ -56,7 +56,7 @@ class ProfitAndLossFilter
      * @param  ?string  $startDate
      * @param  ?string  $endDate
      * @param  ?string  $locationId
-     * @param  ?ProfitAndLossFilterAccountingMethod  $accountingMethod
+     * @param  ?\Apideck\Unify\Models\Components\ProfitAndLossFilterAccountingMethod  $accountingMethod
      * @phpstan-pure
      */
     public function __construct(?string $customerId = null, ?string $startDate = null, ?string $endDate = null, ?string $locationId = null, ?ProfitAndLossFilterAccountingMethod $accountingMethod = null)

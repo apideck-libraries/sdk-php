@@ -30,7 +30,7 @@ class PaymentInput
     /**
      * Status of payment
      *
-     * @var ?PaymentStatus $status
+     * @var ?\Apideck\Unify\Models\Components\PaymentStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\PaymentStatus|null')]
@@ -40,7 +40,7 @@ class PaymentInput
     /**
      * Type of payment
      *
-     * @var ?PaymentType $type
+     * @var ?\Apideck\Unify\Models\Components\PaymentType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\PaymentType|null')]
@@ -50,7 +50,7 @@ class PaymentInput
     /**
      * $allocations
      *
-     * @var ?array<AllocationInput> $allocations
+     * @var ?array<\Apideck\Unify\Models\Components\AllocationInput> $allocations
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('allocations')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\AllocationInput>|null')]
@@ -60,7 +60,7 @@ class PaymentInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -70,7 +70,7 @@ class PaymentInput
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -80,7 +80,7 @@ class PaymentInput
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -154,7 +154,7 @@ class PaymentInput
 
     /**
      *
-     * @var ?LinkedLedgerAccount $account
+     * @var ?\Apideck\Unify\Models\Components\LinkedLedgerAccount $account
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
@@ -164,7 +164,7 @@ class PaymentInput
     /**
      * The customer this entity is linked to.
      *
-     * @var ?LinkedCustomerInput $customer
+     * @var ?\Apideck\Unify\Models\Components\LinkedCustomerInput $customer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedCustomerInput|null')]
@@ -174,7 +174,7 @@ class PaymentInput
     /**
      * The supplier this entity is linked to.
      *
-     * @var ?DeprecatedLinkedSupplierInput $supplier
+     * @var ?\Apideck\Unify\Models\Components\DeprecatedLinkedSupplierInput $supplier
      * @deprecated  field: This field is deprecated and may be removed in a future version..
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('supplier')]
@@ -221,7 +221,7 @@ class PaymentInput
     /**
      * A list of linked tracking categories.
      *
-     * @var ?array<?LinkedTrackingCategory> $trackingCategories
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory> $trackingCategories
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory|null>|null')]
@@ -249,12 +249,12 @@ class PaymentInput
     /**
      * @param  ?float  $totalAmount
      * @param  ?\DateTime  $transactionDate
-     * @param  ?PaymentStatus  $status
-     * @param  ?PaymentType  $type
-     * @param  ?array<AllocationInput>  $allocations
-     * @param  ?array<CustomField1|CustomField2>  $customFields
-     * @param  ?array<PassThroughBody>  $passThrough
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\PaymentStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\PaymentType  $type
+     * @param  ?array<\Apideck\Unify\Models\Components\AllocationInput>  $allocations
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?float  $currencyRate
      * @param  ?string  $reference
      * @param  ?string  $paymentMethod
@@ -262,14 +262,14 @@ class PaymentInput
      * @param  ?string  $paymentMethodId
      * @param  ?string  $accountsReceivableAccountType
      * @param  ?string  $accountsReceivableAccountId
-     * @param  ?LinkedLedgerAccount  $account
-     * @param  ?LinkedCustomerInput  $customer
-     * @param  ?DeprecatedLinkedSupplierInput  $supplier
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $account
+     * @param  ?\Apideck\Unify\Models\Components\LinkedCustomerInput  $customer
+     * @param  ?\Apideck\Unify\Models\Components\DeprecatedLinkedSupplierInput  $supplier
      * @param  ?string  $companyId
      * @param  ?bool  $reconciled
      * @param  ?string  $note
      * @param  ?string  $number
-     * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory>  $trackingCategories
      * @param  ?string  $rowVersion
      * @param  ?string  $displayId
      * @phpstan-pure

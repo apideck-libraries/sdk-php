@@ -31,7 +31,7 @@ class Email
     /**
      * Email type
      *
-     * @var ?EmailType $type
+     * @var ?\Apideck\Unify\Models\Components\EmailType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EmailType|null')]
@@ -41,7 +41,7 @@ class Email
     /**
      * @param  ?string  $email
      * @param  ?string  $id
-     * @param  ?EmailType  $type
+     * @param  ?\Apideck\Unify\Models\Components\EmailType  $type
      * @phpstan-pure
      */
     public function __construct(?string $email = null, ?string $id = null, ?EmailType $type = null)

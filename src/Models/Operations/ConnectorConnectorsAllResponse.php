@@ -13,7 +13,7 @@ class ConnectorConnectorsAllResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,14 +22,14 @@ class ConnectorConnectorsAllResponse
     /**
      * Connectors
      *
-     * @var ?Components\GetConnectorsResponse $getConnectorsResponse
+     * @var ?\Apideck\Unify\Models\Components\GetConnectorsResponse $getConnectorsResponse
      */
     public ?Components\GetConnectorsResponse $getConnectorsResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
@@ -38,9 +38,9 @@ class ConnectorConnectorsAllResponse
      */
     public \Closure $next;
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetConnectorsResponse  $getConnectorsResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetConnectorsResponse  $getConnectorsResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetConnectorsResponse $getConnectorsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

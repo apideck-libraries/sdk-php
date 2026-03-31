@@ -22,7 +22,7 @@ class InvoiceItem
 
     /**
      *
-     * @var ?SalesDetails $salesDetails
+     * @var ?\Apideck\Unify\Models\Components\SalesDetails $salesDetails
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('sales_details')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\SalesDetails|null')]
@@ -31,7 +31,7 @@ class InvoiceItem
 
     /**
      *
-     * @var ?PurchaseDetails $purchaseDetails
+     * @var ?\Apideck\Unify\Models\Components\PurchaseDetails $purchaseDetails
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('purchase_details')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\PurchaseDetails|null')]
@@ -41,7 +41,7 @@ class InvoiceItem
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -132,7 +132,7 @@ class InvoiceItem
     /**
      * Item type
      *
-     * @var ?InvoiceItemTypeType $type
+     * @var ?\Apideck\Unify\Models\Components\InvoiceItemTypeType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\InvoiceItemTypeType|null')]
@@ -158,7 +158,7 @@ class InvoiceItem
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -167,7 +167,7 @@ class InvoiceItem
 
     /**
      *
-     * @var ?LinkedLedgerAccount $assetAccount
+     * @var ?\Apideck\Unify\Models\Components\LinkedLedgerAccount $assetAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('asset_account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
@@ -176,7 +176,7 @@ class InvoiceItem
 
     /**
      *
-     * @var ?LinkedLedgerAccount $incomeAccount
+     * @var ?\Apideck\Unify\Models\Components\LinkedLedgerAccount $incomeAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('income_account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
@@ -185,7 +185,7 @@ class InvoiceItem
 
     /**
      *
-     * @var ?LinkedLedgerAccount $expenseAccount
+     * @var ?\Apideck\Unify\Models\Components\LinkedLedgerAccount $expenseAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('expense_account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
@@ -194,7 +194,7 @@ class InvoiceItem
 
     /**
      *
-     * @var ?DeprecatedLinkedTrackingCategory $trackingCategory
+     * @var ?\Apideck\Unify\Models\Components\DeprecatedLinkedTrackingCategory $trackingCategory
      * @deprecated  field: This field is deprecated and may be removed in a future version..
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_category')]
@@ -205,7 +205,7 @@ class InvoiceItem
     /**
      * A list of linked tracking categories.
      *
-     * @var ?array<?LinkedTrackingCategory> $trackingCategories
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory> $trackingCategories
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory|null>|null')]
@@ -322,9 +322,9 @@ class InvoiceItem
 
     /**
      * @param  ?string  $id
-     * @param  ?SalesDetails  $salesDetails
-     * @param  ?PurchaseDetails  $purchaseDetails
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?\Apideck\Unify\Models\Components\SalesDetails  $salesDetails
+     * @param  ?\Apideck\Unify\Models\Components\PurchaseDetails  $purchaseDetails
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $name
      * @param  ?string  $description
      * @param  ?string  $displayId
@@ -334,15 +334,15 @@ class InvoiceItem
      * @param  ?bool  $tracked
      * @param  ?bool  $taxable
      * @param  ?LocalDate  $inventoryDate
-     * @param  ?InvoiceItemTypeType  $type
+     * @param  ?\Apideck\Unify\Models\Components\InvoiceItemTypeType  $type
      * @param  ?float  $quantity
      * @param  ?float  $unitPrice
-     * @param  ?Currency  $currency
-     * @param  ?LinkedLedgerAccount  $assetAccount
-     * @param  ?LinkedLedgerAccount  $incomeAccount
-     * @param  ?LinkedLedgerAccount  $expenseAccount
-     * @param  ?DeprecatedLinkedTrackingCategory  $trackingCategory
-     * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $assetAccount
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $incomeAccount
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $expenseAccount
+     * @param  ?\Apideck\Unify\Models\Components\DeprecatedLinkedTrackingCategory  $trackingCategory
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory>  $trackingCategories
      * @param  ?bool  $active
      * @param  ?string  $departmentId
      * @param  ?string  $locationId

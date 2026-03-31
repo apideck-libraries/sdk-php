@@ -24,7 +24,7 @@ class Meta
     /**
      * Cursors to navigate to previous or next pages through the API
      *
-     * @var ?Cursors $cursors
+     * @var ?\Apideck\Unify\Models\Components\Cursors $cursors
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('cursors')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Cursors|null')]
@@ -33,7 +33,7 @@ class Meta
 
     /**
      * @param  ?int  $itemsOnPage
-     * @param  ?Cursors  $cursors
+     * @param  ?\Apideck\Unify\Models\Components\Cursors  $cursors
      * @phpstan-pure
      */
     public function __construct(?int $itemsOnPage = null, ?Cursors $cursors = null)

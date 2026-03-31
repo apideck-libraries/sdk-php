@@ -39,7 +39,7 @@ class EcommerceOrdersAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\EcommerceOrdersFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\EcommerceOrdersFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\EcommerceOrdersFilter $filter = null;
@@ -47,7 +47,7 @@ class EcommerceOrdersAllRequest
     /**
      * Apply sorting
      *
-     * @var ?Components\OrdersSort $sort
+     * @var ?\Apideck\Unify\Models\Components\OrdersSort $sort
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=sort')]
     public ?Components\OrdersSort $sort = null;
@@ -98,8 +98,8 @@ class EcommerceOrdersAllRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?int  $limit
-     * @param  ?Components\EcommerceOrdersFilter  $filter
-     * @param  ?Components\OrdersSort  $sort
+     * @param  ?\Apideck\Unify\Models\Components\EcommerceOrdersFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\OrdersSort  $sort
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields

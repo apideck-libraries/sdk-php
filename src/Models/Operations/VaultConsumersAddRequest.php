@@ -14,7 +14,7 @@ class VaultConsumersAddRequest
 {
     /**
      *
-     * @var Components\CreateConsumerRequest $createConsumerRequest
+     * @var \Apideck\Unify\Models\Components\CreateConsumerRequest $createConsumerRequest
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\CreateConsumerRequest $createConsumerRequest;
@@ -28,7 +28,7 @@ class VaultConsumersAddRequest
     public ?string $appId = null;
 
     /**
-     * @param  Components\CreateConsumerRequest  $createConsumerRequest
+     * @param  \Apideck\Unify\Models\Components\CreateConsumerRequest  $createConsumerRequest
      * @param  ?string  $appId
      * @phpstan-pure
      */

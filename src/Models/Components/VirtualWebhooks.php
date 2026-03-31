@@ -15,7 +15,7 @@ class VirtualWebhooks
     /**
      * The rate at which requests for resources will be made to downstream.
      *
-     * @var RequestRate $requestRate
+     * @var \Apideck\Unify\Models\Components\RequestRate $requestRate
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('request_rate')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\RequestRate')]
@@ -24,7 +24,7 @@ class VirtualWebhooks
     /**
      * The resources that will be requested from downstream.
      *
-     * @var ?array<string, WebhookSupportResources> $resources
+     * @var ?array<string, \Apideck\Unify\Models\Components\WebhookSupportResources> $resources
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('resources')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, \Apideck\Unify\Models\Components\WebhookSupportResources>|null')]
@@ -32,8 +32,8 @@ class VirtualWebhooks
     public ?array $resources = null;
 
     /**
-     * @param  RequestRate  $requestRate
-     * @param  ?array<string, WebhookSupportResources>  $resources
+     * @param  \Apideck\Unify\Models\Components\RequestRate  $requestRate
+     * @param  ?array<string, \Apideck\Unify\Models\Components\WebhookSupportResources>  $resources
      * @phpstan-pure
      */
     public function __construct(RequestRate $requestRate, ?array $resources = null)

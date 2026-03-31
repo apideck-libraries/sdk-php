@@ -86,7 +86,7 @@ class ConsumerConnection
     /**
      * Type of authorization used by the connector
      *
-     * @var ?AuthType $authType
+     * @var ?\Apideck\Unify\Models\Components\AuthType $authType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('auth_type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\AuthType|null')]
@@ -112,12 +112,22 @@ class ConsumerConnection
     /**
      * [Connection state flow](#section/Connection-state)
      *
-     * @var ?ConnectionState $state
+     * @var ?\Apideck\Unify\Models\Components\ConnectionState $state
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('state')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConnectionState|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?ConnectionState $state = null;
+
+    /**
+     * The operational health status of the connection
+     *
+     * @var ?\Apideck\Unify\Models\Components\ConnectionHealth $health
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('health')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConnectionHealth|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ConnectionHealth $health = null;
 
     /**
      * Connection settings. Values will persist to `form_fields` with corresponding id
@@ -148,6 +158,24 @@ class ConsumerConnection
     public ?string $updatedAt = null;
 
     /**
+     * ISO 8601 timestamp indicating when credentials will be cleared if token refresh continues to fail. Only present when connection health is pending_refresh and a retention window is active.
+     *
+     * @var ?string $credentialsExpireAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('credentials_expire_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $credentialsExpireAt = null;
+
+    /**
+     * ISO 8601 timestamp of the most recent token refresh failure. Only present when connection has experienced refresh failures.
+     *
+     * @var ?string $lastRefreshFailedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('last_refresh_failed_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $lastRefreshFailedAt = null;
+
+    /**
      * @param  ?string  $id
      * @param  ?string  $name
      * @param  ?string  $icon
@@ -157,16 +185,19 @@ class ConsumerConnection
      * @param  ?string  $serviceId
      * @param  ?string  $unifiedApi
      * @param  ?string  $consumerId
-     * @param  ?AuthType  $authType
+     * @param  ?\Apideck\Unify\Models\Components\AuthType  $authType
      * @param  ?bool  $enabled
      * @param  ?string  $createdAt
-     * @param  ?ConnectionState  $state
+     * @param  ?\Apideck\Unify\Models\Components\ConnectionState  $state
+     * @param  ?\Apideck\Unify\Models\Components\ConnectionHealth  $health
      * @param  ?array<string, mixed>  $settings
      * @param  ?array<string, mixed>  $metadata
      * @param  ?string  $updatedAt
+     * @param  ?string  $credentialsExpireAt
+     * @param  ?string  $lastRefreshFailedAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?string $icon = null, ?string $logo = null, ?string $website = null, ?string $tagLine = null, ?string $serviceId = null, ?string $unifiedApi = null, ?string $consumerId = null, ?AuthType $authType = null, ?bool $enabled = null, ?string $createdAt = null, ?ConnectionState $state = null, ?array $settings = null, ?array $metadata = null, ?string $updatedAt = null)
+    public function __construct(?string $id = null, ?string $name = null, ?string $icon = null, ?string $logo = null, ?string $website = null, ?string $tagLine = null, ?string $serviceId = null, ?string $unifiedApi = null, ?string $consumerId = null, ?AuthType $authType = null, ?bool $enabled = null, ?string $createdAt = null, ?ConnectionState $state = null, ?ConnectionHealth $health = null, ?array $settings = null, ?array $metadata = null, ?string $updatedAt = null, ?string $credentialsExpireAt = null, ?string $lastRefreshFailedAt = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -181,8 +212,11 @@ class ConsumerConnection
         $this->enabled = $enabled;
         $this->createdAt = $createdAt;
         $this->state = $state;
+        $this->health = $health;
         $this->settings = $settings;
         $this->metadata = $metadata;
         $this->updatedAt = $updatedAt;
+        $this->credentialsExpireAt = $credentialsExpireAt;
+        $this->lastRefreshFailedAt = $lastRefreshFailedAt;
     }
 }

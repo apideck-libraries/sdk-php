@@ -54,7 +54,7 @@ class GetMessageResponse
 
     /**
      *
-     * @var Message $data
+     * @var \Apideck\Unify\Models\Components\Message $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Message')]
@@ -76,7 +76,7 @@ class GetMessageResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Message  $data
+     * @param  \Apideck\Unify\Models\Components\Message  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

@@ -23,7 +23,7 @@ class BalanceByPeriod
     /**
      * $balancesByTransaction
      *
-     * @var ?array<BalanceByTransaction> $balancesByTransaction
+     * @var ?array<\Apideck\Unify\Models\Components\BalanceByTransaction> $balancesByTransaction
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('balances_by_transaction')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\BalanceByTransaction>|null')]
@@ -50,7 +50,7 @@ class BalanceByPeriod
 
     /**
      * @param  ?float  $totalAmount
-     * @param  ?array<BalanceByTransaction>  $balancesByTransaction
+     * @param  ?array<\Apideck\Unify\Models\Components\BalanceByTransaction>  $balancesByTransaction
      * @param  ?LocalDate  $startDate
      * @param  ?LocalDate  $endDate
      * @phpstan-pure

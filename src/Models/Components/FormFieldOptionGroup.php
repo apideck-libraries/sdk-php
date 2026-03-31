@@ -21,7 +21,7 @@ class FormFieldOptionGroup
     /**
      * $options
      *
-     * @var array<SimpleFormFieldOption> $options
+     * @var array<\Apideck\Unify\Models\Components\SimpleFormFieldOption> $options
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\SimpleFormFieldOption>')]
@@ -29,7 +29,7 @@ class FormFieldOptionGroup
 
     /**
      *
-     * @var FormFieldOptionGroupOptionType $optionType
+     * @var \Apideck\Unify\Models\Components\FormFieldOptionGroupOptionType $optionType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('option_type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\FormFieldOptionGroupOptionType')]
@@ -45,8 +45,8 @@ class FormFieldOptionGroup
 
     /**
      * @param  string  $label
-     * @param  array<SimpleFormFieldOption>  $options
-     * @param  FormFieldOptionGroupOptionType  $optionType
+     * @param  array<\Apideck\Unify\Models\Components\SimpleFormFieldOption>  $options
+     * @param  \Apideck\Unify\Models\Components\FormFieldOptionGroupOptionType  $optionType
      * @param  ?string  $id
      * @phpstan-pure
      */

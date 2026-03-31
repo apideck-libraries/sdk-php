@@ -22,7 +22,7 @@ class CrmNotesUpdateRequest
 
     /**
      *
-     * @var Components\NoteInput $note
+     * @var \Apideck\Unify\Models\Components\NoteInput $note
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\NoteInput $note;
@@ -61,7 +61,7 @@ class CrmNotesUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\NoteInput  $note
+     * @param  \Apideck\Unify\Models\Components\NoteInput  $note
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

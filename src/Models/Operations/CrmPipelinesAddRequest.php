@@ -14,7 +14,7 @@ class CrmPipelinesAddRequest
 {
     /**
      *
-     * @var Components\PipelineInput $pipeline
+     * @var \Apideck\Unify\Models\Components\PipelineInput $pipeline
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\PipelineInput $pipeline;
@@ -52,7 +52,7 @@ class CrmPipelinesAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\PipelineInput  $pipeline
+     * @param  \Apideck\Unify\Models\Components\PipelineInput  $pipeline
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

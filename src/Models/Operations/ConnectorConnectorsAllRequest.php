@@ -23,7 +23,7 @@ class ConnectorConnectorsAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\ConnectorsFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\ConnectorsFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\ConnectorsFilter $filter = null;
@@ -47,7 +47,7 @@ class ConnectorConnectorsAllRequest
     /**
      * @param  ?string  $appId
      * @param  ?int  $limit
-     * @param  ?Components\ConnectorsFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\ConnectorsFilter  $filter
      * @param  ?string  $cursor
      * @phpstan-pure
      */

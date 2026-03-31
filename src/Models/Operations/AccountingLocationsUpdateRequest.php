@@ -22,7 +22,7 @@ class AccountingLocationsUpdateRequest
 
     /**
      *
-     * @var Components\AccountingLocationInput $accountingLocation
+     * @var \Apideck\Unify\Models\Components\AccountingLocationInput $accountingLocation
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\AccountingLocationInput $accountingLocation;
@@ -69,7 +69,7 @@ class AccountingLocationsUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\AccountingLocationInput  $accountingLocation
+     * @param  \Apideck\Unify\Models\Components\AccountingLocationInput  $accountingLocation
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

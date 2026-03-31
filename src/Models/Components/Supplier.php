@@ -22,7 +22,7 @@ class Supplier
     /**
      * $addresses
      *
-     * @var ?array<Address> $addresses
+     * @var ?array<\Apideck\Unify\Models\Components\Address> $addresses
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('addresses')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Address>|null')]
@@ -32,7 +32,7 @@ class Supplier
     /**
      * $phoneNumbers
      *
-     * @var ?array<PhoneNumber> $phoneNumbers
+     * @var ?array<\Apideck\Unify\Models\Components\PhoneNumber> $phoneNumbers
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('phone_numbers')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PhoneNumber>|null')]
@@ -42,7 +42,7 @@ class Supplier
     /**
      * $emails
      *
-     * @var ?array<Email> $emails
+     * @var ?array<\Apideck\Unify\Models\Components\Email> $emails
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('emails')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Email>|null')]
@@ -52,7 +52,7 @@ class Supplier
     /**
      * $websites
      *
-     * @var ?array<Website> $websites
+     * @var ?array<\Apideck\Unify\Models\Components\Website> $websites
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('websites')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Website>|null')]
@@ -62,7 +62,7 @@ class Supplier
     /**
      * $bankAccounts
      *
-     * @var ?array<BankAccount> $bankAccounts
+     * @var ?array<\Apideck\Unify\Models\Components\BankAccount> $bankAccounts
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('bank_accounts')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\BankAccount>|null')]
@@ -71,7 +71,7 @@ class Supplier
 
     /**
      *
-     * @var ?LinkedTaxRate $taxRate
+     * @var ?\Apideck\Unify\Models\Components\LinkedTaxRate $taxRate
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRate|null')]
@@ -81,7 +81,7 @@ class Supplier
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -91,7 +91,7 @@ class Supplier
     /**
      * $taxDetails
      *
-     * @var ?array<?LinkedTaxDetail> $taxDetails
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedTaxDetail> $taxDetails
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tax_details')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTaxDetail|null>|null')]
@@ -101,7 +101,7 @@ class Supplier
     /**
      * $taxStatusDetails
      *
-     * @var ?array<?LinkedTaxStatusDetail> $taxStatusDetails
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedTaxStatusDetail> $taxStatusDetails
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tax_status_details')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTaxStatusDetail|null>|null')]
@@ -111,7 +111,7 @@ class Supplier
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -272,7 +272,7 @@ class Supplier
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -281,7 +281,7 @@ class Supplier
 
     /**
      *
-     * @var ?LinkedLedgerAccount $account
+     * @var ?\Apideck\Unify\Models\Components\LinkedLedgerAccount $account
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
@@ -291,7 +291,7 @@ class Supplier
     /**
      * Supplier status
      *
-     * @var ?SupplierStatus $status
+     * @var ?\Apideck\Unify\Models\Components\SupplierStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\SupplierStatus|null')]
@@ -409,16 +409,16 @@ class Supplier
 
     /**
      * @param  string  $id
-     * @param  ?array<Address>  $addresses
-     * @param  ?array<PhoneNumber>  $phoneNumbers
-     * @param  ?array<Email>  $emails
-     * @param  ?array<Website>  $websites
-     * @param  ?array<BankAccount>  $bankAccounts
-     * @param  ?LinkedTaxRate  $taxRate
-     * @param  ?array<CustomField1|CustomField2>  $customFields
-     * @param  ?array<?LinkedTaxDetail>  $taxDetails
-     * @param  ?array<?LinkedTaxStatusDetail>  $taxStatusDetails
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<\Apideck\Unify\Models\Components\Address>  $addresses
+     * @param  ?array<\Apideck\Unify\Models\Components\PhoneNumber>  $phoneNumbers
+     * @param  ?array<\Apideck\Unify\Models\Components\Email>  $emails
+     * @param  ?array<\Apideck\Unify\Models\Components\Website>  $websites
+     * @param  ?array<\Apideck\Unify\Models\Components\BankAccount>  $bankAccounts
+     * @param  ?\Apideck\Unify\Models\Components\LinkedTaxRate  $taxRate
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTaxDetail>  $taxDetails
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTaxStatusDetail>  $taxStatusDetails
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $subsidiaryId
      * @param  ?string  $integrationSystemId
      * @param  ?string  $downstreamId
@@ -436,9 +436,9 @@ class Supplier
      * @param  ?string  $notes
      * @param  ?string  $taxNumber
      * @param  ?bool  $taxable
-     * @param  ?Currency  $currency
-     * @param  ?LinkedLedgerAccount  $account
-     * @param  ?SupplierStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $account
+     * @param  ?\Apideck\Unify\Models\Components\SupplierStatus  $status
      * @param  ?string  $paymentMethod
      * @param  ?string  $terms
      * @param  ?string  $termsId

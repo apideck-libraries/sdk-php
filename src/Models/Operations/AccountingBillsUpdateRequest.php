@@ -22,7 +22,7 @@ class AccountingBillsUpdateRequest
 
     /**
      *
-     * @var Components\BillInput $bill
+     * @var \Apideck\Unify\Models\Components\BillInput $bill
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\BillInput $bill;
@@ -61,7 +61,7 @@ class AccountingBillsUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\BillInput  $bill
+     * @param  \Apideck\Unify\Models\Components\BillInput  $bill
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

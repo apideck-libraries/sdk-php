@@ -13,7 +13,7 @@ class VaultValidateConnectionStateResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class VaultValidateConnectionStateResponse
     /**
      * Connection access token refreshed
      *
-     * @var ?Components\ValidateConnectionStateResponse $validateConnectionStateResponse
+     * @var ?\Apideck\Unify\Models\Components\ValidateConnectionStateResponse $validateConnectionStateResponse
      */
     public ?Components\ValidateConnectionStateResponse $validateConnectionStateResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\ValidateConnectionStateResponse  $validateConnectionStateResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\ValidateConnectionStateResponse  $validateConnectionStateResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\ValidateConnectionStateResponse $validateConnectionStateResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

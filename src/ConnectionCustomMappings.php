@@ -52,8 +52,8 @@ class ConnectionCustomMappings
      *
      * This endpoint returns a list of custom mappings for a connection.
      *
-     * @param  Operations\VaultConnectionCustomMappingsAllRequest  $request
-     * @return Operations\VaultConnectionCustomMappingsAllResponse
+     * @param  \Apideck\Unify\Models\Operations\VaultConnectionCustomMappingsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\VaultConnectionCustomMappingsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(Operations\VaultConnectionCustomMappingsAllRequest $request, ?Options $options = null): Operations\VaultConnectionCustomMappingsAllResponse

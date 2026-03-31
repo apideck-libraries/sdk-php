@@ -14,7 +14,7 @@ class CreateWebhookRequest
     /**
      * Name of Apideck Unified API
      *
-     * @var UnifiedApiId $unifiedApi
+     * @var \Apideck\Unify\Models\Components\UnifiedApiId $unifiedApi
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('unified_api')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\UnifiedApiId')]
@@ -23,7 +23,7 @@ class CreateWebhookRequest
     /**
      * The status of the webhook.
      *
-     * @var Status $status
+     * @var \Apideck\Unify\Models\Components\Status $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Status')]
@@ -40,7 +40,7 @@ class CreateWebhookRequest
     /**
      * The list of subscribed events for this webhook. [`*`] indicates that all events are enabled.
      *
-     * @var array<WebhookEventType> $events
+     * @var array<\Apideck\Unify\Models\Components\WebhookEventType> $events
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('events')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\WebhookEventType>')]
@@ -56,10 +56,10 @@ class CreateWebhookRequest
     public ?string $description = null;
 
     /**
-     * @param  UnifiedApiId  $unifiedApi
-     * @param  Status  $status
+     * @param  \Apideck\Unify\Models\Components\UnifiedApiId  $unifiedApi
+     * @param  \Apideck\Unify\Models\Components\Status  $status
      * @param  string  $deliveryUrl
-     * @param  array<WebhookEventType>  $events
+     * @param  array<\Apideck\Unify\Models\Components\WebhookEventType>  $events
      * @param  ?string  $description
      * @phpstan-pure
      */

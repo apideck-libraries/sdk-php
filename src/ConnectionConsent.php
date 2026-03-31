@@ -52,8 +52,8 @@ class ConnectionConsent
      *
      * Update the consent state of a connection
      *
-     * @param  Operations\VaultConnectionConsentUpdateRequest  $request
-     * @return Operations\VaultConnectionConsentUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\VaultConnectionConsentUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\VaultConnectionConsentUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\VaultConnectionConsentUpdateRequest $request, ?Options $options = null): Operations\VaultConnectionConsentUpdateResponse

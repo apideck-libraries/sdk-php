@@ -39,7 +39,7 @@ class CrmActivitiesAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\ActivitiesFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\ActivitiesFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\ActivitiesFilter $filter = null;
@@ -47,7 +47,7 @@ class CrmActivitiesAllRequest
     /**
      * Apply sorting
      *
-     * @var ?Components\ActivitiesSort $sort
+     * @var ?\Apideck\Unify\Models\Components\ActivitiesSort $sort
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=sort')]
     public ?Components\ActivitiesSort $sort = null;
@@ -98,8 +98,8 @@ class CrmActivitiesAllRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?int  $limit
-     * @param  ?Components\ActivitiesFilter  $filter
-     * @param  ?Components\ActivitiesSort  $sort
+     * @param  ?\Apideck\Unify\Models\Components\ActivitiesFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\ActivitiesSort  $sort
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields

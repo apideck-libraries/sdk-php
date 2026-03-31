@@ -23,7 +23,7 @@ class AllocationInput
     /**
      * Type of entity this payment should be attributed to.
      *
-     * @var ?AllocationType $type
+     * @var ?\Apideck\Unify\Models\Components\AllocationType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\AllocationType|null')]
@@ -50,7 +50,7 @@ class AllocationInput
 
     /**
      * @param  ?string  $id
-     * @param  ?AllocationType  $type
+     * @param  ?\Apideck\Unify\Models\Components\AllocationType  $type
      * @param  ?string  $allocationId
      * @param  ?float  $amount
      * @phpstan-pure

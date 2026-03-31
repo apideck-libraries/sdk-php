@@ -58,7 +58,7 @@ class Connection
     /**
      * [Connection state flow](#section/Connection-state)
      *
-     * @var ?ConnectionState $state
+     * @var ?\Apideck\Unify\Models\Components\ConnectionState $state
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('state')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConnectionState|null')]
@@ -68,7 +68,7 @@ class Connection
     /**
      * The current state of the Integration.
      *
-     * @var ?IntegrationState $integrationState
+     * @var ?\Apideck\Unify\Models\Components\IntegrationState $integrationState
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('integration_state')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\IntegrationState|null')]
@@ -78,7 +78,7 @@ class Connection
     /**
      * Type of authorization used by the connector
      *
-     * @var ?AuthType $authType
+     * @var ?\Apideck\Unify\Models\Components\AuthType $authType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('auth_type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\AuthType|null')]
@@ -88,7 +88,7 @@ class Connection
     /**
      * OAuth grant type used by the connector. More info: https://oauth.net/2/grant-types
      *
-     * @var ?OAuthGrantType $oauthGrantType
+     * @var ?\Apideck\Unify\Models\Components\OAuthGrantType $oauthGrantType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('oauth_grant_type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\OAuthGrantType|null')]
@@ -98,7 +98,7 @@ class Connection
     /**
      * Status of the connection.
      *
-     * @var ?ConnectionStatus $status
+     * @var ?\Apideck\Unify\Models\Components\ConnectionStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConnectionStatus|null')]
@@ -144,7 +144,7 @@ class Connection
     /**
      * The settings that are wanted to create a connection.
      *
-     * @var ?array<FormField> $formFields
+     * @var ?array<\Apideck\Unify\Models\Components\FormField> $formFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('form_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\FormField>|null')]
@@ -154,7 +154,7 @@ class Connection
     /**
      * $configuration
      *
-     * @var ?array<Configuration> $configuration
+     * @var ?array<\Apideck\Unify\Models\Components\Configuration> $configuration
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('configuration')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Configuration>|null')]
@@ -220,7 +220,7 @@ class Connection
     /**
      * $subscriptions
      *
-     * @var ?array<WebhookSubscription> $subscriptions
+     * @var ?array<\Apideck\Unify\Models\Components\WebhookSubscription> $subscriptions
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subscriptions')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\WebhookSubscription>|null')]
@@ -239,7 +239,7 @@ class Connection
     /**
      * List of custom mappings configured for this connection
      *
-     * @var ?array<CustomMapping> $customMappings
+     * @var ?array<\Apideck\Unify\Models\Components\CustomMapping> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomMapping>|null')]
@@ -249,7 +249,7 @@ class Connection
     /**
      * The current consent state of the connection
      *
-     * @var ?ConsentState $consentState
+     * @var ?\Apideck\Unify\Models\Components\ConsentState $consentState
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('consent_state')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConsentState|null')]
@@ -259,7 +259,7 @@ class Connection
     /**
      * Immutable array of consent records for compliance and audit purposes
      *
-     * @var ?array<ConsentRecord> $consents
+     * @var ?array<\Apideck\Unify\Models\Components\ConsentRecord> $consents
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('consents')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ConsentRecord>|null')]
@@ -268,7 +268,7 @@ class Connection
 
     /**
      *
-     * @var ?ConsentRecord $latestConsent
+     * @var ?\Apideck\Unify\Models\Components\ConsentRecord $latestConsent
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('latest_consent')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConsentRecord|null')]
@@ -277,7 +277,7 @@ class Connection
 
     /**
      *
-     * @var ?DataScopes $applicationDataScopes
+     * @var ?\Apideck\Unify\Models\Components\DataScopes $applicationDataScopes
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('application_data_scopes')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\DataScopes|null')]
@@ -287,7 +287,7 @@ class Connection
     /**
      * Operational health status of the connection
      *
-     * @var ?Health $health
+     * @var ?\Apideck\Unify\Models\Components\Health $health
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('health')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Health|null')]
@@ -372,31 +372,31 @@ class Connection
      * @param  ?string  $name
      * @param  ?string  $tagLine
      * @param  ?string  $unifiedApi
-     * @param  ?ConnectionState  $state
-     * @param  ?IntegrationState  $integrationState
-     * @param  ?AuthType  $authType
-     * @param  ?OAuthGrantType  $oauthGrantType
-     * @param  ?ConnectionStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\ConnectionState  $state
+     * @param  ?\Apideck\Unify\Models\Components\IntegrationState  $integrationState
+     * @param  ?\Apideck\Unify\Models\Components\AuthType  $authType
+     * @param  ?\Apideck\Unify\Models\Components\OAuthGrantType  $oauthGrantType
+     * @param  ?\Apideck\Unify\Models\Components\ConnectionStatus  $status
      * @param  ?bool  $enabled
      * @param  ?string  $website
      * @param  ?string  $icon
      * @param  ?string  $logo
-     * @param  ?array<FormField>  $formFields
-     * @param  ?array<Configuration>  $configuration
+     * @param  ?array<\Apideck\Unify\Models\Components\FormField>  $formFields
+     * @param  ?array<\Apideck\Unify\Models\Components\Configuration>  $configuration
      * @param  ?array<string>  $configurableResources
      * @param  ?array<string>  $resourceSchemaSupport
      * @param  ?array<string>  $resourceSettingsSupport
      * @param  ?bool  $validationSupport
      * @param  ?bool  $schemaSupport
      * @param  ?array<string>  $settingsRequiredForAuthorization
-     * @param  ?array<WebhookSubscription>  $subscriptions
+     * @param  ?array<\Apideck\Unify\Models\Components\WebhookSubscription>  $subscriptions
      * @param  ?bool  $hasGuide
-     * @param  ?array<CustomMapping>  $customMappings
-     * @param  ?ConsentState  $consentState
-     * @param  ?array<ConsentRecord>  $consents
-     * @param  ?ConsentRecord  $latestConsent
-     * @param  ?DataScopes  $applicationDataScopes
-     * @param  ?Health  $health
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomMapping>  $customMappings
+     * @param  ?\Apideck\Unify\Models\Components\ConsentState  $consentState
+     * @param  ?array<\Apideck\Unify\Models\Components\ConsentRecord>  $consents
+     * @param  ?\Apideck\Unify\Models\Components\ConsentRecord  $latestConsent
+     * @param  ?\Apideck\Unify\Models\Components\DataScopes  $applicationDataScopes
+     * @param  ?\Apideck\Unify\Models\Components\Health  $health
      * @param  ?float  $credentialsExpireAt
      * @param  ?float  $lastRefreshFailedAt
      * @param  ?float  $createdAt

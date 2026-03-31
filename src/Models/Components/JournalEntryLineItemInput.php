@@ -14,7 +14,7 @@ class JournalEntryLineItemInput
     /**
      * Debit entries are considered positive, and credit entries are considered negative.
      *
-     * @var ?JournalEntryLineItemType $type
+     * @var ?\Apideck\Unify\Models\Components\JournalEntryLineItemType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\JournalEntryLineItemType|null')]
@@ -22,7 +22,7 @@ class JournalEntryLineItemInput
 
     /**
      *
-     * @var ?LinkedTaxRateInput $taxRate
+     * @var ?\Apideck\Unify\Models\Components\LinkedTaxRateInput $taxRate
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRateInput|null')]
@@ -31,7 +31,7 @@ class JournalEntryLineItemInput
 
     /**
      *
-     * @var ?LinkedLedgerAccount $ledgerAccount
+     * @var ?\Apideck\Unify\Models\Components\LinkedLedgerAccount $ledgerAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('ledger_account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
@@ -40,7 +40,7 @@ class JournalEntryLineItemInput
     /**
      * Worktags of the line item. This is currently only supported in Workday.
      *
-     * @var ?array<?LinkedWorktag> $worktags
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedWorktag> $worktags
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('worktags')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedWorktag|null>|null')]
@@ -86,7 +86,7 @@ class JournalEntryLineItemInput
     /**
      * The tax applicability of this line item. Overrides the root-level tax_type for this line.
      *
-     * @var ?TaxType $taxType
+     * @var ?\Apideck\Unify\Models\Components\TaxType $taxType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tax_type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\TaxType|null')]
@@ -95,7 +95,7 @@ class JournalEntryLineItemInput
 
     /**
      *
-     * @var ?DeprecatedLinkedTrackingCategory $trackingCategory
+     * @var ?\Apideck\Unify\Models\Components\DeprecatedLinkedTrackingCategory $trackingCategory
      * @deprecated  field: This field is deprecated and may be removed in a future version..
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_category')]
@@ -106,7 +106,7 @@ class JournalEntryLineItemInput
     /**
      * A list of linked tracking categories.
      *
-     * @var ?array<?LinkedTrackingCategory> $trackingCategories
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory> $trackingCategories
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory|null>|null')]
@@ -116,7 +116,7 @@ class JournalEntryLineItemInput
     /**
      * The customer this entity is linked to.
      *
-     * @var ?LinkedCustomerInput $customer
+     * @var ?\Apideck\Unify\Models\Components\LinkedCustomerInput $customer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedCustomerInput|null')]
@@ -126,7 +126,7 @@ class JournalEntryLineItemInput
     /**
      * The supplier this entity is linked to.
      *
-     * @var ?LinkedSupplierInput $supplier
+     * @var ?\Apideck\Unify\Models\Components\LinkedSupplierInput $supplier
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('supplier')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedSupplierInput|null')]
@@ -136,7 +136,7 @@ class JournalEntryLineItemInput
     /**
      * The employee this entity is linked to.
      *
-     * @var ?LinkedEmployee $employee
+     * @var ?\Apideck\Unify\Models\Components\LinkedEmployee $employee
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('employee')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedEmployee|null')]
@@ -171,20 +171,20 @@ class JournalEntryLineItemInput
     public ?int $lineNumber = null;
 
     /**
-     * @param  ?JournalEntryLineItemType  $type
-     * @param  ?LinkedTaxRateInput  $taxRate
-     * @param  ?LinkedLedgerAccount  $ledgerAccount
-     * @param  ?array<?LinkedWorktag>  $worktags
+     * @param  ?\Apideck\Unify\Models\Components\JournalEntryLineItemType  $type
+     * @param  ?\Apideck\Unify\Models\Components\LinkedTaxRateInput  $taxRate
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $ledgerAccount
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedWorktag>  $worktags
      * @param  ?string  $description
      * @param  ?float  $taxAmount
      * @param  ?float  $subTotal
      * @param  ?float  $totalAmount
-     * @param  ?TaxType  $taxType
-     * @param  ?DeprecatedLinkedTrackingCategory  $trackingCategory
-     * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
-     * @param  ?LinkedCustomerInput  $customer
-     * @param  ?LinkedSupplierInput  $supplier
-     * @param  ?LinkedEmployee  $employee
+     * @param  ?\Apideck\Unify\Models\Components\TaxType  $taxType
+     * @param  ?\Apideck\Unify\Models\Components\DeprecatedLinkedTrackingCategory  $trackingCategory
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory>  $trackingCategories
+     * @param  ?\Apideck\Unify\Models\Components\LinkedCustomerInput  $customer
+     * @param  ?\Apideck\Unify\Models\Components\LinkedSupplierInput  $supplier
+     * @param  ?\Apideck\Unify\Models\Components\LinkedEmployee  $employee
      * @param  ?string  $departmentId
      * @param  ?string  $locationId
      * @param  ?int  $lineNumber

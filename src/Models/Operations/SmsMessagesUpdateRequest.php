@@ -22,7 +22,7 @@ class SmsMessagesUpdateRequest
 
     /**
      *
-     * @var Components\MessageInput $message
+     * @var \Apideck\Unify\Models\Components\MessageInput $message
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\MessageInput $message;
@@ -61,7 +61,7 @@ class SmsMessagesUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\MessageInput  $message
+     * @param  \Apideck\Unify\Models\Components\MessageInput  $message
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

@@ -30,7 +30,7 @@ class UpdateConsumerResponse
 
     /**
      *
-     * @var Consumer $data
+     * @var \Apideck\Unify\Models\Components\Consumer $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Consumer')]
@@ -49,7 +49,7 @@ class UpdateConsumerResponse
     /**
      * @param  int  $statusCode
      * @param  string  $status
-     * @param  Consumer  $data
+     * @param  \Apideck\Unify\Models\Components\Consumer  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

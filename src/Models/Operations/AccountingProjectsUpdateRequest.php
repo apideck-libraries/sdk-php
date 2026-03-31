@@ -22,7 +22,7 @@ class AccountingProjectsUpdateRequest
 
     /**
      *
-     * @var Components\ProjectInput $project
+     * @var \Apideck\Unify\Models\Components\ProjectInput $project
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\ProjectInput $project;
@@ -69,7 +69,7 @@ class AccountingProjectsUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\ProjectInput  $project
+     * @param  \Apideck\Unify\Models\Components\ProjectInput  $project
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

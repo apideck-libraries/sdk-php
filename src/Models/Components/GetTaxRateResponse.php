@@ -54,7 +54,7 @@ class GetTaxRateResponse
 
     /**
      *
-     * @var TaxRate $data
+     * @var \Apideck\Unify\Models\Components\TaxRate $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\TaxRate')]
@@ -76,7 +76,7 @@ class GetTaxRateResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  TaxRate  $data
+     * @param  \Apideck\Unify\Models\Components\TaxRate  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

@@ -54,7 +54,7 @@ class GetDepartmentResponse
 
     /**
      *
-     * @var Department $data
+     * @var \Apideck\Unify\Models\Components\Department $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Department')]
@@ -76,7 +76,7 @@ class GetDepartmentResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Department  $data
+     * @param  \Apideck\Unify\Models\Components\Department  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

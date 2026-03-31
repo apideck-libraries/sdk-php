@@ -56,7 +56,7 @@ class CustomMappings
      * @param  string  $serviceId
      * @param  ?string  $consumerId
      * @param  ?string  $appId
-     * @return Operations\VaultCustomMappingsAllResponse
+     * @return \Apideck\Unify\Models\Operations\VaultCustomMappingsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(string $unifiedApi, string $serviceId, ?string $consumerId = null, ?string $appId = null, ?Options $options = null): Operations\VaultCustomMappingsAllResponse

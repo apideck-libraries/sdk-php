@@ -13,7 +13,7 @@ class EcommerceOrdersAllResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,14 +22,14 @@ class EcommerceOrdersAllResponse
     /**
      * Orders
      *
-     * @var ?Components\GetEcommerceOrdersResponse $getEcommerceOrdersResponse
+     * @var ?\Apideck\Unify\Models\Components\GetEcommerceOrdersResponse $getEcommerceOrdersResponse
      */
     public ?Components\GetEcommerceOrdersResponse $getEcommerceOrdersResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
@@ -38,9 +38,9 @@ class EcommerceOrdersAllResponse
      */
     public \Closure $next;
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetEcommerceOrdersResponse  $getEcommerceOrdersResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetEcommerceOrdersResponse  $getEcommerceOrdersResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetEcommerceOrdersResponse $getEcommerceOrdersResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

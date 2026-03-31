@@ -54,7 +54,7 @@ class GetTicketResponse
 
     /**
      *
-     * @var Ticket $data
+     * @var \Apideck\Unify\Models\Components\Ticket $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Ticket')]
@@ -76,7 +76,7 @@ class GetTicketResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Ticket  $data
+     * @param  \Apideck\Unify\Models\Components\Ticket  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

@@ -13,7 +13,7 @@ class VaultConnectionsImportResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class VaultConnectionsImportResponse
     /**
      * Connection created
      *
-     * @var ?Components\CreateConnectionResponse $createConnectionResponse
+     * @var ?\Apideck\Unify\Models\Components\CreateConnectionResponse $createConnectionResponse
      */
     public ?Components\CreateConnectionResponse $createConnectionResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\CreateConnectionResponse  $createConnectionResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\CreateConnectionResponse  $createConnectionResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateConnectionResponse $createConnectionResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

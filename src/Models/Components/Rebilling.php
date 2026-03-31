@@ -24,7 +24,7 @@ class Rebilling
     /**
      * Status of the rebilling process for this line item.
      *
-     * @var ?RebillStatus $rebillStatus
+     * @var ?\Apideck\Unify\Models\Components\RebillStatus $rebillStatus
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('rebill_status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\RebillStatus|null')]
@@ -51,7 +51,7 @@ class Rebilling
 
     /**
      * @param  ?bool  $rebillable
-     * @param  ?RebillStatus  $rebillStatus
+     * @param  ?\Apideck\Unify\Models\Components\RebillStatus  $rebillStatus
      * @param  ?string  $linkedTransactionId
      * @param  ?string  $linkedTransactionLineId
      * @phpstan-pure

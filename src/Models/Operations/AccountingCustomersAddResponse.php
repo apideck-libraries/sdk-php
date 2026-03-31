@@ -13,7 +13,7 @@ class AccountingCustomersAddResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class AccountingCustomersAddResponse
     /**
      * Customers
      *
-     * @var ?Components\CreateCustomerResponse $createCustomerResponse
+     * @var ?\Apideck\Unify\Models\Components\CreateCustomerResponse $createCustomerResponse
      */
     public ?Components\CreateCustomerResponse $createCustomerResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\CreateCustomerResponse  $createCustomerResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\CreateCustomerResponse  $createCustomerResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateCustomerResponse $createCustomerResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

@@ -30,7 +30,7 @@ class Project
 
     /**
      *
-     * @var ?LinkedTaxRate $taxRate
+     * @var ?\Apideck\Unify\Models\Components\LinkedTaxRate $taxRate
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRate|null')]
@@ -50,7 +50,7 @@ class Project
     /**
      * An array of addresses associated with the project (billing, job site, etc.)
      *
-     * @var ?array<Address> $addresses
+     * @var ?array<\Apideck\Unify\Models\Components\Address> $addresses
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('addresses')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Address>|null')]
@@ -60,7 +60,7 @@ class Project
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -106,7 +106,7 @@ class Project
     /**
      * Current status of the project
      *
-     * @var ?ProjectProjectStatus $status
+     * @var ?\Apideck\Unify\Models\Components\ProjectProjectStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ProjectProjectStatus|null')]
@@ -125,7 +125,7 @@ class Project
     /**
      * Type or category of the project
      *
-     * @var ?ProjectType $projectType
+     * @var ?\Apideck\Unify\Models\Components\ProjectType $projectType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('project_type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ProjectType|null')]
@@ -135,7 +135,7 @@ class Project
     /**
      * Priority level of the project
      *
-     * @var ?Priority $priority
+     * @var ?\Apideck\Unify\Models\Components\Priority $priority
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('priority')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Priority|null')]
@@ -181,7 +181,7 @@ class Project
     /**
      * The customer this entity is linked to.
      *
-     * @var ?LinkedCustomer $customer
+     * @var ?\Apideck\Unify\Models\Components\LinkedCustomer $customer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedCustomer|null')]
@@ -191,7 +191,7 @@ class Project
     /**
      * Department or organizational unit associated with the project
      *
-     * @var ?ProjectDepartment $department
+     * @var ?\Apideck\Unify\Models\Components\ProjectDepartment $department
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('department')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ProjectDepartment|null')]
@@ -219,7 +219,7 @@ class Project
     /**
      * Parent project if this is a subproject
      *
-     * @var ?ParentProject $parentProject
+     * @var ?\Apideck\Unify\Models\Components\ParentProject $parentProject
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('parent_project')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ParentProject|null')]
@@ -229,7 +229,7 @@ class Project
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -293,7 +293,7 @@ class Project
     /**
      * Method used for billing this project
      *
-     * @var ?BillingMethod $billingMethod
+     * @var ?\Apideck\Unify\Models\Components\BillingMethod $billingMethod
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('billing_method')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BillingMethod|null')]
@@ -303,7 +303,7 @@ class Project
     /**
      * Current phase of the project lifecycle
      *
-     * @var ?ProjectPhase $phase
+     * @var ?\Apideck\Unify\Models\Components\ProjectPhase $phase
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('phase')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ProjectPhase|null')]
@@ -313,7 +313,7 @@ class Project
     /**
      * A list of linked tracking categories.
      *
-     * @var ?array<?LinkedTrackingCategory> $trackingCategories
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory> $trackingCategories
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory|null>|null')]
@@ -350,7 +350,7 @@ class Project
     /**
      * Current status of project schedule compared to plan
      *
-     * @var ?ScheduleStatus $scheduleStatus
+     * @var ?\Apideck\Unify\Models\Components\ScheduleStatus $scheduleStatus
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('schedule_status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ScheduleStatus|null')]
@@ -423,42 +423,42 @@ class Project
     /**
      * @param  string  $name
      * @param  ?string  $id
-     * @param  ?LinkedTaxRate  $taxRate
+     * @param  ?\Apideck\Unify\Models\Components\LinkedTaxRate  $taxRate
      * @param  ?array<string>  $tags
-     * @param  ?array<Address>  $addresses
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<\Apideck\Unify\Models\Components\Address>  $addresses
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
      * @param  ?string  $downstreamId
      * @param  ?string  $displayId
      * @param  ?string  $referenceId
      * @param  ?string  $description
-     * @param  ?ProjectProjectStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\ProjectProjectStatus  $status
      * @param  ?bool  $active
-     * @param  ?ProjectType  $projectType
-     * @param  ?Priority  $priority
+     * @param  ?\Apideck\Unify\Models\Components\ProjectType  $projectType
+     * @param  ?\Apideck\Unify\Models\Components\Priority  $priority
      * @param  ?float  $completionPercentage
      * @param  ?LocalDate  $startDate
      * @param  ?LocalDate  $endDate
      * @param  ?LocalDate  $completionDate
-     * @param  ?LinkedCustomer  $customer
-     * @param  ?ProjectDepartment  $department
+     * @param  ?\Apideck\Unify\Models\Components\LinkedCustomer  $customer
+     * @param  ?\Apideck\Unify\Models\Components\ProjectDepartment  $department
      * @param  ?string  $companyId
      * @param  ?string  $ownerId
-     * @param  ?ParentProject  $parentProject
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\ParentProject  $parentProject
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?float  $budgetAmount
      * @param  ?float  $approvedAmount
      * @param  ?float  $actualAmount
      * @param  ?float  $budgetHours
      * @param  ?float  $actualHours
      * @param  ?float  $hourlyRate
-     * @param  ?BillingMethod  $billingMethod
+     * @param  ?\Apideck\Unify\Models\Components\BillingMethod  $billingMethod
      * @param  ?bool  $isBillable
-     * @param  ?ProjectPhase  $phase
-     * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
+     * @param  ?\Apideck\Unify\Models\Components\ProjectPhase  $phase
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory>  $trackingCategories
      * @param  ?string  $notes
      * @param  ?string  $contractNumber
      * @param  ?float  $profitMargin
-     * @param  ?ScheduleStatus  $scheduleStatus
+     * @param  ?\Apideck\Unify\Models\Components\ScheduleStatus  $scheduleStatus
      * @param  ?int  $teamSize
      * @param  ?string  $rowVersion
      * @param  ?string  $updatedBy

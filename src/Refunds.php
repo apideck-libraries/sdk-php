@@ -52,8 +52,8 @@ class Refunds
      *
      * Create Refund
      *
-     * @param  Operations\AccountingRefundsAddRequest  $request
-     * @return Operations\AccountingRefundsAddResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingRefundsAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingRefundsAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\AccountingRefundsAddRequest $request, ?Options $options = null): Operations\AccountingRefundsAddResponse
@@ -227,8 +227,8 @@ class Refunds
      *
      * List Refunds
      *
-     * @param  ?Operations\AccountingRefundsAllRequest  $request
-     * @return Operations\AccountingRefundsAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingRefundsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingRefundsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AccountingRefundsAllRequest $request = null, ?Options $options = null): Operations\AccountingRefundsAllResponse
@@ -456,8 +456,8 @@ class Refunds
      *
      * List Refunds
      *
-     * @param  ?Operations\AccountingRefundsAllRequest  $request
-     * @return \Generator<Operations\AccountingRefundsAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingRefundsAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AccountingRefundsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AccountingRefundsAllRequest $request = null, ?Options $options = null): \Generator
@@ -474,8 +474,8 @@ class Refunds
      *
      * Delete Refund
      *
-     * @param  Operations\AccountingRefundsDeleteRequest  $request
-     * @return Operations\AccountingRefundsDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingRefundsDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingRefundsDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\AccountingRefundsDeleteRequest $request, ?Options $options = null): Operations\AccountingRefundsDeleteResponse
@@ -644,8 +644,8 @@ class Refunds
      *
      * Get Refund
      *
-     * @param  Operations\AccountingRefundsOneRequest  $request
-     * @return Operations\AccountingRefundsOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingRefundsOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingRefundsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AccountingRefundsOneRequest $request, ?Options $options = null): Operations\AccountingRefundsOneResponse
@@ -814,8 +814,8 @@ class Refunds
      *
      * Update Refund
      *
-     * @param  Operations\AccountingRefundsUpdateRequest  $request
-     * @return Operations\AccountingRefundsUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingRefundsUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingRefundsUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\AccountingRefundsUpdateRequest $request, ?Options $options = null): Operations\AccountingRefundsUpdateResponse

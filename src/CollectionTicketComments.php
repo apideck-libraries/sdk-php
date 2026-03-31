@@ -52,8 +52,8 @@ class CollectionTicketComments
      *
      * Create Comment
      *
-     * @param  Operations\IssueTrackingCollectionTicketCommentsAddRequest  $request
-     * @return Operations\IssueTrackingCollectionTicketCommentsAddResponse
+     * @param  \Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketCommentsAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketCommentsAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\IssueTrackingCollectionTicketCommentsAddRequest $request, ?Options $options = null): Operations\IssueTrackingCollectionTicketCommentsAddResponse
@@ -227,8 +227,8 @@ class CollectionTicketComments
      *
      * List Comments
      *
-     * @param  Operations\IssueTrackingCollectionTicketCommentsAllRequest  $request
-     * @return Operations\IssueTrackingCollectionTicketCommentsAllResponse
+     * @param  \Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketCommentsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketCommentsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(Operations\IssueTrackingCollectionTicketCommentsAllRequest $request, ?Options $options = null): Operations\IssueTrackingCollectionTicketCommentsAllResponse
@@ -458,8 +458,8 @@ class CollectionTicketComments
      *
      * List Comments
      *
-     * @param  Operations\IssueTrackingCollectionTicketCommentsAllRequest  $request
-     * @return \Generator<Operations\IssueTrackingCollectionTicketCommentsAllResponse>
+     * @param  \Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketCommentsAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketCommentsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(Operations\IssueTrackingCollectionTicketCommentsAllRequest $request, ?Options $options = null): \Generator
@@ -476,8 +476,8 @@ class CollectionTicketComments
      *
      * Delete Comment
      *
-     * @param  Operations\IssueTrackingCollectionTicketCommentsDeleteRequest  $request
-     * @return Operations\IssueTrackingCollectionTicketCommentsDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketCommentsDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketCommentsDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\IssueTrackingCollectionTicketCommentsDeleteRequest $request, ?Options $options = null): Operations\IssueTrackingCollectionTicketCommentsDeleteResponse
@@ -646,8 +646,8 @@ class CollectionTicketComments
      *
      * Get Comment
      *
-     * @param  Operations\IssueTrackingCollectionTicketCommentsOneRequest  $request
-     * @return Operations\IssueTrackingCollectionTicketCommentsOneResponse
+     * @param  \Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketCommentsOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketCommentsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function getIndividual(Operations\IssueTrackingCollectionTicketCommentsOneRequest $request, ?Options $options = null): Operations\IssueTrackingCollectionTicketCommentsOneResponse
@@ -875,8 +875,8 @@ class CollectionTicketComments
      *
      * Get Comment
      *
-     * @param  Operations\IssueTrackingCollectionTicketCommentsOneRequest  $request
-     * @return \Generator<Operations\IssueTrackingCollectionTicketCommentsOneResponse>
+     * @param  \Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketCommentsOneRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketCommentsOneResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\IssueTrackingCollectionTicketCommentsOneRequest $request, ?Options $options = null): \Generator
@@ -893,8 +893,8 @@ class CollectionTicketComments
      *
      * Update Comment
      *
-     * @param  Operations\IssueTrackingCollectionTicketCommentsUpdateRequest  $request
-     * @return Operations\IssueTrackingCollectionTicketCommentsUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketCommentsUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\IssueTrackingCollectionTicketCommentsUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\IssueTrackingCollectionTicketCommentsUpdateRequest $request, ?Options $options = null): Operations\IssueTrackingCollectionTicketCommentsUpdateResponse

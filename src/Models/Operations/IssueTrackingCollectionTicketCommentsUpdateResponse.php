@@ -13,7 +13,7 @@ class IssueTrackingCollectionTicketCommentsUpdateResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class IssueTrackingCollectionTicketCommentsUpdateResponse
     /**
      * Update a Comment
      *
-     * @var ?Components\UpdateCommentResponse $updateCommentResponse
+     * @var ?\Apideck\Unify\Models\Components\UpdateCommentResponse $updateCommentResponse
      */
     public ?Components\UpdateCommentResponse $updateCommentResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\UpdateCommentResponse  $updateCommentResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\UpdateCommentResponse  $updateCommentResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UpdateCommentResponse $updateCommentResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

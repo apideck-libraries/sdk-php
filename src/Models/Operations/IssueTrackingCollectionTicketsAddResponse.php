@@ -13,7 +13,7 @@ class IssueTrackingCollectionTicketsAddResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class IssueTrackingCollectionTicketsAddResponse
     /**
      * Create a Ticket
      *
-     * @var ?Components\CreateTicketResponse $createTicketResponse
+     * @var ?\Apideck\Unify\Models\Components\CreateTicketResponse $createTicketResponse
      */
     public ?Components\CreateTicketResponse $createTicketResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\CreateTicketResponse  $createTicketResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\CreateTicketResponse  $createTicketResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateTicketResponse $createTicketResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

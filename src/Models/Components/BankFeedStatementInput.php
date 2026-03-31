@@ -23,7 +23,7 @@ class BankFeedStatementInput
     /**
      * The current status of the bank feed statement.
      *
-     * @var ?StatementStatus $status
+     * @var ?\Apideck\Unify\Models\Components\StatementStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\StatementStatus|null')]
@@ -60,7 +60,7 @@ class BankFeedStatementInput
     /**
      * Whether the amount is a credit or debit.
      *
-     * @var ?CreditOrDebit $startBalanceCreditOrDebit
+     * @var ?\Apideck\Unify\Models\Components\CreditOrDebit $startBalanceCreditOrDebit
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('start_balance_credit_or_debit')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CreditOrDebit|null')]
@@ -79,7 +79,7 @@ class BankFeedStatementInput
     /**
      * Whether the amount is a credit or debit.
      *
-     * @var ?CreditOrDebit $endBalanceCreditOrDebit
+     * @var ?\Apideck\Unify\Models\Components\CreditOrDebit $endBalanceCreditOrDebit
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('end_balance_credit_or_debit')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CreditOrDebit|null')]
@@ -89,7 +89,7 @@ class BankFeedStatementInput
     /**
      * List of transactions in the bank feed statement.
      *
-     * @var ?array<Transactions> $transactions
+     * @var ?array<\Apideck\Unify\Models\Components\Transactions> $transactions
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('transactions')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Transactions>|null')]
@@ -98,14 +98,14 @@ class BankFeedStatementInput
 
     /**
      * @param  ?string  $bankFeedAccountId
-     * @param  ?StatementStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\StatementStatus  $status
      * @param  ?\DateTime  $startDate
      * @param  ?\DateTime  $endDate
      * @param  ?float  $startBalance
-     * @param  ?CreditOrDebit  $startBalanceCreditOrDebit
+     * @param  ?\Apideck\Unify\Models\Components\CreditOrDebit  $startBalanceCreditOrDebit
      * @param  ?float  $endBalance
-     * @param  ?CreditOrDebit  $endBalanceCreditOrDebit
-     * @param  ?array<Transactions>  $transactions
+     * @param  ?\Apideck\Unify\Models\Components\CreditOrDebit  $endBalanceCreditOrDebit
+     * @param  ?array<\Apideck\Unify\Models\Components\Transactions>  $transactions
      * @phpstan-pure
      */
     public function __construct(?string $bankFeedAccountId = null, ?StatementStatus $status = null, ?\DateTime $startDate = null, ?\DateTime $endDate = null, ?float $startBalance = null, ?CreditOrDebit $startBalanceCreditOrDebit = null, ?float $endBalance = null, ?CreditOrDebit $endBalanceCreditOrDebit = null, ?array $transactions = null)

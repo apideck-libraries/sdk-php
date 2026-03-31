@@ -31,7 +31,7 @@ class RequestRate
     /**
      * The window unit for the rate.
      *
-     * @var Unit $unit
+     * @var \Apideck\Unify\Models\Components\Unit $unit
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('unit')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Unit')]
@@ -40,7 +40,7 @@ class RequestRate
     /**
      * @param  int  $rate
      * @param  int  $size
-     * @param  Unit  $unit
+     * @param  \Apideck\Unify\Models\Components\Unit  $unit
      * @phpstan-pure
      */
     public function __construct(int $rate, int $size, Unit $unit)

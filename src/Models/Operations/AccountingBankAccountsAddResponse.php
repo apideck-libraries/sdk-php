@@ -13,7 +13,7 @@ class AccountingBankAccountsAddResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class AccountingBankAccountsAddResponse
     /**
      * Bank Account created
      *
-     * @var ?Components\CreateBankAccountResponse $createBankAccountResponse
+     * @var ?\Apideck\Unify\Models\Components\CreateBankAccountResponse $createBankAccountResponse
      */
     public ?Components\CreateBankAccountResponse $createBankAccountResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\CreateBankAccountResponse  $createBankAccountResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\CreateBankAccountResponse  $createBankAccountResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateBankAccountResponse $createBankAccountResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

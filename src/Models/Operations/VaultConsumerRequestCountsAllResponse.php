@@ -13,7 +13,7 @@ class VaultConsumerRequestCountsAllResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class VaultConsumerRequestCountsAllResponse
     /**
      * Consumers Request Counts within Date Range
      *
-     * @var ?Components\ConsumerRequestCountsInDateRangeResponse $consumerRequestCountsInDateRangeResponse
+     * @var ?\Apideck\Unify\Models\Components\ConsumerRequestCountsInDateRangeResponse $consumerRequestCountsInDateRangeResponse
      */
     public ?Components\ConsumerRequestCountsInDateRangeResponse $consumerRequestCountsInDateRangeResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\ConsumerRequestCountsInDateRangeResponse  $consumerRequestCountsInDateRangeResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\ConsumerRequestCountsInDateRangeResponse  $consumerRequestCountsInDateRangeResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\ConsumerRequestCountsInDateRangeResponse $consumerRequestCountsInDateRangeResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

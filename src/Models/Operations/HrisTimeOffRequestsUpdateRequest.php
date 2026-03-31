@@ -30,7 +30,7 @@ class HrisTimeOffRequestsUpdateRequest
 
     /**
      *
-     * @var Components\TimeOffRequestInput $timeOffRequest
+     * @var \Apideck\Unify\Models\Components\TimeOffRequestInput $timeOffRequest
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\TimeOffRequestInput $timeOffRequest;
@@ -70,7 +70,7 @@ class HrisTimeOffRequestsUpdateRequest
     /**
      * @param  string  $id
      * @param  string  $employeeId
-     * @param  Components\TimeOffRequestInput  $timeOffRequest
+     * @param  \Apideck\Unify\Models\Components\TimeOffRequestInput  $timeOffRequest
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

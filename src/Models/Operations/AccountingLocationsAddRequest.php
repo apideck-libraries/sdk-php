@@ -14,7 +14,7 @@ class AccountingLocationsAddRequest
 {
     /**
      *
-     * @var Components\AccountingLocationInput $accountingLocation
+     * @var \Apideck\Unify\Models\Components\AccountingLocationInput $accountingLocation
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\AccountingLocationInput $accountingLocation;
@@ -60,7 +60,7 @@ class AccountingLocationsAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\AccountingLocationInput  $accountingLocation
+     * @param  \Apideck\Unify\Models\Components\AccountingLocationInput  $accountingLocation
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

@@ -22,7 +22,7 @@ class CrmLeadsUpdateRequest
 
     /**
      *
-     * @var Components\LeadInput $lead
+     * @var \Apideck\Unify\Models\Components\LeadInput $lead
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\LeadInput $lead;
@@ -61,7 +61,7 @@ class CrmLeadsUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\LeadInput  $lead
+     * @param  \Apideck\Unify\Models\Components\LeadInput  $lead
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

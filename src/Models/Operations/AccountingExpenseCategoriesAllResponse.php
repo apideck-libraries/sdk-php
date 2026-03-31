@@ -13,7 +13,7 @@ class AccountingExpenseCategoriesAllResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,14 +22,14 @@ class AccountingExpenseCategoriesAllResponse
     /**
      * Expense Categories
      *
-     * @var ?Components\GetExpenseCategoriesResponse $getExpenseCategoriesResponse
+     * @var ?\Apideck\Unify\Models\Components\GetExpenseCategoriesResponse $getExpenseCategoriesResponse
      */
     public ?Components\GetExpenseCategoriesResponse $getExpenseCategoriesResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
@@ -38,9 +38,9 @@ class AccountingExpenseCategoriesAllResponse
      */
     public \Closure $next;
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetExpenseCategoriesResponse  $getExpenseCategoriesResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetExpenseCategoriesResponse  $getExpenseCategoriesResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetExpenseCategoriesResponse $getExpenseCategoriesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

@@ -32,7 +32,7 @@ class Detail2
     /**
      * Debug information including request/response details and OAuth timing metadata
      *
-     * @var ?DetailDebug $debug
+     * @var ?\Apideck\Unify\Models\Errors\DetailDebug $debug
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('debug')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Errors\DetailDebug|null')]
@@ -42,7 +42,7 @@ class Detail2
     /**
      * @param  ?string  $type
      * @param  ?string  $message
-     * @param  ?DetailDebug  $debug
+     * @param  ?\Apideck\Unify\Models\Errors\DetailDebug  $debug
      * @phpstan-pure
      */
     public function __construct(?string $type = null, ?string $message = null, ?DetailDebug $debug = null)

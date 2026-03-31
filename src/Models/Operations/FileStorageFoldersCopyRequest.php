@@ -22,7 +22,7 @@ class FileStorageFoldersCopyRequest
 
     /**
      *
-     * @var Components\CopyFolderRequest $copyFolderRequest
+     * @var \Apideck\Unify\Models\Components\CopyFolderRequest $copyFolderRequest
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\CopyFolderRequest $copyFolderRequest;
@@ -69,7 +69,7 @@ class FileStorageFoldersCopyRequest
 
     /**
      * @param  string  $id
-     * @param  Components\CopyFolderRequest  $copyFolderRequest
+     * @param  \Apideck\Unify\Models\Components\CopyFolderRequest  $copyFolderRequest
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

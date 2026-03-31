@@ -13,7 +13,7 @@ class VaultConsumersAddResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class VaultConsumersAddResponse
     /**
      * Consumer created
      *
-     * @var ?Components\CreateConsumerResponse $createConsumerResponse
+     * @var ?\Apideck\Unify\Models\Components\CreateConsumerResponse $createConsumerResponse
      */
     public ?Components\CreateConsumerResponse $createConsumerResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\CreateConsumerResponse  $createConsumerResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\CreateConsumerResponse  $createConsumerResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateConsumerResponse $createConsumerResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

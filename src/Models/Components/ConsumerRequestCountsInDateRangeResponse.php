@@ -30,7 +30,7 @@ class ConsumerRequestCountsInDateRangeResponse
 
     /**
      *
-     * @var ConsumerRequestCountsInDateRangeResponseData $data
+     * @var \Apideck\Unify\Models\Components\ConsumerRequestCountsInDateRangeResponseData $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConsumerRequestCountsInDateRangeResponseData')]
@@ -49,7 +49,7 @@ class ConsumerRequestCountsInDateRangeResponse
     /**
      * @param  int  $statusCode
      * @param  string  $status
-     * @param  ConsumerRequestCountsInDateRangeResponseData  $data
+     * @param  \Apideck\Unify\Models\Components\ConsumerRequestCountsInDateRangeResponseData  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

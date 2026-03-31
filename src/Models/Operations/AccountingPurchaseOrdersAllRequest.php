@@ -55,7 +55,7 @@ class AccountingPurchaseOrdersAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\PurchaseOrdersFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\PurchaseOrdersFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\PurchaseOrdersFilter $filter = null;
@@ -63,7 +63,7 @@ class AccountingPurchaseOrdersAllRequest
     /**
      * Apply sorting
      *
-     * @var ?Components\PurchaseOrdersSort $sort
+     * @var ?\Apideck\Unify\Models\Components\PurchaseOrdersSort $sort
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=sort')]
     public ?Components\PurchaseOrdersSort $sort = null;
@@ -100,8 +100,8 @@ class AccountingPurchaseOrdersAllRequest
      * @param  ?string  $companyId
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?int  $limit
-     * @param  ?Components\PurchaseOrdersFilter  $filter
-     * @param  ?Components\PurchaseOrdersSort  $sort
+     * @param  ?\Apideck\Unify\Models\Components\PurchaseOrdersFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\PurchaseOrdersSort  $sort
      * @param  ?string  $cursor
      * @phpstan-pure
      */

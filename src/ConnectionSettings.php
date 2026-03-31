@@ -53,8 +53,8 @@ class ConnectionSettings
      * This endpoint returns custom settings and their defaults required by connection for a given resource.
      *
      *
-     * @param  Operations\VaultConnectionSettingsAllRequest  $request
-     * @return Operations\VaultConnectionSettingsAllResponse
+     * @param  \Apideck\Unify\Models\Operations\VaultConnectionSettingsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\VaultConnectionSettingsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(Operations\VaultConnectionSettingsAllRequest $request, ?Options $options = null): Operations\VaultConnectionSettingsAllResponse
@@ -220,8 +220,8 @@ class ConnectionSettings
      *
      * Update default values for a connection's resource settings
      *
-     * @param  Operations\VaultConnectionSettingsUpdateRequest  $request
-     * @return Operations\VaultConnectionSettingsUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\VaultConnectionSettingsUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\VaultConnectionSettingsUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\VaultConnectionSettingsUpdateRequest $request, ?Options $options = null): Operations\VaultConnectionSettingsUpdateResponse

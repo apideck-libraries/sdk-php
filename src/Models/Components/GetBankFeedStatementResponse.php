@@ -54,7 +54,7 @@ class GetBankFeedStatementResponse
 
     /**
      *
-     * @var BankFeedStatement $data
+     * @var \Apideck\Unify\Models\Components\BankFeedStatement $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BankFeedStatement')]
@@ -76,7 +76,7 @@ class GetBankFeedStatementResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  BankFeedStatement  $data
+     * @param  \Apideck\Unify\Models\Components\BankFeedStatement  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

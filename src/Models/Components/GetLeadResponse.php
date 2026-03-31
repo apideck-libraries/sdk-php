@@ -54,7 +54,7 @@ class GetLeadResponse
 
     /**
      *
-     * @var Lead $data
+     * @var \Apideck\Unify\Models\Components\Lead $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Lead')]
@@ -76,7 +76,7 @@ class GetLeadResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Lead  $data
+     * @param  \Apideck\Unify\Models\Components\Lead  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

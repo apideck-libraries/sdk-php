@@ -22,7 +22,7 @@ class AtsApplicantsUpdateRequest
 
     /**
      *
-     * @var Components\ApplicantInput $applicant
+     * @var \Apideck\Unify\Models\Components\ApplicantInput $applicant
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\ApplicantInput $applicant;
@@ -61,7 +61,7 @@ class AtsApplicantsUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\ApplicantInput  $applicant
+     * @param  \Apideck\Unify\Models\Components\ApplicantInput  $applicant
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

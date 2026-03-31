@@ -13,7 +13,7 @@ class CrmCustomObjectSchemasUpdateResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class CrmCustomObjectSchemasUpdateResponse
     /**
      * Custom object schema updated
      *
-     * @var ?Components\UpdateCustomObjectSchemaResponse $updateCustomObjectSchemaResponse
+     * @var ?\Apideck\Unify\Models\Components\UpdateCustomObjectSchemaResponse $updateCustomObjectSchemaResponse
      */
     public ?Components\UpdateCustomObjectSchemaResponse $updateCustomObjectSchemaResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\UpdateCustomObjectSchemaResponse  $updateCustomObjectSchemaResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\UpdateCustomObjectSchemaResponse  $updateCustomObjectSchemaResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UpdateCustomObjectSchemaResponse $updateCustomObjectSchemaResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

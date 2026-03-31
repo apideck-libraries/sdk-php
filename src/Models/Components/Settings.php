@@ -15,7 +15,7 @@ class Settings
     /**
      * Provide the IDs of the Unified APIs you want to be visible. Leaving it empty or omitting this field will show all Unified APIs.
      *
-     * @var ?array<UnifiedApiId> $unifiedApis
+     * @var ?array<\Apideck\Unify\Models\Components\UnifiedApiId> $unifiedApis
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('unified_apis')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\UnifiedApiId>|null')]
@@ -28,7 +28,7 @@ class Settings
      * Available actions are: `delete`, `disconnect`, `reauthorize` and `disable`.
      * Empty array will hide all actions. By default all actions are visible.
      *
-     * @var ?array<AllowActions> $allowActions
+     * @var ?array<\Apideck\Unify\Models\Components\AllowActions> $allowActions
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('allow_actions')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\AllowActions>|null')]
@@ -117,7 +117,7 @@ class Settings
     public ?bool $hideGuides = null;
 
     /**
-     * @param  ?array<UnifiedApiId>  $unifiedApis
+     * @param  ?array<\Apideck\Unify\Models\Components\UnifiedApiId>  $unifiedApis
      * @param  ?bool  $hideResourceSettings
      * @param  ?bool  $sandboxMode
      * @param  ?bool  $isolationMode
@@ -127,7 +127,7 @@ class Settings
      * @param  ?bool  $showSidebar
      * @param  ?bool  $autoRedirect
      * @param  ?bool  $hideGuides
-     * @param  ?array<AllowActions>  $allowActions
+     * @param  ?array<\Apideck\Unify\Models\Components\AllowActions>  $allowActions
      * @phpstan-pure
      */
     public function __construct(?array $unifiedApis = null, ?array $allowActions = null, ?bool $hideResourceSettings = false, ?bool $sandboxMode = false, ?bool $isolationMode = false, ?string $sessionLength = '1h', ?bool $showLogs = true, ?bool $showSuggestions = false, ?bool $showSidebar = true, ?bool $autoRedirect = false, ?bool $hideGuides = false)

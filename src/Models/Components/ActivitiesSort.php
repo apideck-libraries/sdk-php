@@ -14,7 +14,7 @@ class ActivitiesSort
     /**
      * The field on which to sort the Activities
      *
-     * @var ?ActivitiesSortBy $by
+     * @var ?\Apideck\Unify\Models\Components\ActivitiesSortBy $by
      */
     #[SpeakeasyMetadata('queryParam:name=by')]
     public ?ActivitiesSortBy $by = null;
@@ -22,14 +22,14 @@ class ActivitiesSort
     /**
      * The direction in which to sort the results
      *
-     * @var ?SortDirection $direction
+     * @var ?\Apideck\Unify\Models\Components\SortDirection $direction
      */
     #[SpeakeasyMetadata('queryParam:name=direction')]
     public ?SortDirection $direction = null;
 
     /**
-     * @param  ?ActivitiesSortBy  $by
-     * @param  ?SortDirection  $direction
+     * @param  ?\Apideck\Unify\Models\Components\ActivitiesSortBy  $by
+     * @param  ?\Apideck\Unify\Models\Components\SortDirection  $direction
      * @phpstan-pure
      */
     public function __construct(?ActivitiesSortBy $by = null, ?SortDirection $direction = SortDirection::Asc)

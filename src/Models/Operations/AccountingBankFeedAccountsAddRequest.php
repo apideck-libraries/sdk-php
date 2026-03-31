@@ -14,7 +14,7 @@ class AccountingBankFeedAccountsAddRequest
 {
     /**
      *
-     * @var Components\BankFeedAccountInput $bankFeedAccount
+     * @var \Apideck\Unify\Models\Components\BankFeedAccountInput $bankFeedAccount
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\BankFeedAccountInput $bankFeedAccount;
@@ -52,7 +52,7 @@ class AccountingBankFeedAccountsAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\BankFeedAccountInput  $bankFeedAccount
+     * @param  \Apideck\Unify\Models\Components\BankFeedAccountInput  $bankFeedAccount
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

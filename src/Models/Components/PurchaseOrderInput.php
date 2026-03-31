@@ -14,7 +14,7 @@ class PurchaseOrderInput
     /**
      * $lineItems
      *
-     * @var ?array<InvoiceLineItemInput> $lineItems
+     * @var ?array<\Apideck\Unify\Models\Components\InvoiceLineItemInput> $lineItems
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\InvoiceLineItemInput>|null')]
@@ -23,7 +23,7 @@ class PurchaseOrderInput
 
     /**
      *
-     * @var ?Address $billingAddress
+     * @var ?\Apideck\Unify\Models\Components\Address $billingAddress
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('billing_address')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
@@ -32,7 +32,7 @@ class PurchaseOrderInput
 
     /**
      *
-     * @var ?Address $shippingAddress
+     * @var ?\Apideck\Unify\Models\Components\Address $shippingAddress
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('shipping_address')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
@@ -41,7 +41,7 @@ class PurchaseOrderInput
 
     /**
      *
-     * @var ?BankAccount $bankAccount
+     * @var ?\Apideck\Unify\Models\Components\BankAccount $bankAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('bank_account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BankAccount|null')]
@@ -51,7 +51,7 @@ class PurchaseOrderInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -61,7 +61,7 @@ class PurchaseOrderInput
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -98,7 +98,7 @@ class PurchaseOrderInput
     /**
      * The supplier this entity is linked to.
      *
-     * @var ?LinkedSupplierInput $supplier
+     * @var ?\Apideck\Unify\Models\Components\LinkedSupplierInput $supplier
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('supplier')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedSupplierInput|null')]
@@ -143,7 +143,7 @@ class PurchaseOrderInput
 
     /**
      *
-     * @var ?PurchaseOrderStatus $status
+     * @var ?\Apideck\Unify\Models\Components\PurchaseOrderStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\PurchaseOrderStatus|null')]
@@ -180,7 +180,7 @@ class PurchaseOrderInput
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -234,7 +234,7 @@ class PurchaseOrderInput
 
     /**
      *
-     * @var ?LinkedLedgerAccount $ledgerAccount
+     * @var ?\Apideck\Unify\Models\Components\LinkedLedgerAccount $ledgerAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('ledger_account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
@@ -307,7 +307,7 @@ class PurchaseOrderInput
     /**
      * Type of amortization
      *
-     * @var ?PurchaseOrderAmortizationType $amortizationType
+     * @var ?\Apideck\Unify\Models\Components\PurchaseOrderAmortizationType $amortizationType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('amortization_type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\PurchaseOrderAmortizationType|null')]
@@ -380,7 +380,7 @@ class PurchaseOrderInput
     /**
      * A list of linked tracking categories.
      *
-     * @var ?array<?LinkedTrackingCategory> $trackingCategories
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory> $trackingCategories
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory|null>|null')]
@@ -397,31 +397,31 @@ class PurchaseOrderInput
     public ?string $rowVersion = null;
 
     /**
-     * @param  ?array<InvoiceLineItemInput>  $lineItems
-     * @param  ?Address  $billingAddress
-     * @param  ?Address  $shippingAddress
-     * @param  ?BankAccount  $bankAccount
-     * @param  ?array<CustomField1|CustomField2>  $customFields
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<\Apideck\Unify\Models\Components\InvoiceLineItemInput>  $lineItems
+     * @param  ?\Apideck\Unify\Models\Components\Address  $billingAddress
+     * @param  ?\Apideck\Unify\Models\Components\Address  $shippingAddress
+     * @param  ?\Apideck\Unify\Models\Components\BankAccount  $bankAccount
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $displayId
      * @param  ?string  $poNumber
      * @param  ?string  $reference
-     * @param  ?LinkedSupplierInput  $supplier
+     * @param  ?\Apideck\Unify\Models\Components\LinkedSupplierInput  $supplier
      * @param  ?string  $subsidiaryId
      * @param  ?string  $companyId
      * @param  ?string  $locationId
      * @param  ?string  $departmentId
-     * @param  ?PurchaseOrderStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\PurchaseOrderStatus  $status
      * @param  ?LocalDate  $issuedDate
      * @param  ?LocalDate  $deliveryDate
      * @param  ?LocalDate  $expectedArrivalDate
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?float  $currencyRate
      * @param  ?float  $subTotal
      * @param  ?float  $totalTax
      * @param  ?float  $total
      * @param  ?bool  $taxInclusive
-     * @param  ?LinkedLedgerAccount  $ledgerAccount
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $ledgerAccount
      * @param  ?string  $templateId
      * @param  ?float  $discountPercentage
      * @param  ?bool  $accountingByRow
@@ -429,7 +429,7 @@ class PurchaseOrderInput
      * @param  ?string  $paymentMethod
      * @param  ?string  $terms
      * @param  ?string  $termsId
-     * @param  ?PurchaseOrderAmortizationType  $amortizationType
+     * @param  ?\Apideck\Unify\Models\Components\PurchaseOrderAmortizationType  $amortizationType
      * @param  ?string  $taxCode
      * @param  ?string  $taxMethod
      * @param  ?string  $issuedMethod
@@ -437,7 +437,7 @@ class PurchaseOrderInput
      * @param  ?string  $channel
      * @param  ?string  $memo
      * @param  ?string  $notes
-     * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory>  $trackingCategories
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */

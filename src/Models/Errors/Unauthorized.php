@@ -51,7 +51,7 @@ class Unauthorized
     /**
      * Contains parameter or domain specific information related to the error and why it occurred.
      *
-     * @var string|Detail2|null $detail
+     * @var string|\Apideck\Unify\Models\Errors\Detail2|null $detail
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('detail')]
     #[\Speakeasy\Serializer\Annotation\Type('string|\Apideck\Unify\Models\Errors\Detail2|null')]
@@ -72,7 +72,7 @@ class Unauthorized
      * @param  ?string  $error
      * @param  ?string  $typeName
      * @param  ?string  $message
-     * @param  string|Detail2|null  $detail
+     * @param  string|\Apideck\Unify\Models\Errors\Detail2|null  $detail
      * @param  ?string  $ref
      * @phpstan-pure
      */

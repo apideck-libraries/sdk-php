@@ -54,7 +54,7 @@ class GetApplicationResponse
 
     /**
      *
-     * @var Application $data
+     * @var \Apideck\Unify\Models\Components\Application $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Application')]
@@ -76,7 +76,7 @@ class GetApplicationResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Application  $data
+     * @param  \Apideck\Unify\Models\Components\Application  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

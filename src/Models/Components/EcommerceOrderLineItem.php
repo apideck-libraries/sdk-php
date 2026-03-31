@@ -15,7 +15,7 @@ class EcommerceOrderLineItem
     /**
      * $options
      *
-     * @var ?array<Options> $options
+     * @var ?array<\Apideck\Unify\Models\Components\Options> $options
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Options>|null')]
@@ -33,7 +33,7 @@ class EcommerceOrderLineItem
     /**
      * $discounts
      *
-     * @var ?array<EcommerceDiscount> $discounts
+     * @var ?array<\Apideck\Unify\Models\Components\EcommerceDiscount> $discounts
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('discounts')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceDiscount>|null')]
@@ -167,9 +167,9 @@ class EcommerceOrderLineItem
     public ?string $totalAmount = null;
 
     /**
-     * @param  ?array<Options>  $options
+     * @param  ?array<\Apideck\Unify\Models\Components\Options>  $options
      * @param  ?string  $quantity
-     * @param  ?array<EcommerceDiscount>  $discounts
+     * @param  ?array<\Apideck\Unify\Models\Components\EcommerceDiscount>  $discounts
      * @param  ?string  $id
      * @param  ?string  $productId
      * @param  ?string  $variantId

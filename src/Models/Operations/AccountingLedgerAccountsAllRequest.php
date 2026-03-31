@@ -47,7 +47,7 @@ class AccountingLedgerAccountsAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\LedgerAccountsFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\LedgerAccountsFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\LedgerAccountsFilter $filter = null;
@@ -55,7 +55,7 @@ class AccountingLedgerAccountsAllRequest
     /**
      * Apply sorting
      *
-     * @var ?Components\LedgerAccountsSort $sort
+     * @var ?\Apideck\Unify\Models\Components\LedgerAccountsSort $sort
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=sort')]
     public ?Components\LedgerAccountsSort $sort = null;
@@ -107,8 +107,8 @@ class AccountingLedgerAccountsAllRequest
      * @param  ?string  $serviceId
      * @param  ?string  $companyId
      * @param  ?int  $limit
-     * @param  ?Components\LedgerAccountsFilter  $filter
-     * @param  ?Components\LedgerAccountsSort  $sort
+     * @param  ?\Apideck\Unify\Models\Components\LedgerAccountsFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\LedgerAccountsSort  $sort
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields

@@ -52,8 +52,8 @@ class ExpenseCategories
      *
      * Create Expense Category
      *
-     * @param  Operations\AccountingExpenseCategoriesAddRequest  $request
-     * @return Operations\AccountingExpenseCategoriesAddResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingExpenseCategoriesAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingExpenseCategoriesAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\AccountingExpenseCategoriesAddRequest $request, ?Options $options = null): Operations\AccountingExpenseCategoriesAddResponse
@@ -227,8 +227,8 @@ class ExpenseCategories
      *
      * List Expense Categories
      *
-     * @param  ?Operations\AccountingExpenseCategoriesAllRequest  $request
-     * @return Operations\AccountingExpenseCategoriesAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingExpenseCategoriesAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingExpenseCategoriesAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AccountingExpenseCategoriesAllRequest $request = null, ?Options $options = null): Operations\AccountingExpenseCategoriesAllResponse
@@ -452,8 +452,8 @@ class ExpenseCategories
      *
      * List Expense Categories
      *
-     * @param  ?Operations\AccountingExpenseCategoriesAllRequest  $request
-     * @return \Generator<Operations\AccountingExpenseCategoriesAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingExpenseCategoriesAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AccountingExpenseCategoriesAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AccountingExpenseCategoriesAllRequest $request = null, ?Options $options = null): \Generator
@@ -470,8 +470,8 @@ class ExpenseCategories
      *
      * Delete Expense Category
      *
-     * @param  Operations\AccountingExpenseCategoriesDeleteRequest  $request
-     * @return Operations\AccountingExpenseCategoriesDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingExpenseCategoriesDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingExpenseCategoriesDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\AccountingExpenseCategoriesDeleteRequest $request, ?Options $options = null): Operations\AccountingExpenseCategoriesDeleteResponse
@@ -640,8 +640,8 @@ class ExpenseCategories
      *
      * Get Expense Category
      *
-     * @param  Operations\AccountingExpenseCategoriesOneRequest  $request
-     * @return Operations\AccountingExpenseCategoriesOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingExpenseCategoriesOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingExpenseCategoriesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AccountingExpenseCategoriesOneRequest $request, ?Options $options = null): Operations\AccountingExpenseCategoriesOneResponse
@@ -810,8 +810,8 @@ class ExpenseCategories
      *
      * Update Expense Category
      *
-     * @param  Operations\AccountingExpenseCategoriesUpdateRequest  $request
-     * @return Operations\AccountingExpenseCategoriesUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingExpenseCategoriesUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingExpenseCategoriesUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\AccountingExpenseCategoriesUpdateRequest $request, ?Options $options = null): Operations\AccountingExpenseCategoriesUpdateResponse
