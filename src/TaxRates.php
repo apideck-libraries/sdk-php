@@ -52,8 +52,8 @@ class TaxRates
      *
      * Create Tax Rate
      *
-     * @param  Operations\AccountingTaxRatesAddRequest  $request
-     * @return Operations\AccountingTaxRatesAddResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingTaxRatesAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingTaxRatesAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\AccountingTaxRatesAddRequest $request, ?Options $options = null): Operations\AccountingTaxRatesAddResponse
@@ -228,8 +228,8 @@ class TaxRates
      * List Tax Rates. Note: Not all connectors return the actual rate/percentage value. In this case, only the tax code or reference is returned. Connectors Affected: Quickbooks
      *
      *
-     * @param  ?Operations\AccountingTaxRatesAllRequest  $request
-     * @return Operations\AccountingTaxRatesAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingTaxRatesAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingTaxRatesAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AccountingTaxRatesAllRequest $request = null, ?Options $options = null): Operations\AccountingTaxRatesAllResponse
@@ -458,8 +458,8 @@ class TaxRates
      * List Tax Rates. Note: Not all connectors return the actual rate/percentage value. In this case, only the tax code or reference is returned. Connectors Affected: Quickbooks
      *
      *
-     * @param  ?Operations\AccountingTaxRatesAllRequest  $request
-     * @return \Generator<Operations\AccountingTaxRatesAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingTaxRatesAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AccountingTaxRatesAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AccountingTaxRatesAllRequest $request = null, ?Options $options = null): \Generator
@@ -476,8 +476,8 @@ class TaxRates
      *
      * Delete Tax Rate
      *
-     * @param  Operations\AccountingTaxRatesDeleteRequest  $request
-     * @return Operations\AccountingTaxRatesDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingTaxRatesDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingTaxRatesDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\AccountingTaxRatesDeleteRequest $request, ?Options $options = null): Operations\AccountingTaxRatesDeleteResponse
@@ -647,8 +647,8 @@ class TaxRates
      * Get Tax Rate. Note: Not all connectors return the actual rate/percentage value. In this case, only the tax code or reference is returned. Support will soon be added to return the actual rate/percentage by doing additional calls in the background to provide the full view of a given tax rate. Connectors Affected: Quickbooks
      *
      *
-     * @param  Operations\AccountingTaxRatesOneRequest  $request
-     * @return Operations\AccountingTaxRatesOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingTaxRatesOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingTaxRatesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AccountingTaxRatesOneRequest $request, ?Options $options = null): Operations\AccountingTaxRatesOneResponse
@@ -817,8 +817,8 @@ class TaxRates
      *
      * Update Tax Rate
      *
-     * @param  Operations\AccountingTaxRatesUpdateRequest  $request
-     * @return Operations\AccountingTaxRatesUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingTaxRatesUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingTaxRatesUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\AccountingTaxRatesUpdateRequest $request, ?Options $options = null): Operations\AccountingTaxRatesUpdateResponse

@@ -14,7 +14,7 @@ class Expense
     /**
      * Expense line items linked to this expense.
      *
-     * @var array<ExpenseLineItem> $lineItems
+     * @var array<\Apideck\Unify\Models\Components\ExpenseLineItem> $lineItems
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ExpenseLineItem>')]
@@ -59,7 +59,7 @@ class Expense
 
     /**
      *
-     * @var ?LinkedTaxRate $taxRate
+     * @var ?\Apideck\Unify\Models\Components\LinkedTaxRate $taxRate
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRate|null')]
@@ -69,7 +69,7 @@ class Expense
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -79,7 +79,7 @@ class Expense
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -107,7 +107,7 @@ class Expense
     /**
      * A flexible account reference that can represent a ledger account (GL account), a bank account, or an employee payable account, depending on the connector's requirements.
      *
-     * @var ?LinkedFinancialAccount $account
+     * @var ?\Apideck\Unify\Models\Components\LinkedFinancialAccount $account
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedFinancialAccount|null')]
@@ -117,7 +117,7 @@ class Expense
     /**
      * The supplier this entity is linked to.
      *
-     * @var ?LinkedSupplier $supplier
+     * @var ?\Apideck\Unify\Models\Components\LinkedSupplier $supplier
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('supplier')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedSupplier|null')]
@@ -135,7 +135,7 @@ class Expense
 
     /**
      *
-     * @var ?LinkedLocation $location
+     * @var ?\Apideck\Unify\Models\Components\LinkedLocation $location
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('location')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLocation|null')]
@@ -153,7 +153,7 @@ class Expense
 
     /**
      *
-     * @var ?LinkedDepartment $department
+     * @var ?\Apideck\Unify\Models\Components\LinkedDepartment $department
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('department')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedDepartment|null')]
@@ -163,7 +163,7 @@ class Expense
     /**
      * The type of payment for the expense.
      *
-     * @var ?ExpensePaymentType $paymentType
+     * @var ?\Apideck\Unify\Models\Components\ExpensePaymentType $paymentType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('payment_type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ExpensePaymentType|null')]
@@ -173,7 +173,7 @@ class Expense
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -192,7 +192,7 @@ class Expense
     /**
      * The type of expense.
      *
-     * @var ?ExpenseType $type
+     * @var ?\Apideck\Unify\Models\Components\ExpenseType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ExpenseType|null')]
@@ -247,7 +247,7 @@ class Expense
     /**
      * A list of linked tracking categories.
      *
-     * @var ?array<?LinkedTrackingCategory> $trackingCategories
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory> $trackingCategories
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory|null>|null')]
@@ -285,7 +285,7 @@ class Expense
     /**
      * Expense status
      *
-     * @var ?ExpenseStatus $status
+     * @var ?\Apideck\Unify\Models\Components\ExpenseStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ExpenseStatus|null')]
@@ -338,36 +338,36 @@ class Expense
     public ?string $createdBy = null;
 
     /**
-     * @param  array<ExpenseLineItem>  $lineItems
+     * @param  array<\Apideck\Unify\Models\Components\ExpenseLineItem>  $lineItems
      * @param  ?string  $id
      * @param  ?\DateTime  $transactionDate
      * @param  ?string  $accountId
      * @param  ?string  $supplierId
-     * @param  ?LinkedTaxRate  $taxRate
-     * @param  ?array<CustomField1|CustomField2>  $customFields
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?\Apideck\Unify\Models\Components\LinkedTaxRate  $taxRate
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $displayId
      * @param  ?string  $number
-     * @param  ?LinkedFinancialAccount  $account
-     * @param  ?LinkedSupplier  $supplier
+     * @param  ?\Apideck\Unify\Models\Components\LinkedFinancialAccount  $account
+     * @param  ?\Apideck\Unify\Models\Components\LinkedSupplier  $supplier
      * @param  ?string  $companyId
-     * @param  ?LinkedLocation  $location
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLocation  $location
      * @param  ?string  $departmentId
-     * @param  ?LinkedDepartment  $department
-     * @param  ?ExpensePaymentType  $paymentType
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\LinkedDepartment  $department
+     * @param  ?\Apideck\Unify\Models\Components\ExpensePaymentType  $paymentType
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?float  $currencyRate
-     * @param  ?ExpenseType  $type
+     * @param  ?\Apideck\Unify\Models\Components\ExpenseType  $type
      * @param  ?string  $memo
      * @param  ?bool  $taxInclusive
      * @param  ?float  $subTotal
      * @param  ?float  $totalTax
      * @param  ?float  $totalAmount
-     * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory>  $trackingCategories
      * @param  ?string  $reference
      * @param  ?string  $sourceDocumentUrl
      * @param  ?array<string, mixed>  $customMappings
-     * @param  ?ExpenseStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\ExpenseStatus  $status
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
      * @param  ?string  $rowVersion

@@ -52,8 +52,8 @@ class BankFeedAccounts
      *
      * Create Bank Feed Account
      *
-     * @param  Operations\AccountingBankFeedAccountsAddRequest  $request
-     * @return Operations\AccountingBankFeedAccountsAddResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingBankFeedAccountsAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingBankFeedAccountsAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\AccountingBankFeedAccountsAddRequest $request, ?Options $options = null): Operations\AccountingBankFeedAccountsAddResponse
@@ -227,8 +227,8 @@ class BankFeedAccounts
      *
      * List Bank Feed Accounts
      *
-     * @param  ?Operations\AccountingBankFeedAccountsAllRequest  $request
-     * @return Operations\AccountingBankFeedAccountsAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingBankFeedAccountsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingBankFeedAccountsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AccountingBankFeedAccountsAllRequest $request = null, ?Options $options = null): Operations\AccountingBankFeedAccountsAllResponse
@@ -454,8 +454,8 @@ class BankFeedAccounts
      *
      * List Bank Feed Accounts
      *
-     * @param  ?Operations\AccountingBankFeedAccountsAllRequest  $request
-     * @return \Generator<Operations\AccountingBankFeedAccountsAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingBankFeedAccountsAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AccountingBankFeedAccountsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AccountingBankFeedAccountsAllRequest $request = null, ?Options $options = null): \Generator
@@ -472,8 +472,8 @@ class BankFeedAccounts
      *
      * Delete Bank Feed Account
      *
-     * @param  Operations\AccountingBankFeedAccountsDeleteRequest  $request
-     * @return Operations\AccountingBankFeedAccountsDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingBankFeedAccountsDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingBankFeedAccountsDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\AccountingBankFeedAccountsDeleteRequest $request, ?Options $options = null): Operations\AccountingBankFeedAccountsDeleteResponse
@@ -642,8 +642,8 @@ class BankFeedAccounts
      *
      * Get Bank Feed Account
      *
-     * @param  Operations\AccountingBankFeedAccountsOneRequest  $request
-     * @return Operations\AccountingBankFeedAccountsOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingBankFeedAccountsOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingBankFeedAccountsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AccountingBankFeedAccountsOneRequest $request, ?Options $options = null): Operations\AccountingBankFeedAccountsOneResponse
@@ -812,8 +812,8 @@ class BankFeedAccounts
      *
      * Update Bank Feed Account
      *
-     * @param  Operations\AccountingBankFeedAccountsUpdateRequest  $request
-     * @return Operations\AccountingBankFeedAccountsUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingBankFeedAccountsUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingBankFeedAccountsUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\AccountingBankFeedAccountsUpdateRequest $request, ?Options $options = null): Operations\AccountingBankFeedAccountsUpdateResponse

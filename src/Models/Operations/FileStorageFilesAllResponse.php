@@ -13,7 +13,7 @@ class FileStorageFilesAllResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,14 +22,14 @@ class FileStorageFilesAllResponse
     /**
      * Files
      *
-     * @var ?Components\GetFilesResponse $getFilesResponse
+     * @var ?\Apideck\Unify\Models\Components\GetFilesResponse $getFilesResponse
      */
     public ?Components\GetFilesResponse $getFilesResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
@@ -38,9 +38,9 @@ class FileStorageFilesAllResponse
      */
     public \Closure $next;
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetFilesResponse  $getFilesResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetFilesResponse  $getFilesResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetFilesResponse $getFilesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

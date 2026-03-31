@@ -53,8 +53,8 @@ class Logs
      * This endpoint includes all consumer request logs.
      *
      *
-     * @param  ?Operations\VaultLogsAllRequest  $request
-     * @return Operations\VaultLogsAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\VaultLogsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\VaultLogsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\VaultLogsAllRequest $request = null, ?Options $options = null): Operations\VaultLogsAllResponse
@@ -273,8 +273,8 @@ class Logs
      * This endpoint includes all consumer request logs.
      *
      *
-     * @param  ?Operations\VaultLogsAllRequest  $request
-     * @return \Generator<Operations\VaultLogsAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\VaultLogsAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\VaultLogsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\VaultLogsAllRequest $request = null, ?Options $options = null): \Generator

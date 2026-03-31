@@ -14,7 +14,7 @@ class AccountingEmployeeInput
     /**
      * Email addresses of the employee.
      *
-     * @var ?array<Email> $emails
+     * @var ?array<\Apideck\Unify\Models\Components\Email> $emails
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('emails')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Email>|null')]
@@ -24,7 +24,7 @@ class AccountingEmployeeInput
     /**
      * The manager of the employee.
      *
-     * @var ?AccountingEmployeeManager $manager
+     * @var ?\Apideck\Unify\Models\Components\AccountingEmployeeManager $manager
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('manager')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\AccountingEmployeeManager|null')]
@@ -34,7 +34,7 @@ class AccountingEmployeeInput
     /**
      * Addresses of the employee.
      *
-     * @var ?array<Address> $addresses
+     * @var ?array<\Apideck\Unify\Models\Components\Address> $addresses
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('addresses')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Address>|null')]
@@ -44,7 +44,7 @@ class AccountingEmployeeInput
     /**
      * Phone numbers of the employee.
      *
-     * @var ?array<PhoneNumber> $phoneNumbers
+     * @var ?array<\Apideck\Unify\Models\Components\PhoneNumber> $phoneNumbers
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('phone_numbers')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PhoneNumber>|null')]
@@ -53,7 +53,7 @@ class AccountingEmployeeInput
 
     /**
      *
-     * @var ?BankAccount $bankAccount
+     * @var ?\Apideck\Unify\Models\Components\BankAccount $bankAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('bank_account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BankAccount|null')]
@@ -63,7 +63,7 @@ class AccountingEmployeeInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -73,7 +73,7 @@ class AccountingEmployeeInput
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -137,7 +137,7 @@ class AccountingEmployeeInput
     /**
      * The status of the employee.
      *
-     * @var ?EmployeeStatus $status
+     * @var ?\Apideck\Unify\Models\Components\EmployeeStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EmployeeStatus|null')]
@@ -155,7 +155,7 @@ class AccountingEmployeeInput
 
     /**
      *
-     * @var ?LinkedDepartmentInput $department
+     * @var ?\Apideck\Unify\Models\Components\LinkedDepartmentInput $department
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('department')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedDepartmentInput|null')]
@@ -164,7 +164,7 @@ class AccountingEmployeeInput
 
     /**
      *
-     * @var ?LinkedLocationInput $location
+     * @var ?\Apideck\Unify\Models\Components\LinkedLocationInput $location
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('location')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLocationInput|null')]
@@ -192,7 +192,7 @@ class AccountingEmployeeInput
     /**
      * The gender represents the gender identity of a person.
      *
-     * @var ?Gender $gender
+     * @var ?\Apideck\Unify\Models\Components\Gender $gender
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('gender')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Gender|null')]
@@ -210,7 +210,7 @@ class AccountingEmployeeInput
 
     /**
      *
-     * @var ?LinkedSubsidiaryInput $subsidiary
+     * @var ?\Apideck\Unify\Models\Components\LinkedSubsidiaryInput $subsidiary
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiary')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedSubsidiaryInput|null')]
@@ -220,7 +220,7 @@ class AccountingEmployeeInput
     /**
      * A list of linked tracking categories.
      *
-     * @var ?array<?LinkedTrackingCategory> $trackingCategories
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory> $trackingCategories
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory|null>|null')]
@@ -230,7 +230,7 @@ class AccountingEmployeeInput
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -256,30 +256,30 @@ class AccountingEmployeeInput
     public ?string $rowVersion = null;
 
     /**
-     * @param  ?array<Email>  $emails
-     * @param  ?AccountingEmployeeManager  $manager
-     * @param  ?array<Address>  $addresses
-     * @param  ?array<PhoneNumber>  $phoneNumbers
-     * @param  ?BankAccount  $bankAccount
-     * @param  ?array<CustomField1|CustomField2>  $customFields
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<\Apideck\Unify\Models\Components\Email>  $emails
+     * @param  ?\Apideck\Unify\Models\Components\AccountingEmployeeManager  $manager
+     * @param  ?array<\Apideck\Unify\Models\Components\Address>  $addresses
+     * @param  ?array<\Apideck\Unify\Models\Components\PhoneNumber>  $phoneNumbers
+     * @param  ?\Apideck\Unify\Models\Components\BankAccount  $bankAccount
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $displayId
      * @param  ?string  $firstName
      * @param  ?string  $lastName
      * @param  ?string  $displayName
      * @param  ?string  $employeeNumber
      * @param  ?string  $jobTitle
-     * @param  ?EmployeeStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\EmployeeStatus  $status
      * @param  ?bool  $isContractor
-     * @param  ?LinkedDepartmentInput  $department
-     * @param  ?LinkedLocationInput  $location
+     * @param  ?\Apideck\Unify\Models\Components\LinkedDepartmentInput  $department
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLocationInput  $location
      * @param  ?LocalDate  $hireDate
      * @param  ?LocalDate  $terminationDate
-     * @param  ?Gender  $gender
+     * @param  ?\Apideck\Unify\Models\Components\Gender  $gender
      * @param  ?LocalDate  $birthDate
-     * @param  ?LinkedSubsidiaryInput  $subsidiary
-     * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\LinkedSubsidiaryInput  $subsidiary
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory>  $trackingCategories
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?string  $notes
      * @param  ?string  $rowVersion
      * @phpstan-pure

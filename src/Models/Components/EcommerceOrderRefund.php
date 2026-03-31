@@ -42,7 +42,7 @@ class EcommerceOrderRefund
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -62,7 +62,7 @@ class EcommerceOrderRefund
      * @param  ?string  $amount
      * @param  ?string  $reason
      * @param  ?string  $id
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */

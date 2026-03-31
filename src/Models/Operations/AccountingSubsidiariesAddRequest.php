@@ -14,7 +14,7 @@ class AccountingSubsidiariesAddRequest
 {
     /**
      *
-     * @var Components\SubsidiaryInput $subsidiary
+     * @var \Apideck\Unify\Models\Components\SubsidiaryInput $subsidiary
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\SubsidiaryInput $subsidiary;
@@ -60,7 +60,7 @@ class AccountingSubsidiariesAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\SubsidiaryInput  $subsidiary
+     * @param  \Apideck\Unify\Models\Components\SubsidiaryInput  $subsidiary
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

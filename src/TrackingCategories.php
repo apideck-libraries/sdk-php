@@ -52,8 +52,8 @@ class TrackingCategories
      *
      * Create Tracking Category
      *
-     * @param  Operations\AccountingTrackingCategoriesAddRequest  $request
-     * @return Operations\AccountingTrackingCategoriesAddResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingTrackingCategoriesAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingTrackingCategoriesAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\AccountingTrackingCategoriesAddRequest $request, ?Options $options = null): Operations\AccountingTrackingCategoriesAddResponse
@@ -227,8 +227,8 @@ class TrackingCategories
      *
      * List Tracking Categories
      *
-     * @param  ?Operations\AccountingTrackingCategoriesAllRequest  $request
-     * @return Operations\AccountingTrackingCategoriesAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingTrackingCategoriesAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingTrackingCategoriesAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AccountingTrackingCategoriesAllRequest $request = null, ?Options $options = null): Operations\AccountingTrackingCategoriesAllResponse
@@ -454,8 +454,8 @@ class TrackingCategories
      *
      * List Tracking Categories
      *
-     * @param  ?Operations\AccountingTrackingCategoriesAllRequest  $request
-     * @return \Generator<Operations\AccountingTrackingCategoriesAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingTrackingCategoriesAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AccountingTrackingCategoriesAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AccountingTrackingCategoriesAllRequest $request = null, ?Options $options = null): \Generator
@@ -472,8 +472,8 @@ class TrackingCategories
      *
      * Delete Tracking Category
      *
-     * @param  Operations\AccountingTrackingCategoriesDeleteRequest  $request
-     * @return Operations\AccountingTrackingCategoriesDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingTrackingCategoriesDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingTrackingCategoriesDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\AccountingTrackingCategoriesDeleteRequest $request, ?Options $options = null): Operations\AccountingTrackingCategoriesDeleteResponse
@@ -642,8 +642,8 @@ class TrackingCategories
      *
      * Get Tracking Category
      *
-     * @param  Operations\AccountingTrackingCategoriesOneRequest  $request
-     * @return Operations\AccountingTrackingCategoriesOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingTrackingCategoriesOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingTrackingCategoriesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AccountingTrackingCategoriesOneRequest $request, ?Options $options = null): Operations\AccountingTrackingCategoriesOneResponse
@@ -812,8 +812,8 @@ class TrackingCategories
      *
      * Update Tracking Category
      *
-     * @param  Operations\AccountingTrackingCategoriesUpdateRequest  $request
-     * @return Operations\AccountingTrackingCategoriesUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingTrackingCategoriesUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingTrackingCategoriesUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\AccountingTrackingCategoriesUpdateRequest $request, ?Options $options = null): Operations\AccountingTrackingCategoriesUpdateResponse

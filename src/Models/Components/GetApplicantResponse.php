@@ -54,7 +54,7 @@ class GetApplicantResponse
 
     /**
      *
-     * @var Applicant $data
+     * @var \Apideck\Unify\Models\Components\Applicant $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Applicant')]
@@ -76,7 +76,7 @@ class GetApplicantResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Applicant  $data
+     * @param  \Apideck\Unify\Models\Components\Applicant  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

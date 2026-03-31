@@ -20,7 +20,7 @@ class ExpenseReportsFilter
 
     /**
      *
-     * @var ?ExpenseReportsFilterStatus $status
+     * @var ?\Apideck\Unify\Models\Components\ExpenseReportsFilterStatus $status
      */
     #[SpeakeasyMetadata('queryParam:name=status')]
     public ?ExpenseReportsFilterStatus $status = null;
@@ -35,7 +35,7 @@ class ExpenseReportsFilter
 
     /**
      * @param  ?\DateTime  $updatedSince
-     * @param  ?ExpenseReportsFilterStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\ExpenseReportsFilterStatus  $status
      * @param  ?string  $employeeId
      * @phpstan-pure
      */

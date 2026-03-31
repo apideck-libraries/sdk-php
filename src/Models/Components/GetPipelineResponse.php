@@ -54,7 +54,7 @@ class GetPipelineResponse
 
     /**
      *
-     * @var Pipeline $data
+     * @var \Apideck\Unify\Models\Components\Pipeline $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Pipeline')]
@@ -76,7 +76,7 @@ class GetPipelineResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Pipeline  $data
+     * @param  \Apideck\Unify\Models\Components\Pipeline  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

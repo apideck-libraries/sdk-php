@@ -54,7 +54,7 @@ class GetOpportunityResponse
 
     /**
      *
-     * @var Opportunity $data
+     * @var \Apideck\Unify\Models\Components\Opportunity $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Opportunity')]
@@ -76,7 +76,7 @@ class GetOpportunityResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Opportunity  $data
+     * @param  \Apideck\Unify\Models\Components\Opportunity  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

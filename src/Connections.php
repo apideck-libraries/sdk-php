@@ -59,7 +59,7 @@ class Connections
      * @param  ?string  $appId
      * @param  ?string  $api
      * @param  ?bool  $configured
-     * @return Operations\VaultConnectionsAllResponse
+     * @return \Apideck\Unify\Models\Operations\VaultConnectionsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?string $consumerId = null, ?string $appId = null, ?string $api = null, ?bool $configured = null, ?Options $options = null): Operations\VaultConnectionsAllResponse
@@ -238,7 +238,7 @@ class Connections
      * @param  string  $unifiedApi
      * @param  ?string  $consumerId
      * @param  ?string  $appId
-     * @return Operations\VaultConnectionsDeleteResponse
+     * @return \Apideck\Unify\Models\Operations\VaultConnectionsDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(string $serviceId, string $unifiedApi, ?string $consumerId = null, ?string $appId = null, ?Options $options = null): Operations\VaultConnectionsDeleteResponse
@@ -401,8 +401,8 @@ class Connections
      * Import an authorized connection.
      *
      *
-     * @param  Operations\VaultConnectionsImportRequest  $request
-     * @return Operations\VaultConnectionsImportResponse
+     * @param  \Apideck\Unify\Models\Operations\VaultConnectionsImportRequest  $request
+     * @return \Apideck\Unify\Models\Operations\VaultConnectionsImportResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function imports(Operations\VaultConnectionsImportRequest $request, ?Options $options = null): Operations\VaultConnectionsImportResponse
@@ -577,7 +577,7 @@ class Connections
      * @param  string  $unifiedApi
      * @param  ?string  $consumerId
      * @param  ?string  $appId
-     * @return Operations\VaultConnectionsOneResponse
+     * @return \Apideck\Unify\Models\Operations\VaultConnectionsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(string $serviceId, string $unifiedApi, ?string $consumerId = null, ?string $appId = null, ?Options $options = null): Operations\VaultConnectionsOneResponse
@@ -755,8 +755,8 @@ class Connections
      *   - The access token will be used for subsequent API requests.
      *
      *
-     * @param  Operations\VaultConnectionsTokenRequest  $request
-     * @return Operations\VaultConnectionsTokenResponse
+     * @param  \Apideck\Unify\Models\Operations\VaultConnectionsTokenRequest  $request
+     * @return \Apideck\Unify\Models\Operations\VaultConnectionsTokenResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function token(Operations\VaultConnectionsTokenRequest $request, ?Options $options = null): Operations\VaultConnectionsTokenResponse
@@ -926,8 +926,8 @@ class Connections
      *
      * Update a connection
      *
-     * @param  Operations\VaultConnectionsUpdateRequest  $request
-     * @return Operations\VaultConnectionsUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\VaultConnectionsUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\VaultConnectionsUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\VaultConnectionsUpdateRequest $request, ?Options $options = null): Operations\VaultConnectionsUpdateResponse

@@ -55,7 +55,7 @@ class ApiResources
      * @param  string  $id
      * @param  string  $resourceId
      * @param  ?string  $appId
-     * @return Operations\ConnectorApiResourcesOneResponse
+     * @return \Apideck\Unify\Models\Operations\ConnectorApiResourcesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(string $id, string $resourceId, ?string $appId = null, ?Options $options = null): Operations\ConnectorApiResourcesOneResponse

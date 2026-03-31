@@ -31,7 +31,7 @@ class GetCustomFieldsResponse
     /**
      * $data
      *
-     * @var array<CustomFieldFinder> $data
+     * @var array<\Apideck\Unify\Models\Components\CustomFieldFinder> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomFieldFinder>')]
@@ -50,7 +50,7 @@ class GetCustomFieldsResponse
     /**
      * @param  int  $statusCode
      * @param  string  $status
-     * @param  array<CustomFieldFinder>  $data
+     * @param  array<\Apideck\Unify\Models\Components\CustomFieldFinder>  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

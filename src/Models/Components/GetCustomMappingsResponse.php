@@ -31,7 +31,7 @@ class GetCustomMappingsResponse
     /**
      * $data
      *
-     * @var array<CustomMapping> $data
+     * @var array<\Apideck\Unify\Models\Components\CustomMapping> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomMapping>')]
@@ -50,7 +50,7 @@ class GetCustomMappingsResponse
     /**
      * @param  int  $statusCode
      * @param  string  $status
-     * @param  array<CustomMapping>  $data
+     * @param  array<\Apideck\Unify\Models\Components\CustomMapping>  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

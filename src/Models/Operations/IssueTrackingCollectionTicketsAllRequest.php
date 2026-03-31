@@ -47,7 +47,7 @@ class IssueTrackingCollectionTicketsAllRequest
     /**
      * Apply sorting
      *
-     * @var ?Components\TicketsSort $sort
+     * @var ?\Apideck\Unify\Models\Components\TicketsSort $sort
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=sort')]
     public ?Components\TicketsSort $sort = null;
@@ -55,7 +55,7 @@ class IssueTrackingCollectionTicketsAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\IssuesFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\IssuesFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\IssuesFilter $filter = null;
@@ -107,8 +107,8 @@ class IssueTrackingCollectionTicketsAllRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?int  $limit
-     * @param  ?Components\TicketsSort  $sort
-     * @param  ?Components\IssuesFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\TicketsSort  $sort
+     * @param  ?\Apideck\Unify\Models\Components\IssuesFilter  $filter
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields

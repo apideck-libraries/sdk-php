@@ -52,8 +52,8 @@ class Subsidiaries
      *
      * Create Subsidiary
      *
-     * @param  Operations\AccountingSubsidiariesAddRequest  $request
-     * @return Operations\AccountingSubsidiariesAddResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingSubsidiariesAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingSubsidiariesAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\AccountingSubsidiariesAddRequest $request, ?Options $options = null): Operations\AccountingSubsidiariesAddResponse
@@ -227,8 +227,8 @@ class Subsidiaries
      *
      * List Subsidiaries
      *
-     * @param  ?Operations\AccountingSubsidiariesAllRequest  $request
-     * @return Operations\AccountingSubsidiariesAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingSubsidiariesAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingSubsidiariesAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AccountingSubsidiariesAllRequest $request = null, ?Options $options = null): Operations\AccountingSubsidiariesAllResponse
@@ -452,8 +452,8 @@ class Subsidiaries
      *
      * List Subsidiaries
      *
-     * @param  ?Operations\AccountingSubsidiariesAllRequest  $request
-     * @return \Generator<Operations\AccountingSubsidiariesAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingSubsidiariesAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AccountingSubsidiariesAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AccountingSubsidiariesAllRequest $request = null, ?Options $options = null): \Generator
@@ -470,8 +470,8 @@ class Subsidiaries
      *
      * Delete Subsidiary
      *
-     * @param  Operations\AccountingSubsidiariesDeleteRequest  $request
-     * @return Operations\AccountingSubsidiariesDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingSubsidiariesDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingSubsidiariesDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\AccountingSubsidiariesDeleteRequest $request, ?Options $options = null): Operations\AccountingSubsidiariesDeleteResponse
@@ -640,8 +640,8 @@ class Subsidiaries
      *
      * Get Subsidiary
      *
-     * @param  Operations\AccountingSubsidiariesOneRequest  $request
-     * @return Operations\AccountingSubsidiariesOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingSubsidiariesOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingSubsidiariesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AccountingSubsidiariesOneRequest $request, ?Options $options = null): Operations\AccountingSubsidiariesOneResponse
@@ -810,8 +810,8 @@ class Subsidiaries
      *
      * Update Subsidiary
      *
-     * @param  Operations\AccountingSubsidiariesUpdateRequest  $request
-     * @return Operations\AccountingSubsidiariesUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingSubsidiariesUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingSubsidiariesUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\AccountingSubsidiariesUpdateRequest $request, ?Options $options = null): Operations\AccountingSubsidiariesUpdateResponse

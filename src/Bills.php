@@ -52,8 +52,8 @@ class Bills
      *
      * Create Bill
      *
-     * @param  Operations\AccountingBillsAddRequest  $request
-     * @return Operations\AccountingBillsAddResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingBillsAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingBillsAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\AccountingBillsAddRequest $request, ?Options $options = null): Operations\AccountingBillsAddResponse
@@ -227,8 +227,8 @@ class Bills
      *
      * List Bills
      *
-     * @param  ?Operations\AccountingBillsAllRequest  $request
-     * @return Operations\AccountingBillsAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingBillsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingBillsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AccountingBillsAllRequest $request = null, ?Options $options = null): Operations\AccountingBillsAllResponse
@@ -458,8 +458,8 @@ class Bills
      *
      * List Bills
      *
-     * @param  ?Operations\AccountingBillsAllRequest  $request
-     * @return \Generator<Operations\AccountingBillsAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingBillsAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AccountingBillsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AccountingBillsAllRequest $request = null, ?Options $options = null): \Generator
@@ -476,8 +476,8 @@ class Bills
      *
      * Delete Bill
      *
-     * @param  Operations\AccountingBillsDeleteRequest  $request
-     * @return Operations\AccountingBillsDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingBillsDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingBillsDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\AccountingBillsDeleteRequest $request, ?Options $options = null): Operations\AccountingBillsDeleteResponse
@@ -646,8 +646,8 @@ class Bills
      *
      * Get Bill
      *
-     * @param  Operations\AccountingBillsOneRequest  $request
-     * @return Operations\AccountingBillsOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingBillsOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingBillsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AccountingBillsOneRequest $request, ?Options $options = null): Operations\AccountingBillsOneResponse
@@ -816,8 +816,8 @@ class Bills
      *
      * Update Bill
      *
-     * @param  Operations\AccountingBillsUpdateRequest  $request
-     * @return Operations\AccountingBillsUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingBillsUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingBillsUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\AccountingBillsUpdateRequest $request, ?Options $options = null): Operations\AccountingBillsUpdateResponse

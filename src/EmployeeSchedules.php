@@ -52,8 +52,8 @@ class EmployeeSchedules
      *
      * List schedules for employee, a schedule is a work pattern, not the actual worked hours, for an employee.
      *
-     * @param  Operations\HrisEmployeeSchedulesAllRequest  $request
-     * @return Operations\HrisEmployeeSchedulesAllResponse
+     * @param  \Apideck\Unify\Models\Operations\HrisEmployeeSchedulesAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\HrisEmployeeSchedulesAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(Operations\HrisEmployeeSchedulesAllRequest $request, ?Options $options = null): Operations\HrisEmployeeSchedulesAllResponse

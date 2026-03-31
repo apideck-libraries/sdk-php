@@ -30,7 +30,7 @@ class GetConnectorResponse
 
     /**
      *
-     * @var Connector $data
+     * @var \Apideck\Unify\Models\Components\Connector $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Connector')]
@@ -39,7 +39,7 @@ class GetConnectorResponse
     /**
      * Response metadata
      *
-     * @var ?Meta $meta
+     * @var ?\Apideck\Unify\Models\Components\Meta $meta
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('meta')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Meta|null')]
@@ -49,7 +49,7 @@ class GetConnectorResponse
     /**
      * Links to navigate to previous or next pages through the API
      *
-     * @var ?Links $links
+     * @var ?\Apideck\Unify\Models\Components\Links $links
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('links')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Links|null')]
@@ -69,9 +69,9 @@ class GetConnectorResponse
     /**
      * @param  int  $statusCode
      * @param  string  $status
-     * @param  Connector  $data
-     * @param  ?Meta  $meta
-     * @param  ?Links  $links
+     * @param  \Apideck\Unify\Models\Components\Connector  $data
+     * @param  ?\Apideck\Unify\Models\Components\Meta  $meta
+     * @param  ?\Apideck\Unify\Models\Components\Links  $links
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

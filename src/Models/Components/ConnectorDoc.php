@@ -32,7 +32,7 @@ class ConnectorDoc
     /**
      * Audience for the doc.
      *
-     * @var ?Audience $audience
+     * @var ?\Apideck\Unify\Models\Components\Audience $audience
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('audience')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Audience|null')]
@@ -42,7 +42,7 @@ class ConnectorDoc
     /**
      * Format of the doc.
      *
-     * @var ?Format $format
+     * @var ?\Apideck\Unify\Models\Components\Format $format
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('format')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Format|null')]
@@ -61,8 +61,8 @@ class ConnectorDoc
     /**
      * @param  ?string  $id
      * @param  ?string  $name
-     * @param  ?Audience  $audience
-     * @param  ?Format  $format
+     * @param  ?\Apideck\Unify\Models\Components\Audience  $audience
+     * @param  ?\Apideck\Unify\Models\Components\Format  $format
      * @param  ?string  $url
      * @phpstan-pure
      */

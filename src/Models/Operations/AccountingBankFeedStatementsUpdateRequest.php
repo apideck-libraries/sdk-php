@@ -22,7 +22,7 @@ class AccountingBankFeedStatementsUpdateRequest
 
     /**
      *
-     * @var Components\BankFeedStatementInput $bankFeedStatement
+     * @var \Apideck\Unify\Models\Components\BankFeedStatementInput $bankFeedStatement
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\BankFeedStatementInput $bankFeedStatement;
@@ -61,7 +61,7 @@ class AccountingBankFeedStatementsUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\BankFeedStatementInput  $bankFeedStatement
+     * @param  \Apideck\Unify\Models\Components\BankFeedStatementInput  $bankFeedStatement
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

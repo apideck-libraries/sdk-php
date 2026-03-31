@@ -50,7 +50,7 @@ class ConnectorResource
     /**
      * Status of the resource. Resources with status live or beta are callable.
      *
-     * @var ?ResourceStatus $status
+     * @var ?\Apideck\Unify\Models\Components\ResourceStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ResourceStatus|null')]
@@ -68,7 +68,7 @@ class ConnectorResource
 
     /**
      *
-     * @var ?PaginationCoverage $pagination
+     * @var ?\Apideck\Unify\Models\Components\PaginationCoverage $pagination
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pagination')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\PaginationCoverage|null')]
@@ -127,7 +127,7 @@ class ConnectorResource
     /**
      * Supported fields on the detail endpoint.
      *
-     * @var ?array<SupportedProperty> $supportedFields
+     * @var ?array<\Apideck\Unify\Models\Components\SupportedProperty> $supportedFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('supported_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\SupportedProperty>|null')]
@@ -137,7 +137,7 @@ class ConnectorResource
     /**
      * Supported fields on the list endpoint.
      *
-     * @var ?array<SupportedProperty> $supportedListFields
+     * @var ?array<\Apideck\Unify\Models\Components\SupportedProperty> $supportedListFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('supported_list_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\SupportedProperty>|null')]
@@ -149,16 +149,16 @@ class ConnectorResource
      * @param  ?string  $name
      * @param  ?string  $downstreamId
      * @param  ?string  $downstreamName
-     * @param  ?ResourceStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\ResourceStatus  $status
      * @param  ?bool  $paginationSupported
-     * @param  ?PaginationCoverage  $pagination
+     * @param  ?\Apideck\Unify\Models\Components\PaginationCoverage  $pagination
      * @param  ?bool  $customFieldsSupported
      * @param  ?array<string>  $supportedOperations
      * @param  ?array<string>  $downstreamUnsupportedOperations
      * @param  ?array<string>  $supportedFilters
      * @param  ?array<string>  $supportedSortBy
-     * @param  ?array<SupportedProperty>  $supportedFields
-     * @param  ?array<SupportedProperty>  $supportedListFields
+     * @param  ?array<\Apideck\Unify\Models\Components\SupportedProperty>  $supportedFields
+     * @param  ?array<\Apideck\Unify\Models\Components\SupportedProperty>  $supportedListFields
      * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?string $downstreamId = null, ?string $downstreamName = null, ?ResourceStatus $status = null, ?bool $paginationSupported = null, ?PaginationCoverage $pagination = null, ?bool $customFieldsSupported = null, ?array $supportedOperations = null, ?array $downstreamUnsupportedOperations = null, ?array $supportedFilters = null, ?array $supportedSortBy = null, ?array $supportedFields = null, ?array $supportedListFields = null)

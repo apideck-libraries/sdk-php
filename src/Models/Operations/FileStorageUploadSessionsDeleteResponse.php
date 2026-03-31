@@ -13,7 +13,7 @@ class FileStorageUploadSessionsDeleteResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class FileStorageUploadSessionsDeleteResponse
     /**
      * UploadSessions
      *
-     * @var ?Components\DeleteUploadSessionResponse $deleteUploadSessionResponse
+     * @var ?\Apideck\Unify\Models\Components\DeleteUploadSessionResponse $deleteUploadSessionResponse
      */
     public ?Components\DeleteUploadSessionResponse $deleteUploadSessionResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\DeleteUploadSessionResponse  $deleteUploadSessionResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\DeleteUploadSessionResponse  $deleteUploadSessionResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteUploadSessionResponse $deleteUploadSessionResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

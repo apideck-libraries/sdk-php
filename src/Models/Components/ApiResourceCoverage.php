@@ -32,7 +32,7 @@ class ApiResourceCoverage
     /**
      * Status of the resource. Resources with status live or beta are callable.
      *
-     * @var ?ResourceStatus $status
+     * @var ?\Apideck\Unify\Models\Components\ResourceStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ResourceStatus|null')]
@@ -42,7 +42,7 @@ class ApiResourceCoverage
     /**
      * $coverage
      *
-     * @var ?array<Coverage> $coverage
+     * @var ?array<\Apideck\Unify\Models\Components\Coverage> $coverage
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('coverage')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Coverage>|null')]
@@ -52,8 +52,8 @@ class ApiResourceCoverage
     /**
      * @param  ?string  $id
      * @param  ?string  $name
-     * @param  ?ResourceStatus  $status
-     * @param  ?array<Coverage>  $coverage
+     * @param  ?\Apideck\Unify\Models\Components\ResourceStatus  $status
+     * @param  ?array<\Apideck\Unify\Models\Components\Coverage>  $coverage
      * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?ResourceStatus $status = null, ?array $coverage = null)

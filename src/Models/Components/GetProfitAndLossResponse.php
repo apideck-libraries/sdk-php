@@ -54,7 +54,7 @@ class GetProfitAndLossResponse
 
     /**
      *
-     * @var ProfitAndLoss $data
+     * @var \Apideck\Unify\Models\Components\ProfitAndLoss $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ProfitAndLoss')]
@@ -76,7 +76,7 @@ class GetProfitAndLossResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  ProfitAndLoss  $data
+     * @param  \Apideck\Unify\Models\Components\ProfitAndLoss  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

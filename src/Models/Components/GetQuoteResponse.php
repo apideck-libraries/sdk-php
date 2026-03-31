@@ -54,7 +54,7 @@ class GetQuoteResponse
 
     /**
      *
-     * @var Quote $data
+     * @var \Apideck\Unify\Models\Components\Quote $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Quote')]
@@ -66,7 +66,7 @@ class GetQuoteResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Quote  $data
+     * @param  \Apideck\Unify\Models\Components\Quote  $data
      * @phpstan-pure
      */
     public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, Quote $data)

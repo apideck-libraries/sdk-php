@@ -52,8 +52,8 @@ class CompanyInfo
      *
      * Get company info
      *
-     * @param  ?Operations\AccountingCompanyInfoOneRequest  $request
-     * @return Operations\AccountingCompanyInfoOneResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingCompanyInfoOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingCompanyInfoOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(?Operations\AccountingCompanyInfoOneRequest $request = null, ?Options $options = null): Operations\AccountingCompanyInfoOneResponse

@@ -32,7 +32,7 @@ class ApiResource
     /**
      * Status of the resource. Resources with status live or beta are callable.
      *
-     * @var ?ResourceStatus $status
+     * @var ?\Apideck\Unify\Models\Components\ResourceStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ResourceStatus|null')]
@@ -42,7 +42,7 @@ class ApiResource
     /**
      * List of linked resources.
      *
-     * @var ?array<LinkedResources> $linkedResources
+     * @var ?array<\Apideck\Unify\Models\Components\LinkedResources> $linkedResources
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('linked_resources')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedResources>|null')]
@@ -52,7 +52,7 @@ class ApiResource
     /**
      * JSON Schema of the resource in our Unified API
      *
-     * @var ?Schema $schema
+     * @var ?\Apideck\Unify\Models\Components\Schema $schema
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('schema')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Schema|null')]
@@ -62,9 +62,9 @@ class ApiResource
     /**
      * @param  ?string  $id
      * @param  ?string  $name
-     * @param  ?ResourceStatus  $status
-     * @param  ?array<LinkedResources>  $linkedResources
-     * @param  ?Schema  $schema
+     * @param  ?\Apideck\Unify\Models\Components\ResourceStatus  $status
+     * @param  ?array<\Apideck\Unify\Models\Components\LinkedResources>  $linkedResources
+     * @param  ?\Apideck\Unify\Models\Components\Schema  $schema
      * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?ResourceStatus $status = null, ?array $linkedResources = null, ?Schema $schema = null)

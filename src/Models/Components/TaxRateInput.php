@@ -23,7 +23,7 @@ class TaxRateInput
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -33,7 +33,7 @@ class TaxRateInput
     /**
      * The subsidiaries this belongs to.
      *
-     * @var ?array<Subsidiaries> $subsidiaries
+     * @var ?array<\Apideck\Unify\Models\Components\Subsidiaries> $subsidiaries
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiaries')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Subsidiaries>|null')]
@@ -43,7 +43,7 @@ class TaxRateInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -134,7 +134,7 @@ class TaxRateInput
     /**
      * $components
      *
-     * @var ?array<Components> $components
+     * @var ?array<\Apideck\Unify\Models\Components\Components> $components
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('components')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Components>|null')]
@@ -171,7 +171,7 @@ class TaxRateInput
     /**
      * Tax rate status
      *
-     * @var ?TaxRateStatus $status
+     * @var ?\Apideck\Unify\Models\Components\TaxRateStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\TaxRateStatus|null')]
@@ -189,9 +189,9 @@ class TaxRateInput
 
     /**
      * @param  ?string  $name
-     * @param  ?array<PassThroughBody>  $passThrough
-     * @param  ?array<Subsidiaries>  $subsidiaries
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
+     * @param  ?array<\Apideck\Unify\Models\Components\Subsidiaries>  $subsidiaries
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
      * @param  ?string  $id
      * @param  ?string  $displayId
      * @param  ?string  $code
@@ -201,11 +201,11 @@ class TaxRateInput
      * @param  ?float  $totalTaxRate
      * @param  ?string  $taxPayableAccountId
      * @param  ?string  $taxRemittedAccountId
-     * @param  ?array<Components>  $components
+     * @param  ?array<\Apideck\Unify\Models\Components\Components>  $components
      * @param  ?string  $type
      * @param  ?string  $reportTaxType
      * @param  ?string  $originalTaxRateId
-     * @param  ?TaxRateStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\TaxRateStatus  $status
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */

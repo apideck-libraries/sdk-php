@@ -52,8 +52,8 @@ class Payrolls
      *
      * List Payroll
      *
-     * @param  ?Operations\HrisPayrollsAllRequest  $request
-     * @return Operations\HrisPayrollsAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\HrisPayrollsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\HrisPayrollsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\HrisPayrollsAllRequest $request = null, ?Options $options = null): Operations\HrisPayrollsAllResponse
@@ -222,8 +222,8 @@ class Payrolls
      *
      * Get Payroll
      *
-     * @param  Operations\HrisPayrollsOneRequest  $request
-     * @return Operations\HrisPayrollsOneResponse
+     * @param  \Apideck\Unify\Models\Operations\HrisPayrollsOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\HrisPayrollsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\HrisPayrollsOneRequest $request, ?Options $options = null): Operations\HrisPayrollsOneResponse

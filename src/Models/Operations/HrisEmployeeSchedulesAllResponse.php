@@ -13,7 +13,7 @@ class HrisEmployeeSchedulesAllResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class HrisEmployeeSchedulesAllResponse
     /**
      * EmployeeSchedules
      *
-     * @var ?Components\GetEmployeeSchedulesResponse $getEmployeeSchedulesResponse
+     * @var ?\Apideck\Unify\Models\Components\GetEmployeeSchedulesResponse $getEmployeeSchedulesResponse
      */
     public ?Components\GetEmployeeSchedulesResponse $getEmployeeSchedulesResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetEmployeeSchedulesResponse  $getEmployeeSchedulesResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetEmployeeSchedulesResponse  $getEmployeeSchedulesResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetEmployeeSchedulesResponse $getEmployeeSchedulesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

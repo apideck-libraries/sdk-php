@@ -56,8 +56,8 @@ class Attachments
      *
      * List Attachments
      *
-     * @param  Operations\AccountingAttachmentsAllRequest  $request
-     * @return Operations\AccountingAttachmentsAllResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingAttachmentsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingAttachmentsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(Operations\AccountingAttachmentsAllRequest $request, ?Options $options = null): Operations\AccountingAttachmentsAllResponse
@@ -285,8 +285,8 @@ class Attachments
      *
      * List Attachments
      *
-     * @param  Operations\AccountingAttachmentsAllRequest  $request
-     * @return \Generator<Operations\AccountingAttachmentsAllResponse>
+     * @param  \Apideck\Unify\Models\Operations\AccountingAttachmentsAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AccountingAttachmentsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(Operations\AccountingAttachmentsAllRequest $request, ?Options $options = null): \Generator
@@ -303,8 +303,8 @@ class Attachments
      *
      * Delete Attachment
      *
-     * @param  Operations\AccountingAttachmentsDeleteRequest  $request
-     * @return Operations\AccountingAttachmentsDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingAttachmentsDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingAttachmentsDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\AccountingAttachmentsDeleteRequest $request, ?Options $options = null): Operations\AccountingAttachmentsDeleteResponse
@@ -473,8 +473,8 @@ class Attachments
      *
      * Download Attachment
      *
-     * @param  Operations\AccountingAttachmentsDownloadRequest  $request
-     * @return Operations\AccountingAttachmentsDownloadResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingAttachmentsDownloadRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingAttachmentsDownloadResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function download(Operations\AccountingAttachmentsDownloadRequest $request, ?Options $options = null): Operations\AccountingAttachmentsDownloadResponse
@@ -640,8 +640,8 @@ class Attachments
      *
      * Get Attachment
      *
-     * @param  Operations\AccountingAttachmentsOneRequest  $request
-     * @return Operations\AccountingAttachmentsOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingAttachmentsOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingAttachmentsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AccountingAttachmentsOneRequest $request, ?Options $options = null): Operations\AccountingAttachmentsOneResponse
@@ -810,9 +810,9 @@ class Attachments
      *
      * Upload attachment
      *
-     * @param  Operations\AccountingAttachmentsUploadRequest  $request
+     * @param  \Apideck\Unify\Models\Operations\AccountingAttachmentsUploadRequest  $request
      * @param  ?string  $serverURL
-     * @return Operations\AccountingAttachmentsUploadResponse
+     * @return \Apideck\Unify\Models\Operations\AccountingAttachmentsUploadResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function upload(Operations\AccountingAttachmentsUploadRequest $request, ?string $serverURL = null, ?Options $options = null): Operations\AccountingAttachmentsUploadResponse

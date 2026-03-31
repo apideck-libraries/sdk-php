@@ -14,7 +14,7 @@ class AccountingBankAccountInput
     /**
      * The type of bank account
      *
-     * @var ?AccountingBankAccountAccountType $accountType
+     * @var ?\Apideck\Unify\Models\Components\AccountingBankAccountAccountType $accountType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('account_type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\AccountingBankAccountAccountType|null')]
@@ -24,7 +24,7 @@ class AccountingBankAccountInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -60,7 +60,7 @@ class AccountingBankAccountInput
 
     /**
      *
-     * @var ?LinkedLedgerAccount $ledgerAccount
+     * @var ?\Apideck\Unify\Models\Components\LinkedLedgerAccount $ledgerAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('ledger_account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
@@ -79,7 +79,7 @@ class AccountingBankAccountInput
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -179,7 +179,7 @@ class AccountingBankAccountInput
     /**
      * The status of the bank account
      *
-     * @var ?AccountingBankAccountStatus $status
+     * @var ?\Apideck\Unify\Models\Components\AccountingBankAccountStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\AccountingBankAccountStatus|null')]
@@ -196,14 +196,14 @@ class AccountingBankAccountInput
     public ?string $description = null;
 
     /**
-     * @param  ?AccountingBankAccountAccountType  $accountType
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?\Apideck\Unify\Models\Components\AccountingBankAccountAccountType  $accountType
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
      * @param  ?string  $displayId
      * @param  ?string  $name
      * @param  ?string  $accountNumber
-     * @param  ?LinkedLedgerAccount  $ledgerAccount
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $ledgerAccount
      * @param  ?string  $bankName
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?float  $balance
      * @param  ?float  $availableBalance
      * @param  ?float  $overdraftLimit
@@ -214,7 +214,7 @@ class AccountingBankAccountInput
      * @param  ?string  $branchIdentifier
      * @param  ?string  $bankCode
      * @param  ?string  $country
-     * @param  ?AccountingBankAccountStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\AccountingBankAccountStatus  $status
      * @param  ?string  $description
      * @phpstan-pure
      */

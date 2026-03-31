@@ -13,7 +13,7 @@ class AtsApplicantsDeleteResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class AtsApplicantsDeleteResponse
     /**
      * Applicants
      *
-     * @var ?Components\DeleteApplicantResponse $deleteApplicantResponse
+     * @var ?\Apideck\Unify\Models\Components\DeleteApplicantResponse $deleteApplicantResponse
      */
     public ?Components\DeleteApplicantResponse $deleteApplicantResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\DeleteApplicantResponse  $deleteApplicantResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\DeleteApplicantResponse  $deleteApplicantResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteApplicantResponse $deleteApplicantResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

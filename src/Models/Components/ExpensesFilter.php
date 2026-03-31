@@ -20,22 +20,22 @@ class ExpensesFilter
 
     /**
      *
-     * @var ?ExpensesFilterStatus $status
+     * @var ?\Apideck\Unify\Models\Components\ExpensesFilterStatus $status
      */
     #[SpeakeasyMetadata('queryParam:name=status')]
     public ?ExpensesFilterStatus $status = null;
 
     /**
      *
-     * @var ?ExpensesFilterType $type
+     * @var ?\Apideck\Unify\Models\Components\ExpensesFilterType $type
      */
     #[SpeakeasyMetadata('queryParam:name=type')]
     public ?ExpensesFilterType $type = null;
 
     /**
      * @param  ?\DateTime  $updatedSince
-     * @param  ?ExpensesFilterStatus  $status
-     * @param  ?ExpensesFilterType  $type
+     * @param  ?\Apideck\Unify\Models\Components\ExpensesFilterStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\ExpensesFilterType  $type
      * @phpstan-pure
      */
     public function __construct(?\DateTime $updatedSince = null, ?ExpensesFilterStatus $status = null, ?ExpensesFilterType $type = null)

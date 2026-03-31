@@ -52,8 +52,8 @@ class BankAccounts
      *
      * Create Bank Account
      *
-     * @param  Operations\AccountingBankAccountsAddRequest  $request
-     * @return Operations\AccountingBankAccountsAddResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingBankAccountsAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingBankAccountsAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\AccountingBankAccountsAddRequest $request, ?Options $options = null): Operations\AccountingBankAccountsAddResponse
@@ -227,8 +227,8 @@ class BankAccounts
      *
      * List Bank Accounts
      *
-     * @param  ?Operations\AccountingBankAccountsAllRequest  $request
-     * @return Operations\AccountingBankAccountsAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingBankAccountsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingBankAccountsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AccountingBankAccountsAllRequest $request = null, ?Options $options = null): Operations\AccountingBankAccountsAllResponse
@@ -458,8 +458,8 @@ class BankAccounts
      *
      * List Bank Accounts
      *
-     * @param  ?Operations\AccountingBankAccountsAllRequest  $request
-     * @return \Generator<Operations\AccountingBankAccountsAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingBankAccountsAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AccountingBankAccountsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AccountingBankAccountsAllRequest $request = null, ?Options $options = null): \Generator
@@ -476,8 +476,8 @@ class BankAccounts
      *
      * Delete Bank Account
      *
-     * @param  Operations\AccountingBankAccountsDeleteRequest  $request
-     * @return Operations\AccountingBankAccountsDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingBankAccountsDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingBankAccountsDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\AccountingBankAccountsDeleteRequest $request, ?Options $options = null): Operations\AccountingBankAccountsDeleteResponse
@@ -646,8 +646,8 @@ class BankAccounts
      *
      * Get Bank Account
      *
-     * @param  Operations\AccountingBankAccountsOneRequest  $request
-     * @return Operations\AccountingBankAccountsOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingBankAccountsOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingBankAccountsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AccountingBankAccountsOneRequest $request, ?Options $options = null): Operations\AccountingBankAccountsOneResponse
@@ -816,8 +816,8 @@ class BankAccounts
      *
      * Update Bank Account
      *
-     * @param  Operations\AccountingBankAccountsUpdateRequest  $request
-     * @return Operations\AccountingBankAccountsUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingBankAccountsUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingBankAccountsUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\AccountingBankAccountsUpdateRequest $request, ?Options $options = null): Operations\AccountingBankAccountsUpdateResponse

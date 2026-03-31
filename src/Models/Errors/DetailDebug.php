@@ -15,7 +15,7 @@ class DetailDebug
     /**
      * HTTP request details
      *
-     * @var ?DetailRequest $request
+     * @var ?\Apideck\Unify\Models\Errors\DetailRequest $request
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('request')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Errors\DetailRequest|null')]
@@ -25,7 +25,7 @@ class DetailDebug
     /**
      * HTTP response details
      *
-     * @var ?DetailResponse $response
+     * @var ?\Apideck\Unify\Models\Errors\DetailResponse $response
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('response')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Errors\DetailResponse|null')]
@@ -78,8 +78,8 @@ class DetailDebug
     public ?float $cooldownRemainingMs = null;
 
     /**
-     * @param  ?DetailRequest  $request
-     * @param  ?DetailResponse  $response
+     * @param  ?\Apideck\Unify\Models\Errors\DetailRequest  $request
+     * @param  ?\Apideck\Unify\Models\Errors\DetailResponse  $response
      * @param  ?string  $message
      * @param  ?string  $code
      * @param  ?float  $credentialsExpireAtMs

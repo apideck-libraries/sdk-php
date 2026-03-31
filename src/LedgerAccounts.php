@@ -52,8 +52,8 @@ class LedgerAccounts
      *
      * Create Ledger Account
      *
-     * @param  Operations\AccountingLedgerAccountsAddRequest  $request
-     * @return Operations\AccountingLedgerAccountsAddResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingLedgerAccountsAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingLedgerAccountsAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\AccountingLedgerAccountsAddRequest $request, ?Options $options = null): Operations\AccountingLedgerAccountsAddResponse
@@ -227,8 +227,8 @@ class LedgerAccounts
      *
      * List Ledger Accounts
      *
-     * @param  ?Operations\AccountingLedgerAccountsAllRequest  $request
-     * @return Operations\AccountingLedgerAccountsAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingLedgerAccountsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingLedgerAccountsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AccountingLedgerAccountsAllRequest $request = null, ?Options $options = null): Operations\AccountingLedgerAccountsAllResponse
@@ -458,8 +458,8 @@ class LedgerAccounts
      *
      * List Ledger Accounts
      *
-     * @param  ?Operations\AccountingLedgerAccountsAllRequest  $request
-     * @return \Generator<Operations\AccountingLedgerAccountsAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingLedgerAccountsAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AccountingLedgerAccountsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AccountingLedgerAccountsAllRequest $request = null, ?Options $options = null): \Generator
@@ -476,8 +476,8 @@ class LedgerAccounts
      *
      * Delete Ledger Account
      *
-     * @param  Operations\AccountingLedgerAccountsDeleteRequest  $request
-     * @return Operations\AccountingLedgerAccountsDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingLedgerAccountsDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingLedgerAccountsDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\AccountingLedgerAccountsDeleteRequest $request, ?Options $options = null): Operations\AccountingLedgerAccountsDeleteResponse
@@ -646,8 +646,8 @@ class LedgerAccounts
      *
      * Get Ledger Account
      *
-     * @param  Operations\AccountingLedgerAccountsOneRequest  $request
-     * @return Operations\AccountingLedgerAccountsOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingLedgerAccountsOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingLedgerAccountsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AccountingLedgerAccountsOneRequest $request, ?Options $options = null): Operations\AccountingLedgerAccountsOneResponse
@@ -816,8 +816,8 @@ class LedgerAccounts
      *
      * Update Ledger Account
      *
-     * @param  Operations\AccountingLedgerAccountsUpdateRequest  $request
-     * @return Operations\AccountingLedgerAccountsUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingLedgerAccountsUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingLedgerAccountsUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\AccountingLedgerAccountsUpdateRequest $request, ?Options $options = null): Operations\AccountingLedgerAccountsUpdateResponse

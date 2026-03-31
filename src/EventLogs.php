@@ -55,8 +55,8 @@ class EventLogs
      * @param  ?string  $appId
      * @param  ?string  $cursor
      * @param  ?int  $limit
-     * @param  ?Components\WebhookEventLogsFilter  $filter
-     * @return Operations\WebhookEventLogsAllResponse
+     * @param  ?\Apideck\Unify\Models\Components\WebhookEventLogsFilter  $filter
+     * @return \Apideck\Unify\Models\Operations\WebhookEventLogsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?string $appId = null, ?string $cursor = null, ?int $limit = null, ?Components\WebhookEventLogsFilter $filter = null, ?Options $options = null): Operations\WebhookEventLogsAllResponse
@@ -277,8 +277,8 @@ class EventLogs
      * @param  ?string  $appId
      * @param  ?string  $cursor
      * @param  ?int  $limit
-     * @param  ?Components\WebhookEventLogsFilter  $filter
-     * @return \Generator<Operations\WebhookEventLogsAllResponse>
+     * @param  ?\Apideck\Unify\Models\Components\WebhookEventLogsFilter  $filter
+     * @return \Generator<\Apideck\Unify\Models\Operations\WebhookEventLogsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?string $appId = null, ?string $cursor = null, ?int $limit = null, ?Components\WebhookEventLogsFilter $filter = null, ?Options $options = null): \Generator

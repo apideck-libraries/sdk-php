@@ -41,7 +41,7 @@ class Opportunity
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -60,7 +60,7 @@ class Opportunity
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -106,7 +106,7 @@ class Opportunity
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -398,14 +398,14 @@ class Opportunity
      * @param  string  $title
      * @param  ?string  $id
      * @param  ?array<string>  $contactIds
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
      * @param  ?bool  $deleted
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $primaryContactId
      * @param  ?string  $description
      * @param  ?string  $type
      * @param  ?float  $monetaryAmount
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?float  $winProbability
      * @param  ?float  $expectedRevenue
      * @param  ?LocalDate  $closeDate

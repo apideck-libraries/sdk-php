@@ -52,8 +52,8 @@ class Projects
      *
      * Create project
      *
-     * @param  Operations\AccountingProjectsAddRequest  $request
-     * @return Operations\AccountingProjectsAddResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingProjectsAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingProjectsAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\AccountingProjectsAddRequest $request, ?Options $options = null): Operations\AccountingProjectsAddResponse
@@ -227,8 +227,8 @@ class Projects
      *
      * List projects
      *
-     * @param  ?Operations\AccountingProjectsAllRequest  $request
-     * @return Operations\AccountingProjectsAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingProjectsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingProjectsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AccountingProjectsAllRequest $request = null, ?Options $options = null): Operations\AccountingProjectsAllResponse
@@ -458,8 +458,8 @@ class Projects
      *
      * List projects
      *
-     * @param  ?Operations\AccountingProjectsAllRequest  $request
-     * @return \Generator<Operations\AccountingProjectsAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingProjectsAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AccountingProjectsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AccountingProjectsAllRequest $request = null, ?Options $options = null): \Generator
@@ -476,8 +476,8 @@ class Projects
      *
      * Delete project
      *
-     * @param  Operations\AccountingProjectsDeleteRequest  $request
-     * @return Operations\AccountingProjectsDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingProjectsDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingProjectsDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\AccountingProjectsDeleteRequest $request, ?Options $options = null): Operations\AccountingProjectsDeleteResponse
@@ -646,8 +646,8 @@ class Projects
      *
      * Get project
      *
-     * @param  Operations\AccountingProjectsOneRequest  $request
-     * @return Operations\AccountingProjectsOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingProjectsOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingProjectsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AccountingProjectsOneRequest $request, ?Options $options = null): Operations\AccountingProjectsOneResponse
@@ -816,8 +816,8 @@ class Projects
      *
      * Update project
      *
-     * @param  Operations\AccountingProjectsUpdateRequest  $request
-     * @return Operations\AccountingProjectsUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingProjectsUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingProjectsUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\AccountingProjectsUpdateRequest $request, ?Options $options = null): Operations\AccountingProjectsUpdateResponse

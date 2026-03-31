@@ -13,7 +13,7 @@ class EmployeeInput
 {
     /**
      *
-     * @var ?PersonInput $partner
+     * @var ?\Apideck\Unify\Models\Components\PersonInput $partner
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\PersonInput|null')]
@@ -22,7 +22,7 @@ class EmployeeInput
 
     /**
      *
-     * @var ?EmploymentRole $employmentRole
+     * @var ?\Apideck\Unify\Models\Components\EmploymentRole $employmentRole
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('employment_role')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EmploymentRole|null')]
@@ -31,7 +31,7 @@ class EmployeeInput
 
     /**
      *
-     * @var ?Manager $manager
+     * @var ?\Apideck\Unify\Models\Components\Manager $manager
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('manager')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Manager|null')]
@@ -61,7 +61,7 @@ class EmployeeInput
     /**
      * $addresses
      *
-     * @var ?array<Address> $addresses
+     * @var ?array<\Apideck\Unify\Models\Components\Address> $addresses
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('addresses')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Address>|null')]
@@ -71,7 +71,7 @@ class EmployeeInput
     /**
      * $phoneNumbers
      *
-     * @var ?array<PhoneNumber> $phoneNumbers
+     * @var ?array<\Apideck\Unify\Models\Components\PhoneNumber> $phoneNumbers
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('phone_numbers')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PhoneNumber>|null')]
@@ -81,7 +81,7 @@ class EmployeeInput
     /**
      * $emails
      *
-     * @var ?array<Email> $emails
+     * @var ?array<\Apideck\Unify\Models\Components\Email> $emails
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('emails')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Email>|null')]
@@ -91,7 +91,7 @@ class EmployeeInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -101,7 +101,7 @@ class EmployeeInput
     /**
      * $socialLinks
      *
-     * @var ?array<SocialLink> $socialLinks
+     * @var ?array<\Apideck\Unify\Models\Components\SocialLink> $socialLinks
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('social_links')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\SocialLink>|null')]
@@ -111,7 +111,7 @@ class EmployeeInput
     /**
      * $bankAccounts
      *
-     * @var ?array<BankAccount2> $bankAccounts
+     * @var ?array<\Apideck\Unify\Models\Components\BankAccount2> $bankAccounts
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('bank_accounts')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\BankAccount2>|null')]
@@ -120,7 +120,7 @@ class EmployeeInput
 
     /**
      *
-     * @var ?ProbationPeriod $probationPeriod
+     * @var ?\Apideck\Unify\Models\Components\ProbationPeriod $probationPeriod
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('probation_period')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ProbationPeriod|null')]
@@ -130,7 +130,7 @@ class EmployeeInput
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -276,7 +276,7 @@ class EmployeeInput
     /**
      * The team the person is currently in.
      *
-     * @var ?Team $team
+     * @var ?\Apideck\Unify\Models\Components\Team $team
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('team')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Team|null')]
@@ -322,7 +322,7 @@ class EmployeeInput
     /**
      * The reason because the employment ended.
      *
-     * @var ?LeavingReason $leavingReason
+     * @var ?\Apideck\Unify\Models\Components\LeavingReason $leavingReason
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('leaving_reason')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LeavingReason|null')]
@@ -341,7 +341,7 @@ class EmployeeInput
     /**
      * The employment status of the employee, indicating whether they are currently employed, inactive, terminated, or in another status.
      *
-     * @var ?EmploymentStatus $employmentStatus
+     * @var ?\Apideck\Unify\Models\Components\EmploymentStatus $employmentStatus
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('employment_status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EmploymentStatus|null')]
@@ -415,7 +415,7 @@ class EmployeeInput
     /**
      * The gender represents the gender identity of a person.
      *
-     * @var ?Gender $gender
+     * @var ?\Apideck\Unify\Models\Components\Gender $gender
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('gender')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Gender|null')]
@@ -487,7 +487,7 @@ class EmployeeInput
     /**
      * $jobs
      *
-     * @var ?array<EmployeeJobInput> $jobs
+     * @var ?array<\Apideck\Unify\Models\Components\EmployeeJobInput> $jobs
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('jobs')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EmployeeJobInput>|null')]
@@ -497,7 +497,7 @@ class EmployeeInput
     /**
      * $compensations
      *
-     * @var ?array<EmployeeCompensationInput> $compensations
+     * @var ?array<\Apideck\Unify\Models\Components\EmployeeCompensationInput> $compensations
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('compensations')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EmployeeCompensationInput>|null')]
@@ -577,19 +577,19 @@ class EmployeeInput
     public ?bool $deleted = null;
 
     /**
-     * @param  ?PersonInput  $partner
-     * @param  ?EmploymentRole  $employmentRole
-     * @param  ?Manager  $manager
+     * @param  ?\Apideck\Unify\Models\Components\PersonInput  $partner
+     * @param  ?\Apideck\Unify\Models\Components\EmploymentRole  $employmentRole
+     * @param  ?\Apideck\Unify\Models\Components\Manager  $manager
      * @param  ?array<?string>  $languages
      * @param  ?array<?string>  $nationalities
-     * @param  ?array<Address>  $addresses
-     * @param  ?array<PhoneNumber>  $phoneNumbers
-     * @param  ?array<Email>  $emails
-     * @param  ?array<CustomField1|CustomField2>  $customFields
-     * @param  ?array<SocialLink>  $socialLinks
-     * @param  ?array<BankAccount2>  $bankAccounts
-     * @param  ?ProbationPeriod  $probationPeriod
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<\Apideck\Unify\Models\Components\Address>  $addresses
+     * @param  ?array<\Apideck\Unify\Models\Components\PhoneNumber>  $phoneNumbers
+     * @param  ?array<\Apideck\Unify\Models\Components\Email>  $emails
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
+     * @param  ?array<\Apideck\Unify\Models\Components\SocialLink>  $socialLinks
+     * @param  ?array<\Apideck\Unify\Models\Components\BankAccount2>  $bankAccounts
+     * @param  ?\Apideck\Unify\Models\Components\ProbationPeriod  $probationPeriod
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $id
      * @param  ?string  $firstName
      * @param  ?string  $lastName
@@ -605,14 +605,14 @@ class EmployeeInput
      * @param  ?string  $department
      * @param  ?string  $departmentId
      * @param  ?string  $departmentName
-     * @param  ?Team  $team
+     * @param  ?\Apideck\Unify\Models\Components\Team  $team
      * @param  ?string  $companyId
      * @param  ?string  $companyName
      * @param  ?string  $employmentStartDate
      * @param  ?string  $employmentEndDate
-     * @param  ?LeavingReason  $leavingReason
+     * @param  ?\Apideck\Unify\Models\Components\LeavingReason  $leavingReason
      * @param  ?string  $employeeNumber
-     * @param  ?EmploymentStatus  $employmentStatus
+     * @param  ?\Apideck\Unify\Models\Components\EmploymentStatus  $employmentStatus
      * @param  ?string  $ethnicity
      * @param  ?array<string>  $directReports
      * @param  ?string  $socialSecurityNumber
@@ -620,7 +620,7 @@ class EmployeeInput
      * @param  ?LocalDate  $deceasedOn
      * @param  ?string  $countryOfBirth
      * @param  ?string  $description
-     * @param  ?Gender  $gender
+     * @param  ?\Apideck\Unify\Models\Components\Gender  $gender
      * @param  ?string  $pronouns
      * @param  ?string  $preferredLanguage
      * @param  ?string  $photoUrl
@@ -628,8 +628,8 @@ class EmployeeInput
      * @param  ?string  $source
      * @param  ?string  $sourceId
      * @param  ?string  $recordUrl
-     * @param  ?array<EmployeeJobInput>  $jobs
-     * @param  ?array<EmployeeCompensationInput>  $compensations
+     * @param  ?array<\Apideck\Unify\Models\Components\EmployeeJobInput>  $jobs
+     * @param  ?array<\Apideck\Unify\Models\Components\EmployeeCompensationInput>  $compensations
      * @param  ?bool  $worksRemote
      * @param  ?string  $taxCode
      * @param  ?string  $taxId

@@ -52,8 +52,8 @@ class PurchaseOrders
      *
      * Create Purchase Order
      *
-     * @param  Operations\AccountingPurchaseOrdersAddRequest  $request
-     * @return Operations\AccountingPurchaseOrdersAddResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingPurchaseOrdersAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingPurchaseOrdersAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\AccountingPurchaseOrdersAddRequest $request, ?Options $options = null): Operations\AccountingPurchaseOrdersAddResponse
@@ -227,8 +227,8 @@ class PurchaseOrders
      *
      * List Purchase Orders
      *
-     * @param  ?Operations\AccountingPurchaseOrdersAllRequest  $request
-     * @return Operations\AccountingPurchaseOrdersAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingPurchaseOrdersAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingPurchaseOrdersAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AccountingPurchaseOrdersAllRequest $request = null, ?Options $options = null): Operations\AccountingPurchaseOrdersAllResponse
@@ -456,8 +456,8 @@ class PurchaseOrders
      *
      * List Purchase Orders
      *
-     * @param  ?Operations\AccountingPurchaseOrdersAllRequest  $request
-     * @return \Generator<Operations\AccountingPurchaseOrdersAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingPurchaseOrdersAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AccountingPurchaseOrdersAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AccountingPurchaseOrdersAllRequest $request = null, ?Options $options = null): \Generator
@@ -474,8 +474,8 @@ class PurchaseOrders
      *
      * Delete Purchase Order
      *
-     * @param  Operations\AccountingPurchaseOrdersDeleteRequest  $request
-     * @return Operations\AccountingPurchaseOrdersDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingPurchaseOrdersDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingPurchaseOrdersDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\AccountingPurchaseOrdersDeleteRequest $request, ?Options $options = null): Operations\AccountingPurchaseOrdersDeleteResponse
@@ -644,8 +644,8 @@ class PurchaseOrders
      *
      * Get Purchase Order
      *
-     * @param  Operations\AccountingPurchaseOrdersOneRequest  $request
-     * @return Operations\AccountingPurchaseOrdersOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingPurchaseOrdersOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingPurchaseOrdersOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AccountingPurchaseOrdersOneRequest $request, ?Options $options = null): Operations\AccountingPurchaseOrdersOneResponse
@@ -814,8 +814,8 @@ class PurchaseOrders
      *
      * Update Purchase Order
      *
-     * @param  Operations\AccountingPurchaseOrdersUpdateRequest  $request
-     * @return Operations\AccountingPurchaseOrdersUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingPurchaseOrdersUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingPurchaseOrdersUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\AccountingPurchaseOrdersUpdateRequest $request, ?Options $options = null): Operations\AccountingPurchaseOrdersUpdateResponse

@@ -13,7 +13,7 @@ class AccountingQuotesUpdateResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class AccountingQuotesUpdateResponse
     /**
      * Quotes
      *
-     * @var ?Components\UpdateQuoteResponse $updateQuoteResponse
+     * @var ?\Apideck\Unify\Models\Components\UpdateQuoteResponse $updateQuoteResponse
      */
     public ?Components\UpdateQuoteResponse $updateQuoteResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\UpdateQuoteResponse  $updateQuoteResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\UpdateQuoteResponse  $updateQuoteResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UpdateQuoteResponse $updateQuoteResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

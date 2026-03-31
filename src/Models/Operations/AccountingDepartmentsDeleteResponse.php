@@ -13,7 +13,7 @@ class AccountingDepartmentsDeleteResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class AccountingDepartmentsDeleteResponse
     /**
      * Department deleted
      *
-     * @var ?Components\DeleteAccountingDepartmentResponse $deleteAccountingDepartmentResponse
+     * @var ?\Apideck\Unify\Models\Components\DeleteAccountingDepartmentResponse $deleteAccountingDepartmentResponse
      */
     public ?Components\DeleteAccountingDepartmentResponse $deleteAccountingDepartmentResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\DeleteAccountingDepartmentResponse  $deleteAccountingDepartmentResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\DeleteAccountingDepartmentResponse  $deleteAccountingDepartmentResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteAccountingDepartmentResponse $deleteAccountingDepartmentResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

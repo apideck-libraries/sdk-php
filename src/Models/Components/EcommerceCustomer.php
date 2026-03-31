@@ -22,7 +22,7 @@ class EcommerceCustomer
     /**
      * An array of addresses for the customer.
      *
-     * @var ?array<Addresses> $addresses
+     * @var ?array<\Apideck\Unify\Models\Components\Addresses> $addresses
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('addresses')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Addresses>|null')]
@@ -32,7 +32,7 @@ class EcommerceCustomer
     /**
      * $orders
      *
-     * @var ?array<LinkedEcommerceOrder> $orders
+     * @var ?array<\Apideck\Unify\Models\Components\LinkedEcommerceOrder> $orders
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('orders')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedEcommerceOrder>|null')]
@@ -78,7 +78,7 @@ class EcommerceCustomer
     /**
      * The current status of the customer
      *
-     * @var ?CustomerStatus $status
+     * @var ?\Apideck\Unify\Models\Components\CustomerStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomerStatus|null')]
@@ -88,7 +88,7 @@ class EcommerceCustomer
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -98,7 +98,7 @@ class EcommerceCustomer
     /**
      * An array of email addresses for the customer.
      *
-     * @var ?array<Email> $emails
+     * @var ?array<\Apideck\Unify\Models\Components\Email> $emails
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('emails')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Email>|null')]
@@ -108,7 +108,7 @@ class EcommerceCustomer
     /**
      * An array of phone numbers for the customer.
      *
-     * @var ?array<PhoneNumber> $phoneNumbers
+     * @var ?array<\Apideck\Unify\Models\Components\PhoneNumber> $phoneNumbers
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('phone_numbers')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PhoneNumber>|null')]
@@ -145,16 +145,16 @@ class EcommerceCustomer
 
     /**
      * @param  string  $id
-     * @param  ?array<Addresses>  $addresses
-     * @param  ?array<LinkedEcommerceOrder>  $orders
+     * @param  ?array<\Apideck\Unify\Models\Components\Addresses>  $addresses
+     * @param  ?array<\Apideck\Unify\Models\Components\LinkedEcommerceOrder>  $orders
      * @param  ?string  $name
      * @param  ?string  $firstName
      * @param  ?string  $lastName
      * @param  ?string  $companyName
-     * @param  ?CustomerStatus  $status
-     * @param  ?Currency  $currency
-     * @param  ?array<Email>  $emails
-     * @param  ?array<PhoneNumber>  $phoneNumbers
+     * @param  ?\Apideck\Unify\Models\Components\CustomerStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
+     * @param  ?array<\Apideck\Unify\Models\Components\Email>  $emails
+     * @param  ?array<\Apideck\Unify\Models\Components\PhoneNumber>  $phoneNumbers
      * @param  ?array<string, mixed>  $customMappings
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt

@@ -54,7 +54,7 @@ class GetAgedCreditorsResponse
 
     /**
      *
-     * @var AgedCreditors $data
+     * @var \Apideck\Unify\Models\Components\AgedCreditors $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\AgedCreditors')]
@@ -76,7 +76,7 @@ class GetAgedCreditorsResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  AgedCreditors  $data
+     * @param  \Apideck\Unify\Models\Components\AgedCreditors  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

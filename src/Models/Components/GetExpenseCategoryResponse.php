@@ -54,7 +54,7 @@ class GetExpenseCategoryResponse
 
     /**
      *
-     * @var ExpenseCategory $data
+     * @var \Apideck\Unify\Models\Components\ExpenseCategory $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ExpenseCategory')]
@@ -76,7 +76,7 @@ class GetExpenseCategoryResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  ExpenseCategory  $data
+     * @param  \Apideck\Unify\Models\Components\ExpenseCategory  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

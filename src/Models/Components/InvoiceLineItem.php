@@ -22,7 +22,7 @@ class InvoiceLineItem
 
     /**
      *
-     * @var ?LinkedInvoiceItem $item
+     * @var ?\Apideck\Unify\Models\Components\LinkedInvoiceItem $item
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('item')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedInvoiceItem|null')]
@@ -32,7 +32,7 @@ class InvoiceLineItem
     /**
      * Worktags of the line item. This is currently only supported in Workday.
      *
-     * @var ?array<?LinkedWorktag> $worktags
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedWorktag> $worktags
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('worktags')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedWorktag|null>|null')]
@@ -41,7 +41,7 @@ class InvoiceLineItem
 
     /**
      *
-     * @var ?LinkedTaxRate $taxRate
+     * @var ?\Apideck\Unify\Models\Components\LinkedTaxRate $taxRate
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRate|null')]
@@ -51,7 +51,7 @@ class InvoiceLineItem
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -97,7 +97,7 @@ class InvoiceLineItem
     /**
      * Item type
      *
-     * @var ?InvoiceLineItemType $type
+     * @var ?\Apideck\Unify\Models\Components\InvoiceLineItemType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\InvoiceLineItemType|null')]
@@ -267,7 +267,7 @@ class InvoiceLineItem
     /**
      * A list of linked tracking categories.
      *
-     * @var ?array<?LinkedTrackingCategory> $trackingCategories
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory> $trackingCategories
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory|null>|null')]
@@ -276,7 +276,7 @@ class InvoiceLineItem
 
     /**
      *
-     * @var ?LinkedLedgerAccount $ledgerAccount
+     * @var ?\Apideck\Unify\Models\Components\LinkedLedgerAccount $ledgerAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('ledger_account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
@@ -330,15 +330,15 @@ class InvoiceLineItem
 
     /**
      * @param  ?string  $rowId
-     * @param  ?LinkedInvoiceItem  $item
-     * @param  ?array<?LinkedWorktag>  $worktags
-     * @param  ?LinkedTaxRate  $taxRate
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?\Apideck\Unify\Models\Components\LinkedInvoiceItem  $item
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedWorktag>  $worktags
+     * @param  ?\Apideck\Unify\Models\Components\LinkedTaxRate  $taxRate
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
      * @param  ?string  $id
      * @param  ?string  $code
      * @param  ?int  $lineNumber
      * @param  ?string  $description
-     * @param  ?InvoiceLineItemType  $type
+     * @param  ?\Apideck\Unify\Models\Components\InvoiceLineItemType  $type
      * @param  ?float  $taxAmount
      * @param  ?float  $totalAmount
      * @param  ?float  $quantity
@@ -357,8 +357,8 @@ class InvoiceLineItem
      * @param  ?string  $taxApplicableOn
      * @param  ?string  $taxRecoverability
      * @param  ?string  $taxMethod
-     * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
-     * @param  ?LinkedLedgerAccount  $ledgerAccount
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory>  $trackingCategories
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $ledgerAccount
      * @param  ?string  $rowVersion
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy

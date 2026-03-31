@@ -13,7 +13,7 @@ class IssueTrackingCollectionTicketCommentsOneResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,14 +22,14 @@ class IssueTrackingCollectionTicketCommentsOneResponse
     /**
      * Get a Comment
      *
-     * @var ?Components\GetCommentResponse $getCommentResponse
+     * @var ?\Apideck\Unify\Models\Components\GetCommentResponse $getCommentResponse
      */
     public ?Components\GetCommentResponse $getCommentResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
@@ -38,9 +38,9 @@ class IssueTrackingCollectionTicketCommentsOneResponse
      */
     public \Closure $next;
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetCommentResponse  $getCommentResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetCommentResponse  $getCommentResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetCommentResponse $getCommentResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

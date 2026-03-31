@@ -47,7 +47,7 @@ class AccountingBillPaymentsAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\PaymentsFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\PaymentsFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\PaymentsFilter $filter = null;
@@ -55,7 +55,7 @@ class AccountingBillPaymentsAllRequest
     /**
      * Apply sorting
      *
-     * @var ?Components\PaymentsSort $sort
+     * @var ?\Apideck\Unify\Models\Components\PaymentsSort $sort
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=sort')]
     public ?Components\PaymentsSort $sort = null;
@@ -107,8 +107,8 @@ class AccountingBillPaymentsAllRequest
      * @param  ?string  $serviceId
      * @param  ?string  $companyId
      * @param  ?int  $limit
-     * @param  ?Components\PaymentsFilter  $filter
-     * @param  ?Components\PaymentsSort  $sort
+     * @param  ?\Apideck\Unify\Models\Components\PaymentsFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\PaymentsSort  $sort
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields

@@ -23,7 +23,7 @@ class Activity
     /**
      * The type of the activity
      *
-     * @var ?ActivityType $type
+     * @var ?\Apideck\Unify\Models\Components\ActivityType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ActivityType|null')]
@@ -31,7 +31,7 @@ class Activity
 
     /**
      *
-     * @var ?Address $locationAddress
+     * @var ?\Apideck\Unify\Models\Components\Address $locationAddress
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('location_address')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
@@ -50,7 +50,7 @@ class Activity
     /**
      * Custom fields of the activity
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -60,7 +60,7 @@ class Activity
     /**
      * $attendees
      *
-     * @var ?array<ActivityAttendee> $attendees
+     * @var ?array<\Apideck\Unify\Models\Components\ActivityAttendee> $attendees
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('attendees')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ActivityAttendee>|null')]
@@ -70,7 +70,7 @@ class Activity
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -340,7 +340,7 @@ class Activity
 
     /**
      *
-     * @var ?ShowAs $showAs
+     * @var ?\Apideck\Unify\Models\Components\ShowAs $showAs
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('show_as')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ShowAs|null')]
@@ -485,12 +485,12 @@ class Activity
 
     /**
      * @param  ?string  $id
-     * @param  ?ActivityType  $type
-     * @param  ?Address  $locationAddress
+     * @param  ?\Apideck\Unify\Models\Components\ActivityType  $type
+     * @param  ?\Apideck\Unify\Models\Components\Address  $locationAddress
      * @param  ?bool  $recurrent
-     * @param  ?array<CustomField1|CustomField2>  $customFields
-     * @param  ?array<ActivityAttendee>  $attendees
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
+     * @param  ?array<\Apideck\Unify\Models\Components\ActivityAttendee>  $attendees
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $downstreamId
      * @param  ?string  $activityDatetime
      * @param  ?int  $durationSeconds
@@ -520,7 +520,7 @@ class Activity
      * @param  ?bool  $child
      * @param  ?bool  $archived
      * @param  ?bool  $deleted
-     * @param  ?ShowAs  $showAs
+     * @param  ?\Apideck\Unify\Models\Components\ShowAs  $showAs
      * @param  ?bool  $done
      * @param  ?string  $startDatetime
      * @param  ?string  $endDatetime

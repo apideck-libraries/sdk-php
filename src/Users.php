@@ -52,8 +52,8 @@ class Users
      *
      * Create user
      *
-     * @param  Operations\CrmUsersAddRequest  $request
-     * @return Operations\CrmUsersAddResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmUsersAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmUsersAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\CrmUsersAddRequest $request, ?Options $options = null): Operations\CrmUsersAddResponse
@@ -227,8 +227,8 @@ class Users
      *
      * List users
      *
-     * @param  ?Operations\CrmUsersAllRequest  $request
-     * @return Operations\CrmUsersAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\CrmUsersAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmUsersAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\CrmUsersAllRequest $request = null, ?Options $options = null): Operations\CrmUsersAllResponse
@@ -452,8 +452,8 @@ class Users
      *
      * List users
      *
-     * @param  ?Operations\CrmUsersAllRequest  $request
-     * @return \Generator<Operations\CrmUsersAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\CrmUsersAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\CrmUsersAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\CrmUsersAllRequest $request = null, ?Options $options = null): \Generator
@@ -470,8 +470,8 @@ class Users
      *
      * Delete user
      *
-     * @param  Operations\CrmUsersDeleteRequest  $request
-     * @return Operations\CrmUsersDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmUsersDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmUsersDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\CrmUsersDeleteRequest $request, ?Options $options = null): Operations\CrmUsersDeleteResponse
@@ -640,8 +640,8 @@ class Users
      *
      * Get user
      *
-     * @param  Operations\CrmUsersOneRequest  $request
-     * @return Operations\CrmUsersOneResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmUsersOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmUsersOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\CrmUsersOneRequest $request, ?Options $options = null): Operations\CrmUsersOneResponse
@@ -810,8 +810,8 @@ class Users
      *
      * Update user
      *
-     * @param  Operations\CrmUsersUpdateRequest  $request
-     * @return Operations\CrmUsersUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmUsersUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmUsersUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\CrmUsersUpdateRequest $request, ?Options $options = null): Operations\CrmUsersUpdateResponse

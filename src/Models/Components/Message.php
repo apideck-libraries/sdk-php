@@ -55,7 +55,7 @@ class Message
     /**
      * Set to sms for SMS messages and mms for MMS messages.
      *
-     * @var ?MessageType $type
+     * @var ?\Apideck\Unify\Models\Components\MessageType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\MessageType|null')]
@@ -83,7 +83,7 @@ class Message
     /**
      * The direction of the message.
      *
-     * @var ?Direction $direction
+     * @var ?\Apideck\Unify\Models\Components\Direction $direction
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('direction')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Direction|null')]
@@ -93,7 +93,7 @@ class Message
     /**
      * Status of the delivery of the message.
      *
-     * @var ?MessageStatus $status
+     * @var ?\Apideck\Unify\Models\Components\MessageStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\MessageStatus|null')]
@@ -139,7 +139,7 @@ class Message
     /**
      * Price of the message.
      *
-     * @var ?Price $price
+     * @var ?\Apideck\Unify\Models\Components\Price $price
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('price')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Price|null')]
@@ -149,7 +149,7 @@ class Message
     /**
      * The error returned if your message status is failed or undelivered.
      *
-     * @var ?Error $error
+     * @var ?\Apideck\Unify\Models\Components\Error $error
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('error')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Error|null')]
@@ -168,7 +168,7 @@ class Message
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -227,19 +227,19 @@ class Message
      * @param  string  $body
      * @param  ?string  $id
      * @param  ?string  $subject
-     * @param  ?MessageType  $type
+     * @param  ?\Apideck\Unify\Models\Components\MessageType  $type
      * @param  ?int  $numberOfUnits
      * @param  ?int  $numberOfMediaFiles
-     * @param  ?Direction  $direction
-     * @param  ?MessageStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\Direction  $direction
+     * @param  ?\Apideck\Unify\Models\Components\MessageStatus  $status
      * @param  ?\DateTime  $scheduledAt
      * @param  ?\DateTime  $sentAt
      * @param  ?string  $webhookUrl
      * @param  ?string  $reference
-     * @param  ?Price  $price
-     * @param  ?Error  $error
+     * @param  ?\Apideck\Unify\Models\Components\Price  $price
+     * @param  ?\Apideck\Unify\Models\Components\Error  $error
      * @param  ?string  $messagingServiceId
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy

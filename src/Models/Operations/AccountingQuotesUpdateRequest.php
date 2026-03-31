@@ -22,7 +22,7 @@ class AccountingQuotesUpdateRequest
 
     /**
      *
-     * @var Components\QuoteInput $quote
+     * @var \Apideck\Unify\Models\Components\QuoteInput $quote
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\QuoteInput $quote;
@@ -69,7 +69,7 @@ class AccountingQuotesUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\QuoteInput  $quote
+     * @param  \Apideck\Unify\Models\Components\QuoteInput  $quote
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

@@ -52,8 +52,8 @@ class Activities
      *
      * Create activity
      *
-     * @param  Operations\CrmActivitiesAddRequest  $request
-     * @return Operations\CrmActivitiesAddResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmActivitiesAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmActivitiesAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\CrmActivitiesAddRequest $request, ?Options $options = null): Operations\CrmActivitiesAddResponse
@@ -227,8 +227,8 @@ class Activities
      *
      * List activities
      *
-     * @param  ?Operations\CrmActivitiesAllRequest  $request
-     * @return Operations\CrmActivitiesAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\CrmActivitiesAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmActivitiesAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\CrmActivitiesAllRequest $request = null, ?Options $options = null): Operations\CrmActivitiesAllResponse
@@ -456,8 +456,8 @@ class Activities
      *
      * List activities
      *
-     * @param  ?Operations\CrmActivitiesAllRequest  $request
-     * @return \Generator<Operations\CrmActivitiesAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\CrmActivitiesAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\CrmActivitiesAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\CrmActivitiesAllRequest $request = null, ?Options $options = null): \Generator
@@ -474,8 +474,8 @@ class Activities
      *
      * Delete activity
      *
-     * @param  Operations\CrmActivitiesDeleteRequest  $request
-     * @return Operations\CrmActivitiesDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmActivitiesDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmActivitiesDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\CrmActivitiesDeleteRequest $request, ?Options $options = null): Operations\CrmActivitiesDeleteResponse
@@ -644,8 +644,8 @@ class Activities
      *
      * Get activity
      *
-     * @param  Operations\CrmActivitiesOneRequest  $request
-     * @return Operations\CrmActivitiesOneResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmActivitiesOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmActivitiesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\CrmActivitiesOneRequest $request, ?Options $options = null): Operations\CrmActivitiesOneResponse
@@ -814,8 +814,8 @@ class Activities
      *
      * Update activity
      *
-     * @param  Operations\CrmActivitiesUpdateRequest  $request
-     * @return Operations\CrmActivitiesUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmActivitiesUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmActivitiesUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\CrmActivitiesUpdateRequest $request, ?Options $options = null): Operations\CrmActivitiesUpdateResponse

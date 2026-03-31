@@ -47,7 +47,7 @@ class EcommerceProductsAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\EcommerceProductsFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\EcommerceProductsFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\EcommerceProductsFilter $filter = null;
@@ -91,7 +91,7 @@ class EcommerceProductsAllRequest
      * @param  ?string  $serviceId
      * @param  ?int  $limit
      * @param  ?array<string, mixed>  $passThrough
-     * @param  ?Components\EcommerceProductsFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\EcommerceProductsFilter  $filter
      * @param  ?string  $cursor
      * @param  ?string  $fields
      * @phpstan-pure

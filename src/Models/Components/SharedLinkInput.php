@@ -22,7 +22,7 @@ class SharedLinkInput
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -41,7 +41,7 @@ class SharedLinkInput
     /**
      * The scope of the shared link.
      *
-     * @var ?Scope $scope
+     * @var ?\Apideck\Unify\Models\Components\Scope $scope
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('scope')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Scope|null')]
@@ -59,9 +59,9 @@ class SharedLinkInput
 
     /**
      * @param  ?string  $targetId
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $downloadUrl
-     * @param  ?Scope  $scope
+     * @param  ?\Apideck\Unify\Models\Components\Scope  $scope
      * @param  ?string  $password
      * @phpstan-pure
      */

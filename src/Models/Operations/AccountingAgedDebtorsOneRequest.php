@@ -47,7 +47,7 @@ class AccountingAgedDebtorsOneRequest
     /**
      * Apply filters
      *
-     * @var ?Components\AgedReportFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\AgedReportFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\AgedReportFilter $filter = null;
@@ -82,7 +82,7 @@ class AccountingAgedDebtorsOneRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?string  $companyId
-     * @param  ?Components\AgedReportFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\AgedReportFilter  $filter
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $fields
      * @phpstan-pure

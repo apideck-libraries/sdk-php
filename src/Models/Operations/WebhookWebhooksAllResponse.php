@@ -13,7 +13,7 @@ class WebhookWebhooksAllResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,14 +22,14 @@ class WebhookWebhooksAllResponse
     /**
      * Webhooks
      *
-     * @var ?Components\GetWebhooksResponse $getWebhooksResponse
+     * @var ?\Apideck\Unify\Models\Components\GetWebhooksResponse $getWebhooksResponse
      */
     public ?Components\GetWebhooksResponse $getWebhooksResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
@@ -38,9 +38,9 @@ class WebhookWebhooksAllResponse
      */
     public \Closure $next;
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetWebhooksResponse  $getWebhooksResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetWebhooksResponse  $getWebhooksResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetWebhooksResponse $getWebhooksResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

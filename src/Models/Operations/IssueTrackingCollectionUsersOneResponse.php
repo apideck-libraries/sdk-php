@@ -13,7 +13,7 @@ class IssueTrackingCollectionUsersOneResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class IssueTrackingCollectionUsersOneResponse
     /**
      * User
      *
-     * @var ?Components\GetCollectionUserResponse $getCollectionUserResponse
+     * @var ?\Apideck\Unify\Models\Components\GetCollectionUserResponse $getCollectionUserResponse
      */
     public ?Components\GetCollectionUserResponse $getCollectionUserResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetCollectionUserResponse  $getCollectionUserResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetCollectionUserResponse  $getCollectionUserResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetCollectionUserResponse $getCollectionUserResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

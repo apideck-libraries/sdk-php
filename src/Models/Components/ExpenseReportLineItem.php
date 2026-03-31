@@ -31,7 +31,7 @@ class ExpenseReportLineItem
     /**
      * The expense category this entity is linked to.
      *
-     * @var ?LinkedExpenseCategory $expenseCategory
+     * @var ?\Apideck\Unify\Models\Components\LinkedExpenseCategory $expenseCategory
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('expense_category')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedExpenseCategory|null')]
@@ -40,7 +40,7 @@ class ExpenseReportLineItem
 
     /**
      *
-     * @var ?LinkedTaxRate $taxRate
+     * @var ?\Apideck\Unify\Models\Components\LinkedTaxRate $taxRate
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRate|null')]
@@ -58,7 +58,7 @@ class ExpenseReportLineItem
 
     /**
      *
-     * @var ?LinkedLedgerAccount $account
+     * @var ?\Apideck\Unify\Models\Components\LinkedLedgerAccount $account
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
@@ -138,7 +138,7 @@ class ExpenseReportLineItem
     /**
      * The customer this entity is linked to.
      *
-     * @var ?LinkedCustomer $customer
+     * @var ?\Apideck\Unify\Models\Components\LinkedCustomer $customer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedCustomer|null')]
@@ -147,7 +147,7 @@ class ExpenseReportLineItem
 
     /**
      *
-     * @var ?LinkedDepartment $department
+     * @var ?\Apideck\Unify\Models\Components\LinkedDepartment $department
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('department')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedDepartment|null')]
@@ -156,7 +156,7 @@ class ExpenseReportLineItem
 
     /**
      *
-     * @var ?LinkedLocation $location
+     * @var ?\Apideck\Unify\Models\Components\LinkedLocation $location
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('location')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLocation|null')]
@@ -166,7 +166,7 @@ class ExpenseReportLineItem
     /**
      * A list of linked tracking categories.
      *
-     * @var ?array<?LinkedTrackingCategory> $trackingCategories
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory> $trackingCategories
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory|null>|null')]
@@ -185,7 +185,7 @@ class ExpenseReportLineItem
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -231,10 +231,10 @@ class ExpenseReportLineItem
     /**
      * @param  float  $amount
      * @param  ?string  $id
-     * @param  ?LinkedExpenseCategory  $expenseCategory
-     * @param  ?LinkedTaxRate  $taxRate
+     * @param  ?\Apideck\Unify\Models\Components\LinkedExpenseCategory  $expenseCategory
+     * @param  ?\Apideck\Unify\Models\Components\LinkedTaxRate  $taxRate
      * @param  ?int  $lineNumber
-     * @param  ?LinkedLedgerAccount  $account
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $account
      * @param  ?string  $description
      * @param  ?float  $quantity
      * @param  ?float  $unitPrice
@@ -243,12 +243,12 @@ class ExpenseReportLineItem
      * @param  ?LocalDate  $transactionDate
      * @param  ?bool  $billable
      * @param  ?bool  $reimbursable
-     * @param  ?LinkedCustomer  $customer
-     * @param  ?LinkedDepartment  $department
-     * @param  ?LinkedLocation  $location
-     * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
+     * @param  ?\Apideck\Unify\Models\Components\LinkedCustomer  $customer
+     * @param  ?\Apideck\Unify\Models\Components\LinkedDepartment  $department
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLocation  $location
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory>  $trackingCategories
      * @param  ?string  $receiptUrl
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy
      * @param  ?\DateTime  $updatedAt

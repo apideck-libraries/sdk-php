@@ -39,7 +39,7 @@ class FileStorageDriveGroupsAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\DriveGroupsFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\DriveGroupsFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\DriveGroupsFilter $filter = null;
@@ -90,7 +90,7 @@ class FileStorageDriveGroupsAllRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?int  $limit
-     * @param  ?Components\DriveGroupsFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\DriveGroupsFilter  $filter
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields

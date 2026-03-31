@@ -54,7 +54,7 @@ class GetAttachmentResponse
 
     /**
      *
-     * @var Attachment $data
+     * @var \Apideck\Unify\Models\Components\Attachment $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Attachment')]
@@ -76,7 +76,7 @@ class GetAttachmentResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Attachment  $data
+     * @param  \Apideck\Unify\Models\Components\Attachment  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

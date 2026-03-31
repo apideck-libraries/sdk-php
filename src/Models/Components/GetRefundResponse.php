@@ -54,7 +54,7 @@ class GetRefundResponse
 
     /**
      *
-     * @var Refund $data
+     * @var \Apideck\Unify\Models\Components\Refund $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Refund')]
@@ -76,7 +76,7 @@ class GetRefundResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Refund  $data
+     * @param  \Apideck\Unify\Models\Components\Refund  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

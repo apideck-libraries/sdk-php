@@ -14,7 +14,7 @@ class AccountingJournalEntriesAddRequest
 {
     /**
      *
-     * @var Components\JournalEntryInput $journalEntry
+     * @var \Apideck\Unify\Models\Components\JournalEntryInput $journalEntry
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\JournalEntryInput $journalEntry;
@@ -60,7 +60,7 @@ class AccountingJournalEntriesAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\JournalEntryInput  $journalEntry
+     * @param  \Apideck\Unify\Models\Components\JournalEntryInput  $journalEntry
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

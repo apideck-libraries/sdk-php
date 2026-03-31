@@ -52,8 +52,8 @@ class Locations
      *
      * Create Location
      *
-     * @param  Operations\AccountingLocationsAddRequest  $request
-     * @return Operations\AccountingLocationsAddResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingLocationsAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingLocationsAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\AccountingLocationsAddRequest $request, ?Options $options = null): Operations\AccountingLocationsAddResponse
@@ -227,8 +227,8 @@ class Locations
      *
      * List Locations
      *
-     * @param  ?Operations\AccountingLocationsAllRequest  $request
-     * @return Operations\AccountingLocationsAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingLocationsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingLocationsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AccountingLocationsAllRequest $request = null, ?Options $options = null): Operations\AccountingLocationsAllResponse
@@ -454,8 +454,8 @@ class Locations
      *
      * List Locations
      *
-     * @param  ?Operations\AccountingLocationsAllRequest  $request
-     * @return \Generator<Operations\AccountingLocationsAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingLocationsAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AccountingLocationsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AccountingLocationsAllRequest $request = null, ?Options $options = null): \Generator
@@ -472,8 +472,8 @@ class Locations
      *
      * Delete Location
      *
-     * @param  Operations\AccountingLocationsDeleteRequest  $request
-     * @return Operations\AccountingLocationsDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingLocationsDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingLocationsDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\AccountingLocationsDeleteRequest $request, ?Options $options = null): Operations\AccountingLocationsDeleteResponse
@@ -642,8 +642,8 @@ class Locations
      *
      * Get Location
      *
-     * @param  Operations\AccountingLocationsOneRequest  $request
-     * @return Operations\AccountingLocationsOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingLocationsOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingLocationsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AccountingLocationsOneRequest $request, ?Options $options = null): Operations\AccountingLocationsOneResponse
@@ -812,8 +812,8 @@ class Locations
      *
      * Update Location
      *
-     * @param  Operations\AccountingLocationsUpdateRequest  $request
-     * @return Operations\AccountingLocationsUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingLocationsUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingLocationsUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\AccountingLocationsUpdateRequest $request, ?Options $options = null): Operations\AccountingLocationsUpdateResponse

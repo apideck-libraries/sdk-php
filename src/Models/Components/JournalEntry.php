@@ -23,7 +23,7 @@ class JournalEntry
     /**
      * Requires a minimum of 2 line items that sum to 0
      *
-     * @var ?array<JournalEntryLineItem> $lineItems
+     * @var ?array<\Apideck\Unify\Models\Components\JournalEntryLineItem> $lineItems
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\JournalEntryLineItem>|null')]
@@ -42,7 +42,7 @@ class JournalEntry
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -52,7 +52,7 @@ class JournalEntry
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -98,7 +98,7 @@ class JournalEntry
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -117,7 +117,7 @@ class JournalEntry
     /**
      * Journal entry status
      *
-     * @var ?JournalEntryStatus $status
+     * @var ?\Apideck\Unify\Models\Components\JournalEntryStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\JournalEntryStatus|null')]
@@ -173,7 +173,7 @@ class JournalEntry
     /**
      * A list of linked tracking categories.
      *
-     * @var ?array<?LinkedTrackingCategory> $trackingCategories
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory> $trackingCategories
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory|null>|null')]
@@ -273,23 +273,23 @@ class JournalEntry
 
     /**
      * @param  ?string  $id
-     * @param  ?array<JournalEntryLineItem>  $lineItems
+     * @param  ?array<\Apideck\Unify\Models\Components\JournalEntryLineItem>  $lineItems
      * @param  ?\DateTime  $postedAt
-     * @param  ?array<CustomField1|CustomField2>  $customFields
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $downstreamId
      * @param  ?string  $displayId
      * @param  ?string  $title
      * @param  ?float  $currencyRate
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?string  $companyId
-     * @param  ?JournalEntryStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\JournalEntryStatus  $status
      * @param  ?string  $memo
      * @param  ?string  $journalSymbol
      * @param  ?string  $taxType
      * @param  ?string  $taxCode
      * @param  ?string  $number
-     * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory>  $trackingCategories
      * @param  ?string  $accountingPeriod
      * @param  ?bool  $taxInclusive
      * @param  ?string  $sourceType

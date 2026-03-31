@@ -23,7 +23,7 @@ class AccountingBankAccountsOneRequest
     /**
      * Apply filters
      *
-     * @var ?Components\BankAccountFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\BankAccountFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\BankAccountFilter $filter = null;
@@ -78,7 +78,7 @@ class AccountingBankAccountsOneRequest
 
     /**
      * @param  string  $id
-     * @param  ?Components\BankAccountFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\BankAccountFilter  $filter
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

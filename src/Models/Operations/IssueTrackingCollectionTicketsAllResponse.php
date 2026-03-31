@@ -13,7 +13,7 @@ class IssueTrackingCollectionTicketsAllResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,14 +22,14 @@ class IssueTrackingCollectionTicketsAllResponse
     /**
      * List Tickets
      *
-     * @var ?Components\GetTicketsResponse $getTicketsResponse
+     * @var ?\Apideck\Unify\Models\Components\GetTicketsResponse $getTicketsResponse
      */
     public ?Components\GetTicketsResponse $getTicketsResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
@@ -38,9 +38,9 @@ class IssueTrackingCollectionTicketsAllResponse
      */
     public \Closure $next;
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetTicketsResponse  $getTicketsResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetTicketsResponse  $getTicketsResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetTicketsResponse $getTicketsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

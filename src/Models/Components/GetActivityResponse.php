@@ -54,7 +54,7 @@ class GetActivityResponse
 
     /**
      *
-     * @var Activity $data
+     * @var \Apideck\Unify\Models\Components\Activity $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Activity')]
@@ -76,7 +76,7 @@ class GetActivityResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Activity  $data
+     * @param  \Apideck\Unify\Models\Components\Activity  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

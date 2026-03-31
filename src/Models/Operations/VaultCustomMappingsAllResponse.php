@@ -13,7 +13,7 @@ class VaultCustomMappingsAllResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class VaultCustomMappingsAllResponse
     /**
      * Custom mapping
      *
-     * @var ?Components\GetCustomMappingsResponse $getCustomMappingsResponse
+     * @var ?\Apideck\Unify\Models\Components\GetCustomMappingsResponse $getCustomMappingsResponse
      */
     public ?Components\GetCustomMappingsResponse $getCustomMappingsResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetCustomMappingsResponse  $getCustomMappingsResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetCustomMappingsResponse  $getCustomMappingsResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetCustomMappingsResponse $getCustomMappingsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

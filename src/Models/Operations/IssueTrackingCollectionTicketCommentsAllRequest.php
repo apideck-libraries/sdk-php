@@ -55,7 +55,7 @@ class IssueTrackingCollectionTicketCommentsAllRequest
     /**
      * Apply sorting
      *
-     * @var ?Components\CommentsSort $sort
+     * @var ?\Apideck\Unify\Models\Components\CommentsSort $sort
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=sort')]
     public ?Components\CommentsSort $sort = null;
@@ -108,7 +108,7 @@ class IssueTrackingCollectionTicketCommentsAllRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?int  $limit
-     * @param  ?Components\CommentsSort  $sort
+     * @param  ?\Apideck\Unify\Models\Components\CommentsSort  $sort
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields

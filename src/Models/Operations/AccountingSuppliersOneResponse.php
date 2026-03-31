@@ -13,7 +13,7 @@ class AccountingSuppliersOneResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class AccountingSuppliersOneResponse
     /**
      * Supplier
      *
-     * @var ?Components\GetSupplierResponse $getSupplierResponse
+     * @var ?\Apideck\Unify\Models\Components\GetSupplierResponse $getSupplierResponse
      */
     public ?Components\GetSupplierResponse $getSupplierResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetSupplierResponse  $getSupplierResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetSupplierResponse  $getSupplierResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetSupplierResponse $getSupplierResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

@@ -55,7 +55,7 @@ class AccountingCategoriesOneRequest
     /**
      * Apply filters
      *
-     * @var ?Components\CategoriesFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\CategoriesFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\CategoriesFilter $filter = null;
@@ -83,7 +83,7 @@ class AccountingCategoriesOneRequest
      * @param  ?string  $serviceId
      * @param  ?string  $companyId
      * @param  ?bool  $raw
-     * @param  ?Components\CategoriesFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\CategoriesFilter  $filter
      * @param  ?string  $fields
      * @phpstan-pure
      */

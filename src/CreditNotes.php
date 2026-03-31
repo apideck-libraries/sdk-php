@@ -52,8 +52,8 @@ class CreditNotes
      *
      * Create Credit Note
      *
-     * @param  Operations\AccountingCreditNotesAddRequest  $request
-     * @return Operations\AccountingCreditNotesAddResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingCreditNotesAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingCreditNotesAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\AccountingCreditNotesAddRequest $request, ?Options $options = null): Operations\AccountingCreditNotesAddResponse
@@ -227,8 +227,8 @@ class CreditNotes
      *
      * List Credit Notes
      *
-     * @param  ?Operations\AccountingCreditNotesAllRequest  $request
-     * @return Operations\AccountingCreditNotesAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingCreditNotesAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingCreditNotesAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AccountingCreditNotesAllRequest $request = null, ?Options $options = null): Operations\AccountingCreditNotesAllResponse
@@ -458,8 +458,8 @@ class CreditNotes
      *
      * List Credit Notes
      *
-     * @param  ?Operations\AccountingCreditNotesAllRequest  $request
-     * @return \Generator<Operations\AccountingCreditNotesAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingCreditNotesAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AccountingCreditNotesAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AccountingCreditNotesAllRequest $request = null, ?Options $options = null): \Generator
@@ -476,8 +476,8 @@ class CreditNotes
      *
      * Delete Credit Note
      *
-     * @param  Operations\AccountingCreditNotesDeleteRequest  $request
-     * @return Operations\AccountingCreditNotesDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingCreditNotesDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingCreditNotesDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\AccountingCreditNotesDeleteRequest $request, ?Options $options = null): Operations\AccountingCreditNotesDeleteResponse
@@ -646,8 +646,8 @@ class CreditNotes
      *
      * Get Credit Note
      *
-     * @param  Operations\AccountingCreditNotesOneRequest  $request
-     * @return Operations\AccountingCreditNotesOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingCreditNotesOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingCreditNotesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AccountingCreditNotesOneRequest $request, ?Options $options = null): Operations\AccountingCreditNotesOneResponse
@@ -816,8 +816,8 @@ class CreditNotes
      *
      * Update Credit Note
      *
-     * @param  Operations\AccountingCreditNotesUpdateRequest  $request
-     * @return Operations\AccountingCreditNotesUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingCreditNotesUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingCreditNotesUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\AccountingCreditNotesUpdateRequest $request, ?Options $options = null): Operations\AccountingCreditNotesUpdateResponse

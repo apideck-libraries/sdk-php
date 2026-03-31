@@ -47,7 +47,7 @@ class AccountingInvoicesAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\InvoicesFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\InvoicesFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\InvoicesFilter $filter = null;
@@ -55,7 +55,7 @@ class AccountingInvoicesAllRequest
     /**
      * Apply sorting
      *
-     * @var ?Components\InvoicesSort $sort
+     * @var ?\Apideck\Unify\Models\Components\InvoicesSort $sort
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=sort')]
     public ?Components\InvoicesSort $sort = null;
@@ -107,8 +107,8 @@ class AccountingInvoicesAllRequest
      * @param  ?string  $serviceId
      * @param  ?string  $companyId
      * @param  ?int  $limit
-     * @param  ?Components\InvoicesFilter  $filter
-     * @param  ?Components\InvoicesSort  $sort
+     * @param  ?\Apideck\Unify\Models\Components\InvoicesFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\InvoicesSort  $sort
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields

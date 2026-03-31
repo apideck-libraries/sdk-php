@@ -22,7 +22,7 @@ class AccountingDepartmentsUpdateRequest
 
     /**
      *
-     * @var Components\AccountingDepartmentInput $accountingDepartment
+     * @var \Apideck\Unify\Models\Components\AccountingDepartmentInput $accountingDepartment
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\AccountingDepartmentInput $accountingDepartment;
@@ -61,7 +61,7 @@ class AccountingDepartmentsUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\AccountingDepartmentInput  $accountingDepartment
+     * @param  \Apideck\Unify\Models\Components\AccountingDepartmentInput  $accountingDepartment
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

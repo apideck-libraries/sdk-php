@@ -39,7 +39,7 @@ class AtsApplicantsAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\ApplicantsFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\ApplicantsFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\ApplicantsFilter $filter = null;
@@ -90,7 +90,7 @@ class AtsApplicantsAllRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?int  $limit
-     * @param  ?Components\ApplicantsFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\ApplicantsFilter  $filter
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields

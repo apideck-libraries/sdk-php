@@ -38,7 +38,7 @@ class BillPayment
     /**
      * Status of payment
      *
-     * @var ?PaymentStatus $status
+     * @var ?\Apideck\Unify\Models\Components\PaymentStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\PaymentStatus|null')]
@@ -48,7 +48,7 @@ class BillPayment
     /**
      * Type of payment
      *
-     * @var ?BillPaymentType $type
+     * @var ?\Apideck\Unify\Models\Components\BillPaymentType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BillPaymentType|null')]
@@ -58,7 +58,7 @@ class BillPayment
     /**
      * $allocations
      *
-     * @var ?array<Allocations> $allocations
+     * @var ?array<\Apideck\Unify\Models\Components\Allocations> $allocations
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('allocations')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Allocations>|null')]
@@ -68,7 +68,7 @@ class BillPayment
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -78,7 +78,7 @@ class BillPayment
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -97,7 +97,7 @@ class BillPayment
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -151,7 +151,7 @@ class BillPayment
 
     /**
      *
-     * @var ?LinkedLedgerAccount $account
+     * @var ?\Apideck\Unify\Models\Components\LinkedLedgerAccount $account
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
@@ -161,7 +161,7 @@ class BillPayment
     /**
      * The supplier this entity is linked to.
      *
-     * @var ?LinkedSupplier $supplier
+     * @var ?\Apideck\Unify\Models\Components\LinkedSupplier $supplier
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('supplier')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedSupplier|null')]
@@ -207,7 +207,7 @@ class BillPayment
     /**
      * A list of linked tracking categories.
      *
-     * @var ?array<?LinkedTrackingCategory> $trackingCategories
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory> $trackingCategories
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory|null>|null')]
@@ -282,25 +282,25 @@ class BillPayment
      * @param  string  $id
      * @param  ?float  $totalAmount
      * @param  ?\DateTime  $transactionDate
-     * @param  ?PaymentStatus  $status
-     * @param  ?BillPaymentType  $type
-     * @param  ?array<Allocations>  $allocations
-     * @param  ?array<CustomField1|CustomField2>  $customFields
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?\Apideck\Unify\Models\Components\PaymentStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\BillPaymentType  $type
+     * @param  ?array<\Apideck\Unify\Models\Components\Allocations>  $allocations
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $downstreamId
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?float  $currencyRate
      * @param  ?string  $reference
      * @param  ?string  $paymentMethod
      * @param  ?string  $paymentMethodReference
      * @param  ?string  $paymentMethodId
-     * @param  ?LinkedLedgerAccount  $account
-     * @param  ?LinkedSupplier  $supplier
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $account
+     * @param  ?\Apideck\Unify\Models\Components\LinkedSupplier  $supplier
      * @param  ?string  $companyId
      * @param  ?bool  $reconciled
      * @param  ?string  $note
      * @param  ?string  $number
-     * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory>  $trackingCategories
      * @param  ?string  $rowVersion
      * @param  ?string  $displayId
      * @param  ?array<string, mixed>  $customMappings

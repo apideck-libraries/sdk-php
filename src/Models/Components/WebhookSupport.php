@@ -15,7 +15,7 @@ class WebhookSupport
     /**
      * Mode of the webhook support.
      *
-     * @var ?Mode $mode
+     * @var ?\Apideck\Unify\Models\Components\Mode $mode
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('mode')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Mode|null')]
@@ -25,7 +25,7 @@ class WebhookSupport
     /**
      * Received events are scoped to connection or across integration.
      *
-     * @var ?SubscriptionLevel $subscriptionLevel
+     * @var ?\Apideck\Unify\Models\Components\SubscriptionLevel $subscriptionLevel
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subscription_level')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\SubscriptionLevel|null')]
@@ -35,7 +35,7 @@ class WebhookSupport
     /**
      * How the subscription is managed in the downstream.
      *
-     * @var ?ManagedVia $managedVia
+     * @var ?\Apideck\Unify\Models\Components\ManagedVia $managedVia
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('managed_via')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ManagedVia|null')]
@@ -45,7 +45,7 @@ class WebhookSupport
     /**
      * Virtual webhook config for the connector.
      *
-     * @var ?VirtualWebhooks $virtualWebhooks
+     * @var ?\Apideck\Unify\Models\Components\VirtualWebhooks $virtualWebhooks
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('virtual_webhooks')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\VirtualWebhooks|null')]
@@ -53,10 +53,10 @@ class WebhookSupport
     public ?VirtualWebhooks $virtualWebhooks = null;
 
     /**
-     * @param  ?Mode  $mode
-     * @param  ?SubscriptionLevel  $subscriptionLevel
-     * @param  ?ManagedVia  $managedVia
-     * @param  ?VirtualWebhooks  $virtualWebhooks
+     * @param  ?\Apideck\Unify\Models\Components\Mode  $mode
+     * @param  ?\Apideck\Unify\Models\Components\SubscriptionLevel  $subscriptionLevel
+     * @param  ?\Apideck\Unify\Models\Components\ManagedVia  $managedVia
+     * @param  ?\Apideck\Unify\Models\Components\VirtualWebhooks  $virtualWebhooks
      * @phpstan-pure
      */
     public function __construct(?Mode $mode = null, ?SubscriptionLevel $subscriptionLevel = null, ?ManagedVia $managedVia = null, ?VirtualWebhooks $virtualWebhooks = null)

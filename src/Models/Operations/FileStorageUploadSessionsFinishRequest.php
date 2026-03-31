@@ -53,7 +53,7 @@ class FileStorageUploadSessionsFinishRequest
 
     /**
      *
-     * @var ?FileStorageUploadSessionsFinishRequestBody $requestBody
+     * @var ?\Apideck\Unify\Models\Operations\FileStorageUploadSessionsFinishRequestBody $requestBody
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public ?FileStorageUploadSessionsFinishRequestBody $requestBody = null;
@@ -73,7 +73,7 @@ class FileStorageUploadSessionsFinishRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?string  $digest
-     * @param  ?FileStorageUploadSessionsFinishRequestBody  $requestBody
+     * @param  ?\Apideck\Unify\Models\Operations\FileStorageUploadSessionsFinishRequestBody  $requestBody
      * @phpstan-pure
      */
     public function __construct(string $id, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $digest = null, ?FileStorageUploadSessionsFinishRequestBody $requestBody = null, ?bool $raw = false)

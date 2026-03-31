@@ -30,7 +30,7 @@ class ExpenseCategory
 
     /**
      *
-     * @var ?LinkedTaxRate $taxRate
+     * @var ?\Apideck\Unify\Models\Components\LinkedTaxRate $taxRate
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRate|null')]
@@ -40,7 +40,7 @@ class ExpenseCategory
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -77,7 +77,7 @@ class ExpenseCategory
     /**
      * The status of the expense category.
      *
-     * @var ?ExpenseCategoryStatus $status
+     * @var ?\Apideck\Unify\Models\Components\ExpenseCategoryStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ExpenseCategoryStatus|null')]
@@ -86,7 +86,7 @@ class ExpenseCategory
 
     /**
      *
-     * @var ?LinkedLedgerAccount $account
+     * @var ?\Apideck\Unify\Models\Components\LinkedLedgerAccount $account
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
@@ -95,7 +95,7 @@ class ExpenseCategory
 
     /**
      *
-     * @var ?LinkedLedgerAccount $offsetAccount
+     * @var ?\Apideck\Unify\Models\Components\LinkedLedgerAccount $offsetAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('offset_account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
@@ -187,14 +187,14 @@ class ExpenseCategory
     /**
      * @param  string  $name
      * @param  ?string  $id
-     * @param  ?LinkedTaxRate  $taxRate
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?\Apideck\Unify\Models\Components\LinkedTaxRate  $taxRate
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $displayId
      * @param  ?string  $code
      * @param  ?string  $description
-     * @param  ?ExpenseCategoryStatus  $status
-     * @param  ?LinkedLedgerAccount  $account
-     * @param  ?LinkedLedgerAccount  $offsetAccount
+     * @param  ?\Apideck\Unify\Models\Components\ExpenseCategoryStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $account
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $offsetAccount
      * @param  ?bool  $rateRequired
      * @param  ?float  $defaultRate
      * @param  ?array<string, mixed>  $customMappings

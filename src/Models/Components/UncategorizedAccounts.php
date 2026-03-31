@@ -58,7 +58,7 @@ class UncategorizedAccounts
     /**
      * The type of profit and loss
      *
-     * @var ?ProfitAndLossType $type
+     * @var ?\Apideck\Unify\Models\Components\ProfitAndLossType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ProfitAndLossType|null')]
@@ -71,7 +71,7 @@ class UncategorizedAccounts
      * @param  ?string  $code
      * @param  ?string  $title
      * @param  ?float  $total
-     * @param  ?ProfitAndLossType  $type
+     * @param  ?\Apideck\Unify\Models\Components\ProfitAndLossType  $type
      * @phpstan-pure
      */
     public function __construct(mixed $records, ?string $id = null, ?string $code = null, ?string $title = null, ?float $total = null, ?ProfitAndLossType $type = null)

@@ -13,7 +13,7 @@ class Addresses
 {
     /**
      *
-     * @var ?EcommerceCustomerType $type
+     * @var ?\Apideck\Unify\Models\Components\EcommerceCustomerType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EcommerceCustomerType|null')]
@@ -84,7 +84,7 @@ class Addresses
     public ?string $country = null;
 
     /**
-     * @param  ?EcommerceCustomerType  $type
+     * @param  ?\Apideck\Unify\Models\Components\EcommerceCustomerType  $type
      * @param  ?string  $id
      * @param  ?string  $line1
      * @param  ?string  $line2

@@ -14,7 +14,7 @@ class OrdersSort
     /**
      * The field on which to sort the Orders
      *
-     * @var ?OrdersSortBy $by
+     * @var ?\Apideck\Unify\Models\Components\OrdersSortBy $by
      */
     #[SpeakeasyMetadata('queryParam:name=by')]
     public ?OrdersSortBy $by = null;
@@ -22,14 +22,14 @@ class OrdersSort
     /**
      * The direction in which to sort the results
      *
-     * @var ?SortDirection $direction
+     * @var ?\Apideck\Unify\Models\Components\SortDirection $direction
      */
     #[SpeakeasyMetadata('queryParam:name=direction')]
     public ?SortDirection $direction = null;
 
     /**
-     * @param  ?OrdersSortBy  $by
-     * @param  ?SortDirection  $direction
+     * @param  ?\Apideck\Unify\Models\Components\OrdersSortBy  $by
+     * @param  ?\Apideck\Unify\Models\Components\SortDirection  $direction
      * @phpstan-pure
      */
     public function __construct(?OrdersSortBy $by = null, ?SortDirection $direction = SortDirection::Asc)

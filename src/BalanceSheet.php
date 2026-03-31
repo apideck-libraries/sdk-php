@@ -52,8 +52,8 @@ class BalanceSheet
      *
      * Get BalanceSheet
      *
-     * @param  ?Operations\AccountingBalanceSheetOneRequest  $request
-     * @return Operations\AccountingBalanceSheetOneResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingBalanceSheetOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingBalanceSheetOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(?Operations\AccountingBalanceSheetOneRequest $request = null, ?Options $options = null): Operations\AccountingBalanceSheetOneResponse

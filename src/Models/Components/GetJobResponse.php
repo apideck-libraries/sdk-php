@@ -54,7 +54,7 @@ class GetJobResponse
 
     /**
      *
-     * @var Job $data
+     * @var \Apideck\Unify\Models\Components\Job $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Job')]
@@ -76,7 +76,7 @@ class GetJobResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Job  $data
+     * @param  \Apideck\Unify\Models\Components\Job  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

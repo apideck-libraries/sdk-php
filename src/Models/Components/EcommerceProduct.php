@@ -22,7 +22,7 @@ class EcommerceProduct
     /**
      * An array of options for the product.
      *
-     * @var ?array<EcommerceProductOptions> $options
+     * @var ?array<\Apideck\Unify\Models\Components\EcommerceProductOptions> $options
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceProductOptions>|null')]
@@ -32,7 +32,7 @@ class EcommerceProduct
     /**
      * $variants
      *
-     * @var ?array<Variants> $variants
+     * @var ?array<\Apideck\Unify\Models\Components\Variants> $variants
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('variants')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Variants>|null')]
@@ -52,7 +52,7 @@ class EcommerceProduct
     /**
      * An array of categories for the product, used for organization and searching.
      *
-     * @var ?array<EcommerceProductCategories> $categories
+     * @var ?array<\Apideck\Unify\Models\Components\EcommerceProductCategories> $categories
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('categories')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceProductCategories>|null')]
@@ -80,7 +80,7 @@ class EcommerceProduct
     /**
      * The current status of the product (active or archived).
      *
-     * @var ?ProductStatus $status
+     * @var ?\Apideck\Unify\Models\Components\ProductStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ProductStatus|null')]
@@ -117,7 +117,7 @@ class EcommerceProduct
     /**
      * An array of image URLs for the product.
      *
-     * @var ?array<Images> $images
+     * @var ?array<\Apideck\Unify\Models\Components\Images> $images
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('images')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Images>|null')]
@@ -172,17 +172,17 @@ class EcommerceProduct
 
     /**
      * @param  string  $id
-     * @param  ?array<EcommerceProductOptions>  $options
-     * @param  ?array<Variants>  $variants
+     * @param  ?array<\Apideck\Unify\Models\Components\EcommerceProductOptions>  $options
+     * @param  ?array<\Apideck\Unify\Models\Components\Variants>  $variants
      * @param  ?array<?string>  $tags
-     * @param  ?array<EcommerceProductCategories>  $categories
+     * @param  ?array<\Apideck\Unify\Models\Components\EcommerceProductCategories>  $categories
      * @param  ?string  $name
      * @param  ?string  $description
-     * @param  ?ProductStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\ProductStatus  $status
      * @param  ?string  $price
      * @param  ?string  $sku
      * @param  ?string  $inventoryQuantity
-     * @param  ?array<Images>  $images
+     * @param  ?array<\Apideck\Unify\Models\Components\Images>  $images
      * @param  ?string  $weight
      * @param  ?string  $weightUnit
      * @param  ?array<string, mixed>  $customMappings

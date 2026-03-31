@@ -13,7 +13,7 @@ class AccountingBankFeedStatementsDeleteResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class AccountingBankFeedStatementsDeleteResponse
     /**
      * Bank Feed Statements
      *
-     * @var ?Components\DeleteBankFeedStatementResponse $deleteBankFeedStatementResponse
+     * @var ?\Apideck\Unify\Models\Components\DeleteBankFeedStatementResponse $deleteBankFeedStatementResponse
      */
     public ?Components\DeleteBankFeedStatementResponse $deleteBankFeedStatementResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\DeleteBankFeedStatementResponse  $deleteBankFeedStatementResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\DeleteBankFeedStatementResponse  $deleteBankFeedStatementResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteBankFeedStatementResponse $deleteBankFeedStatementResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

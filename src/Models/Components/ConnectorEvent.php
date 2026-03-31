@@ -24,7 +24,7 @@ class ConnectorEvent
     /**
      * Unify event source
      *
-     * @var ?EventSource $eventSource
+     * @var ?\Apideck\Unify\Models\Components\EventSource $eventSource
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('event_source')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EventSource|null')]
@@ -61,7 +61,7 @@ class ConnectorEvent
 
     /**
      * @param  ?string  $eventType
-     * @param  ?EventSource  $eventSource
+     * @param  ?\Apideck\Unify\Models\Components\EventSource  $eventSource
      * @param  ?string  $downstreamEventType
      * @param  ?array<string>  $resources
      * @param  ?string  $entityType

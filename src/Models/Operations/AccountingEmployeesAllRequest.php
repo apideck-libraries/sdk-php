@@ -39,7 +39,7 @@ class AccountingEmployeesAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\AccountingEmployeesFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\AccountingEmployeesFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\AccountingEmployeesFilter $filter = null;
@@ -82,7 +82,7 @@ class AccountingEmployeesAllRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?int  $limit
-     * @param  ?Components\AccountingEmployeesFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\AccountingEmployeesFilter  $filter
      * @param  ?string  $cursor
      * @param  ?string  $fields
      * @phpstan-pure

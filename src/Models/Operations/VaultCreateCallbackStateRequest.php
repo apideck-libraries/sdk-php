@@ -31,7 +31,7 @@ class VaultCreateCallbackStateRequest
     /**
      * Callback state data
      *
-     * @var Components\CreateCallbackState $createCallbackState
+     * @var \Apideck\Unify\Models\Components\CreateCallbackState $createCallbackState
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\CreateCallbackState $createCallbackState;
@@ -55,7 +55,7 @@ class VaultCreateCallbackStateRequest
     /**
      * @param  string  $serviceId
      * @param  string  $unifiedApi
-     * @param  Components\CreateCallbackState  $createCallbackState
+     * @param  \Apideck\Unify\Models\Components\CreateCallbackState  $createCallbackState
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @phpstan-pure

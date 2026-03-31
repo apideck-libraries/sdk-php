@@ -13,7 +13,7 @@ class JobLinks
 {
     /**
      *
-     * @var ?JobType $type
+     * @var ?\Apideck\Unify\Models\Components\JobType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\JobType|null')]
@@ -29,7 +29,7 @@ class JobLinks
     public ?string $url = null;
 
     /**
-     * @param  ?JobType  $type
+     * @param  ?\Apideck\Unify\Models\Components\JobType  $type
      * @param  ?string  $url
      * @phpstan-pure
      */

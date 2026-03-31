@@ -13,7 +13,7 @@ class CrmCustomObjectSchemasDeleteResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class CrmCustomObjectSchemasDeleteResponse
     /**
      * Custom object schema deleted
      *
-     * @var ?Components\DeleteCustomObjectSchemaResponse $deleteCustomObjectSchemaResponse
+     * @var ?\Apideck\Unify\Models\Components\DeleteCustomObjectSchemaResponse $deleteCustomObjectSchemaResponse
      */
     public ?Components\DeleteCustomObjectSchemaResponse $deleteCustomObjectSchemaResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\DeleteCustomObjectSchemaResponse  $deleteCustomObjectSchemaResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\DeleteCustomObjectSchemaResponse  $deleteCustomObjectSchemaResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteCustomObjectSchemaResponse $deleteCustomObjectSchemaResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

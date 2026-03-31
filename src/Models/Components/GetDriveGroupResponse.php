@@ -54,7 +54,7 @@ class GetDriveGroupResponse
 
     /**
      *
-     * @var DriveGroup $data
+     * @var \Apideck\Unify\Models\Components\DriveGroup $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\DriveGroup')]
@@ -76,7 +76,7 @@ class GetDriveGroupResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  DriveGroup  $data
+     * @param  \Apideck\Unify\Models\Components\DriveGroup  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

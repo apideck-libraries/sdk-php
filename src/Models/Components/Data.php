@@ -30,7 +30,7 @@ class Data
     /**
      * The metadata of the consumer. This is used to display the consumer in the sidebar. This is optional, but recommended.
      *
-     * @var ?ConsumerMetadata $metadata
+     * @var ?\Apideck\Unify\Models\Components\ConsumerMetadata $metadata
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConsumerMetadata|null')]
@@ -47,7 +47,7 @@ class Data
 
     /**
      *
-     * @var ?RequestCountAllocation $requestCounts
+     * @var ?\Apideck\Unify\Models\Components\RequestCountAllocation $requestCounts
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('request_counts')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\RequestCountAllocation|null')]
@@ -91,9 +91,9 @@ class Data
     /**
      * @param  ?string  $consumerId
      * @param  ?string  $applicationId
-     * @param  ?ConsumerMetadata  $metadata
+     * @param  ?\Apideck\Unify\Models\Components\ConsumerMetadata  $metadata
      * @param  ?float  $aggregatedRequestCount
-     * @param  ?RequestCountAllocation  $requestCounts
+     * @param  ?\Apideck\Unify\Models\Components\RequestCountAllocation  $requestCounts
      * @param  ?string  $created
      * @param  ?string  $modified
      * @param  ?string  $requestCountUpdated

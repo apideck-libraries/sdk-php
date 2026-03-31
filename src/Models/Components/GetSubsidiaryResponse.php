@@ -54,7 +54,7 @@ class GetSubsidiaryResponse
 
     /**
      *
-     * @var Subsidiary $data
+     * @var \Apideck\Unify\Models\Components\Subsidiary $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Subsidiary')]
@@ -76,7 +76,7 @@ class GetSubsidiaryResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Subsidiary  $data
+     * @param  \Apideck\Unify\Models\Components\Subsidiary  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

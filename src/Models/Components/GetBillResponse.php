@@ -54,7 +54,7 @@ class GetBillResponse
 
     /**
      *
-     * @var Bill $data
+     * @var \Apideck\Unify\Models\Components\Bill $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Bill')]
@@ -76,7 +76,7 @@ class GetBillResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Bill  $data
+     * @param  \Apideck\Unify\Models\Components\Bill  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

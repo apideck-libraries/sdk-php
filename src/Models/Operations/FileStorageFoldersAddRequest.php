@@ -14,7 +14,7 @@ class FileStorageFoldersAddRequest
 {
     /**
      *
-     * @var Components\CreateFolderRequest $createFolderRequest
+     * @var \Apideck\Unify\Models\Components\CreateFolderRequest $createFolderRequest
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\CreateFolderRequest $createFolderRequest;
@@ -60,7 +60,7 @@ class FileStorageFoldersAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\CreateFolderRequest  $createFolderRequest
+     * @param  \Apideck\Unify\Models\Components\CreateFolderRequest  $createFolderRequest
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

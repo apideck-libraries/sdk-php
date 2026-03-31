@@ -23,7 +23,7 @@ class LedgerAccountInput
     /**
      * The type of account.
      *
-     * @var ?LedgerAccountType $type
+     * @var ?\Apideck\Unify\Models\Components\LedgerAccountType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LedgerAccountType|null')]
@@ -32,7 +32,7 @@ class LedgerAccountInput
 
     /**
      *
-     * @var ?LinkedTaxRateInput $taxRate
+     * @var ?\Apideck\Unify\Models\Components\LinkedTaxRateInput $taxRate
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRateInput|null')]
@@ -41,7 +41,7 @@ class LedgerAccountInput
 
     /**
      *
-     * @var ?BankAccount $bankAccount
+     * @var ?\Apideck\Unify\Models\Components\BankAccount $bankAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('bank_account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BankAccount|null')]
@@ -50,7 +50,7 @@ class LedgerAccountInput
 
     /**
      *
-     * @var ?ParentAccount $parentAccount
+     * @var ?\Apideck\Unify\Models\Components\ParentAccount $parentAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('parent_account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ParentAccount|null')]
@@ -60,7 +60,7 @@ class LedgerAccountInput
     /**
      * The subsidiaries the account belongs to.
      *
-     * @var ?array<LedgerAccountSubsidiaries> $subsidiaries
+     * @var ?array<\Apideck\Unify\Models\Components\LedgerAccountSubsidiaries> $subsidiaries
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiaries')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LedgerAccountSubsidiaries>|null')]
@@ -70,7 +70,7 @@ class LedgerAccountInput
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -80,7 +80,7 @@ class LedgerAccountInput
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -109,7 +109,7 @@ class LedgerAccountInput
     /**
      * The classification of account.
      *
-     * @var ?LedgerAccountClassification $classification
+     * @var ?\Apideck\Unify\Models\Components\LedgerAccountClassification $classification
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('classification')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LedgerAccountClassification|null')]
@@ -173,7 +173,7 @@ class LedgerAccountInput
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -209,7 +209,7 @@ class LedgerAccountInput
     /**
      * The status of the account.
      *
-     * @var ?AccountStatus $status
+     * @var ?\Apideck\Unify\Models\Components\AccountStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\AccountStatus|null')]
@@ -254,27 +254,27 @@ class LedgerAccountInput
 
     /**
      * @param  ?string  $displayId
-     * @param  ?LedgerAccountType  $type
-     * @param  ?LinkedTaxRateInput  $taxRate
-     * @param  ?BankAccount  $bankAccount
-     * @param  ?ParentAccount  $parentAccount
-     * @param  ?array<LedgerAccountSubsidiaries>  $subsidiaries
-     * @param  ?array<CustomField1|CustomField2>  $customFields
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?\Apideck\Unify\Models\Components\LedgerAccountType  $type
+     * @param  ?\Apideck\Unify\Models\Components\LinkedTaxRateInput  $taxRate
+     * @param  ?\Apideck\Unify\Models\Components\BankAccount  $bankAccount
+     * @param  ?\Apideck\Unify\Models\Components\ParentAccount  $parentAccount
+     * @param  ?array<\Apideck\Unify\Models\Components\LedgerAccountSubsidiaries>  $subsidiaries
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $nominalCode
      * @param  ?string  $code
-     * @param  ?LedgerAccountClassification  $classification
+     * @param  ?\Apideck\Unify\Models\Components\LedgerAccountClassification  $classification
      * @param  ?string  $subType
      * @param  ?string  $name
      * @param  ?string  $fullyQualifiedName
      * @param  ?string  $description
      * @param  ?float  $openingBalance
      * @param  ?float  $currentBalance
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?string  $taxType
      * @param  ?float  $level
      * @param  ?bool  $active
-     * @param  ?AccountStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\AccountStatus  $status
      * @param  ?bool  $header
      * @param  ?bool  $subAccount
      * @param  ?LocalDate  $lastReconciliationDate

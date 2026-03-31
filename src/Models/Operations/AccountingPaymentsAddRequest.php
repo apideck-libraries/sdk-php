@@ -14,7 +14,7 @@ class AccountingPaymentsAddRequest
 {
     /**
      *
-     * @var Components\PaymentInput $payment
+     * @var \Apideck\Unify\Models\Components\PaymentInput $payment
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\PaymentInput $payment;
@@ -60,7 +60,7 @@ class AccountingPaymentsAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\PaymentInput  $payment
+     * @param  \Apideck\Unify\Models\Components\PaymentInput  $payment
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

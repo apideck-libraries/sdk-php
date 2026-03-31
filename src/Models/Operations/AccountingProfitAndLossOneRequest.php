@@ -47,7 +47,7 @@ class AccountingProfitAndLossOneRequest
     /**
      * Apply filters
      *
-     * @var ?Components\ProfitAndLossFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\ProfitAndLossFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\ProfitAndLossFilter $filter = null;
@@ -82,7 +82,7 @@ class AccountingProfitAndLossOneRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?string  $companyId
-     * @param  ?Components\ProfitAndLossFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\ProfitAndLossFilter  $filter
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $fields
      * @phpstan-pure

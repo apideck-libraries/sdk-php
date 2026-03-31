@@ -13,7 +13,7 @@ class AccountingCompaniesAllResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,14 +22,14 @@ class AccountingCompaniesAllResponse
     /**
      * Companies
      *
-     * @var ?Components\GetCompaniesResponse $getCompaniesResponse
+     * @var ?\Apideck\Unify\Models\Components\GetCompaniesResponse $getCompaniesResponse
      */
     public ?Components\GetCompaniesResponse $getCompaniesResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
@@ -38,9 +38,9 @@ class AccountingCompaniesAllResponse
      */
     public \Closure $next;
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetCompaniesResponse  $getCompaniesResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetCompaniesResponse  $getCompaniesResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetCompaniesResponse $getCompaniesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

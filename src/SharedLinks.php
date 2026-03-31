@@ -52,8 +52,8 @@ class SharedLinks
      *
      * Create Shared Link
      *
-     * @param  Operations\FileStorageSharedLinksAddRequest  $request
-     * @return Operations\FileStorageSharedLinksAddResponse
+     * @param  \Apideck\Unify\Models\Operations\FileStorageSharedLinksAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageSharedLinksAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\FileStorageSharedLinksAddRequest $request, ?Options $options = null): Operations\FileStorageSharedLinksAddResponse
@@ -227,8 +227,8 @@ class SharedLinks
      *
      * List Shared Links
      *
-     * @param  ?Operations\FileStorageSharedLinksAllRequest  $request
-     * @return Operations\FileStorageSharedLinksAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\FileStorageSharedLinksAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageSharedLinksAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\FileStorageSharedLinksAllRequest $request = null, ?Options $options = null): Operations\FileStorageSharedLinksAllResponse
@@ -452,8 +452,8 @@ class SharedLinks
      *
      * List Shared Links
      *
-     * @param  ?Operations\FileStorageSharedLinksAllRequest  $request
-     * @return \Generator<Operations\FileStorageSharedLinksAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\FileStorageSharedLinksAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\FileStorageSharedLinksAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\FileStorageSharedLinksAllRequest $request = null, ?Options $options = null): \Generator
@@ -470,8 +470,8 @@ class SharedLinks
      *
      * Delete Shared Link
      *
-     * @param  Operations\FileStorageSharedLinksDeleteRequest  $request
-     * @return Operations\FileStorageSharedLinksDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\FileStorageSharedLinksDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageSharedLinksDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\FileStorageSharedLinksDeleteRequest $request, ?Options $options = null): Operations\FileStorageSharedLinksDeleteResponse
@@ -640,8 +640,8 @@ class SharedLinks
      *
      * Get Shared Link
      *
-     * @param  Operations\FileStorageSharedLinksOneRequest  $request
-     * @return Operations\FileStorageSharedLinksOneResponse
+     * @param  \Apideck\Unify\Models\Operations\FileStorageSharedLinksOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageSharedLinksOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\FileStorageSharedLinksOneRequest $request, ?Options $options = null): Operations\FileStorageSharedLinksOneResponse
@@ -810,8 +810,8 @@ class SharedLinks
      *
      * Update Shared Link
      *
-     * @param  Operations\FileStorageSharedLinksUpdateRequest  $request
-     * @return Operations\FileStorageSharedLinksUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\FileStorageSharedLinksUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageSharedLinksUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\FileStorageSharedLinksUpdateRequest $request, ?Options $options = null): Operations\FileStorageSharedLinksUpdateResponse

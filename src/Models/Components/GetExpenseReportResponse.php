@@ -54,7 +54,7 @@ class GetExpenseReportResponse
 
     /**
      *
-     * @var ExpenseReport $data
+     * @var \Apideck\Unify\Models\Components\ExpenseReport $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ExpenseReport')]
@@ -76,7 +76,7 @@ class GetExpenseReportResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  ExpenseReport  $data
+     * @param  \Apideck\Unify\Models\Components\ExpenseReport  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

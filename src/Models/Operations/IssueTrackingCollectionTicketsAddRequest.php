@@ -22,7 +22,7 @@ class IssueTrackingCollectionTicketsAddRequest
 
     /**
      *
-     * @var Components\TicketInput $ticket
+     * @var \Apideck\Unify\Models\Components\TicketInput $ticket
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\TicketInput $ticket;
@@ -61,7 +61,7 @@ class IssueTrackingCollectionTicketsAddRequest
 
     /**
      * @param  string  $collectionId
-     * @param  Components\TicketInput  $ticket
+     * @param  \Apideck\Unify\Models\Components\TicketInput  $ticket
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

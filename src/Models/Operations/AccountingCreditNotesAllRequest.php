@@ -47,7 +47,7 @@ class AccountingCreditNotesAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\CreditNotesFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\CreditNotesFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\CreditNotesFilter $filter = null;
@@ -55,7 +55,7 @@ class AccountingCreditNotesAllRequest
     /**
      * Apply sorting
      *
-     * @var ?Components\CreditNotesSort $sort
+     * @var ?\Apideck\Unify\Models\Components\CreditNotesSort $sort
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=sort')]
     public ?Components\CreditNotesSort $sort = null;
@@ -107,8 +107,8 @@ class AccountingCreditNotesAllRequest
      * @param  ?string  $serviceId
      * @param  ?string  $companyId
      * @param  ?int  $limit
-     * @param  ?Components\CreditNotesFilter  $filter
-     * @param  ?Components\CreditNotesSort  $sort
+     * @param  ?\Apideck\Unify\Models\Components\CreditNotesFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\CreditNotesSort  $sort
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields

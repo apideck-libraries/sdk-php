@@ -39,7 +39,7 @@ class BalanceSheetFilter
     /**
      * The type of period to include in the resource: month, quarter, year.
      *
-     * @var ?PeriodType $periodType
+     * @var ?\Apideck\Unify\Models\Components\PeriodType $periodType
      */
     #[SpeakeasyMetadata('queryParam:name=period_type')]
     public ?PeriodType $periodType = null;
@@ -55,7 +55,7 @@ class BalanceSheetFilter
     /**
      * The accounting method used for the report: cash or accrual.
      *
-     * @var ?AccountingMethod $accountingMethod
+     * @var ?\Apideck\Unify\Models\Components\AccountingMethod $accountingMethod
      */
     #[SpeakeasyMetadata('queryParam:name=accounting_method')]
     public ?AccountingMethod $accountingMethod = null;
@@ -64,9 +64,9 @@ class BalanceSheetFilter
      * @param  ?string  $startDate
      * @param  ?string  $endDate
      * @param  ?int  $periodCount
-     * @param  ?PeriodType  $periodType
+     * @param  ?\Apideck\Unify\Models\Components\PeriodType  $periodType
      * @param  ?string  $locationId
-     * @param  ?AccountingMethod  $accountingMethod
+     * @param  ?\Apideck\Unify\Models\Components\AccountingMethod  $accountingMethod
      * @phpstan-pure
      */
     public function __construct(?string $startDate = null, ?string $endDate = null, ?int $periodCount = null, ?PeriodType $periodType = null, ?string $locationId = null, ?AccountingMethod $accountingMethod = null)

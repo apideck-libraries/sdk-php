@@ -22,7 +22,7 @@ class Configuration
     /**
      * $defaults
      *
-     * @var ?array<Defaults> $defaults
+     * @var ?array<\Apideck\Unify\Models\Components\Defaults> $defaults
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('defaults')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Defaults>|null')]
@@ -31,7 +31,7 @@ class Configuration
 
     /**
      * @param  ?string  $resource
-     * @param  ?array<Defaults>  $defaults
+     * @param  ?array<\Apideck\Unify\Models\Components\Defaults>  $defaults
      * @phpstan-pure
      */
     public function __construct(?string $resource = null, ?array $defaults = null)

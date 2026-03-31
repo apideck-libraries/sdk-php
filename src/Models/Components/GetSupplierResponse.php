@@ -54,7 +54,7 @@ class GetSupplierResponse
 
     /**
      *
-     * @var Supplier $data
+     * @var \Apideck\Unify\Models\Components\Supplier $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Supplier')]
@@ -76,7 +76,7 @@ class GetSupplierResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Supplier  $data
+     * @param  \Apideck\Unify\Models\Components\Supplier  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

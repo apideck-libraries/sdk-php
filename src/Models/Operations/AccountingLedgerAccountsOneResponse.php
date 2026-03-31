@@ -13,7 +13,7 @@ class AccountingLedgerAccountsOneResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class AccountingLedgerAccountsOneResponse
     /**
      * LedgerAccount
      *
-     * @var ?Components\GetLedgerAccountResponse $getLedgerAccountResponse
+     * @var ?\Apideck\Unify\Models\Components\GetLedgerAccountResponse $getLedgerAccountResponse
      */
     public ?Components\GetLedgerAccountResponse $getLedgerAccountResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetLedgerAccountResponse  $getLedgerAccountResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetLedgerAccountResponse  $getLedgerAccountResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetLedgerAccountResponse $getLedgerAccountResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

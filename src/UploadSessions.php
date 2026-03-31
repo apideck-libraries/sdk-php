@@ -68,9 +68,9 @@ class UploadSessions
      *
      * Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](/guides/file-upload).
      *
-     * @param  Operations\FileStorageUploadSessionsAddRequest  $request
+     * @param  \Apideck\Unify\Models\Operations\FileStorageUploadSessionsAddRequest  $request
      * @param  ?string  $serverURL
-     * @return Operations\FileStorageUploadSessionsAddResponse
+     * @return \Apideck\Unify\Models\Operations\FileStorageUploadSessionsAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\FileStorageUploadSessionsAddRequest $request, ?string $serverURL = null, ?Options $options = null): Operations\FileStorageUploadSessionsAddResponse
@@ -248,8 +248,8 @@ class UploadSessions
      *
      * Abort Upload Session. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](/guides/file-upload).
      *
-     * @param  Operations\FileStorageUploadSessionsDeleteRequest  $request
-     * @return Operations\FileStorageUploadSessionsDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\FileStorageUploadSessionsDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageUploadSessionsDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\FileStorageUploadSessionsDeleteRequest $request, ?Options $options = null): Operations\FileStorageUploadSessionsDeleteResponse
@@ -418,9 +418,9 @@ class UploadSessions
      *
      * Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](/guides/file-upload).
      *
-     * @param  Operations\FileStorageUploadSessionsFinishRequest  $request
+     * @param  \Apideck\Unify\Models\Operations\FileStorageUploadSessionsFinishRequest  $request
      * @param  ?string  $serverURL
-     * @return Operations\FileStorageUploadSessionsFinishResponse
+     * @return \Apideck\Unify\Models\Operations\FileStorageUploadSessionsFinishResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function finish(Operations\FileStorageUploadSessionsFinishRequest $request, ?string $serverURL = null, ?Options $options = null): Operations\FileStorageUploadSessionsFinishResponse
@@ -597,9 +597,9 @@ class UploadSessions
      *
      * Get Upload Session. Use the `part_size` to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](/guides/file-upload).
      *
-     * @param  Operations\FileStorageUploadSessionsOneRequest  $request
+     * @param  \Apideck\Unify\Models\Operations\FileStorageUploadSessionsOneRequest  $request
      * @param  ?string  $serverURL
-     * @return Operations\FileStorageUploadSessionsOneResponse
+     * @return \Apideck\Unify\Models\Operations\FileStorageUploadSessionsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\FileStorageUploadSessionsOneRequest $request, ?string $serverURL = null, ?Options $options = null): Operations\FileStorageUploadSessionsOneResponse
@@ -772,9 +772,9 @@ class UploadSessions
      *
      * Upload part of File to Upload Session (max 100MB). Get `part_size` from [Get Upload Session](#operation/uploadSessionsOne) first. Every File part (except the last one) uploaded to this endpoint should have Content-Length equal to `part_size`. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](/guides/file-upload).
      *
-     * @param  Operations\FileStorageUploadSessionsUploadRequest  $request
+     * @param  \Apideck\Unify\Models\Operations\FileStorageUploadSessionsUploadRequest  $request
      * @param  ?string  $serverURL
-     * @return Operations\FileStorageUploadSessionsUploadResponse
+     * @return \Apideck\Unify\Models\Operations\FileStorageUploadSessionsUploadResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function upload(Operations\FileStorageUploadSessionsUploadRequest $request, ?string $serverURL = null, ?Options $options = null): Operations\FileStorageUploadSessionsUploadResponse

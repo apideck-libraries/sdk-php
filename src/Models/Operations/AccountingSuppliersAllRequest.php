@@ -47,7 +47,7 @@ class AccountingSuppliersAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\SuppliersFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\SuppliersFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\SuppliersFilter $filter = null;
@@ -55,7 +55,7 @@ class AccountingSuppliersAllRequest
     /**
      * Apply sorting
      *
-     * @var ?Components\SuppliersSort $sort
+     * @var ?\Apideck\Unify\Models\Components\SuppliersSort $sort
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=sort')]
     public ?Components\SuppliersSort $sort = null;
@@ -107,8 +107,8 @@ class AccountingSuppliersAllRequest
      * @param  ?string  $serviceId
      * @param  ?string  $companyId
      * @param  ?int  $limit
-     * @param  ?Components\SuppliersFilter  $filter
-     * @param  ?Components\SuppliersSort  $sort
+     * @param  ?\Apideck\Unify\Models\Components\SuppliersFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\SuppliersSort  $sort
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields

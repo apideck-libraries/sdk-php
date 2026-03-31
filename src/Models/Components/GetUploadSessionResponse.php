@@ -54,7 +54,7 @@ class GetUploadSessionResponse
 
     /**
      *
-     * @var UploadSession $data
+     * @var \Apideck\Unify\Models\Components\UploadSession $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\UploadSession')]
@@ -76,7 +76,7 @@ class GetUploadSessionResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  UploadSession  $data
+     * @param  \Apideck\Unify\Models\Components\UploadSession  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

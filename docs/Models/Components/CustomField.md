@@ -7,7 +7,7 @@
 
 ```php
 /**
-* @var Components\CustomField1
+* @var \Apideck\Unify\Models\Components\CustomField1
 */
 Components\CustomField1 $value = /* values here */
 ```
@@ -16,7 +16,7 @@ Components\CustomField1 $value = /* values here */
 
 ```php
 /**
-* @var Components\CustomField2
+* @var \Apideck\Unify\Models\Components\CustomField2
 */
 Components\CustomField2 $value = /* values here */
 ```

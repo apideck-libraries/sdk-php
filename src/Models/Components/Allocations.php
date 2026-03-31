@@ -14,7 +14,7 @@ class Allocations
     /**
      * Type of entity this payment should be attributed to.
      *
-     * @var ?BillPaymentAllocationType $type
+     * @var ?\Apideck\Unify\Models\Components\BillPaymentAllocationType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BillPaymentAllocationType|null')]
@@ -57,7 +57,7 @@ class Allocations
     public ?float $amount = null;
 
     /**
-     * @param  ?BillPaymentAllocationType  $type
+     * @param  ?\Apideck\Unify\Models\Components\BillPaymentAllocationType  $type
      * @param  ?string  $code
      * @param  ?string  $allocationId
      * @param  ?string  $id

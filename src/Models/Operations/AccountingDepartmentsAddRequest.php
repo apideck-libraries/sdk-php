@@ -14,7 +14,7 @@ class AccountingDepartmentsAddRequest
 {
     /**
      *
-     * @var Components\AccountingDepartmentInput $accountingDepartment
+     * @var \Apideck\Unify\Models\Components\AccountingDepartmentInput $accountingDepartment
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\AccountingDepartmentInput $accountingDepartment;
@@ -60,7 +60,7 @@ class AccountingDepartmentsAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\AccountingDepartmentInput  $accountingDepartment
+     * @param  \Apideck\Unify\Models\Components\AccountingDepartmentInput  $accountingDepartment
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

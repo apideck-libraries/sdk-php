@@ -52,8 +52,8 @@ class Categories
      *
      * List Categories
      *
-     * @param  ?Operations\AccountingCategoriesAllRequest  $request
-     * @return Operations\AccountingCategoriesAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingCategoriesAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingCategoriesAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AccountingCategoriesAllRequest $request = null, ?Options $options = null): Operations\AccountingCategoriesAllResponse
@@ -279,8 +279,8 @@ class Categories
      *
      * List Categories
      *
-     * @param  ?Operations\AccountingCategoriesAllRequest  $request
-     * @return \Generator<Operations\AccountingCategoriesAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingCategoriesAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AccountingCategoriesAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AccountingCategoriesAllRequest $request = null, ?Options $options = null): \Generator
@@ -297,8 +297,8 @@ class Categories
      *
      * Get Category
      *
-     * @param  Operations\AccountingCategoriesOneRequest  $request
-     * @return Operations\AccountingCategoriesOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingCategoriesOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingCategoriesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AccountingCategoriesOneRequest $request, ?Options $options = null): Operations\AccountingCategoriesOneResponse

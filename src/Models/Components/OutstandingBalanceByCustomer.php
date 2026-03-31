@@ -32,7 +32,7 @@ class OutstandingBalanceByCustomer
     /**
      * $outstandingBalancesByCurrency
      *
-     * @var ?array<OutstandingBalanceByCurrency> $outstandingBalancesByCurrency
+     * @var ?array<\Apideck\Unify\Models\Components\OutstandingBalanceByCurrency> $outstandingBalancesByCurrency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('outstanding_balances_by_currency')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\OutstandingBalanceByCurrency>|null')]
@@ -42,7 +42,7 @@ class OutstandingBalanceByCustomer
     /**
      * @param  ?string  $customerId
      * @param  ?string  $customerName
-     * @param  ?array<OutstandingBalanceByCurrency>  $outstandingBalancesByCurrency
+     * @param  ?array<\Apideck\Unify\Models\Components\OutstandingBalanceByCurrency>  $outstandingBalancesByCurrency
      * @phpstan-pure
      */
     public function __construct(?string $customerId = null, ?string $customerName = null, ?array $outstandingBalancesByCurrency = null)

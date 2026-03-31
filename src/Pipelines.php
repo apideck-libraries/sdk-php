@@ -52,8 +52,8 @@ class Pipelines
      *
      * Create pipeline
      *
-     * @param  Operations\CrmPipelinesAddRequest  $request
-     * @return Operations\CrmPipelinesAddResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmPipelinesAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmPipelinesAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\CrmPipelinesAddRequest $request, ?Options $options = null): Operations\CrmPipelinesAddResponse
@@ -227,8 +227,8 @@ class Pipelines
      *
      * List pipelines
      *
-     * @param  ?Operations\CrmPipelinesAllRequest  $request
-     * @return Operations\CrmPipelinesAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\CrmPipelinesAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmPipelinesAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\CrmPipelinesAllRequest $request = null, ?Options $options = null): Operations\CrmPipelinesAllResponse
@@ -452,8 +452,8 @@ class Pipelines
      *
      * List pipelines
      *
-     * @param  ?Operations\CrmPipelinesAllRequest  $request
-     * @return \Generator<Operations\CrmPipelinesAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\CrmPipelinesAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\CrmPipelinesAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\CrmPipelinesAllRequest $request = null, ?Options $options = null): \Generator
@@ -470,8 +470,8 @@ class Pipelines
      *
      * Delete pipeline
      *
-     * @param  Operations\CrmPipelinesDeleteRequest  $request
-     * @return Operations\CrmPipelinesDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmPipelinesDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmPipelinesDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\CrmPipelinesDeleteRequest $request, ?Options $options = null): Operations\CrmPipelinesDeleteResponse
@@ -640,8 +640,8 @@ class Pipelines
      *
      * Get pipeline
      *
-     * @param  Operations\CrmPipelinesOneRequest  $request
-     * @return Operations\CrmPipelinesOneResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmPipelinesOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmPipelinesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\CrmPipelinesOneRequest $request, ?Options $options = null): Operations\CrmPipelinesOneResponse
@@ -810,8 +810,8 @@ class Pipelines
      *
      * Update pipeline
      *
-     * @param  Operations\CrmPipelinesUpdateRequest  $request
-     * @return Operations\CrmPipelinesUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmPipelinesUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmPipelinesUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\CrmPipelinesUpdateRequest $request, ?Options $options = null): Operations\CrmPipelinesUpdateResponse

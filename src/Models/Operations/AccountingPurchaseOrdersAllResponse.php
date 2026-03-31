@@ -13,7 +13,7 @@ class AccountingPurchaseOrdersAllResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,14 +22,14 @@ class AccountingPurchaseOrdersAllResponse
     /**
      * PurchaseOrders
      *
-     * @var ?Components\GetPurchaseOrdersResponse $getPurchaseOrdersResponse
+     * @var ?\Apideck\Unify\Models\Components\GetPurchaseOrdersResponse $getPurchaseOrdersResponse
      */
     public ?Components\GetPurchaseOrdersResponse $getPurchaseOrdersResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
@@ -38,9 +38,9 @@ class AccountingPurchaseOrdersAllResponse
      */
     public \Closure $next;
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetPurchaseOrdersResponse  $getPurchaseOrdersResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetPurchaseOrdersResponse  $getPurchaseOrdersResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetPurchaseOrdersResponse $getPurchaseOrdersResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

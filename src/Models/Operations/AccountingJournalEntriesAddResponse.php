@@ -13,7 +13,7 @@ class AccountingJournalEntriesAddResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class AccountingJournalEntriesAddResponse
     /**
      * JournalEntries
      *
-     * @var ?Components\CreateJournalEntryResponse $createJournalEntryResponse
+     * @var ?\Apideck\Unify\Models\Components\CreateJournalEntryResponse $createJournalEntryResponse
      */
     public ?Components\CreateJournalEntryResponse $createJournalEntryResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\CreateJournalEntryResponse  $createJournalEntryResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\CreateJournalEntryResponse  $createJournalEntryResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateJournalEntryResponse $createJournalEntryResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

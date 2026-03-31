@@ -45,7 +45,7 @@ class VaultConnectionsTokenRequest
 
     /**
      *
-     * @var ?VaultConnectionsTokenRequestBody $requestBody
+     * @var ?\Apideck\Unify\Models\Operations\VaultConnectionsTokenRequestBody $requestBody
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public ?VaultConnectionsTokenRequestBody $requestBody = null;
@@ -55,7 +55,7 @@ class VaultConnectionsTokenRequest
      * @param  string  $unifiedApi
      * @param  ?string  $consumerId
      * @param  ?string  $appId
-     * @param  ?VaultConnectionsTokenRequestBody  $requestBody
+     * @param  ?\Apideck\Unify\Models\Operations\VaultConnectionsTokenRequestBody  $requestBody
      * @phpstan-pure
      */
     public function __construct(string $serviceId, string $unifiedApi, ?string $consumerId = null, ?string $appId = null, ?VaultConnectionsTokenRequestBody $requestBody = null)

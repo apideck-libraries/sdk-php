@@ -22,7 +22,7 @@ class HrisEmployeesUpdateRequest
 
     /**
      *
-     * @var Components\EmployeeInput $employee
+     * @var \Apideck\Unify\Models\Components\EmployeeInput $employee
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\EmployeeInput $employee;
@@ -61,7 +61,7 @@ class HrisEmployeesUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\EmployeeInput  $employee
+     * @param  \Apideck\Unify\Models\Components\EmployeeInput  $employee
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

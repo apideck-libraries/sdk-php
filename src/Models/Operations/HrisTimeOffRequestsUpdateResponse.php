@@ -13,7 +13,7 @@ class HrisTimeOffRequestsUpdateResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class HrisTimeOffRequestsUpdateResponse
     /**
      * TimeOffRequests
      *
-     * @var ?Components\UpdateTimeOffRequestResponse $updateTimeOffRequestResponse
+     * @var ?\Apideck\Unify\Models\Components\UpdateTimeOffRequestResponse $updateTimeOffRequestResponse
      */
     public ?Components\UpdateTimeOffRequestResponse $updateTimeOffRequestResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\UpdateTimeOffRequestResponse  $updateTimeOffRequestResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\UpdateTimeOffRequestResponse  $updateTimeOffRequestResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UpdateTimeOffRequestResponse $updateTimeOffRequestResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

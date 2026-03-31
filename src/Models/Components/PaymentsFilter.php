@@ -42,7 +42,7 @@ class PaymentsFilter
 
     /**
      *
-     * @var ?PaymentsFilterType $type
+     * @var ?\Apideck\Unify\Models\Components\PaymentsFilterType $type
      */
     #[SpeakeasyMetadata('queryParam:name=type')]
     public ?PaymentsFilterType $type = null;
@@ -52,7 +52,7 @@ class PaymentsFilter
      * @param  ?string  $invoiceId
      * @param  ?string  $supplierId
      * @param  ?string  $customerId
-     * @param  ?PaymentsFilterType  $type
+     * @param  ?\Apideck\Unify\Models\Components\PaymentsFilterType  $type
      * @phpstan-pure
      */
     public function __construct(?\DateTime $updatedSince = null, ?string $invoiceId = null, ?string $supplierId = null, ?string $customerId = null, ?PaymentsFilterType $type = null)

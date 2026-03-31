@@ -22,7 +22,7 @@ class FileStorageSharedLinksUpdateRequest
 
     /**
      *
-     * @var Components\SharedLinkInput $sharedLink
+     * @var \Apideck\Unify\Models\Components\SharedLinkInput $sharedLink
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\SharedLinkInput $sharedLink;
@@ -61,7 +61,7 @@ class FileStorageSharedLinksUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\SharedLinkInput  $sharedLink
+     * @param  \Apideck\Unify\Models\Components\SharedLinkInput  $sharedLink
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

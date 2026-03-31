@@ -22,7 +22,7 @@ class Attachment
 
     /**
      *
-     * @var ?AttachmentReference $reference
+     * @var ?\Apideck\Unify\Models\Components\AttachmentReference $reference
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('reference')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\AttachmentReference|null')]
@@ -32,7 +32,7 @@ class Attachment
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -131,8 +131,8 @@ class Attachment
 
     /**
      * @param  ?string  $id
-     * @param  ?AttachmentReference  $reference
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?\Apideck\Unify\Models\Components\AttachmentReference  $reference
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $displayId
      * @param  ?string  $name
      * @param  ?string  $mimeType

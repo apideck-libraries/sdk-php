@@ -14,7 +14,7 @@ class LedgerAccountsSort
     /**
      * The field on which to sort the Ledger Accounts
      *
-     * @var ?LedgerAccountsSortBy $by
+     * @var ?\Apideck\Unify\Models\Components\LedgerAccountsSortBy $by
      */
     #[SpeakeasyMetadata('queryParam:name=by')]
     public ?LedgerAccountsSortBy $by = null;
@@ -22,14 +22,14 @@ class LedgerAccountsSort
     /**
      * The direction in which to sort the results
      *
-     * @var ?SortDirection $direction
+     * @var ?\Apideck\Unify\Models\Components\SortDirection $direction
      */
     #[SpeakeasyMetadata('queryParam:name=direction')]
     public ?SortDirection $direction = null;
 
     /**
-     * @param  ?LedgerAccountsSortBy  $by
-     * @param  ?SortDirection  $direction
+     * @param  ?\Apideck\Unify\Models\Components\LedgerAccountsSortBy  $by
+     * @param  ?\Apideck\Unify\Models\Components\SortDirection  $direction
      * @phpstan-pure
      */
     public function __construct(?LedgerAccountsSortBy $by = null, ?SortDirection $direction = SortDirection::Asc)

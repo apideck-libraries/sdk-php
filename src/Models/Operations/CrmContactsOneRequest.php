@@ -47,7 +47,7 @@ class CrmContactsOneRequest
     /**
      * Apply filters
      *
-     * @var ?Components\ContactsFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\ContactsFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\ContactsFilter $filter = null;
@@ -74,7 +74,7 @@ class CrmContactsOneRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?bool  $raw
-     * @param  ?Components\ContactsFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\ContactsFilter  $filter
      * @param  ?string  $fields
      * @phpstan-pure
      */

@@ -39,7 +39,7 @@ class AccountingRefundsAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\RefundsFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\RefundsFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\RefundsFilter $filter = null;
@@ -47,7 +47,7 @@ class AccountingRefundsAllRequest
     /**
      * Apply sorting
      *
-     * @var ?Components\RefundsSort $sort
+     * @var ?\Apideck\Unify\Models\Components\RefundsSort $sort
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=sort')]
     public ?Components\RefundsSort $sort = null;
@@ -98,8 +98,8 @@ class AccountingRefundsAllRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?int  $limit
-     * @param  ?Components\RefundsFilter  $filter
-     * @param  ?Components\RefundsSort  $sort
+     * @param  ?\Apideck\Unify\Models\Components\RefundsFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\RefundsSort  $sort
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields

@@ -60,7 +60,7 @@ class LinkedEcommerceCustomer
     /**
      * $phoneNumbers
      *
-     * @var ?array<PhoneNumber> $phoneNumbers
+     * @var ?array<\Apideck\Unify\Models\Components\PhoneNumber> $phoneNumbers
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('phone_numbers')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PhoneNumber>|null')]
@@ -70,7 +70,7 @@ class LinkedEcommerceCustomer
     /**
      * $emails
      *
-     * @var ?array<Email> $emails
+     * @var ?array<\Apideck\Unify\Models\Components\Email> $emails
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('emails')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Email>|null')]
@@ -83,8 +83,8 @@ class LinkedEcommerceCustomer
      * @param  ?string  $firstName
      * @param  ?string  $lastName
      * @param  ?string  $companyName
-     * @param  ?array<PhoneNumber>  $phoneNumbers
-     * @param  ?array<Email>  $emails
+     * @param  ?array<\Apideck\Unify\Models\Components\PhoneNumber>  $phoneNumbers
+     * @param  ?array<\Apideck\Unify\Models\Components\Email>  $emails
      * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $companyName = null, ?array $phoneNumbers = null, ?array $emails = null)

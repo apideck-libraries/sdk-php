@@ -53,8 +53,8 @@ class CreateCallback
      * This endpoint creates a callback state that can be used to issue requests to the callback endpoint.
      *
      *
-     * @param  Operations\VaultCreateCallbackStateRequest  $request
-     * @return Operations\VaultCreateCallbackStateResponse
+     * @param  \Apideck\Unify\Models\Operations\VaultCreateCallbackStateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\VaultCreateCallbackStateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function state(Operations\VaultCreateCallbackStateRequest $request, ?Options $options = null): Operations\VaultCreateCallbackStateResponse

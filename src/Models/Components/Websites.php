@@ -31,7 +31,7 @@ class Websites
     /**
      * The type of website
      *
-     * @var ?ApplicantType $type
+     * @var ?\Apideck\Unify\Models\Components\ApplicantType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ApplicantType|null')]
@@ -41,7 +41,7 @@ class Websites
     /**
      * @param  string  $url
      * @param  ?string  $id
-     * @param  ?ApplicantType  $type
+     * @param  ?\Apideck\Unify\Models\Components\ApplicantType  $type
      * @phpstan-pure
      */
     public function __construct(string $url, ?string $id = null, ?ApplicantType $type = null)

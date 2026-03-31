@@ -13,7 +13,7 @@ class EmployeeSchedules
 {
     /**
      *
-     * @var ?Employee $employee
+     * @var ?\Apideck\Unify\Models\Components\Employee $employee
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('employee')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Employee|null')]
@@ -23,7 +23,7 @@ class EmployeeSchedules
     /**
      * $schedules
      *
-     * @var ?array<Schedule> $schedules
+     * @var ?array<\Apideck\Unify\Models\Components\Schedule> $schedules
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('schedules')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Schedule>|null')]
@@ -31,8 +31,8 @@ class EmployeeSchedules
     public ?array $schedules = null;
 
     /**
-     * @param  ?Employee  $employee
-     * @param  ?array<Schedule>  $schedules
+     * @param  ?\Apideck\Unify\Models\Components\Employee  $employee
+     * @param  ?array<\Apideck\Unify\Models\Components\Schedule>  $schedules
      * @phpstan-pure
      */
     public function __construct(?Employee $employee = null, ?array $schedules = null)

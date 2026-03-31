@@ -46,7 +46,7 @@ class MessageInput
     /**
      * Set to sms for SMS messages and mms for MMS messages.
      *
-     * @var ?MessageType $type
+     * @var ?\Apideck\Unify\Models\Components\MessageType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\MessageType|null')]
@@ -92,7 +92,7 @@ class MessageInput
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -104,12 +104,12 @@ class MessageInput
      * @param  string  $to
      * @param  string  $body
      * @param  ?string  $subject
-     * @param  ?MessageType  $type
+     * @param  ?\Apideck\Unify\Models\Components\MessageType  $type
      * @param  ?\DateTime  $scheduledAt
      * @param  ?string  $webhookUrl
      * @param  ?string  $reference
      * @param  ?string  $messagingServiceId
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @phpstan-pure
      */
     public function __construct(string $from, string $to, string $body, ?string $subject = null, ?MessageType $type = null, ?\DateTime $scheduledAt = null, ?string $webhookUrl = null, ?string $reference = null, ?string $messagingServiceId = null, ?array $passThrough = null)

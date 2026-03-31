@@ -52,8 +52,8 @@ class Opportunities
      *
      * Create opportunity
      *
-     * @param  Operations\CrmOpportunitiesAddRequest  $request
-     * @return Operations\CrmOpportunitiesAddResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmOpportunitiesAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmOpportunitiesAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\CrmOpportunitiesAddRequest $request, ?Options $options = null): Operations\CrmOpportunitiesAddResponse
@@ -227,8 +227,8 @@ class Opportunities
      *
      * List opportunities
      *
-     * @param  ?Operations\CrmOpportunitiesAllRequest  $request
-     * @return Operations\CrmOpportunitiesAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\CrmOpportunitiesAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmOpportunitiesAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\CrmOpportunitiesAllRequest $request = null, ?Options $options = null): Operations\CrmOpportunitiesAllResponse
@@ -456,8 +456,8 @@ class Opportunities
      *
      * List opportunities
      *
-     * @param  ?Operations\CrmOpportunitiesAllRequest  $request
-     * @return \Generator<Operations\CrmOpportunitiesAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\CrmOpportunitiesAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\CrmOpportunitiesAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\CrmOpportunitiesAllRequest $request = null, ?Options $options = null): \Generator
@@ -474,8 +474,8 @@ class Opportunities
      *
      * Delete opportunity
      *
-     * @param  Operations\CrmOpportunitiesDeleteRequest  $request
-     * @return Operations\CrmOpportunitiesDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmOpportunitiesDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmOpportunitiesDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\CrmOpportunitiesDeleteRequest $request, ?Options $options = null): Operations\CrmOpportunitiesDeleteResponse
@@ -644,8 +644,8 @@ class Opportunities
      *
      * Get opportunity
      *
-     * @param  Operations\CrmOpportunitiesOneRequest  $request
-     * @return Operations\CrmOpportunitiesOneResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmOpportunitiesOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmOpportunitiesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\CrmOpportunitiesOneRequest $request, ?Options $options = null): Operations\CrmOpportunitiesOneResponse
@@ -814,8 +814,8 @@ class Opportunities
      *
      * Update opportunity
      *
-     * @param  Operations\CrmOpportunitiesUpdateRequest  $request
-     * @return Operations\CrmOpportunitiesUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmOpportunitiesUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmOpportunitiesUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\CrmOpportunitiesUpdateRequest $request, ?Options $options = null): Operations\CrmOpportunitiesUpdateResponse

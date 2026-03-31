@@ -47,7 +47,7 @@ class AccountingTaxRatesAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\TaxRatesFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\TaxRatesFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\TaxRatesFilter $filter = null;
@@ -99,7 +99,7 @@ class AccountingTaxRatesAllRequest
      * @param  ?string  $serviceId
      * @param  ?string  $companyId
      * @param  ?int  $limit
-     * @param  ?Components\TaxRatesFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\TaxRatesFilter  $filter
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields

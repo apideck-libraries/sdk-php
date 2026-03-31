@@ -54,7 +54,7 @@ class GetContactResponse
 
     /**
      *
-     * @var Contact $data
+     * @var \Apideck\Unify\Models\Components\Contact $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Contact')]
@@ -76,7 +76,7 @@ class GetContactResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Contact  $data
+     * @param  \Apideck\Unify\Models\Components\Contact  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

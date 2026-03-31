@@ -55,8 +55,8 @@ class Connectors
      * @param  ?string  $appId
      * @param  ?string  $cursor
      * @param  ?int  $limit
-     * @param  ?Components\ConnectorsFilter  $filter
-     * @return Operations\ConnectorConnectorsAllResponse
+     * @param  ?\Apideck\Unify\Models\Components\ConnectorsFilter  $filter
+     * @return \Apideck\Unify\Models\Operations\ConnectorConnectorsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?string $appId = null, ?string $cursor = null, ?int $limit = null, ?Components\ConnectorsFilter $filter = null, ?Options $options = null): Operations\ConnectorConnectorsAllResponse
@@ -255,8 +255,8 @@ class Connectors
      * @param  ?string  $appId
      * @param  ?string  $cursor
      * @param  ?int  $limit
-     * @param  ?Components\ConnectorsFilter  $filter
-     * @return \Generator<Operations\ConnectorConnectorsAllResponse>
+     * @param  ?\Apideck\Unify\Models\Components\ConnectorsFilter  $filter
+     * @return \Generator<\Apideck\Unify\Models\Operations\ConnectorConnectorsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?string $appId = null, ?string $cursor = null, ?int $limit = null, ?Components\ConnectorsFilter $filter = null, ?Options $options = null): \Generator
@@ -275,7 +275,7 @@ class Connectors
      *
      * @param  string  $id
      * @param  ?string  $appId
-     * @return Operations\ConnectorConnectorsOneResponse
+     * @return \Apideck\Unify\Models\Operations\ConnectorConnectorsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(string $id, ?string $appId = null, ?Options $options = null): Operations\ConnectorConnectorsOneResponse

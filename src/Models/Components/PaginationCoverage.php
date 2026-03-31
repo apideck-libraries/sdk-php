@@ -14,7 +14,7 @@ class PaginationCoverage
     /**
      * How pagination is implemented on this connector. Native mode means Apideck is using the pagination parameters of the connector. With virtual pagination, the connector does not support pagination, but Apideck emulates it.
      *
-     * @var ?PaginationCoverageMode $mode
+     * @var ?\Apideck\Unify\Models\Components\PaginationCoverageMode $mode
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('mode')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\PaginationCoverageMode|null')]
@@ -40,7 +40,7 @@ class PaginationCoverage
     public ?bool $limitSupport = null;
 
     /**
-     * @param  ?PaginationCoverageMode  $mode
+     * @param  ?\Apideck\Unify\Models\Components\PaginationCoverageMode  $mode
      * @param  ?bool  $pagingSupport
      * @param  ?bool  $limitSupport
      * @phpstan-pure

@@ -52,8 +52,8 @@ class AgedCreditors
      *
      * Get Aged Creditors
      *
-     * @param  ?Operations\AccountingAgedCreditorsOneRequest  $request
-     * @return Operations\AccountingAgedCreditorsOneResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingAgedCreditorsOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingAgedCreditorsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(?Operations\AccountingAgedCreditorsOneRequest $request = null, ?Options $options = null): Operations\AccountingAgedCreditorsOneResponse

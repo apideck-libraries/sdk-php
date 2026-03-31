@@ -22,7 +22,7 @@ class AccountingTaxRatesUpdateRequest
 
     /**
      *
-     * @var Components\TaxRateInput $taxRate
+     * @var \Apideck\Unify\Models\Components\TaxRateInput $taxRate
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\TaxRateInput $taxRate;
@@ -69,7 +69,7 @@ class AccountingTaxRatesUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\TaxRateInput  $taxRate
+     * @param  \Apideck\Unify\Models\Components\TaxRateInput  $taxRate
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

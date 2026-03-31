@@ -52,8 +52,8 @@ class JournalEntries
      *
      * Create Journal Entry
      *
-     * @param  Operations\AccountingJournalEntriesAddRequest  $request
-     * @return Operations\AccountingJournalEntriesAddResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingJournalEntriesAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingJournalEntriesAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\AccountingJournalEntriesAddRequest $request, ?Options $options = null): Operations\AccountingJournalEntriesAddResponse
@@ -227,8 +227,8 @@ class JournalEntries
      *
      * List Journal Entries
      *
-     * @param  ?Operations\AccountingJournalEntriesAllRequest  $request
-     * @return Operations\AccountingJournalEntriesAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingJournalEntriesAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingJournalEntriesAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AccountingJournalEntriesAllRequest $request = null, ?Options $options = null): Operations\AccountingJournalEntriesAllResponse
@@ -458,8 +458,8 @@ class JournalEntries
      *
      * List Journal Entries
      *
-     * @param  ?Operations\AccountingJournalEntriesAllRequest  $request
-     * @return \Generator<Operations\AccountingJournalEntriesAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingJournalEntriesAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AccountingJournalEntriesAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AccountingJournalEntriesAllRequest $request = null, ?Options $options = null): \Generator
@@ -476,8 +476,8 @@ class JournalEntries
      *
      * Delete Journal Entry
      *
-     * @param  Operations\AccountingJournalEntriesDeleteRequest  $request
-     * @return Operations\AccountingJournalEntriesDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingJournalEntriesDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingJournalEntriesDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\AccountingJournalEntriesDeleteRequest $request, ?Options $options = null): Operations\AccountingJournalEntriesDeleteResponse
@@ -646,8 +646,8 @@ class JournalEntries
      *
      * Get Journal Entry
      *
-     * @param  Operations\AccountingJournalEntriesOneRequest  $request
-     * @return Operations\AccountingJournalEntriesOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingJournalEntriesOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingJournalEntriesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AccountingJournalEntriesOneRequest $request, ?Options $options = null): Operations\AccountingJournalEntriesOneResponse
@@ -816,8 +816,8 @@ class JournalEntries
      *
      * Update Journal Entry
      *
-     * @param  Operations\AccountingJournalEntriesUpdateRequest  $request
-     * @return Operations\AccountingJournalEntriesUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingJournalEntriesUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingJournalEntriesUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\AccountingJournalEntriesUpdateRequest $request, ?Options $options = null): Operations\AccountingJournalEntriesUpdateResponse

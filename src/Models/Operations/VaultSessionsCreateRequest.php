@@ -31,7 +31,7 @@ class VaultSessionsCreateRequest
     /**
      * Additional redirect uri and/or consumer metadata
      *
-     * @var ?Components\Session $session
+     * @var ?\Apideck\Unify\Models\Components\Session $session
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public ?Components\Session $session = null;
@@ -39,7 +39,7 @@ class VaultSessionsCreateRequest
     /**
      * @param  ?string  $consumerId
      * @param  ?string  $appId
-     * @param  ?Components\Session  $session
+     * @param  ?\Apideck\Unify\Models\Components\Session  $session
      * @phpstan-pure
      */
     public function __construct(?string $consumerId = null, ?string $appId = null, ?Components\Session $session = null)

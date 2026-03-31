@@ -32,7 +32,7 @@ class Invoice
     /**
      * $lineItems
      *
-     * @var ?array<InvoiceLineItem> $lineItems
+     * @var ?array<\Apideck\Unify\Models\Components\InvoiceLineItem> $lineItems
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\InvoiceLineItem>|null')]
@@ -41,7 +41,7 @@ class Invoice
 
     /**
      *
-     * @var ?Address $billingAddress
+     * @var ?\Apideck\Unify\Models\Components\Address $billingAddress
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('billing_address')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
@@ -50,7 +50,7 @@ class Invoice
 
     /**
      *
-     * @var ?Address $shippingAddress
+     * @var ?\Apideck\Unify\Models\Components\Address $shippingAddress
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('shipping_address')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
@@ -59,7 +59,7 @@ class Invoice
 
     /**
      *
-     * @var ?BankAccount $bankAccount
+     * @var ?\Apideck\Unify\Models\Components\BankAccount $bankAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('bank_account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BankAccount|null')]
@@ -69,7 +69,7 @@ class Invoice
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -79,7 +79,7 @@ class Invoice
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -107,7 +107,7 @@ class Invoice
     /**
      * Invoice type
      *
-     * @var ?InvoiceType $type
+     * @var ?\Apideck\Unify\Models\Components\InvoiceType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\InvoiceType|null')]
@@ -126,7 +126,7 @@ class Invoice
     /**
      * The customer this entity is linked to.
      *
-     * @var ?LinkedCustomer $customer
+     * @var ?\Apideck\Unify\Models\Components\LinkedCustomer $customer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedCustomer|null')]
@@ -217,7 +217,7 @@ class Invoice
     /**
      * Invoice status
      *
-     * @var ?InvoiceStatus $status
+     * @var ?\Apideck\Unify\Models\Components\InvoiceStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\InvoiceStatus|null')]
@@ -227,7 +227,7 @@ class Invoice
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -335,7 +335,7 @@ class Invoice
 
     /**
      *
-     * @var ?DeprecatedLinkedTrackingCategory $trackingCategory
+     * @var ?\Apideck\Unify\Models\Components\DeprecatedLinkedTrackingCategory $trackingCategory
      * @deprecated  field: This field is deprecated and may be removed in a future version..
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_category')]
@@ -346,7 +346,7 @@ class Invoice
     /**
      * A list of linked tracking categories.
      *
-     * @var ?array<?LinkedTrackingCategory> $trackingCategories
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory> $trackingCategories
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory|null>|null')]
@@ -374,7 +374,7 @@ class Invoice
     /**
      * IDs of payments made on the invoice
      *
-     * @var ?array<PaymentAllocations> $paymentAllocations
+     * @var ?array<\Apideck\Unify\Models\Components\PaymentAllocations> $paymentAllocations
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('payment_allocations')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PaymentAllocations>|null')]
@@ -419,7 +419,7 @@ class Invoice
 
     /**
      *
-     * @var ?LinkedLedgerAccount $ledgerAccount
+     * @var ?\Apideck\Unify\Models\Components\LinkedLedgerAccount $ledgerAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('ledger_account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
@@ -484,17 +484,17 @@ class Invoice
     /**
      * @param  ?string  $id
      * @param  ?bool  $invoiceSent
-     * @param  ?array<InvoiceLineItem>  $lineItems
-     * @param  ?Address  $billingAddress
-     * @param  ?Address  $shippingAddress
-     * @param  ?BankAccount  $bankAccount
-     * @param  ?array<CustomField1|CustomField2>  $customFields
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<\Apideck\Unify\Models\Components\InvoiceLineItem>  $lineItems
+     * @param  ?\Apideck\Unify\Models\Components\Address  $billingAddress
+     * @param  ?\Apideck\Unify\Models\Components\Address  $shippingAddress
+     * @param  ?\Apideck\Unify\Models\Components\BankAccount  $bankAccount
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $downstreamId
      * @param  ?string  $displayId
-     * @param  ?InvoiceType  $type
+     * @param  ?\Apideck\Unify\Models\Components\InvoiceType  $type
      * @param  ?string  $number
-     * @param  ?LinkedCustomer  $customer
+     * @param  ?\Apideck\Unify\Models\Components\LinkedCustomer  $customer
      * @param  ?string  $companyId
      * @param  ?string  $locationId
      * @param  ?string  $departmentId
@@ -504,8 +504,8 @@ class Invoice
      * @param  ?string  $termsId
      * @param  ?string  $poNumber
      * @param  ?string  $reference
-     * @param  ?InvoiceStatus  $status
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\InvoiceStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?float  $currencyRate
      * @param  ?bool  $taxInclusive
      * @param  ?float  $subTotal
@@ -517,16 +517,16 @@ class Invoice
      * @param  ?float  $balance
      * @param  ?float  $deposit
      * @param  ?string  $customerMemo
-     * @param  ?DeprecatedLinkedTrackingCategory  $trackingCategory
-     * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
+     * @param  ?\Apideck\Unify\Models\Components\DeprecatedLinkedTrackingCategory  $trackingCategory
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory>  $trackingCategories
      * @param  ?string  $templateId
      * @param  ?string  $sourceDocumentUrl
-     * @param  ?array<PaymentAllocations>  $paymentAllocations
+     * @param  ?array<\Apideck\Unify\Models\Components\PaymentAllocations>  $paymentAllocations
      * @param  ?string  $paymentMethod
      * @param  ?string  $channel
      * @param  ?string  $language
      * @param  ?bool  $accountingByRow
-     * @param  ?LinkedLedgerAccount  $ledgerAccount
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $ledgerAccount
      * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $rowVersion
      * @param  ?string  $updatedBy

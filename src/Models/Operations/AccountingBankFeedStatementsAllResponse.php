@@ -13,7 +13,7 @@ class AccountingBankFeedStatementsAllResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,14 +22,14 @@ class AccountingBankFeedStatementsAllResponse
     /**
      * Bank Feed Statements
      *
-     * @var ?Components\GetBankFeedStatementsResponse $getBankFeedStatementsResponse
+     * @var ?\Apideck\Unify\Models\Components\GetBankFeedStatementsResponse $getBankFeedStatementsResponse
      */
     public ?Components\GetBankFeedStatementsResponse $getBankFeedStatementsResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
@@ -38,9 +38,9 @@ class AccountingBankFeedStatementsAllResponse
      */
     public \Closure $next;
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetBankFeedStatementsResponse  $getBankFeedStatementsResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetBankFeedStatementsResponse  $getBankFeedStatementsResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetBankFeedStatementsResponse $getBankFeedStatementsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

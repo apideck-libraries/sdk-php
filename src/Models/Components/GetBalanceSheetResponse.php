@@ -54,7 +54,7 @@ class GetBalanceSheetResponse
 
     /**
      *
-     * @var BalanceSheet $data
+     * @var \Apideck\Unify\Models\Components\BalanceSheet $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BalanceSheet')]
@@ -76,7 +76,7 @@ class GetBalanceSheetResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  BalanceSheet  $data
+     * @param  \Apideck\Unify\Models\Components\BalanceSheet  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

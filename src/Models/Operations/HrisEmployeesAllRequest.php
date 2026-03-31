@@ -39,7 +39,7 @@ class HrisEmployeesAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\EmployeesFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\EmployeesFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\EmployeesFilter $filter = null;
@@ -47,7 +47,7 @@ class HrisEmployeesAllRequest
     /**
      * Apply sorting
      *
-     * @var ?Components\EmployeesSort $sort
+     * @var ?\Apideck\Unify\Models\Components\EmployeesSort $sort
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=sort')]
     public ?Components\EmployeesSort $sort = null;
@@ -98,8 +98,8 @@ class HrisEmployeesAllRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?int  $limit
-     * @param  ?Components\EmployeesFilter  $filter
-     * @param  ?Components\EmployeesSort  $sort
+     * @param  ?\Apideck\Unify\Models\Components\EmployeesFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\EmployeesSort  $sort
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields

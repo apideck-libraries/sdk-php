@@ -54,7 +54,7 @@ class EmployeePayroll
     /**
      * The overview of the payroll totals.
      *
-     * @var ?PayrollTotals $totals
+     * @var ?\Apideck\Unify\Models\Components\PayrollTotals $totals
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('totals')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\PayrollTotals|null')]
@@ -64,7 +64,7 @@ class EmployeePayroll
     /**
      * An array of compensations for the payroll.
      *
-     * @var ?array<Compensation> $compensations
+     * @var ?array<\Apideck\Unify\Models\Components\Compensation> $compensations
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('compensations')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Compensation>|null')]
@@ -104,8 +104,8 @@ class EmployeePayroll
      * @param  ?string  $checkDate
      * @param  ?string  $startDate
      * @param  ?string  $endDate
-     * @param  ?PayrollTotals  $totals
-     * @param  ?array<Compensation>  $compensations
+     * @param  ?\Apideck\Unify\Models\Components\PayrollTotals  $totals
+     * @param  ?array<\Apideck\Unify\Models\Components\Compensation>  $compensations
      * @param  ?string  $employeeId
      * @param  ?string  $companyId
      * @param  ?string  $processedDate

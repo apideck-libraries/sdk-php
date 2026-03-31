@@ -54,7 +54,7 @@ class GetFolderResponse
 
     /**
      *
-     * @var Folder $data
+     * @var \Apideck\Unify\Models\Components\Folder $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Folder')]
@@ -76,7 +76,7 @@ class GetFolderResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Folder  $data
+     * @param  \Apideck\Unify\Models\Components\Folder  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

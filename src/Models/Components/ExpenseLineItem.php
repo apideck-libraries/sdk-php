@@ -42,7 +42,7 @@ class ExpenseLineItem
 
     /**
      *
-     * @var ?LinkedTaxRate $taxRate
+     * @var ?\Apideck\Unify\Models\Components\LinkedTaxRate $taxRate
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRate|null')]
@@ -59,7 +59,7 @@ class ExpenseLineItem
 
     /**
      *
-     * @var ?LinkedInvoiceItem $item
+     * @var ?\Apideck\Unify\Models\Components\LinkedInvoiceItem $item
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('item')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedInvoiceItem|null')]
@@ -69,7 +69,7 @@ class ExpenseLineItem
     /**
      * A list of linked tracking categories.
      *
-     * @var ?array<?LinkedTrackingCategory> $trackingCategories
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory> $trackingCategories
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory|null>|null')]
@@ -78,7 +78,7 @@ class ExpenseLineItem
 
     /**
      *
-     * @var ?LinkedLedgerAccount $account
+     * @var ?\Apideck\Unify\Models\Components\LinkedLedgerAccount $account
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
@@ -88,7 +88,7 @@ class ExpenseLineItem
     /**
      * The customer this entity is linked to.
      *
-     * @var ?LinkedCustomer $customer
+     * @var ?\Apideck\Unify\Models\Components\LinkedCustomer $customer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedCustomer|null')]
@@ -106,7 +106,7 @@ class ExpenseLineItem
 
     /**
      *
-     * @var ?LinkedDepartment $department
+     * @var ?\Apideck\Unify\Models\Components\LinkedDepartment $department
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('department')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedDepartment|null')]
@@ -124,7 +124,7 @@ class ExpenseLineItem
 
     /**
      *
-     * @var ?LinkedLocation $location
+     * @var ?\Apideck\Unify\Models\Components\LinkedLocation $location
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('location')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLocation|null')]
@@ -143,7 +143,7 @@ class ExpenseLineItem
     /**
      * Line Item type
      *
-     * @var ?LineItemType $type
+     * @var ?\Apideck\Unify\Models\Components\LineItemType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LineItemType|null')]
@@ -187,7 +187,7 @@ class ExpenseLineItem
     /**
      * Rebilling metadata for this line item.
      *
-     * @var ?Rebilling $rebilling
+     * @var ?\Apideck\Unify\Models\Components\Rebilling $rebilling
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('rebilling')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Rebilling|null')]
@@ -198,23 +198,23 @@ class ExpenseLineItem
      * @param  ?string  $id
      * @param  ?string  $accountId
      * @param  ?string  $customerId
-     * @param  ?LinkedTaxRate  $taxRate
+     * @param  ?\Apideck\Unify\Models\Components\LinkedTaxRate  $taxRate
      * @param  ?float  $totalAmount
-     * @param  ?LinkedInvoiceItem  $item
-     * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
-     * @param  ?LinkedLedgerAccount  $account
-     * @param  ?LinkedCustomer  $customer
+     * @param  ?\Apideck\Unify\Models\Components\LinkedInvoiceItem  $item
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory>  $trackingCategories
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $account
+     * @param  ?\Apideck\Unify\Models\Components\LinkedCustomer  $customer
      * @param  ?string  $departmentId
-     * @param  ?LinkedDepartment  $department
+     * @param  ?\Apideck\Unify\Models\Components\LinkedDepartment  $department
      * @param  ?string  $locationId
-     * @param  ?LinkedLocation  $location
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLocation  $location
      * @param  ?string  $description
-     * @param  ?LineItemType  $type
+     * @param  ?\Apideck\Unify\Models\Components\LineItemType  $type
      * @param  ?float  $taxAmount
      * @param  ?float  $quantity
      * @param  ?float  $unitPrice
      * @param  ?int  $lineNumber
-     * @param  ?Rebilling  $rebilling
+     * @param  ?\Apideck\Unify\Models\Components\Rebilling  $rebilling
      * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $accountId = null, ?string $customerId = null, ?LinkedTaxRate $taxRate = null, ?float $totalAmount = null, ?LinkedInvoiceItem $item = null, ?array $trackingCategories = null, ?LinkedLedgerAccount $account = null, ?LinkedCustomer $customer = null, ?string $departmentId = null, ?LinkedDepartment $department = null, ?string $locationId = null, ?LinkedLocation $location = null, ?string $description = null, ?LineItemType $type = null, ?float $taxAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?int $lineNumber = null, ?Rebilling $rebilling = null)

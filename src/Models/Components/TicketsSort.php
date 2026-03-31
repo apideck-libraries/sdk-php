@@ -14,7 +14,7 @@ class TicketsSort
     /**
      * The field on which to sort the Tickets
      *
-     * @var ?TicketsSortBy $by
+     * @var ?\Apideck\Unify\Models\Components\TicketsSortBy $by
      */
     #[SpeakeasyMetadata('queryParam:name=by')]
     public ?TicketsSortBy $by = null;
@@ -22,14 +22,14 @@ class TicketsSort
     /**
      * The direction in which to sort the results
      *
-     * @var ?SortDirection $direction
+     * @var ?\Apideck\Unify\Models\Components\SortDirection $direction
      */
     #[SpeakeasyMetadata('queryParam:name=direction')]
     public ?SortDirection $direction = null;
 
     /**
-     * @param  ?TicketsSortBy  $by
-     * @param  ?SortDirection  $direction
+     * @param  ?\Apideck\Unify\Models\Components\TicketsSortBy  $by
+     * @param  ?\Apideck\Unify\Models\Components\SortDirection  $direction
      * @phpstan-pure
      */
     public function __construct(?TicketsSortBy $by = null, ?SortDirection $direction = SortDirection::Asc)

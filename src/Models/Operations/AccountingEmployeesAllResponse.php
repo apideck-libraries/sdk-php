@@ -13,7 +13,7 @@ class AccountingEmployeesAllResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,14 +22,14 @@ class AccountingEmployeesAllResponse
     /**
      * Employees
      *
-     * @var ?Components\GetAccountingEmployeesResponse $getAccountingEmployeesResponse
+     * @var ?\Apideck\Unify\Models\Components\GetAccountingEmployeesResponse $getAccountingEmployeesResponse
      */
     public ?Components\GetAccountingEmployeesResponse $getAccountingEmployeesResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
@@ -38,9 +38,9 @@ class AccountingEmployeesAllResponse
      */
     public \Closure $next;
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetAccountingEmployeesResponse  $getAccountingEmployeesResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetAccountingEmployeesResponse  $getAccountingEmployeesResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetAccountingEmployeesResponse $getAccountingEmployeesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

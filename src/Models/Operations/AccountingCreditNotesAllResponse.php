@@ -13,7 +13,7 @@ class AccountingCreditNotesAllResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,14 +22,14 @@ class AccountingCreditNotesAllResponse
     /**
      * Credit Notes
      *
-     * @var ?Components\GetCreditNotesResponse $getCreditNotesResponse
+     * @var ?\Apideck\Unify\Models\Components\GetCreditNotesResponse $getCreditNotesResponse
      */
     public ?Components\GetCreditNotesResponse $getCreditNotesResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
@@ -38,9 +38,9 @@ class AccountingCreditNotesAllResponse
      */
     public \Closure $next;
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetCreditNotesResponse  $getCreditNotesResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetCreditNotesResponse  $getCreditNotesResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetCreditNotesResponse $getCreditNotesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

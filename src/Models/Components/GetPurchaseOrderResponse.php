@@ -54,7 +54,7 @@ class GetPurchaseOrderResponse
 
     /**
      *
-     * @var PurchaseOrder $data
+     * @var \Apideck\Unify\Models\Components\PurchaseOrder $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\PurchaseOrder')]
@@ -76,7 +76,7 @@ class GetPurchaseOrderResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  PurchaseOrder  $data
+     * @param  \Apideck\Unify\Models\Components\PurchaseOrder  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

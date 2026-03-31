@@ -54,7 +54,7 @@ class GetLedgerAccountResponse
 
     /**
      *
-     * @var LedgerAccount $data
+     * @var \Apideck\Unify\Models\Components\LedgerAccount $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LedgerAccount')]
@@ -76,7 +76,7 @@ class GetLedgerAccountResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  LedgerAccount  $data
+     * @param  \Apideck\Unify\Models\Components\LedgerAccount  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

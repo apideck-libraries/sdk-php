@@ -20,7 +20,7 @@ class WebhookEventLogsFilter
 
     /**
      *
-     * @var ?WebhookEventLogsFilterService $service
+     * @var ?\Apideck\Unify\Models\Components\WebhookEventLogsFilterService $service
      */
     #[SpeakeasyMetadata('queryParam:name=service')]
     public ?WebhookEventLogsFilterService $service = null;
@@ -48,7 +48,7 @@ class WebhookEventLogsFilter
 
     /**
      * @param  ?string  $excludeApis
-     * @param  ?WebhookEventLogsFilterService  $service
+     * @param  ?\Apideck\Unify\Models\Components\WebhookEventLogsFilterService  $service
      * @param  ?string  $consumerId
      * @param  ?string  $entityType
      * @param  ?string  $eventType

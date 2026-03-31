@@ -23,7 +23,7 @@ class WebhookEventLogsAllRequest
     /**
      * Filter results
      *
-     * @var ?Components\WebhookEventLogsFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\WebhookEventLogsFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\WebhookEventLogsFilter $filter = null;
@@ -47,7 +47,7 @@ class WebhookEventLogsAllRequest
     /**
      * @param  ?string  $appId
      * @param  ?int  $limit
-     * @param  ?Components\WebhookEventLogsFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\WebhookEventLogsFilter  $filter
      * @param  ?string  $cursor
      * @phpstan-pure
      */

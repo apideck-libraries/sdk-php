@@ -13,7 +13,7 @@ class EmployeeJobInput
 {
     /**
      *
-     * @var ?Address $location
+     * @var ?\Apideck\Unify\Models\Components\Address $location
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('location')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
@@ -68,7 +68,7 @@ class EmployeeJobInput
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -78,7 +78,7 @@ class EmployeeJobInput
     /**
      * Unit of measurement for employee compensation.
      *
-     * @var ?PaymentUnit $paymentUnit
+     * @var ?\Apideck\Unify\Models\Components\PaymentUnit $paymentUnit
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('payment_unit')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\PaymentUnit|null')]
@@ -115,7 +115,7 @@ class EmployeeJobInput
     /**
      * Indicates the status of the job.
      *
-     * @var ?EmployeeJobStatus $status
+     * @var ?\Apideck\Unify\Models\Components\EmployeeJobStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EmployeeJobStatus|null')]
@@ -123,18 +123,18 @@ class EmployeeJobInput
     public ?EmployeeJobStatus $status = null;
 
     /**
-     * @param  ?Address  $location
+     * @param  ?\Apideck\Unify\Models\Components\Address  $location
      * @param  ?string  $title
      * @param  ?string  $role
      * @param  ?LocalDate  $startDate
      * @param  ?LocalDate  $endDate
      * @param  ?float  $compensationRate
-     * @param  ?Currency  $currency
-     * @param  ?PaymentUnit  $paymentUnit
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\PaymentUnit  $paymentUnit
      * @param  ?LocalDate  $hiredAt
      * @param  ?bool  $isPrimary
      * @param  ?bool  $isManager
-     * @param  ?EmployeeJobStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\EmployeeJobStatus  $status
      * @phpstan-pure
      */
     public function __construct(?Address $location = null, ?string $title = null, ?string $role = null, ?LocalDate $startDate = null, ?LocalDate $endDate = null, ?float $compensationRate = null, ?Currency $currency = null, ?PaymentUnit $paymentUnit = null, ?LocalDate $hiredAt = null, ?bool $isPrimary = null, ?bool $isManager = null, ?EmployeeJobStatus $status = null)

@@ -22,7 +22,7 @@ class CrmOpportunitiesUpdateRequest
 
     /**
      *
-     * @var Components\OpportunityInput $opportunity
+     * @var \Apideck\Unify\Models\Components\OpportunityInput $opportunity
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\OpportunityInput $opportunity;
@@ -61,7 +61,7 @@ class CrmOpportunitiesUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\OpportunityInput  $opportunity
+     * @param  \Apideck\Unify\Models\Components\OpportunityInput  $opportunity
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

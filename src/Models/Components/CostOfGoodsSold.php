@@ -50,7 +50,7 @@ class CostOfGoodsSold
     /**
      * The type of profit and loss
      *
-     * @var ?ProfitAndLossType $type
+     * @var ?\Apideck\Unify\Models\Components\ProfitAndLossType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ProfitAndLossType|null')]
@@ -71,7 +71,7 @@ class CostOfGoodsSold
      * @param  ?string  $id
      * @param  ?string  $code
      * @param  ?string  $title
-     * @param  ?ProfitAndLossType  $type
+     * @param  ?\Apideck\Unify\Models\Components\ProfitAndLossType  $type
      * @param  ?float  $total
      * @phpstan-pure
      */

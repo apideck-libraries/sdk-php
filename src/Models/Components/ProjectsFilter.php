@@ -22,7 +22,7 @@ class ProjectsFilter
     /**
      * Status of projects to filter by
      *
-     * @var ?ProjectStatus $status
+     * @var ?\Apideck\Unify\Models\Components\ProjectStatus $status
      */
     #[SpeakeasyMetadata('queryParam:name=status')]
     public ?ProjectStatus $status = null;
@@ -45,7 +45,7 @@ class ProjectsFilter
 
     /**
      * @param  ?string  $name
-     * @param  ?ProjectStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\ProjectStatus  $status
      * @param  ?string  $customerId
      * @param  ?\DateTime  $updatedSince
      * @phpstan-pure

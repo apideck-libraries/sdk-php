@@ -13,7 +13,7 @@ class AccountingAgedCreditorsOneResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class AccountingAgedCreditorsOneResponse
     /**
      * Aged Creditors
      *
-     * @var ?Components\GetAgedCreditorsResponse $getAgedCreditorsResponse
+     * @var ?\Apideck\Unify\Models\Components\GetAgedCreditorsResponse $getAgedCreditorsResponse
      */
     public ?Components\GetAgedCreditorsResponse $getAgedCreditorsResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetAgedCreditorsResponse  $getAgedCreditorsResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetAgedCreditorsResponse  $getAgedCreditorsResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetAgedCreditorsResponse $getAgedCreditorsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

@@ -54,7 +54,7 @@ class GetCollectionUserResponse
 
     /**
      *
-     * @var CollectionUser $data
+     * @var \Apideck\Unify\Models\Components\CollectionUser $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CollectionUser')]
@@ -76,7 +76,7 @@ class GetCollectionUserResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  CollectionUser  $data
+     * @param  \Apideck\Unify\Models\Components\CollectionUser  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

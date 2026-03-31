@@ -54,7 +54,7 @@ class GetBankFeedAccountResponse
 
     /**
      *
-     * @var BankFeedAccount $data
+     * @var \Apideck\Unify\Models\Components\BankFeedAccount $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BankFeedAccount')]
@@ -76,7 +76,7 @@ class GetBankFeedAccountResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  BankFeedAccount  $data
+     * @param  \Apideck\Unify\Models\Components\BankFeedAccount  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

@@ -14,13 +14,13 @@ class CategoriesFilter
     /**
      * The type of the category.
      *
-     * @var ?CategoriesFilterType $type
+     * @var ?\Apideck\Unify\Models\Components\CategoriesFilterType $type
      */
     #[SpeakeasyMetadata('queryParam:name=type')]
     public ?CategoriesFilterType $type = null;
 
     /**
-     * @param  ?CategoriesFilterType  $type
+     * @param  ?\Apideck\Unify\Models\Components\CategoriesFilterType  $type
      * @phpstan-pure
      */
     public function __construct(?CategoriesFilterType $type = null)

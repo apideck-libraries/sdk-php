@@ -52,8 +52,8 @@ class CollectionTags
      *
      * List Tags
      *
-     * @param  Operations\IssueTrackingCollectionTagsAllRequest  $request
-     * @return Operations\IssueTrackingCollectionTagsAllResponse
+     * @param  \Apideck\Unify\Models\Operations\IssueTrackingCollectionTagsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\IssueTrackingCollectionTagsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(Operations\IssueTrackingCollectionTagsAllRequest $request, ?Options $options = null): Operations\IssueTrackingCollectionTagsAllResponse
@@ -279,8 +279,8 @@ class CollectionTags
      *
      * List Tags
      *
-     * @param  Operations\IssueTrackingCollectionTagsAllRequest  $request
-     * @return \Generator<Operations\IssueTrackingCollectionTagsAllResponse>
+     * @param  \Apideck\Unify\Models\Operations\IssueTrackingCollectionTagsAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\IssueTrackingCollectionTagsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(Operations\IssueTrackingCollectionTagsAllRequest $request, ?Options $options = null): \Generator

@@ -13,7 +13,7 @@ class FileStorageDriveGroupsOneResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class FileStorageDriveGroupsOneResponse
     /**
      * DriveGroups
      *
-     * @var ?Components\GetDriveGroupResponse $getDriveGroupResponse
+     * @var ?\Apideck\Unify\Models\Components\GetDriveGroupResponse $getDriveGroupResponse
      */
     public ?Components\GetDriveGroupResponse $getDriveGroupResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetDriveGroupResponse  $getDriveGroupResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetDriveGroupResponse  $getDriveGroupResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetDriveGroupResponse $getDriveGroupResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

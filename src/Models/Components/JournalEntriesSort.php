@@ -14,7 +14,7 @@ class JournalEntriesSort
     /**
      * The field on which to sort the Journal Entries.
      *
-     * @var ?JournalEntriesSortBy $by
+     * @var ?\Apideck\Unify\Models\Components\JournalEntriesSortBy $by
      */
     #[SpeakeasyMetadata('queryParam:name=by')]
     public ?JournalEntriesSortBy $by = null;
@@ -22,14 +22,14 @@ class JournalEntriesSort
     /**
      * The direction in which to sort the results
      *
-     * @var ?SortDirection $direction
+     * @var ?\Apideck\Unify\Models\Components\SortDirection $direction
      */
     #[SpeakeasyMetadata('queryParam:name=direction')]
     public ?SortDirection $direction = null;
 
     /**
-     * @param  ?JournalEntriesSortBy  $by
-     * @param  ?SortDirection  $direction
+     * @param  ?\Apideck\Unify\Models\Components\JournalEntriesSortBy  $by
+     * @param  ?\Apideck\Unify\Models\Components\SortDirection  $direction
      * @phpstan-pure
      */
     public function __construct(?JournalEntriesSortBy $by = null, ?SortDirection $direction = SortDirection::Asc)

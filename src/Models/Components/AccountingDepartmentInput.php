@@ -14,7 +14,7 @@ class AccountingDepartmentInput
     /**
      * Based on the status some functionality is enabled or disabled.
      *
-     * @var ?DepartmentStatus $status
+     * @var ?\Apideck\Unify\Models\Components\DepartmentStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\DepartmentStatus|null')]
@@ -24,7 +24,7 @@ class AccountingDepartmentInput
     /**
      * $subsidiaries
      *
-     * @var ?array<SubsidiaryReferenceInput> $subsidiaries
+     * @var ?array<\Apideck\Unify\Models\Components\SubsidiaryReferenceInput> $subsidiaries
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiaries')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\SubsidiaryReferenceInput>|null')]
@@ -43,7 +43,7 @@ class AccountingDepartmentInput
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -87,10 +87,10 @@ class AccountingDepartmentInput
     public ?string $rowVersion = null;
 
     /**
-     * @param  ?DepartmentStatus  $status
-     * @param  ?array<SubsidiaryReferenceInput>  $subsidiaries
+     * @param  ?\Apideck\Unify\Models\Components\DepartmentStatus  $status
+     * @param  ?array<\Apideck\Unify\Models\Components\SubsidiaryReferenceInput>  $subsidiaries
      * @param  ?string  $code
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $parentId
      * @param  ?string  $displayId
      * @param  ?string  $name

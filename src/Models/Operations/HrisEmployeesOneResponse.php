@@ -13,7 +13,7 @@ class HrisEmployeesOneResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class HrisEmployeesOneResponse
     /**
      * Employees
      *
-     * @var ?Components\GetEmployeeResponse $getEmployeeResponse
+     * @var ?\Apideck\Unify\Models\Components\GetEmployeeResponse $getEmployeeResponse
      */
     public ?Components\GetEmployeeResponse $getEmployeeResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetEmployeeResponse  $getEmployeeResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetEmployeeResponse  $getEmployeeResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetEmployeeResponse $getEmployeeResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

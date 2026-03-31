@@ -13,7 +13,7 @@ class ConnectionImportData
 {
     /**
      *
-     * @var ?Credentials $credentials
+     * @var ?\Apideck\Unify\Models\Components\Credentials $credentials
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('credentials')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Credentials|null')]
@@ -41,7 +41,7 @@ class ConnectionImportData
     public ?array $metadata = null;
 
     /**
-     * @param  ?Credentials  $credentials
+     * @param  ?\Apideck\Unify\Models\Components\Credentials  $credentials
      * @param  ?array<string, mixed>  $settings
      * @param  ?array<string, mixed>  $metadata
      * @phpstan-pure

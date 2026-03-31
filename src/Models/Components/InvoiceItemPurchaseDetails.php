@@ -13,7 +13,7 @@ class InvoiceItemPurchaseDetails
 {
     /**
      *
-     * @var ?LinkedTaxRateInput $taxRate
+     * @var ?\Apideck\Unify\Models\Components\LinkedTaxRateInput $taxRate
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tax_rate')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedTaxRateInput|null')]
@@ -47,7 +47,7 @@ class InvoiceItemPurchaseDetails
     public ?bool $taxInclusive = null;
 
     /**
-     * @param  ?LinkedTaxRateInput  $taxRate
+     * @param  ?\Apideck\Unify\Models\Components\LinkedTaxRateInput  $taxRate
      * @param  ?float  $unitPrice
      * @param  ?string  $unitOfMeasure
      * @param  ?bool  $taxInclusive

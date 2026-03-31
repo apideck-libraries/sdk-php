@@ -31,7 +31,7 @@ class VaultConnectionConsentUpdateRequest
     /**
      * New consent state
      *
-     * @var Components\UpdateConsentRequest $updateConsentRequest
+     * @var \Apideck\Unify\Models\Components\UpdateConsentRequest $updateConsentRequest
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\UpdateConsentRequest $updateConsentRequest;
@@ -55,7 +55,7 @@ class VaultConnectionConsentUpdateRequest
     /**
      * @param  string  $serviceId
      * @param  string  $unifiedApi
-     * @param  Components\UpdateConsentRequest  $updateConsentRequest
+     * @param  \Apideck\Unify\Models\Components\UpdateConsentRequest  $updateConsentRequest
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @phpstan-pure

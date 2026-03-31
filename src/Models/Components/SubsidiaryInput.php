@@ -14,7 +14,7 @@ class SubsidiaryInput
     /**
      * Based on the status some functionality is enabled or disabled.
      *
-     * @var ?SubsidiaryStatus $status
+     * @var ?\Apideck\Unify\Models\Components\SubsidiaryStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\SubsidiaryStatus|null')]
@@ -23,7 +23,7 @@ class SubsidiaryInput
 
     /**
      *
-     * @var ?Address $address
+     * @var ?\Apideck\Unify\Models\Components\Address $address
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('address')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
@@ -33,7 +33,7 @@ class SubsidiaryInput
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -70,7 +70,7 @@ class SubsidiaryInput
     /**
      * List of currencies supported by this subsidiary
      *
-     * @var ?array<?Currency> $currencies
+     * @var ?array<?\Apideck\Unify\Models\Components\Currency> $currencies
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currencies')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Currency|null>|null')]
@@ -87,13 +87,13 @@ class SubsidiaryInput
     public ?string $rowVersion = null;
 
     /**
-     * @param  ?SubsidiaryStatus  $status
-     * @param  ?Address  $address
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?\Apideck\Unify\Models\Components\SubsidiaryStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\Address  $address
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $parentId
      * @param  ?string  $name
      * @param  ?string  $displayId
-     * @param  ?array<?Currency>  $currencies
+     * @param  ?array<?\Apideck\Unify\Models\Components\Currency>  $currencies
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */

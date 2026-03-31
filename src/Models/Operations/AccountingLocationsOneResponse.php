@@ -13,7 +13,7 @@ class AccountingLocationsOneResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class AccountingLocationsOneResponse
     /**
      * Location
      *
-     * @var ?Components\GetAccountingLocationResponse $getAccountingLocationResponse
+     * @var ?\Apideck\Unify\Models\Components\GetAccountingLocationResponse $getAccountingLocationResponse
      */
     public ?Components\GetAccountingLocationResponse $getAccountingLocationResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetAccountingLocationResponse  $getAccountingLocationResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetAccountingLocationResponse  $getAccountingLocationResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetAccountingLocationResponse $getAccountingLocationResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

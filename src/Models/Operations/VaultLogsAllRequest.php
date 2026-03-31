@@ -31,7 +31,7 @@ class VaultLogsAllRequest
     /**
      * Filter results
      *
-     * @var ?Components\LogsFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\LogsFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\LogsFilter $filter = null;
@@ -55,7 +55,7 @@ class VaultLogsAllRequest
     /**
      * @param  ?string  $appId
      * @param  ?string  $consumerId
-     * @param  ?Components\LogsFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\LogsFilter  $filter
      * @param  ?int  $limit
      * @param  ?string  $cursor
      * @phpstan-pure

@@ -39,7 +39,7 @@ class HrisPayrollsAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\PayrollsFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\PayrollsFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\PayrollsFilter $filter = null;
@@ -73,7 +73,7 @@ class HrisPayrollsAllRequest
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId
-     * @param  ?Components\PayrollsFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\PayrollsFilter  $filter
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $fields
      * @phpstan-pure

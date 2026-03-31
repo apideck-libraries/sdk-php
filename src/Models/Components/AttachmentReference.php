@@ -13,7 +13,7 @@ class AttachmentReference
 {
     /**
      *
-     * @var ?AttachmentReferenceType $type
+     * @var ?\Apideck\Unify\Models\Components\AttachmentReferenceType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\AttachmentReferenceType|null')]
@@ -30,7 +30,7 @@ class AttachmentReference
     public ?string $id = null;
 
     /**
-     * @param  ?AttachmentReferenceType  $type
+     * @param  ?\Apideck\Unify\Models\Components\AttachmentReferenceType  $type
      * @param  ?string  $id
      * @phpstan-pure
      */

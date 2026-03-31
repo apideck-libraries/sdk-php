@@ -52,8 +52,8 @@ class ApideckCustomers
      *
      * List Customers
      *
-     * @param  ?Operations\EcommerceCustomersAllRequest  $request
-     * @return Operations\EcommerceCustomersAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\EcommerceCustomersAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\EcommerceCustomersAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\EcommerceCustomersAllRequest $request = null, ?Options $options = null): Operations\EcommerceCustomersAllResponse
@@ -279,8 +279,8 @@ class ApideckCustomers
      *
      * List Customers
      *
-     * @param  ?Operations\EcommerceCustomersAllRequest  $request
-     * @return \Generator<Operations\EcommerceCustomersAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\EcommerceCustomersAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\EcommerceCustomersAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\EcommerceCustomersAllRequest $request = null, ?Options $options = null): \Generator
@@ -297,8 +297,8 @@ class ApideckCustomers
      *
      * Get Customer
      *
-     * @param  Operations\EcommerceCustomersOneRequest  $request
-     * @return Operations\EcommerceCustomersOneResponse
+     * @param  \Apideck\Unify\Models\Operations\EcommerceCustomersOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\EcommerceCustomersOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\EcommerceCustomersOneRequest $request, ?Options $options = null): Operations\EcommerceCustomersOneResponse

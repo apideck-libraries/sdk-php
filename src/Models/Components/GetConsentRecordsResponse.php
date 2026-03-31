@@ -31,7 +31,7 @@ class GetConsentRecordsResponse
     /**
      * $data
      *
-     * @var array<ConsentRecord> $data
+     * @var array<\Apideck\Unify\Models\Components\ConsentRecord> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ConsentRecord>')]
@@ -50,7 +50,7 @@ class GetConsentRecordsResponse
     /**
      * @param  int  $statusCode
      * @param  string  $status
-     * @param  array<ConsentRecord>  $data
+     * @param  array<\Apideck\Unify\Models\Components\ConsentRecord>  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

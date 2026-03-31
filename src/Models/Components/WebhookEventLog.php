@@ -58,7 +58,7 @@ class WebhookEventLog
     /**
      * Name of Apideck Unified API
      *
-     * @var ?UnifiedApiId $unifiedApi
+     * @var ?\Apideck\Unify\Models\Components\UnifiedApiId $unifiedApi
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('unified_api')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\UnifiedApiId|null')]
@@ -68,7 +68,7 @@ class WebhookEventLog
     /**
      * Apideck service provider associated with event.
      *
-     * @var ?WebhookEventLogService $service
+     * @var ?\Apideck\Unify\Models\Components\WebhookEventLogService $service
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('service')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\WebhookEventLogService|null')]
@@ -159,7 +159,7 @@ class WebhookEventLog
     /**
      * record of each attempt to call webhook endpoint
      *
-     * @var ?array<Attempts> $attempts
+     * @var ?array<\Apideck\Unify\Models\Components\Attempts> $attempts
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('attempts')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Attempts>|null')]
@@ -172,8 +172,8 @@ class WebhookEventLog
      * @param  ?bool  $success
      * @param  ?string  $applicationId
      * @param  ?string  $consumerId
-     * @param  ?UnifiedApiId  $unifiedApi
-     * @param  ?WebhookEventLogService  $service
+     * @param  ?\Apideck\Unify\Models\Components\UnifiedApiId  $unifiedApi
+     * @param  ?\Apideck\Unify\Models\Components\WebhookEventLogService  $service
      * @param  ?string  $endpoint
      * @param  ?string  $eventType
      * @param  ?float  $executionAttempt
@@ -183,7 +183,7 @@ class WebhookEventLog
      * @param  ?string  $requestBody
      * @param  ?string  $responseBody
      * @param  ?bool  $retryScheduled
-     * @param  ?array<Attempts>  $attempts
+     * @param  ?array<\Apideck\Unify\Models\Components\Attempts>  $attempts
      * @phpstan-pure
      */
     public function __construct(?string $id = null, ?int $statusCode = null, ?bool $success = null, ?string $applicationId = null, ?string $consumerId = null, ?UnifiedApiId $unifiedApi = null, ?WebhookEventLogService $service = null, ?string $endpoint = null, ?string $eventType = null, ?float $executionAttempt = null, ?string $httpMethod = null, ?string $timestamp = null, ?string $entityType = null, ?string $requestBody = null, ?string $responseBody = null, ?bool $retryScheduled = null, ?array $attempts = null)

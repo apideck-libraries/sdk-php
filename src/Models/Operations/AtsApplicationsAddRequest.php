@@ -14,7 +14,7 @@ class AtsApplicationsAddRequest
 {
     /**
      *
-     * @var Components\ApplicationInput $application
+     * @var \Apideck\Unify\Models\Components\ApplicationInput $application
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\ApplicationInput $application;
@@ -52,7 +52,7 @@ class AtsApplicationsAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\ApplicationInput  $application
+     * @param  \Apideck\Unify\Models\Components\ApplicationInput  $application
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

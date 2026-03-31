@@ -14,7 +14,7 @@ class BankAccountsSort
     /**
      * The field to sort by
      *
-     * @var ?SortBy $by
+     * @var ?\Apideck\Unify\Models\Components\SortBy $by
      */
     #[SpeakeasyMetadata('queryParam:name=by')]
     public ?SortBy $by = null;
@@ -22,14 +22,14 @@ class BankAccountsSort
     /**
      * The direction in which to sort the results
      *
-     * @var ?SortDirection $direction
+     * @var ?\Apideck\Unify\Models\Components\SortDirection $direction
      */
     #[SpeakeasyMetadata('queryParam:name=direction')]
     public ?SortDirection $direction = null;
 
     /**
-     * @param  ?SortBy  $by
-     * @param  ?SortDirection  $direction
+     * @param  ?\Apideck\Unify\Models\Components\SortBy  $by
+     * @param  ?\Apideck\Unify\Models\Components\SortDirection  $direction
      * @phpstan-pure
      */
     public function __construct(?SortBy $by = SortBy::UpdatedAt, ?SortDirection $direction = SortDirection::Asc)

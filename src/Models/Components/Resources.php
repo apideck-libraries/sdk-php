@@ -32,7 +32,7 @@ class Resources
     /**
      * Status of the resource. Resources with status live or beta are callable.
      *
-     * @var ?ResourceStatus $status
+     * @var ?\Apideck\Unify\Models\Components\ResourceStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ResourceStatus|null')]
@@ -51,7 +51,7 @@ class Resources
     /**
      * @param  ?string  $id
      * @param  ?string  $name
-     * @param  ?ResourceStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\ResourceStatus  $status
      * @param  ?bool  $excludedFromCoverage
      * @phpstan-pure
      */

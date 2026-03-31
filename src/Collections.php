@@ -52,8 +52,8 @@ class Collections
      *
      * List Collections
      *
-     * @param  ?Operations\IssueTrackingCollectionsAllRequest  $request
-     * @return Operations\IssueTrackingCollectionsAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\IssueTrackingCollectionsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\IssueTrackingCollectionsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\IssueTrackingCollectionsAllRequest $request = null, ?Options $options = null): Operations\IssueTrackingCollectionsAllResponse
@@ -279,8 +279,8 @@ class Collections
      *
      * List Collections
      *
-     * @param  ?Operations\IssueTrackingCollectionsAllRequest  $request
-     * @return \Generator<Operations\IssueTrackingCollectionsAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\IssueTrackingCollectionsAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\IssueTrackingCollectionsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\IssueTrackingCollectionsAllRequest $request = null, ?Options $options = null): \Generator
@@ -297,8 +297,8 @@ class Collections
      *
      * Get Collection
      *
-     * @param  Operations\IssueTrackingCollectionsOneRequest  $request
-     * @return Operations\IssueTrackingCollectionsOneResponse
+     * @param  \Apideck\Unify\Models\Operations\IssueTrackingCollectionsOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\IssueTrackingCollectionsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\IssueTrackingCollectionsOneRequest $request, ?Options $options = null): Operations\IssueTrackingCollectionsOneResponse

@@ -39,7 +39,7 @@ class IssueTrackingCollectionsAllRequest
     /**
      * Apply sorting
      *
-     * @var ?Components\CollectionsSort $sort
+     * @var ?\Apideck\Unify\Models\Components\CollectionsSort $sort
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=sort')]
     public ?Components\CollectionsSort $sort = null;
@@ -90,7 +90,7 @@ class IssueTrackingCollectionsAllRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?int  $limit
-     * @param  ?Components\CollectionsSort  $sort
+     * @param  ?\Apideck\Unify\Models\Components\CollectionsSort  $sort
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields

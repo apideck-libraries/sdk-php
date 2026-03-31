@@ -29,7 +29,7 @@ class LedgerAccountsFilter
     /**
      * Filter by account classification.
      *
-     * @var ?Classification $classification
+     * @var ?\Apideck\Unify\Models\Components\Classification $classification
      */
     #[SpeakeasyMetadata('queryParam:name=classification')]
     public ?Classification $classification = null;
@@ -37,7 +37,7 @@ class LedgerAccountsFilter
     /**
      * @param  ?string  $name
      * @param  ?\DateTime  $updatedSince
-     * @param  ?Classification  $classification
+     * @param  ?\Apideck\Unify\Models\Components\Classification  $classification
      * @phpstan-pure
      */
     public function __construct(?string $name = null, ?\DateTime $updatedSince = null, ?Classification $classification = null)

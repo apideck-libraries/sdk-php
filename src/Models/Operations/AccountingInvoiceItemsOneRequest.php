@@ -55,7 +55,7 @@ class AccountingInvoiceItemsOneRequest
     /**
      * Apply filters
      *
-     * @var ?Components\InvoiceItemFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\InvoiceItemFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\InvoiceItemFilter $filter = null;
@@ -83,7 +83,7 @@ class AccountingInvoiceItemsOneRequest
      * @param  ?string  $serviceId
      * @param  ?string  $companyId
      * @param  ?bool  $raw
-     * @param  ?Components\InvoiceItemFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\InvoiceItemFilter  $filter
      * @param  ?string  $fields
      * @phpstan-pure
      */

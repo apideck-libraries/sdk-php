@@ -14,7 +14,7 @@ class AccountingPurchaseOrdersAddRequest
 {
     /**
      *
-     * @var Components\PurchaseOrderInput $purchaseOrder
+     * @var \Apideck\Unify\Models\Components\PurchaseOrderInput $purchaseOrder
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\PurchaseOrderInput $purchaseOrder;
@@ -60,7 +60,7 @@ class AccountingPurchaseOrdersAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\PurchaseOrderInput  $purchaseOrder
+     * @param  \Apideck\Unify\Models\Components\PurchaseOrderInput  $purchaseOrder
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

@@ -14,7 +14,7 @@ class Session
     /**
      * The metadata of the consumer. This is used to display the consumer in the sidebar. This is optional, but recommended.
      *
-     * @var ?ConsumerMetadata $consumerMetadata
+     * @var ?\Apideck\Unify\Models\Components\ConsumerMetadata $consumerMetadata
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('consumer_metadata')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConsumerMetadata|null')]
@@ -33,7 +33,7 @@ class Session
     /**
      * Settings to change the way the Vault is displayed.
      *
-     * @var ?Settings $settings
+     * @var ?\Apideck\Unify\Models\Components\Settings $settings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('settings')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Settings|null')]
@@ -43,7 +43,7 @@ class Session
     /**
      * Theming options to change the look and feel of Vault.
      *
-     * @var ?Theme $theme
+     * @var ?\Apideck\Unify\Models\Components\Theme $theme
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('theme')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Theme|null')]
@@ -61,10 +61,10 @@ class Session
     public ?array $customConsumerSettings = null;
 
     /**
-     * @param  ?ConsumerMetadata  $consumerMetadata
+     * @param  ?\Apideck\Unify\Models\Components\ConsumerMetadata  $consumerMetadata
      * @param  ?string  $redirectUri
-     * @param  ?Settings  $settings
-     * @param  ?Theme  $theme
+     * @param  ?\Apideck\Unify\Models\Components\Settings  $settings
+     * @param  ?\Apideck\Unify\Models\Components\Theme  $theme
      * @param  ?array<string, mixed>  $customConsumerSettings
      * @phpstan-pure
      */

@@ -54,7 +54,7 @@ class DeleteInvoiceResponse
 
     /**
      *
-     * @var InvoiceResponse $data
+     * @var \Apideck\Unify\Models\Components\InvoiceResponse $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\InvoiceResponse')]
@@ -76,7 +76,7 @@ class DeleteInvoiceResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  InvoiceResponse  $data
+     * @param  \Apideck\Unify\Models\Components\InvoiceResponse  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

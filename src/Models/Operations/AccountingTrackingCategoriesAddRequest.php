@@ -14,7 +14,7 @@ class AccountingTrackingCategoriesAddRequest
 {
     /**
      *
-     * @var Components\TrackingCategoryInput $trackingCategory
+     * @var \Apideck\Unify\Models\Components\TrackingCategoryInput $trackingCategory
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\TrackingCategoryInput $trackingCategory;
@@ -60,7 +60,7 @@ class AccountingTrackingCategoriesAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\TrackingCategoryInput  $trackingCategory
+     * @param  \Apideck\Unify\Models\Components\TrackingCategoryInput  $trackingCategory
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

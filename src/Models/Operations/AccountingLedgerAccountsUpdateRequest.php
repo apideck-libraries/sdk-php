@@ -22,7 +22,7 @@ class AccountingLedgerAccountsUpdateRequest
 
     /**
      *
-     * @var Components\LedgerAccountInput $ledgerAccount
+     * @var \Apideck\Unify\Models\Components\LedgerAccountInput $ledgerAccount
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\LedgerAccountInput $ledgerAccount;
@@ -69,7 +69,7 @@ class AccountingLedgerAccountsUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\LedgerAccountInput  $ledgerAccount
+     * @param  \Apideck\Unify\Models\Components\LedgerAccountInput  $ledgerAccount
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

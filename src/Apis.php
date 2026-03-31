@@ -55,8 +55,8 @@ class Apis
      * @param  ?string  $appId
      * @param  ?string  $cursor
      * @param  ?int  $limit
-     * @param  ?Components\ApisFilter  $filter
-     * @return Operations\ConnectorApisAllResponse
+     * @param  ?\Apideck\Unify\Models\Components\ApisFilter  $filter
+     * @return \Apideck\Unify\Models\Operations\ConnectorApisAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?string $appId = null, ?string $cursor = null, ?int $limit = null, ?Components\ApisFilter $filter = null, ?Options $options = null): Operations\ConnectorApisAllResponse
@@ -255,8 +255,8 @@ class Apis
      * @param  ?string  $appId
      * @param  ?string  $cursor
      * @param  ?int  $limit
-     * @param  ?Components\ApisFilter  $filter
-     * @return \Generator<Operations\ConnectorApisAllResponse>
+     * @param  ?\Apideck\Unify\Models\Components\ApisFilter  $filter
+     * @return \Generator<\Apideck\Unify\Models\Operations\ConnectorApisAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?string $appId = null, ?string $cursor = null, ?int $limit = null, ?Components\ApisFilter $filter = null, ?Options $options = null): \Generator
@@ -275,7 +275,7 @@ class Apis
      *
      * @param  string  $id
      * @param  ?string  $appId
-     * @return Operations\ConnectorApisOneResponse
+     * @return \Apideck\Unify\Models\Operations\ConnectorApisOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(string $id, ?string $appId = null, ?Options $options = null): Operations\ConnectorApisOneResponse

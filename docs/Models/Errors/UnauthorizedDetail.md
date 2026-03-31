@@ -18,7 +18,7 @@ string $value = /* values here */
 
 ```php
 /**
-* @var Errors\Detail2
+* @var \Apideck\Unify\Models\Errors\Detail2
 */
 Errors\Detail2 $value = /* values here */
 ```

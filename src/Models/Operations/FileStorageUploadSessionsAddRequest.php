@@ -14,7 +14,7 @@ class FileStorageUploadSessionsAddRequest
 {
     /**
      *
-     * @var Components\CreateUploadSessionRequest $createUploadSessionRequest
+     * @var \Apideck\Unify\Models\Components\CreateUploadSessionRequest $createUploadSessionRequest
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\CreateUploadSessionRequest $createUploadSessionRequest;
@@ -52,7 +52,7 @@ class FileStorageUploadSessionsAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\CreateUploadSessionRequest  $createUploadSessionRequest
+     * @param  \Apideck\Unify\Models\Components\CreateUploadSessionRequest  $createUploadSessionRequest
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

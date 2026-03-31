@@ -23,7 +23,7 @@ class ConnectionInput
     /**
      * $configuration
      *
-     * @var ?array<ConnectionConfiguration> $configuration
+     * @var ?array<\Apideck\Unify\Models\Components\ConnectionConfiguration> $configuration
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('configuration')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ConnectionConfiguration>|null')]
@@ -33,7 +33,7 @@ class ConnectionInput
     /**
      * List of custom mappings configured for this connection
      *
-     * @var ?array<CustomMappingInput> $customMappings
+     * @var ?array<\Apideck\Unify\Models\Components\CustomMappingInput> $customMappings
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_mappings')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomMappingInput>|null')]
@@ -43,7 +43,7 @@ class ConnectionInput
     /**
      * The current consent state of the connection
      *
-     * @var ?ConsentState $consentState
+     * @var ?\Apideck\Unify\Models\Components\ConsentState $consentState
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('consent_state')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConsentState|null')]
@@ -52,7 +52,7 @@ class ConnectionInput
 
     /**
      *
-     * @var ?ConsentRecordInput $latestConsent
+     * @var ?\Apideck\Unify\Models\Components\ConsentRecordInput $latestConsent
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('latest_consent')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConsentRecordInput|null')]
@@ -61,7 +61,7 @@ class ConnectionInput
 
     /**
      *
-     * @var ?DataScopesInput $applicationDataScopes
+     * @var ?\Apideck\Unify\Models\Components\DataScopesInput $applicationDataScopes
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('application_data_scopes')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\DataScopesInput|null')]
@@ -90,11 +90,11 @@ class ConnectionInput
 
     /**
      * @param  ?bool  $enabled
-     * @param  ?array<ConnectionConfiguration>  $configuration
-     * @param  ?array<CustomMappingInput>  $customMappings
-     * @param  ?ConsentState  $consentState
-     * @param  ?ConsentRecordInput  $latestConsent
-     * @param  ?DataScopesInput  $applicationDataScopes
+     * @param  ?array<\Apideck\Unify\Models\Components\ConnectionConfiguration>  $configuration
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomMappingInput>  $customMappings
+     * @param  ?\Apideck\Unify\Models\Components\ConsentState  $consentState
+     * @param  ?\Apideck\Unify\Models\Components\ConsentRecordInput  $latestConsent
+     * @param  ?\Apideck\Unify\Models\Components\DataScopesInput  $applicationDataScopes
      * @param  ?array<string, mixed>  $settings
      * @param  ?array<string, mixed>  $metadata
      * @phpstan-pure

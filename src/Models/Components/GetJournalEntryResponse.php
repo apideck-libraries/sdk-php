@@ -54,7 +54,7 @@ class GetJournalEntryResponse
 
     /**
      *
-     * @var JournalEntry $data
+     * @var \Apideck\Unify\Models\Components\JournalEntry $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\JournalEntry')]
@@ -76,7 +76,7 @@ class GetJournalEntryResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  JournalEntry  $data
+     * @param  \Apideck\Unify\Models\Components\JournalEntry  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

@@ -14,7 +14,7 @@ class WebhookWebhooksAddRequest
 {
     /**
      *
-     * @var Components\CreateWebhookRequest $createWebhookRequest
+     * @var \Apideck\Unify\Models\Components\CreateWebhookRequest $createWebhookRequest
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\CreateWebhookRequest $createWebhookRequest;
@@ -28,7 +28,7 @@ class WebhookWebhooksAddRequest
     public ?string $appId = null;
 
     /**
-     * @param  Components\CreateWebhookRequest  $createWebhookRequest
+     * @param  \Apideck\Unify\Models\Components\CreateWebhookRequest  $createWebhookRequest
      * @param  ?string  $appId
      * @phpstan-pure
      */

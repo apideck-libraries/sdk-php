@@ -30,7 +30,7 @@ class Transactions
     /**
      * Whether the amount is a credit or debit.
      *
-     * @var CreditOrDebit $creditOrDebit
+     * @var \Apideck\Unify\Models\Components\CreditOrDebit $creditOrDebit
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('credit_or_debit')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CreditOrDebit')]
@@ -74,7 +74,7 @@ class Transactions
     /**
      * Type of transaction.
      *
-     * @var ?BankFeedStatementTransactionType $transactionType
+     * @var ?\Apideck\Unify\Models\Components\BankFeedStatementTransactionType $transactionType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('transaction_type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BankFeedStatementTransactionType|null')]
@@ -84,12 +84,12 @@ class Transactions
     /**
      * @param  \DateTime  $postedDate
      * @param  float  $amount
-     * @param  CreditOrDebit  $creditOrDebit
+     * @param  \Apideck\Unify\Models\Components\CreditOrDebit  $creditOrDebit
      * @param  string  $sourceTransactionId
      * @param  ?string  $description
      * @param  ?string  $counterparty
      * @param  ?string  $reference
-     * @param  ?BankFeedStatementTransactionType  $transactionType
+     * @param  ?\Apideck\Unify\Models\Components\BankFeedStatementTransactionType  $transactionType
      * @phpstan-pure
      */
     public function __construct(\DateTime $postedDate, float $amount, CreditOrDebit $creditOrDebit, string $sourceTransactionId, ?string $description = null, ?string $counterparty = null, ?string $reference = null, ?BankFeedStatementTransactionType $transactionType = null)

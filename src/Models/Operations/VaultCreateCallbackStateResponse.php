@@ -13,7 +13,7 @@ class VaultCreateCallbackStateResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class VaultCreateCallbackStateResponse
     /**
      * Callback state created
      *
-     * @var ?Components\CreateCallbackStateResponse $createCallbackStateResponse
+     * @var ?\Apideck\Unify\Models\Components\CreateCallbackStateResponse $createCallbackStateResponse
      */
     public ?Components\CreateCallbackStateResponse $createCallbackStateResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\CreateCallbackStateResponse  $createCallbackStateResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\CreateCallbackStateResponse  $createCallbackStateResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateCallbackStateResponse $createCallbackStateResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

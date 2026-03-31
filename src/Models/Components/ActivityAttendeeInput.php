@@ -86,7 +86,7 @@ class ActivityAttendeeInput
     /**
      * Status of the attendee
      *
-     * @var ?ActivityAttendeeStatus $status
+     * @var ?\Apideck\Unify\Models\Components\ActivityAttendeeStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ActivityAttendeeStatus|null')]
@@ -102,7 +102,7 @@ class ActivityAttendeeInput
      * @param  ?string  $suffix
      * @param  ?string  $emailAddress
      * @param  ?bool  $isOrganizer
-     * @param  ?ActivityAttendeeStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\ActivityAttendeeStatus  $status
      * @phpstan-pure
      */
     public function __construct(?string $name = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $prefix = null, ?string $suffix = null, ?string $emailAddress = null, ?bool $isOrganizer = null, ?ActivityAttendeeStatus $status = null)

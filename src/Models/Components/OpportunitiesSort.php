@@ -14,7 +14,7 @@ class OpportunitiesSort
     /**
      * The field on which to sort the Opportunities
      *
-     * @var ?OpportunitiesSortBy $by
+     * @var ?\Apideck\Unify\Models\Components\OpportunitiesSortBy $by
      */
     #[SpeakeasyMetadata('queryParam:name=by')]
     public ?OpportunitiesSortBy $by = null;
@@ -22,14 +22,14 @@ class OpportunitiesSort
     /**
      * The direction in which to sort the results
      *
-     * @var ?SortDirection $direction
+     * @var ?\Apideck\Unify\Models\Components\SortDirection $direction
      */
     #[SpeakeasyMetadata('queryParam:name=direction')]
     public ?SortDirection $direction = null;
 
     /**
-     * @param  ?OpportunitiesSortBy  $by
-     * @param  ?SortDirection  $direction
+     * @param  ?\Apideck\Unify\Models\Components\OpportunitiesSortBy  $by
+     * @param  ?\Apideck\Unify\Models\Components\SortDirection  $direction
      * @phpstan-pure
      */
     public function __construct(?OpportunitiesSortBy $by = null, ?SortDirection $direction = SortDirection::Asc)

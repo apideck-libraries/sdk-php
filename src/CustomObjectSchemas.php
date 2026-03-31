@@ -52,8 +52,8 @@ class CustomObjectSchemas
      *
      * Create custom object schema
      *
-     * @param  Operations\CrmCustomObjectSchemasAddRequest  $request
-     * @return Operations\CrmCustomObjectSchemasAddResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmCustomObjectSchemasAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmCustomObjectSchemasAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\CrmCustomObjectSchemasAddRequest $request, ?Options $options = null): Operations\CrmCustomObjectSchemasAddResponse
@@ -227,8 +227,8 @@ class CustomObjectSchemas
      *
      * List custom object schemas
      *
-     * @param  ?Operations\CrmCustomObjectSchemasAllRequest  $request
-     * @return Operations\CrmCustomObjectSchemasAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\CrmCustomObjectSchemasAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmCustomObjectSchemasAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\CrmCustomObjectSchemasAllRequest $request = null, ?Options $options = null): Operations\CrmCustomObjectSchemasAllResponse
@@ -450,8 +450,8 @@ class CustomObjectSchemas
      *
      * List custom object schemas
      *
-     * @param  ?Operations\CrmCustomObjectSchemasAllRequest  $request
-     * @return \Generator<Operations\CrmCustomObjectSchemasAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\CrmCustomObjectSchemasAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\CrmCustomObjectSchemasAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\CrmCustomObjectSchemasAllRequest $request = null, ?Options $options = null): \Generator
@@ -468,8 +468,8 @@ class CustomObjectSchemas
      *
      * Delete custom object schema
      *
-     * @param  Operations\CrmCustomObjectSchemasDeleteRequest  $request
-     * @return Operations\CrmCustomObjectSchemasDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmCustomObjectSchemasDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmCustomObjectSchemasDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\CrmCustomObjectSchemasDeleteRequest $request, ?Options $options = null): Operations\CrmCustomObjectSchemasDeleteResponse
@@ -638,8 +638,8 @@ class CustomObjectSchemas
      *
      * Get custom object schema
      *
-     * @param  Operations\CrmCustomObjectSchemasOneRequest  $request
-     * @return Operations\CrmCustomObjectSchemasOneResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmCustomObjectSchemasOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmCustomObjectSchemasOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\CrmCustomObjectSchemasOneRequest $request, ?Options $options = null): Operations\CrmCustomObjectSchemasOneResponse
@@ -808,8 +808,8 @@ class CustomObjectSchemas
      *
      * Update custom object schema
      *
-     * @param  Operations\CrmCustomObjectSchemasUpdateRequest  $request
-     * @return Operations\CrmCustomObjectSchemasUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\CrmCustomObjectSchemasUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\CrmCustomObjectSchemasUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\CrmCustomObjectSchemasUpdateRequest $request, ?Options $options = null): Operations\CrmCustomObjectSchemasUpdateResponse

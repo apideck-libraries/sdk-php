@@ -31,7 +31,7 @@ class GetConnectionsResponse
     /**
      * $data
      *
-     * @var array<Connection> $data
+     * @var array<\Apideck\Unify\Models\Components\Connection> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Connection>')]
@@ -50,7 +50,7 @@ class GetConnectionsResponse
     /**
      * @param  int  $statusCode
      * @param  string  $status
-     * @param  array<Connection>  $data
+     * @param  array<\Apideck\Unify\Models\Components\Connection>  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

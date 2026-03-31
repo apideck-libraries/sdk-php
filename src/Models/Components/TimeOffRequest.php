@@ -22,7 +22,7 @@ class TimeOffRequest
 
     /**
      *
-     * @var ?Notes $notes
+     * @var ?\Apideck\Unify\Models\Components\Notes $notes
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('notes')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Notes|null')]
@@ -32,7 +32,7 @@ class TimeOffRequest
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -69,7 +69,7 @@ class TimeOffRequest
     /**
      * The status of the time off request.
      *
-     * @var ?TimeOffRequestStatusStatus $status
+     * @var ?\Apideck\Unify\Models\Components\TimeOffRequestStatusStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\TimeOffRequestStatusStatus|null')]
@@ -115,7 +115,7 @@ class TimeOffRequest
     /**
      * The type of request
      *
-     * @var ?RequestType $requestType
+     * @var ?\Apideck\Unify\Models\Components\RequestType $requestType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('request_type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\RequestType|null')]
@@ -134,7 +134,7 @@ class TimeOffRequest
     /**
      * The unit of time off requested. Possible values include: `hours`, `days`, or `other`.
      *
-     * @var ?Units $units
+     * @var ?\Apideck\Unify\Models\Components\Units $units
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('units')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Units|null')]
@@ -207,19 +207,19 @@ class TimeOffRequest
 
     /**
      * @param  ?string  $id
-     * @param  ?Notes  $notes
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?\Apideck\Unify\Models\Components\Notes  $notes
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $policyType
      * @param  ?string  $employeeId
      * @param  ?string  $policyId
-     * @param  ?TimeOffRequestStatusStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\TimeOffRequestStatusStatus  $status
      * @param  ?string  $description
      * @param  ?string  $startDate
      * @param  ?string  $endDate
      * @param  ?string  $requestDate
-     * @param  ?RequestType  $requestType
+     * @param  ?\Apideck\Unify\Models\Components\RequestType  $requestType
      * @param  ?string  $approvalDate
-     * @param  ?Units  $units
+     * @param  ?\Apideck\Unify\Models\Components\Units  $units
      * @param  ?float  $amount
      * @param  ?string  $dayPart
      * @param  ?array<string, mixed>  $customMappings

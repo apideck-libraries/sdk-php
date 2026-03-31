@@ -54,7 +54,7 @@ class GetCommentResponse
 
     /**
      *
-     * @var CollectionTicketComment $data
+     * @var \Apideck\Unify\Models\Components\CollectionTicketComment $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CollectionTicketComment')]
@@ -76,7 +76,7 @@ class GetCommentResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  CollectionTicketComment  $data
+     * @param  \Apideck\Unify\Models\Components\CollectionTicketComment  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

@@ -33,7 +33,7 @@ class LinkedFinancialAccountInput
     /**
      * The type of account being referenced. Use `ledger_account` for GL accounts from the chart of accounts, or `bank_account` for bank account entities. When not specified, the connector will use its default behavior.
      *
-     * @var ?LinkedFinancialAccountAccountType $type
+     * @var ?\Apideck\Unify\Models\Components\LinkedFinancialAccountAccountType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedFinancialAccountAccountType|null')]
@@ -61,7 +61,7 @@ class LinkedFinancialAccountInput
     /**
      * @param  ?string  $id
      * @param  ?string  $code
-     * @param  ?LinkedFinancialAccountAccountType  $type
+     * @param  ?\Apideck\Unify\Models\Components\LinkedFinancialAccountAccountType  $type
      * @param  ?string  $displayId
      * @param  ?string  $accountNumber
      * @phpstan-pure

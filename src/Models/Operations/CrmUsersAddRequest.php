@@ -14,7 +14,7 @@ class CrmUsersAddRequest
 {
     /**
      *
-     * @var Components\UserInput $user
+     * @var \Apideck\Unify\Models\Components\UserInput $user
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\UserInput $user;
@@ -52,7 +52,7 @@ class CrmUsersAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\UserInput  $user
+     * @param  \Apideck\Unify\Models\Components\UserInput  $user
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

@@ -52,8 +52,8 @@ class Folders
      *
      * Create Folder
      *
-     * @param  Operations\FileStorageFoldersAddRequest  $request
-     * @return Operations\FileStorageFoldersAddResponse
+     * @param  \Apideck\Unify\Models\Operations\FileStorageFoldersAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageFoldersAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\FileStorageFoldersAddRequest $request, ?Options $options = null): Operations\FileStorageFoldersAddResponse
@@ -227,8 +227,8 @@ class Folders
      *
      * Copy Folder
      *
-     * @param  Operations\FileStorageFoldersCopyRequest  $request
-     * @return Operations\FileStorageFoldersCopyResponse
+     * @param  \Apideck\Unify\Models\Operations\FileStorageFoldersCopyRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageFoldersCopyResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function copy(Operations\FileStorageFoldersCopyRequest $request, ?Options $options = null): Operations\FileStorageFoldersCopyResponse
@@ -402,8 +402,8 @@ class Folders
      *
      * Delete Folder
      *
-     * @param  Operations\FileStorageFoldersDeleteRequest  $request
-     * @return Operations\FileStorageFoldersDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\FileStorageFoldersDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageFoldersDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\FileStorageFoldersDeleteRequest $request, ?Options $options = null): Operations\FileStorageFoldersDeleteResponse
@@ -572,8 +572,8 @@ class Folders
      *
      * Get Folder
      *
-     * @param  Operations\FileStorageFoldersOneRequest  $request
-     * @return Operations\FileStorageFoldersOneResponse
+     * @param  \Apideck\Unify\Models\Operations\FileStorageFoldersOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageFoldersOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\FileStorageFoldersOneRequest $request, ?Options $options = null): Operations\FileStorageFoldersOneResponse
@@ -742,8 +742,8 @@ class Folders
      *
      * Rename or move Folder
      *
-     * @param  Operations\FileStorageFoldersUpdateRequest  $request
-     * @return Operations\FileStorageFoldersUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\FileStorageFoldersUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\FileStorageFoldersUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\FileStorageFoldersUpdateRequest $request, ?Options $options = null): Operations\FileStorageFoldersUpdateResponse

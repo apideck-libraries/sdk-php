@@ -54,7 +54,7 @@ class GetEmployeePayrollResponse
 
     /**
      *
-     * @var EmployeePayroll $data
+     * @var \Apideck\Unify\Models\Components\EmployeePayroll $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EmployeePayroll')]
@@ -76,7 +76,7 @@ class GetEmployeePayrollResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  EmployeePayroll  $data
+     * @param  \Apideck\Unify\Models\Components\EmployeePayroll  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

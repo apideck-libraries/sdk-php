@@ -14,13 +14,13 @@ class BankAccountFilter
     /**
      * Filter by account type
      *
-     * @var ?BankAccountFilterAccountType $accountType
+     * @var ?\Apideck\Unify\Models\Components\BankAccountFilterAccountType $accountType
      */
     #[SpeakeasyMetadata('queryParam:name=account_type')]
     public ?BankAccountFilterAccountType $accountType = null;
 
     /**
-     * @param  ?BankAccountFilterAccountType  $accountType
+     * @param  ?\Apideck\Unify\Models\Components\BankAccountFilterAccountType  $accountType
      * @phpstan-pure
      */
     public function __construct(?BankAccountFilterAccountType $accountType = null)

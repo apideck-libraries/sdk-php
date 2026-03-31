@@ -54,7 +54,7 @@ class GetHrisCompanyResponse
 
     /**
      *
-     * @var HrisCompany $data
+     * @var \Apideck\Unify\Models\Components\HrisCompany $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\HrisCompany')]
@@ -76,7 +76,7 @@ class GetHrisCompanyResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  HrisCompany  $data
+     * @param  \Apideck\Unify\Models\Components\HrisCompany  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

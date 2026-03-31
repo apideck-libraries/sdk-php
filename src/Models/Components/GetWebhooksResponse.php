@@ -31,7 +31,7 @@ class GetWebhooksResponse
     /**
      * $data
      *
-     * @var array<Webhook> $data
+     * @var array<\Apideck\Unify\Models\Components\Webhook> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Webhook>')]
@@ -40,7 +40,7 @@ class GetWebhooksResponse
     /**
      * Response metadata
      *
-     * @var ?Meta $meta
+     * @var ?\Apideck\Unify\Models\Components\Meta $meta
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('meta')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Meta|null')]
@@ -50,7 +50,7 @@ class GetWebhooksResponse
     /**
      * Links to navigate to previous or next pages through the API
      *
-     * @var ?Links $links
+     * @var ?\Apideck\Unify\Models\Components\Links $links
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('links')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Links|null')]
@@ -70,9 +70,9 @@ class GetWebhooksResponse
     /**
      * @param  int  $statusCode
      * @param  string  $status
-     * @param  array<Webhook>  $data
-     * @param  ?Meta  $meta
-     * @param  ?Links  $links
+     * @param  array<\Apideck\Unify\Models\Components\Webhook>  $data
+     * @param  ?\Apideck\Unify\Models\Components\Meta  $meta
+     * @param  ?\Apideck\Unify\Models\Components\Links  $links
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

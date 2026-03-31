@@ -23,7 +23,7 @@ class LinkedSupplier
 
     /**
      *
-     * @var ?Address $address
+     * @var ?\Apideck\Unify\Models\Components\Address $address
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('address')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
@@ -59,7 +59,7 @@ class LinkedSupplier
 
     /**
      * @param  ?string  $id
-     * @param  ?Address  $address
+     * @param  ?\Apideck\Unify\Models\Components\Address  $address
      * @param  ?string  $displayId
      * @param  ?string  $displayName
      * @param  ?string  $companyName

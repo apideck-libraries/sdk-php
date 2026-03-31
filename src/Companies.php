@@ -52,8 +52,8 @@ class Companies
      *
      * List all companies accessible through the current connection. Only connectors that support multi-company access (x-apideck-supports-multi-company) will return a list of companies. Use the returned company ID in the x-apideck-company-id header to scope subsequent requests to a specific company.
      *
-     * @param  ?Operations\AccountingCompaniesAllRequest  $request
-     * @return Operations\AccountingCompaniesAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingCompaniesAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingCompaniesAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AccountingCompaniesAllRequest $request = null, ?Options $options = null): Operations\AccountingCompaniesAllResponse
@@ -277,8 +277,8 @@ class Companies
      *
      * List all companies accessible through the current connection. Only connectors that support multi-company access (x-apideck-supports-multi-company) will return a list of companies. Use the returned company ID in the x-apideck-company-id header to scope subsequent requests to a specific company.
      *
-     * @param  ?Operations\AccountingCompaniesAllRequest  $request
-     * @return \Generator<Operations\AccountingCompaniesAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingCompaniesAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AccountingCompaniesAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AccountingCompaniesAllRequest $request = null, ?Options $options = null): \Generator

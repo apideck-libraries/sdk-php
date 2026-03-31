@@ -31,7 +31,7 @@ class VaultConnectionsImportRequest
     /**
      * Fields that need to be persisted on the resource
      *
-     * @var Components\ConnectionImportData $connectionImportData
+     * @var \Apideck\Unify\Models\Components\ConnectionImportData $connectionImportData
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\ConnectionImportData $connectionImportData;
@@ -55,7 +55,7 @@ class VaultConnectionsImportRequest
     /**
      * @param  string  $serviceId
      * @param  string  $unifiedApi
-     * @param  Components\ConnectionImportData  $connectionImportData
+     * @param  \Apideck\Unify\Models\Components\ConnectionImportData  $connectionImportData
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @phpstan-pure

@@ -14,7 +14,7 @@ class Webhook
     /**
      * Name of Apideck Unified API
      *
-     * @var UnifiedApiId $unifiedApi
+     * @var \Apideck\Unify\Models\Components\UnifiedApiId $unifiedApi
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('unified_api')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\UnifiedApiId')]
@@ -23,7 +23,7 @@ class Webhook
     /**
      * The status of the webhook.
      *
-     * @var Status $status
+     * @var \Apideck\Unify\Models\Components\Status $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Status')]
@@ -48,7 +48,7 @@ class Webhook
     /**
      * The list of subscribed events for this webhook. [`*`] indicates that all events are enabled.
      *
-     * @var array<WebhookEventType> $events
+     * @var array<\Apideck\Unify\Models\Components\WebhookEventType> $events
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('events')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\WebhookEventType>')]
@@ -65,7 +65,7 @@ class Webhook
     /**
      * Indicates why the webhook has been disabled. `retry_limit`: webhook reached its retry limit. `usage_limit`: account is over its usage limit. `delivery_url_validation_failed`: delivery URL failed validation during webhook creation or update.
      *
-     * @var ?DisabledReason $disabledReason
+     * @var ?\Apideck\Unify\Models\Components\DisabledReason $disabledReason
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('disabled_reason')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\DisabledReason|null')]
@@ -100,13 +100,13 @@ class Webhook
     public ?\DateTime $createdAt = null;
 
     /**
-     * @param  UnifiedApiId  $unifiedApi
-     * @param  Status  $status
+     * @param  \Apideck\Unify\Models\Components\UnifiedApiId  $unifiedApi
+     * @param  \Apideck\Unify\Models\Components\Status  $status
      * @param  string  $deliveryUrl
      * @param  string  $executeBaseUrl
-     * @param  array<WebhookEventType>  $events
+     * @param  array<\Apideck\Unify\Models\Components\WebhookEventType>  $events
      * @param  ?string  $id
-     * @param  ?DisabledReason  $disabledReason
+     * @param  ?\Apideck\Unify\Models\Components\DisabledReason  $disabledReason
      * @param  ?string  $description
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt

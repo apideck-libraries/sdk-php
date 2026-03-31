@@ -23,7 +23,7 @@ class SupportedProperty
     /**
      * List of child properties of the unified property.
      *
-     * @var ?array<SupportedProperty> $childProperties
+     * @var ?array<\Apideck\Unify\Models\Components\SupportedProperty> $childProperties
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('child_properties')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\SupportedProperty>|null')]
@@ -32,7 +32,7 @@ class SupportedProperty
 
     /**
      * @param  ?string  $unifiedProperty
-     * @param  ?array<SupportedProperty>  $childProperties
+     * @param  ?array<\Apideck\Unify\Models\Components\SupportedProperty>  $childProperties
      * @phpstan-pure
      */
     public function __construct(?string $unifiedProperty = null, ?array $childProperties = null)

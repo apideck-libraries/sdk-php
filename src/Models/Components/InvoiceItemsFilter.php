@@ -29,7 +29,7 @@ class InvoiceItemsFilter
     /**
      * The type of invoice item, indicating whether it is an inventory item, a service, or another type.
      *
-     * @var ?InvoiceItemType $type
+     * @var ?\Apideck\Unify\Models\Components\InvoiceItemType $type
      */
     #[SpeakeasyMetadata('queryParam:name=type')]
     public ?InvoiceItemType $type = null;
@@ -37,7 +37,7 @@ class InvoiceItemsFilter
     /**
      * The kind of transaction, indicating whether it is a sales transaction or a purchase transaction.
      *
-     * @var ?TransactionType $transactionType
+     * @var ?\Apideck\Unify\Models\Components\TransactionType $transactionType
      */
     #[SpeakeasyMetadata('queryParam:name=transaction_type')]
     public ?TransactionType $transactionType = null;
@@ -45,8 +45,8 @@ class InvoiceItemsFilter
     /**
      * @param  ?\DateTime  $updatedSince
      * @param  ?string  $name
-     * @param  ?InvoiceItemType  $type
-     * @param  ?TransactionType  $transactionType
+     * @param  ?\Apideck\Unify\Models\Components\InvoiceItemType  $type
+     * @param  ?\Apideck\Unify\Models\Components\TransactionType  $transactionType
      * @phpstan-pure
      */
     public function __construct(?\DateTime $updatedSince = null, ?string $name = null, ?InvoiceItemType $type = null, ?TransactionType $transactionType = null)

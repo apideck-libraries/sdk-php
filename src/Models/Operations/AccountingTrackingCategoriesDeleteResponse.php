@@ -13,7 +13,7 @@ class AccountingTrackingCategoriesDeleteResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,21 +22,21 @@ class AccountingTrackingCategoriesDeleteResponse
     /**
      * Tracking category deleted
      *
-     * @var ?Components\DeleteTrackingCategoryResponse $deleteTrackingCategoryResponse
+     * @var ?\Apideck\Unify\Models\Components\DeleteTrackingCategoryResponse $deleteTrackingCategoryResponse
      */
     public ?Components\DeleteTrackingCategoryResponse $deleteTrackingCategoryResponse = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\DeleteTrackingCategoryResponse  $deleteTrackingCategoryResponse
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\DeleteTrackingCategoryResponse  $deleteTrackingCategoryResponse
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteTrackingCategoryResponse $deleteTrackingCategoryResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

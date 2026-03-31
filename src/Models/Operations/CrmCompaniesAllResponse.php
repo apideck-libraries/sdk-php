@@ -13,7 +13,7 @@ class CrmCompaniesAllResponse
 {
     /**
      *
-     * @var Components\HTTPMetadata $httpMeta
+     * @var \Apideck\Unify\Models\Components\HTTPMetadata $httpMeta
      */
     #[\Speakeasy\Serializer\Annotation\Exclude]
 
@@ -22,14 +22,14 @@ class CrmCompaniesAllResponse
     /**
      * Companies
      *
-     * @var ?Components\GetCompaniesResponse1 $getCompaniesResponse1
+     * @var ?\Apideck\Unify\Models\Components\GetCompaniesResponse1 $getCompaniesResponse1
      */
     public ?Components\GetCompaniesResponse1 $getCompaniesResponse1 = null;
 
     /**
      * Unexpected error
      *
-     * @var ?Components\UnexpectedErrorResponse $unexpectedErrorResponse
+     * @var ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse $unexpectedErrorResponse
      */
     public ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null;
 
@@ -38,9 +38,9 @@ class CrmCompaniesAllResponse
      */
     public \Closure $next;
     /**
-     * @param  Components\HTTPMetadata  $httpMeta
-     * @param  ?Components\GetCompaniesResponse1  $getCompaniesResponse1
-     * @param  ?Components\UnexpectedErrorResponse  $unexpectedErrorResponse
+     * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  ?\Apideck\Unify\Models\Components\GetCompaniesResponse1  $getCompaniesResponse1
+     * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
     public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetCompaniesResponse1 $getCompaniesResponse1 = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)

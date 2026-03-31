@@ -31,7 +31,7 @@ class VaultConnectionsUpdateRequest
     /**
      * Fields that need to be updated on the resource
      *
-     * @var Components\ConnectionInput $connection
+     * @var \Apideck\Unify\Models\Components\ConnectionInput $connection
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\ConnectionInput $connection;
@@ -55,7 +55,7 @@ class VaultConnectionsUpdateRequest
     /**
      * @param  string  $serviceId
      * @param  string  $unifiedApi
-     * @param  Components\ConnectionInput  $connection
+     * @param  \Apideck\Unify\Models\Components\ConnectionInput  $connection
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @phpstan-pure

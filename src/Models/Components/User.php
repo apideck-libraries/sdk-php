@@ -14,7 +14,7 @@ class User
     /**
      * $emails
      *
-     * @var array<Email> $emails
+     * @var array<\Apideck\Unify\Models\Components\Email> $emails
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('emails')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Email>')]
@@ -32,7 +32,7 @@ class User
     /**
      * $addresses
      *
-     * @var ?array<Address> $addresses
+     * @var ?array<\Apideck\Unify\Models\Components\Address> $addresses
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('addresses')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Address>|null')]
@@ -42,7 +42,7 @@ class User
     /**
      * $phoneNumbers
      *
-     * @var ?array<PhoneNumber> $phoneNumbers
+     * @var ?array<\Apideck\Unify\Models\Components\PhoneNumber> $phoneNumbers
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('phone_numbers')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PhoneNumber>|null')]
@@ -52,7 +52,7 @@ class User
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -206,11 +206,11 @@ class User
     public ?string $createdAt = null;
 
     /**
-     * @param  array<Email>  $emails
+     * @param  array<\Apideck\Unify\Models\Components\Email>  $emails
      * @param  ?string  $id
-     * @param  ?array<Address>  $addresses
-     * @param  ?array<PhoneNumber>  $phoneNumbers
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?array<\Apideck\Unify\Models\Components\Address>  $addresses
+     * @param  ?array<\Apideck\Unify\Models\Components\PhoneNumber>  $phoneNumbers
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $parentId
      * @param  ?string  $username
      * @param  ?string  $firstName

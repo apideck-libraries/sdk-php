@@ -22,7 +22,7 @@ class CrmPipelinesUpdateRequest
 
     /**
      *
-     * @var Components\PipelineInput $pipeline
+     * @var \Apideck\Unify\Models\Components\PipelineInput $pipeline
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\PipelineInput $pipeline;
@@ -61,7 +61,7 @@ class CrmPipelinesUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\PipelineInput  $pipeline
+     * @param  \Apideck\Unify\Models\Components\PipelineInput  $pipeline
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

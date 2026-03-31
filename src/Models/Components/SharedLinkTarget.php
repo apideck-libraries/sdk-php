@@ -31,7 +31,7 @@ class SharedLinkTarget
     /**
      * The type of resource. Could be file, folder or url
      *
-     * @var ?FileType $type
+     * @var ?\Apideck\Unify\Models\Components\FileType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\FileType|null')]
@@ -41,7 +41,7 @@ class SharedLinkTarget
     /**
      * @param  string  $id
      * @param  ?string  $name
-     * @param  ?FileType  $type
+     * @param  ?\Apideck\Unify\Models\Components\FileType  $type
      * @phpstan-pure
      */
     public function __construct(string $id, ?string $name = null, ?FileType $type = null)

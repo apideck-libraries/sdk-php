@@ -22,7 +22,7 @@ class AccountingPurchaseOrdersUpdateRequest
 
     /**
      *
-     * @var Components\PurchaseOrderInput $purchaseOrder
+     * @var \Apideck\Unify\Models\Components\PurchaseOrderInput $purchaseOrder
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\PurchaseOrderInput $purchaseOrder;
@@ -69,7 +69,7 @@ class AccountingPurchaseOrdersUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\PurchaseOrderInput  $purchaseOrder
+     * @param  \Apideck\Unify\Models\Components\PurchaseOrderInput  $purchaseOrder
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

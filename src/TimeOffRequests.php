@@ -52,8 +52,8 @@ class TimeOffRequests
      *
      * Create Time Off Request
      *
-     * @param  Operations\HrisTimeOffRequestsAddRequest  $request
-     * @return Operations\HrisTimeOffRequestsAddResponse
+     * @param  \Apideck\Unify\Models\Operations\HrisTimeOffRequestsAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\HrisTimeOffRequestsAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\HrisTimeOffRequestsAddRequest $request, ?Options $options = null): Operations\HrisTimeOffRequestsAddResponse
@@ -227,8 +227,8 @@ class TimeOffRequests
      *
      * List Time Off Requests
      *
-     * @param  ?Operations\HrisTimeOffRequestsAllRequest  $request
-     * @return Operations\HrisTimeOffRequestsAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\HrisTimeOffRequestsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\HrisTimeOffRequestsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\HrisTimeOffRequestsAllRequest $request = null, ?Options $options = null): Operations\HrisTimeOffRequestsAllResponse
@@ -454,8 +454,8 @@ class TimeOffRequests
      *
      * List Time Off Requests
      *
-     * @param  ?Operations\HrisTimeOffRequestsAllRequest  $request
-     * @return \Generator<Operations\HrisTimeOffRequestsAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\HrisTimeOffRequestsAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\HrisTimeOffRequestsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\HrisTimeOffRequestsAllRequest $request = null, ?Options $options = null): \Generator
@@ -472,8 +472,8 @@ class TimeOffRequests
      *
      * Delete Time Off Request
      *
-     * @param  Operations\HrisTimeOffRequestsDeleteRequest  $request
-     * @return Operations\HrisTimeOffRequestsDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\HrisTimeOffRequestsDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\HrisTimeOffRequestsDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\HrisTimeOffRequestsDeleteRequest $request, ?Options $options = null): Operations\HrisTimeOffRequestsDeleteResponse
@@ -642,8 +642,8 @@ class TimeOffRequests
      *
      * Get Time Off Request
      *
-     * @param  Operations\HrisTimeOffRequestsOneRequest  $request
-     * @return Operations\HrisTimeOffRequestsOneResponse
+     * @param  \Apideck\Unify\Models\Operations\HrisTimeOffRequestsOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\HrisTimeOffRequestsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\HrisTimeOffRequestsOneRequest $request, ?Options $options = null): Operations\HrisTimeOffRequestsOneResponse
@@ -812,8 +812,8 @@ class TimeOffRequests
      *
      * Update Time Off Request
      *
-     * @param  Operations\HrisTimeOffRequestsUpdateRequest  $request
-     * @return Operations\HrisTimeOffRequestsUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\HrisTimeOffRequestsUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\HrisTimeOffRequestsUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\HrisTimeOffRequestsUpdateRequest $request, ?Options $options = null): Operations\HrisTimeOffRequestsUpdateResponse

@@ -30,7 +30,7 @@ class CreditNote
     /**
      * Status of credit notes
      *
-     * @var ?CreditNoteStatus $status
+     * @var ?\Apideck\Unify\Models\Components\CreditNoteStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CreditNoteStatus|null')]
@@ -49,7 +49,7 @@ class CreditNote
     /**
      * Type of payment
      *
-     * @var ?CreditNoteType $type
+     * @var ?\Apideck\Unify\Models\Components\CreditNoteType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CreditNoteType|null')]
@@ -59,7 +59,7 @@ class CreditNote
     /**
      * $lineItems
      *
-     * @var ?array<InvoiceLineItem> $lineItems
+     * @var ?array<\Apideck\Unify\Models\Components\InvoiceLineItem> $lineItems
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('line_items')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\InvoiceLineItem>|null')]
@@ -69,7 +69,7 @@ class CreditNote
     /**
      * $allocations
      *
-     * @var ?array<Allocation> $allocations
+     * @var ?array<\Apideck\Unify\Models\Components\Allocation> $allocations
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('allocations')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Allocation>|null')]
@@ -78,7 +78,7 @@ class CreditNote
 
     /**
      *
-     * @var ?Address $billingAddress
+     * @var ?\Apideck\Unify\Models\Components\Address $billingAddress
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('billing_address')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
@@ -87,7 +87,7 @@ class CreditNote
 
     /**
      *
-     * @var ?Address $shippingAddress
+     * @var ?\Apideck\Unify\Models\Components\Address $shippingAddress
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('shipping_address')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Address|null')]
@@ -97,7 +97,7 @@ class CreditNote
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -107,7 +107,7 @@ class CreditNote
     /**
      * The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
      *
-     * @var ?array<PassThroughBody> $passThrough
+     * @var ?array<\Apideck\Unify\Models\Components\PassThroughBody> $passThrough
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pass_through')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PassThroughBody>|null')]
@@ -126,7 +126,7 @@ class CreditNote
     /**
      * The customer this entity is linked to.
      *
-     * @var ?LinkedCustomer $customer
+     * @var ?\Apideck\Unify\Models\Components\LinkedCustomer $customer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedCustomer|null')]
@@ -163,7 +163,7 @@ class CreditNote
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -253,7 +253,7 @@ class CreditNote
 
     /**
      *
-     * @var ?LinkedLedgerAccount $account
+     * @var ?\Apideck\Unify\Models\Components\LinkedLedgerAccount $account
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('account')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedLedgerAccount|null')]
@@ -290,7 +290,7 @@ class CreditNote
     /**
      * A list of linked tracking categories.
      *
-     * @var ?array<?LinkedTrackingCategory> $trackingCategories
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory> $trackingCategories
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedTrackingCategory|null>|null')]
@@ -355,21 +355,21 @@ class CreditNote
     /**
      * @param  string  $id
      * @param  float  $totalAmount
-     * @param  ?CreditNoteStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\CreditNoteStatus  $status
      * @param  ?\DateTime  $dateIssued
-     * @param  ?CreditNoteType  $type
-     * @param  ?array<InvoiceLineItem>  $lineItems
-     * @param  ?array<Allocation>  $allocations
-     * @param  ?Address  $billingAddress
-     * @param  ?Address  $shippingAddress
-     * @param  ?array<CustomField1|CustomField2>  $customFields
-     * @param  ?array<PassThroughBody>  $passThrough
+     * @param  ?\Apideck\Unify\Models\Components\CreditNoteType  $type
+     * @param  ?array<\Apideck\Unify\Models\Components\InvoiceLineItem>  $lineItems
+     * @param  ?array<\Apideck\Unify\Models\Components\Allocation>  $allocations
+     * @param  ?\Apideck\Unify\Models\Components\Address  $billingAddress
+     * @param  ?\Apideck\Unify\Models\Components\Address  $shippingAddress
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
+     * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $number
-     * @param  ?LinkedCustomer  $customer
+     * @param  ?\Apideck\Unify\Models\Components\LinkedCustomer  $customer
      * @param  ?string  $companyId
      * @param  ?string  $locationId
      * @param  ?string  $departmentId
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?float  $currencyRate
      * @param  ?bool  $taxInclusive
      * @param  ?float  $subTotal
@@ -379,11 +379,11 @@ class CreditNote
      * @param  ?float  $remainingCredit
      * @param  ?string  $reference
      * @param  ?\DateTime  $datePaid
-     * @param  ?LinkedLedgerAccount  $account
+     * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $account
      * @param  ?string  $note
      * @param  ?string  $terms
      * @param  ?string  $termsId
-     * @param  ?array<?LinkedTrackingCategory>  $trackingCategories
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory>  $trackingCategories
      * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $rowVersion
      * @param  ?string  $updatedBy

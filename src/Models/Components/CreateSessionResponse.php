@@ -30,7 +30,7 @@ class CreateSessionResponse
 
     /**
      *
-     * @var CreateSessionResponseData $data
+     * @var \Apideck\Unify\Models\Components\CreateSessionResponseData $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CreateSessionResponseData')]
@@ -49,7 +49,7 @@ class CreateSessionResponse
     /**
      * @param  int  $statusCode
      * @param  string  $status
-     * @param  CreateSessionResponseData  $data
+     * @param  \Apideck\Unify\Models\Components\CreateSessionResponseData  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

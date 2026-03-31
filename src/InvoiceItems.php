@@ -52,8 +52,8 @@ class InvoiceItems
      *
      * Create Invoice Item
      *
-     * @param  Operations\AccountingInvoiceItemsAddRequest  $request
-     * @return Operations\AccountingInvoiceItemsAddResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingInvoiceItemsAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingInvoiceItemsAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\AccountingInvoiceItemsAddRequest $request, ?Options $options = null): Operations\AccountingInvoiceItemsAddResponse
@@ -227,8 +227,8 @@ class InvoiceItems
      *
      * List Invoice Items
      *
-     * @param  ?Operations\AccountingInvoiceItemsAllRequest  $request
-     * @return Operations\AccountingInvoiceItemsAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingInvoiceItemsAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingInvoiceItemsAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AccountingInvoiceItemsAllRequest $request = null, ?Options $options = null): Operations\AccountingInvoiceItemsAllResponse
@@ -458,8 +458,8 @@ class InvoiceItems
      *
      * List Invoice Items
      *
-     * @param  ?Operations\AccountingInvoiceItemsAllRequest  $request
-     * @return \Generator<Operations\AccountingInvoiceItemsAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingInvoiceItemsAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AccountingInvoiceItemsAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AccountingInvoiceItemsAllRequest $request = null, ?Options $options = null): \Generator
@@ -476,8 +476,8 @@ class InvoiceItems
      *
      * Delete Invoice Item
      *
-     * @param  Operations\AccountingInvoiceItemsDeleteRequest  $request
-     * @return Operations\AccountingInvoiceItemsDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingInvoiceItemsDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingInvoiceItemsDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\AccountingInvoiceItemsDeleteRequest $request, ?Options $options = null): Operations\AccountingInvoiceItemsDeleteResponse
@@ -646,8 +646,8 @@ class InvoiceItems
      *
      * Get Invoice Item
      *
-     * @param  Operations\AccountingInvoiceItemsOneRequest  $request
-     * @return Operations\AccountingInvoiceItemsOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingInvoiceItemsOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingInvoiceItemsOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AccountingInvoiceItemsOneRequest $request, ?Options $options = null): Operations\AccountingInvoiceItemsOneResponse
@@ -816,8 +816,8 @@ class InvoiceItems
      *
      * Update Invoice Item
      *
-     * @param  Operations\AccountingInvoiceItemsUpdateRequest  $request
-     * @return Operations\AccountingInvoiceItemsUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingInvoiceItemsUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingInvoiceItemsUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\AccountingInvoiceItemsUpdateRequest $request, ?Options $options = null): Operations\AccountingInvoiceItemsUpdateResponse

@@ -23,7 +23,7 @@ class ValidateConnectionStateResponseData
     /**
      * [Connection state flow](#section/Connection-state)
      *
-     * @var ?ConnectionState $state
+     * @var ?\Apideck\Unify\Models\Components\ConnectionState $state
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('state')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConnectionState|null')]
@@ -32,7 +32,7 @@ class ValidateConnectionStateResponseData
 
     /**
      * @param  ?string  $id
-     * @param  ?ConnectionState  $state
+     * @param  ?\Apideck\Unify\Models\Components\ConnectionState  $state
      * @phpstan-pure
      */
     public function __construct(?string $id = null, ?ConnectionState $state = null)

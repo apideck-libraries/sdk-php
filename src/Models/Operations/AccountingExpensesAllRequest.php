@@ -47,7 +47,7 @@ class AccountingExpensesAllRequest
     /**
      * Apply filters
      *
-     * @var ?Components\ExpensesFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\ExpensesFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\ExpensesFilter $filter = null;
@@ -83,7 +83,7 @@ class AccountingExpensesAllRequest
      * @param  ?string  $serviceId
      * @param  ?string  $companyId
      * @param  ?int  $limit
-     * @param  ?Components\ExpensesFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\ExpensesFilter  $filter
      * @param  ?string  $cursor
      * @phpstan-pure
      */

@@ -40,7 +40,7 @@ class Coverage
 
     /**
      *
-     * @var ?PaginationCoverage $pagination
+     * @var ?\Apideck\Unify\Models\Components\PaginationCoverage $pagination
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('pagination')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\PaginationCoverage|null')]
@@ -80,7 +80,7 @@ class Coverage
     /**
      * Supported fields on the detail endpoint.
      *
-     * @var ?array<SupportedProperty> $supportedFields
+     * @var ?array<\Apideck\Unify\Models\Components\SupportedProperty> $supportedFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('supported_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\SupportedProperty>|null')]
@@ -90,7 +90,7 @@ class Coverage
     /**
      * Supported fields on the list endpoint.
      *
-     * @var ?array<SupportedProperty> $supportedListFields
+     * @var ?array<\Apideck\Unify\Models\Components\SupportedProperty> $supportedListFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('supported_list_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\SupportedProperty>|null')]
@@ -101,12 +101,12 @@ class Coverage
      * @param  ?string  $downstreamId
      * @param  ?string  $downstreamName
      * @param  ?bool  $paginationSupported
-     * @param  ?PaginationCoverage  $pagination
+     * @param  ?\Apideck\Unify\Models\Components\PaginationCoverage  $pagination
      * @param  ?array<string>  $supportedOperations
      * @param  ?array<string>  $supportedFilters
      * @param  ?array<string>  $supportedSortBy
-     * @param  ?array<SupportedProperty>  $supportedFields
-     * @param  ?array<SupportedProperty>  $supportedListFields
+     * @param  ?array<\Apideck\Unify\Models\Components\SupportedProperty>  $supportedFields
+     * @param  ?array<\Apideck\Unify\Models\Components\SupportedProperty>  $supportedListFields
      * @phpstan-pure
      */
     public function __construct(?string $downstreamId = null, ?string $downstreamName = null, ?bool $paginationSupported = null, ?PaginationCoverage $pagination = null, ?array $supportedOperations = null, ?array $supportedFilters = null, ?array $supportedSortBy = null, ?array $supportedFields = null, ?array $supportedListFields = null)

@@ -32,7 +32,7 @@ class Job
     /**
      * The visibility of the job
      *
-     * @var ?Visibility $visibility
+     * @var ?\Apideck\Unify\Models\Components\Visibility $visibility
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('visibility')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Visibility|null')]
@@ -42,7 +42,7 @@ class Job
     /**
      * The status of the job.
      *
-     * @var ?JobStatus $status
+     * @var ?\Apideck\Unify\Models\Components\JobStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\JobStatus|null')]
@@ -78,7 +78,7 @@ class Job
 
     /**
      *
-     * @var ?Department $department
+     * @var ?\Apideck\Unify\Models\Components\Department $department
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('department')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Department|null')]
@@ -88,7 +88,7 @@ class Job
     /**
      * Details of the branch for which the job is created.
      *
-     * @var ?Branch $branch
+     * @var ?\Apideck\Unify\Models\Components\Branch $branch
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('branch')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Branch|null')]
@@ -108,7 +108,7 @@ class Job
     /**
      * $blocks
      *
-     * @var ?array<Blocks> $blocks
+     * @var ?array<\Apideck\Unify\Models\Components\Blocks> $blocks
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('blocks')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Blocks>|null')]
@@ -117,7 +117,7 @@ class Job
 
     /**
      *
-     * @var ?Salary $salary
+     * @var ?\Apideck\Unify\Models\Components\Salary $salary
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('salary')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Salary|null')]
@@ -127,7 +127,7 @@ class Job
     /**
      * $links
      *
-     * @var ?array<JobLinks> $links
+     * @var ?array<\Apideck\Unify\Models\Components\JobLinks> $links
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('links')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\JobLinks>|null')]
@@ -154,7 +154,7 @@ class Job
     /**
      * $addresses
      *
-     * @var ?array<Address> $addresses
+     * @var ?array<\Apideck\Unify\Models\Components\Address> $addresses
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('addresses')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Address>|null')]
@@ -164,7 +164,7 @@ class Job
     /**
      * $customFields
      *
-     * @var ?array<CustomField1|CustomField2> $customFields
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
@@ -199,7 +199,7 @@ class Job
 
     /**
      *
-     * @var ?EmploymentTerms $employmentTerms
+     * @var ?\Apideck\Unify\Models\Components\EmploymentTerms $employmentTerms
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('employment_terms')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EmploymentTerms|null')]
@@ -400,25 +400,25 @@ class Job
     /**
      * @param  ?string  $id
      * @param  ?int  $sequence
-     * @param  ?Visibility  $visibility
-     * @param  ?JobStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\Visibility  $visibility
+     * @param  ?\Apideck\Unify\Models\Components\JobStatus  $status
      * @param  ?string  $code
      * @param  ?string  $experience
      * @param  ?string  $requisitionId
-     * @param  ?Department  $department
-     * @param  ?Branch  $branch
+     * @param  ?\Apideck\Unify\Models\Components\Department  $department
+     * @param  ?\Apideck\Unify\Models\Components\Branch  $branch
      * @param  ?array<string>  $hiringManagers
-     * @param  ?array<Blocks>  $blocks
-     * @param  ?Salary  $salary
-     * @param  ?array<JobLinks>  $links
+     * @param  ?array<\Apideck\Unify\Models\Components\Blocks>  $blocks
+     * @param  ?\Apideck\Unify\Models\Components\Salary  $salary
+     * @param  ?array<\Apideck\Unify\Models\Components\JobLinks>  $links
      * @param  ?bool  $confidential
      * @param  ?bool  $availableToEmployees
-     * @param  ?array<Address>  $addresses
-     * @param  ?array<CustomField1|CustomField2>  $customFields
+     * @param  ?array<\Apideck\Unify\Models\Components\Address>  $addresses
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
      * @param  ?string  $slug
      * @param  ?string  $title
      * @param  ?string  $language
-     * @param  ?EmploymentTerms  $employmentTerms
+     * @param  ?\Apideck\Unify\Models\Components\EmploymentTerms  $employmentTerms
      * @param  ?string  $location
      * @param  ?bool  $remote
      * @param  ?array<string>  $recruiters

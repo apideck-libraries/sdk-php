@@ -52,8 +52,8 @@ class Expenses
      *
      * Create Expense
      *
-     * @param  Operations\AccountingExpensesAddRequest  $request
-     * @return Operations\AccountingExpensesAddResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingExpensesAddRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingExpensesAddResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function create(Operations\AccountingExpensesAddRequest $request, ?Options $options = null): Operations\AccountingExpensesAddResponse
@@ -227,8 +227,8 @@ class Expenses
      *
      * List Expenses
      *
-     * @param  ?Operations\AccountingExpensesAllRequest  $request
-     * @return Operations\AccountingExpensesAllResponse
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingExpensesAllRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingExpensesAllResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     private function listIndividual(?Operations\AccountingExpensesAllRequest $request = null, ?Options $options = null): Operations\AccountingExpensesAllResponse
@@ -452,8 +452,8 @@ class Expenses
      *
      * List Expenses
      *
-     * @param  ?Operations\AccountingExpensesAllRequest  $request
-     * @return \Generator<Operations\AccountingExpensesAllResponse>
+     * @param  ?\Apideck\Unify\Models\Operations\AccountingExpensesAllRequest  $request
+     * @return \Generator<\Apideck\Unify\Models\Operations\AccountingExpensesAllResponse>
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function list(?Operations\AccountingExpensesAllRequest $request = null, ?Options $options = null): \Generator
@@ -470,8 +470,8 @@ class Expenses
      *
      * Delete Expense
      *
-     * @param  Operations\AccountingExpensesDeleteRequest  $request
-     * @return Operations\AccountingExpensesDeleteResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingExpensesDeleteRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingExpensesDeleteResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function delete(Operations\AccountingExpensesDeleteRequest $request, ?Options $options = null): Operations\AccountingExpensesDeleteResponse
@@ -640,8 +640,8 @@ class Expenses
      *
      * Get Expense
      *
-     * @param  Operations\AccountingExpensesOneRequest  $request
-     * @return Operations\AccountingExpensesOneResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingExpensesOneRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingExpensesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function get(Operations\AccountingExpensesOneRequest $request, ?Options $options = null): Operations\AccountingExpensesOneResponse
@@ -810,8 +810,8 @@ class Expenses
      *
      * Update Expense
      *
-     * @param  Operations\AccountingExpensesUpdateRequest  $request
-     * @return Operations\AccountingExpensesUpdateResponse
+     * @param  \Apideck\Unify\Models\Operations\AccountingExpensesUpdateRequest  $request
+     * @return \Apideck\Unify\Models\Operations\AccountingExpensesUpdateResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
     public function update(Operations\AccountingExpensesUpdateRequest $request, ?Options $options = null): Operations\AccountingExpensesUpdateResponse

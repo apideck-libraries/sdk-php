@@ -14,7 +14,7 @@ class AccountingInvoiceItemsAddRequest
 {
     /**
      *
-     * @var Components\InvoiceItemInput $invoiceItem
+     * @var \Apideck\Unify\Models\Components\InvoiceItemInput $invoiceItem
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\InvoiceItemInput $invoiceItem;
@@ -60,7 +60,7 @@ class AccountingInvoiceItemsAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\InvoiceItemInput  $invoiceItem
+     * @param  \Apideck\Unify\Models\Components\InvoiceItemInput  $invoiceItem
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

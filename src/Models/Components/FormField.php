@@ -31,7 +31,7 @@ class FormField
 
     /**
      *
-     * @var ?FormFieldType $type
+     * @var ?\Apideck\Unify\Models\Components\FormFieldType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\FormFieldType|null')]
@@ -58,7 +58,7 @@ class FormField
     /**
      * $options
      *
-     * @var ?array<SimpleFormFieldOption|FormFieldOptionGroup> $options
+     * @var ?array<\Apideck\Unify\Models\Components\SimpleFormFieldOption|\Apideck\Unify\Models\Components\FormFieldOptionGroup> $options
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\SimpleFormFieldOption|\Apideck\Unify\Models\Components\FormFieldOptionGroup>|null')]
@@ -149,11 +149,11 @@ class FormField
     /**
      * @param  ?string  $id
      * @param  ?string  $label
-     * @param  ?FormFieldType  $type
+     * @param  ?\Apideck\Unify\Models\Components\FormFieldType  $type
      * @param  ?bool  $required
      * @param  ?bool  $customField
      * @param  ?bool  $allowCustomValues
-     * @param  ?array<SimpleFormFieldOption|FormFieldOptionGroup>  $options
+     * @param  ?array<\Apideck\Unify\Models\Components\SimpleFormFieldOption|\Apideck\Unify\Models\Components\FormFieldOptionGroup>  $options
      * @param  ?string  $placeholder
      * @param  ?string  $description
      * @param  ?bool  $disabled

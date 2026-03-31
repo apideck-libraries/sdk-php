@@ -62,7 +62,7 @@ class EmployeesFilter
     /**
      * Employment status to filter on
      *
-     * @var ?EmployeesFilterEmploymentStatus $employmentStatus
+     * @var ?\Apideck\Unify\Models\Components\EmployeesFilterEmploymentStatus $employmentStatus
      */
     #[SpeakeasyMetadata('queryParam:name=employment_status')]
     public ?EmployeesFilterEmploymentStatus $employmentStatus = null;
@@ -106,7 +106,7 @@ class EmployeesFilter
      * @param  ?string  $title
      * @param  ?string  $lastName
      * @param  ?string  $managerId
-     * @param  ?EmployeesFilterEmploymentStatus  $employmentStatus
+     * @param  ?\Apideck\Unify\Models\Components\EmployeesFilterEmploymentStatus  $employmentStatus
      * @param  ?string  $employeeNumber
      * @param  ?string  $departmentId
      * @param  ?string  $city

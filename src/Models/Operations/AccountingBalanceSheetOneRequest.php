@@ -55,7 +55,7 @@ class AccountingBalanceSheetOneRequest
     /**
      * Apply filters
      *
-     * @var ?Components\BalanceSheetFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\BalanceSheetFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\BalanceSheetFilter $filter = null;
@@ -74,7 +74,7 @@ class AccountingBalanceSheetOneRequest
      * @param  ?string  $serviceId
      * @param  ?string  $companyId
      * @param  ?array<string, mixed>  $passThrough
-     * @param  ?Components\BalanceSheetFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\BalanceSheetFilter  $filter
      * @param  ?bool  $raw
      * @phpstan-pure
      */

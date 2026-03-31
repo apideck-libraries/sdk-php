@@ -59,7 +59,7 @@ class Manager
     /**
      * The employment status of the employee, indicating whether they are currently employed, inactive, terminated, or in another status.
      *
-     * @var ?EmploymentStatus $employmentStatus
+     * @var ?\Apideck\Unify\Models\Components\EmploymentStatus $employmentStatus
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('employment_status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\EmploymentStatus|null')]
@@ -72,7 +72,7 @@ class Manager
      * @param  ?string  $firstName
      * @param  ?string  $lastName
      * @param  ?string  $email
-     * @param  ?EmploymentStatus  $employmentStatus
+     * @param  ?\Apideck\Unify\Models\Components\EmploymentStatus  $employmentStatus
      * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?EmploymentStatus $employmentStatus = null)

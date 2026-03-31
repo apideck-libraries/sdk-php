@@ -47,7 +47,7 @@ class HrisEmployeesOneRequest
     /**
      * Apply filters
      *
-     * @var ?Components\EmployeesOneFilter $filter
+     * @var ?\Apideck\Unify\Models\Components\EmployeesOneFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
     public ?Components\EmployeesOneFilter $filter = null;
@@ -82,7 +82,7 @@ class HrisEmployeesOneRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?bool  $raw
-     * @param  ?Components\EmployeesOneFilter  $filter
+     * @param  ?\Apideck\Unify\Models\Components\EmployeesOneFilter  $filter
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $fields
      * @phpstan-pure

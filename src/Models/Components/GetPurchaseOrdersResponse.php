@@ -55,7 +55,7 @@ class GetPurchaseOrdersResponse
     /**
      * $data
      *
-     * @var array<PurchaseOrder> $data
+     * @var array<\Apideck\Unify\Models\Components\PurchaseOrder> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PurchaseOrder>')]
@@ -64,7 +64,7 @@ class GetPurchaseOrdersResponse
     /**
      * Response metadata
      *
-     * @var ?Meta $meta
+     * @var ?\Apideck\Unify\Models\Components\Meta $meta
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('meta')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Meta|null')]
@@ -74,7 +74,7 @@ class GetPurchaseOrdersResponse
     /**
      * Links to navigate to previous or next pages through the API
      *
-     * @var ?Links $links
+     * @var ?\Apideck\Unify\Models\Components\Links $links
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('links')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Links|null')]
@@ -97,9 +97,9 @@ class GetPurchaseOrdersResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  array<PurchaseOrder>  $data
-     * @param  ?Meta  $meta
-     * @param  ?Links  $links
+     * @param  array<\Apideck\Unify\Models\Components\PurchaseOrder>  $data
+     * @param  ?\Apideck\Unify\Models\Components\Meta  $meta
+     * @param  ?\Apideck\Unify\Models\Components\Links  $links
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

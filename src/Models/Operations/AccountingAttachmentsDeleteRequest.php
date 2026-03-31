@@ -15,7 +15,7 @@ class AccountingAttachmentsDeleteRequest
     /**
      * The reference type of the document.
      *
-     * @var Components\AttachmentReferenceType $referenceType
+     * @var \Apideck\Unify\Models\Components\AttachmentReferenceType $referenceType
      */
     #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=reference_type')]
     public Components\AttachmentReferenceType $referenceType;
@@ -69,7 +69,7 @@ class AccountingAttachmentsDeleteRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\AttachmentReferenceType  $referenceType
+     * @param  \Apideck\Unify\Models\Components\AttachmentReferenceType  $referenceType
      * @param  string  $referenceId
      * @param  string  $id
      * @param  ?string  $consumerId

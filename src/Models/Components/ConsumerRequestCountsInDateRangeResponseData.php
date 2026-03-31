@@ -53,7 +53,7 @@ class ConsumerRequestCountsInDateRangeResponseData
 
     /**
      *
-     * @var ?RequestCountAllocation $requestCounts
+     * @var ?\Apideck\Unify\Models\Components\RequestCountAllocation $requestCounts
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('request_counts')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\RequestCountAllocation|null')]
@@ -66,7 +66,7 @@ class ConsumerRequestCountsInDateRangeResponseData
      * @param  ?string  $startDatetime
      * @param  ?string  $endDatetime
      * @param  ?float  $aggregatedRequestCount
-     * @param  ?RequestCountAllocation  $requestCounts
+     * @param  ?\Apideck\Unify\Models\Components\RequestCountAllocation  $requestCounts
      * @phpstan-pure
      */
     public function __construct(?string $applicationId = null, ?string $consumerId = null, ?string $startDatetime = null, ?string $endDatetime = null, ?float $aggregatedRequestCount = null, ?RequestCountAllocation $requestCounts = null)

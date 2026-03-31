@@ -22,7 +22,7 @@ class AccountingRefundsUpdateRequest
 
     /**
      *
-     * @var Components\RefundInput $refund
+     * @var \Apideck\Unify\Models\Components\RefundInput $refund
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\RefundInput $refund;
@@ -61,7 +61,7 @@ class AccountingRefundsUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\RefundInput  $refund
+     * @param  \Apideck\Unify\Models\Components\RefundInput  $refund
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

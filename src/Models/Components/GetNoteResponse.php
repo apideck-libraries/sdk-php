@@ -54,7 +54,7 @@ class GetNoteResponse
 
     /**
      *
-     * @var Note $data
+     * @var \Apideck\Unify\Models\Components\Note $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Note')]
@@ -76,7 +76,7 @@ class GetNoteResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Note  $data
+     * @param  \Apideck\Unify\Models\Components\Note  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */

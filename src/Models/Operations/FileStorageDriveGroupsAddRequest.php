@@ -14,7 +14,7 @@ class FileStorageDriveGroupsAddRequest
 {
     /**
      *
-     * @var Components\DriveGroupInput $driveGroup
+     * @var \Apideck\Unify\Models\Components\DriveGroupInput $driveGroup
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\DriveGroupInput $driveGroup;
@@ -52,7 +52,7 @@ class FileStorageDriveGroupsAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\DriveGroupInput  $driveGroup
+     * @param  \Apideck\Unify\Models\Components\DriveGroupInput  $driveGroup
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

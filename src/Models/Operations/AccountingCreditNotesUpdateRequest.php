@@ -22,7 +22,7 @@ class AccountingCreditNotesUpdateRequest
 
     /**
      *
-     * @var Components\CreditNoteInput $creditNote
+     * @var \Apideck\Unify\Models\Components\CreditNoteInput $creditNote
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\CreditNoteInput $creditNote;
@@ -61,7 +61,7 @@ class AccountingCreditNotesUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\CreditNoteInput  $creditNote
+     * @param  \Apideck\Unify\Models\Components\CreditNoteInput  $creditNote
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId

@@ -14,7 +14,7 @@ class HrisCompaniesAddRequest
 {
     /**
      *
-     * @var Components\HrisCompanyInput $hrisCompany
+     * @var \Apideck\Unify\Models\Components\HrisCompanyInput $hrisCompany
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\HrisCompanyInput $hrisCompany;
@@ -52,7 +52,7 @@ class HrisCompaniesAddRequest
     public ?bool $raw = null;
 
     /**
-     * @param  Components\HrisCompanyInput  $hrisCompany
+     * @param  \Apideck\Unify\Models\Components\HrisCompanyInput  $hrisCompany
      * @param  ?bool  $raw
      * @param  ?string  $consumerId
      * @param  ?string  $appId

@@ -23,7 +23,7 @@ class Api
     /**
      * Indicates whether the API is a Unified API. If unified_api is false, the API is a Platform API.
      *
-     * @var ?ApiType $type
+     * @var ?\Apideck\Unify\Models\Components\ApiType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ApiType|null')]
@@ -42,7 +42,7 @@ class Api
     /**
      * Status of the API. APIs with status live or beta are callable.
      *
-     * @var ?ApiStatus $status
+     * @var ?\Apideck\Unify\Models\Components\ApiStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ApiStatus|null')]
@@ -80,7 +80,7 @@ class Api
     /**
      * List of resources supported in this API.
      *
-     * @var ?array<Resources> $resources
+     * @var ?array<\Apideck\Unify\Models\Components\Resources> $resources
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('resources')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Resources>|null')]
@@ -117,13 +117,13 @@ class Api
 
     /**
      * @param  ?string  $id
-     * @param  ?ApiType  $type
+     * @param  ?\Apideck\Unify\Models\Components\ApiType  $type
      * @param  ?string  $name
-     * @param  ?ApiStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\ApiStatus  $status
      * @param  ?string  $specUrl
      * @param  ?string  $apiReferenceUrl
      * @param  ?array<string>  $categories
-     * @param  ?array<Resources>  $resources
+     * @param  ?array<\Apideck\Unify\Models\Components\Resources>  $resources
      * @param  ?array<string>  $events
      * @param  ?string  $description
      * @param  ?string  $postmanCollectionId

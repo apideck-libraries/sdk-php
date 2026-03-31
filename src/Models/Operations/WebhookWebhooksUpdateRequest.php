@@ -22,7 +22,7 @@ class WebhookWebhooksUpdateRequest
 
     /**
      *
-     * @var Components\UpdateWebhookRequest $updateWebhookRequest
+     * @var \Apideck\Unify\Models\Components\UpdateWebhookRequest $updateWebhookRequest
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public Components\UpdateWebhookRequest $updateWebhookRequest;
@@ -37,7 +37,7 @@ class WebhookWebhooksUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  Components\UpdateWebhookRequest  $updateWebhookRequest
+     * @param  \Apideck\Unify\Models\Components\UpdateWebhookRequest  $updateWebhookRequest
      * @param  ?string  $appId
      * @phpstan-pure
      */

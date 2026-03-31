@@ -23,7 +23,7 @@ class CompanyInfo
     /**
      * Based on the status some functionality is enabled or disabled.
      *
-     * @var ?CompanyStatus $status
+     * @var ?\Apideck\Unify\Models\Components\CompanyStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CompanyStatus|null')]
@@ -59,7 +59,7 @@ class CompanyInfo
 
     /**
      *
-     * @var ?TaxRate $defaultSalesTax
+     * @var ?\Apideck\Unify\Models\Components\TaxRate $defaultSalesTax
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('default_sales_tax')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\TaxRate|null')]
@@ -69,7 +69,7 @@ class CompanyInfo
     /**
      * The start month of fiscal year.
      *
-     * @var ?TheStartMonthOfFiscalYear $fiscalYearStartMonth
+     * @var ?\Apideck\Unify\Models\Components\TheStartMonthOfFiscalYear $fiscalYearStartMonth
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('fiscal_year_start_month')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\TheStartMonthOfFiscalYear|null')]
@@ -88,7 +88,7 @@ class CompanyInfo
     /**
      * $addresses
      *
-     * @var ?array<Address> $addresses
+     * @var ?array<\Apideck\Unify\Models\Components\Address> $addresses
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('addresses')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Address>|null')]
@@ -98,7 +98,7 @@ class CompanyInfo
     /**
      * $phoneNumbers
      *
-     * @var ?array<PhoneNumber> $phoneNumbers
+     * @var ?array<\Apideck\Unify\Models\Components\PhoneNumber> $phoneNumbers
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('phone_numbers')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PhoneNumber>|null')]
@@ -108,7 +108,7 @@ class CompanyInfo
     /**
      * $emails
      *
-     * @var ?array<Email> $emails
+     * @var ?array<\Apideck\Unify\Models\Components\Email> $emails
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('emails')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Email>|null')]
@@ -127,7 +127,7 @@ class CompanyInfo
     /**
      * The mode of tracking categories for the company on transactions
      *
-     * @var ?TrackingCategoriesMode $trackingCategoriesMode
+     * @var ?\Apideck\Unify\Models\Components\TrackingCategoriesMode $trackingCategoriesMode
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tracking_categories_mode')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\TrackingCategoriesMode|null')]
@@ -163,7 +163,7 @@ class CompanyInfo
     /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
-     * @var ?Currency $currency
+     * @var ?\Apideck\Unify\Models\Components\Currency $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Currency|null')]
@@ -236,22 +236,22 @@ class CompanyInfo
 
     /**
      * @param  ?string  $id
-     * @param  ?CompanyStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\CompanyStatus  $status
      * @param  ?string  $legalName
      * @param  ?bool  $automatedSalesTax
      * @param  ?bool  $salesTaxEnabled
-     * @param  ?TaxRate  $defaultSalesTax
-     * @param  ?TheStartMonthOfFiscalYear  $fiscalYearStartMonth
+     * @param  ?\Apideck\Unify\Models\Components\TaxRate  $defaultSalesTax
+     * @param  ?\Apideck\Unify\Models\Components\TheStartMonthOfFiscalYear  $fiscalYearStartMonth
      * @param  ?LocalDate  $companyStartDate
-     * @param  ?array<Address>  $addresses
-     * @param  ?array<PhoneNumber>  $phoneNumbers
-     * @param  ?array<Email>  $emails
+     * @param  ?array<\Apideck\Unify\Models\Components\Address>  $addresses
+     * @param  ?array<\Apideck\Unify\Models\Components\PhoneNumber>  $phoneNumbers
+     * @param  ?array<\Apideck\Unify\Models\Components\Email>  $emails
      * @param  ?bool  $trackingCategoriesEnabled
-     * @param  ?TrackingCategoriesMode  $trackingCategoriesMode
+     * @param  ?\Apideck\Unify\Models\Components\TrackingCategoriesMode  $trackingCategoriesMode
      * @param  ?string  $companyName
      * @param  ?string  $country
      * @param  ?string  $salesTaxNumber
-     * @param  ?Currency  $currency
+     * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?string  $language
      * @param  ?array<string, mixed>  $customMappings
      * @param  ?string  $rowVersion

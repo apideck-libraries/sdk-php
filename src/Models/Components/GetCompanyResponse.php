@@ -54,7 +54,7 @@ class GetCompanyResponse
 
     /**
      *
-     * @var Company1 $data
+     * @var \Apideck\Unify\Models\Components\Company1 $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Company1')]
@@ -76,7 +76,7 @@ class GetCompanyResponse
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
-     * @param  Company1  $data
+     * @param  \Apideck\Unify\Models\Components\Company1  $data
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */
