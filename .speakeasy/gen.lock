@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 97d22df53affc8a9a7ca8183172d67d7
-  docVersion: 10.24.12
-  speakeasyVersion: 1.761.0
-  generationVersion: 2.879.1
-  releaseVersion: 0.18.2
-  configChecksum: de55e4f3fc6c2684fbcf1c6d75e06a35
+  docChecksum: 7e5dbcd62de4da85649c8700b7ede6d9
+  docVersion: 10.24.13
+  speakeasyVersion: 1.761.1
+  generationVersion: 2.879.6
+  releaseVersion: 0.18.3
+  configChecksum: 9f9d4367f54125a39d8b95d0156261b2
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: c2041574-8115-4e16-99fa-4c5e2897ead3
-  pristine_commit_hash: 41a1f4faa659ae0542a9016086c7b6385aeb5535
-  pristine_tree_hash: 64ace1d46d035333ad529cc3e7d7878281a4efb9
+  generation_id: edb46d0d-0671-475d-920d-9672e7cb9791
+  pristine_commit_hash: 6f3f915287fd3053941c77258f668a983379982e
+  pristine_tree_hash: 970d26320591e2d04366d7630c1224b2a7450f13
 features:
   php:
     additionalProperties: 0.1.0
@@ -22,7 +22,7 @@ features:
     deepObjectParams: 0.1.0
     deprecations: 2.81.1
     errors: 0.3.0
-    flattening: 2.81.1
+    flattening: 2.81.2
     globalSecurity: 2.81.12
     globalSecurityFlattening: 0.1.2
     globalServerURLs: 2.83.1
@@ -14049,8 +14049,8 @@ trackedFiles:
     pristine_git_object: e545faec300f90e92733f178a0db7056a1f40a11
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:87b6fd3537962d682df4e70da2cb501e295228f8
-    pristine_git_object: 4103906e2ce997929e131be15e06ec78c68596c7
+    last_write_checksum: sha1:3ed1cbb7c910c56fe10f38c0bf2b6528752668d3
+    pristine_git_object: 65ea2e176a7878dc80939ebeb7fad43ef6e68c2e
   src/Sessions.php:
     id: 7f6ea05b19ca
     last_write_checksum: sha1:1bccce37a38fe4d80333f82a2b770c05dd7143ff
@@ -30636,7 +30636,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `apideck->webhook->webhooks->list()`:  `response.data[]->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->create()`: \n  *  `request.createWebhookRequest->events[]` **Changed**\n  *  `response.data->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->get()`:  `response.data->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->update()`: \n  *  `request.updateWebhookRequest->events[]` **Changed**\n  *  `response.data->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->delete()`:  `response.data->events[]` **Changed** (Breaking ⚠️)\n* `apideck->vault->consumers->create()`:  `response.data->connections[]` **Changed**\n* `apideck->vault->consumers->get()`:  `response.data->connections[]` **Changed**\n* `apideck->vault->consumers->update()`:  `response.data->connections[]` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md
