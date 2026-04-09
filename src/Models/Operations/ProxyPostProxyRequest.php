@@ -68,16 +68,25 @@ class ProxyPostProxyRequest
     public ?string $requestBody = null;
 
     /**
+     * Override the default downstream request timeout in milliseconds. The default is 28000 (28 seconds).
+     *
+     * @var ?int $timeout
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-apideck-timeout')]
+    public ?int $timeout = null;
+
+    /**
      * @param  string  $serviceId
      * @param  string  $downstreamUrl
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $unifiedApi
      * @param  ?string  $downstreamAuthorization
+     * @param  ?int  $timeout
      * @param  ?string  $requestBody
      * @phpstan-pure
      */
-    public function __construct(string $serviceId, string $downstreamUrl, ?string $consumerId = null, ?string $appId = null, ?string $unifiedApi = null, ?string $downstreamAuthorization = null, ?string $requestBody = null)
+    public function __construct(string $serviceId, string $downstreamUrl, ?string $consumerId = null, ?string $appId = null, ?string $unifiedApi = null, ?string $downstreamAuthorization = null, ?string $requestBody = null, ?int $timeout = 28000)
     {
         $this->serviceId = $serviceId;
         $this->downstreamUrl = $downstreamUrl;
@@ -86,5 +95,6 @@ class ProxyPostProxyRequest
         $this->unifiedApi = $unifiedApi;
         $this->downstreamAuthorization = $downstreamAuthorization;
         $this->requestBody = $requestBody;
+        $this->timeout = $timeout;
     }
 }
