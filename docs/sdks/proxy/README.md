@@ -41,6 +41,7 @@ $request = new Operations\ProxyGetProxyRequest(
     unifiedApi: 'hris',
     downstreamUrl: 'https://api.close.com/api/v1/lead',
     downstreamAuthorization: 'Bearer <token>',
+    timeout: 30000,
 );
 
 $response = $sdk->proxy->get(
@@ -99,6 +100,7 @@ $request = new Operations\ProxyOptionsProxyRequest(
     unifiedApi: 'hris',
     downstreamUrl: 'https://api.close.com/api/v1/lead',
     downstreamAuthorization: 'Bearer <token>',
+    timeout: 30000,
 );
 
 $response = $sdk->proxy->options(
@@ -157,6 +159,7 @@ $request = new Operations\ProxyPostProxyRequest(
     unifiedApi: 'hris',
     downstreamUrl: 'https://api.close.com/api/v1/lead',
     downstreamAuthorization: 'Bearer <token>',
+    timeout: 30000,
 );
 
 $response = $sdk->proxy->post(
@@ -215,6 +218,7 @@ $request = new Operations\ProxyPutProxyRequest(
     unifiedApi: 'hris',
     downstreamUrl: 'https://api.close.com/api/v1/lead',
     downstreamAuthorization: 'Bearer <token>',
+    timeout: 30000,
 );
 
 $response = $sdk->proxy->put(
@@ -273,6 +277,7 @@ $request = new Operations\ProxyPatchProxyRequest(
     unifiedApi: 'hris',
     downstreamUrl: 'https://api.close.com/api/v1/lead',
     downstreamAuthorization: 'Bearer <token>',
+    timeout: 30000,
 );
 
 $response = $sdk->proxy->patch(
@@ -331,6 +336,7 @@ $request = new Operations\ProxyDeleteProxyRequest(
     unifiedApi: 'hris',
     downstreamUrl: 'https://api.close.com/api/v1/lead',
     downstreamAuthorization: 'Bearer <token>',
+    timeout: 30000,
 );
 
 $response = $sdk->proxy->delete(

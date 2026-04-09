@@ -52,19 +52,29 @@ class TaxRatesFilter
     public ?bool $revenue = null;
 
     /**
+     * Filter by tax rate status
+     *
+     * @var ?\Apideck\Unify\Models\Components\TaxRatesFilterStatus $status
+     */
+    #[SpeakeasyMetadata('queryParam:name=status')]
+    public ?TaxRatesFilterStatus $status = null;
+
+    /**
      * @param  ?bool  $assets
      * @param  ?bool  $equity
      * @param  ?bool  $expenses
      * @param  ?bool  $liabilities
      * @param  ?bool  $revenue
+     * @param  ?\Apideck\Unify\Models\Components\TaxRatesFilterStatus  $status
      * @phpstan-pure
      */
-    public function __construct(?bool $assets = null, ?bool $equity = null, ?bool $expenses = null, ?bool $liabilities = null, ?bool $revenue = null)
+    public function __construct(?bool $assets = null, ?bool $equity = null, ?bool $expenses = null, ?bool $liabilities = null, ?bool $revenue = null, ?TaxRatesFilterStatus $status = null)
     {
         $this->assets = $assets;
         $this->equity = $equity;
         $this->expenses = $expenses;
         $this->liabilities = $liabilities;
         $this->revenue = $revenue;
+        $this->status = $status;
     }
 }
