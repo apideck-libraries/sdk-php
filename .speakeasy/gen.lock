@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: efb6c39b3910cae3d7cb08d56d69d638
-  docVersion: 10.24.19
-  speakeasyVersion: 1.761.1
-  generationVersion: 2.879.6
-  releaseVersion: 0.18.4
-  configChecksum: 112b0830393923f27a05e86a8963f52e
+  docChecksum: 8a7f8b2f475b990578d2d0bcf778b54f
+  docVersion: 10.24.21
+  speakeasyVersion: 1.761.3
+  generationVersion: 2.879.11
+  releaseVersion: 0.18.5
+  configChecksum: a09c4f1ae43a36c190dd33b3daeedad1
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: a38ddbee-ab0e-4e89-89ff-8e3099a8b9d5
-  pristine_commit_hash: ed6a788033cfef5b6bb3842dbafbd84e1e8a274d
-  pristine_tree_hash: cdece99fa0cec7ac222537b408c451d6d57dc657
+  generation_id: 93a3176a-fe9c-46a6-a080-a23ebf1d338e
+  pristine_commit_hash: 01d7f420dbb3562113c62725a45123712076bdc3
+  pristine_tree_hash: 905c76b5d7fe5b987586d929443ea319263eb383
 features:
   php:
     additionalProperties: 0.1.0
@@ -14057,8 +14057,8 @@ trackedFiles:
     pristine_git_object: e545faec300f90e92733f178a0db7056a1f40a11
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:761fa0b5e0cd827ab97c3120a3c1cadb27143141
-    pristine_git_object: ece27313775f327fd8c246ae4b92cd651ac59cf8
+    last_write_checksum: sha1:922065c9bd805f6738eaf69f02ec830b9e46680f
+    pristine_git_object: fa1e3efcbf144083542f2fd6efa60d4a1ff1546f
   src/Sessions.php:
     id: 7f6ea05b19ca
     last_write_checksum: sha1:1bccce37a38fe4d80333f82a2b770c05dd7143ff
@@ -30650,7 +30650,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `apideck->accounting->taxRates->list()`: \n  *  `request->filter` **Changed**\n* `apideck->proxy->get()`: \n  *  `request->timeout` **Added**\n* `apideck->proxy->options()`: \n  *  `request->timeout` **Added**\n* `apideck->proxy->post()`: \n  *  `request->timeout` **Added**\n* `apideck->proxy->put()`: \n  *  `request->timeout` **Added**\n* `apideck->proxy->patch()`: \n  *  `request->timeout` **Added**\n* `apideck->proxy->delete()`: \n  *  `request->timeout` **Added**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md
