@@ -388,6 +388,16 @@ class BillInput
     public ?string $sourceDocumentUrl = null;
 
     /**
+     * A list of linked payment allocations.
+     *
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedPaymentAllocations> $paymentAllocations
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('payment_allocations')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedPaymentAllocations|null>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $paymentAllocations = null;
+
+    /**
      * A list of linked tracking categories.
      *
      * @var ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory> $trackingCategories
@@ -457,12 +467,13 @@ class BillInput
      * @param  ?string  $taxMethod
      * @param  ?bool  $documentReceived
      * @param  ?string  $sourceDocumentUrl
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedPaymentAllocations>  $paymentAllocations
      * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory>  $trackingCategories
      * @param  ?string  $rowVersion
      * @param  ?string  $accountingPeriod
      * @phpstan-pure
      */
-    public function __construct(?array $lineItems = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?array $attachments = null, ?string $displayId = null, ?string $billNumber = null, ?LinkedSupplierInput $supplier = null, ?string $companyId = null, ?string $locationId = null, ?string $departmentId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?LocalDate $billDate = null, ?LocalDate $dueDate = null, ?LocalDate $paidDate = null, ?string $poNumber = null, ?string $reference = null, ?string $terms = null, ?string $termsId = null, ?float $balance = null, ?float $deposit = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?string $taxCode = null, ?string $notes = null, ?BillStatus $status = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?float $discountPercentage = null, ?string $templateId = null, ?string $approvedBy = null, ?AmortizationType $amortizationType = null, ?string $taxMethod = null, ?bool $documentReceived = null, ?string $sourceDocumentUrl = null, ?array $trackingCategories = null, ?string $rowVersion = null, ?string $accountingPeriod = null)
+    public function __construct(?array $lineItems = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?array $attachments = null, ?string $displayId = null, ?string $billNumber = null, ?LinkedSupplierInput $supplier = null, ?string $companyId = null, ?string $locationId = null, ?string $departmentId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?LocalDate $billDate = null, ?LocalDate $dueDate = null, ?LocalDate $paidDate = null, ?string $poNumber = null, ?string $reference = null, ?string $terms = null, ?string $termsId = null, ?float $balance = null, ?float $deposit = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?string $taxCode = null, ?string $notes = null, ?BillStatus $status = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?float $discountPercentage = null, ?string $templateId = null, ?string $approvedBy = null, ?AmortizationType $amortizationType = null, ?string $taxMethod = null, ?bool $documentReceived = null, ?string $sourceDocumentUrl = null, ?array $paymentAllocations = null, ?array $trackingCategories = null, ?string $rowVersion = null, ?string $accountingPeriod = null)
     {
         $this->lineItems = $lineItems;
         $this->bankAccount = $bankAccount;
@@ -505,6 +516,7 @@ class BillInput
         $this->taxMethod = $taxMethod;
         $this->documentReceived = $documentReceived;
         $this->sourceDocumentUrl = $sourceDocumentUrl;
+        $this->paymentAllocations = $paymentAllocations;
         $this->trackingCategories = $trackingCategories;
         $this->rowVersion = $rowVersion;
         $this->accountingPeriod = $accountingPeriod;
