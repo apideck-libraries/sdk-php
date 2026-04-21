@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: ede153bf7fa315177c20dc48132922d2
-  docVersion: 10.24.23
-  speakeasyVersion: 1.761.7
-  generationVersion: 2.881.0
-  releaseVersion: 0.18.6
-  configChecksum: 2e0309a1561f2c0b191766b84a9eb7df
+  docChecksum: 2b91077d3422f4b5c6cdfdac2d535068
+  docVersion: 10.24.24
+  speakeasyVersion: 1.761.9
+  generationVersion: 2.881.4
+  releaseVersion: 0.18.7
+  configChecksum: 9bff01c378296139bcb9676e763b9959
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: 9f3eb379-4aaa-4485-8d7a-eeba91779cd4
-  pristine_commit_hash: 61538b3d3cee67c42e3ae6e773e6ff70db746717
-  pristine_tree_hash: b6d2f56916568daa95782bbe8727767f342eac27
+  generation_id: 81b9c3be-5f4f-489a-a133-f25920e2f3ab
+  pristine_commit_hash: 489fba6e747a74f4dc95e0c7e1ae8d59589f000b
+  pristine_tree_hash: 42378164446f6cd5bba57f22726c2ccabebb6368
 features:
   php:
     additionalProperties: 0.1.0
@@ -49,8 +49,8 @@ trackedFiles:
     pristine_git_object: a93a82d6fc16f1137ae0802f279ab872b0a68e04
   composer.json:
     id: 3957b91a0d84
-    last_write_checksum: sha1:12d7926d100e17935116fcb9bb02648344eaefb3
-    pristine_git_object: e2373d0e11c19a8723cc2ab10b9abf420df3401d
+    last_write_checksum: sha1:c829bdc8d65638bdd20be34026bc9e7476aaf532
+    pristine_git_object: 7700b4d76ad4146ea3f56b26d937d138bcc6cac8
   docs/Models/Components/AccountStatus.md:
     id: e56505065ab2
     last_write_checksum: sha1:4528c8b11f7d009daf45e766ba562b91a5f9dc19
@@ -14065,8 +14065,8 @@ trackedFiles:
     pristine_git_object: 1b84a996bbe4b1742310466f6289fde44ac8a13c
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:28bf63e82d5fbc7ddfce2676bb66b8c9e8937c34
-    pristine_git_object: 41e8160e28136958d10d0a4b42e82990b127faba
+    last_write_checksum: sha1:4f7cbc040ae2f3a0aff86a38e19d798b92030744
+    pristine_git_object: 6a48958877bac7cf5d52de09b81cd79f342c9c57
   src/Sessions.php:
     id: 7f6ea05b19ca
     last_write_checksum: sha1:49fed08b188438bf50f8af86d8631d9f3bf3cd5f
@@ -30658,7 +30658,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `apideck->accounting->bills->list()`:  `response.data[]->paymentAllocations` **Added**\n* `apideck->accounting->bills->create()`: \n  *  `request->bill->paymentAllocations` **Added**\n* `apideck->accounting->bills->get()`:  `response.data->paymentAllocations` **Added**\n* `apideck->accounting->bills->update()`: \n  *  `request->bill->paymentAllocations` **Added**\n* `apideck->accounting->payments->list()`: \n  *  `request->filter` **Changed**\n* `apideck->accounting->billPayments->list()`: \n  *  `request->filter` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md
