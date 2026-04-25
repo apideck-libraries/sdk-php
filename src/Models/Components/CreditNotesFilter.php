@@ -12,6 +12,14 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class CreditNotesFilter
 {
     /**
+     * Return records with a row ID greater than or equal to the given value
+     *
+     * @var ?string $idSince
+     */
+    #[SpeakeasyMetadata('queryParam:name=id_since')]
+    public ?string $idSince = null;
+
+    /**
      *
      * @var ?\DateTime $updatedSince
      */
@@ -19,11 +27,13 @@ class CreditNotesFilter
     public ?\DateTime $updatedSince = null;
 
     /**
+     * @param  ?string  $idSince
      * @param  ?\DateTime  $updatedSince
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedSince = null)
+    public function __construct(?string $idSince = null, ?\DateTime $updatedSince = null)
     {
+        $this->idSince = $idSince;
         $this->updatedSince = $updatedSince;
     }
 }

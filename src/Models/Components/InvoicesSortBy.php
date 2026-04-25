@@ -14,4 +14,5 @@ enum InvoicesSortBy: string
 {
     case CreatedAt = 'created_at';
     case UpdatedAt = 'updated_at';
+    case Id = 'id';
 }

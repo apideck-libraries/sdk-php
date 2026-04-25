@@ -55,15 +55,24 @@ class PaymentsFilter
     public ?PaymentsFilterType $type = null;
 
     /**
+     * Filter by payment status
+     *
+     * @var ?\Apideck\Unify\Models\Components\PaymentsFilterPaymentStatus $status
+     */
+    #[SpeakeasyMetadata('queryParam:name=status')]
+    public ?PaymentsFilterPaymentStatus $status = null;
+
+    /**
      * @param  ?\DateTime  $updatedSince
      * @param  ?string  $invoiceId
      * @param  ?string  $billId
      * @param  ?string  $supplierId
      * @param  ?string  $customerId
      * @param  ?\Apideck\Unify\Models\Components\PaymentsFilterType  $type
+     * @param  ?\Apideck\Unify\Models\Components\PaymentsFilterPaymentStatus  $status
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedSince = null, ?string $invoiceId = null, ?string $billId = null, ?string $supplierId = null, ?string $customerId = null, ?PaymentsFilterType $type = null)
+    public function __construct(?\DateTime $updatedSince = null, ?string $invoiceId = null, ?string $billId = null, ?string $supplierId = null, ?string $customerId = null, ?PaymentsFilterType $type = null, ?PaymentsFilterPaymentStatus $status = null)
     {
         $this->updatedSince = $updatedSince;
         $this->invoiceId = $invoiceId;
@@ -71,5 +80,6 @@ class PaymentsFilter
         $this->supplierId = $supplierId;
         $this->customerId = $customerId;
         $this->type = $type;
+        $this->status = $status;
     }
 }

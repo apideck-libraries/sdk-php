@@ -9,3 +9,4 @@ The field on which to sort the Bills
 | ----------- | ----------- |
 | `UpdatedAt` | updated_at  |
 | `CreatedAt` | created_at  |
+| `Id`        | id          |
