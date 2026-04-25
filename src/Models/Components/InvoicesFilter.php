@@ -12,6 +12,14 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class InvoicesFilter
 {
     /**
+     * Return records with a row ID greater than or equal to the given value
+     *
+     * @var ?string $idSince
+     */
+    #[SpeakeasyMetadata('queryParam:name=id_since')]
+    public ?string $idSince = null;
+
+    /**
      *
      * @var ?\DateTime $updatedSince
      */
@@ -42,14 +50,16 @@ class InvoicesFilter
     public ?string $supplierId = null;
 
     /**
+     * @param  ?string  $idSince
      * @param  ?\DateTime  $updatedSince
      * @param  ?\DateTime  $createdSince
      * @param  ?string  $number
      * @param  ?string  $supplierId
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedSince = null, ?\DateTime $createdSince = null, ?string $number = null, ?string $supplierId = null)
+    public function __construct(?string $idSince = null, ?\DateTime $updatedSince = null, ?\DateTime $createdSince = null, ?string $number = null, ?string $supplierId = null)
     {
+        $this->idSince = $idSince;
         $this->updatedSince = $updatedSince;
         $this->createdSince = $createdSince;
         $this->number = $number;

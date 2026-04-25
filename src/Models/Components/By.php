@@ -14,4 +14,5 @@ enum By: string
 {
     case UpdatedAt = 'updated_at';
     case CreatedAt = 'created_at';
+    case Id = 'id';
 }

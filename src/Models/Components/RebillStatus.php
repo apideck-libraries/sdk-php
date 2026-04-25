@@ -15,4 +15,5 @@ enum RebillStatus: string
     case Pending = 'pending';
     case Billed = 'billed';
     case Voided = 'voided';
+    case Other = 'other';
 }
