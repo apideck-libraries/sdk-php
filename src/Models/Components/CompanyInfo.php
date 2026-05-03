@@ -190,6 +190,16 @@ class CompanyInfo
     public ?array $customMappings = null;
 
     /**
+     * The accounting basis used by the company for financial reports.
+     *
+     * @var ?\Apideck\Unify\Models\Components\AccountingMethod $accountingMethod
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('accounting_method')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\AccountingMethod|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?AccountingMethod $accountingMethod = null;
+
+    /**
      * A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
      *
      * @var ?string $rowVersion
@@ -254,6 +264,7 @@ class CompanyInfo
      * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?string  $language
      * @param  ?array<string, mixed>  $customMappings
+     * @param  ?\Apideck\Unify\Models\Components\AccountingMethod  $accountingMethod
      * @param  ?string  $rowVersion
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy
@@ -261,7 +272,7 @@ class CompanyInfo
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?CompanyStatus $status = null, ?string $legalName = null, ?bool $automatedSalesTax = null, ?bool $salesTaxEnabled = null, ?TaxRate $defaultSalesTax = null, ?TheStartMonthOfFiscalYear $fiscalYearStartMonth = null, ?LocalDate $companyStartDate = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?bool $trackingCategoriesEnabled = null, ?TrackingCategoriesMode $trackingCategoriesMode = null, ?string $companyName = null, ?string $country = null, ?string $salesTaxNumber = null, ?Currency $currency = null, ?string $language = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?CompanyStatus $status = null, ?string $legalName = null, ?bool $automatedSalesTax = null, ?bool $salesTaxEnabled = null, ?TaxRate $defaultSalesTax = null, ?TheStartMonthOfFiscalYear $fiscalYearStartMonth = null, ?LocalDate $companyStartDate = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?bool $trackingCategoriesEnabled = null, ?TrackingCategoriesMode $trackingCategoriesMode = null, ?string $companyName = null, ?string $country = null, ?string $salesTaxNumber = null, ?Currency $currency = null, ?string $language = null, ?array $customMappings = null, ?AccountingMethod $accountingMethod = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->status = $status;
@@ -282,6 +293,7 @@ class CompanyInfo
         $this->currency = $currency;
         $this->language = $language;
         $this->customMappings = $customMappings;
+        $this->accountingMethod = $accountingMethod;
         $this->rowVersion = $rowVersion;
         $this->updatedBy = $updatedBy;
         $this->createdBy = $createdBy;

@@ -15,6 +15,7 @@ enum Health: string
     case Revoked = 'revoked';
     case MissingSettings = 'missing_settings';
     case NeedsConsent = 'needs_consent';
+    case PendingConfirmation = 'pending_confirmation';
     case NeedsAuth = 'needs_auth';
     case PendingRefresh = 'pending_refresh';
     case Ok = 'ok';
