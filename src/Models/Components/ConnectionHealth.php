@@ -15,6 +15,7 @@ enum ConnectionHealth: string
     case Ok = 'ok';
     case PendingRefresh = 'pending_refresh';
     case NeedsAuth = 'needs_auth';
+    case PendingConfirmation = 'pending_confirmation';
     case NeedsConsent = 'needs_consent';
     case Revoked = 'revoked';
     case MissingSettings = 'missing_settings';

@@ -55,10 +55,10 @@ class BalanceSheetFilter
     /**
      * The accounting method used for the report: cash or accrual.
      *
-     * @var ?\Apideck\Unify\Models\Components\AccountingMethod $accountingMethod
+     * @var ?\Apideck\Unify\Models\Components\BalanceSheetFilterAccountingMethod $accountingMethod
      */
     #[SpeakeasyMetadata('queryParam:name=accounting_method')]
-    public ?AccountingMethod $accountingMethod = null;
+    public ?BalanceSheetFilterAccountingMethod $accountingMethod = null;
 
     /**
      * @param  ?string  $startDate
@@ -66,10 +66,10 @@ class BalanceSheetFilter
      * @param  ?int  $periodCount
      * @param  ?\Apideck\Unify\Models\Components\PeriodType  $periodType
      * @param  ?string  $locationId
-     * @param  ?\Apideck\Unify\Models\Components\AccountingMethod  $accountingMethod
+     * @param  ?\Apideck\Unify\Models\Components\BalanceSheetFilterAccountingMethod  $accountingMethod
      * @phpstan-pure
      */
-    public function __construct(?string $startDate = null, ?string $endDate = null, ?int $periodCount = null, ?PeriodType $periodType = null, ?string $locationId = null, ?AccountingMethod $accountingMethod = null)
+    public function __construct(?string $startDate = null, ?string $endDate = null, ?int $periodCount = null, ?PeriodType $periodType = null, ?string $locationId = null, ?BalanceSheetFilterAccountingMethod $accountingMethod = null)
     {
         $this->startDate = $startDate;
         $this->endDate = $endDate;
