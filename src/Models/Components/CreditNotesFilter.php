@@ -27,13 +27,32 @@ class CreditNotesFilter
     public ?\DateTime $updatedSince = null;
 
     /**
+     *
+     * @var ?\DateTime $createdSince
+     */
+    #[SpeakeasyMetadata('queryParam:name=created_since,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $createdSince = null;
+
+    /**
+     * Credit note number to search for
+     *
+     * @var ?string $number
+     */
+    #[SpeakeasyMetadata('queryParam:name=number')]
+    public ?string $number = null;
+
+    /**
      * @param  ?string  $idSince
      * @param  ?\DateTime  $updatedSince
+     * @param  ?\DateTime  $createdSince
+     * @param  ?string  $number
      * @phpstan-pure
      */
-    public function __construct(?string $idSince = null, ?\DateTime $updatedSince = null)
+    public function __construct(?string $idSince = null, ?\DateTime $updatedSince = null, ?\DateTime $createdSince = null, ?string $number = null)
     {
         $this->idSince = $idSince;
         $this->updatedSince = $updatedSince;
+        $this->createdSince = $createdSince;
+        $this->number = $number;
     }
 }

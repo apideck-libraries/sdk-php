@@ -35,15 +35,25 @@ class LedgerAccountsFilter
     public ?Classification $classification = null;
 
     /**
+     * Filter by account status.
+     *
+     * @var ?\Apideck\Unify\Models\Components\LedgerAccountsFilterStatus $status
+     */
+    #[SpeakeasyMetadata('queryParam:name=status')]
+    public ?LedgerAccountsFilterStatus $status = null;
+
+    /**
      * @param  ?string  $name
      * @param  ?\DateTime  $updatedSince
      * @param  ?\Apideck\Unify\Models\Components\Classification  $classification
+     * @param  ?\Apideck\Unify\Models\Components\LedgerAccountsFilterStatus  $status
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?\DateTime $updatedSince = null, ?Classification $classification = null)
+    public function __construct(?string $name = null, ?\DateTime $updatedSince = null, ?Classification $classification = null, ?LedgerAccountsFilterStatus $status = null)
     {
         $this->name = $name;
         $this->updatedSince = $updatedSince;
         $this->classification = $classification;
+        $this->status = $status;
     }
 }

@@ -19,6 +19,14 @@ class InvoiceItemsFilter
     public ?\DateTime $updatedSince = null;
 
     /**
+     * Comma-separated list of invoice item IDs to filter by (e.g. `12345,67890`).
+     *
+     * @var ?string $ids
+     */
+    #[SpeakeasyMetadata('queryParam:name=ids')]
+    public ?string $ids = null;
+
+    /**
      * Name of Invoice Items to search for
      *
      * @var ?string $name
@@ -44,14 +52,16 @@ class InvoiceItemsFilter
 
     /**
      * @param  ?\DateTime  $updatedSince
+     * @param  ?string  $ids
      * @param  ?string  $name
      * @param  ?\Apideck\Unify\Models\Components\InvoiceItemType  $type
      * @param  ?\Apideck\Unify\Models\Components\TransactionType  $transactionType
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedSince = null, ?string $name = null, ?InvoiceItemType $type = null, ?TransactionType $transactionType = null)
+    public function __construct(?\DateTime $updatedSince = null, ?string $ids = null, ?string $name = null, ?InvoiceItemType $type = null, ?TransactionType $transactionType = null)
     {
         $this->updatedSince = $updatedSince;
+        $this->ids = $ids;
         $this->name = $name;
         $this->type = $type;
         $this->transactionType = $transactionType;
