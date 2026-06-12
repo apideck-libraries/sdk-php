@@ -35,15 +35,35 @@ class LedgerAccountsFilter
     public ?Classification $classification = null;
 
     /**
+     * Filter by account status.
+     *
+     * @var ?\Apideck\Unify\Models\Components\LedgerAccountsFilterStatus $status
+     */
+    #[SpeakeasyMetadata('queryParam:name=status')]
+    public ?LedgerAccountsFilterStatus $status = null;
+
+    /**
+     * Filter by the subsidiary (legal entity) the record belongs to. Only honored on connectors that support multi-entity scoping (e.g. NetSuite OneWorld); ignored elsewhere.
+     *
+     * @var ?string $subsidiaryId
+     */
+    #[SpeakeasyMetadata('queryParam:name=subsidiary_id')]
+    public ?string $subsidiaryId = null;
+
+    /**
      * @param  ?string  $name
      * @param  ?\DateTime  $updatedSince
      * @param  ?\Apideck\Unify\Models\Components\Classification  $classification
+     * @param  ?\Apideck\Unify\Models\Components\LedgerAccountsFilterStatus  $status
+     * @param  ?string  $subsidiaryId
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?\DateTime $updatedSince = null, ?Classification $classification = null)
+    public function __construct(?string $name = null, ?\DateTime $updatedSince = null, ?Classification $classification = null, ?LedgerAccountsFilterStatus $status = null, ?string $subsidiaryId = null)
     {
         $this->name = $name;
         $this->updatedSince = $updatedSince;
         $this->classification = $classification;
+        $this->status = $status;
+        $this->subsidiaryId = $subsidiaryId;
     }
 }

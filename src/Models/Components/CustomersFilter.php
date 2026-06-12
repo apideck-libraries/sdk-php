@@ -67,6 +67,14 @@ class CustomersFilter
     public ?string $supplierId = null;
 
     /**
+     * Filter by the subsidiary (legal entity) the customer's primary subsidiary belongs to. Only honored on connectors that support multi-entity scoping (e.g. NetSuite OneWorld); ignored elsewhere.
+     *
+     * @var ?string $subsidiaryId
+     */
+    #[SpeakeasyMetadata('queryParam:name=subsidiary_id')]
+    public ?string $subsidiaryId = null;
+
+    /**
      * Status of customer to filter on
      *
      * @var ?\Apideck\Unify\Models\Components\CustomersFilterStatus $status
@@ -82,10 +90,11 @@ class CustomersFilter
      * @param  ?string  $email
      * @param  ?\DateTime  $updatedSince
      * @param  ?string  $supplierId
+     * @param  ?string  $subsidiaryId
      * @param  ?\Apideck\Unify\Models\Components\CustomersFilterStatus  $status
      * @phpstan-pure
      */
-    public function __construct(?string $companyName = null, ?string $displayName = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?\DateTime $updatedSince = null, ?string $supplierId = null, ?CustomersFilterStatus $status = null)
+    public function __construct(?string $companyName = null, ?string $displayName = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?\DateTime $updatedSince = null, ?string $supplierId = null, ?string $subsidiaryId = null, ?CustomersFilterStatus $status = null)
     {
         $this->companyName = $companyName;
         $this->displayName = $displayName;
@@ -94,6 +103,7 @@ class CustomersFilter
         $this->email = $email;
         $this->updatedSince = $updatedSince;
         $this->supplierId = $supplierId;
+        $this->subsidiaryId = $subsidiaryId;
         $this->status = $status;
     }
 }

@@ -23,6 +23,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Apideck\Unify;
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
@@ -35,6 +36,9 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\CrmNotesAllRequest(
     serviceId: 'salesforce',
+    filter: new Components\NotesFilter(
+        title: 'Follow up call',
+    ),
     passThrough: [
         'search' => 'San Francisco',
     ],

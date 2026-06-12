@@ -50,19 +50,29 @@ class InvoicesFilter
     public ?string $supplierId = null;
 
     /**
+     * Filter by the subsidiary (legal entity) the record belongs to. Only honored on connectors that support multi-entity scoping (e.g. NetSuite OneWorld); ignored elsewhere.
+     *
+     * @var ?string $subsidiaryId
+     */
+    #[SpeakeasyMetadata('queryParam:name=subsidiary_id')]
+    public ?string $subsidiaryId = null;
+
+    /**
      * @param  ?string  $idSince
      * @param  ?\DateTime  $updatedSince
      * @param  ?\DateTime  $createdSince
      * @param  ?string  $number
      * @param  ?string  $supplierId
+     * @param  ?string  $subsidiaryId
      * @phpstan-pure
      */
-    public function __construct(?string $idSince = null, ?\DateTime $updatedSince = null, ?\DateTime $createdSince = null, ?string $number = null, ?string $supplierId = null)
+    public function __construct(?string $idSince = null, ?\DateTime $updatedSince = null, ?\DateTime $createdSince = null, ?string $number = null, ?string $supplierId = null, ?string $subsidiaryId = null)
     {
         $this->idSince = $idSince;
         $this->updatedSince = $updatedSince;
         $this->createdSince = $createdSince;
         $this->number = $number;
         $this->supplierId = $supplierId;
+        $this->subsidiaryId = $subsidiaryId;
     }
 }

@@ -69,6 +69,15 @@ class UserInput
     public ?string $username = null;
 
     /**
+     * The name of the resource.
+     *
+     * @var ?string $name
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $name = null;
+
+    /**
      * The first name of the person.
      *
      * @var ?string $firstName
@@ -184,6 +193,7 @@ class UserInput
      * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $parentId
      * @param  ?string  $username
+     * @param  ?string  $name
      * @param  ?string  $firstName
      * @param  ?string  $lastName
      * @param  ?string  $title
@@ -198,7 +208,7 @@ class UserInput
      * @param  ?string  $password
      * @phpstan-pure
      */
-    public function __construct(array $emails, ?array $addresses = null, ?array $phoneNumbers = null, ?array $passThrough = null, ?string $parentId = null, ?string $username = null, ?string $firstName = null, ?string $lastName = null, ?string $title = null, ?string $division = null, ?string $department = null, ?string $companyName = null, ?string $employeeNumber = null, ?string $description = null, ?string $image = null, ?string $language = null, ?string $status = null, ?string $password = null)
+    public function __construct(array $emails, ?array $addresses = null, ?array $phoneNumbers = null, ?array $passThrough = null, ?string $parentId = null, ?string $username = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $title = null, ?string $division = null, ?string $department = null, ?string $companyName = null, ?string $employeeNumber = null, ?string $description = null, ?string $image = null, ?string $language = null, ?string $status = null, ?string $password = null)
     {
         $this->emails = $emails;
         $this->addresses = $addresses;
@@ -206,6 +216,7 @@ class UserInput
         $this->passThrough = $passThrough;
         $this->parentId = $parentId;
         $this->username = $username;
+        $this->name = $name;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->title = $title;

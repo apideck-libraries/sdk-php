@@ -44,17 +44,27 @@ class ProjectsFilter
     public ?\DateTime $updatedSince = null;
 
     /**
+     * Filter by the subsidiary (legal entity) the record belongs to. Only honored on connectors that support multi-entity scoping (e.g. NetSuite OneWorld); ignored elsewhere.
+     *
+     * @var ?string $subsidiaryId
+     */
+    #[SpeakeasyMetadata('queryParam:name=subsidiary_id')]
+    public ?string $subsidiaryId = null;
+
+    /**
      * @param  ?string  $name
      * @param  ?\Apideck\Unify\Models\Components\ProjectStatus  $status
      * @param  ?string  $customerId
      * @param  ?\DateTime  $updatedSince
+     * @param  ?string  $subsidiaryId
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?ProjectStatus $status = null, ?string $customerId = null, ?\DateTime $updatedSince = null)
+    public function __construct(?string $name = null, ?ProjectStatus $status = null, ?string $customerId = null, ?\DateTime $updatedSince = null, ?string $subsidiaryId = null)
     {
         $this->name = $name;
         $this->status = $status;
         $this->customerId = $customerId;
         $this->updatedSince = $updatedSince;
+        $this->subsidiaryId = $subsidiaryId;
     }
 }

@@ -26,13 +26,33 @@ class JournalEntriesFilter
     public ?JournalEntriesFilterStatus $status = null;
 
     /**
+     * Connector-specific scope hint that controls which downstream source backs the read. On Xero, `manual` reads from `ManualJournals` (free in every tier), while `system` reads from `Journals` (the full general ledger view including manual journal postings, paid post 2026-03-02). Omitting the filter is equivalent to `system` and preserves the legacy default. Only honored on connectors where the distinction is exposed; ignored elsewhere.
+     *
+     * @var ?\Apideck\Unify\Models\Components\JournalEntriesFilterScope $scope
+     */
+    #[SpeakeasyMetadata('queryParam:name=scope')]
+    public ?JournalEntriesFilterScope $scope = null;
+
+    /**
+     * Filter by the subsidiary (legal entity) the record belongs to. Only honored on connectors that support multi-entity scoping (e.g. NetSuite OneWorld); ignored elsewhere.
+     *
+     * @var ?string $subsidiaryId
+     */
+    #[SpeakeasyMetadata('queryParam:name=subsidiary_id')]
+    public ?string $subsidiaryId = null;
+
+    /**
      * @param  ?\DateTime  $updatedSince
      * @param  ?\Apideck\Unify\Models\Components\JournalEntriesFilterStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\JournalEntriesFilterScope  $scope
+     * @param  ?string  $subsidiaryId
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedSince = null, ?JournalEntriesFilterStatus $status = null)
+    public function __construct(?\DateTime $updatedSince = null, ?JournalEntriesFilterStatus $status = null, ?JournalEntriesFilterScope $scope = null, ?string $subsidiaryId = null)
     {
         $this->updatedSince = $updatedSince;
         $this->status = $status;
+        $this->scope = $scope;
+        $this->subsidiaryId = $subsidiaryId;
     }
 }

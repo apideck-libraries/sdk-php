@@ -209,6 +209,15 @@ class Payment
     public ?string $companyId = null;
 
     /**
+     *
+     * @var ?\Apideck\Unify\Models\Components\LinkedSubsidiary $subsidiary
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiary')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedSubsidiary|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedSubsidiary $subsidiary = null;
+
+    /**
      * Indicates if the transaction has been reconciled.
      *
      * @var ?bool $reconciled
@@ -331,6 +340,7 @@ class Payment
      * @param  ?\Apideck\Unify\Models\Components\LinkedCustomer  $customer
      * @param  ?\Apideck\Unify\Models\Components\DeprecatedLinkedSupplier  $supplier
      * @param  ?string  $companyId
+     * @param  ?\Apideck\Unify\Models\Components\LinkedSubsidiary  $subsidiary
      * @param  ?bool  $reconciled
      * @param  ?string  $note
      * @param  ?string  $number
@@ -344,7 +354,7 @@ class Payment
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, ?float $totalAmount = null, ?\DateTime $transactionDate = null, ?PaymentStatus $status = null, ?PaymentType $type = null, ?array $allocations = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?Currency $currency = null, ?float $currencyRate = null, ?string $reference = null, ?string $paymentMethod = null, ?string $paymentMethodReference = null, ?string $paymentMethodId = null, ?string $accountsReceivableAccountType = null, ?string $accountsReceivableAccountId = null, ?LinkedLedgerAccount $account = null, ?LinkedCustomer $customer = null, ?DeprecatedLinkedSupplier $supplier = null, ?string $companyId = null, ?bool $reconciled = null, ?string $note = null, ?string $number = null, ?array $trackingCategories = null, ?string $rowVersion = null, ?string $displayId = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(string $id, ?float $totalAmount = null, ?\DateTime $transactionDate = null, ?PaymentStatus $status = null, ?PaymentType $type = null, ?array $allocations = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?Currency $currency = null, ?float $currencyRate = null, ?string $reference = null, ?string $paymentMethod = null, ?string $paymentMethodReference = null, ?string $paymentMethodId = null, ?string $accountsReceivableAccountType = null, ?string $accountsReceivableAccountId = null, ?LinkedLedgerAccount $account = null, ?LinkedCustomer $customer = null, ?DeprecatedLinkedSupplier $supplier = null, ?string $companyId = null, ?LinkedSubsidiary $subsidiary = null, ?bool $reconciled = null, ?string $note = null, ?string $number = null, ?array $trackingCategories = null, ?string $rowVersion = null, ?string $displayId = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
         $this->totalAmount = $totalAmount;
@@ -367,6 +377,7 @@ class Payment
         $this->customer = $customer;
         $this->supplier = $supplier;
         $this->companyId = $companyId;
+        $this->subsidiary = $subsidiary;
         $this->reconciled = $reconciled;
         $this->note = $note;
         $this->number = $number;

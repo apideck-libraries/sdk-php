@@ -78,6 +78,15 @@ class User
     public ?string $username = null;
 
     /**
+     * The name of the resource.
+     *
+     * @var ?string $name
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $name = null;
+
+    /**
      * The first name of the person.
      *
      * @var ?string $firstName
@@ -213,6 +222,7 @@ class User
      * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $parentId
      * @param  ?string  $username
+     * @param  ?string  $name
      * @param  ?string  $firstName
      * @param  ?string  $lastName
      * @param  ?string  $title
@@ -229,7 +239,7 @@ class User
      * @param  ?string  $createdAt
      * @phpstan-pure
      */
-    public function __construct(array $emails, ?string $id = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $passThrough = null, ?string $parentId = null, ?string $username = null, ?string $firstName = null, ?string $lastName = null, ?string $title = null, ?string $division = null, ?string $department = null, ?string $companyName = null, ?string $employeeNumber = null, ?string $description = null, ?string $image = null, ?string $language = null, ?string $status = null, ?array $customMappings = null, ?string $updatedAt = null, ?string $createdAt = null)
+    public function __construct(array $emails, ?string $id = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $passThrough = null, ?string $parentId = null, ?string $username = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $title = null, ?string $division = null, ?string $department = null, ?string $companyName = null, ?string $employeeNumber = null, ?string $description = null, ?string $image = null, ?string $language = null, ?string $status = null, ?array $customMappings = null, ?string $updatedAt = null, ?string $createdAt = null)
     {
         $this->emails = $emails;
         $this->id = $id;
@@ -238,6 +248,7 @@ class User
         $this->passThrough = $passThrough;
         $this->parentId = $parentId;
         $this->username = $username;
+        $this->name = $name;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->title = $title;

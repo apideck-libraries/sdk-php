@@ -43,6 +43,8 @@ class Accounting
 
     public JournalEntries $journalEntries;
 
+    public GeneralLedgerTransactions $generalLedgerTransactions;
+
     public PurchaseOrders $purchaseOrders;
 
     public Subsidiaries $subsidiaries;
@@ -102,6 +104,7 @@ class Accounting
         $this->balanceSheet = new BalanceSheet($this->sdkConfiguration);
         $this->profitAndLoss = new ProfitAndLoss($this->sdkConfiguration);
         $this->journalEntries = new JournalEntries($this->sdkConfiguration);
+        $this->generalLedgerTransactions = new GeneralLedgerTransactions($this->sdkConfiguration);
         $this->purchaseOrders = new PurchaseOrders($this->sdkConfiguration);
         $this->subsidiaries = new Subsidiaries($this->sdkConfiguration);
         $this->locations = new Locations($this->sdkConfiguration);

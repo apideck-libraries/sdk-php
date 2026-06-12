@@ -331,6 +331,7 @@ class Quotes
                             companyId: $request != null ? $request->companyId : null,
                             cursor: $nextCursor,
                             limit: $request != null ? $request->limit : null,
+                            filter: $request != null ? $request->filter : null,
                         ),
                     );
                 };
@@ -436,6 +437,7 @@ class Quotes
                             companyId: $request != null ? $request->companyId : null,
                             cursor: $nextCursor,
                             limit: $request != null ? $request->limit : null,
+                            filter: $request != null ? $request->filter : null,
                         ),
                     );
                 };

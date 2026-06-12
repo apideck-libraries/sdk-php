@@ -313,6 +313,15 @@ class Connection
     public ?float $lastRefreshFailedAt = null;
 
     /**
+     * Unix timestamp in milliseconds of the last downstream unreachable error (502/504 network class). A value of 0 indicates no active error. Connection remains callable while this is set; health surfaces as 'degraded'.
+     *
+     * @var ?float $lastDownstreamErrorAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('last_downstream_error_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $lastDownstreamErrorAt = null;
+
+    /**
      *
      * @var ?float $createdAt
      */
@@ -399,6 +408,7 @@ class Connection
      * @param  ?\Apideck\Unify\Models\Components\Health  $health
      * @param  ?float  $credentialsExpireAt
      * @param  ?float  $lastRefreshFailedAt
+     * @param  ?float  $lastDownstreamErrorAt
      * @param  ?float  $createdAt
      * @param  ?string  $authorizeUrl
      * @param  ?string  $revokeUrl
@@ -407,7 +417,7 @@ class Connection
      * @param  ?float  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $serviceId = null, ?string $name = null, ?string $tagLine = null, ?string $unifiedApi = null, ?ConnectionState $state = null, ?IntegrationState $integrationState = null, ?AuthType $authType = null, ?OAuthGrantType $oauthGrantType = null, ?ConnectionStatus $status = null, ?bool $enabled = null, ?string $website = null, ?string $icon = null, ?string $logo = null, ?array $formFields = null, ?array $configuration = null, ?array $configurableResources = null, ?array $resourceSchemaSupport = null, ?array $resourceSettingsSupport = null, ?bool $validationSupport = null, ?bool $schemaSupport = null, ?array $settingsRequiredForAuthorization = null, ?array $subscriptions = null, ?bool $hasGuide = null, ?array $customMappings = null, ?ConsentState $consentState = null, ?array $consents = null, ?ConsentRecord $latestConsent = null, ?DataScopes $applicationDataScopes = null, ?Health $health = null, ?float $credentialsExpireAt = null, ?float $lastRefreshFailedAt = null, ?float $createdAt = null, ?string $authorizeUrl = null, ?string $revokeUrl = null, ?array $settings = null, ?array $metadata = null, ?float $updatedAt = null)
+    public function __construct(?string $id = null, ?string $serviceId = null, ?string $name = null, ?string $tagLine = null, ?string $unifiedApi = null, ?ConnectionState $state = null, ?IntegrationState $integrationState = null, ?AuthType $authType = null, ?OAuthGrantType $oauthGrantType = null, ?ConnectionStatus $status = null, ?bool $enabled = null, ?string $website = null, ?string $icon = null, ?string $logo = null, ?array $formFields = null, ?array $configuration = null, ?array $configurableResources = null, ?array $resourceSchemaSupport = null, ?array $resourceSettingsSupport = null, ?bool $validationSupport = null, ?bool $schemaSupport = null, ?array $settingsRequiredForAuthorization = null, ?array $subscriptions = null, ?bool $hasGuide = null, ?array $customMappings = null, ?ConsentState $consentState = null, ?array $consents = null, ?ConsentRecord $latestConsent = null, ?DataScopes $applicationDataScopes = null, ?Health $health = null, ?float $credentialsExpireAt = null, ?float $lastRefreshFailedAt = null, ?float $lastDownstreamErrorAt = null, ?float $createdAt = null, ?string $authorizeUrl = null, ?string $revokeUrl = null, ?array $settings = null, ?array $metadata = null, ?float $updatedAt = null)
     {
         $this->id = $id;
         $this->serviceId = $serviceId;
@@ -441,6 +451,7 @@ class Connection
         $this->health = $health;
         $this->credentialsExpireAt = $credentialsExpireAt;
         $this->lastRefreshFailedAt = $lastRefreshFailedAt;
+        $this->lastDownstreamErrorAt = $lastDownstreamErrorAt;
         $this->createdAt = $createdAt;
         $this->authorizeUrl = $authorizeUrl;
         $this->revokeUrl = $revokeUrl;
