@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace Apideck\Unify\Models\Operations;
 
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Utils\SpeakeasyMetadata;
 class CrmUsersAllRequest
 {
@@ -34,6 +35,14 @@ class CrmUsersAllRequest
      */
     #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-apideck-service-id')]
     public ?string $serviceId = null;
+
+    /**
+     * Apply filters
+     *
+     * @var ?\Apideck\Unify\Models\Components\UsersFilter $filter
+     */
+    #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
+    public ?Components\UsersFilter $filter = null;
 
     /**
      * Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
@@ -81,16 +90,18 @@ class CrmUsersAllRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?int  $limit
+     * @param  ?\Apideck\Unify\Models\Components\UsersFilter  $filter
      * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields
      * @phpstan-pure
      */
-    public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?array $passThrough = null, ?string $cursor = null, ?string $fields = null, ?bool $raw = false, ?int $limit = 20)
+    public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?Components\UsersFilter $filter = null, ?array $passThrough = null, ?string $cursor = null, ?string $fields = null, ?bool $raw = false, ?int $limit = 20)
     {
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
+        $this->filter = $filter;
         $this->passThrough = $passThrough;
         $this->cursor = $cursor;
         $this->fields = $fields;

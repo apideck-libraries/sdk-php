@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 
-/** The accounting method used for the report: cash or accrual. */
+/** The accounting basis used by the company for financial reports. */
 enum AccountingMethod: string
 {
     case Cash = 'cash';

@@ -33,6 +33,7 @@ enum UnifiedApiId: string
     case Script = 'script';
     case Sms = 'sms';
     case Spreadsheet = 'spreadsheet';
+    case SubscriptionAnalytics = 'subscription-analytics';
     case TeamMessaging = 'team-messaging';
     case IssueTracking = 'issue-tracking';
     case TimeRegistration = 'time-registration';

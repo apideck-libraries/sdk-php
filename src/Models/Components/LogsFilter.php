@@ -12,11 +12,52 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class LogsFilter
 {
     /**
+     * Filter by connector ID. Known limitation: this field is not currently applied at the log query resolver — connector filtering is performed via the service identifier internally (see GH-10099).
      *
      * @var ?string $connectorId
      */
     #[SpeakeasyMetadata('queryParam:name=connector_id')]
     public ?string $connectorId = null;
+
+    /**
+     * Filter by request path. Match behavior is controlled by path_match_mode (defaults to CONTAINS).
+     *
+     * @var ?string $path
+     */
+    #[SpeakeasyMetadata('queryParam:name=path')]
+    public ?string $path = null;
+
+    /**
+     * Filter by a single HTTP method.
+     *
+     * @var ?string $httpMethod
+     */
+    #[SpeakeasyMetadata('queryParam:name=http_method')]
+    public ?string $httpMethod = null;
+
+    /**
+     * Filter by multiple HTTP methods.
+     *
+     * @var ?array<string> $httpMethods
+     */
+    #[SpeakeasyMetadata('queryParam:name=http_methods')]
+    public ?array $httpMethods = null;
+
+    /**
+     * Filter logs at or after this ISO 8601 date-time (inclusive).
+     *
+     * @var ?\DateTime $startDate
+     */
+    #[SpeakeasyMetadata('queryParam:name=start_date,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $startDate = null;
+
+    /**
+     * Filter logs at or before this ISO 8601 date-time (inclusive). Must be on or after start_date.
+     *
+     * @var ?\DateTime $endDate
+     */
+    #[SpeakeasyMetadata('queryParam:name=end_date,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $endDate = null;
 
     /**
      * Filter by a single HTTP status code. For backward compatibility - use status_codes for multiple values.
@@ -42,17 +83,37 @@ class LogsFilter
     public ?string $excludeUnifiedApis = null;
 
     /**
+     * How the path filter is matched. CONTAINS matches the path anywhere; STARTS_WITH / ENDS_WITH anchor the match; EXACT requires the whole path to match. Only applied when path is set.
+     *
+     * @var ?\Apideck\Unify\Models\Components\PathMatchMode $pathMatchMode
+     */
+    #[SpeakeasyMetadata('queryParam:name=path_match_mode')]
+    public ?PathMatchMode $pathMatchMode = null;
+
+    /**
      * @param  ?string  $connectorId
+     * @param  ?string  $path
+     * @param  ?\Apideck\Unify\Models\Components\PathMatchMode  $pathMatchMode
+     * @param  ?string  $httpMethod
+     * @param  ?array<string>  $httpMethods
+     * @param  ?\DateTime  $startDate
+     * @param  ?\DateTime  $endDate
      * @param  ?float  $statusCode
      * @param  ?array<float>  $statusCodes
      * @param  ?string  $excludeUnifiedApis
      * @phpstan-pure
      */
-    public function __construct(?string $connectorId = null, ?float $statusCode = null, ?array $statusCodes = null, ?string $excludeUnifiedApis = null)
+    public function __construct(?string $connectorId = null, ?string $path = null, ?string $httpMethod = null, ?array $httpMethods = null, ?\DateTime $startDate = null, ?\DateTime $endDate = null, ?float $statusCode = null, ?array $statusCodes = null, ?string $excludeUnifiedApis = null, ?PathMatchMode $pathMatchMode = PathMatchMode::Contains)
     {
         $this->connectorId = $connectorId;
+        $this->path = $path;
+        $this->httpMethod = $httpMethod;
+        $this->httpMethods = $httpMethods;
+        $this->startDate = $startDate;
+        $this->endDate = $endDate;
         $this->statusCode = $statusCode;
         $this->statusCodes = $statusCodes;
         $this->excludeUnifiedApis = $excludeUnifiedApis;
+        $this->pathMatchMode = $pathMatchMode;
     }
 }

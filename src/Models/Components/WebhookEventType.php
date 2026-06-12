@@ -42,6 +42,8 @@ enum WebhookEventType: string
     case VaultConnectionTokenRefreshFailed = 'vault.connection.token_refresh.failed';
     case VaultConnectionTokenRefreshPending = 'vault.connection.token_refresh.pending';
     case VaultConnectionTokenRefreshRecovered = 'vault.connection.token_refresh.recovered';
+    case VaultConnectionDownstreamDegraded = 'vault.connection.downstream.degraded';
+    case VaultConnectionDownstreamRecovered = 'vault.connection.downstream.recovered';
     case AtsJobCreated = 'ats.job.created';
     case AtsJobUpdated = 'ats.job.updated';
     case AtsJobDeleted = 'ats.job.deleted';

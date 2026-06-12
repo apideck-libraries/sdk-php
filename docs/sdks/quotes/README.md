@@ -23,7 +23,9 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Apideck\Unify;
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
+use Apideck\Unify\Utils;
 
 $sdk = Unify\Apideck::builder()
     ->setConsumerId('test-consumer')
@@ -36,6 +38,11 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingQuotesAllRequest(
     serviceId: 'salesforce',
     companyId: '12345',
+    filter: new Components\QuotesFilter(
+        updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
+        createdSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
+        number: 'OIT00546',
+    ),
 );
 
 $responses = $sdk->accounting->quotes->list(

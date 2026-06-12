@@ -63,6 +63,14 @@ class PaymentsFilter
     public ?PaymentsFilterPaymentStatus $status = null;
 
     /**
+     * Filter by the subsidiary (legal entity) the record belongs to. Only honored on connectors that support multi-entity scoping (e.g. NetSuite OneWorld); ignored elsewhere.
+     *
+     * @var ?string $subsidiaryId
+     */
+    #[SpeakeasyMetadata('queryParam:name=subsidiary_id')]
+    public ?string $subsidiaryId = null;
+
+    /**
      * @param  ?\DateTime  $updatedSince
      * @param  ?string  $invoiceId
      * @param  ?string  $billId
@@ -70,9 +78,10 @@ class PaymentsFilter
      * @param  ?string  $customerId
      * @param  ?\Apideck\Unify\Models\Components\PaymentsFilterType  $type
      * @param  ?\Apideck\Unify\Models\Components\PaymentsFilterPaymentStatus  $status
+     * @param  ?string  $subsidiaryId
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedSince = null, ?string $invoiceId = null, ?string $billId = null, ?string $supplierId = null, ?string $customerId = null, ?PaymentsFilterType $type = null, ?PaymentsFilterPaymentStatus $status = null)
+    public function __construct(?\DateTime $updatedSince = null, ?string $invoiceId = null, ?string $billId = null, ?string $supplierId = null, ?string $customerId = null, ?PaymentsFilterType $type = null, ?PaymentsFilterPaymentStatus $status = null, ?string $subsidiaryId = null)
     {
         $this->updatedSince = $updatedSince;
         $this->invoiceId = $invoiceId;
@@ -81,5 +90,6 @@ class PaymentsFilter
         $this->customerId = $customerId;
         $this->type = $type;
         $this->status = $status;
+        $this->subsidiaryId = $subsidiaryId;
     }
 }

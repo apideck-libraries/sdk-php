@@ -59,15 +59,24 @@ class SuppliersFilter
     public ?\DateTime $updatedSince = null;
 
     /**
+     * Filter by the subsidiary (legal entity) the supplier's primary subsidiary belongs to. Only honored on connectors that support multi-entity scoping (e.g. NetSuite OneWorld); ignored elsewhere.
+     *
+     * @var ?string $subsidiaryId
+     */
+    #[SpeakeasyMetadata('queryParam:name=subsidiary_id')]
+    public ?string $subsidiaryId = null;
+
+    /**
      * @param  ?string  $companyName
      * @param  ?string  $displayName
      * @param  ?string  $firstName
      * @param  ?string  $lastName
      * @param  ?string  $email
      * @param  ?\DateTime  $updatedSince
+     * @param  ?string  $subsidiaryId
      * @phpstan-pure
      */
-    public function __construct(?string $companyName = null, ?string $displayName = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?\DateTime $updatedSince = null)
+    public function __construct(?string $companyName = null, ?string $displayName = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?\DateTime $updatedSince = null, ?string $subsidiaryId = null)
     {
         $this->companyName = $companyName;
         $this->displayName = $displayName;
@@ -75,5 +84,6 @@ class SuppliersFilter
         $this->lastName = $lastName;
         $this->email = $email;
         $this->updatedSince = $updatedSince;
+        $this->subsidiaryId = $subsidiaryId;
     }
 }

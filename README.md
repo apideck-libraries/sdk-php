@@ -291,6 +291,11 @@ foreach ($responses as $response) {
 * [update](docs/sdks/expenses/README.md#update) - Update Expense
 * [delete](docs/sdks/expenses/README.md#delete) - Delete Expense
 
+### [Accounting.GeneralLedgerTransactions](docs/sdks/generalledgertransactions/README.md)
+
+* [list](docs/sdks/generalledgertransactions/README.md#list) - List General Ledger Transactions
+* [get](docs/sdks/generalledgertransactions/README.md#get) - Get General Ledger Transaction
+
 ### [Accounting.InvoiceItems](docs/sdks/invoiceitems/README.md)
 
 * [list](docs/sdks/invoiceitems/README.md#list) - List Invoice Items

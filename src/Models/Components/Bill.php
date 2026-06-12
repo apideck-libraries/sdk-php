@@ -116,6 +116,15 @@ class Bill
     public ?string $companyId = null;
 
     /**
+     *
+     * @var ?\Apideck\Unify\Models\Components\LinkedSubsidiary $subsidiary
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiary')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedSubsidiary|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedSubsidiary $subsidiary = null;
+
+    /**
      * The ID of the location
      *
      * @var ?string $locationId
@@ -501,6 +510,7 @@ class Bill
      * @param  ?string  $billNumber
      * @param  ?\Apideck\Unify\Models\Components\LinkedSupplier  $supplier
      * @param  ?string  $companyId
+     * @param  ?\Apideck\Unify\Models\Components\LinkedSubsidiary  $subsidiary
      * @param  ?string  $locationId
      * @param  ?string  $departmentId
      * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
@@ -544,7 +554,7 @@ class Bill
      * @param  ?string  $accountingPeriod
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?array $lineItems = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?array $attachments = null, ?string $downstreamId = null, ?string $displayId = null, ?string $billNumber = null, ?LinkedSupplier $supplier = null, ?string $companyId = null, ?string $locationId = null, ?string $departmentId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?LocalDate $billDate = null, ?LocalDate $dueDate = null, ?LocalDate $paidDate = null, ?string $poNumber = null, ?string $reference = null, ?string $terms = null, ?string $termsId = null, ?float $balance = null, ?float $deposit = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?string $taxCode = null, ?string $notes = null, ?BillStatus $status = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?float $discountPercentage = null, ?string $templateId = null, ?string $approvedBy = null, ?AmortizationType $amortizationType = null, ?string $taxMethod = null, ?bool $documentReceived = null, ?string $sourceDocumentUrl = null, ?array $paymentAllocations = null, ?array $trackingCategories = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null, ?array $customMappings = null, ?string $accountingPeriod = null)
+    public function __construct(?string $id = null, ?array $lineItems = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?array $attachments = null, ?string $downstreamId = null, ?string $displayId = null, ?string $billNumber = null, ?LinkedSupplier $supplier = null, ?string $companyId = null, ?LinkedSubsidiary $subsidiary = null, ?string $locationId = null, ?string $departmentId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?LocalDate $billDate = null, ?LocalDate $dueDate = null, ?LocalDate $paidDate = null, ?string $poNumber = null, ?string $reference = null, ?string $terms = null, ?string $termsId = null, ?float $balance = null, ?float $deposit = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?string $taxCode = null, ?string $notes = null, ?BillStatus $status = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?float $discountPercentage = null, ?string $templateId = null, ?string $approvedBy = null, ?AmortizationType $amortizationType = null, ?string $taxMethod = null, ?bool $documentReceived = null, ?string $sourceDocumentUrl = null, ?array $paymentAllocations = null, ?array $trackingCategories = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null, ?array $customMappings = null, ?string $accountingPeriod = null)
     {
         $this->id = $id;
         $this->lineItems = $lineItems;
@@ -557,6 +567,7 @@ class Bill
         $this->billNumber = $billNumber;
         $this->supplier = $supplier;
         $this->companyId = $companyId;
+        $this->subsidiary = $subsidiary;
         $this->locationId = $locationId;
         $this->departmentId = $departmentId;
         $this->currency = $currency;

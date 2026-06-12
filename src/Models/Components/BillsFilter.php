@@ -35,15 +35,25 @@ class BillsFilter
     public ?BillsFilterStatus $status = null;
 
     /**
+     * Filter by the subsidiary (legal entity) the record belongs to. Only honored on connectors that support multi-entity scoping (e.g. NetSuite OneWorld); ignored elsewhere.
+     *
+     * @var ?string $subsidiaryId
+     */
+    #[SpeakeasyMetadata('queryParam:name=subsidiary_id')]
+    public ?string $subsidiaryId = null;
+
+    /**
      * @param  ?string  $idSince
      * @param  ?\DateTime  $updatedSince
      * @param  ?\Apideck\Unify\Models\Components\BillsFilterStatus  $status
+     * @param  ?string  $subsidiaryId
      * @phpstan-pure
      */
-    public function __construct(?string $idSince = null, ?\DateTime $updatedSince = null, ?BillsFilterStatus $status = null)
+    public function __construct(?string $idSince = null, ?\DateTime $updatedSince = null, ?BillsFilterStatus $status = null, ?string $subsidiaryId = null)
     {
         $this->idSince = $idSince;
         $this->updatedSince = $updatedSince;
         $this->status = $status;
+        $this->subsidiaryId = $subsidiaryId;
     }
 }

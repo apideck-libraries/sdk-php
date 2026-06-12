@@ -34,15 +34,25 @@ class ExpenseReportsFilter
     public ?string $employeeId = null;
 
     /**
+     * Filter by the subsidiary (legal entity) the record belongs to. Only honored on connectors that support multi-entity scoping (e.g. NetSuite OneWorld); ignored elsewhere.
+     *
+     * @var ?string $subsidiaryId
+     */
+    #[SpeakeasyMetadata('queryParam:name=subsidiary_id')]
+    public ?string $subsidiaryId = null;
+
+    /**
      * @param  ?\DateTime  $updatedSince
      * @param  ?\Apideck\Unify\Models\Components\ExpenseReportsFilterStatus  $status
      * @param  ?string  $employeeId
+     * @param  ?string  $subsidiaryId
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedSince = null, ?ExpenseReportsFilterStatus $status = null, ?string $employeeId = null)
+    public function __construct(?\DateTime $updatedSince = null, ?ExpenseReportsFilterStatus $status = null, ?string $employeeId = null, ?string $subsidiaryId = null)
     {
         $this->updatedSince = $updatedSince;
         $this->status = $status;
         $this->employeeId = $employeeId;
+        $this->subsidiaryId = $subsidiaryId;
     }
 }

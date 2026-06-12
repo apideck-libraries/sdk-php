@@ -97,6 +97,15 @@ class JournalEntryInput
     public ?string $companyId = null;
 
     /**
+     *
+     * @var ?\Apideck\Unify\Models\Components\LinkedSubsidiaryInput $subsidiary
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiary')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedSubsidiaryInput|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedSubsidiaryInput $subsidiary = null;
+
+    /**
      * Journal entry status
      *
      * @var ?\Apideck\Unify\Models\Components\JournalEntryStatus $status
@@ -217,6 +226,7 @@ class JournalEntryInput
      * @param  ?float  $currencyRate
      * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?string  $companyId
+     * @param  ?\Apideck\Unify\Models\Components\LinkedSubsidiaryInput  $subsidiary
      * @param  ?\Apideck\Unify\Models\Components\JournalEntryStatus  $status
      * @param  ?string  $memo
      * @param  ?string  $journalSymbol
@@ -231,7 +241,7 @@ class JournalEntryInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?array $lineItems = null, ?\DateTime $postedAt = null, ?array $customFields = null, ?array $passThrough = null, ?string $displayId = null, ?string $title = null, ?float $currencyRate = null, ?Currency $currency = null, ?string $companyId = null, ?JournalEntryStatus $status = null, ?string $memo = null, ?string $journalSymbol = null, ?string $taxType = null, ?string $taxCode = null, ?string $number = null, ?array $trackingCategories = null, ?string $accountingPeriod = null, ?bool $taxInclusive = null, ?string $sourceType = null, ?string $sourceId = null, ?string $rowVersion = null)
+    public function __construct(?array $lineItems = null, ?\DateTime $postedAt = null, ?array $customFields = null, ?array $passThrough = null, ?string $displayId = null, ?string $title = null, ?float $currencyRate = null, ?Currency $currency = null, ?string $companyId = null, ?LinkedSubsidiaryInput $subsidiary = null, ?JournalEntryStatus $status = null, ?string $memo = null, ?string $journalSymbol = null, ?string $taxType = null, ?string $taxCode = null, ?string $number = null, ?array $trackingCategories = null, ?string $accountingPeriod = null, ?bool $taxInclusive = null, ?string $sourceType = null, ?string $sourceId = null, ?string $rowVersion = null)
     {
         $this->lineItems = $lineItems;
         $this->postedAt = $postedAt;
@@ -242,6 +252,7 @@ class JournalEntryInput
         $this->currencyRate = $currencyRate;
         $this->currency = $currency;
         $this->companyId = $companyId;
+        $this->subsidiary = $subsidiary;
         $this->status = $status;
         $this->memo = $memo;
         $this->journalSymbol = $journalSymbol;
