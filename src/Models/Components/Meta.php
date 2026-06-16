@@ -32,13 +32,24 @@ class Meta
     public ?Cursors $cursors = null;
 
     /**
+     * Number of records available in total for this resource
+     *
+     * @var ?int $totalCount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('total_count')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?int $totalCount = null;
+
+    /**
      * @param  ?int  $itemsOnPage
      * @param  ?\Apideck\Unify\Models\Components\Cursors  $cursors
+     * @param  ?int  $totalCount
      * @phpstan-pure
      */
-    public function __construct(?int $itemsOnPage = null, ?Cursors $cursors = null)
+    public function __construct(?int $itemsOnPage = null, ?Cursors $cursors = null, ?int $totalCount = null)
     {
         $this->itemsOnPage = $itemsOnPage;
         $this->cursors = $cursors;
+        $this->totalCount = $totalCount;
     }
 }
