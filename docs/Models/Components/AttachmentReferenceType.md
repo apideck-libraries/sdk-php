@@ -3,9 +3,10 @@
 
 ## Values
 
-| Name      | Value     |
-| --------- | --------- |
-| `Invoice` | invoice   |
-| `Bill`    | bill      |
-| `Expense` | expense   |
-| `Quote`   | quote     |
+| Name            | Value           |
+| --------------- | --------------- |
+| `Invoice`       | invoice         |
+| `Bill`          | bill            |
+| `Expense`       | expense         |
+| `ExpenseReport` | expense-report  |
+| `Quote`         | quote           |
