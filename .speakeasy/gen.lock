@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: f0a6d0b9d5a4d6d2b6fb63d849fefac3
-  docVersion: 10.24.43
-  speakeasyVersion: 1.778.0
-  generationVersion: 2.904.2
-  releaseVersion: 0.18.10
-  configChecksum: d10ef074d9ccbf6fce49f91281579724
+  docChecksum: 554718be0d800287c855ef2a0a35edb4
+  docVersion: 10.24.44
+  speakeasyVersion: 1.784.0
+  generationVersion: 2.911.0
+  releaseVersion: 0.18.11
+  configChecksum: 9d1a5771a504e08cdf98fb527660647e
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: b8934bd6-aed2-4b78-947c-164c6c98f4b1
-  pristine_commit_hash: 88c167689aaf5a5faadc19229f260727151ae0db
-  pristine_tree_hash: b58e1f17b1c1b973e0870de065c2fa71d47f32cb
+  generation_id: f52e1551-181a-42ac-b42e-e7311bb2d816
+  pristine_commit_hash: cb24bd684bdfafb994b4048dc5ea566b6db22e2e
+  pristine_tree_hash: d0132ebd1f7ceeb8544af9996846067c6805ef4b
 features:
   php:
     additionalProperties: 0.1.0
@@ -35,7 +35,7 @@ features:
     nullables: 1.0.1
     pagination: 0.1.5
     responseFormat: 0.1.0
-    retries: 0.1.1
+    retries: 0.1.2
     typeOverrides: 2.81.1
     unions: 0.1.8
 trackedFiles:
@@ -1485,8 +1485,8 @@ trackedFiles:
     pristine_git_object: 0cf84fcdf0af22199afc08f4ce46f041b015dbbd
   docs/Models/Components/EcommerceOrder.md:
     id: fa6c83b08400
-    last_write_checksum: sha1:8e110a88711b61941c567bb3643780cccc53cbd8
-    pristine_git_object: 257691f9a81d1b0c06b279addbe6691087a8b1b3
+    last_write_checksum: sha1:c21477f8759617c1a754e1ec7ef07bfd4de406b1
+    pristine_git_object: 912713a8134472fbd051486aeb7d7d73e7f498a9
   docs/Models/Components/EcommerceOrderLineItem.md:
     id: 734ef38b666d
     last_write_checksum: sha1:b8a10fcac67a433281dc48eccaab481d23eb2519
@@ -8929,8 +8929,8 @@ trackedFiles:
     pristine_git_object: 5fbbffe4ec6c34d07a1644b737b8a96f941c7bb8
   src/Models/Components/EcommerceOrder.php:
     id: 765344813f26
-    last_write_checksum: sha1:7ed7e8b67ee6a7230f818c374bd678ee9efe0daf
-    pristine_git_object: a62e391cbddba51abefa707a71ffb62d4e8bf5f8
+    last_write_checksum: sha1:fd7bfe74d6bf5b050057e59ca60a166180811c7a
+    pristine_git_object: 04fc4d7f5174fe5e67022fadda96ab93dce8d4de
   src/Models/Components/EcommerceOrderLineItem.php:
     id: a906ae5c6201
     last_write_checksum: sha1:4e912da61543dcb504b548acdd9eefc5ea35c03e
@@ -14249,8 +14249,8 @@ trackedFiles:
     pristine_git_object: 1b84a996bbe4b1742310466f6289fde44ac8a13c
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:c4b3d9f96143932863c24faca26210962539175a
-    pristine_git_object: 8af40ca6e1b4192da4c9447c9a6de4b3dd5a55ac
+    last_write_checksum: sha1:6d640fb4c9c87da37b737dee5c2b35e1700f8aa6
+    pristine_git_object: c54df94efa7d394bd23dfe4e3854bfd7e426b9b7
   src/Sessions.php:
     id: 7f6ea05b19ca
     last_write_checksum: sha1:49fed08b188438bf50f8af86d8631d9f3bf3cd5f
@@ -14401,8 +14401,8 @@ trackedFiles:
     pristine_git_object: 473d43d19011d09043dfc99146af3842a867c9e2
   src/Utils/Retry/RetryUtils.php:
     id: 28597380e832
-    last_write_checksum: sha1:641075ce04cee7c59518b4fba6910f6a46eefaf7
-    pristine_git_object: 4666efab8fe320bca2fb2106f775e7848dc270fd
+    last_write_checksum: sha1:9bf44f9b888f95eaff9382869aa59312b943ae70
+    pristine_git_object: 9dd098ba0c34777b9a2bf403258f84c461f35e23
   src/Utils/Retry/TemporaryError.php:
     id: d58c3851b91f
     last_write_checksum: sha1:ca7161a1092ea8590bea051e80a1f8abe08fe7ea
@@ -22991,7 +22991,7 @@ examples:
           x-apideck-service-id: "salesforce"
       responses:
         "200":
-          application/json: {"status_code": 200, "status": "OK", "service": "shopify", "resource": "orders", "operation": "one", "data": {"id": "12345", "order_number": "123456789", "currency": "USD", "discounts": [{"code": "SUMMER20", "amount": "5.99", "percentage": "0.1"}], "sub_total": "45.17", "shipping_cost": "5.17", "coupon_discount": "5.5", "total_discount": "5.5", "total_tax": "5.16", "total_amount": "50.17", "refunded_amount": "5.5", "status": "active", "payment_status": "paid", "fulfillment_status": "shipped", "payment_method": "credit_card", "customer": {"id": "12345", "name": "John Doe", "first_name": "John", "last_name": "Doe", "company_name": "Acme Inc.", "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}]}, "billing_address": {"line1": "123 Main Street", "line2": "Apt 1", "company_name": "Acme Inc.", "city": "New York", "state": "NY", "postal_code": "10001", "country": "US"}, "shipping_address": {"line1": "123 Main Street", "line2": "Apt 1", "company_name": "Acme Inc.", "city": "New York", "state": "NY", "postal_code": "10001", "country": "US"}, "tracking": [{"provider": "UPS", "number": "1Z9999999999999999", "url": "https://www.ups.com/track?tracknum=1Z9999999999999999", "updated_at": "2020-09-30T07:43:32.000Z"}], "line_items": [{"id": "12345", "product_id": "def456", "variant_id": "ghi789", "sku": "MBP123-16GB-SILVER-13", "name": "Midnight 16inch MacBook Pro", "description": "Powerful and portable, the MacBook Pro is perfect for professionals and creatives.", "options": [{"id": "jkl012", "name": "Color", "value": "Silver"}], "quantity": "2", "unit_price": "19.99", "tax_rate": "0.08", "tax_amount": "1.6", "is_refunded": false, "refunded_amount": "0", "refunded_quantity": "0", "sub_total": "43.18", "total_amount": "43.18", "discounts": [{"code": "SUMMER20", "amount": "5.99", "percentage": "0.1"}]}], "note": "Special instructions for delivery", "refunds": [{"id": "12345", "amount": "100", "currency": "USD", "reason": "Customer requested a refund", "created_at": "2020-09-30T07:43:32.000Z"}], "created_at": "2020-09-30T07:43:32.000Z", "updated_at": "2020-09-30T07:43:32.000Z"}}
+          application/json: {"status_code": 200, "status": "OK", "service": "shopify", "resource": "orders", "operation": "one", "data": {"id": "12345", "order_number": "123456789", "currency": "USD", "discounts": [{"code": "SUMMER20", "amount": "5.99", "percentage": "0.1"}], "sub_total": "45.17", "shipping_cost": "5.17", "coupon_discount": "5.5", "total_discount": "5.5", "total_tax": "5.16", "total_amount": "50.17", "refunded_amount": "5.5", "tax_inclusive": true, "status": "active", "payment_status": "paid", "fulfillment_status": "shipped", "payment_method": "credit_card", "customer": {"id": "12345", "name": "John Doe", "first_name": "John", "last_name": "Doe", "company_name": "Acme Inc.", "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}]}, "billing_address": {"line1": "123 Main Street", "line2": "Apt 1", "company_name": "Acme Inc.", "city": "New York", "state": "NY", "postal_code": "10001", "country": "US"}, "shipping_address": {"line1": "123 Main Street", "line2": "Apt 1", "company_name": "Acme Inc.", "city": "New York", "state": "NY", "postal_code": "10001", "country": "US"}, "tracking": [{"provider": "UPS", "number": "1Z9999999999999999", "url": "https://www.ups.com/track?tracknum=1Z9999999999999999", "updated_at": "2020-09-30T07:43:32.000Z"}], "line_items": [{"id": "12345", "product_id": "def456", "variant_id": "ghi789", "sku": "MBP123-16GB-SILVER-13", "name": "Midnight 16inch MacBook Pro", "description": "Powerful and portable, the MacBook Pro is perfect for professionals and creatives.", "options": [{"id": "jkl012", "name": "Color", "value": "Silver"}], "quantity": "2", "unit_price": "19.99", "tax_rate": "0.08", "tax_amount": "1.6", "is_refunded": false, "refunded_amount": "0", "refunded_quantity": "0", "sub_total": "43.18", "total_amount": "43.18", "discounts": [{"code": "SUMMER20", "amount": "5.99", "percentage": "0.1"}]}], "note": "Special instructions for delivery", "refunds": [{"id": "12345", "amount": "100", "currency": "USD", "reason": "Customer requested a refund", "created_at": "2020-09-30T07:43:32.000Z"}], "created_at": "2020-09-30T07:43:32.000Z", "updated_at": "2020-09-30T07:43:32.000Z"}}
         "400":
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
         "401":
@@ -30903,7 +30903,10 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `apideck->accounting->attachments->list()`: \n  *  `request->referenceType` **Changed**\n  *  `response` **Changed** (Breaking ⚠️)\n* `apideck->accounting->attachments->get()`: \n  *  `request->referenceType` **Changed**\n  *  `response.data->reference->type->enum(expenseReport)` **Added** (Breaking ⚠️)\n* `apideck->crm->contacts->list()`:  `response.meta->totalCount` **Added**\n* `apideck->ecommerce->products->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->invoiceItems->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->creditNotes->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->customers->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->suppliers->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->payments->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->refunds->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->companies->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->journalEntries->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->taxRates->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->purchaseOrders->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->subsidiaries->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->locations->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->departments->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->invoices->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->attachments->upload()`: \n  *  `request->referenceType` **Changed**\n* `apideck->accounting->bills->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->attachments->delete()`: \n  *  `request->referenceType` **Changed**\n* `apideck->accounting->attachments->download()`: \n  *  `request->referenceType` **Changed**\n* `apideck->accounting->bankAccounts->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->trackingCategories->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->billPayments->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->expenses->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->bankFeedAccounts->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->bankFeedStatements->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->categories->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->quotes->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->projects->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->employees->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->expenseCategories->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->expenseReports->list()`:  `response.meta->totalCount` **Added**\n* `apideck->ats->jobs->list()`:  `response.meta->totalCount` **Added**\n* `apideck->ats->applicants->list()`:  `response.meta->totalCount` **Added**\n* `apideck->crm->leads->list()`:  `response.meta->totalCount` **Added**\n* `apideck->crm->companies->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->generalLedgerTransactions->list()`:  `response.meta->totalCount` **Added**\n* `apideck->accounting->ledgerAccounts->list()`:  `response.meta->totalCount` **Added**\n* `apideck->ats->applications->list()`:  `response.meta->totalCount` **Added**\n* `apideck->crm->pipelines->list()`:  `response.meta->totalCount` **Added**\n* `apideck->crm->notes->list()`:  `response.meta->totalCount` **Added**\n* `apideck->crm->users->list()`:  `response.meta->totalCount` **Added**\n* `apideck->crm->activities->list()`:  `response.meta->totalCount` **Added**\n* `apideck->crm->customObjectSchemas->list()`:  `response.meta->totalCount` **Added**\n* `apideck->crm->customObjects->list()`:  `response.meta->totalCount` **Added**\n* `apideck->ecommerce->orders->list()`:  `response.meta->totalCount` **Added**\n* `apideck->crm->opportunities->list()`:  `response.meta->totalCount` **Added**\n* `apideck->ecommerce->customers->list()`:  `response.meta->totalCount` **Added**\n* `apideck->filestorage->files->list()`:  `response.meta->totalCount` **Added**\n* `apideck->filestorage->files->search()`:  `response.meta->totalCount` **Added**\n* `apideck->filestorage->sharedLinks->list()`:  `response.meta->totalCount` **Added**\n* `apideck->filestorage->drives->list()`:  `response.meta->totalCount` **Added**\n* `apideck->filestorage->driveGroups->list()`:  `response.meta->totalCount` **Added**\n* `apideck->hris->employees->list()`:  `response.meta->totalCount` **Added**\n* `apideck->hris->companies->list()`:  `response.meta->totalCount` **Added**\n* `apideck->hris->departments->list()`:  `response.meta->totalCount` **Added**\n* `apideck->hris->timeOffRequests->list()`:  `response.meta->totalCount` **Added**\n* `apideck->sms->messages->list()`:  `response.meta->totalCount` **Added**\n* `apideck->issuetracking->collections->list()`:  `response.meta->totalCount` **Added**\n* `apideck->issuetracking->collectionTickets->list()`:  `response.meta->totalCount` **Added**\n* `apideck->issuetracking->collectionTicketComments->list()`:  `response.meta->totalCount` **Added**\n* `apideck->issuetracking->collectionUsers->list()`:  `response.meta->totalCount` **Added**\n* `apideck->issuetracking->collectionTags->list()`:  `response.meta->totalCount` **Added**\n* `apideck->connector->connectors->list()`:  `response.meta->totalCount` **Added**\n* `apideck->connector->connectors->get()`:  `response.meta->totalCount` **Added**\n* `apideck->connector->connectorResources->get()`:  `response.meta->totalCount` **Added**\n* `apideck->connector->apis->list()`:  `response.meta->totalCount` **Added**\n* `apideck->connector->apis->get()`:  `response.meta->totalCount` **Added**\n* `apideck->connector->apiResources->get()`:  `response.meta->totalCount` **Added**\n* `apideck->connector->apiResourceCoverage->get()`:  `response.meta->totalCount` **Added**\n* `apideck->vault->consumers->list()`:  `response.meta->totalCount` **Added**\n* `apideck->vault->logs->list()`:  `response.meta->totalCount` **Added**\n* `apideck->webhook->webhooks->list()`:  `response.meta->totalCount` **Added**\n* `apideck->webhook->eventLogs->list()`:  `response.meta->totalCount` **Added**\n"
+releaseNotes: |
+  ## Php SDK Changes:
+  * `apideck->ecommerce->orders->list()`:  `response.data[]->taxInclusive` **Added**
+  * `apideck->ecommerce->orders->get()`:  `response.data->taxInclusive` **Added**
 generatedFiles:
   - .gitattributes
   - USAGE.md
