@@ -172,6 +172,15 @@ class EcommerceOrder
     public ?string $refundedAmount = null;
 
     /**
+     * Indicates whether the order's monetary amounts are inclusive of tax.
+     *
+     * @var ?bool $taxInclusive
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_inclusive')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $taxInclusive = null;
+
+    /**
      * Current status of the order.
      *
      * @var ?\Apideck\Unify\Models\Components\EcommerceOrderStatus $status
@@ -265,6 +274,7 @@ class EcommerceOrder
      * @param  ?string  $totalTax
      * @param  ?string  $totalAmount
      * @param  ?string  $refundedAmount
+     * @param  ?bool  $taxInclusive
      * @param  ?\Apideck\Unify\Models\Components\EcommerceOrderStatus  $status
      * @param  ?\Apideck\Unify\Models\Components\EcommerceOrderPaymentStatus  $paymentStatus
      * @param  ?\Apideck\Unify\Models\Components\FulfillmentStatus  $fulfillmentStatus
@@ -275,7 +285,7 @@ class EcommerceOrder
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, ?array $discounts = null, ?LinkedEcommerceCustomer $customer = null, ?EcommerceAddress $billingAddress = null, ?EcommerceAddress $shippingAddress = null, ?array $tracking = null, ?array $lineItems = null, ?array $refunds = null, ?string $orderNumber = null, ?Currency $currency = null, ?string $subTotal = null, ?string $shippingCost = null, ?string $couponDiscount = null, ?string $totalDiscount = null, ?string $totalTax = null, ?string $totalAmount = null, ?string $refundedAmount = null, ?EcommerceOrderStatus $status = null, ?EcommerceOrderPaymentStatus $paymentStatus = null, ?FulfillmentStatus $fulfillmentStatus = null, ?string $paymentMethod = null, ?string $note = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(string $id, ?array $discounts = null, ?LinkedEcommerceCustomer $customer = null, ?EcommerceAddress $billingAddress = null, ?EcommerceAddress $shippingAddress = null, ?array $tracking = null, ?array $lineItems = null, ?array $refunds = null, ?string $orderNumber = null, ?Currency $currency = null, ?string $subTotal = null, ?string $shippingCost = null, ?string $couponDiscount = null, ?string $totalDiscount = null, ?string $totalTax = null, ?string $totalAmount = null, ?string $refundedAmount = null, ?bool $taxInclusive = null, ?EcommerceOrderStatus $status = null, ?EcommerceOrderPaymentStatus $paymentStatus = null, ?FulfillmentStatus $fulfillmentStatus = null, ?string $paymentMethod = null, ?string $note = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
         $this->discounts = $discounts;
@@ -294,6 +304,7 @@ class EcommerceOrder
         $this->totalTax = $totalTax;
         $this->totalAmount = $totalAmount;
         $this->refundedAmount = $refundedAmount;
+        $this->taxInclusive = $taxInclusive;
         $this->status = $status;
         $this->paymentStatus = $paymentStatus;
         $this->fulfillmentStatus = $fulfillmentStatus;
