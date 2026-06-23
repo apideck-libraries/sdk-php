@@ -37,6 +37,16 @@ class GetConnectionResponse
     public Connection $data;
 
     /**
+     * Response metadata
+     *
+     * @var ?\Apideck\Unify\Models\Components\Meta $meta
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('meta')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Meta|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Meta $meta = null;
+
+    /**
      * Raw response from the integration when raw=true query param is provided
      *
      * @var ?array<string, mixed> $raw
@@ -50,14 +60,16 @@ class GetConnectionResponse
      * @param  int  $statusCode
      * @param  string  $status
      * @param  \Apideck\Unify\Models\Components\Connection  $data
+     * @param  ?\Apideck\Unify\Models\Components\Meta  $meta
      * @param  ?array<string, mixed>  $raw
      * @phpstan-pure
      */
-    public function __construct(int $statusCode, string $status, Connection $data, ?array $raw = null)
+    public function __construct(int $statusCode, string $status, Connection $data, ?Meta $meta = null, ?array $raw = null)
     {
         $this->statusCode = $statusCode;
         $this->status = $status;
         $this->data = $data;
+        $this->meta = $meta;
         $this->raw = $raw;
     }
 }

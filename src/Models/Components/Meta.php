@@ -41,15 +41,27 @@ class Meta
     public ?int $totalCount = null;
 
     /**
+     * Non-fatal warnings emitted when optional workflow steps failed. Present only when at least one step degraded; the response status remains 200.
+     *
+     * @var ?array<\Apideck\Unify\Models\Components\Warnings> $warnings
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('warnings')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Warnings>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $warnings = null;
+
+    /**
      * @param  ?int  $itemsOnPage
      * @param  ?\Apideck\Unify\Models\Components\Cursors  $cursors
      * @param  ?int  $totalCount
+     * @param  ?array<\Apideck\Unify\Models\Components\Warnings>  $warnings
      * @phpstan-pure
      */
-    public function __construct(?int $itemsOnPage = null, ?Cursors $cursors = null, ?int $totalCount = null)
+    public function __construct(?int $itemsOnPage = null, ?Cursors $cursors = null, ?int $totalCount = null, ?array $warnings = null)
     {
         $this->itemsOnPage = $itemsOnPage;
         $this->cursors = $cursors;
         $this->totalCount = $totalCount;
+        $this->warnings = $warnings;
     }
 }
