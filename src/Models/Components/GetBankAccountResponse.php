@@ -64,15 +64,26 @@ class GetBankAccountResponse
     public ?string $operation = null;
 
     /**
+     * Response metadata
+     *
+     * @var ?\Apideck\Unify\Models\Components\Meta $meta
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('meta')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Meta|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Meta $meta = null;
+
+    /**
      * @param  int  $statusCode
      * @param  string  $status
      * @param  \Apideck\Unify\Models\Components\AccountingBankAccount  $data
      * @param  ?string  $service
      * @param  ?string  $resource
      * @param  ?string  $operation
+     * @param  ?\Apideck\Unify\Models\Components\Meta  $meta
      * @phpstan-pure
      */
-    public function __construct(int $statusCode, string $status, AccountingBankAccount $data, ?string $service = null, ?string $resource = null, ?string $operation = null)
+    public function __construct(int $statusCode, string $status, AccountingBankAccount $data, ?string $service = null, ?string $resource = null, ?string $operation = null, ?Meta $meta = null)
     {
         $this->statusCode = $statusCode;
         $this->status = $status;
@@ -80,5 +91,6 @@ class GetBankAccountResponse
         $this->service = $service;
         $this->resource = $resource;
         $this->operation = $operation;
+        $this->meta = $meta;
     }
 }

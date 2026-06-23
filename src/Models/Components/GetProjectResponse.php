@@ -61,15 +61,26 @@ class GetProjectResponse
     public Project $data;
 
     /**
+     * Response metadata
+     *
+     * @var ?\Apideck\Unify\Models\Components\Meta $meta
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('meta')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Meta|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Meta $meta = null;
+
+    /**
      * @param  int  $statusCode
      * @param  string  $status
      * @param  string  $service
      * @param  string  $resource
      * @param  string  $operation
      * @param  \Apideck\Unify\Models\Components\Project  $data
+     * @param  ?\Apideck\Unify\Models\Components\Meta  $meta
      * @phpstan-pure
      */
-    public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, Project $data)
+    public function __construct(int $statusCode, string $status, string $service, string $resource, string $operation, Project $data, ?Meta $meta = null)
     {
         $this->statusCode = $statusCode;
         $this->status = $status;
@@ -77,5 +88,6 @@ class GetProjectResponse
         $this->resource = $resource;
         $this->operation = $operation;
         $this->data = $data;
+        $this->meta = $meta;
     }
 }
