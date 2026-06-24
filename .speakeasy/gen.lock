@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 6ad19facc815e8f35d0053f29d8237df
+  docChecksum: 68923650e7b6b6c6878542d9fbc5f950
   docVersion: 10.24.45
-  speakeasyVersion: 1.784.1
-  generationVersion: 2.911.3
-  releaseVersion: 0.18.12
-  configChecksum: 96b5a99f9e4ff8841934b61b6da1dc7b
+  speakeasyVersion: 1.785.0
+  generationVersion: 2.912.1
+  releaseVersion: 0.18.13
+  configChecksum: 12769d7bcd63387c9d0624481a8fc3a0
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: b7cbddbe-e427-41a5-9124-fc5a12d9ee4f
-  pristine_commit_hash: eedcb2f62705696fa7ef4a826d4c490d9dedd449
-  pristine_tree_hash: e14025302bce3d183f5d7805f8657bc3136760bb
+  generation_id: 82537bf7-804a-4bbf-8e77-51661cdf42d2
+  pristine_commit_hash: f0943e4d4b89cd914173445c729b6cfccffbaecb
+  pristine_tree_hash: 8e3b61343d027b2318200e01ffc25311a86fae65
 features:
   php:
     additionalProperties: 0.1.0
@@ -14257,8 +14257,8 @@ trackedFiles:
     pristine_git_object: 1b84a996bbe4b1742310466f6289fde44ac8a13c
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:00d42a06da37e47ddc4f87bb13cbeacf3ffe8d03
-    pristine_git_object: 7f3c19737028e2230a1fec9e5a3240d54b4d6952
+    last_write_checksum: sha1:8a5f6d413a0bb3bcd2017b76d259a4f0fd12d996
+    pristine_git_object: c8f14030386e2c4c62a26701c3fe6a7f99769f8e
   src/Sessions.php:
     id: 7f6ea05b19ca
     last_write_checksum: sha1:49fed08b188438bf50f8af86d8631d9f3bf3cd5f
@@ -30911,155 +30911,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Php SDK Changes:
-  * `apideck->accounting->taxRates->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->taxRates->get()`:  `response.meta` **Added**
-  * `apideck->accounting->bills->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->bills->get()`:  `response.meta` **Added**
-  * `apideck->accounting->invoices->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->invoices->get()`:  `response.meta` **Added**
-  * `apideck->accounting->ledgerAccounts->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->ledgerAccounts->get()`:  `response.meta` **Added**
-  * `apideck->accounting->invoiceItems->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->invoiceItems->get()`:  `response.meta` **Added**
-  * `apideck->accounting->creditNotes->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->creditNotes->get()`:  `response.meta` **Added**
-  * `apideck->accounting->customers->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->customers->get()`:  `response.meta` **Added**
-  * `apideck->accounting->suppliers->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->suppliers->get()`:  `response.meta` **Added**
-  * `apideck->accounting->payments->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->payments->get()`:  `response.meta` **Added**
-  * `apideck->accounting->refunds->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->refunds->get()`:  `response.meta` **Added**
-  * `apideck->accounting->companyInfo->get()`:  `response.meta` **Added**
-  * `apideck->accounting->companies->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->balanceSheet->get()`:  `response.meta` **Added**
-  * `apideck->accounting->profitAndLoss->get()`:  `response.meta` **Added**
-  * `apideck->accounting->journalEntries->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->journalEntries->get()`:  `response.meta` **Added**
-  * `apideck->accounting->generalLedgerTransactions->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->generalLedgerTransactions->get()`:  `response.meta` **Added**
-  * `apideck->accounting->purchaseOrders->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->purchaseOrders->get()`:  `response.meta` **Added**
-  * `apideck->accounting->subsidiaries->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->subsidiaries->get()`:  `response.meta` **Added**
-  * `apideck->accounting->locations->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->locations->get()`:  `response.meta` **Added**
-  * `apideck->accounting->departments->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->departments->get()`:  `response.meta` **Added**
-  * `apideck->accounting->attachments->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->attachments->get()`:  `response.meta` **Added**
-  * `apideck->accounting->bankAccounts->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->bankAccounts->get()`:  `response.meta` **Added**
-  * `apideck->accounting->trackingCategories->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->trackingCategories->get()`:  `response.meta` **Added**
-  * `apideck->accounting->billPayments->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->billPayments->get()`:  `response.meta` **Added**
-  * `apideck->accounting->expenses->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->expenses->get()`:  `response.meta` **Added**
-  * `apideck->accounting->agedCreditors->get()`:  `response.meta` **Added**
-  * `apideck->accounting->agedDebtors->get()`:  `response.meta` **Added**
-  * `apideck->accounting->bankFeedAccounts->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->bankFeedAccounts->get()`:  `response.meta` **Added**
-  * `apideck->accounting->bankFeedStatements->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->bankFeedStatements->get()`:  `response.meta` **Added**
-  * `apideck->accounting->categories->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->categories->get()`:  `response.meta` **Added**
-  * `apideck->accounting->quotes->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->quotes->get()`:  `response.meta` **Added**
-  * `apideck->accounting->projects->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->projects->get()`:  `response.meta` **Added**
-  * `apideck->accounting->employees->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->employees->get()`:  `response.meta` **Added**
-  * `apideck->accounting->expenseCategories->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->expenseCategories->get()`:  `response.meta` **Added**
-  * `apideck->accounting->expenseReports->list()`:  `response.meta->warnings` **Added**
-  * `apideck->accounting->expenseReports->get()`:  `response.meta` **Added**
-  * `apideck->ats->jobs->list()`:  `response.meta->warnings` **Added**
-  * `apideck->ats->jobs->get()`:  `response.meta` **Added**
-  * `apideck->ats->applicants->list()`:  `response.meta->warnings` **Added**
-  * `apideck->ats->applicants->get()`:  `response.meta` **Added**
-  * `apideck->ats->applications->list()`:  `response.meta->warnings` **Added**
-  * `apideck->ats->applications->get()`:  `response.meta` **Added**
-  * `apideck->crm->companies->list()`:  `response.meta->warnings` **Added**
-  * `apideck->crm->companies->get()`:  `response.meta` **Added**
-  * `apideck->crm->contacts->list()`:  `response.meta->warnings` **Added**
-  * `apideck->crm->contacts->get()`:  `response.meta` **Added**
-  * `apideck->crm->opportunities->list()`:  `response.meta->warnings` **Added**
-  * `apideck->crm->opportunities->get()`:  `response.meta` **Added**
-  * `apideck->crm->leads->list()`:  `response.meta->warnings` **Added**
-  * `apideck->crm->leads->get()`:  `response.meta` **Added**
-  * `apideck->crm->pipelines->list()`:  `response.meta->warnings` **Added**
-  * `apideck->crm->pipelines->get()`:  `response.meta` **Added**
-  * `apideck->crm->notes->list()`:  `response.meta->warnings` **Added**
-  * `apideck->crm->notes->get()`:  `response.meta` **Added**
-  * `apideck->crm->users->list()`:  `response.meta->warnings` **Added**
-  * `apideck->crm->users->get()`:  `response.meta` **Added**
-  * `apideck->crm->activities->list()`:  `response.meta->warnings` **Added**
-  * `apideck->crm->activities->get()`:  `response.meta` **Added**
-  * `apideck->crm->customObjectSchemas->list()`:  `response.meta->warnings` **Added**
-  * `apideck->crm->customObjectSchemas->get()`:  `response.meta` **Added**
-  * `apideck->crm->customObjects->list()`:  `response.meta->warnings` **Added**
-  * `apideck->crm->customObjects->get()`:  `response.meta` **Added**
-  * `apideck->ecommerce->orders->list()`:  `response.meta->warnings` **Added**
-  * `apideck->ecommerce->orders->get()`:  `response.meta` **Added**
-  * `apideck->ecommerce->products->list()`:  `response.meta->warnings` **Added**
-  * `apideck->ecommerce->products->get()`:  `response.meta` **Added**
-  * `apideck->ecommerce->customers->list()`:  `response.meta->warnings` **Added**
-  * `apideck->ecommerce->customers->get()`:  `response.meta` **Added**
-  * `apideck->ecommerce->stores->get()`:  `response.meta` **Added**
-  * `apideck->filestorage->files->list()`:  `response.meta->warnings` **Added**
-  * `apideck->filestorage->files->search()`:  `response.meta->warnings` **Added**
-  * `apideck->filestorage->files->get()`:  `response.meta` **Added**
-  * `apideck->filestorage->folders->get()`:  `response.meta` **Added**
-  * `apideck->filestorage->sharedLinks->list()`:  `response.meta->warnings` **Added**
-  * `apideck->filestorage->sharedLinks->get()`:  `response.meta` **Added**
-  * `apideck->filestorage->uploadSessions->get()`:  `response.meta` **Added**
-  * `apideck->filestorage->uploadSessions->finish()`:  `response.meta` **Added**
-  * `apideck->filestorage->drives->list()`:  `response.meta->warnings` **Added**
-  * `apideck->filestorage->drives->get()`:  `response.meta` **Added**
-  * `apideck->filestorage->driveGroups->list()`:  `response.meta->warnings` **Added**
-  * `apideck->filestorage->driveGroups->get()`:  `response.meta` **Added**
-  * `apideck->hris->employees->list()`:  `response.meta->warnings` **Added**
-  * `apideck->hris->employees->get()`:  `response.meta` **Added**
-  * `apideck->hris->companies->list()`:  `response.meta->warnings` **Added**
-  * `apideck->hris->companies->get()`:  `response.meta` **Added**
-  * `apideck->hris->departments->list()`:  `response.meta->warnings` **Added**
-  * `apideck->hris->departments->get()`:  `response.meta` **Added**
-  * `apideck->hris->payrolls->get()`:  `response.meta` **Added**
-  * `apideck->hris->employeePayrolls->get()`:  `response.meta` **Added**
-  * `apideck->hris->employeeSchedules->list()`:  `response.meta` **Added**
-  * `apideck->hris->timeOffRequests->list()`:  `response.meta->warnings` **Added**
-  * `apideck->hris->timeOffRequests->get()`:  `response.meta` **Added**
-  * `apideck->sms->messages->list()`:  `response.meta->warnings` **Added**
-  * `apideck->sms->messages->get()`:  `response.meta` **Added**
-  * `apideck->issuetracking->collections->list()`:  `response.meta->warnings` **Added**
-  * `apideck->issuetracking->collections->get()`:  `response.meta` **Added**
-  * `apideck->issuetracking->collectionTickets->list()`:  `response.meta->warnings` **Added**
-  * `apideck->issuetracking->collectionTickets->get()`:  `response.meta` **Added**
-  * `apideck->issuetracking->collectionTicketComments->list()`:  `response.meta->warnings` **Added**
-  * `apideck->issuetracking->collectionTicketComments->get()`:  `response.meta` **Added**
-  * `apideck->issuetracking->collectionUsers->list()`:  `response.meta->warnings` **Added**
-  * `apideck->issuetracking->collectionUsers->get()`:  `response.meta` **Added**
-  * `apideck->issuetracking->collectionTags->list()`:  `response.meta->warnings` **Added**
-  * `apideck->connector->connectors->list()`:  `response.meta->warnings` **Added**
-  * `apideck->connector->connectors->get()`:  `response.meta->warnings` **Added**
-  * `apideck->connector->connectorResources->get()`:  `response.meta->warnings` **Added**
-  * `apideck->connector->apis->list()`:  `response.meta->warnings` **Added**
-  * `apideck->connector->apis->get()`:  `response.meta->warnings` **Added**
-  * `apideck->connector->apiResources->get()`:  `response.meta->warnings` **Added**
-  * `apideck->connector->apiResourceCoverage->get()`:  `response.meta->warnings` **Added**
-  * `apideck->vault->consumers->list()`:  `response.meta->warnings` **Added**
-  * `apideck->vault->consumers->get()`:  `response.meta` **Added**
-  * `apideck->vault->connections->get()`:  `response.meta` **Added**
-  * `apideck->vault->connections->token()`:  `response.meta` **Added**
-  * `apideck->vault->connectionSettings->list()`:  `response.meta` **Added**
-  * `apideck->vault->logs->list()`:  `response.meta->warnings` **Added**
-  * `apideck->webhook->webhooks->list()`:  `response.meta->warnings` **Added**
-  * `apideck->webhook->webhooks->get()`:  `response.meta` **Added**
-  * `apideck->webhook->eventLogs->list()`:  `response.meta->warnings` **Added**
 generatedFiles:
   - .gitattributes
   - USAGE.md
