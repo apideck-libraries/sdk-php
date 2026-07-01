@@ -1,24 +1,24 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: bf75c4e39ad240fea287ca0111c6767a
+  docChecksum: 9fb172abecf9e00b87ece9a928938a58
   docVersion: 10.24.45
-  speakeasyVersion: 1.786.1
-  generationVersion: 2.913.3
-  releaseVersion: 0.18.16
-  configChecksum: cd93dc27fe3b594a11175db00acb1693
+  speakeasyVersion: 1.787.0
+  generationVersion: 2.914.0
+  releaseVersion: 0.18.17
+  configChecksum: 0576d4dfee15c32778aee9048748a5f7
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: ba682e7b-8aa2-4c53-9211-a03f53f82997
-  pristine_commit_hash: 1e7531a6f14b2fc30ef41a10cc339a4d0d710ad6
-  pristine_tree_hash: 1c293172a05214b1fecdfcc53f4109fb3b0e5706
+  generation_id: 8aea814a-b54a-4d66-b2b5-b5922dc486a0
+  pristine_commit_hash: 8784fe19d0d272da7ffde40928e2c397f5ef806a
+  pristine_tree_hash: 6220c7d518d0d8414cc5fefe6e5fea46c9762d40
 features:
   php:
     additionalProperties: 0.1.0
     constsAndDefaults: 0.2.2
-    core: 3.9.23
+    core: 3.9.24
     deepObjectParams: 0.1.0
     deprecations: 2.81.1
     errors: 0.3.1
@@ -49,8 +49,8 @@ trackedFiles:
     pristine_git_object: a93a82d6fc16f1137ae0802f279ab872b0a68e04
   composer.json:
     id: 3957b91a0d84
-    last_write_checksum: sha1:c829bdc8d65638bdd20be34026bc9e7476aaf532
-    pristine_git_object: 7700b4d76ad4146ea3f56b26d937d138bcc6cac8
+    last_write_checksum: sha1:a43777579f340bf38b576f1d1db0ee1a579f9b95
+    pristine_git_object: 423f8dd8947640bbd335fd5cc9055df7ad1c3258
   docs/Models/Components/AccountStatus.md:
     id: e56505065ab2
     last_write_checksum: sha1:4528c8b11f7d009daf45e766ba562b91a5f9dc19
@@ -14257,8 +14257,8 @@ trackedFiles:
     pristine_git_object: 1b84a996bbe4b1742310466f6289fde44ac8a13c
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:a66cded33a2111bc48bfc249de0659d313fdbcbb
-    pristine_git_object: 76c01969ed6488b470959e480d8ebb0d04d76c5b
+    last_write_checksum: sha1:50e4f674ea192ec28f8419e0f9462642bf23bc4a
+    pristine_git_object: 70cc6474d655bf296763b65deaebbdbcffb4de5d
   src/Sessions.php:
     id: 7f6ea05b19ca
     last_write_checksum: sha1:49fed08b188438bf50f8af86d8631d9f3bf3cd5f
