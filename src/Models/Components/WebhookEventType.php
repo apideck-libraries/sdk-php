@@ -142,4 +142,7 @@ enum WebhookEventType: string
     case AccountingProjectCreated = 'accounting.project.created';
     case AccountingProjectUpdated = 'accounting.project.updated';
     case AccountingProjectDeleted = 'accounting.project.deleted';
+    case AccountingTrackingCategoryCreated = 'accounting.tracking_category.created';
+    case AccountingTrackingCategoryUpdated = 'accounting.tracking_category.updated';
+    case AccountingTrackingCategoryDeleted = 'accounting.tracking_category.deleted';
 }

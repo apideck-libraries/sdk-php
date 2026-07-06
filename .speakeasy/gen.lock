@@ -1,24 +1,24 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 0255bcee6b7b46efd5ff4bb8fc8b8514
-  docVersion: 10.24.46
-  speakeasyVersion: 1.787.0
-  generationVersion: 2.914.0
-  releaseVersion: 0.18.18
-  configChecksum: 6d87a784cc2dc43d96588f20b3a6bca6
+  docChecksum: dfe6f0f5d02c51f97215a38a4147d219
+  docVersion: 10.24.47
+  speakeasyVersion: 1.788.1
+  generationVersion: 2.915.1
+  releaseVersion: 0.18.19
+  configChecksum: a60911e36baccceaacfcd8bb71e3a828
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: 1f35b363-21a6-49c0-8972-93c204bc5601
-  pristine_commit_hash: 4593f6c8d91d70e3bbe7eb17a0e321b959d4576e
-  pristine_tree_hash: 2449ff6272a362114e08f6627d05fbc01315ce4a
+  generation_id: 24fd7489-e0fe-435f-bbc0-d6b19e7567c9
+  pristine_commit_hash: 45250c126523bdb38909878e057150785b638edd
+  pristine_tree_hash: 9c9df7d10decad8a3575e987cce68e955de82742
 features:
   php:
     additionalProperties: 0.1.0
     constsAndDefaults: 0.2.2
-    core: 3.9.24
+    core: 3.9.25
     deepObjectParams: 0.1.0
     deprecations: 2.81.1
     errors: 0.3.1
@@ -2673,12 +2673,12 @@ trackedFiles:
     pristine_git_object: 062f339a606cda95fefc8f687905edec5e070ff2
   docs/Models/Components/LedgerAccountsFilter.md:
     id: 63d99e555bfb
-    last_write_checksum: sha1:d914d96ee392503166349cb7a76c4d3ba7043b90
-    pristine_git_object: 1834086df4482166d1390b73a8f647d49c53af70
+    last_write_checksum: sha1:6bbefca4cf80323a5ad6d4921c974334f776d035
+    pristine_git_object: 1e7d38c2f0b06b74d261ba519bf9bb37266ace82
   docs/Models/Components/LedgerAccountsFilterStatus.md:
     id: e57e9f6e4963
-    last_write_checksum: sha1:28543a1adb8c222fc65ab2682cf6aca24c222948
-    pristine_git_object: 800f33aae7e9696762b544745d7ab0ed8fd2c000
+    last_write_checksum: sha1:ec94b71dc779238ac99b7278ffb67db65fc19035
+    pristine_git_object: fd4021625cf750400370fcfc8b7a8e2d645d0e5a
   docs/Models/Components/LedgerAccountsSort.md:
     id: 0ede501bc33e
     last_write_checksum: sha1:77ec6523cd91453a54e17e92089859cdb98703bd
@@ -3917,16 +3917,16 @@ trackedFiles:
     pristine_git_object: 7bdda5ec81cea57adc25d4340de5c2f1c37ee67b
   docs/Models/Components/WebhookEventLogsFilter.md:
     id: 8c8b0970e09d
-    last_write_checksum: sha1:e0350c94765647033313d35c63a20334fc733b99
-    pristine_git_object: 0789c7b6f3ccf69eebef49ba80821a868d4f3f78
+    last_write_checksum: sha1:622bdce229a1920edf2e6d3dc3ac464954460300
+    pristine_git_object: 43d82b747da09b5ca6ad277d05fee47600c85f67
   docs/Models/Components/WebhookEventLogsFilterService.md:
     id: d391f609ec50
     last_write_checksum: sha1:d4f32f5148ef5dc3df4f8e31a55caaac1945000d
     pristine_git_object: 0b7c1484210eb1a1e5413c67143bc1f0e4dd6202
   docs/Models/Components/WebhookEventType.md:
     id: 234a36136da0
-    last_write_checksum: sha1:971db86da6430251f7050bcce18465373cfa6374
-    pristine_git_object: 831d8690da89c025607bb91f126c006bfc7d15b1
+    last_write_checksum: sha1:ffeb203bdfdadea111edf31c5ce883e12253d234
+    pristine_git_object: 83cdb285c9b31a3dab39c21fe538e2dbb400bdf0
   docs/Models/Components/WebhookSubscription.md:
     id: f2c87de13dad
     last_write_checksum: sha1:6597f4643a7e3821b6f7e9a5ffc0dab713589913
@@ -10113,12 +10113,12 @@ trackedFiles:
     pristine_git_object: 5941e4f544072fa04a9337f40a97a6257290fe3d
   src/Models/Components/LedgerAccountsFilter.php:
     id: 36159f03d8bf
-    last_write_checksum: sha1:0407bd4474a709c7b084bdff2d9b61fa2e1ad2b9
-    pristine_git_object: 10ebe07e7b9a8c26f1d59138e365c229e5bdea3b
+    last_write_checksum: sha1:2460492abdd6e2f1449f7c713f72fa8888e3902c
+    pristine_git_object: 25289e90414836a650e8c91a5c177f3a257f9db4
   src/Models/Components/LedgerAccountsFilterStatus.php:
     id: 81029d96ceed
-    last_write_checksum: sha1:ec9f0f6998bac19a41924ffc058fc6022c9cef37
-    pristine_git_object: 7b2be0ff327588703846d38cd9352eff01d2210d
+    last_write_checksum: sha1:882e8a0970a2dd5b6bf27036cdac0a6e4075c1a6
+    pristine_git_object: 38d63257726be2dae3b7ce8d9c46662eed1495e9
   src/Models/Components/LedgerAccountsSort.php:
     id: 44e4b243471b
     last_write_checksum: sha1:f42431d42b75bca7635580d0586aff009c14d057
@@ -11345,16 +11345,16 @@ trackedFiles:
     pristine_git_object: 474c7cb99bc780146aba2e273cb67b8879534c1a
   src/Models/Components/WebhookEventLogsFilter.php:
     id: 66c5225dc223
-    last_write_checksum: sha1:faad518b98eca2de5b3a49082864c80db6fb802b
-    pristine_git_object: 1905a8df49791fc324acdba1ca0cbc6c739eaedd
+    last_write_checksum: sha1:0edab5e1862413dfe8811743333c5f022ef26034
+    pristine_git_object: b81fdcdd9d0bb737d7e231e4089fadd6503a3fcb
   src/Models/Components/WebhookEventLogsFilterService.php:
     id: 7b9e877c7e52
     last_write_checksum: sha1:48b1438c416a082b633517934205b383f7ef866a
     pristine_git_object: 2a6e8b749dda537dcbb4bb99f7ecf7886a65882b
   src/Models/Components/WebhookEventType.php:
     id: aa6707ce7d20
-    last_write_checksum: sha1:ec0ffad8c9273a59e2f3cd12fced768949c7e77b
-    pristine_git_object: 00fb78983e87dee0d6334287daec3e423a4674fa
+    last_write_checksum: sha1:46b6317b21c0b64f81c6daaf4080714fbcf09a77
+    pristine_git_object: 3ff8a2b3543a777ebf5c6c1d1d23b4343ff63953
   src/Models/Components/WebhookSubscription.php:
     id: 0842240c30d4
     last_write_checksum: sha1:3ba085278eacacd9c83388a50d9ecb64627862af
@@ -14257,8 +14257,8 @@ trackedFiles:
     pristine_git_object: 1b84a996bbe4b1742310466f6289fde44ac8a13c
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:3e9123dcd162b790c93623812bb939f4ecfb53d5
-    pristine_git_object: faeb0eaa59f9c7e72fa9faca69b10eaf418c4b86
+    last_write_checksum: sha1:c029316dcfd23c28ea3f22fb210e9a596569c78e
+    pristine_git_object: 22cb8777e4f666f2ce5c9ffcbc0362d1841f7c93
   src/Sessions.php:
     id: 7f6ea05b19ca
     last_write_checksum: sha1:49fed08b188438bf50f8af86d8631d9f3bf3cd5f
@@ -28975,7 +28975,7 @@ examples:
       parameters:
         query:
           limit: 20
-          filter: {"exclude_apis": "vault,proxy", "consumer_id": "test_user_id", "entity_type": "Connection", "event_type": "vault.connection.callable"}
+          filter: {"exclude_apis": "vault,proxy", "consumer_id": "test_user_id", "entity_type": "Connection", "event_type": "vault.connection.callable", "start_date": "2024-01-01T00:00:00.000Z", "end_date": "2024-01-31T23:59:59.999Z", "status_code": 201, "status_codes": [200, 201, 204]}
         header:
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
       responses:
@@ -30911,6 +30911,7 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: "## Php SDK Changes:\n* `apideck->webhook->webhooks->list()`:  `response.data[]->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->create()`: \n  *  `request.createWebhookRequest->events[]` **Changed**\n  *  `response.data->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->get()`:  `response.data->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->update()`: \n  *  `request.updateWebhookRequest->events[]` **Changed**\n  *  `response.data->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->delete()`:  `response.data->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->eventLogs->list()`:  `request.filter` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md
