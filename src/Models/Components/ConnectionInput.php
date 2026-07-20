@@ -81,12 +81,12 @@ class ConnectionInput
     /**
      * Attach your own consumer specific metadata
      *
-     * @var ?array<string, mixed> $metadata
+     * @var ?\Apideck\Unify\Models\Components\ConnectionMetadataInput $metadata
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConnectionMetadataInput|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $metadata = null;
+    public ?ConnectionMetadataInput $metadata = null;
 
     /**
      * @param  ?bool  $enabled
@@ -96,10 +96,10 @@ class ConnectionInput
      * @param  ?\Apideck\Unify\Models\Components\ConsentRecordInput  $latestConsent
      * @param  ?\Apideck\Unify\Models\Components\DataScopesInput  $applicationDataScopes
      * @param  ?array<string, mixed>  $settings
-     * @param  ?array<string, mixed>  $metadata
+     * @param  ?\Apideck\Unify\Models\Components\ConnectionMetadataInput  $metadata
      * @phpstan-pure
      */
-    public function __construct(?bool $enabled = null, ?array $configuration = null, ?array $customMappings = null, ?ConsentState $consentState = null, ?ConsentRecordInput $latestConsent = null, ?DataScopesInput $applicationDataScopes = null, ?array $settings = null, ?array $metadata = null)
+    public function __construct(?bool $enabled = null, ?array $configuration = null, ?array $customMappings = null, ?ConsentState $consentState = null, ?ConsentRecordInput $latestConsent = null, ?DataScopesInput $applicationDataScopes = null, ?array $settings = null, ?ConnectionMetadataInput $metadata = null)
     {
         $this->enabled = $enabled;
         $this->configuration = $configuration;

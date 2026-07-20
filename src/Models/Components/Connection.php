@@ -360,12 +360,12 @@ class Connection
     /**
      * Attach your own consumer specific metadata
      *
-     * @var ?array<string, mixed> $metadata
+     * @var ?\Apideck\Unify\Models\Components\ConnectionMetadata $metadata
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConnectionMetadata|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $metadata = null;
+    public ?ConnectionMetadata $metadata = null;
 
     /**
      *
@@ -413,11 +413,11 @@ class Connection
      * @param  ?string  $authorizeUrl
      * @param  ?string  $revokeUrl
      * @param  ?array<string, mixed>  $settings
-     * @param  ?array<string, mixed>  $metadata
+     * @param  ?\Apideck\Unify\Models\Components\ConnectionMetadata  $metadata
      * @param  ?float  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $serviceId = null, ?string $name = null, ?string $tagLine = null, ?string $unifiedApi = null, ?ConnectionState $state = null, ?IntegrationState $integrationState = null, ?AuthType $authType = null, ?OAuthGrantType $oauthGrantType = null, ?ConnectionStatus $status = null, ?bool $enabled = null, ?string $website = null, ?string $icon = null, ?string $logo = null, ?array $formFields = null, ?array $configuration = null, ?array $configurableResources = null, ?array $resourceSchemaSupport = null, ?array $resourceSettingsSupport = null, ?bool $validationSupport = null, ?bool $schemaSupport = null, ?array $settingsRequiredForAuthorization = null, ?array $subscriptions = null, ?bool $hasGuide = null, ?array $customMappings = null, ?ConsentState $consentState = null, ?array $consents = null, ?ConsentRecord $latestConsent = null, ?DataScopes $applicationDataScopes = null, ?Health $health = null, ?float $credentialsExpireAt = null, ?float $lastRefreshFailedAt = null, ?float $lastDownstreamErrorAt = null, ?float $createdAt = null, ?string $authorizeUrl = null, ?string $revokeUrl = null, ?array $settings = null, ?array $metadata = null, ?float $updatedAt = null)
+    public function __construct(?string $id = null, ?string $serviceId = null, ?string $name = null, ?string $tagLine = null, ?string $unifiedApi = null, ?ConnectionState $state = null, ?IntegrationState $integrationState = null, ?AuthType $authType = null, ?OAuthGrantType $oauthGrantType = null, ?ConnectionStatus $status = null, ?bool $enabled = null, ?string $website = null, ?string $icon = null, ?string $logo = null, ?array $formFields = null, ?array $configuration = null, ?array $configurableResources = null, ?array $resourceSchemaSupport = null, ?array $resourceSettingsSupport = null, ?bool $validationSupport = null, ?bool $schemaSupport = null, ?array $settingsRequiredForAuthorization = null, ?array $subscriptions = null, ?bool $hasGuide = null, ?array $customMappings = null, ?ConsentState $consentState = null, ?array $consents = null, ?ConsentRecord $latestConsent = null, ?DataScopes $applicationDataScopes = null, ?Health $health = null, ?float $credentialsExpireAt = null, ?float $lastRefreshFailedAt = null, ?float $lastDownstreamErrorAt = null, ?float $createdAt = null, ?string $authorizeUrl = null, ?string $revokeUrl = null, ?array $settings = null, ?ConnectionMetadata $metadata = null, ?float $updatedAt = null)
     {
         $this->id = $id;
         $this->serviceId = $serviceId;

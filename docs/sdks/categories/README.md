@@ -38,6 +38,9 @@ $request = new Operations\AccountingCategoriesAllRequest(
     filter: new Components\CategoriesFilter(
         type: Components\CategoriesFilterType::Expense,
     ),
+    passThrough: [
+        'search' => 'San Francisco',
+    ],
 );
 
 $responses = $sdk->accounting->categories->list(

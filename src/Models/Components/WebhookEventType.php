@@ -114,6 +114,9 @@ enum WebhookEventType: string
     case HrisCompanyCreated = 'hris.company.created';
     case HrisCompanyUpdated = 'hris.company.updated';
     case HrisCompanyDeleted = 'hris.company.deleted';
+    case HrisTimeOffRequestCreated = 'hris.time-off-request.created';
+    case HrisTimeOffRequestUpdated = 'hris.time-off-request.updated';
+    case HrisTimeOffRequestDeleted = 'hris.time-off-request.deleted';
     case FileStorageFileCreated = 'file-storage.file.created';
     case FileStorageFileUpdated = 'file-storage.file.updated';
     case FileStorageFileDeleted = 'file-storage.file.deleted';
@@ -142,4 +145,7 @@ enum WebhookEventType: string
     case AccountingProjectCreated = 'accounting.project.created';
     case AccountingProjectUpdated = 'accounting.project.updated';
     case AccountingProjectDeleted = 'accounting.project.deleted';
+    case AccountingTrackingCategoryCreated = 'accounting.tracking_category.created';
+    case AccountingTrackingCategoryUpdated = 'accounting.tracking_category.updated';
+    case AccountingTrackingCategoryDeleted = 'accounting.tracking_category.deleted';
 }

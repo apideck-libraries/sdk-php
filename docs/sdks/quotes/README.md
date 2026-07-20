@@ -43,6 +43,9 @@ $request = new Operations\AccountingQuotesAllRequest(
         createdSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
         number: 'OIT00546',
     ),
+    passThrough: [
+        'search' => 'San Francisco',
+    ],
 );
 
 $responses = $sdk->accounting->quotes->list(

@@ -41,6 +41,9 @@ $request = new Operations\AccountingLocationsAllRequest(
     filter: new Components\AccountingLocationsFilter(
         subsidiary: '1',
     ),
+    passThrough: [
+        'search' => 'San Francisco',
+    ],
 );
 
 $responses = $sdk->accounting->locations->list(

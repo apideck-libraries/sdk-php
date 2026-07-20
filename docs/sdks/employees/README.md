@@ -42,6 +42,9 @@ $request = new Operations\AccountingEmployeesAllRequest(
         updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
         status: Components\AccountingEmployeesFilterStatus::Active,
     ),
+    passThrough: [
+        'search' => 'San Francisco',
+    ],
 );
 
 $responses = $sdk->accounting->employees->list(
