@@ -47,19 +47,89 @@ class WebhookEventLogsFilter
     public ?string $eventType = null;
 
     /**
+     * Filter logs at or after this ISO 8601 date-time (inclusive).
+     *
+     * @var ?\DateTime $startDate
+     */
+    #[SpeakeasyMetadata('queryParam:name=start_date,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $startDate = null;
+
+    /**
+     * Filter logs at or before this ISO 8601 date-time (inclusive). Must be on or after start_date.
+     *
+     * @var ?\DateTime $endDate
+     */
+    #[SpeakeasyMetadata('queryParam:name=end_date,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $endDate = null;
+
+    /**
+     * Filter by delivery success or failure.
+     *
+     * @var ?bool $success
+     */
+    #[SpeakeasyMetadata('queryParam:name=success')]
+    public ?bool $success = null;
+
+    /**
+     * Filter by a single HTTP status code. For backward compatibility - use status_codes for multiple values.
+     *
+     * @var ?float $statusCode
+     */
+    #[SpeakeasyMetadata('queryParam:name=status_code')]
+    public ?float $statusCode = null;
+
+    /**
+     * Filter by multiple HTTP status codes. Values must be between 100-599. Maximum 50 status codes allowed.
+     *
+     * @var ?array<float> $statusCodes
+     */
+    #[SpeakeasyMetadata('queryParam:name=status_codes')]
+    public ?array $statusCodes = null;
+
+    /**
+     * Filter by webhook event ID.
+     *
+     * @var ?string $eventId
+     */
+    #[SpeakeasyMetadata('queryParam:name=event_id')]
+    public ?string $eventId = null;
+
+    /**
+     * Filter by the delivery attempt number.
+     *
+     * @var ?float $executionAttempt
+     */
+    #[SpeakeasyMetadata('queryParam:name=execution_attempt')]
+    public ?float $executionAttempt = null;
+
+    /**
      * @param  ?string  $excludeApis
      * @param  ?\Apideck\Unify\Models\Components\WebhookEventLogsFilterService  $service
      * @param  ?string  $consumerId
      * @param  ?string  $entityType
      * @param  ?string  $eventType
+     * @param  ?\DateTime  $startDate
+     * @param  ?\DateTime  $endDate
+     * @param  ?bool  $success
+     * @param  ?float  $statusCode
+     * @param  ?array<float>  $statusCodes
+     * @param  ?string  $eventId
+     * @param  ?float  $executionAttempt
      * @phpstan-pure
      */
-    public function __construct(?string $excludeApis = null, ?WebhookEventLogsFilterService $service = null, ?string $consumerId = null, ?string $entityType = null, ?string $eventType = null)
+    public function __construct(?string $excludeApis = null, ?WebhookEventLogsFilterService $service = null, ?string $consumerId = null, ?string $entityType = null, ?string $eventType = null, ?\DateTime $startDate = null, ?\DateTime $endDate = null, ?bool $success = null, ?float $statusCode = null, ?array $statusCodes = null, ?string $eventId = null, ?float $executionAttempt = null)
     {
         $this->excludeApis = $excludeApis;
         $this->service = $service;
         $this->consumerId = $consumerId;
         $this->entityType = $entityType;
         $this->eventType = $eventType;
+        $this->startDate = $startDate;
+        $this->endDate = $endDate;
+        $this->success = $success;
+        $this->statusCode = $statusCode;
+        $this->statusCodes = $statusCodes;
+        $this->eventId = $eventId;
+        $this->executionAttempt = $executionAttempt;
     }
 }

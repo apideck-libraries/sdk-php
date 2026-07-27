@@ -41,6 +41,9 @@ $request = new Operations\AccountingDepartmentsAllRequest(
     filter: new Components\AccountingDepartmentsFilter(
         subsidiary: '1',
     ),
+    passThrough: [
+        'search' => 'San Francisco',
+    ],
 );
 
 $responses = $sdk->accounting->departments->list(

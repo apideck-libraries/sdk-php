@@ -332,6 +332,7 @@ class Subsidiaries
                             cursor: $nextCursor,
                             limit: $request != null ? $request->limit : null,
                             fields: $request != null ? $request->fields : null,
+                            passThrough: $request != null ? $request->passThrough : null,
                         ),
                     );
                 };
@@ -438,6 +439,7 @@ class Subsidiaries
                             cursor: $nextCursor,
                             limit: $request != null ? $request->limit : null,
                             fields: $request != null ? $request->fields : null,
+                            passThrough: $request != null ? $request->passThrough : null,
                         ),
                     );
                 };

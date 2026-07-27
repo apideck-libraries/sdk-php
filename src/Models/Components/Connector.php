@@ -259,6 +259,16 @@ class Connector
     public ?array $docs = null;
 
     /**
+     * Editorial overview metadata for the connector, used to render the connector's Overview documentation (implementation difficulty, partnership requirements, sandbox availability, and other at-a-glance facts).
+     *
+     * @var ?\Apideck\Unify\Models\Components\ConnectorOverview $overview
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('overview')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ConnectorOverview|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ConnectorOverview $overview = null;
+
+    /**
      *
      * @var ?\Apideck\Unify\Models\Components\TlsSupport $tlsSupport
      */
@@ -303,11 +313,12 @@ class Connector
      * @param  ?\Apideck\Unify\Models\Components\WebhookSupport  $webhookSupport
      * @param  ?\Apideck\Unify\Models\Components\SchemaSupport  $schemaSupport
      * @param  ?array<\Apideck\Unify\Models\Components\ConnectorDoc>  $docs
+     * @param  ?\Apideck\Unify\Models\Components\ConnectorOverview  $overview
      * @param  ?\Apideck\Unify\Models\Components\TlsSupport  $tlsSupport
      * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?ConnectorStatus $status = null, ?string $iconUrl = null, ?string $logoUrl = null, ?string $websiteUrl = null, ?string $signupUrl = null, ?string $partnerSignupUrl = null, ?bool $freeTrialAvailable = null, ?ConnectorAuthType $authType = null, ?bool $authOnly = null, ?bool $blindMapped = null, ?ConnectorOauthGrantType $oauthGrantType = null, ?OauthCredentialsSource $oauthCredentialsSource = null, ?array $oauthScopes = null, ?bool $customScopes = null, ?bool $hasSandboxCredentials = null, ?array $settings = null, ?string $serviceId = null, ?array $unifiedApis = null, ?array $supportedResources = null, ?array $configurableResources = null, ?array $supportedEvents = null, ?WebhookSupport $webhookSupport = null, ?SchemaSupport $schemaSupport = null, ?array $docs = null, ?TlsSupport $tlsSupport = null, ?string $description = null)
+    public function __construct(?string $id = null, ?string $name = null, ?ConnectorStatus $status = null, ?string $iconUrl = null, ?string $logoUrl = null, ?string $websiteUrl = null, ?string $signupUrl = null, ?string $partnerSignupUrl = null, ?bool $freeTrialAvailable = null, ?ConnectorAuthType $authType = null, ?bool $authOnly = null, ?bool $blindMapped = null, ?ConnectorOauthGrantType $oauthGrantType = null, ?OauthCredentialsSource $oauthCredentialsSource = null, ?array $oauthScopes = null, ?bool $customScopes = null, ?bool $hasSandboxCredentials = null, ?array $settings = null, ?string $serviceId = null, ?array $unifiedApis = null, ?array $supportedResources = null, ?array $configurableResources = null, ?array $supportedEvents = null, ?WebhookSupport $webhookSupport = null, ?SchemaSupport $schemaSupport = null, ?array $docs = null, ?ConnectorOverview $overview = null, ?TlsSupport $tlsSupport = null, ?string $description = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -335,6 +346,7 @@ class Connector
         $this->webhookSupport = $webhookSupport;
         $this->schemaSupport = $schemaSupport;
         $this->docs = $docs;
+        $this->overview = $overview;
         $this->tlsSupport = $tlsSupport;
         $this->description = $description;
     }

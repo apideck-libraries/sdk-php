@@ -223,6 +223,15 @@ class ExpenseReport
     public ?AccountingPeriod $accountingPeriod = null;
 
     /**
+     * Optional reference identifier for the transaction.
+     *
+     * @var ?string $reference
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('reference')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $reference = null;
+
+    /**
      *
      * @var ?\Apideck\Unify\Models\Components\LinkedSubsidiary $subsidiary
      */
@@ -339,6 +348,7 @@ class ExpenseReport
      * @param  ?\Apideck\Unify\Models\Components\LinkedLocation  $location
      * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $account
      * @param  ?\Apideck\Unify\Models\Components\AccountingPeriod  $accountingPeriod
+     * @param  ?string  $reference
      * @param  ?\Apideck\Unify\Models\Components\LinkedSubsidiary  $subsidiary
      * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory>  $trackingCategories
      * @param  ?bool  $taxInclusive
@@ -351,7 +361,7 @@ class ExpenseReport
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(ExpenseReportEmployee $employee, array $lineItems, ?string $id = null, ?\DateTime $transactionDate = null, ?array $customFields = null, ?array $passThrough = null, ?string $displayId = null, ?string $number = null, ?string $title = null, ?ExpenseReportStatus $status = null, ?LocalDate $postingDate = null, ?LocalDate $dueDate = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $subTotal = null, ?float $totalTax = null, ?float $totalAmount = null, ?float $reimbursableAmount = null, ?string $memo = null, ?LinkedDepartment $department = null, ?LinkedLocation $location = null, ?LinkedLedgerAccount $account = null, ?AccountingPeriod $accountingPeriod = null, ?LinkedSubsidiary $subsidiary = null, ?array $trackingCategories = null, ?bool $taxInclusive = null, ?ApprovedBy $approvedBy = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(ExpenseReportEmployee $employee, array $lineItems, ?string $id = null, ?\DateTime $transactionDate = null, ?array $customFields = null, ?array $passThrough = null, ?string $displayId = null, ?string $number = null, ?string $title = null, ?ExpenseReportStatus $status = null, ?LocalDate $postingDate = null, ?LocalDate $dueDate = null, ?Currency $currency = null, ?float $currencyRate = null, ?float $subTotal = null, ?float $totalTax = null, ?float $totalAmount = null, ?float $reimbursableAmount = null, ?string $memo = null, ?LinkedDepartment $department = null, ?LinkedLocation $location = null, ?LinkedLedgerAccount $account = null, ?AccountingPeriod $accountingPeriod = null, ?string $reference = null, ?LinkedSubsidiary $subsidiary = null, ?array $trackingCategories = null, ?bool $taxInclusive = null, ?ApprovedBy $approvedBy = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->employee = $employee;
         $this->lineItems = $lineItems;
@@ -376,6 +386,7 @@ class ExpenseReport
         $this->location = $location;
         $this->account = $account;
         $this->accountingPeriod = $accountingPeriod;
+        $this->reference = $reference;
         $this->subsidiary = $subsidiary;
         $this->trackingCategories = $trackingCategories;
         $this->taxInclusive = $taxInclusive;

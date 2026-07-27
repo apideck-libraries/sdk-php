@@ -101,13 +101,15 @@ $request = new Operations\VaultConnectionSettingsUpdateRequest(
             'instance_url' => 'https://eu28.salesforce.com',
             'api_key' => '12345xxxxxx',
         ],
-        metadata: [
-            'account' => [
-                'name' => 'My Company',
-                'id' => 'c01458a5-7276-41ce-bc19-639906b0450a',
+        metadata: new Components\ConnectionMetadataInput(
+            additionalProperties: [
+                'account' => [
+                    'name' => 'My Company',
+                    'id' => 'c01458a5-7276-41ce-bc19-639906b0450a',
+                ],
+                'plan' => 'enterprise',
             ],
-            'plan' => 'enterprise',
-        ],
+        ),
         configuration: [
             new Components\ConnectionConfiguration(
                 resource: 'leads',

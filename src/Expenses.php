@@ -332,6 +332,7 @@ class Expenses
                             cursor: $nextCursor,
                             limit: $request != null ? $request->limit : null,
                             filter: $request != null ? $request->filter : null,
+                            passThrough: $request != null ? $request->passThrough : null,
                         ),
                     );
                 };
@@ -438,6 +439,7 @@ class Expenses
                             cursor: $nextCursor,
                             limit: $request != null ? $request->limit : null,
                             filter: $request != null ? $request->filter : null,
+                            passThrough: $request != null ? $request->passThrough : null,
                         ),
                     );
                 };

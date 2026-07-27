@@ -33,6 +33,9 @@ $request = new Operations\AccountingCompaniesAllRequest(
     serviceId: 'salesforce',
     companyId: '12345',
     fields: 'id,updated_at',
+    passThrough: [
+        'search' => 'San Francisco',
+    ],
 );
 
 $responses = $sdk->accounting->companies->list(

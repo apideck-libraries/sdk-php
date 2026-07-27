@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 use Apideck\Unify\Utils\SpeakeasyMetadata;
+use Brick\DateTime\LocalDate;
 class BillsFilter
 {
     /**
@@ -25,6 +26,22 @@ class BillsFilter
      */
     #[SpeakeasyMetadata('queryParam:name=updated_since,dateTimeFormat=Y-m-d\TH:i:s.up')]
     public ?\DateTime $updatedSince = null;
+
+    /**
+     * Return bills with a document date (`bill_date`) on or after the given date (YYYY-MM-DD).
+     *
+     * @var ?LocalDate $billedSince
+     */
+    #[SpeakeasyMetadata('queryParam:name=billed_since,dateTimeFormat=Y-m-d')]
+    public ?LocalDate $billedSince = null;
+
+    /**
+     * Return bills with a due date (`due_date`) on or after the given date (YYYY-MM-DD).
+     *
+     * @var ?LocalDate $dueSince
+     */
+    #[SpeakeasyMetadata('queryParam:name=due_since,dateTimeFormat=Y-m-d')]
+    public ?LocalDate $dueSince = null;
 
     /**
      * Filter by bill status
@@ -45,14 +62,18 @@ class BillsFilter
     /**
      * @param  ?string  $idSince
      * @param  ?\DateTime  $updatedSince
+     * @param  ?LocalDate  $billedSince
+     * @param  ?LocalDate  $dueSince
      * @param  ?\Apideck\Unify\Models\Components\BillsFilterStatus  $status
      * @param  ?string  $subsidiaryId
      * @phpstan-pure
      */
-    public function __construct(?string $idSince = null, ?\DateTime $updatedSince = null, ?BillsFilterStatus $status = null, ?string $subsidiaryId = null)
+    public function __construct(?string $idSince = null, ?\DateTime $updatedSince = null, ?LocalDate $billedSince = null, ?LocalDate $dueSince = null, ?BillsFilterStatus $status = null, ?string $subsidiaryId = null)
     {
         $this->idSince = $idSince;
         $this->updatedSince = $updatedSince;
+        $this->billedSince = $billedSince;
+        $this->dueSince = $dueSince;
         $this->status = $status;
         $this->subsidiaryId = $subsidiaryId;
     }

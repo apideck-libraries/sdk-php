@@ -37,6 +37,9 @@ $request = new Operations\AccountingSubsidiariesAllRequest(
     serviceId: 'salesforce',
     companyId: '12345',
     fields: 'id,updated_at',
+    passThrough: [
+        'search' => 'San Francisco',
+    ],
 );
 
 $responses = $sdk->accounting->subsidiaries->list(
