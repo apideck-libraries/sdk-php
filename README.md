@@ -510,6 +510,11 @@ foreach ($responses as $response) {
 * [update](docs/sdks/leads/README.md#update) - Update lead
 * [delete](docs/sdks/leads/README.md#delete) - Delete lead
 
+### [Crm.Lists](docs/sdks/lists/README.md)
+
+* [list](docs/sdks/lists/README.md#list) - List lists
+* [get](docs/sdks/lists/README.md#get) - Get list
+
 ### [Crm.Notes](docs/sdks/notes/README.md)
 
 * [list](docs/sdks/notes/README.md#list) - List notes

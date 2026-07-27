@@ -40,6 +40,9 @@ $request = new Operations\AccountingAttachmentsAllRequest(
     serviceId: 'salesforce',
     companyId: '12345',
     fields: 'id,updated_at',
+    passThrough: [
+        'search' => 'San Francisco',
+    ],
 );
 
 $responses = $sdk->accounting->attachments->list(

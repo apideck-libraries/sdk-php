@@ -142,12 +142,12 @@ class ConsumerConnection
     /**
      * Attach your own consumer specific metadata
      *
-     * @var ?array<string, mixed> $metadata
+     * @var ?\Apideck\Unify\Models\Components\Metadata $metadata
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Metadata|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $metadata = null;
+    public ?Metadata $metadata = null;
 
     /**
      *
@@ -191,13 +191,13 @@ class ConsumerConnection
      * @param  ?\Apideck\Unify\Models\Components\ConnectionState  $state
      * @param  ?\Apideck\Unify\Models\Components\ConnectionHealth  $health
      * @param  ?array<string, mixed>  $settings
-     * @param  ?array<string, mixed>  $metadata
+     * @param  ?\Apideck\Unify\Models\Components\Metadata  $metadata
      * @param  ?string  $updatedAt
      * @param  ?string  $credentialsExpireAt
      * @param  ?string  $lastRefreshFailedAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?string $icon = null, ?string $logo = null, ?string $website = null, ?string $tagLine = null, ?string $serviceId = null, ?string $unifiedApi = null, ?string $consumerId = null, ?AuthType $authType = null, ?bool $enabled = null, ?string $createdAt = null, ?ConnectionState $state = null, ?ConnectionHealth $health = null, ?array $settings = null, ?array $metadata = null, ?string $updatedAt = null, ?string $credentialsExpireAt = null, ?string $lastRefreshFailedAt = null)
+    public function __construct(?string $id = null, ?string $name = null, ?string $icon = null, ?string $logo = null, ?string $website = null, ?string $tagLine = null, ?string $serviceId = null, ?string $unifiedApi = null, ?string $consumerId = null, ?AuthType $authType = null, ?bool $enabled = null, ?string $createdAt = null, ?ConnectionState $state = null, ?ConnectionHealth $health = null, ?array $settings = null, ?Metadata $metadata = null, ?string $updatedAt = null, ?string $credentialsExpireAt = null, ?string $lastRefreshFailedAt = null)
     {
         $this->id = $id;
         $this->name = $name;

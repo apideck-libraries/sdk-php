@@ -43,6 +43,9 @@ $request = new Operations\AccountingExpensesAllRequest(
         status: Components\ExpensesFilterStatus::Draft,
         type: Components\ExpensesFilterType::Expense,
     ),
+    passThrough: [
+        'search' => 'San Francisco',
+    ],
 );
 
 $responses = $sdk->accounting->expenses->list(

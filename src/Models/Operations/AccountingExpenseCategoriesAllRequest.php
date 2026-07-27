@@ -45,6 +45,14 @@ class AccountingExpenseCategoriesAllRequest
     public ?Components\ExpenseCategoriesFilter $filter = null;
 
     /**
+     * Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
+     *
+     * @var ?array<string, mixed> $passThrough
+     */
+    #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=pass_through')]
+    public ?array $passThrough = null;
+
+    /**
      * Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
      *
      * @var ?string $cursor
@@ -83,16 +91,18 @@ class AccountingExpenseCategoriesAllRequest
      * @param  ?string  $serviceId
      * @param  ?int  $limit
      * @param  ?\Apideck\Unify\Models\Components\ExpenseCategoriesFilter  $filter
+     * @param  ?array<string, mixed>  $passThrough
      * @param  ?string  $cursor
      * @param  ?string  $fields
      * @phpstan-pure
      */
-    public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?Components\ExpenseCategoriesFilter $filter = null, ?string $cursor = null, ?string $fields = null, ?bool $raw = false, ?int $limit = 20)
+    public function __construct(?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?Components\ExpenseCategoriesFilter $filter = null, ?array $passThrough = null, ?string $cursor = null, ?string $fields = null, ?bool $raw = false, ?int $limit = 20)
     {
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
         $this->filter = $filter;
+        $this->passThrough = $passThrough;
         $this->cursor = $cursor;
         $this->fields = $fields;
         $this->raw = $raw;

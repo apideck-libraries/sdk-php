@@ -108,6 +108,9 @@
 | `HrisCompanyCreated`                     | hris.company.created                     |
 | `HrisCompanyUpdated`                     | hris.company.updated                     |
 | `HrisCompanyDeleted`                     | hris.company.deleted                     |
+| `HrisTimeOffRequestCreated`              | hris.time-off-request.created            |
+| `HrisTimeOffRequestUpdated`              | hris.time-off-request.updated            |
+| `HrisTimeOffRequestDeleted`              | hris.time-off-request.deleted            |
 | `FileStorageFileCreated`                 | file-storage.file.created                |
 | `FileStorageFileUpdated`                 | file-storage.file.updated                |
 | `FileStorageFileDeleted`                 | file-storage.file.deleted                |
@@ -136,3 +139,6 @@
 | `AccountingProjectCreated`               | accounting.project.created               |
 | `AccountingProjectUpdated`               | accounting.project.updated               |
 | `AccountingProjectDeleted`               | accounting.project.deleted               |
+| `AccountingTrackingCategoryCreated`      | accounting.tracking_category.created     |
+| `AccountingTrackingCategoryUpdated`      | accounting.tracking_category.updated     |
+| `AccountingTrackingCategoryDeleted`      | accounting.tracking_category.deleted     |

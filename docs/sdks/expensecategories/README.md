@@ -42,6 +42,9 @@ $request = new Operations\AccountingExpenseCategoriesAllRequest(
         updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
         status: Components\ExpenseCategoriesFilterStatus::Active,
     ),
+    passThrough: [
+        'search' => 'San Francisco',
+    ],
 );
 
 $responses = $sdk->accounting->expenseCategories->list(
