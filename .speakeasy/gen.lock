@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 0bb72903b2014147d0580d5dc1adfbf5
-  docVersion: 10.28.1
+  docChecksum: 24c7bf58cfc041a04e545f9a809e4caa
+  docVersion: 10.28.2
   speakeasyVersion: 1.791.0
   generationVersion: 2.924.0
-  releaseVersion: 0.19.0
-  configChecksum: d9d8f7d724479d1054a2677af790aac9
+  releaseVersion: 0.19.1
+  configChecksum: 7bc1e2130f32a599a75489ce70368466
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: e619f09a-28f0-4f65-8e6b-8879c90bdd36
-  pristine_commit_hash: 7d0fa63f2a4896f14b98873d592032622a407fd0
-  pristine_tree_hash: 49629bce0f324ab1b8d0e58b94a8a8a734973f53
+  generation_id: 5c556d70-562c-4208-892d-7519d2ec4da2
+  pristine_commit_hash: 20fca0dc3928521698a6381dec6ef0189bbed20f
+  pristine_tree_hash: 6eca83b60e9e16c46b9f628e552fea28175616a5
 features:
   php:
     additionalProperties: 0.1.1
@@ -14409,8 +14409,8 @@ trackedFiles:
     pristine_git_object: 1b84a996bbe4b1742310466f6289fde44ac8a13c
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:6ba6ed73cc16b13ebffa7158704c92f29876e056
-    pristine_git_object: 04074af89ac502763d099a6d663a3a7616a727ea
+    last_write_checksum: sha1:d71d5b5a7c74d6b3875cbb0e028239aad73af1f5
+    pristine_git_object: 495808cf545b6dd600d980f7c0c3b1bd3a4ddcba
   src/Sessions.php:
     id: 7f6ea05b19ca
     last_write_checksum: sha1:49fed08b188438bf50f8af86d8631d9f3bf3cd5f
@@ -31128,7 +31128,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `apideck->vault->consumers->create()`:  `response.data->connections[]->metadata` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->delete()`:  `response.data->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->update()`: \n  *  `request.updateWebhookRequest->events[]` **Changed**\n  *  `response.data->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->get()`:  `response.data->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->create()`: \n  *  `request.createWebhookRequest->events[]` **Changed**\n  *  `response.data->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->list()`:  `response.data[]->events[]` **Changed** (Breaking ⚠️)\n* `apideck->vault->connectionSettings->update()`: \n  *  `request->connection->metadata` **Changed** (Breaking ⚠️)\n  *  `response.data->metadata` **Changed** (Breaking ⚠️)\n* `apideck->vault->connectionSettings->list()`:  `response.data->metadata` **Changed** (Breaking ⚠️)\n* `apideck->vault->connections->token()`:  `response.data->metadata` **Changed** (Breaking ⚠️)\n* `apideck->vault->connections->imports()`:  `response.data->metadata` **Changed** (Breaking ⚠️)\n* `apideck->vault->connections->update()`: \n  *  `request->connection->metadata` **Changed** (Breaking ⚠️)\n  *  `response.data->metadata` **Changed** (Breaking ⚠️)\n* `apideck->vault->connections->get()`:  `response.data->metadata` **Changed** (Breaking ⚠️)\n* `apideck->vault->connections->list()`:  `response.data[]->metadata` **Changed** (Breaking ⚠️)\n* `apideck->vault->consumers->update()`:  `response.data->connections[]->metadata` **Changed** (Breaking ⚠️)\n* `apideck->vault->consumers->get()`:  `response.data->connections[]->metadata` **Changed** (Breaking ⚠️)\n* `apideck->accounting->expenses->list()`: \n  *  `request->passThrough` **Added**\n* `apideck->accounting->quotes->list()`: \n  *  `request->passThrough` **Added**\n* `apideck->connector->connectors->list()`:  `response.data[]->overview` **Added**\n* `apideck->connector->connectors->get()`:  `response.data->overview` **Added**\n* `apideck->accounting->expenseReports->get()`:  `response.data->reference` **Added**\n* `apideck->accounting->expenseReports->create()`: \n  *  `request->expenseReport->reference` **Added**\n* `apideck->accounting->expenseReports->list()`: \n  *  `request->passThrough` **Added**\n  *  `response.data[]->reference` **Added**\n* `apideck->accounting->expenseCategories->list()`: \n  *  `request->passThrough` **Added**\n* `apideck->accounting->employees->list()`: \n  *  `request->passThrough` **Added**\n* `apideck->accounting->expenseReports->update()`: \n  *  `request->expenseReport->reference` **Added**\n* `apideck->accounting->categories->list()`: \n  *  `request->passThrough` **Added**\n* `apideck->crm->lists->list()`: **Added**\n* `apideck->accounting->attachments->list()`: \n  *  `request->passThrough` **Added**\n* `apideck->accounting->departments->list()`: \n  *  `request->passThrough` **Added**\n* `apideck->accounting->locations->list()`: \n  *  `request->passThrough` **Added**\n* `apideck->accounting->subsidiaries->list()`: \n  *  `request->passThrough` **Added**\n* `apideck->accounting->companies->list()`: \n  *  `request->passThrough` **Added**\n* `apideck->accounting->bills->list()`: \n  *  `request->filter` **Changed**\n* `apideck->crm->lists->get()`: **Added**\n* `apideck->webhook->eventLogs->list()`:  `request.filter` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md
