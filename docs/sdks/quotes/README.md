@@ -42,6 +42,7 @@ $request = new Operations\AccountingQuotesAllRequest(
         updatedSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
         createdSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
         number: 'OIT00546',
+        customerId: '123abc',
     ),
     passThrough: [
         'search' => 'San Francisco',

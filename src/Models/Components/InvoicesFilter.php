@@ -58,15 +58,24 @@ class InvoicesFilter
     public ?string $subsidiaryId = null;
 
     /**
+     * Filter by customer id
+     *
+     * @var ?string $customerId
+     */
+    #[SpeakeasyMetadata('queryParam:name=customer_id')]
+    public ?string $customerId = null;
+
+    /**
      * @param  ?string  $idSince
      * @param  ?\DateTime  $updatedSince
      * @param  ?\DateTime  $createdSince
      * @param  ?string  $number
      * @param  ?string  $supplierId
      * @param  ?string  $subsidiaryId
+     * @param  ?string  $customerId
      * @phpstan-pure
      */
-    public function __construct(?string $idSince = null, ?\DateTime $updatedSince = null, ?\DateTime $createdSince = null, ?string $number = null, ?string $supplierId = null, ?string $subsidiaryId = null)
+    public function __construct(?string $idSince = null, ?\DateTime $updatedSince = null, ?\DateTime $createdSince = null, ?string $number = null, ?string $supplierId = null, ?string $subsidiaryId = null, ?string $customerId = null)
     {
         $this->idSince = $idSince;
         $this->updatedSince = $updatedSince;
@@ -74,5 +83,6 @@ class InvoicesFilter
         $this->number = $number;
         $this->supplierId = $supplierId;
         $this->subsidiaryId = $subsidiaryId;
+        $this->customerId = $customerId;
     }
 }

@@ -34,15 +34,25 @@ class QuotesFilter
     public ?string $number = null;
 
     /**
+     * Filter by customer id
+     *
+     * @var ?string $customerId
+     */
+    #[SpeakeasyMetadata('queryParam:name=customer_id')]
+    public ?string $customerId = null;
+
+    /**
      * @param  ?\DateTime  $updatedSince
      * @param  ?\DateTime  $createdSince
      * @param  ?string  $number
+     * @param  ?string  $customerId
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedSince = null, ?\DateTime $createdSince = null, ?string $number = null)
+    public function __construct(?\DateTime $updatedSince = null, ?\DateTime $createdSince = null, ?string $number = null, ?string $customerId = null)
     {
         $this->updatedSince = $updatedSince;
         $this->createdSince = $createdSince;
         $this->number = $number;
+        $this->customerId = $customerId;
     }
 }
