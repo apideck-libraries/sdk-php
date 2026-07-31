@@ -127,6 +127,15 @@ class CustomerInput
     public ?string $companyId = null;
 
     /**
+     *
+     * @var ?\Apideck\Unify\Models\Components\LinkedSubsidiaryInput $subsidiary
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subsidiary')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedSubsidiaryInput|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedSubsidiaryInput $subsidiary = null;
+
+    /**
      * The category/type of the customer
      *
      * @var ?string $customerCategory
@@ -320,6 +329,7 @@ class CustomerInput
      * @param  ?string  $displayName
      * @param  ?string  $companyName
      * @param  ?string  $companyId
+     * @param  ?\Apideck\Unify\Models\Components\LinkedSubsidiaryInput  $subsidiary
      * @param  ?string  $customerCategory
      * @param  ?string  $title
      * @param  ?string  $firstName
@@ -342,7 +352,7 @@ class CustomerInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?string $customerCategory = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?bool $project = null, ?string $notes = null, ?string $taxNumber = null, ?bool $taxable = null, ?Currency $currency = null, ?LinkedLedgerAccount $account = null, ?LinkedParentCustomer $parent = null, ?CustomerStatusStatus $status = null, ?string $paymentMethod = null, ?string $terms = null, ?string $termsId = null, ?string $channel = null, ?string $rowVersion = null)
+    public function __construct(?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?LinkedSubsidiaryInput $subsidiary = null, ?string $customerCategory = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?bool $project = null, ?string $notes = null, ?string $taxNumber = null, ?bool $taxable = null, ?Currency $currency = null, ?LinkedLedgerAccount $account = null, ?LinkedParentCustomer $parent = null, ?CustomerStatusStatus $status = null, ?string $paymentMethod = null, ?string $terms = null, ?string $termsId = null, ?string $channel = null, ?string $rowVersion = null)
     {
         $this->addresses = $addresses;
         $this->phoneNumbers = $phoneNumbers;
@@ -356,6 +366,7 @@ class CustomerInput
         $this->displayName = $displayName;
         $this->companyName = $companyName;
         $this->companyId = $companyId;
+        $this->subsidiary = $subsidiary;
         $this->customerCategory = $customerCategory;
         $this->title = $title;
         $this->firstName = $firstName;
