@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 2ca7321c4701b3ff4d9efc27f2ba613b
+  docChecksum: 95b2dae475577f0ef5a4dcdd721dfd87
   docVersion: 10.29.1
-  speakeasyVersion: 1.791.0
-  generationVersion: 2.924.0
-  releaseVersion: 0.20.1
-  configChecksum: 0cdbb20c37cad3ba1d0410136baef554
+  speakeasyVersion: 1.791.1
+  generationVersion: 2.926.2
+  releaseVersion: 0.20.2
+  configChecksum: 8d5c04d102b528e90179ec1258d1beac
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: b8bf9edc-9065-4adf-a768-109f078f0c3f
-  pristine_commit_hash: 2470c85b9af3b341fc63666a8613207c572f6e9e
-  pristine_tree_hash: 078f64f1b3cd44df517af41e52b30de0bd5de71e
+  generation_id: 6251f7e7-9897-4759-aca0-90e00500078c
+  pristine_commit_hash: 351a362af72e1ceb554472e644553aaee9608532
+  pristine_tree_hash: c95ae47f4bf21fc8cc93671b08f9b84ad8ea6536
 features:
   php:
     additionalProperties: 0.1.1
@@ -35,7 +35,7 @@ features:
     nullables: 1.0.1
     pagination: 0.1.5
     responseFormat: 0.1.0
-    retries: 0.1.2
+    retries: 0.1.3
     typeOverrides: 2.81.1
     unions: 0.1.8
 trackedFiles:
@@ -14409,8 +14409,8 @@ trackedFiles:
     pristine_git_object: 1b84a996bbe4b1742310466f6289fde44ac8a13c
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:40dbad3468c22ffc8f36752bcacc428ceb1fca45
-    pristine_git_object: c2701b066d294143b65c0532f5341d1a114dbc61
+    last_write_checksum: sha1:064f9f4048fc322a83c28880dbfc91f7da65a602
+    pristine_git_object: 6fd5168386567e625e2c2150e3f508bef16b14a8
   src/Sessions.php:
     id: 7f6ea05b19ca
     last_write_checksum: sha1:49fed08b188438bf50f8af86d8631d9f3bf3cd5f
@@ -14561,8 +14561,8 @@ trackedFiles:
     pristine_git_object: 473d43d19011d09043dfc99146af3842a867c9e2
   src/Utils/Retry/RetryUtils.php:
     id: 28597380e832
-    last_write_checksum: sha1:9bf44f9b888f95eaff9382869aa59312b943ae70
-    pristine_git_object: 9dd098ba0c34777b9a2bf403258f84c461f35e23
+    last_write_checksum: sha1:a2589dbe4ec99ed912e4910fdb5a97858ab3e039
+    pristine_git_object: e726b0b5899094832c6e4efb1091d8b973c271f3
   src/Utils/Retry/TemporaryError.php:
     id: d58c3851b91f
     last_write_checksum: sha1:ca7161a1092ea8590bea051e80a1f8abe08fe7ea
@@ -31128,7 +31128,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `apideck->accounting->customers->list()`:  `response.data[]->subsidiary` **Added**\n* `apideck->accounting->customers->create()`: \n  *  `request->customer->subsidiary` **Added**\n* `apideck->accounting->customers->get()`:  `response.data->subsidiary` **Added**\n* `apideck->accounting->customers->update()`: \n  *  `request->customer->subsidiary` **Added**\n* `apideck->accounting->suppliers->list()`:  `response.data[]->subsidiary` **Added**\n* `apideck->accounting->suppliers->create()`: \n  *  `request->supplier->subsidiary` **Added**\n* `apideck->accounting->suppliers->get()`:  `response.data->subsidiary` **Added**\n* `apideck->accounting->suppliers->update()`: \n  *  `request->supplier->subsidiary` **Added**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md
