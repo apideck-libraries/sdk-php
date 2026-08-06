@@ -9,6 +9,7 @@
 * [update](#update) - Update connection
 * [delete](#delete) - Deletes a connection
 * [imports](#imports) - Import connection
+* [migrate](#migrate) - Migrate connection
 * [token](#token) - Authorize Access Token
 
 ## list
@@ -422,6 +423,80 @@ if ($response->createConnectionResponse !== null) {
 | Errors\UnauthorizedResponse    | 401                            | application/json               |
 | Errors\PaymentRequiredResponse | 402                            | application/json               |
 | Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## migrate
+
+Migrate the connection to the target connector, keeping its credentials and connection state
+(settings, metadata, configuration, subscriptions, consents). The source connection record is
+removed WITHOUT revoking or disconnecting the downstream token.
+
+Available migration targets are declared per connector — refer to the connector's
+documentation page or the Connector API's `migration_targets` field.
+
+Migrated tokens carry the source connector's OAuth scopes, so operations exclusive to the
+target connector may require re-authorization.
+
+Retries are idempotent: a partially-completed migration resumes where it left off.
+
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="vault.connectionsMigrate" method="post" path="/vault/connections/{unified_api}/{service_id}/migrate" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Components;
+use Apideck\Unify\Models\Operations;
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
+    ->build();
+
+$request = new Operations\VaultConnectionsMigrateRequest(
+    serviceId: 'pipedrive',
+    unifiedApi: 'crm',
+    connectionMigrateData: new Components\ConnectionMigrateData(
+        targetServiceId: 'intuit-enterprise-suite',
+    ),
+);
+
+$response = $sdk->vault->connections->migrate(
+    request: $request
+);
+
+if ($response->createConnectionResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                             | [Operations\VaultConnectionsMigrateRequest](../../Models/Operations/VaultConnectionsMigrateRequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+
+### Response
+
+**[?Operations\VaultConnectionsMigrateResponse](../../Models/Operations/VaultConnectionsMigrateResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\ConflictResponse        | 409                            | application/json               |
 | Errors\UnprocessableResponse   | 422                            | application/json               |
 | Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
 

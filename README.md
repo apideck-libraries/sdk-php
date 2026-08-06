@@ -510,6 +510,10 @@ foreach ($responses as $response) {
 * [update](docs/sdks/leads/README.md#update) - Update lead
 * [delete](docs/sdks/leads/README.md#delete) - Delete lead
 
+### [Crm.ListMembers](docs/sdks/listmembers/README.md)
+
+* [list](docs/sdks/listmembers/README.md#list) - List list members
+
 ### [Crm.Lists](docs/sdks/lists/README.md)
 
 * [list](docs/sdks/lists/README.md#list) - List lists
@@ -728,6 +732,7 @@ foreach ($responses as $response) {
 * [update](docs/sdks/connections/README.md#update) - Update connection
 * [delete](docs/sdks/connections/README.md#delete) - Deletes a connection
 * [imports](docs/sdks/connections/README.md#imports) - Import connection
+* [migrate](docs/sdks/connections/README.md#migrate) - Migrate connection
 * [token](docs/sdks/connections/README.md#token) - Authorize Access Token
 
 ### [Vault.ConnectionSettings](docs/sdks/connectionsettings/README.md)
