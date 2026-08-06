@@ -25,6 +25,8 @@ class Crm
 
     public Lists $lists;
 
+    public ListMembers $listMembers;
+
     public Notes $notes;
 
     public Users $users;
@@ -47,6 +49,7 @@ class Crm
         $this->leads = new Leads($this->sdkConfiguration);
         $this->pipelines = new Pipelines($this->sdkConfiguration);
         $this->lists = new Lists($this->sdkConfiguration);
+        $this->listMembers = new ListMembers($this->sdkConfiguration);
         $this->notes = new Notes($this->sdkConfiguration);
         $this->users = new Users($this->sdkConfiguration);
         $this->activities = new Activities($this->sdkConfiguration);

@@ -39,6 +39,7 @@ enum WebhookEventType: string
     case VaultConnectionDeleted = 'vault.connection.deleted';
     case VaultConnectionCallable = 'vault.connection.callable';
     case VaultConnectionRevoked = 'vault.connection.revoked';
+    case VaultConnectionMigrated = 'vault.connection.migrated';
     case VaultConnectionTokenRefreshFailed = 'vault.connection.token_refresh.failed';
     case VaultConnectionTokenRefreshPending = 'vault.connection.token_refresh.pending';
     case VaultConnectionTokenRefreshRecovered = 'vault.connection.token_refresh.recovered';

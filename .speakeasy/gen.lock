@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 43b03ba7a55d1dfed115dfc868b63feb
-  docVersion: 10.30.0
-  speakeasyVersion: 1.791.3
-  generationVersion: 2.926.2
-  releaseVersion: 0.21.0
-  configChecksum: a5a3e13169e086c6712cb809acb325a4
+  docChecksum: 8eb7746fd60545ccbdd89ac13589745a
+  docVersion: 10.32.0
+  speakeasyVersion: 1.791.4
+  generationVersion: 2.926.8
+  releaseVersion: 0.22.0
+  configChecksum: 0df0d6ac756e671dd26c91877a044bb7
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: 2f00a8e4-bfe4-4ccf-9886-7a6f6f2fc056
-  pristine_commit_hash: 4d4fea52a7aec2ee315d9fba7ef57b8e406bb32e
-  pristine_tree_hash: 28bde4315129d9278e5f5b6f9a45669d20efc801
+  generation_id: 21270f68-aaf7-43de-83ec-2eb62e653de5
+  pristine_commit_hash: 35e2e2348d093598c3c1f87a43c2847babd3f598
+  pristine_tree_hash: 2903410aa765cc29c4d643574f3c461d7a04e141
 features:
   php:
     additionalProperties: 0.1.1
@@ -627,6 +627,10 @@ trackedFiles:
     id: 496e468f6b5c
     last_write_checksum: sha1:b658cd4da5045416f5fa7396de98a2ec9bc58ac4
     pristine_git_object: 430f78addc8c4a7bab88525786643e6b3ba93373
+  docs/Models/Components/ConnectionMigrateData.md:
+    id: ad6404107e53
+    last_write_checksum: sha1:95cc7a8d6998db4f9ba84bc38c28701e74ec09c6
+    pristine_git_object: a7c56ebcb62f71a203f037c28c6b354d7661699d
   docs/Models/Components/ConnectionState.md:
     id: e3713da3e6e7
     last_write_checksum: sha1:973930db631390dedb446710b1c0c3ac4266d6a3
@@ -641,8 +645,8 @@ trackedFiles:
     pristine_git_object: 4028ee6bbb21811ce3a8e0fdf48efdb8dcc2b0c7
   docs/Models/Components/Connector.md:
     id: 5249840e19f2
-    last_write_checksum: sha1:d1935b8b18950c7a89a14f992cfafda981493713
-    pristine_git_object: 289d585b849e655181461e57d6cecb7fbf2a844b
+    last_write_checksum: sha1:30e3ead481b4c667598632c6c407d9287e6f8155
+    pristine_git_object: eabe09ae9ff27b35e4589dfcb07de01063ce95e1
   docs/Models/Components/ConnectorAuthType.md:
     id: b91cf9fa0664
     last_write_checksum: sha1:8e2f1f7fe21086e96f31be3fe2aacfa5b3c00d3e
@@ -2275,6 +2279,10 @@ trackedFiles:
     id: 6010e709f49a
     last_write_checksum: sha1:d7027d8c9a40f7591767324da28b348596615c3d
     pristine_git_object: f68677f7841061b987e979403fb6cd67be468e9d
+  docs/Models/Components/GetListMembersResponse.md:
+    id: 043e872b549f
+    last_write_checksum: sha1:b4bdb0ce19ea5ddf2b67847d71f5f74e20cd26cc
+    pristine_git_object: a9c6ea5143a4b859bd3cf574fbd5a1f1d2d1caa5
   docs/Models/Components/GetListResponse.md:
     id: cf4149c80eb7
     last_write_checksum: sha1:a97d0d5fd44a44403d32e178cfaa1067c98627a9
@@ -2855,6 +2863,10 @@ trackedFiles:
     id: 96c82369ab69
     last_write_checksum: sha1:444a0ac98844e4321cce6841c06a305b6e850f03
     pristine_git_object: 866b0439dc7ea123ea13b19cd496f09d5effd590
+  docs/Models/Components/ListMember.md:
+    id: 29d6bb60187b
+    last_write_checksum: sha1:44f55734559306b811f702e5132702deae70e8a9
+    pristine_git_object: 8a96fa883f75c35e6459f2066a30d8009c820799
   docs/Models/Components/ListT.md:
     id: 8249fd9645b9
     last_write_checksum: sha1:f90a8e56097b9a4cc5b08e5de4b23c9e89bb4736
@@ -3981,8 +3993,8 @@ trackedFiles:
     pristine_git_object: 0b7c1484210eb1a1e5413c67143bc1f0e4dd6202
   docs/Models/Components/WebhookEventType.md:
     id: 234a36136da0
-    last_write_checksum: sha1:4d903d418f9d12175c84a6e3405736a0947040f2
-    pristine_git_object: 744f55961c480702aee349666bc6a5df17600ae3
+    last_write_checksum: sha1:05e287b1c5e26c305860ddfd75f58b2dda032ed2
+    pristine_git_object: cee85faa55c19f6897f3ce56b77050b634639247
   docs/Models/Components/WebhookSubscription.md:
     id: f2c87de13dad
     last_write_checksum: sha1:6597f4643a7e3821b6f7e9a5ffc0dab713589913
@@ -4015,6 +4027,14 @@ trackedFiles:
     id: 8f0676d47044
     last_write_checksum: sha1:bdab6b582b5d9e42b8e7c3ebbb245a4a23e968ce
     pristine_git_object: b49d5f9a412723d4231c1576f8229695ddffa0de
+  docs/Models/Errors/ConflictResponse.md:
+    id: 4a61a8145841
+    last_write_checksum: sha1:37b6d91e97dd3fd5f75c2cd4bb78be546c3f3a3e
+    pristine_git_object: 4e4ab553eece9cc731e58a0e1042e764fa3355e1
+  docs/Models/Errors/ConflictResponseDetail.md:
+    id: 51f15ec898cc
+    last_write_checksum: sha1:01f808bf677acc1c7c5057be8dd44ae0df388c0a
+    pristine_git_object: 6cb79228d72c4f4c174806e16297b0a702fa419c
   docs/Models/Errors/Debug.md:
     id: d977071c4665
     last_write_checksum: sha1:055eed4cc542547cb3f77ae57779ebb86db3450d
@@ -5675,6 +5695,14 @@ trackedFiles:
     id: 5753135fd74c
     last_write_checksum: sha1:aa01327dd8d0a435f43c76e06769cd5b17b19c74
     pristine_git_object: 8eba7439abd074dca97c85d05185ea045b98e69d
+  docs/Models/Operations/CrmListMembersAllRequest.md:
+    id: 4d6065ecbe06
+    last_write_checksum: sha1:758b476d019b01a63c797997509afd69e24f23a1
+    pristine_git_object: 9a05c89f39ec6a88fc349808488bf2383824b85a
+  docs/Models/Operations/CrmListMembersAllResponse.md:
+    id: 2eb7caf0ff12
+    last_write_checksum: sha1:867efbc292218caeb5ce15e7a60f9595850e6610
+    pristine_git_object: 6b84a48b1b9cf612cd54f8005e18bfe56828585b
   docs/Models/Operations/CrmListsAllRequest.md:
     id: c71fbf8e9509
     last_write_checksum: sha1:0dd0c7d28e965eb16f9d584ebaf9e1b5480f3429
@@ -6663,6 +6691,14 @@ trackedFiles:
     id: 9e46ef3242c4
     last_write_checksum: sha1:911fb7c3d6a5effb9e55232c44e37aaa8de8f55c
     pristine_git_object: 7bd8c2731cce4a7dae512a6c5a4ceb1fbecd790c
+  docs/Models/Operations/VaultConnectionsMigrateRequest.md:
+    id: 4634a67bb5d9
+    last_write_checksum: sha1:a32d5eefaa7db710dd49f4c18ee0e868f5990c86
+    pristine_git_object: a0aafd1e9a3d10034a4b6c28ccb4b88663021600
+  docs/Models/Operations/VaultConnectionsMigrateResponse.md:
+    id: 9e03d7fd47c8
+    last_write_checksum: sha1:ded7f343c26d78242dd60397951153460beb69bb
+    pristine_git_object: 96aa8c214a7bcd5b3f7423cb16f66ad33f2cfb89
   docs/Models/Operations/VaultConnectionsOneRequest.md:
     id: 5c719b0fe3b6
     last_write_checksum: sha1:fa5526bc582854741c56b97f08a8b59596d5f088
@@ -6965,8 +7001,8 @@ trackedFiles:
     pristine_git_object: de44d3788907e2930d8b8975930cef316c9c8567
   docs/sdks/connections/README.md:
     id: 3ef8931411ea
-    last_write_checksum: sha1:a082f0a70bcd1f304345e3e75133abdaa5b5c1ee
-    pristine_git_object: c1928a8eab8b9f74a9bafdf84dcda62d8fc9229a
+    last_write_checksum: sha1:6f71b517fdc207d1554e58869488d00d0c3bd749
+    pristine_git_object: 37aed53b3cbd8676e1a40101fca79076edcac62a
   docs/sdks/connectionsettings/README.md:
     id: 644e68edbec9
     last_write_checksum: sha1:43203c136ae8577e2ce3eb255b5d260846df1b0c
@@ -7099,6 +7135,10 @@ trackedFiles:
     id: 5169c83ca089
     last_write_checksum: sha1:56da4867b3396b5f228c744a7fc7c8a1653c2648
     pristine_git_object: 17310387418db17f2e34458cae24f0f89c638274
+  docs/sdks/listmembers/README.md:
+    id: 25721cb6a379
+    last_write_checksum: sha1:983d9a4b21c7cac85e25261edd8cf37bc01a1ae9
+    pristine_git_object: 2a9ea125a77f8290f3cd5126c83aeb224180d645
   docs/sdks/lists/README.md:
     id: 2bf91000d730
     last_write_checksum: sha1:b16ccd984f25f75e855284df7813b7d15d4860af
@@ -7377,8 +7417,8 @@ trackedFiles:
     pristine_git_object: 1621fa2c2074f6f99fb3efeee0a256da0d30f720
   src/Connections.php:
     id: ba80c9debe4b
-    last_write_checksum: sha1:6771d05cb04be50a7052dd798bec60dfe0b6c608
-    pristine_git_object: 88d56afeb44a8528e24df142704586aa17b3661d
+    last_write_checksum: sha1:f33f64a5e9375e24f61e04130088f8f116d7f3de
+    pristine_git_object: 83fb86b00bfa20e053744972f8faee5902844161
   src/Connector.php:
     id: f2a8e0f0c03b
     last_write_checksum: sha1:64e4b8351c170181e718329ca0d801cb303fe0e4
@@ -7417,8 +7457,8 @@ trackedFiles:
     pristine_git_object: 3c5d64f776cbcdf600658d0f95c2dbd1da7d7279
   src/Crm.php:
     id: 026f6b09c649
-    last_write_checksum: sha1:070a982cf91fe443b4ec44a0e4ad29cd8d7115ea
-    pristine_git_object: 05829ee01e70a57b4d9f699cca689e6bee867711
+    last_write_checksum: sha1:be36aaf49ab7d69aae9443738c8451082477e338
+    pristine_git_object: 3d8ee7b0ea60d16a1b7463aa80f8f21d674d1d13
   src/CustomFields.php:
     id: 46702472d9f6
     last_write_checksum: sha1:0edf7dd7091b7613a135e037057dcfab39f2be25
@@ -7595,6 +7635,10 @@ trackedFiles:
     id: 13009e36ee60
     last_write_checksum: sha1:2bf3a647af999b66522c98fdfb37162bf4bf15bd
     pristine_git_object: a514d4b775dd63e400580223a364e812988223e8
+  src/ListMembers.php:
+    id: c1946a244ec5
+    last_write_checksum: sha1:dd17f689c0b901837b47474877aebb319e21e48c
+    pristine_git_object: f8588382ad35223e319ef8d7c90cb842a22db21c
   src/Lists.php:
     id: 69c08bae7be1
     last_write_checksum: sha1:18cd8bf6c2a76534fc5d756448c3651708baeeb7
@@ -8187,6 +8231,10 @@ trackedFiles:
     id: 6e42627ba0aa
     last_write_checksum: sha1:535af0ce5c029022b4bbc0be2bdb3b405fb626eb
     pristine_git_object: 5d29da1d4e8565f5512e9b0657e8ecf25ff02d26
+  src/Models/Components/ConnectionMigrateData.php:
+    id: 78493c28979c
+    last_write_checksum: sha1:62cfc5b290d871dbaa18dc51107b0ed66d4a8ac1
+    pristine_git_object: 484a681df2cae28e2bc5dd626e50242282dd67ff
   src/Models/Components/ConnectionState.php:
     id: e7c3da0fd81a
     last_write_checksum: sha1:14fdcf2ee6ff494709791b1dd65177f27556556a
@@ -8197,8 +8245,8 @@ trackedFiles:
     pristine_git_object: b3241f412ceeef67ba8b80aa84efe36686f5f32c
   src/Models/Components/Connector.php:
     id: dc959b812835
-    last_write_checksum: sha1:05df59050ff6d13f5523ac6f451b449d4a9d7213
-    pristine_git_object: 3877b0f40a6484b4e8136b97deaa06a6394a1f70
+    last_write_checksum: sha1:2f27253d87c2f2b3a28973957aa4ea1d9c850b35
+    pristine_git_object: e694c7eba975bafe4e4f5d837935e706e93c050b
   src/Models/Components/ConnectorAuthType.php:
     id: 06fa47d67954
     last_write_checksum: sha1:10e2cddc104aca0cc6cc475913b6a88f559eaf7e
@@ -9795,6 +9843,10 @@ trackedFiles:
     id: 92db91afee7d
     last_write_checksum: sha1:f87c5d05d83e77bbca3187c6cf8c247c90079f34
     pristine_git_object: 1f8c0026cd2be020d2891e4cdaf8810a491ce6b1
+  src/Models/Components/GetListMembersResponse.php:
+    id: 8c7a0e95d0d0
+    last_write_checksum: sha1:3ebdd2db73c2ab57a1f5b91b503670e7090e49c1
+    pristine_git_object: bbfdd963205c7e5e039265b3274ee96488348517
   src/Models/Components/GetListResponse.php:
     id: 740e8069f7d9
     last_write_checksum: sha1:fcc1ace1ac470ec96d7147078055ee64b2718e46
@@ -10375,6 +10427,10 @@ trackedFiles:
     id: 5200cf8f06b8
     last_write_checksum: sha1:d8697ba2a7f448b6f91ab76a0ca5d67ea806aefd
     pristine_git_object: 6f7a9d578192329441418703bd472e8d6b159964
+  src/Models/Components/ListMember.php:
+    id: 1b5d1081200b
+    last_write_checksum: sha1:94be32de22148b4104e9b31aa175d4efd7084cb7
+    pristine_git_object: 4288a5b2c70263214168421b71e31f0b7b269ca3
   src/Models/Components/ListT.php:
     id: ba7d5ef0d930
     last_write_checksum: sha1:0717fc18d88dbad35434d13bc6b2c57cf759e295
@@ -11489,8 +11545,8 @@ trackedFiles:
     pristine_git_object: 2a6e8b749dda537dcbb4bb99f7ecf7886a65882b
   src/Models/Components/WebhookEventType.php:
     id: aa6707ce7d20
-    last_write_checksum: sha1:9779726076b34789d5aa50f2b3579526d1c4a0be
-    pristine_git_object: defe71250787db77249225a49c44523121317896
+    last_write_checksum: sha1:820ab559dbc87e5d466857bc8aac84972fe418b5
+    pristine_git_object: 36ccad774fe495109128292284afc8f7902b4cc4
   src/Models/Components/WebhookSubscription.php:
     id: 0842240c30d4
     last_write_checksum: sha1:3ba085278eacacd9c83388a50d9ecb64627862af
@@ -11531,6 +11587,14 @@ trackedFiles:
     id: dba1193db3ed
     last_write_checksum: sha1:78f37bd898733d84512a7d9ac041cdf794a925f8
     pristine_git_object: 31bc39a4bd2e4d1fdd3f11d4b1d7d73051ed9dc4
+  src/Models/Errors/ConflictResponse.php:
+    id: 7d4edff1e10d
+    last_write_checksum: sha1:ef507cbffbaf17a6559dc091287344cb9ba8c9f5
+    pristine_git_object: 1cc851bd8466d8de3c4600ff0ade6c65a261edf7
+  src/Models/Errors/ConflictResponseThrowable.php:
+    id: 97d542c4a5f6
+    last_write_checksum: sha1:2c681c3895765a93412efda844ed13c7b1d9861b
+    pristine_git_object: 7cb16ab6e725d44babd122e39aa99e23bffdbbb4
   src/Models/Errors/Debug.php:
     id: 1dc1cea202ef
     last_write_checksum: sha1:8ba7dd432c0183c865cda673862bd89a90e8c590
@@ -13191,6 +13255,14 @@ trackedFiles:
     id: 56e1c96e877a
     last_write_checksum: sha1:1e4e2c86678473a5b286bc41f5107b0e08c7d627
     pristine_git_object: f8fe111203993743ef164c6e3942eabddacadf3e
+  src/Models/Operations/CrmListMembersAllRequest.php:
+    id: fab0740e23af
+    last_write_checksum: sha1:9be475016eea504b96746964ec5092d759bad302
+    pristine_git_object: 672f8d0f6575c6f4e44abe29baf0ab3ab5a0e211
+  src/Models/Operations/CrmListMembersAllResponse.php:
+    id: 316deef5cbed
+    last_write_checksum: sha1:c6ba8ca43ec9bc363a56ed3f83833458bdb0dd39
+    pristine_git_object: 2af10f1fb68885d3dfa9929eff1dfe91d33594f7
   src/Models/Operations/CrmListsAllRequest.php:
     id: b7670457d4bc
     last_write_checksum: sha1:eba38c2c340118f53239ddaab992bbdd9f80bad6
@@ -14179,6 +14251,14 @@ trackedFiles:
     id: 718c5dfdbe72
     last_write_checksum: sha1:79ff522b9a33742020d03e741b9ae7a3f083581c
     pristine_git_object: 6c389e0e76308e154471a897134f27bf639a7133
+  src/Models/Operations/VaultConnectionsMigrateRequest.php:
+    id: ff665378f3a9
+    last_write_checksum: sha1:9e0f3940813a4001313bf86c4e13c54d84a1017c
+    pristine_git_object: 024fcc19cd45f6f45b2731436cbc9d22a263d8d0
+  src/Models/Operations/VaultConnectionsMigrateResponse.php:
+    id: 52e357b3da62
+    last_write_checksum: sha1:bc0f4cca08610637fe5c32935c94621cd618d328
+    pristine_git_object: a1a9d228283c637438ea03fecaffcf1dcd1a137d
   src/Models/Operations/VaultConnectionsOneRequest.php:
     id: bf5ecaa0977a
     last_write_checksum: sha1:f1f791c874324c24ebd302a893990cf1a2c7e7f1
@@ -14409,8 +14489,8 @@ trackedFiles:
     pristine_git_object: 1b84a996bbe4b1742310466f6289fde44ac8a13c
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:4b820ed19e6c5e1e89953044768fa47c4255af6e
-    pristine_git_object: e57f944ee4acbca4c13797f3fcdeabf6c187836d
+    last_write_checksum: sha1:17ccc7dadbed744bd2ab3c06cf443f44f08cd11d
+    pristine_git_object: a9bddc92595bf407828a6ac67ae10e1991cfa188
   src/Sessions.php:
     id: 7f6ea05b19ca
     last_write_checksum: sha1:49fed08b188438bf50f8af86d8631d9f3bf3cd5f
@@ -31126,8 +31206,66 @@ examples:
           application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
         default:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  crm.listMembersAll:
+    speakeasy-default-crm-list-members-all:
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          raw: false
+          limit: 20
+          pass_through: {"search": "San Francisco"}
+          fields: "id,updated_at"
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+          x-apideck-service-id: "salesforce"
+      responses:
+        "200":
+          application/json: {"status_code": 200, "status": "OK", "service": "hubspot", "resource": "list-members", "operation": "all", "data": [{"id": "12345", "object_type": "contacts"}], "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}, "total_count": 1, "warnings": [{"type": "downstream_request_failed", "status_code": 429, "operation": "getManager"}]}, "links": {"previous": "https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjE%3D", "current": "https://unify.apideck.com/crm/companies", "next": "https://unify.apideck.com/crm/companies?cursor=em9oby1jcm06OnBhZ2U6OjM"}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+  vault.connectionsMigrate:
+    speakeasy-default-vault-connections-migrate:
+      parameters:
+        path:
+          service_id: "pipedrive"
+          unified_api: "crm"
+        header:
+          x-apideck-consumer-id: "test-consumer"
+          x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+      requestBody:
+        application/json: {"target_service_id": "intuit-enterprise-suite"}
+      responses:
+        "200":
+          application/json: {"status_code": 201, "status": "OK", "data": {"id": "crm+salesforce", "service_id": "salesforce", "name": "Salesforce", "tag_line": "CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.", "unified_api": "crm", "state": "authorized", "integration_state": "configured", "auth_type": "oauth2", "oauth_grant_type": "authorization_code", "enabled": true, "website": "https://www.salesforce.com", "icon": "https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png", "logo": "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg", "authorize_url": "https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>", "revoke_url": "https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>", "settings": {"instance_url": "https://eu28.salesforce.com", "api_key": "12345xxxxxx"}, "metadata": {"account": {"name": "My Company", "id": "c01458a5-7276-41ce-bc19-639906b0450a"}, "plan": "enterprise"}, "form_fields": [{"id": "instance_url", "label": "Instance url", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": false}, {"id": "api_key", "label": "API Key", "placeholder": "", "type": "text", "required": true, "custom_field": false, "allow_custom_values": false, "disabled": false, "sensitive": true}], "configuration": [{"resource": "leads", "defaults": [{"target": "custom_fields", "id": "ProductInterest", "options": [{"label": "General Channel", "options": [{"label": "General Channel", "value": "general", "option_type": "simple"}], "option_type": "group"}], "value": "GC5000 series"}]}], "configurable_resources": ["opportunities", "companies", "contacts", "leads"], "resource_schema_support": ["leads"], "resource_settings_support": ["leads"], "settings_required_for_authorization": ["client_id", "client_secret"], "subscriptions": [{"downstream_id": "5f5f5f5f5f5f5f5f5f5f5f5f", "unify_event_types": ["crm.contact.created"], "downstream_event_types": ["contacts.CREATED"], "execute_url": "https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}", "created_at": "2020-10-01T12:00:00.000Z"}], "has_guide": true, "custom_mappings": [{"id": "hris+employees+first_aid_training", "label": "First Aid Training", "description": "First Aid Training completed after 2019-01-01", "value": "$.root.training.first_aid", "key": "first_aid_training", "required": false, "custom_field": true, "consumer_id": "test_user_id", "example": "Some value"}], "consent_state": "granted", "consents": [{"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}], "latest_consent": {"id": "con_1234567890", "created_at": "2025-04-15T14:30:00Z", "granted": true, "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "application_data_scopes": {"enabled": true, "updated_at": "2025-04-15T14:30:00Z", "resources": {"hris.employees": {"id": {"read": true, "write": false}, "first_name": {"read": true, "write": true}, "last_name": {"read": true, "write": true}, "email": {"read": true, "write": true}, "addresses[].street": {"read": true, "write": false}, "addresses[].city": {"read": true, "write": false}, "employment.job_title": {"read": true, "write": true}, "custom_fields[].employee_number": {"read": true, "write": false}}, "hris.departments": {"id": {"read": true, "write": false}, "name": {"read": true, "write": true}, "code": {"read": true, "write": false}}}}, "health": "ok", "credentials_expire_at": 1730172800000, "last_refresh_failed_at": 1730000000000, "last_downstream_error_at": 1730000000000, "created_at": 1615563533390, "updated_at": 1616662325753}}
+        "400":
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
+        "401":
+          application/json: {"status_code": 401, "error": "Unauthorized", "type_name": "UnauthorizedError", "message": "Unauthorized Request", "detail": "Missing authentication", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
+        "402":
+          application/json: {"status_code": 402, "error": "Payment Required", "type_name": "RequestLimitError", "message": "Request Limit Reached", "detail": "You have reached your limit of 2000", "ref": "https://developers.apideck.com/errors#requestlimiterror"}
+        "404":
+          application/json: {"status_code": 404, "error": "Not Found", "type_name": "EntityNotFoundError", "message": "Unknown Widget", "detail": "Could not find widget with id: '123'", "ref": "https://developers.apideck.com/errors#entitynotfounderror"}
+        "409":
+          application/json: {"status_code": 409, "error": "Conflict", "type_name": "ConflictError", "message": "Conflict", "detail": "A connection already exists for the target connector", "ref": "https://developers.apideck.com/errors#conflicterror"}
+        "422":
+          application/json: {"status_code": 422, "error": "Unprocessable Entity", "type_name": "InvalidStateError", "message": "Invalid State", "detail": "Unprocessable request, please verify your request headers and body.", "ref": "https://developers.apideck.com/errors#invalidstateerror"}
+        default:
+          application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: "## Php SDK Changes:\n* `apideck->webhook->webhooks->list()`:  `response.data[]->events[]->enum(vault.connection.migrated)` **Added** (Breaking ⚠️)\n* `apideck->webhook->webhooks->create()`: \n  *  `request.createWebhookRequest->events[]->enum(vault.connection.migrated)` **Added**\n  *  `response.data->events[]->enum(vault.connection.migrated)` **Added** (Breaking ⚠️)\n* `apideck->webhook->webhooks->get()`:  `response.data->events[]->enum(vault.connection.migrated)` **Added** (Breaking ⚠️)\n* `apideck->webhook->webhooks->update()`: \n  *  `request.updateWebhookRequest->events[]->enum(vault.connection.migrated)` **Added**\n  *  `response.data->events[]->enum(vault.connection.migrated)` **Added** (Breaking ⚠️)\n* `apideck->webhook->webhooks->delete()`:  `response.data->events[]->enum(vault.connection.migrated)` **Added** (Breaking ⚠️)\n* `apideck->crm->listMembers->list()`: **Added**\n* `apideck->vault->connections->migrate()`: **Added**\n* `apideck->connector->connectors->list()`:  `response.data[]->migrationTargets` **Added**\n* `apideck->connector->connectors->get()`:  `response.data->migrationTargets` **Added**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md

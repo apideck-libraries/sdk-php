@@ -94,6 +94,16 @@ class Connector
     public ?bool $freeTrialAvailable = null;
 
     /**
+     * Service ids of connectors this connector's connections can be migrated to via the Vault connectionsMigrate operation.
+     *
+     * @var ?array<string> $migrationTargets
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('migration_targets')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $migrationTargets = null;
+
+    /**
      * Type of authorization used by the connector
      *
      * @var ?\Apideck\Unify\Models\Components\ConnectorAuthType $authType
@@ -296,6 +306,7 @@ class Connector
      * @param  ?string  $signupUrl
      * @param  ?string  $partnerSignupUrl
      * @param  ?bool  $freeTrialAvailable
+     * @param  ?array<string>  $migrationTargets
      * @param  ?\Apideck\Unify\Models\Components\ConnectorAuthType  $authType
      * @param  ?bool  $authOnly
      * @param  ?bool  $blindMapped
@@ -318,7 +329,7 @@ class Connector
      * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?ConnectorStatus $status = null, ?string $iconUrl = null, ?string $logoUrl = null, ?string $websiteUrl = null, ?string $signupUrl = null, ?string $partnerSignupUrl = null, ?bool $freeTrialAvailable = null, ?ConnectorAuthType $authType = null, ?bool $authOnly = null, ?bool $blindMapped = null, ?ConnectorOauthGrantType $oauthGrantType = null, ?OauthCredentialsSource $oauthCredentialsSource = null, ?array $oauthScopes = null, ?bool $customScopes = null, ?bool $hasSandboxCredentials = null, ?array $settings = null, ?string $serviceId = null, ?array $unifiedApis = null, ?array $supportedResources = null, ?array $configurableResources = null, ?array $supportedEvents = null, ?WebhookSupport $webhookSupport = null, ?SchemaSupport $schemaSupport = null, ?array $docs = null, ?ConnectorOverview $overview = null, ?TlsSupport $tlsSupport = null, ?string $description = null)
+    public function __construct(?string $id = null, ?string $name = null, ?ConnectorStatus $status = null, ?string $iconUrl = null, ?string $logoUrl = null, ?string $websiteUrl = null, ?string $signupUrl = null, ?string $partnerSignupUrl = null, ?bool $freeTrialAvailable = null, ?array $migrationTargets = null, ?ConnectorAuthType $authType = null, ?bool $authOnly = null, ?bool $blindMapped = null, ?ConnectorOauthGrantType $oauthGrantType = null, ?OauthCredentialsSource $oauthCredentialsSource = null, ?array $oauthScopes = null, ?bool $customScopes = null, ?bool $hasSandboxCredentials = null, ?array $settings = null, ?string $serviceId = null, ?array $unifiedApis = null, ?array $supportedResources = null, ?array $configurableResources = null, ?array $supportedEvents = null, ?WebhookSupport $webhookSupport = null, ?SchemaSupport $schemaSupport = null, ?array $docs = null, ?ConnectorOverview $overview = null, ?TlsSupport $tlsSupport = null, ?string $description = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -329,6 +340,7 @@ class Connector
         $this->signupUrl = $signupUrl;
         $this->partnerSignupUrl = $partnerSignupUrl;
         $this->freeTrialAvailable = $freeTrialAvailable;
+        $this->migrationTargets = $migrationTargets;
         $this->authType = $authType;
         $this->authOnly = $authOnly;
         $this->blindMapped = $blindMapped;
