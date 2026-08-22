@@ -76,6 +76,14 @@ class ProxyPutProxyRequest
     public ?int $timeout = null;
 
     /**
+     * Set to `false` to opt out of the redirect to the presigned download URL. Instead of a `30x` response, you receive a `200` JSON body `{ url, expires_at }` containing the URL and its expiry, which you can fetch explicitly. Use this if your client automatically forwards the `Authorization` header onto redirects, since the downstream storage provider will reject that request. Any value other than `false` (or omitting the header) preserves the default redirect behavior.
+     *
+     * @var ?bool $followRedirects
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-apideck-follow-redirects')]
+    public ?bool $followRedirects = null;
+
+    /**
      * @param  string  $serviceId
      * @param  string  $downstreamUrl
      * @param  ?string  $consumerId
@@ -83,10 +91,11 @@ class ProxyPutProxyRequest
      * @param  ?string  $unifiedApi
      * @param  ?string  $downstreamAuthorization
      * @param  ?int  $timeout
+     * @param  ?bool  $followRedirects
      * @param  ?string  $requestBody
      * @phpstan-pure
      */
-    public function __construct(string $serviceId, string $downstreamUrl, ?string $consumerId = null, ?string $appId = null, ?string $unifiedApi = null, ?string $downstreamAuthorization = null, ?string $requestBody = null, ?int $timeout = 28000)
+    public function __construct(string $serviceId, string $downstreamUrl, ?string $consumerId = null, ?string $appId = null, ?string $unifiedApi = null, ?string $downstreamAuthorization = null, ?string $requestBody = null, ?int $timeout = 28000, ?bool $followRedirects = true)
     {
         $this->serviceId = $serviceId;
         $this->downstreamUrl = $downstreamUrl;
@@ -96,5 +105,6 @@ class ProxyPutProxyRequest
         $this->downstreamAuthorization = $downstreamAuthorization;
         $this->requestBody = $requestBody;
         $this->timeout = $timeout;
+        $this->followRedirects = $followRedirects;
     }
 }

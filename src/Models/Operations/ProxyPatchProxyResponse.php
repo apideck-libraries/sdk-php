@@ -27,42 +27,42 @@ class ProxyPatchProxyResponse
     public array $headers;
 
     /**
-     * Ok
+     * Ok. When the request includes `x-apideck-follow-redirects: false` and the downstream response would otherwise redirect to a presigned URL (oversized responses), the body is instead an `application/json` object `{ url, expires_at }` — fetch `url` explicitly (without the Authorization header) to retrieve the payload.
      *
      * @var ?array<string, mixed> $responseJson
      */
     public ?array $responseJson = null;
 
     /**
-     * Ok
+     * Ok. When the request includes `x-apideck-follow-redirects: false` and the downstream response would otherwise redirect to a presigned URL (oversized responses), the body is instead an `application/json` object `{ url, expires_at }` — fetch `url` explicitly (without the Authorization header) to retrieve the payload.
      *
      * @var ?string $responseBinary
      */
     public ?string $responseBinary = null;
 
     /**
-     * Ok
+     * Ok. When the request includes `x-apideck-follow-redirects: false` and the downstream response would otherwise redirect to a presigned URL (oversized responses), the body is instead an `application/json` object `{ url, expires_at }` — fetch `url` explicitly (without the Authorization header) to retrieve the payload.
      *
      * @var ?string $responsePdf
      */
     public ?string $responsePdf = null;
 
     /**
-     * Ok
+     * Ok. When the request includes `x-apideck-follow-redirects: false` and the downstream response would otherwise redirect to a presigned URL (oversized responses), the body is instead an `application/json` object `{ url, expires_at }` — fetch `url` explicitly (without the Authorization header) to retrieve the payload.
      *
      * @var ?string $responseXml
      */
     public ?string $responseXml = null;
 
     /**
-     * Ok
+     * Ok. When the request includes `x-apideck-follow-redirects: false` and the downstream response would otherwise redirect to a presigned URL (oversized responses), the body is instead an `application/json` object `{ url, expires_at }` — fetch `url` explicitly (without the Authorization header) to retrieve the payload.
      *
      * @var ?string $responseCsv
      */
     public ?string $responseCsv = null;
 
     /**
-     * Ok
+     * Ok. When the request includes `x-apideck-follow-redirects: false` and the downstream response would otherwise redirect to a presigned URL (oversized responses), the body is instead an `application/json` object `{ url, expires_at }` — fetch `url` explicitly (without the Authorization header) to retrieve the payload.
      *
      * @var ?string $responseText
      */

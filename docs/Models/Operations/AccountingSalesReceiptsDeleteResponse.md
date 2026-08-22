@@ -1,0 +1,10 @@
+# AccountingSalesReceiptsDeleteResponse
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                      | [Components\HTTPMetadata](../../Models/Components/HTTPMetadata.md)                              | :heavy_check_mark:                                                                              | N/A                                                                                             |
+| `deleteSalesReceiptResponse`                                                                    | [?Components\DeleteSalesReceiptResponse](../../Models/Components/DeleteSalesReceiptResponse.md) | :heavy_minus_sign:                                                                              | SalesReceipt deleted                                                                            |
+| `unexpectedErrorResponse`                                                                       | [?Components\UnexpectedErrorResponse](../../Models/Components/UnexpectedErrorResponse.md)       | :heavy_minus_sign:                                                                              | Unexpected error                                                                                |

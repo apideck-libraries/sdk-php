@@ -29,6 +29,15 @@ class CustomField2
     public ?string $id = null;
 
     /**
+     * Display name of the record a reference-type custom field points at. `value` carries that record's id; this carries its human-readable name, so a consumer does not need a second lookup to render it.
+     *
+     * @var ?string $refName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ref_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $refName = null;
+
+    /**
      * More information about the custom field
      *
      * @var ?string $description
@@ -49,14 +58,16 @@ class CustomField2
     /**
      * @param  ?string  $name
      * @param  ?string  $id
+     * @param  ?string  $refName
      * @param  ?string  $description
      * @param  string|float|bool|array<string, mixed>|array<string|float|bool|array<string, mixed>|null>|null  $value
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?string $id = null, ?string $description = null, string|float|bool|array|null $value = null)
+    public function __construct(?string $name = null, ?string $id = null, ?string $refName = null, ?string $description = null, string|float|bool|array|null $value = null)
     {
         $this->name = $name;
         $this->id = $id;
+        $this->refName = $refName;
         $this->description = $description;
         $this->value = $value;
     }

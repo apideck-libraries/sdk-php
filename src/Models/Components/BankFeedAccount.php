@@ -86,6 +86,42 @@ class BankFeedAccount
     public ?array $customFields = null;
 
     /**
+     * Bank routing number (US)
+     *
+     * @var ?string $sourceRoutingNumber
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source_routing_number')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $sourceRoutingNumber = null;
+
+    /**
+     * The bank account number
+     *
+     * @var ?string $sourceAccountNumber
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source_account_number')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $sourceAccountNumber = null;
+
+    /**
+     * The current balance of the source bank account.
+     *
+     * @var ?float $balance
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('balance')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $balance = null;
+
+    /**
+     * The available balance of the source bank account (considering pending transactions and overdraft).
+     *
+     * @var ?float $availableBalance
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('available_balance')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $availableBalance = null;
+
+    /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
      * @var ?\Apideck\Unify\Models\Components\Currency $currency
@@ -159,6 +195,10 @@ class BankFeedAccount
      * @param  ?string  $targetAccountNumber
      * @param  ?\Apideck\Unify\Models\Components\FeedStatus  $feedStatus
      * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
+     * @param  ?string  $sourceRoutingNumber
+     * @param  ?string  $sourceAccountNumber
+     * @param  ?float  $balance
+     * @param  ?float  $availableBalance
      * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?string  $country
      * @param  ?array<string, mixed>  $customMappings
@@ -168,7 +208,7 @@ class BankFeedAccount
      * @param  ?string  $createdBy
      * @phpstan-pure
      */
-    public function __construct(string $id, ?BankAccountType $bankAccountType = null, ?string $sourceAccountId = null, ?string $targetAccountId = null, ?string $targetAccountName = null, ?string $targetAccountNumber = null, ?FeedStatus $feedStatus = null, ?array $customFields = null, ?Currency $currency = null, ?string $country = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $updatedBy = null, ?string $createdBy = null)
+    public function __construct(string $id, ?BankAccountType $bankAccountType = null, ?string $sourceAccountId = null, ?string $targetAccountId = null, ?string $targetAccountName = null, ?string $targetAccountNumber = null, ?FeedStatus $feedStatus = null, ?array $customFields = null, ?string $sourceRoutingNumber = null, ?string $sourceAccountNumber = null, ?float $balance = null, ?float $availableBalance = null, ?Currency $currency = null, ?string $country = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $updatedBy = null, ?string $createdBy = null)
     {
         $this->id = $id;
         $this->bankAccountType = $bankAccountType;
@@ -178,6 +218,10 @@ class BankFeedAccount
         $this->targetAccountNumber = $targetAccountNumber;
         $this->feedStatus = $feedStatus;
         $this->customFields = $customFields;
+        $this->sourceRoutingNumber = $sourceRoutingNumber;
+        $this->sourceAccountNumber = $sourceAccountNumber;
+        $this->balance = $balance;
+        $this->availableBalance = $availableBalance;
         $this->currency = $currency;
         $this->country = $country;
         $this->customMappings = $customMappings;

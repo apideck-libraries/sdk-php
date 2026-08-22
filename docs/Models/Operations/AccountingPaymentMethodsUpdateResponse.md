@@ -1,0 +1,10 @@
+# AccountingPaymentMethodsUpdateResponse
+
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                        | [Components\HTTPMetadata](../../Models/Components/HTTPMetadata.md)                                | :heavy_check_mark:                                                                                | N/A                                                                                               |
+| `updatePaymentMethodResponse`                                                                     | [?Components\UpdatePaymentMethodResponse](../../Models/Components/UpdatePaymentMethodResponse.md) | :heavy_minus_sign:                                                                                | Payment Methods                                                                                   |
+| `unexpectedErrorResponse`                                                                         | [?Components\UnexpectedErrorResponse](../../Models/Components/UnexpectedErrorResponse.md)         | :heavy_minus_sign:                                                                                | Unexpected error                                                                                  |

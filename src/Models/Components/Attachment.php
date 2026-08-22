@@ -85,6 +85,15 @@ class Attachment
     public ?string $description = null;
 
     /**
+     * The URL to download or preview the file
+     *
+     * @var ?string $fileUrl
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('file_url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $fileUrl = null;
+
+    /**
      * The folder id where this attachment belong to
      *
      * @var ?string $parentFolderId
@@ -138,6 +147,7 @@ class Attachment
      * @param  ?string  $mimeType
      * @param  ?int  $size
      * @param  ?string  $description
+     * @param  ?string  $fileUrl
      * @param  ?string  $parentFolderId
      * @param  ?string  $updatedBy
      * @param  ?string  $createdBy
@@ -145,7 +155,7 @@ class Attachment
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?AttachmentReference $reference = null, ?array $passThrough = null, ?string $displayId = null, ?string $name = null, ?string $mimeType = null, ?int $size = null, ?string $description = null, ?string $parentFolderId = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?AttachmentReference $reference = null, ?array $passThrough = null, ?string $displayId = null, ?string $name = null, ?string $mimeType = null, ?int $size = null, ?string $description = null, ?string $fileUrl = null, ?string $parentFolderId = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->reference = $reference;
@@ -155,6 +165,7 @@ class Attachment
         $this->mimeType = $mimeType;
         $this->size = $size;
         $this->description = $description;
+        $this->fileUrl = $fileUrl;
         $this->parentFolderId = $parentFolderId;
         $this->updatedBy = $updatedBy;
         $this->createdBy = $createdBy;

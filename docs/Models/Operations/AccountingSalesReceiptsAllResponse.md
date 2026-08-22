@@ -1,0 +1,10 @@
+# AccountingSalesReceiptsAllResponse
+
+
+## Fields
+
+| Field                                                                                       | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                  | [Components\HTTPMetadata](../../Models/Components/HTTPMetadata.md)                          | :heavy_check_mark:                                                                          | N/A                                                                                         |
+| `getSalesReceiptsResponse`                                                                  | [?Components\GetSalesReceiptsResponse](../../Models/Components/GetSalesReceiptsResponse.md) | :heavy_minus_sign:                                                                          | SalesReceipts                                                                               |
+| `unexpectedErrorResponse`                                                                   | [?Components\UnexpectedErrorResponse](../../Models/Components/UnexpectedErrorResponse.md)   | :heavy_minus_sign:                                                                          | Unexpected error                                                                            |

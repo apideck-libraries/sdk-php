@@ -42,6 +42,7 @@ $request = new Operations\ProxyGetProxyRequest(
     downstreamUrl: 'https://api.close.com/api/v1/lead',
     downstreamAuthorization: 'Bearer <token>',
     timeout: 30000,
+    followRedirects: false,
 );
 
 $response = $sdk->proxy->get(
@@ -101,6 +102,7 @@ $request = new Operations\ProxyOptionsProxyRequest(
     downstreamUrl: 'https://api.close.com/api/v1/lead',
     downstreamAuthorization: 'Bearer <token>',
     timeout: 30000,
+    followRedirects: false,
 );
 
 $response = $sdk->proxy->options(
@@ -160,6 +162,7 @@ $request = new Operations\ProxyPostProxyRequest(
     downstreamUrl: 'https://api.close.com/api/v1/lead',
     downstreamAuthorization: 'Bearer <token>',
     timeout: 30000,
+    followRedirects: false,
 );
 
 $response = $sdk->proxy->post(
@@ -219,6 +222,7 @@ $request = new Operations\ProxyPutProxyRequest(
     downstreamUrl: 'https://api.close.com/api/v1/lead',
     downstreamAuthorization: 'Bearer <token>',
     timeout: 30000,
+    followRedirects: false,
 );
 
 $response = $sdk->proxy->put(
@@ -278,6 +282,7 @@ $request = new Operations\ProxyPatchProxyRequest(
     downstreamUrl: 'https://api.close.com/api/v1/lead',
     downstreamAuthorization: 'Bearer <token>',
     timeout: 30000,
+    followRedirects: false,
 );
 
 $response = $sdk->proxy->patch(
@@ -337,6 +342,7 @@ $request = new Operations\ProxyDeleteProxyRequest(
     downstreamUrl: 'https://api.close.com/api/v1/lead',
     downstreamAuthorization: 'Bearer <token>',
     timeout: 30000,
+    followRedirects: false,
 );
 
 $response = $sdk->proxy->delete(

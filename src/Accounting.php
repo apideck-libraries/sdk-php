@@ -45,6 +45,8 @@ class Accounting
 
     public GeneralLedgerTransactions $generalLedgerTransactions;
 
+    public SalesReceipts $salesReceipts;
+
     public PurchaseOrders $purchaseOrders;
 
     public Subsidiaries $subsidiaries;
@@ -81,6 +83,8 @@ class Accounting
 
     public ExpenseCategories $expenseCategories;
 
+    public PaymentMethods $paymentMethods;
+
     public ExpenseReports $expenseReports;
 
     /**
@@ -105,6 +109,7 @@ class Accounting
         $this->profitAndLoss = new ProfitAndLoss($this->sdkConfiguration);
         $this->journalEntries = new JournalEntries($this->sdkConfiguration);
         $this->generalLedgerTransactions = new GeneralLedgerTransactions($this->sdkConfiguration);
+        $this->salesReceipts = new SalesReceipts($this->sdkConfiguration);
         $this->purchaseOrders = new PurchaseOrders($this->sdkConfiguration);
         $this->subsidiaries = new Subsidiaries($this->sdkConfiguration);
         $this->locations = new Locations($this->sdkConfiguration);
@@ -123,6 +128,7 @@ class Accounting
         $this->projects = new Projects($this->sdkConfiguration);
         $this->employees = new Employees($this->sdkConfiguration);
         $this->expenseCategories = new ExpenseCategories($this->sdkConfiguration);
+        $this->paymentMethods = new PaymentMethods($this->sdkConfiguration);
         $this->expenseReports = new ExpenseReports($this->sdkConfiguration);
     }
     /**

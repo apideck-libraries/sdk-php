@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 use Apideck\Unify\Utils\SpeakeasyMetadata;
+use Brick\DateTime\LocalDate;
 class JournalEntriesFilter
 {
     /**
@@ -17,6 +18,22 @@ class JournalEntriesFilter
      */
     #[SpeakeasyMetadata('queryParam:name=updated_since,dateTimeFormat=Y-m-d\TH:i:s.up')]
     public ?\DateTime $updatedSince = null;
+
+    /**
+     * Return journal entries posted on or after this date (posting date, inclusive). Connectors without date-range support reject this filter with UnsupportedFiltersError.
+     *
+     * @var ?LocalDate $startDate
+     */
+    #[SpeakeasyMetadata('queryParam:name=start_date,dateTimeFormat=Y-m-d')]
+    public ?LocalDate $startDate = null;
+
+    /**
+     * Return journal entries posted on or before this date (posting date, inclusive). Connectors without date-range support reject this filter with UnsupportedFiltersError.
+     *
+     * @var ?LocalDate $endDate
+     */
+    #[SpeakeasyMetadata('queryParam:name=end_date,dateTimeFormat=Y-m-d')]
+    public ?LocalDate $endDate = null;
 
     /**
      *
@@ -43,14 +60,18 @@ class JournalEntriesFilter
 
     /**
      * @param  ?\DateTime  $updatedSince
+     * @param  ?LocalDate  $startDate
+     * @param  ?LocalDate  $endDate
      * @param  ?\Apideck\Unify\Models\Components\JournalEntriesFilterStatus  $status
      * @param  ?\Apideck\Unify\Models\Components\JournalEntriesFilterScope  $scope
      * @param  ?string  $subsidiaryId
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedSince = null, ?JournalEntriesFilterStatus $status = null, ?JournalEntriesFilterScope $scope = null, ?string $subsidiaryId = null)
+    public function __construct(?\DateTime $updatedSince = null, ?LocalDate $startDate = null, ?LocalDate $endDate = null, ?JournalEntriesFilterStatus $status = null, ?JournalEntriesFilterScope $scope = null, ?string $subsidiaryId = null)
     {
         $this->updatedSince = $updatedSince;
+        $this->startDate = $startDate;
+        $this->endDate = $endDate;
         $this->status = $status;
         $this->scope = $scope;
         $this->subsidiaryId = $subsidiaryId;

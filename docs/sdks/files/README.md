@@ -379,6 +379,7 @@ $request = new Operations\FileStorageFilesDownloadRequest(
     id: '<id>',
     serviceId: 'salesforce',
     fields: 'id,updated_at',
+    followRedirects: false,
 );
 
 $response = $sdk->fileStorage->files->download(
