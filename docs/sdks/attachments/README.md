@@ -296,6 +296,7 @@ $request = new Operations\AccountingAttachmentsDownloadRequest(
     serviceId: 'salesforce',
     companyId: '12345',
     fields: 'id,updated_at',
+    followRedirects: false,
 );
 
 $response = $sdk->accounting->attachments->download(

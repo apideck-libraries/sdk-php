@@ -1,0 +1,10 @@
+# AccountingPaymentMethodsAllResponse
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                    | [Components\HTTPMetadata](../../Models/Components/HTTPMetadata.md)                            | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `getPaymentMethodsResponse`                                                                   | [?Components\GetPaymentMethodsResponse](../../Models/Components/GetPaymentMethodsResponse.md) | :heavy_minus_sign:                                                                            | Payment Methods                                                                               |
+| `unexpectedErrorResponse`                                                                     | [?Components\UnexpectedErrorResponse](../../Models/Components/UnexpectedErrorResponse.md)     | :heavy_minus_sign:                                                                            | Unexpected error                                                                              |

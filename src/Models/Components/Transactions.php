@@ -82,6 +82,15 @@ class Transactions
     public ?BankFeedStatementTransactionType $transactionType = null;
 
     /**
+     * The ISO 18245 merchant category code (MCC) classifying the merchant for this transaction, expected as a four-digit code such as `5812`. The format is not enforced by the API, matching the other bank identifier fields.
+     *
+     * @var ?string $merchantCategoryCode
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('merchant_category_code')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $merchantCategoryCode = null;
+
+    /**
      * @param  \DateTime  $postedDate
      * @param  float  $amount
      * @param  \Apideck\Unify\Models\Components\CreditOrDebit  $creditOrDebit
@@ -90,9 +99,10 @@ class Transactions
      * @param  ?string  $counterparty
      * @param  ?string  $reference
      * @param  ?\Apideck\Unify\Models\Components\BankFeedStatementTransactionType  $transactionType
+     * @param  ?string  $merchantCategoryCode
      * @phpstan-pure
      */
-    public function __construct(\DateTime $postedDate, float $amount, CreditOrDebit $creditOrDebit, string $sourceTransactionId, ?string $description = null, ?string $counterparty = null, ?string $reference = null, ?BankFeedStatementTransactionType $transactionType = null)
+    public function __construct(\DateTime $postedDate, float $amount, CreditOrDebit $creditOrDebit, string $sourceTransactionId, ?string $description = null, ?string $counterparty = null, ?string $reference = null, ?BankFeedStatementTransactionType $transactionType = null, ?string $merchantCategoryCode = null)
     {
         $this->postedDate = $postedDate;
         $this->amount = $amount;
@@ -102,5 +112,6 @@ class Transactions
         $this->counterparty = $counterparty;
         $this->reference = $reference;
         $this->transactionType = $transactionType;
+        $this->merchantCategoryCode = $merchantCategoryCode;
     }
 }

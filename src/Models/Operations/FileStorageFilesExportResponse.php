@@ -20,7 +20,7 @@ class FileStorageFilesExportResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
-     * File Download
+     * File Download. When the request includes `x-apideck-follow-redirects: false` and the download would otherwise redirect to a presigned URL, the response body is instead an `application/json` object `{ url, expires_at }` — fetch `url` explicitly (without the Authorization header) to retrieve the file.
      *
      * @var ?string $getFileDownloadResponse
      */

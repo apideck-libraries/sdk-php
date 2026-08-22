@@ -77,6 +77,14 @@ class AccountingAttachmentsDownloadRequest
     public ?string $fields = null;
 
     /**
+     * Set to `false` to opt out of the redirect to the presigned download URL. Instead of a `30x` response, you receive a `200` JSON body `{ url, expires_at }` containing the URL and its expiry, which you can fetch explicitly. Use this if your client automatically forwards the `Authorization` header onto redirects, since the downstream storage provider will reject that request. Any value other than `false` (or omitting the header) preserves the default redirect behavior.
+     *
+     * @var ?bool $followRedirects
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-apideck-follow-redirects')]
+    public ?bool $followRedirects = null;
+
+    /**
      * @param  \Apideck\Unify\Models\Components\AttachmentReferenceType  $referenceType
      * @param  string  $referenceId
      * @param  string  $id
@@ -84,10 +92,11 @@ class AccountingAttachmentsDownloadRequest
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?string  $companyId
+     * @param  ?bool  $followRedirects
      * @param  ?string  $fields
      * @phpstan-pure
      */
-    public function __construct(Components\AttachmentReferenceType $referenceType, string $referenceId, string $id, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $companyId = null, ?string $fields = null)
+    public function __construct(Components\AttachmentReferenceType $referenceType, string $referenceId, string $id, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $companyId = null, ?string $fields = null, ?bool $followRedirects = true)
     {
         $this->referenceType = $referenceType;
         $this->referenceId = $referenceId;
@@ -97,5 +106,6 @@ class AccountingAttachmentsDownloadRequest
         $this->serviceId = $serviceId;
         $this->companyId = $companyId;
         $this->fields = $fields;
+        $this->followRedirects = $followRedirects;
     }
 }

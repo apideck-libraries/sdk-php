@@ -52,19 +52,29 @@ class FileStorageFilesDownloadRequest
     public ?string $fields = null;
 
     /**
+     * Set to `false` to opt out of the redirect to the presigned download URL. Instead of a `30x` response, you receive a `200` JSON body `{ url, expires_at }` containing the URL and its expiry, which you can fetch explicitly. Use this if your client automatically forwards the `Authorization` header onto redirects, since the downstream storage provider will reject that request. Any value other than `false` (or omitting the header) preserves the default redirect behavior.
+     *
+     * @var ?bool $followRedirects
+     */
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-apideck-follow-redirects')]
+    public ?bool $followRedirects = null;
+
+    /**
      * @param  string  $id
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId
+     * @param  ?bool  $followRedirects
      * @param  ?string  $fields
      * @phpstan-pure
      */
-    public function __construct(string $id, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $fields = null)
+    public function __construct(string $id, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $fields = null, ?bool $followRedirects = true)
     {
         $this->id = $id;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
         $this->fields = $fields;
+        $this->followRedirects = $followRedirects;
     }
 }

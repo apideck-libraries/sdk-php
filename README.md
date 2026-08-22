@@ -336,6 +336,14 @@ foreach ($responses as $response) {
 * [update](docs/sdks/locations/README.md#update) - Update Location
 * [delete](docs/sdks/locations/README.md#delete) - Delete Location
 
+### [Accounting.PaymentMethods](docs/sdks/paymentmethods/README.md)
+
+* [list](docs/sdks/paymentmethods/README.md#list) - List Payment Methods
+* [create](docs/sdks/paymentmethods/README.md#create) - Create Payment Method
+* [get](docs/sdks/paymentmethods/README.md#get) - Get Payment Method
+* [update](docs/sdks/paymentmethods/README.md#update) - Update Payment Method
+* [delete](docs/sdks/paymentmethods/README.md#delete) - Delete Payment Method
+
 ### [Accounting.Payments](docs/sdks/payments/README.md)
 
 * [list](docs/sdks/payments/README.md#list) - List Payments
@@ -379,6 +387,14 @@ foreach ($responses as $response) {
 * [get](docs/sdks/refunds/README.md#get) - Get Refund
 * [update](docs/sdks/refunds/README.md#update) - Update Refund
 * [delete](docs/sdks/refunds/README.md#delete) - Delete Refund
+
+### [Accounting.SalesReceipts](docs/sdks/salesreceipts/README.md)
+
+* [list](docs/sdks/salesreceipts/README.md#list) - List Sales Receipts
+* [create](docs/sdks/salesreceipts/README.md#create) - Create Sales Receipt
+* [get](docs/sdks/salesreceipts/README.md#get) - Get Sales Receipt
+* [update](docs/sdks/salesreceipts/README.md#update) - Update Sales Receipt
+* [delete](docs/sdks/salesreceipts/README.md#delete) - Delete Sales Receipt
 
 ### [Accounting.Subsidiaries](docs/sdks/subsidiaries/README.md)
 
