@@ -12,6 +12,14 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class CustomersFilter
 {
     /**
+     * Comma-separated list of customer IDs to filter by (e.g. `12345,67890`).
+     *
+     * @var ?string $ids
+     */
+    #[SpeakeasyMetadata('queryParam:name=ids')]
+    public ?string $ids = null;
+
+    /**
      * Company Name of customer to search for
      *
      * @var ?string $companyName
@@ -83,6 +91,7 @@ class CustomersFilter
     public ?CustomersFilterStatus $status = null;
 
     /**
+     * @param  ?string  $ids
      * @param  ?string  $companyName
      * @param  ?string  $displayName
      * @param  ?string  $firstName
@@ -94,8 +103,9 @@ class CustomersFilter
      * @param  ?\Apideck\Unify\Models\Components\CustomersFilterStatus  $status
      * @phpstan-pure
      */
-    public function __construct(?string $companyName = null, ?string $displayName = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?\DateTime $updatedSince = null, ?string $supplierId = null, ?string $subsidiaryId = null, ?CustomersFilterStatus $status = null)
+    public function __construct(?string $ids = null, ?string $companyName = null, ?string $displayName = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?\DateTime $updatedSince = null, ?string $supplierId = null, ?string $subsidiaryId = null, ?CustomersFilterStatus $status = null)
     {
+        $this->ids = $ids;
         $this->companyName = $companyName;
         $this->displayName = $displayName;
         $this->firstName = $firstName;

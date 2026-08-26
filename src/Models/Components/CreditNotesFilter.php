@@ -12,6 +12,14 @@ use Apideck\Unify\Utils\SpeakeasyMetadata;
 class CreditNotesFilter
 {
     /**
+     * Comma-separated list of credit note IDs to filter by (e.g. `12345,67890`). On some connectors (e.g. DualEntry) the credit note ID is the credit note number.
+     *
+     * @var ?string $ids
+     */
+    #[SpeakeasyMetadata('queryParam:name=ids')]
+    public ?string $ids = null;
+
+    /**
      * Return records with a row ID greater than or equal to the given value
      *
      * @var ?string $idSince
@@ -58,6 +66,7 @@ class CreditNotesFilter
     public ?string $customerId = null;
 
     /**
+     * @param  ?string  $ids
      * @param  ?string  $idSince
      * @param  ?\DateTime  $updatedSince
      * @param  ?\DateTime  $createdSince
@@ -66,8 +75,9 @@ class CreditNotesFilter
      * @param  ?string  $customerId
      * @phpstan-pure
      */
-    public function __construct(?string $idSince = null, ?\DateTime $updatedSince = null, ?\DateTime $createdSince = null, ?string $number = null, ?string $subsidiaryId = null, ?string $customerId = null)
+    public function __construct(?string $ids = null, ?string $idSince = null, ?\DateTime $updatedSince = null, ?\DateTime $createdSince = null, ?string $number = null, ?string $subsidiaryId = null, ?string $customerId = null)
     {
+        $this->ids = $ids;
         $this->idSince = $idSince;
         $this->updatedSince = $updatedSince;
         $this->createdSince = $createdSince;
