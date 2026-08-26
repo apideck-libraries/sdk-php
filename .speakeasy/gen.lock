@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: b0432f8b090f29832461c610ed2cab3a
-  docVersion: 10.44.0
-  speakeasyVersion: 1.795.1
+  docChecksum: 031b70d18f3cd86477200b3d51d3369c
+  docVersion: 10.45.0
+  speakeasyVersion: 1.795.3
   generationVersion: 2.932.9
-  releaseVersion: 0.23.0
-  configChecksum: c80a091fd78c695aeb80d55593066052
+  releaseVersion: 0.24.0
+  configChecksum: c03f044fe2e98462c11e0f9e061511cb
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: ac9919c0-7201-450f-ae52-6e6e7ab94e44
-  pristine_commit_hash: a7779f5e42100c924ffad7666fa6db80cff7500a
-  pristine_tree_hash: 5de869ed822df9128af6563a5a2414e10458e275
+  generation_id: 709aa363-6840-4a82-aafc-89f500a27fd6
+  pristine_commit_hash: 33a2ad6613bda393313a683d29f3600f5a41b17a
+  pristine_tree_hash: aefedf42c5ce328cfad64d3205460600a5dad972
 features:
   php:
     additionalProperties: 0.1.1
@@ -1069,8 +1069,8 @@ trackedFiles:
     pristine_git_object: 4739f854dd031ee2c8557077c1fe5464bbccc884
   docs/Models/Components/CreditNotesFilter.md:
     id: f0853eb3fd71
-    last_write_checksum: sha1:d77fefe0ec365eeb40ffeae52415c2c82ef3df2d
-    pristine_git_object: 5f92e0875f8ab9d5ed4a59d081aa659f24fe22b3
+    last_write_checksum: sha1:e230dae9a9a8a434324323bb3b55c4079a0da090
+    pristine_git_object: c06a42fa7780f27b10e749507462c39e4366a14f
   docs/Models/Components/CreditNotesSort.md:
     id: 4bf8820e883e
     last_write_checksum: sha1:040e197319549cc89a28fc824f6e712b8efcf293
@@ -1177,8 +1177,8 @@ trackedFiles:
     pristine_git_object: b23f7e9fca31852d9c08afe9905e7488e4f4730a
   docs/Models/Components/CustomersFilter.md:
     id: 309bf1a930d6
-    last_write_checksum: sha1:b0f94b9005f16805012d71c36eed61ed3e05f50c
-    pristine_git_object: 5c4ffd5034a2812dc5b3cd20e1cf3d0a17c025a9
+    last_write_checksum: sha1:1c30e5324deeb75627fa4dc2fc29caf47340c282
+    pristine_git_object: 8eec8e853fa676696b99f5f44cc158dd9e0ceb39
   docs/Models/Components/CustomersFilterStatus.md:
     id: fb17b9196d52
     last_write_checksum: sha1:a5140fd74cfeee52836163cdaa0d48c8e7c2a095
@@ -2633,8 +2633,8 @@ trackedFiles:
     pristine_git_object: de1dbf1534a850fb2d2a5edc091f9a587f0e9326
   docs/Models/Components/InvoicesFilter.md:
     id: 69b35a412ef4
-    last_write_checksum: sha1:b888a289216096e83b9f8fef689e39c41e994414
-    pristine_git_object: b0f26aea07b827e6c80f29abf7735549c970764a
+    last_write_checksum: sha1:aa280ff4fbe9f9654e1dbdc4a5e7de143360d79a
+    pristine_git_object: 8f94497f7b21e58b165ce105ca4b8d3b5f6da439
   docs/Models/Components/InvoicesSort.md:
     id: d6fee2e1ccbf
     last_write_checksum: sha1:3982e80794c746d32b878cf5ff8177a1cb2f9711
@@ -4493,8 +4493,8 @@ trackedFiles:
     pristine_git_object: 49e8f283af1fac5c0c8604cc4cec1194e01fe64c
   docs/Models/Operations/AccountingCreditNotesAllRequest.md:
     id: 0535f64dacc7
-    last_write_checksum: sha1:afa0eef95b4a04262cb913191db6cc6fae5f2a6a
-    pristine_git_object: 1bb26fb01c935dfea543b781e877f4b7d41ac893
+    last_write_checksum: sha1:ec6fa6370c804eea5efbe8d7dad61504d30b8d62
+    pristine_git_object: 12470f74627768634df649bb517a478801ca07af
   docs/Models/Operations/AccountingCreditNotesAllResponse.md:
     id: f50279758b92
     last_write_checksum: sha1:f2bf1fb4fd9943de3611a5f0c52e2172f316565c
@@ -4533,8 +4533,8 @@ trackedFiles:
     pristine_git_object: b5b47677636ae8025be69e8e3a077ffd9afbe443
   docs/Models/Operations/AccountingCustomersAllRequest.md:
     id: b18967b66a3f
-    last_write_checksum: sha1:350023bd506ffe82604d9bf2b8c5e08909360ae8
-    pristine_git_object: ecd1b2ffc71148c4d457c00dc8d90192c6040ba1
+    last_write_checksum: sha1:e37c7a20541daff5a2c73a27384fbad8b05007ec
+    pristine_git_object: be385a871eee01ad5684f0d30af788350de9b48a
   docs/Models/Operations/AccountingCustomersAllResponse.md:
     id: fa8753563ca6
     last_write_checksum: sha1:f7063c6fd2e895c580687c49034d6fabe7d69c6e
@@ -4829,8 +4829,8 @@ trackedFiles:
     pristine_git_object: 4a79611faffc654b09f3a0a6e250e9a6b2158f50
   docs/Models/Operations/AccountingInvoicesAllRequest.md:
     id: 93090ea4190c
-    last_write_checksum: sha1:375c6073f5bcc921acd41708ebc6462b3dda3298
-    pristine_git_object: 67511d872e5d897b9d8e0cb01f4bd66f012e5b14
+    last_write_checksum: sha1:5c1d8476a8a12e36becdd4b139f28b2e6f944882
+    pristine_git_object: 7763ed647b54e3ba38c48a3003cc1b4e4170cde5
   docs/Models/Operations/AccountingInvoicesAllResponse.md:
     id: d33144d3fc8f
     last_write_checksum: sha1:28f6528281958f58ce83ee47f578176208a59edf
@@ -8833,8 +8833,8 @@ trackedFiles:
     pristine_git_object: 2b8f983db1d1c2efab7bd6410658f365ffe233e6
   src/Models/Components/CreditNotesFilter.php:
     id: 1bf1330d69e2
-    last_write_checksum: sha1:7b0435959e39d0d401118473f70d86e0e8fc0907
-    pristine_git_object: b7d3e650bde1e5cd33708218352a7a4ca949b3c0
+    last_write_checksum: sha1:b55228976bef82eb5f1f1266445a1f5f49770e64
+    pristine_git_object: 589cca933a7650a8b2e180cca4b154fbf276b03b
   src/Models/Components/CreditNotesSort.php:
     id: b10e39ef7c3c
     last_write_checksum: sha1:5412c05c586f8c2132291475bab680e86eae1c0f
@@ -8921,8 +8921,8 @@ trackedFiles:
     pristine_git_object: 1405199cd524f0e0c4ced0d17f9391b6decd3292
   src/Models/Components/CustomersFilter.php:
     id: da1190702017
-    last_write_checksum: sha1:702a3bbf979d22128856b7a092330bceb0fb196f
-    pristine_git_object: 4d5a214fc5fa40388578bfba37bd0b95bdbe6b88
+    last_write_checksum: sha1:dbdbdac64125851f2bce6b89c7d0e96af525b23a
+    pristine_git_object: 32216d03bd55b9958ade063b89538b5cc5579ef8
   src/Models/Components/CustomersFilterStatus.php:
     id: 17b7bf34987b
     last_write_checksum: sha1:e8b224899aa4a099d86bb7bb71841cd9e8da2325
@@ -10361,8 +10361,8 @@ trackedFiles:
     pristine_git_object: 932392e96d2566ee7241f205616dead5f5925429
   src/Models/Components/InvoicesFilter.php:
     id: d89d536dd021
-    last_write_checksum: sha1:12f33b9b8ec1ba836d141eb11c834de7fb0237c4
-    pristine_git_object: a8a1e400c0bc450801ef53c13c172f8776a8c677
+    last_write_checksum: sha1:3f577fa52efc7e9e031cc62333b58b2af88a6843
+    pristine_git_object: 0e5f6f2e5818d79e05f144578b50c33584a1b170
   src/Models/Components/InvoicesSort.php:
     id: 05d3c1a12755
     last_write_checksum: sha1:a58c5a890726d1e4f4b35e2764e38abdd8eda78b
@@ -14813,8 +14813,8 @@ trackedFiles:
     pristine_git_object: 1b84a996bbe4b1742310466f6289fde44ac8a13c
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:225515b889fba6d8a89da0fb682e6e3c253d6565
-    pristine_git_object: ea920b2bec2f094b0a1ac120a338c0e4a5ec5a28
+    last_write_checksum: sha1:945020bd5f1395e36933836b893069430b555955
+    pristine_git_object: bb59db1fcdc8402610ecd66776ee69c9cd9810d6
   src/SalesReceipts.php:
     id: 671bcf284513
     last_write_checksum: sha1:c593f9a727511a6f194dffbf802d5895081caeb9
@@ -15593,7 +15593,7 @@ examples:
         query:
           raw: false
           limit: 20
-          filter: {"id_since": "1", "updated_since": "2020-09-30T07:43:32.000Z", "created_since": "2020-09-30T07:43:32.000Z", "number": "OIT00546", "supplier_id": "123", "customer_id": "123abc"}
+          filter: {"ids": "12345,67890", "id_since": "1", "updated_since": "2020-09-30T07:43:32.000Z", "created_since": "2020-09-30T07:43:32.000Z", "number": "OIT00546", "supplier_id": "123", "customer_id": "123abc"}
           sort: {"by": "updated_at", "direction": "desc"}
           pass_through: {"search": "San Francisco"}
           fields: "id,updated_at"
@@ -16407,7 +16407,7 @@ examples:
         query:
           raw: false
           limit: 20
-          filter: {"id_since": "1", "updated_since": "2020-09-30T07:43:32.000Z", "created_since": "2020-09-30T07:43:32.000Z", "number": "OIT00546", "customer_id": "123abc"}
+          filter: {"ids": "12345,67890", "id_since": "1", "updated_since": "2020-09-30T07:43:32.000Z", "created_since": "2020-09-30T07:43:32.000Z", "number": "OIT00546", "customer_id": "123abc"}
           sort: {"by": "updated_at", "direction": "desc"}
           pass_through: {"search": "San Francisco"}
           fields: "id,updated_at"
@@ -16677,7 +16677,7 @@ examples:
         query:
           raw: false
           limit: 20
-          filter: {"company_name": "SpaceX", "display_name": "Elon Musk", "first_name": "Elon", "last_name": "Musk", "email": "elon@musk.com", "status": "active", "updated_since": "2020-09-30T07:43:32.000Z", "supplier_id": "123"}
+          filter: {"ids": "12345,67890", "company_name": "SpaceX", "display_name": "Elon Musk", "first_name": "Elon", "last_name": "Musk", "email": "elon@musk.com", "status": "active", "updated_since": "2020-09-30T07:43:32.000Z", "supplier_id": "123"}
           sort: {"by": "updated_at", "direction": "desc"}
           pass_through: {"search": "San Francisco"}
           fields: "id,updated_at"
@@ -31876,7 +31876,7 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `apideck->accounting->refunds->list()`:  `response.data[]` **Changed** (Breaking ⚠️)\n* `apideck->accounting->refunds->get()`:  `response.data` **Changed** (Breaking ⚠️)\n* `apideck->accounting->salesReceipts->list()`: **Added**\n* `apideck->accounting->salesReceipts->create()`: **Added**\n* `apideck->accounting->salesReceipts->get()`: **Added**\n* `apideck->accounting->salesReceipts->update()`: **Added**\n* `apideck->accounting->salesReceipts->delete()`: **Added**\n* `apideck->accounting->paymentMethods->list()`: **Added**\n* `apideck->accounting->paymentMethods->create()`: **Added**\n* `apideck->accounting->paymentMethods->get()`: **Added**\n* `apideck->accounting->paymentMethods->update()`: **Added**\n* `apideck->accounting->paymentMethods->delete()`: **Added**\n* `apideck->accounting->taxRates->list()`:  `response.data[]->customFields[]` **Changed**\n* `apideck->accounting->taxRates->create()`: \n  *  `request->taxRate->customFields[]` **Changed**\n* `apideck->accounting->taxRates->get()`:  `response.data->customFields[]` **Changed**\n* `apideck->accounting->taxRates->update()`: \n  *  `request->taxRate->customFields[]` **Changed**\n* `apideck->accounting->bills->list()`:  `response.data[]->customFields[]` **Changed**\n* `apideck->accounting->bills->create()`: \n  *  `request->bill->customFields[]` **Changed**\n* `apideck->accounting->bills->get()`:  `response.data->customFields[]` **Changed**\n* `apideck->accounting->bills->update()`: \n  *  `request->bill->customFields[]` **Changed**\n* `apideck->accounting->invoices->list()`:  `response.data[]->lineItems[]->customFields[]` **Changed**\n* `apideck->accounting->invoices->create()`: \n  *  `request->invoice->lineItems[]->customFields[]` **Changed**\n* `apideck->accounting->invoices->get()`:  `response.data->lineItems[]->customFields[]` **Changed**\n* `apideck->accounting->invoices->update()`: \n  *  `request->invoice->lineItems[]->customFields[]` **Changed**\n* `apideck->accounting->ledgerAccounts->list()`:  `response.data[]->customFields[]` **Changed**\n* `apideck->accounting->ledgerAccounts->create()`: \n  *  `request->ledgerAccount->customFields[]` **Changed**\n* `apideck->accounting->ledgerAccounts->get()`:  `response.data->customFields[]` **Changed**\n* `apideck->accounting->ledgerAccounts->update()`: \n  *  `request->ledgerAccount->customFields[]` **Changed**\n* `apideck->accounting->creditNotes->list()`:  `response.data[]->lineItems[]->customFields[]` **Changed**\n* `apideck->accounting->creditNotes->create()`: \n  *  `request->creditNote->lineItems[]->customFields[]` **Changed**\n* `apideck->accounting->creditNotes->get()`:  `response.data->lineItems[]->customFields[]` **Changed**\n* `apideck->accounting->creditNotes->update()`: \n  *  `request->creditNote->lineItems[]->customFields[]` **Changed**\n* `apideck->accounting->customers->list()`:  `response.data[]->customFields[]` **Changed**\n* `apideck->accounting->customers->create()`: \n  *  `request->customer->customFields[]` **Changed**\n* `apideck->accounting->customers->get()`:  `response.data->customFields[]` **Changed**\n* `apideck->accounting->customers->update()`: \n  *  `request->customer->customFields[]` **Changed**\n* `apideck->accounting->suppliers->list()`:  `response.data[]->customFields[]` **Changed**\n* `apideck->accounting->suppliers->create()`: \n  *  `request->supplier->customFields[]` **Changed**\n* `apideck->accounting->suppliers->get()`:  `response.data->customFields[]` **Changed**\n* `apideck->accounting->suppliers->update()`: \n  *  `request->supplier->customFields[]` **Changed**\n* `apideck->accounting->payments->list()`:  `response.data[]->customFields[]` **Changed**\n* `apideck->accounting->payments->create()`: \n  *  `request->payment->customFields[]` **Changed**\n* `apideck->accounting->payments->get()`:  `response.data->customFields[]` **Changed**\n* `apideck->accounting->payments->update()`: \n  *  `request->payment->customFields[]` **Changed**\n* `apideck->accounting->refunds->create()`: \n  *  `request->refund` **Changed**\n* `apideck->accounting->refunds->update()`: \n  *  `request->refund` **Changed**\n* `apideck->accounting->companyInfo->get()`:  `response.data->defaultSalesTax->customFields[]` **Changed**\n* `apideck->accounting->journalEntries->list()`: \n  *  `request->filter` **Changed**\n  *  `response.data[]->customFields[]` **Changed**\n* `apideck->accounting->journalEntries->create()`: \n  *  `request->journalEntry->customFields[]` **Changed**\n* `apideck->accounting->journalEntries->get()`:  `response.data->customFields[]` **Changed**\n* `apideck->accounting->journalEntries->update()`: \n  *  `request->journalEntry->customFields[]` **Changed**\n* `apideck->accounting->generalLedgerTransactions->list()`:  `response.data[]->customFields[]` **Changed**\n* `apideck->accounting->generalLedgerTransactions->get()`:  `response.data->customFields[]` **Changed**\n* `apideck->accounting->purchaseOrders->list()`:  `response.data[]->lineItems[]->customFields[]` **Changed**\n* `apideck->accounting->purchaseOrders->create()`: \n  *  `request->purchaseOrder->lineItems[]->customFields[]` **Changed**\n* `apideck->accounting->purchaseOrders->get()`:  `response.data->lineItems[]->customFields[]` **Changed**\n* `apideck->accounting->purchaseOrders->update()`: \n  *  `request->purchaseOrder->lineItems[]->customFields[]` **Changed**\n* `apideck->accounting->attachments->list()`:  `response.data[]->fileUrl` **Added**\n* `apideck->accounting->attachments->get()`:  `response.data->fileUrl` **Added**\n* `apideck->accounting->attachments->download()`: \n  *  `request->followRedirects` **Added**\n* `apideck->accounting->bankAccounts->list()`:  `response.data[]->customFields[]` **Changed**\n* `apideck->accounting->bankAccounts->create()`: \n  *  `request->accountingBankAccount->customFields[]` **Changed**\n* `apideck->accounting->bankAccounts->get()`:  `response.data->customFields[]` **Changed**\n* `apideck->accounting->bankAccounts->update()`: \n  *  `request->accountingBankAccount->customFields[]` **Changed**\n* `apideck->accounting->billPayments->list()`:  `response.data[]->customFields[]` **Changed**\n* `apideck->accounting->billPayments->create()`: \n  *  `request->billPayment->customFields[]` **Changed**\n* `apideck->accounting->billPayments->get()`:  `response.data->customFields[]` **Changed**\n* `apideck->accounting->billPayments->update()`: \n  *  `request->billPayment->customFields[]` **Changed**\n* `apideck->accounting->expenses->list()`:  `response.data[]->customFields[]` **Changed**\n* `apideck->accounting->expenses->create()`: \n  *  `request->expense->customFields[]` **Changed**\n* `apideck->accounting->expenses->get()`:  `response.data->customFields[]` **Changed**\n* `apideck->accounting->expenses->update()`: \n  *  `request->expense->customFields[]` **Changed**\n* `apideck->accounting->bankFeedAccounts->list()`:  `response.data[]` **Changed**\n* `apideck->accounting->bankFeedAccounts->create()`: \n  *  `request->bankFeedAccount` **Changed**\n* `apideck->accounting->bankFeedAccounts->get()`:  `response.data` **Changed**\n* `apideck->accounting->bankFeedAccounts->update()`: \n  *  `request->bankFeedAccount` **Changed**\n* `apideck->accounting->bankFeedStatements->list()`:  `response.data[]->transactions[]->merchantCategoryCode` **Added**\n* `apideck->accounting->bankFeedStatements->create()`: \n  *  `request->bankFeedStatement->transactions[]->merchantCategoryCode` **Added**\n* `apideck->accounting->bankFeedStatements->get()`:  `response.data->transactions[]->merchantCategoryCode` **Added**\n* `apideck->accounting->bankFeedStatements->update()`: \n  *  `request->bankFeedStatement->transactions[]->merchantCategoryCode` **Added**\n* `apideck->accounting->quotes->list()`:  `response.data[]->lineItems[]->customFields[]` **Changed**\n* `apideck->accounting->quotes->create()`: \n  *  `request->quote->lineItems[]->customFields[]` **Changed**\n* `apideck->accounting->quotes->get()`:  `response.data->lineItems[]->customFields[]` **Changed**\n* `apideck->accounting->quotes->update()`: \n  *  `request->quote->lineItems[]->customFields[]` **Changed**\n* `apideck->accounting->projects->list()`:  `response.data[]->customFields[]` **Changed**\n* `apideck->accounting->projects->create()`: \n  *  `request->project->customFields[]` **Changed**\n* `apideck->accounting->projects->get()`:  `response.data->customFields[]` **Changed**\n* `apideck->accounting->projects->update()`: \n  *  `request->project->customFields[]` **Changed**\n* `apideck->accounting->employees->list()`:  `response.data[]->customFields[]` **Changed**\n* `apideck->accounting->employees->create()`: \n  *  `request->accountingEmployee->customFields[]` **Changed**\n* `apideck->accounting->employees->get()`:  `response.data->customFields[]` **Changed**\n* `apideck->accounting->employees->update()`: \n  *  `request->accountingEmployee->customFields[]` **Changed**\n* `apideck->accounting->expenseReports->list()`:  `response.data[]->customFields[]` **Changed**\n* `apideck->accounting->expenseReports->create()`: \n  *  `request->expenseReport->customFields[]` **Changed**\n* `apideck->accounting->expenseReports->get()`:  `response.data->customFields[]` **Changed**\n* `apideck->accounting->expenseReports->update()`: \n  *  `request->expenseReport->customFields[]` **Changed**\n* `apideck->ats->jobs->list()`:  `response.data[]->customFields[]` **Changed**\n* `apideck->ats->jobs->create()`: \n  *  `request->job->customFields[]` **Changed**\n* `apideck->ats->jobs->get()`:  `response.data->customFields[]` **Changed**\n* `apideck->ats->jobs->update()`: \n  *  `request->job->customFields[]` **Changed**\n* `apideck->ats->applicants->list()`:  `response.data[]->customFields[]` **Changed**\n* `apideck->ats->applicants->create()`: \n  *  `request->applicant->customFields[]` **Changed**\n* `apideck->ats->applicants->get()`:  `response.data->customFields[]` **Changed**\n* `apideck->ats->applicants->update()`: \n  *  `request->applicant->customFields[]` **Changed**\n* `apideck->crm->companies->list()`:  `response.data[]->customFields[]` **Changed**\n* `apideck->crm->companies->create()`: \n  *  `request->company1->customFields[]` **Changed**\n* `apideck->crm->companies->get()`:  `response.data->customFields[]` **Changed**\n* `apideck->crm->companies->update()`: \n  *  `request->company1->customFields[]` **Changed**\n* `apideck->crm->contacts->list()`:  `response.data[]->customFields[]` **Changed**\n* `apideck->crm->contacts->create()`: \n  *  `request->contact->customFields[]` **Changed**\n* `apideck->crm->contacts->get()`:  `response.data->customFields[]` **Changed**\n* `apideck->crm->contacts->update()`: \n  *  `request->contact->customFields[]` **Changed**\n* `apideck->crm->opportunities->list()`:  `response.data[]->customFields[]` **Changed**\n* `apideck->crm->opportunities->create()`: \n  *  `request->opportunity->customFields[]` **Changed**\n* `apideck->crm->opportunities->get()`:  `response.data->customFields[]` **Changed**\n* `apideck->crm->opportunities->update()`: \n  *  `request->opportunity->customFields[]` **Changed**\n* `apideck->crm->leads->list()`:  `response.data[]->customFields[]` **Changed**\n* `apideck->crm->leads->create()`: \n  *  `request->lead->customFields[]` **Changed**\n* `apideck->crm->leads->get()`:  `response.data->customFields[]` **Changed**\n* `apideck->crm->leads->update()`: \n  *  `request->lead->customFields[]` **Changed**\n* `apideck->crm->lists->list()`:  `response.data[]->customFields[]` **Changed**\n* `apideck->crm->lists->get()`:  `response.data->customFields[]` **Changed**\n* `apideck->crm->activities->list()`:  `response.data[]->customFields[]` **Changed**\n* `apideck->crm->activities->create()`: \n  *  `request->activity->customFields[]` **Changed**\n* `apideck->crm->activities->get()`:  `response.data->customFields[]` **Changed**\n* `apideck->crm->activities->update()`: \n  *  `request->activity->customFields[]` **Changed**\n* `apideck->filestorage->files->download()`: \n  *  `request->followRedirects` **Added**\n* `apideck->hris->employees->list()`:  `response.data[]->customFields[]` **Changed**\n* `apideck->hris->employees->create()`: \n  *  `request->employee->customFields[]` **Changed**\n* `apideck->hris->employees->get()`:  `response.data->customFields[]` **Changed**\n* `apideck->hris->employees->update()`: \n  *  `request->employee->customFields[]` **Changed**\n* `apideck->hris->employeeSchedules->list()`:  `response.data->employee->customFields[]` **Changed**\n* `apideck->proxy->get()`: \n  *  `request->followRedirects` **Added**\n* `apideck->proxy->options()`: \n  *  `request->followRedirects` **Added**\n* `apideck->proxy->post()`: \n  *  `request->followRedirects` **Added**\n* `apideck->proxy->put()`: \n  *  `request->followRedirects` **Added**\n* `apideck->proxy->patch()`: \n  *  `request->followRedirects` **Added**\n* `apideck->proxy->delete()`: \n  *  `request->followRedirects` **Added**\n"
+releaseNotes: "## Php SDK Changes:\n* `apideck->accounting->invoices->list()`: \n  *  `request->filter` **Changed**\n* `apideck->accounting->creditNotes->list()`: \n  *  `request->filter` **Changed**\n* `apideck->accounting->customers->list()`: \n  *  `request->filter` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md
