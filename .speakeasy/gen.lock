@@ -1,24 +1,24 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 031b70d18f3cd86477200b3d51d3369c
+  docChecksum: 46d632f3613c82f908742397d2bb1d28
   docVersion: 10.45.0
-  speakeasyVersion: 1.795.3
-  generationVersion: 2.932.9
-  releaseVersion: 0.24.0
-  configChecksum: c03f044fe2e98462c11e0f9e061511cb
+  speakeasyVersion: 1.796.0
+  generationVersion: 2.932.15
+  releaseVersion: 0.24.1
+  configChecksum: 42fa2219e5e42ab48aa130d11bdbbc4b
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: 709aa363-6840-4a82-aafc-89f500a27fd6
-  pristine_commit_hash: 33a2ad6613bda393313a683d29f3600f5a41b17a
-  pristine_tree_hash: aefedf42c5ce328cfad64d3205460600a5dad972
+  generation_id: 5493e57d-3c79-4717-9343-b242932ef9ba
+  pristine_commit_hash: 93cc02c9a59235b124401385c6b06fb7322a7ae8
+  pristine_tree_hash: efd11828973b0bc7cd13ef9f9135e73ce80505d9
 features:
   php:
     additionalProperties: 0.1.1
     constsAndDefaults: 0.2.2
-    core: 3.9.27
+    core: 3.9.28
     deepObjectParams: 0.1.0
     deprecations: 2.81.1
     errors: 0.3.1
@@ -7393,8 +7393,8 @@ trackedFiles:
     pristine_git_object: 6333f50937343e0cbb2114f030503d92b6946427
   docs/sdks/taxrates/README.md:
     id: 6358000da833
-    last_write_checksum: sha1:c8bea8c3e0d887acab3b65ca6a9d32cc589289e9
-    pristine_git_object: 92f9ed74aed9d72a000764480540b85e5d645c0c
+    last_write_checksum: sha1:85433bd57a132d7f526baf2f2814da48004642be
+    pristine_git_object: 8df84fb74ca5589416694b55bf7f6d479417e5d9
   docs/sdks/timeoffrequests/README.md:
     id: e94091d49fcb
     last_write_checksum: sha1:58f8521d80429b9417a98e3a2f12f9fc62a9c5ce
@@ -14813,8 +14813,8 @@ trackedFiles:
     pristine_git_object: 1b84a996bbe4b1742310466f6289fde44ac8a13c
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:945020bd5f1395e36933836b893069430b555955
-    pristine_git_object: bb59db1fcdc8402610ecd66776ee69c9cd9810d6
+    last_write_checksum: sha1:b2cb9e747868991374beea9f1295901899995a9d
+    pristine_git_object: a2255baecf0d657325f9a12abb61ba8630caa5a5
   src/SalesReceipts.php:
     id: 671bcf284513
     last_write_checksum: sha1:c593f9a727511a6f194dffbf802d5895081caeb9
@@ -14845,8 +14845,8 @@ trackedFiles:
     pristine_git_object: 1a3a1a9670511ad84fddcea1e7244a2ab2694cd5
   src/TaxRates.php:
     id: 30b9b2bf23ee
-    last_write_checksum: sha1:1ee28b610ca368776371c3e81feb6676a6dbff6f
-    pristine_git_object: 12892169f4ba226354a5ab6971e288646d3e535e
+    last_write_checksum: sha1:500b817f20d8f3fda51284a7531bcfb555dba0ca
+    pristine_git_object: f2808c3fe61fcafb06453a210a350b1b96fd342e
   src/TimeOffRequests.php:
     id: be0891666431
     last_write_checksum: sha1:f5ed1b7963c22a7a4a6eb87d95d4a2743ba41455
@@ -31876,7 +31876,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `apideck->accounting->invoices->list()`: \n  *  `request->filter` **Changed**\n* `apideck->accounting->creditNotes->list()`: \n  *  `request->filter` **Changed**\n* `apideck->accounting->customers->list()`: \n  *  `request->filter` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md
