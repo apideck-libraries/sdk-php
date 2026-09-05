@@ -206,6 +206,14 @@ foreach ($responses as $response) {
 * [update](docs/sdks/bankfeedstatements/README.md#update) - Update Bank Feed Statement
 * [delete](docs/sdks/bankfeedstatements/README.md#delete) - Delete Bank Feed Statement
 
+### [Accounting.BillCreditNotes](docs/sdks/billcreditnotes/README.md)
+
+* [list](docs/sdks/billcreditnotes/README.md#list) - List Bill Credit Notes
+* [create](docs/sdks/billcreditnotes/README.md#create) - Create Bill Credit Note
+* [get](docs/sdks/billcreditnotes/README.md#get) - Get Bill Credit Note
+* [update](docs/sdks/billcreditnotes/README.md#update) - Update Bill Credit Note
+* [delete](docs/sdks/billcreditnotes/README.md#delete) - Delete Bill Credit Note
+
 ### [Accounting.BillPayments](docs/sdks/billpayments/README.md)
 
 * [list](docs/sdks/billpayments/README.md#list) - List Bill Payments
