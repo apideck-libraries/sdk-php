@@ -28,6 +28,14 @@ class OpportunitiesFilter
     public ?string $status = null;
 
     /**
+     * Status ID to filter on
+     *
+     * @var ?string $statusId
+     */
+    #[SpeakeasyMetadata('queryParam:name=status_id')]
+    public ?string $statusId = null;
+
+    /**
      * Monetary amount to filter on
      *
      * @var ?float $monetaryAmount
@@ -70,6 +78,7 @@ class OpportunitiesFilter
     /**
      * @param  ?string  $title
      * @param  ?string  $status
+     * @param  ?string  $statusId
      * @param  ?float  $monetaryAmount
      * @param  ?float  $winProbability
      * @param  ?string  $companyId
@@ -77,10 +86,11 @@ class OpportunitiesFilter
      * @param  ?string  $primaryContactId
      * @phpstan-pure
      */
-    public function __construct(?string $title = null, ?string $status = null, ?float $monetaryAmount = null, ?float $winProbability = null, ?string $companyId = null, ?string $ownerId = null, ?string $primaryContactId = null)
+    public function __construct(?string $title = null, ?string $status = null, ?string $statusId = null, ?float $monetaryAmount = null, ?float $winProbability = null, ?string $companyId = null, ?string $ownerId = null, ?string $primaryContactId = null)
     {
         $this->title = $title;
         $this->status = $status;
+        $this->statusId = $statusId;
         $this->monetaryAmount = $monetaryAmount;
         $this->winProbability = $winProbability;
         $this->companyId = $companyId;

@@ -93,6 +93,15 @@ class FormField
     public ?bool $disabled = null;
 
     /**
+     * Indicates if the options for a form field failed to be fetched from the downstream service. Only applicable to fields with dynamic options. When true, a retry mechanism should be provided to the user.
+     *
+     * @var ?bool $optionsFetchError
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('options_fetch_error')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $optionsFetchError = null;
+
+    /**
      * Indicates if the form field is not displayed but the value that is being stored on the connection.
      *
      * @var ?bool $hidden
@@ -157,6 +166,7 @@ class FormField
      * @param  ?string  $placeholder
      * @param  ?string  $description
      * @param  ?bool  $disabled
+     * @param  ?bool  $optionsFetchError
      * @param  ?bool  $hidden
      * @param  ?bool  $deprecated
      * @param  ?bool  $sensitive
@@ -164,7 +174,7 @@ class FormField
      * @param  ?string  $suffix
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $label = null, ?FormFieldType $type = null, ?bool $required = null, ?bool $customField = null, ?array $options = null, ?string $placeholder = null, ?string $description = null, ?bool $disabled = null, ?bool $hidden = null, ?bool $deprecated = null, ?bool $sensitive = null, ?string $prefix = null, ?string $suffix = null, ?bool $allowCustomValues = false)
+    public function __construct(?string $id = null, ?string $label = null, ?FormFieldType $type = null, ?bool $required = null, ?bool $customField = null, ?array $options = null, ?string $placeholder = null, ?string $description = null, ?bool $disabled = null, ?bool $optionsFetchError = null, ?bool $hidden = null, ?bool $deprecated = null, ?bool $sensitive = null, ?string $prefix = null, ?string $suffix = null, ?bool $allowCustomValues = false)
     {
         $this->id = $id;
         $this->label = $label;
@@ -175,6 +185,7 @@ class FormField
         $this->placeholder = $placeholder;
         $this->description = $description;
         $this->disabled = $disabled;
+        $this->optionsFetchError = $optionsFetchError;
         $this->hidden = $hidden;
         $this->deprecated = $deprecated;
         $this->sensitive = $sensitive;
