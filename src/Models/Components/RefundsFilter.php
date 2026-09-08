@@ -27,13 +27,23 @@ class RefundsFilter
     public ?string $customerId = null;
 
     /**
+     * Filter by the subsidiary (legal entity) the record belongs to. Only honored on connectors that support multi-entity scoping (e.g. NetSuite OneWorld); ignored elsewhere.
+     *
+     * @var ?string $subsidiaryId
+     */
+    #[SpeakeasyMetadata('queryParam:name=subsidiary_id')]
+    public ?string $subsidiaryId = null;
+
+    /**
      * @param  ?\DateTime  $updatedSince
      * @param  ?string  $customerId
+     * @param  ?string  $subsidiaryId
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedSince = null, ?string $customerId = null)
+    public function __construct(?\DateTime $updatedSince = null, ?string $customerId = null, ?string $subsidiaryId = null)
     {
         $this->updatedSince = $updatedSince;
         $this->customerId = $customerId;
+        $this->subsidiaryId = $subsidiaryId;
     }
 }

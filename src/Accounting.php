@@ -25,6 +25,8 @@ class Accounting
 
     public CreditNotes $creditNotes;
 
+    public BillCreditNotes $billCreditNotes;
+
     public Customers $customers;
 
     public Suppliers $suppliers;
@@ -99,6 +101,7 @@ class Accounting
         $this->ledgerAccounts = new LedgerAccounts($this->sdkConfiguration);
         $this->invoiceItems = new InvoiceItems($this->sdkConfiguration);
         $this->creditNotes = new CreditNotes($this->sdkConfiguration);
+        $this->billCreditNotes = new BillCreditNotes($this->sdkConfiguration);
         $this->customers = new Customers($this->sdkConfiguration);
         $this->suppliers = new Suppliers($this->sdkConfiguration);
         $this->payments = new Payments($this->sdkConfiguration);

@@ -88,6 +88,16 @@ class EcommerceProduct
     public ?ProductStatus $status = null;
 
     /**
+     * The tax applicability of the product: `taxable` (the product is taxed), `shipping` (only the shipping is taxed, the product itself is exempt) or `none` (neither is taxed).
+     *
+     * @var ?\Apideck\Unify\Models\Components\TaxStatus $taxStatus
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\TaxStatus|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?TaxStatus $taxStatus = null;
+
+    /**
      * The price of the product.
      *
      * @var ?string $price
@@ -179,6 +189,7 @@ class EcommerceProduct
      * @param  ?string  $name
      * @param  ?string  $description
      * @param  ?\Apideck\Unify\Models\Components\ProductStatus  $status
+     * @param  ?\Apideck\Unify\Models\Components\TaxStatus  $taxStatus
      * @param  ?string  $price
      * @param  ?string  $sku
      * @param  ?string  $inventoryQuantity
@@ -190,7 +201,7 @@ class EcommerceProduct
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, ?array $options = null, ?array $variants = null, ?array $tags = null, ?array $categories = null, ?string $name = null, ?string $description = null, ?ProductStatus $status = null, ?string $price = null, ?string $sku = null, ?string $inventoryQuantity = null, ?array $images = null, ?string $weight = null, ?string $weightUnit = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(string $id, ?array $options = null, ?array $variants = null, ?array $tags = null, ?array $categories = null, ?string $name = null, ?string $description = null, ?ProductStatus $status = null, ?TaxStatus $taxStatus = null, ?string $price = null, ?string $sku = null, ?string $inventoryQuantity = null, ?array $images = null, ?string $weight = null, ?string $weightUnit = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
         $this->options = $options;
@@ -200,6 +211,7 @@ class EcommerceProduct
         $this->name = $name;
         $this->description = $description;
         $this->status = $status;
+        $this->taxStatus = $taxStatus;
         $this->price = $price;
         $this->sku = $sku;
         $this->inventoryQuantity = $inventoryQuantity;
