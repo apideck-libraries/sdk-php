@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 421ff039c5764a88ac2a57281760a66e
-  docVersion: 10.52.0
+  docChecksum: 1d4a15dbdde2de60d8aa1b9b48e1b774
+  docVersion: 10.53.0
   speakeasyVersion: 1.796.4
   generationVersion: 2.935.1
-  releaseVersion: 0.25.0
-  configChecksum: c0e5d59f5e23b72313aa885554150051
+  releaseVersion: 0.26.0
+  configChecksum: 4cfa5c99780f6b989b660753a27618eb
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: 4b8cea1f-576b-4fdc-ba02-9cf5b6e67edc
-  pristine_commit_hash: dd1a6216fdec4b4ec0b6220cd21b9ea3fa471494
-  pristine_tree_hash: 770b28ef58512437f080f943337e85348fe5ce20
+  generation_id: e20e6253-7c20-4f7c-861e-e673ee611b7c
+  pristine_commit_hash: e9e03cf3f9e1798e0ecf0baf9ca0bd1abd429e33
+  pristine_tree_hash: e3e5ec050c6c63246bdd600969fe751874b9f756
 features:
   php:
     additionalProperties: 0.1.1
@@ -15021,8 +15021,8 @@ trackedFiles:
     pristine_git_object: 1b84a996bbe4b1742310466f6289fde44ac8a13c
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:03633ad26304bfef6cd22d84ef582740f6d3eed1
-    pristine_git_object: ae3cbb450b3d2313339388c4a5d0b9ccae07d02c
+    last_write_checksum: sha1:1a14de366161035792761947e216f833023ca89f
+    pristine_git_object: dff2935fa1cf7c8c8eb5ed5ee458acd01601fde0
   src/SalesReceipts.php:
     id: 671bcf284513
     last_write_checksum: sha1:c593f9a727511a6f194dffbf802d5895081caeb9
@@ -32223,7 +32223,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `apideck->accounting->attachments->list()`: \n  *  `request->referenceType` **Changed**\n  *  `response.data[]->reference->type->enum(billCreditNote)` **Added** (Breaking ⚠️)\n* `apideck->accounting->attachments->get()`: \n  *  `request->referenceType` **Changed**\n  *  `response.data->reference->type->enum(billCreditNote)` **Added** (Breaking ⚠️)\n* `apideck->accounting->attachments->download()`: \n  *  `request->referenceType` **Changed**\n* `apideck->ecommerce->products->list()`:  `response.data[]->taxStatus` **Added**\n* `apideck->accounting->billCreditNotes->delete()`: **Added**\n* `apideck->accounting->refunds->list()`: \n  *  `request->filter` **Changed**\n* `apideck->accounting->billCreditNotes->get()`: **Added**\n* `apideck->accounting->attachments->upload()`: \n  *  `request->referenceType` **Changed**\n* `apideck->accounting->billCreditNotes->create()`: **Added**\n* `apideck->accounting->attachments->delete()`: \n  *  `request->referenceType` **Changed**\n* `apideck->accounting->billCreditNotes->list()`: **Added**\n* `apideck->accounting->quotes->list()`: \n  *  `request->filter` **Changed**\n* `apideck->crm->opportunities->list()`: \n  *  `request->filter` **Changed**\n* `apideck->accounting->billCreditNotes->update()`: **Added**\n* `apideck->ecommerce->products->get()`:  `response.data->taxStatus` **Added**\n* `apideck->vault->connections->list()`:  `response.data[]->formFields[]->optionsFetchError` **Added**\n* `apideck->vault->connections->get()`:  `response.data->formFields[]->optionsFetchError` **Added**\n* `apideck->vault->connections->update()`:  `response.data->formFields[]->optionsFetchError` **Added**\n* `apideck->vault->connections->imports()`:  `response.data->formFields[]->optionsFetchError` **Added**\n* `apideck->vault->connections->migrate()`:  `response.data->formFields[]->optionsFetchError` **Added**\n* `apideck->vault->connections->token()`:  `response.data->formFields[]->optionsFetchError` **Added**\n* `apideck->vault->connectionSettings->list()`:  `response.data->formFields[]->optionsFetchError` **Added**\n* `apideck->vault->connectionSettings->update()`:  `response.data->formFields[]->optionsFetchError` **Added**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md
