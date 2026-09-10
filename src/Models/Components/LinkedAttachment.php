@@ -30,7 +30,7 @@ class LinkedAttachment
     public ?string $mimeType = null;
 
     /**
-     * Whether the file is c ompressed.
+     * Whether the file is compressed.
      *
      * @var ?bool $isCompressed
      */
