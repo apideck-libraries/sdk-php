@@ -61,6 +61,8 @@ class Accounting
 
     public BankAccounts $bankAccounts;
 
+    public Journals $journals;
+
     public TrackingCategories $trackingCategories;
 
     public BillPayments $billPayments;
@@ -119,6 +121,7 @@ class Accounting
         $this->departments = new Departments($this->sdkConfiguration);
         $this->attachments = new Attachments($this->sdkConfiguration);
         $this->bankAccounts = new BankAccounts($this->sdkConfiguration);
+        $this->journals = new Journals($this->sdkConfiguration);
         $this->trackingCategories = new TrackingCategories($this->sdkConfiguration);
         $this->billPayments = new BillPayments($this->sdkConfiguration);
         $this->expenses = new Expenses($this->sdkConfiguration);

@@ -328,6 +328,14 @@ foreach ($responses as $response) {
 * [update](docs/sdks/journalentries/README.md#update) - Update Journal Entry
 * [delete](docs/sdks/journalentries/README.md#delete) - Delete Journal Entry
 
+### [Accounting.Journals](docs/sdks/journals/README.md)
+
+* [list](docs/sdks/journals/README.md#list) - List Journals
+* [create](docs/sdks/journals/README.md#create) - Create Journal
+* [get](docs/sdks/journals/README.md#get) - Get Journal
+* [update](docs/sdks/journals/README.md#update) - Update Journal
+* [delete](docs/sdks/journals/README.md#delete) - Delete Journal
+
 ### [Accounting.LedgerAccounts](docs/sdks/ledgeraccounts/README.md)
 
 * [list](docs/sdks/ledgeraccounts/README.md#list) - List Ledger Accounts

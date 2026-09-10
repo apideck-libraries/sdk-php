@@ -93,6 +93,15 @@ class JournalEntryLineItem
     public ?float $totalAmount = null;
 
     /**
+     * Amount for this line in the company's base currency. Used when the journal entry currency differs from the company's base currency.
+     *
+     * @var ?float $baseCurrencyAmount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('base_currency_amount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $baseCurrencyAmount = null;
+
+    /**
      * The tax applicability of this line item. Overrides the root-level tax_type for this line.
      *
      * @var ?\Apideck\Unify\Models\Components\TaxType $taxType
@@ -189,6 +198,7 @@ class JournalEntryLineItem
      * @param  ?float  $taxAmount
      * @param  ?float  $subTotal
      * @param  ?float  $totalAmount
+     * @param  ?float  $baseCurrencyAmount
      * @param  ?\Apideck\Unify\Models\Components\TaxType  $taxType
      * @param  ?\Apideck\Unify\Models\Components\DeprecatedLinkedTrackingCategory  $trackingCategory
      * @param  ?array<?\Apideck\Unify\Models\Components\LinkedTrackingCategory>  $trackingCategories
@@ -200,7 +210,7 @@ class JournalEntryLineItem
      * @param  ?int  $lineNumber
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?JournalEntryLineItemType $type = null, ?LinkedTaxRate $taxRate = null, ?LinkedLedgerAccount $ledgerAccount = null, ?array $worktags = null, ?string $description = null, ?float $taxAmount = null, ?float $subTotal = null, ?float $totalAmount = null, ?TaxType $taxType = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?LinkedCustomer $customer = null, ?LinkedSupplier $supplier = null, ?LinkedEmployee $employee = null, ?string $departmentId = null, ?string $locationId = null, ?int $lineNumber = null)
+    public function __construct(?string $id = null, ?JournalEntryLineItemType $type = null, ?LinkedTaxRate $taxRate = null, ?LinkedLedgerAccount $ledgerAccount = null, ?array $worktags = null, ?string $description = null, ?float $taxAmount = null, ?float $subTotal = null, ?float $totalAmount = null, ?float $baseCurrencyAmount = null, ?TaxType $taxType = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?LinkedCustomer $customer = null, ?LinkedSupplier $supplier = null, ?LinkedEmployee $employee = null, ?string $departmentId = null, ?string $locationId = null, ?int $lineNumber = null)
     {
         $this->id = $id;
         $this->type = $type;
@@ -211,6 +221,7 @@ class JournalEntryLineItem
         $this->taxAmount = $taxAmount;
         $this->subTotal = $subTotal;
         $this->totalAmount = $totalAmount;
+        $this->baseCurrencyAmount = $baseCurrencyAmount;
         $this->taxType = $taxType;
         $this->trackingCategory = $trackingCategory;
         $this->trackingCategories = $trackingCategories;

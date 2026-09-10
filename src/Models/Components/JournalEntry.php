@@ -40,6 +40,16 @@ class JournalEntry
     public ?\DateTime $postedAt = null;
 
     /**
+     * Files attached to this journal entry. Use the attachments endpoints with reference_type=journal-entry and this entry's id where the connector supports it.
+     *
+     * @var ?array<?\Apideck\Unify\Models\Components\LinkedAttachment> $attachments
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('attachments')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedAttachment|null>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $attachments = null;
+
+    /**
      * $customFields
      *
      * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
@@ -143,7 +153,7 @@ class JournalEntry
     public ?string $memo = null;
 
     /**
-     * Journal symbol of the entry. For example IND for indirect costs
+     * Journal symbol of the entry. For example IND for indirect costs. Where supported, list /accounting/journals to discover available journals and their posting rules. For Exact Online, supply the journal code, not its id.
      *
      * @var ?string $journalSymbol
      */
@@ -284,6 +294,7 @@ class JournalEntry
      * @param  ?string  $id
      * @param  ?array<\Apideck\Unify\Models\Components\JournalEntryLineItem>  $lineItems
      * @param  ?\DateTime  $postedAt
+     * @param  ?array<?\Apideck\Unify\Models\Components\LinkedAttachment>  $attachments
      * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
      * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?string  $downstreamId
@@ -312,11 +323,12 @@ class JournalEntry
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?array $lineItems = null, ?\DateTime $postedAt = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $displayId = null, ?string $title = null, ?float $currencyRate = null, ?Currency $currency = null, ?string $companyId = null, ?LinkedSubsidiary $subsidiary = null, ?JournalEntryStatus $status = null, ?string $memo = null, ?string $journalSymbol = null, ?string $taxType = null, ?string $taxCode = null, ?string $number = null, ?array $trackingCategories = null, ?string $accountingPeriod = null, ?bool $taxInclusive = null, ?string $sourceType = null, ?string $sourceId = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null)
+    public function __construct(?string $id = null, ?array $lineItems = null, ?\DateTime $postedAt = null, ?array $attachments = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $displayId = null, ?string $title = null, ?float $currencyRate = null, ?Currency $currency = null, ?string $companyId = null, ?LinkedSubsidiary $subsidiary = null, ?JournalEntryStatus $status = null, ?string $memo = null, ?string $journalSymbol = null, ?string $taxType = null, ?string $taxCode = null, ?string $number = null, ?array $trackingCategories = null, ?string $accountingPeriod = null, ?bool $taxInclusive = null, ?string $sourceType = null, ?string $sourceId = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null)
     {
         $this->id = $id;
         $this->lineItems = $lineItems;
         $this->postedAt = $postedAt;
+        $this->attachments = $attachments;
         $this->customFields = $customFields;
         $this->passThrough = $passThrough;
         $this->downstreamId = $downstreamId;
