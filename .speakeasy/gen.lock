@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 7dd54a203a75639e3a71096822e5298b
+  docChecksum: 835abcad25f292e32e15679177560da7
   docVersion: 10.53.0
   speakeasyVersion: 1.796.4
   generationVersion: 2.935.1
-  releaseVersion: 0.26.1
-  configChecksum: a874a70ca6b0ec65a334d16522ef5db1
+  releaseVersion: 0.26.2
+  configChecksum: 3c702b2f3d21f2042022911e2161e024
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: 13101deb-975c-4d9b-952a-10daee945a30
-  pristine_commit_hash: b6692c08a7f9f063d8c4da19149d18197d07c476
-  pristine_tree_hash: 0244682608190f84aa5e3e0f9e853f875327a865
+  generation_id: 22b2e893-16f7-4406-8e5a-037a78c031f4
+  pristine_commit_hash: 9142562b5c299436e371605ed2997a5ecc8aa169
+  pristine_tree_hash: b0f532ce2c1bf26742bf4897bc73d772b844a5ad
 features:
   php:
     additionalProperties: 0.1.1
@@ -15173,8 +15173,8 @@ trackedFiles:
     pristine_git_object: 1b84a996bbe4b1742310466f6289fde44ac8a13c
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:7b9f88eb7b2829416be8d40ae7f94edbb4d68370
-    pristine_git_object: d131810fc44e8d80a68d49bd1c0012504aed75ba
+    last_write_checksum: sha1:511c508649720cff717bba9833cb1b55fd107d38
+    pristine_git_object: a5c8e8d38549bb65a7ec65e0c469e6174ae5f7a6
   src/SalesReceipts.php:
     id: 671bcf284513
     last_write_checksum: sha1:c593f9a727511a6f194dffbf802d5895081caeb9
@@ -32514,7 +32514,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `apideck->accounting->attachments->list()`: \n  *  `request->referenceType` **Changed**\n  *  `response.data[]->reference->type` **Changed** (Breaking ⚠️)\n* `apideck->accounting->attachments->get()`: \n  *  `request->referenceType` **Changed**\n  *  `response.data->reference->type` **Changed** (Breaking ⚠️)\n* `apideck->accounting->journals->update()`: **Added**\n* `apideck->accounting->journals->list()`: **Added**\n* `apideck->accounting->journals->delete()`: **Added**\n* `apideck->accounting->journalEntries->list()`:  `response.data[]` **Changed**\n* `apideck->accounting->journalEntries->create()`: \n  *  `request->journalEntry` **Changed**\n* `apideck->accounting->journalEntries->get()`:  `response.data` **Changed**\n* `apideck->accounting->journalEntries->update()`: \n  *  `request->journalEntry` **Changed**\n* `apideck->accounting->journals->get()`: **Added**\n* `apideck->accounting->attachments->upload()`: \n  *  `request->referenceType` **Changed**\n* `apideck->accounting->journals->create()`: **Added**\n* `apideck->accounting->attachments->delete()`: \n  *  `request->referenceType` **Changed**\n* `apideck->accounting->attachments->download()`: \n  *  `request->referenceType` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md
