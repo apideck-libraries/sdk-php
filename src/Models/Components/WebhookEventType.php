@@ -134,6 +134,10 @@ enum WebhookEventType: string
     case EcommerceOrderCreated = 'ecommerce.order.created';
     case EcommerceOrderUpdated = 'ecommerce.order.updated';
     case EcommerceOrderDeleted = 'ecommerce.order.deleted';
+    case EcommerceOrderPaid = 'ecommerce.order.paid';
+    case EcommerceOrderShipped = 'ecommerce.order.shipped';
+    case EcommerceOrderRefunded = 'ecommerce.order.refunded';
+    case EcommerceOrderDelivered = 'ecommerce.order.delivered';
     case EcommerceProductCreated = 'ecommerce.product.created';
     case EcommerceProductUpdated = 'ecommerce.product.updated';
     case EcommerceProductDeleted = 'ecommerce.product.deleted';
