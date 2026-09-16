@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 7dd54a203a75639e3a71096822e5298b
-  docVersion: 10.53.0
-  speakeasyVersion: 1.796.4
-  generationVersion: 2.935.1
-  releaseVersion: 0.26.1
-  configChecksum: a874a70ca6b0ec65a334d16522ef5db1
+  docChecksum: da868fbc1984a89bc4f902d7c1e51dc2
+  docVersion: 10.56.1
+  speakeasyVersion: 1.797.0
+  generationVersion: 2.937.18
+  releaseVersion: 0.27.0
+  configChecksum: 9dfbcfcebf2b3855fd347e0b6843920e
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: 13101deb-975c-4d9b-952a-10daee945a30
-  pristine_commit_hash: b6692c08a7f9f063d8c4da19149d18197d07c476
-  pristine_tree_hash: 0244682608190f84aa5e3e0f9e853f875327a865
+  generation_id: b6656bfe-3519-4f72-ba19-deab1df1707f
+  pristine_commit_hash: 4362d61b0744a25bd383d3d8c469e03fcd49dab4
+  pristine_tree_hash: dd0a566c4d9467d47feaaabfc9381b1dba150f02
 features:
   php:
     additionalProperties: 0.1.1
@@ -4161,8 +4161,8 @@ trackedFiles:
     pristine_git_object: 0b7c1484210eb1a1e5413c67143bc1f0e4dd6202
   docs/Models/Components/WebhookEventType.md:
     id: 234a36136da0
-    last_write_checksum: sha1:05e287b1c5e26c305860ddfd75f58b2dda032ed2
-    pristine_git_object: cee85faa55c19f6897f3ce56b77050b634639247
+    last_write_checksum: sha1:dd6a55543b809790c7b3737a660e32d7a9254c16
+    pristine_git_object: abbf40fbbc488cff1ed537813795dd3298cd2454
   docs/Models/Components/WebhookSubscription.md:
     id: f2c87de13dad
     last_write_checksum: sha1:6597f4643a7e3821b6f7e9a5ffc0dab713589913
@@ -12065,8 +12065,8 @@ trackedFiles:
     pristine_git_object: 2a6e8b749dda537dcbb4bb99f7ecf7886a65882b
   src/Models/Components/WebhookEventType.php:
     id: aa6707ce7d20
-    last_write_checksum: sha1:820ab559dbc87e5d466857bc8aac84972fe418b5
-    pristine_git_object: 36ccad774fe495109128292284afc8f7902b4cc4
+    last_write_checksum: sha1:b192c168fe562f496c289ad9b31cdd2600588700
+    pristine_git_object: e563edfad20f30532d8f257f168027cb8aa6166d
   src/Models/Components/WebhookSubscription.php:
     id: 0842240c30d4
     last_write_checksum: sha1:3ba085278eacacd9c83388a50d9ecb64627862af
@@ -15173,8 +15173,8 @@ trackedFiles:
     pristine_git_object: 1b84a996bbe4b1742310466f6289fde44ac8a13c
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:7b9f88eb7b2829416be8d40ae7f94edbb4d68370
-    pristine_git_object: d131810fc44e8d80a68d49bd1c0012504aed75ba
+    last_write_checksum: sha1:c226201efb73aaa202686a701e94196872eb379c
+    pristine_git_object: 1a37dcc4c21a97636b30fc9c804f22fa68f64684
   src/SalesReceipts.php:
     id: 671bcf284513
     last_write_checksum: sha1:c593f9a727511a6f194dffbf802d5895081caeb9
@@ -15361,8 +15361,8 @@ trackedFiles:
     pristine_git_object: 068eeb4332f10059140f72bab006ee6fe6f26fc3
   src/Utils/Utils.php:
     id: c902f57e2422
-    last_write_checksum: sha1:eb69e68751ea38d85acd2ffdb17c20dbac27584d
-    pristine_git_object: 9b19c73eda79d5da0cb9a3349b94c4c2824023f8
+    last_write_checksum: sha1:b45a76418396eece33b216acf9c9a6a48d96b099
+    pristine_git_object: 7f1d86aac787d555df346680a1318d19cab7714a
   src/ValidateConnection.php:
     id: ab4f37cbe64a
     last_write_checksum: sha1:cb20158bff142893af4273b6aa58a9e57922a45a
@@ -32514,7 +32514,7 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `apideck->accounting->attachments->list()`: \n  *  `request->referenceType` **Changed**\n  *  `response.data[]->reference->type` **Changed** (Breaking ⚠️)\n* `apideck->accounting->attachments->get()`: \n  *  `request->referenceType` **Changed**\n  *  `response.data->reference->type` **Changed** (Breaking ⚠️)\n* `apideck->accounting->journals->update()`: **Added**\n* `apideck->accounting->journals->list()`: **Added**\n* `apideck->accounting->journals->delete()`: **Added**\n* `apideck->accounting->journalEntries->list()`:  `response.data[]` **Changed**\n* `apideck->accounting->journalEntries->create()`: \n  *  `request->journalEntry` **Changed**\n* `apideck->accounting->journalEntries->get()`:  `response.data` **Changed**\n* `apideck->accounting->journalEntries->update()`: \n  *  `request->journalEntry` **Changed**\n* `apideck->accounting->journals->get()`: **Added**\n* `apideck->accounting->attachments->upload()`: \n  *  `request->referenceType` **Changed**\n* `apideck->accounting->journals->create()`: **Added**\n* `apideck->accounting->attachments->delete()`: \n  *  `request->referenceType` **Changed**\n* `apideck->accounting->attachments->download()`: \n  *  `request->referenceType` **Changed**\n"
+releaseNotes: "## Php SDK Changes:\n* `apideck->webhook->webhooks->list()`:  `response.data[]->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->create()`: \n  *  `request.createWebhookRequest->events[]` **Changed**\n  *  `response.data->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->get()`:  `response.data->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->update()`: \n  *  `request.updateWebhookRequest->events[]` **Changed**\n  *  `response.data->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->delete()`:  `response.data->events[]` **Changed** (Breaking ⚠️)\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md
