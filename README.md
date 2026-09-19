@@ -304,6 +304,11 @@ foreach ($responses as $response) {
 * [list](docs/sdks/generalledgertransactions/README.md#list) - List General Ledger Transactions
 * [get](docs/sdks/generalledgertransactions/README.md#get) - Get General Ledger Transaction
 
+### [Accounting.GoodsReceipts](docs/sdks/goodsreceipts/README.md)
+
+* [list](docs/sdks/goodsreceipts/README.md#list) - List Goods Receipts
+* [get](docs/sdks/goodsreceipts/README.md#get) - Get Goods Receipt
+
 ### [Accounting.InvoiceItems](docs/sdks/invoiceitems/README.md)
 
 * [list](docs/sdks/invoiceitems/README.md#list) - List Invoice Items
