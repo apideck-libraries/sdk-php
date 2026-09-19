@@ -51,6 +51,8 @@ class Accounting
 
     public PurchaseOrders $purchaseOrders;
 
+    public GoodsReceipts $goodsReceipts;
+
     public Subsidiaries $subsidiaries;
 
     public Locations $locations;
@@ -116,6 +118,7 @@ class Accounting
         $this->generalLedgerTransactions = new GeneralLedgerTransactions($this->sdkConfiguration);
         $this->salesReceipts = new SalesReceipts($this->sdkConfiguration);
         $this->purchaseOrders = new PurchaseOrders($this->sdkConfiguration);
+        $this->goodsReceipts = new GoodsReceipts($this->sdkConfiguration);
         $this->subsidiaries = new Subsidiaries($this->sdkConfiguration);
         $this->locations = new Locations($this->sdkConfiguration);
         $this->departments = new Departments($this->sdkConfiguration);

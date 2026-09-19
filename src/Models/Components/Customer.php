@@ -260,6 +260,15 @@ class Customer
     public ?Currency $currency = null;
 
     /**
+     * The customer's outstanding balance: the amount the customer currently owes, in the customer's currency. A positive value means the customer owes the business.
+     *
+     * @var ?float $balance
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('balance')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $balance = null;
+
+    /**
      *
      * @var ?\Apideck\Unify\Models\Components\LinkedLedgerAccount $account
      */
@@ -407,6 +416,7 @@ class Customer
      * @param  ?string  $taxNumber
      * @param  ?bool  $taxable
      * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
+     * @param  ?float  $balance
      * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $account
      * @param  ?\Apideck\Unify\Models\Components\LinkedParentCustomer  $parent
      * @param  ?\Apideck\Unify\Models\Components\CustomerStatusStatus  $status
@@ -422,7 +432,7 @@ class Customer
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(string $id, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?LinkedSubsidiary $subsidiary = null, ?string $customerCategory = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?bool $project = null, ?string $notes = null, ?string $taxNumber = null, ?bool $taxable = null, ?Currency $currency = null, ?LinkedLedgerAccount $account = null, ?LinkedParentCustomer $parent = null, ?CustomerStatusStatus $status = null, ?string $paymentMethod = null, ?string $terms = null, ?string $termsId = null, ?string $channel = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null)
+    public function __construct(string $id, ?array $addresses = null, ?array $phoneNumbers = null, ?array $emails = null, ?array $websites = null, ?array $bankAccounts = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $displayId = null, ?string $displayName = null, ?string $companyName = null, ?string $companyId = null, ?LinkedSubsidiary $subsidiary = null, ?string $customerCategory = null, ?string $title = null, ?string $firstName = null, ?string $middleName = null, ?string $lastName = null, ?string $suffix = null, ?bool $individual = null, ?bool $project = null, ?string $notes = null, ?string $taxNumber = null, ?bool $taxable = null, ?Currency $currency = null, ?float $balance = null, ?LinkedLedgerAccount $account = null, ?LinkedParentCustomer $parent = null, ?CustomerStatusStatus $status = null, ?string $paymentMethod = null, ?string $terms = null, ?string $termsId = null, ?string $channel = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null)
     {
         $this->id = $id;
         $this->addresses = $addresses;
@@ -451,6 +461,7 @@ class Customer
         $this->taxNumber = $taxNumber;
         $this->taxable = $taxable;
         $this->currency = $currency;
+        $this->balance = $balance;
         $this->account = $account;
         $this->parent = $parent;
         $this->status = $status;

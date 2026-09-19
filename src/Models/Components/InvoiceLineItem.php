@@ -238,6 +238,15 @@ class InvoiceLineItem
     public ?bool $prepaid = null;
 
     /**
+     * If true, this line item is subject to tax. Read-only, and only populated by connectors that record taxability on the line itself.
+     *
+     * @var ?bool $taxable
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('taxable')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $taxable = null;
+
+    /**
      * Tax applicable on
      *
      * @var ?string $taxApplicableOn
@@ -354,6 +363,7 @@ class InvoiceLineItem
      * @param  ?string  $shippingId
      * @param  ?string  $memo
      * @param  ?bool  $prepaid
+     * @param  ?bool  $taxable
      * @param  ?string  $taxApplicableOn
      * @param  ?string  $taxRecoverability
      * @param  ?string  $taxMethod
@@ -366,7 +376,7 @@ class InvoiceLineItem
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?array $worktags = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?string $id = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?InvoiceLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?LocalDate $serviceDate = null, ?string $categoryId = null, ?string $locationId = null, ?string $departmentId = null, ?string $subsidiaryId = null, ?string $shippingId = null, ?string $memo = null, ?bool $prepaid = null, ?string $taxApplicableOn = null, ?string $taxRecoverability = null, ?string $taxMethod = null, ?array $trackingCategories = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?array $worktags = null, ?LinkedTaxRate $taxRate = null, ?array $customFields = null, ?string $id = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?InvoiceLineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?LocalDate $serviceDate = null, ?string $categoryId = null, ?string $locationId = null, ?string $departmentId = null, ?string $subsidiaryId = null, ?string $shippingId = null, ?string $memo = null, ?bool $prepaid = null, ?bool $taxable = null, ?string $taxApplicableOn = null, ?string $taxRecoverability = null, ?string $taxMethod = null, ?array $trackingCategories = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->rowId = $rowId;
         $this->item = $item;
@@ -393,6 +403,7 @@ class InvoiceLineItem
         $this->shippingId = $shippingId;
         $this->memo = $memo;
         $this->prepaid = $prepaid;
+        $this->taxable = $taxable;
         $this->taxApplicableOn = $taxApplicableOn;
         $this->taxRecoverability = $taxRecoverability;
         $this->taxMethod = $taxMethod;

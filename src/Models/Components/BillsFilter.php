@@ -28,6 +28,22 @@ class BillsFilter
     public ?\DateTime $updatedSince = null;
 
     /**
+     * Return bills whose `bill_number` equals the given value (exact match). Use this to verify whether a create that timed out (`outcome: uncertain`) was persisted before retrying. Bill numbers are not guaranteed unique on every connector, so more than one bill can be returned.
+     *
+     * @var ?string $billNumber
+     */
+    #[SpeakeasyMetadata('queryParam:name=bill_number')]
+    public ?string $billNumber = null;
+
+    /**
+     * Return bills whose `reference` equals the given value (exact match). Use this to look up a bill by the reference you supplied on create, for example after a create that timed out (`outcome: uncertain`).
+     *
+     * @var ?string $reference
+     */
+    #[SpeakeasyMetadata('queryParam:name=reference')]
+    public ?string $reference = null;
+
+    /**
      * Return bills with a document date (`bill_date`) on or after the given date (YYYY-MM-DD).
      *
      * @var ?LocalDate $billedSince
@@ -62,16 +78,20 @@ class BillsFilter
     /**
      * @param  ?string  $idSince
      * @param  ?\DateTime  $updatedSince
+     * @param  ?string  $billNumber
+     * @param  ?string  $reference
      * @param  ?LocalDate  $billedSince
      * @param  ?LocalDate  $dueSince
      * @param  ?\Apideck\Unify\Models\Components\BillsFilterStatus  $status
      * @param  ?string  $subsidiaryId
      * @phpstan-pure
      */
-    public function __construct(?string $idSince = null, ?\DateTime $updatedSince = null, ?LocalDate $billedSince = null, ?LocalDate $dueSince = null, ?BillsFilterStatus $status = null, ?string $subsidiaryId = null)
+    public function __construct(?string $idSince = null, ?\DateTime $updatedSince = null, ?string $billNumber = null, ?string $reference = null, ?LocalDate $billedSince = null, ?LocalDate $dueSince = null, ?BillsFilterStatus $status = null, ?string $subsidiaryId = null)
     {
         $this->idSince = $idSince;
         $this->updatedSince = $updatedSince;
+        $this->billNumber = $billNumber;
+        $this->reference = $reference;
         $this->billedSince = $billedSince;
         $this->dueSince = $dueSince;
         $this->status = $status;
