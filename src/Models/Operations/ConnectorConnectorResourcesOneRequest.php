@@ -39,19 +39,19 @@ class ConnectorConnectorResourcesOneRequest
     /**
      * Specify unified API for the connector resource. This is useful when a resource appears in multiple APIs
      *
-     * @var ?\Apideck\Unify\Models\Components\UnifiedApiId $unifiedApi
+     * @var ?\Apideck\Unify\Models\Components\UnifiedApi $unifiedApi
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=unified_api')]
-    public ?Components\UnifiedApiId $unifiedApi = null;
+    public ?Components\UnifiedApi $unifiedApi = null;
 
     /**
      * @param  string  $id
      * @param  string  $resourceId
      * @param  ?string  $appId
-     * @param  ?\Apideck\Unify\Models\Components\UnifiedApiId  $unifiedApi
+     * @param  ?\Apideck\Unify\Models\Components\UnifiedApi  $unifiedApi
      * @phpstan-pure
      */
-    public function __construct(string $id, string $resourceId, ?string $appId = null, ?Components\UnifiedApiId $unifiedApi = null)
+    public function __construct(string $id, string $resourceId, ?string $appId = null, ?Components\UnifiedApi $unifiedApi = null)
     {
         $this->id = $id;
         $this->resourceId = $resourceId;
