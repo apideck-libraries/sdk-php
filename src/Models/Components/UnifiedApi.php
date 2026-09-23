@@ -9,19 +9,35 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 
-/** Which Unified Api request was made to. */
+/** Name of Apideck Unified API */
 enum UnifiedApi: string
 {
-    case Crm = 'crm';
-    case Lead = 'lead';
-    case Proxy = 'proxy';
-    case Vault = 'vault';
     case Accounting = 'accounting';
-    case Hris = 'hris';
     case Ats = 'ats';
+    case Calendar = 'calendar';
+    case Crm = 'crm';
+    case Csp = 'csp';
+    case CustomerSupport = 'customer-support';
     case Ecommerce = 'ecommerce';
-    case IssueTracking = 'issue-tracking';
-    case Pos = 'pos';
+    case Email = 'email';
+    case EmailMarketing = 'email-marketing';
+    case ExpenseManagement = 'expense-management';
     case FileStorage = 'file-storage';
+    case Form = 'form';
+    case Hris = 'hris';
+    case Lead = 'lead';
+    case Payroll = 'payroll';
+    case Pos = 'pos';
+    case Procurement = 'procurement';
+    case ProjectManagement = 'project-management';
+    case Script = 'script';
     case Sms = 'sms';
+    case Spreadsheet = 'spreadsheet';
+    case SubscriptionAnalytics = 'subscription-analytics';
+    case TeamMessaging = 'team-messaging';
+    case IssueTracking = 'issue-tracking';
+    case TimeRegistration = 'time-registration';
+    case TransactionalEmail = 'transactional-email';
+    case Vault = 'vault';
+    case DataWarehouse = 'data-warehouse';
 }

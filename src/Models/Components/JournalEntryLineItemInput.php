@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Apideck\Unify\Models\Components;
 
-
+use Brick\DateTime\LocalDate;
 class JournalEntryLineItemInput
 {
     /**
@@ -180,6 +180,24 @@ class JournalEntryLineItemInput
     public ?int $lineNumber = null;
 
     /**
+     * The financial date of this specific line, when it differs from the journal entry's own posted_at date - for example when booking a historical or backdated transaction. Not populated by every connector: some post the entry date at the header level only, in which case this line-level date is legitimately absent rather than wrong.
+     *
+     * @var ?LocalDate $date
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LocalDate $date = null;
+
+    /**
+     * A unique identifier for the source of this specific line, distinct from the journal entry's own source_id. Useful for reconciling an individual line back to an external system's own record when a single journal entry aggregates lines originating from more than one source.
+     *
+     * @var ?string $sourceId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $sourceId = null;
+
+    /**
      * @param  ?\Apideck\Unify\Models\Components\JournalEntryLineItemType  $type
      * @param  ?\Apideck\Unify\Models\Components\LinkedTaxRateInput  $taxRate
      * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $ledgerAccount
@@ -198,9 +216,11 @@ class JournalEntryLineItemInput
      * @param  ?string  $departmentId
      * @param  ?string  $locationId
      * @param  ?int  $lineNumber
+     * @param  ?LocalDate  $date
+     * @param  ?string  $sourceId
      * @phpstan-pure
      */
-    public function __construct(?JournalEntryLineItemType $type = null, ?LinkedTaxRateInput $taxRate = null, ?LinkedLedgerAccount $ledgerAccount = null, ?array $worktags = null, ?string $description = null, ?float $taxAmount = null, ?float $subTotal = null, ?float $totalAmount = null, ?float $baseCurrencyAmount = null, ?TaxType $taxType = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?LinkedCustomerInput $customer = null, ?LinkedSupplierInput $supplier = null, ?LinkedEmployee $employee = null, ?string $departmentId = null, ?string $locationId = null, ?int $lineNumber = null)
+    public function __construct(?JournalEntryLineItemType $type = null, ?LinkedTaxRateInput $taxRate = null, ?LinkedLedgerAccount $ledgerAccount = null, ?array $worktags = null, ?string $description = null, ?float $taxAmount = null, ?float $subTotal = null, ?float $totalAmount = null, ?float $baseCurrencyAmount = null, ?TaxType $taxType = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?LinkedCustomerInput $customer = null, ?LinkedSupplierInput $supplier = null, ?LinkedEmployee $employee = null, ?string $departmentId = null, ?string $locationId = null, ?int $lineNumber = null, ?LocalDate $date = null, ?string $sourceId = null)
     {
         $this->type = $type;
         $this->taxRate = $taxRate;
@@ -220,5 +240,7 @@ class JournalEntryLineItemInput
         $this->departmentId = $departmentId;
         $this->locationId = $locationId;
         $this->lineNumber = $lineNumber;
+        $this->date = $date;
+        $this->sourceId = $sourceId;
     }
 }

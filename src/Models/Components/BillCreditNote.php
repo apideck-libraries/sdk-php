@@ -14,18 +14,20 @@ class BillCreditNote
     /**
      * Unique identifier representing the entity
      *
-     * @var string $id
+     * @var ?string $id
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public string $id;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
 
     /**
      * Amount of transaction
      *
-     * @var float $totalAmount
+     * @var ?float $totalAmount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('total_amount')]
-    public float $totalAmount;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $totalAmount = null;
 
     /**
      * Status of bill credit notes
@@ -326,8 +328,8 @@ class BillCreditNote
     public ?\DateTime $createdAt = null;
 
     /**
-     * @param  string  $id
-     * @param  float  $totalAmount
+     * @param  ?string  $id
+     * @param  ?float  $totalAmount
      * @param  ?\Apideck\Unify\Models\Components\BillCreditNoteStatus  $status
      * @param  ?\DateTime  $dateIssued
      * @param  ?\Apideck\Unify\Models\Components\BillCreditNoteType  $type
@@ -362,7 +364,7 @@ class BillCreditNote
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(string $id, float $totalAmount, ?BillCreditNoteStatus $status = null, ?\DateTime $dateIssued = null, ?BillCreditNoteType $type = null, ?array $lineItems = null, ?array $allocations = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?LinkedSupplier $supplier = null, ?LinkedSubsidiary $subsidiary = null, ?LinkedLocation $location = null, ?LinkedDepartment $department = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $balance = null, ?float $remainingCredit = null, ?string $reference = null, ?\DateTime $datePaid = null, ?LinkedLedgerAccount $account = null, ?string $note = null, ?string $terms = null, ?array $trackingCategories = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?float $totalAmount = null, ?BillCreditNoteStatus $status = null, ?\DateTime $dateIssued = null, ?BillCreditNoteType $type = null, ?array $lineItems = null, ?array $allocations = null, ?array $customFields = null, ?array $passThrough = null, ?string $number = null, ?LinkedSupplier $supplier = null, ?LinkedSubsidiary $subsidiary = null, ?LinkedLocation $location = null, ?LinkedDepartment $department = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $balance = null, ?float $remainingCredit = null, ?string $reference = null, ?\DateTime $datePaid = null, ?LinkedLedgerAccount $account = null, ?string $note = null, ?string $terms = null, ?array $trackingCategories = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->totalAmount = $totalAmount;

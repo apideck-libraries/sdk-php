@@ -55,11 +55,11 @@ class ConnectorResources
      * @param  string  $id
      * @param  string  $resourceId
      * @param  ?string  $appId
-     * @param  ?\Apideck\Unify\Models\Components\UnifiedApiId  $unifiedApi
+     * @param  ?\Apideck\Unify\Models\Components\UnifiedApi  $unifiedApi
      * @return \Apideck\Unify\Models\Operations\ConnectorConnectorResourcesOneResponse
      * @throws \Apideck\Unify\Models\Errors\APIException
      */
-    public function get(string $id, string $resourceId, ?string $appId = null, ?Components\UnifiedApiId $unifiedApi = null, ?Options $options = null): Operations\ConnectorConnectorResourcesOneResponse
+    public function get(string $id, string $resourceId, ?string $appId = null, ?Components\UnifiedApi $unifiedApi = null, ?Options $options = null): Operations\ConnectorConnectorResourcesOneResponse
     {
         $retryConfig = null;
         if ($options) {

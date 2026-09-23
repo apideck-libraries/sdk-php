@@ -20,6 +20,16 @@ class EcommerceStore
     public string $id;
 
     /**
+     * Seller-side addresses exposed by the platform for this store. Currently holds the store's default shipping origin when the platform designates one. Empty when none is available.
+     *
+     * @var ?array<\Apideck\Unify\Models\Components\EcommerceAddress> $addresses
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('addresses')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\EcommerceAddress>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $addresses = null;
+
+    /**
      * The store's name
      *
      * @var ?string $name
@@ -76,6 +86,7 @@ class EcommerceStore
 
     /**
      * @param  string  $id
+     * @param  ?array<\Apideck\Unify\Models\Components\EcommerceAddress>  $addresses
      * @param  ?string  $name
      * @param  ?string  $storeUrl
      * @param  ?string  $adminUrl
@@ -84,9 +95,10 @@ class EcommerceStore
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, ?string $name = null, ?string $storeUrl = null, ?string $adminUrl = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(string $id, ?array $addresses = null, ?string $name = null, ?string $storeUrl = null, ?string $adminUrl = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
+        $this->addresses = $addresses;
         $this->name = $name;
         $this->storeUrl = $storeUrl;
         $this->adminUrl = $adminUrl;

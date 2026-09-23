@@ -272,6 +272,15 @@ class Company1Input
     public ?string $lastName = null;
 
     /**
+     * Parent ID
+     *
+     * @var ?string $parentId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('parent_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $parentId = null;
+
+    /**
      * $tags
      *
      * @var ?array<string> $tags
@@ -337,13 +346,14 @@ class Company1Input
      * @param  ?string  $acn
      * @param  ?string  $firstName
      * @param  ?string  $lastName
+     * @param  ?string  $parentId
      * @param  ?array<string>  $tags
      * @param  ?bool  $readOnly
      * @param  ?string  $salutation
      * @param  ?LocalDate  $birthday
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?array $bankAccounts = null, ?array $websites = null, ?array $addresses = null, ?array $socialLinks = null, ?array $phoneNumbers = null, ?array $emails = null, ?CompanyRowType $rowType = null, ?array $customFields = null, ?array $passThrough = null, ?string $ownerId = null, ?string $image = null, ?string $description = null, ?string $vatNumber = null, ?Currency $currency = null, ?string $status = null, ?string $fax = null, ?string $annualRevenue = null, ?string $numberOfEmployees = null, ?string $industry = null, ?string $ownership = null, ?string $salesTaxNumber = null, ?string $payeeNumber = null, ?string $abnOrTfn = null, ?string $abnBranch = null, ?string $acn = null, ?string $firstName = null, ?string $lastName = null, ?array $tags = null, ?bool $readOnly = null, ?string $salutation = null, ?LocalDate $birthday = null)
+    public function __construct(?string $name = null, ?array $bankAccounts = null, ?array $websites = null, ?array $addresses = null, ?array $socialLinks = null, ?array $phoneNumbers = null, ?array $emails = null, ?CompanyRowType $rowType = null, ?array $customFields = null, ?array $passThrough = null, ?string $ownerId = null, ?string $image = null, ?string $description = null, ?string $vatNumber = null, ?Currency $currency = null, ?string $status = null, ?string $fax = null, ?string $annualRevenue = null, ?string $numberOfEmployees = null, ?string $industry = null, ?string $ownership = null, ?string $salesTaxNumber = null, ?string $payeeNumber = null, ?string $abnOrTfn = null, ?string $abnBranch = null, ?string $acn = null, ?string $firstName = null, ?string $lastName = null, ?string $parentId = null, ?array $tags = null, ?bool $readOnly = null, ?string $salutation = null, ?LocalDate $birthday = null)
     {
         $this->name = $name;
         $this->bankAccounts = $bankAccounts;
@@ -373,6 +383,7 @@ class Company1Input
         $this->acn = $acn;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
+        $this->parentId = $parentId;
         $this->tags = $tags;
         $this->readOnly = $readOnly;
         $this->salutation = $salutation;
