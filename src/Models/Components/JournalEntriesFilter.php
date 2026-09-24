@@ -20,6 +20,14 @@ class JournalEntriesFilter
     public ?\DateTime $updatedSince = null;
 
     /**
+     * Journal entry number to search for
+     *
+     * @var ?string $number
+     */
+    #[SpeakeasyMetadata('queryParam:name=number')]
+    public ?string $number = null;
+
+    /**
      * Return journal entries posted on or after this date (posting date, inclusive). Connectors without date-range support reject this filter with UnsupportedFiltersError.
      *
      * @var ?LocalDate $startDate
@@ -60,6 +68,7 @@ class JournalEntriesFilter
 
     /**
      * @param  ?\DateTime  $updatedSince
+     * @param  ?string  $number
      * @param  ?LocalDate  $startDate
      * @param  ?LocalDate  $endDate
      * @param  ?\Apideck\Unify\Models\Components\JournalEntriesFilterStatus  $status
@@ -67,9 +76,10 @@ class JournalEntriesFilter
      * @param  ?string  $subsidiaryId
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedSince = null, ?LocalDate $startDate = null, ?LocalDate $endDate = null, ?JournalEntriesFilterStatus $status = null, ?JournalEntriesFilterScope $scope = null, ?string $subsidiaryId = null)
+    public function __construct(?\DateTime $updatedSince = null, ?string $number = null, ?LocalDate $startDate = null, ?LocalDate $endDate = null, ?JournalEntriesFilterStatus $status = null, ?JournalEntriesFilterScope $scope = null, ?string $subsidiaryId = null)
     {
         $this->updatedSince = $updatedSince;
+        $this->number = $number;
         $this->startDate = $startDate;
         $this->endDate = $endDate;
         $this->status = $status;

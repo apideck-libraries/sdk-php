@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 69ac7145a3461c0d16bb872962c695e4
-  docVersion: 10.58.11
+  docChecksum: 850f00c1ec68870861a921b24aac07e2
+  docVersion: 10.58.18
   speakeasyVersion: 1.798.0
   generationVersion: 2.938.0
-  releaseVersion: 0.27.1
-  configChecksum: 8b5569ec34ec150bac9b97c77b70d461
+  releaseVersion: 0.27.2
+  configChecksum: 0826818dbcdac140ca14aa49f1aa9937
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: 45799cca-b75f-4112-beae-6fe4fecb2d31
-  pristine_commit_hash: 63b1ea20590d2ffc083434b9ac688120a6464609
-  pristine_tree_hash: 695a109427bc13f7f9e18c7b79d0ed87223328ad
+  generation_id: a667d7ef-3f56-4919-9771-a9de8916f8b4
+  pristine_commit_hash: ad66beb5c455cf597c767df6f33016949ad22253
+  pristine_tree_hash: 52dc61642012b5240d5182d430443624421021a2
 features:
   php:
     additionalProperties: 0.1.1
@@ -2777,8 +2777,8 @@ trackedFiles:
     pristine_git_object: c6bb504dc89f1553cef6287aa6a78bb00563f393
   docs/Models/Components/JournalEntriesFilter.md:
     id: 850c849a7153
-    last_write_checksum: sha1:6c8f47437c837b5a7adcd52234298d01c9d25797
-    pristine_git_object: f01659904ba73aff54e73e721f016b683823c0a1
+    last_write_checksum: sha1:c4790d1e34076972a0bd0e1967d26890fef512fb
+    pristine_git_object: e8019fba6d043ba25ae01fef1451e5830efa1548
   docs/Models/Components/JournalEntriesFilterScope.md:
     id: 03f5b9c95482
     last_write_checksum: sha1:b11fe88d61dc764316dd5ed3115ff070540b34c8
@@ -10753,8 +10753,8 @@ trackedFiles:
     pristine_git_object: 5e0b9dec079973de839779f3f77cf4f1380e4775
   src/Models/Components/JournalEntriesFilter.php:
     id: 660ce8b2dbe5
-    last_write_checksum: sha1:ebbd609603d7f4a6248dcf875b78a22cbe0380ff
-    pristine_git_object: 25a1ae2c9797ba02e64993f997e7e78f3402eb30
+    last_write_checksum: sha1:90167eefda5da9fa362ab36db4bd8886d4ffb5cb
+    pristine_git_object: 5abae1c64082cf3c1ee890672511987bab39e6ee
   src/Models/Components/JournalEntriesFilterScope.php:
     id: 81415591ba00
     last_write_checksum: sha1:0065df6979db519da7c87aab7ae9f0d098c65b6c
@@ -15285,8 +15285,8 @@ trackedFiles:
     pristine_git_object: 1b84a996bbe4b1742310466f6289fde44ac8a13c
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:141f6ad98aa426b4397188e366dcbe0d7ccccd96
-    pristine_git_object: 9df8754002c76bf3a091f4a403e15f6efeae3b79
+    last_write_checksum: sha1:92049031753512649643a082d4816d217e9c2f3f
+    pristine_git_object: eb1385907769abd07090a2f8877236abcca0d24a
   src/SalesReceipts.php:
     id: 671bcf284513
     last_write_checksum: sha1:c593f9a727511a6f194dffbf802d5895081caeb9
@@ -32684,7 +32684,7 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `apideck->accounting->billCreditNotes->list()`:  `response.data[]` **Changed**\n* `apideck->accounting->billCreditNotes->create()`: \n  *  `request->billCreditNote->totalAmount` **Changed**\n* `apideck->accounting->billCreditNotes->get()`:  `response.data` **Changed**\n* `apideck->accounting->billCreditNotes->update()`: \n  *  `request->billCreditNote->totalAmount` **Changed**\n* `apideck->accounting->journalEntries->list()`:  `response.data[]->lineItems[]` **Changed**\n* `apideck->accounting->journalEntries->create()`: \n  *  `request->journalEntry->lineItems[]` **Changed**\n* `apideck->accounting->journalEntries->get()`:  `response.data->lineItems[]` **Changed**\n* `apideck->accounting->journalEntries->update()`: \n  *  `request->journalEntry->lineItems[]` **Changed**\n* `apideck->crm->companies->create()`: \n  *  `request->company1->parentId` **Added**\n* `apideck->crm->companies->update()`: \n  *  `request->company1->parentId` **Added**\n* `apideck->ecommerce->stores->get()`:  `response.data->addresses` **Added**\n"
+releaseNotes: "## Php SDK Changes:\n* `apideck->accounting->journalEntries->list()`: \n  *  `request->filter` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md
