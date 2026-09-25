@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 850f00c1ec68870861a921b24aac07e2
-  docVersion: 10.58.18
-  speakeasyVersion: 1.798.0
-  generationVersion: 2.938.0
-  releaseVersion: 0.27.2
-  configChecksum: 0826818dbcdac140ca14aa49f1aa9937
+  docChecksum: 61b3f54e4700bf484dd0556a99bb4d08
+  docVersion: 10.58.19
+  speakeasyVersion: 1.799.0
+  generationVersion: 2.941.0
+  releaseVersion: 0.27.3
+  configChecksum: f67ab387ddf06938d81f047528254cab
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: a667d7ef-3f56-4919-9771-a9de8916f8b4
-  pristine_commit_hash: ad66beb5c455cf597c767df6f33016949ad22253
-  pristine_tree_hash: 52dc61642012b5240d5182d430443624421021a2
+  generation_id: bfff8fda-8db0-43a0-b1ee-b7613668df53
+  pristine_commit_hash: ed7106b3e7db1d49c6e11b1e96d96bb3e127c510
+  pristine_tree_hash: 0303c7dd1fc530857861d376ac2617300d6d6f65
 features:
   php:
     additionalProperties: 0.1.1
@@ -15285,8 +15285,8 @@ trackedFiles:
     pristine_git_object: 1b84a996bbe4b1742310466f6289fde44ac8a13c
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:92049031753512649643a082d4816d217e9c2f3f
-    pristine_git_object: eb1385907769abd07090a2f8877236abcca0d24a
+    last_write_checksum: sha1:9c7de6a2ebd1783e6a743e148e7e1723c6b1ad1c
+    pristine_git_object: ba067000eed8f8c0687734d167ba2c8afa67ec42
   src/SalesReceipts.php:
     id: 671bcf284513
     last_write_checksum: sha1:c593f9a727511a6f194dffbf802d5895081caeb9
@@ -32684,7 +32684,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `apideck->accounting->journalEntries->list()`: \n  *  `request->filter` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md
