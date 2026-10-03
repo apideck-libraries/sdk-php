@@ -80,10 +80,10 @@ class Api
     /**
      * List of resources supported in this API.
      *
-     * @var ?array<\Apideck\Unify\Models\Components\Resources> $resources
+     * @var ?array<\Apideck\Unify\Models\Components\ApiResources> $resources
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('resources')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Resources>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\ApiResources>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $resources = null;
 
@@ -123,7 +123,7 @@ class Api
      * @param  ?string  $specUrl
      * @param  ?string  $apiReferenceUrl
      * @param  ?array<string>  $categories
-     * @param  ?array<\Apideck\Unify\Models\Components\Resources>  $resources
+     * @param  ?array<\Apideck\Unify\Models\Components\ApiResources>  $resources
      * @param  ?array<string>  $events
      * @param  ?string  $description
      * @param  ?string  $postmanCollectionId

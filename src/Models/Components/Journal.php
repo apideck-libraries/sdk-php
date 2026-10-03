@@ -96,6 +96,16 @@ class Journal
     public ?LinkedFinancialAccount $defaultAccount = null;
 
     /**
+     * A flexible account reference that can represent a ledger account (GL account), a bank account, or an employee payable account, depending on the connector's requirements.
+     *
+     * @var ?\Apideck\Unify\Models\Components\LinkedFinancialAccount $clearingAccount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('clearing_account')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedFinancialAccount|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedFinancialAccount $clearingAccount = null;
+
+    /**
      * Whether the journal is blocked for posting.
      *
      * @var ?bool $blocked
@@ -142,13 +152,14 @@ class Journal
      * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?string  $iban
      * @param  ?\Apideck\Unify\Models\Components\LinkedFinancialAccount  $defaultAccount
+     * @param  ?\Apideck\Unify\Models\Components\LinkedFinancialAccount  $clearingAccount
      * @param  ?bool  $blocked
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
      * @param  ?array<string, mixed>  $customMappings
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $code = null, ?string $name = null, ?string $description = null, ?JournalType $type = null, ?bool $allowVat = null, ?Currency $currency = null, ?string $iban = null, ?LinkedFinancialAccount $defaultAccount = null, ?bool $blocked = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?array $customMappings = null)
+    public function __construct(?string $id = null, ?string $code = null, ?string $name = null, ?string $description = null, ?JournalType $type = null, ?bool $allowVat = null, ?Currency $currency = null, ?string $iban = null, ?LinkedFinancialAccount $defaultAccount = null, ?LinkedFinancialAccount $clearingAccount = null, ?bool $blocked = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?array $customMappings = null)
     {
         $this->id = $id;
         $this->code = $code;
@@ -159,6 +170,7 @@ class Journal
         $this->currency = $currency;
         $this->iban = $iban;
         $this->defaultAccount = $defaultAccount;
+        $this->clearingAccount = $clearingAccount;
         $this->blocked = $blocked;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;

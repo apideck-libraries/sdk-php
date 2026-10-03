@@ -9,6 +9,7 @@
 * [get](#get) - Get Bill Payment
 * [update](#update) - Update Bill Payment
 * [delete](#delete) - Delete Bill Payment
+* [createBatch](#createbatch) - Create Bill Payments in batch
 
 ## list
 
@@ -551,6 +552,175 @@ if ($response->deleteBillPaymentResponse !== null) {
 ### Response
 
 **[?Operations\AccountingBillPaymentsDeleteResponse](../../Models/Operations/AccountingBillPaymentsDeleteResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## createBatch
+
+Create multiple bill payments in a single request. Each item is processed independently, so some may be created while others fail; the response returns `200` with one result per item, in the order the items were sent. The maximum number of items accepted per request depends on the connector.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="accounting.billPaymentsBatchAdd" method="post" path="/accounting/bill-payments/batch" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Components;
+use Apideck\Unify\Models\Operations;
+use Apideck\Unify\Utils;
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
+    ->build();
+
+$request = new Operations\AccountingBillPaymentsBatchAddRequest(
+    serviceId: 'salesforce',
+    companyId: '12345',
+    batchBillPaymentsRequest: new Components\BatchBillPaymentsRequest(
+        items: [
+            new Components\BatchBillPaymentsRequestItems(
+                ref: 'item-1',
+                data: new Components\BillPaymentCreateInput(
+                    currency: Components\Currency::Usd,
+                    currencyRate: 0.69,
+                    totalAmount: 49.99,
+                    reference: '123456',
+                    paymentMethod: 'cash',
+                    paymentMethodReference: '123456',
+                    paymentMethodId: '12345',
+                    account: new Components\LinkedLedgerAccount(
+                        id: '123456',
+                        name: 'Bank account',
+                        nominalCode: 'N091',
+                        code: '453',
+                        parentId: '123456',
+                        displayId: '123456',
+                    ),
+                    transactionDate: Utils\Utils::parseDateTime('2021-05-01T12:00:00.000Z'),
+                    supplier: new Components\LinkedSupplierInput(
+                        id: '12345',
+                        displayName: 'Windsurf Shop',
+                        address: new Components\Address(
+                            id: '123',
+                            type: Components\Type::Primary,
+                            string: '25 Spring Street, Blackburn, VIC 3130',
+                            name: 'HQ US',
+                            line1: 'Main street',
+                            line2: 'apt #',
+                            line3: 'Suite #',
+                            line4: 'delivery instructions',
+                            line5: 'Attention: Finance Dept',
+                            streetNumber: '25',
+                            city: 'San Francisco',
+                            state: 'CA',
+                            postalCode: '94104',
+                            country: 'US',
+                            latitude: '40.759211',
+                            longitude: '-73.984638',
+                            county: 'Santa Clara',
+                            contactName: 'Elon Musk',
+                            salutation: 'Mr',
+                            phoneNumber: '111-111-1111',
+                            fax: '122-111-1111',
+                            email: 'elon@musk.com',
+                            website: 'https://elonmusk.com',
+                            notes: 'Address notes or delivery instructions.',
+                            rowVersion: '1-12345',
+                        ),
+                    ),
+                    companyId: '12345',
+                    subsidiary: new Components\LinkedSubsidiaryInput(
+                        displayId: '123456',
+                        name: 'Acme Inc.',
+                    ),
+                    reconciled: true,
+                    status: Components\PaymentStatus::Authorised,
+                    type: Components\BillPaymentCreateInputBillPaymentType::AccountsPayable,
+                    allocations: [
+                        new Components\BillPaymentCreateInputAllocations(
+                            id: '12345',
+                            type: Components\BillPaymentCreateInputAllocationType::Bill,
+                            amount: 49.99,
+                            allocationId: '123456',
+                        ),
+                    ],
+                    note: 'Some notes about this transaction',
+                    number: '123456',
+                    trackingCategories: [
+                        new Components\LinkedTrackingCategory(
+                            id: '123456',
+                            code: '100',
+                            name: 'New York',
+                            parentId: '123456',
+                            parentName: 'New York',
+                        ),
+                    ],
+                    customFields: [
+                        new Components\CustomField1(
+                            id: '2389328923893298',
+                            name: 'employee_level',
+                            refName: 'Marketing',
+                            description: 'Employee Level',
+                            value: 'Uses Salesforce and Marketo',
+                        ),
+                    ],
+                    rowVersion: '1-12345',
+                    displayId: '123456',
+                    passThrough: [
+                        new Components\PassThroughBody(
+                            serviceId: '<id>',
+                            extendPaths: [
+                                new Components\ExtendPaths(
+                                    path: '$.nested.property',
+                                    value: [
+                                        'TaxClassificationRef' => [
+                                            'value' => 'EUC-99990201-V1-00020000',
+                                        ],
+                                    ],
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
+            ),
+        ],
+    ),
+);
+
+$response = $sdk->accounting->billPayments->createBatch(
+    request: $request
+);
+
+if ($response->batchBillPaymentsResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                           | [Operations\AccountingBillPaymentsBatchAddRequest](../../Models/Operations/AccountingBillPaymentsBatchAddRequest.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
+
+### Response
+
+**[?Operations\AccountingBillPaymentsBatchAddResponse](../../Models/Operations/AccountingBillPaymentsBatchAddResponse.md)**
 
 ### Errors
 

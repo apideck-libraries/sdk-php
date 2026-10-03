@@ -9,6 +9,7 @@
 * [get](#get) - Get Journal Entry
 * [update](#update) - Update Journal Entry
 * [delete](#delete) - Delete Journal Entry
+* [createBatch](#createbatch) - Create Journal Entries in batch
 
 ## list
 
@@ -642,6 +643,68 @@ if ($response->deleteJournalEntryResponse !== null) {
 ### Response
 
 **[?Operations\AccountingJournalEntriesDeleteResponse](../../Models/Operations/AccountingJournalEntriesDeleteResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## createBatch
+
+Create multiple journal entries in a single request. Each item is processed independently, so some may be created while others fail; the response returns `200` with one result per item, in the order the items were sent. The maximum number of items accepted per request depends on the connector.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="accounting.journalEntriesBatchAdd" method="post" path="/accounting/journal-entries/batch" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Components;
+use Apideck\Unify\Models\Operations;
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
+    ->build();
+
+$request = new Operations\AccountingJournalEntriesBatchAddRequest(
+    serviceId: 'salesforce',
+    companyId: '12345',
+    batchJournalEntriesRequest: new Components\BatchJournalEntriesRequest(
+        items: [],
+    ),
+);
+
+$response = $sdk->accounting->journalEntries->createBatch(
+    request: $request
+);
+
+if ($response->batchJournalEntriesResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                                               | [Operations\AccountingJournalEntriesBatchAddRequest](../../Models/Operations/AccountingJournalEntriesBatchAddRequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
+
+### Response
+
+**[?Operations\AccountingJournalEntriesBatchAddResponse](../../Models/Operations/AccountingJournalEntriesBatchAddResponse.md)**
 
 ### Errors
 

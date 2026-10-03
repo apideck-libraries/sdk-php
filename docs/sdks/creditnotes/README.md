@@ -9,6 +9,7 @@
 * [get](#get) - Get Credit Note
 * [update](#update) - Update Credit Note
 * [delete](#delete) - Delete Credit Note
+* [createBatch](#createbatch) - Create Credit Notes in batch
 
 ## list
 
@@ -687,6 +688,68 @@ if ($response->deleteCreditNoteResponse !== null) {
 ### Response
 
 **[?Operations\AccountingCreditNotesDeleteResponse](../../Models/Operations/AccountingCreditNotesDeleteResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## createBatch
+
+Create multiple credit notes in a single request. Each item is processed independently, so some may be created while others fail; the response returns `200` with one result per item, in the order the items were sent. The maximum number of items accepted per request depends on the connector.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="accounting.creditNotesBatchAdd" method="post" path="/accounting/credit-notes/batch" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Components;
+use Apideck\Unify\Models\Operations;
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
+    ->build();
+
+$request = new Operations\AccountingCreditNotesBatchAddRequest(
+    serviceId: 'salesforce',
+    companyId: '12345',
+    batchCreditNotesRequest: new Components\BatchCreditNotesRequest(
+        items: [],
+    ),
+);
+
+$response = $sdk->accounting->creditNotes->createBatch(
+    request: $request
+);
+
+if ($response->batchCreditNotesResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                                         | [Operations\AccountingCreditNotesBatchAddRequest](../../Models/Operations/AccountingCreditNotesBatchAddRequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
+
+### Response
+
+**[?Operations\AccountingCreditNotesBatchAddResponse](../../Models/Operations/AccountingCreditNotesBatchAddResponse.md)**
 
 ### Errors
 

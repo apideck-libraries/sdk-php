@@ -87,6 +87,16 @@ class JournalInput
     public ?LinkedFinancialAccountInput $defaultAccount = null;
 
     /**
+     * A flexible account reference that can represent a ledger account (GL account), a bank account, or an employee payable account, depending on the connector's requirements.
+     *
+     * @var ?\Apideck\Unify\Models\Components\LinkedFinancialAccountInput $clearingAccount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('clearing_account')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\LinkedFinancialAccountInput|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkedFinancialAccountInput $clearingAccount = null;
+
+    /**
      * Whether the journal is blocked for posting.
      *
      * @var ?bool $blocked
@@ -104,10 +114,11 @@ class JournalInput
      * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?string  $iban
      * @param  ?\Apideck\Unify\Models\Components\LinkedFinancialAccountInput  $defaultAccount
+     * @param  ?\Apideck\Unify\Models\Components\LinkedFinancialAccountInput  $clearingAccount
      * @param  ?bool  $blocked
      * @phpstan-pure
      */
-    public function __construct(?string $code = null, ?string $name = null, ?string $description = null, ?JournalType $type = null, ?bool $allowVat = null, ?Currency $currency = null, ?string $iban = null, ?LinkedFinancialAccountInput $defaultAccount = null, ?bool $blocked = null)
+    public function __construct(?string $code = null, ?string $name = null, ?string $description = null, ?JournalType $type = null, ?bool $allowVat = null, ?Currency $currency = null, ?string $iban = null, ?LinkedFinancialAccountInput $defaultAccount = null, ?LinkedFinancialAccountInput $clearingAccount = null, ?bool $blocked = null)
     {
         $this->code = $code;
         $this->name = $name;
@@ -117,6 +128,7 @@ class JournalInput
         $this->currency = $currency;
         $this->iban = $iban;
         $this->defaultAccount = $defaultAccount;
+        $this->clearingAccount = $clearingAccount;
         $this->blocked = $blocked;
     }
 }

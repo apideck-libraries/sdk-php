@@ -117,6 +117,13 @@ $request = new Operations\AccountingJournalsAddRequest(
             displayId: '123456',
             accountNumber: '123465',
         ),
+        clearingAccount: new Components\LinkedFinancialAccountInput(
+            id: '123456',
+            type: Components\LinkedFinancialAccountAccountType::LedgerAccount,
+            code: '1100',
+            displayId: '123456',
+            accountNumber: '123465',
+        ),
         blocked: false,
     ),
 );
@@ -248,6 +255,7 @@ $request = new Operations\AccountingJournalsUpdateRequest(
         currency: Components\Currency::Usd,
         iban: 'GB33BUKB20201555555555',
         defaultAccount: null,
+        clearingAccount: null,
         blocked: false,
     ),
 );

@@ -12,54 +12,31 @@ namespace Apideck\Unify\Models\Components;
 class Resources
 {
     /**
-     * ID of the resource, typically a lowercased version of its name.
+     * `none` means this resource refuses batch writes. `native` satisfies a batch in a single downstream call against the provider's own batch endpoint, so the request counts as one request against your plan. `loop` satisfies it as a bounded sequential fan-out, one downstream call per item — so a request of N records takes roughly N times as long and counts as N requests.
      *
-     * @var ?string $id
+     * @var \Apideck\Unify\Models\Components\BatchSupportResourcesMode $mode
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $id = null;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('mode')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BatchSupportResourcesMode')]
+    public BatchSupportResourcesMode $mode;
 
     /**
-     * Name of the resource (plural)
+     * The maximum number of items this resource accepts in one request. A request carrying more is rejected before any record is written. Resources on the same connector can differ: a resource that writes records one at a time is usually capped lower than one that writes them in a single call. Absent when the connector has not declared one, in which case the platform default applies.
      *
-     * @var ?string $name
+     * @var ?int $maxItems
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('max_items')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $name = null;
+    public ?int $maxItems = null;
 
     /**
-     * Status of the resource. Resources with status live or beta are callable.
-     *
-     * @var ?\Apideck\Unify\Models\Components\ResourceStatus $status
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ResourceStatus|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?ResourceStatus $status = null;
-
-    /**
-     * Exclude from mapping coverage
-     *
-     * @var ?bool $excludedFromCoverage
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('excluded_from_coverage')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $excludedFromCoverage = null;
-
-    /**
-     * @param  ?string  $id
-     * @param  ?string  $name
-     * @param  ?\Apideck\Unify\Models\Components\ResourceStatus  $status
-     * @param  ?bool  $excludedFromCoverage
+     * @param  \Apideck\Unify\Models\Components\BatchSupportResourcesMode  $mode
+     * @param  ?int  $maxItems
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?ResourceStatus $status = null, ?bool $excludedFromCoverage = null)
+    public function __construct(BatchSupportResourcesMode $mode, ?int $maxItems = null)
     {
-        $this->id = $id;
-        $this->name = $name;
-        $this->status = $status;
-        $this->excludedFromCoverage = $excludedFromCoverage;
+        $this->mode = $mode;
+        $this->maxItems = $maxItems;
     }
 }

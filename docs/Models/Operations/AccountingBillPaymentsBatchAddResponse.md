@@ -1,0 +1,10 @@
+# AccountingBillPaymentsBatchAddResponse
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                    | [Components\HTTPMetadata](../../Models/Components/HTTPMetadata.md)                            | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `batchBillPaymentsResponse`                                                                   | [?Components\BatchBillPaymentsResponse](../../Models/Components/BatchBillPaymentsResponse.md) | :heavy_minus_sign:                                                                            | Bill Payments batch processed                                                                 |
+| `unexpectedErrorResponse`                                                                     | [?Components\UnexpectedErrorResponse](../../Models/Components/UnexpectedErrorResponse.md)     | :heavy_minus_sign:                                                                            | Unexpected error                                                                              |

@@ -149,12 +149,12 @@ class Message
     /**
      * The error returned if your message status is failed or undelivered.
      *
-     * @var ?\Apideck\Unify\Models\Components\Error $error
+     * @var ?\Apideck\Unify\Models\Components\MessageError $error
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('error')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\Error|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\MessageError|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Error $error = null;
+    public ?MessageError $error = null;
 
     /**
      * The ID of the Messaging Service used with the message. In case of Plivo this links to the Powerpack ID.
@@ -237,7 +237,7 @@ class Message
      * @param  ?string  $webhookUrl
      * @param  ?string  $reference
      * @param  ?\Apideck\Unify\Models\Components\Price  $price
-     * @param  ?\Apideck\Unify\Models\Components\Error  $error
+     * @param  ?\Apideck\Unify\Models\Components\MessageError  $error
      * @param  ?string  $messagingServiceId
      * @param  ?array<\Apideck\Unify\Models\Components\PassThroughBody>  $passThrough
      * @param  ?array<string, mixed>  $customMappings
@@ -247,7 +247,7 @@ class Message
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(string $from, string $to, string $body, ?string $id = null, ?string $subject = null, ?MessageType $type = null, ?int $numberOfUnits = null, ?int $numberOfMediaFiles = null, ?Direction $direction = null, ?MessageStatus $status = null, ?\DateTime $scheduledAt = null, ?\DateTime $sentAt = null, ?string $webhookUrl = null, ?string $reference = null, ?Price $price = null, ?Error $error = null, ?string $messagingServiceId = null, ?array $passThrough = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(string $from, string $to, string $body, ?string $id = null, ?string $subject = null, ?MessageType $type = null, ?int $numberOfUnits = null, ?int $numberOfMediaFiles = null, ?Direction $direction = null, ?MessageStatus $status = null, ?\DateTime $scheduledAt = null, ?\DateTime $sentAt = null, ?string $webhookUrl = null, ?string $reference = null, ?Price $price = null, ?MessageError $error = null, ?string $messagingServiceId = null, ?array $passThrough = null, ?array $customMappings = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->from = $from;
         $this->to = $to;
