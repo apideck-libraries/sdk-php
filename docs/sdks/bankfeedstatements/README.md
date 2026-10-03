@@ -23,6 +23,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Apideck\Unify;
+use Apideck\Unify\Models\Components;
 use Apideck\Unify\Models\Operations;
 
 $sdk = Unify\Apideck::builder()
@@ -36,6 +37,9 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingBankFeedStatementsAllRequest(
     serviceId: 'salesforce',
     companyId: '12345',
+    filter: new Components\BankFeedStatementsFilter(
+        bankFeedAccountId: '12345',
+    ),
     passThrough: [
         'search' => 'San Francisco',
     ],

@@ -9,6 +9,7 @@
 * [get](#get) - Get Customer
 * [update](#update) - Update Customer
 * [delete](#delete) - Delete Customer
+* [createBatch](#createbatch) - Create Customers in batch
 
 ## list
 
@@ -664,6 +665,207 @@ if ($response->deleteCustomerResponse !== null) {
 ### Response
 
 **[?Operations\AccountingCustomersDeleteResponse](../../Models/Operations/AccountingCustomersDeleteResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## createBatch
+
+Create multiple customers in a single request. Each item is processed independently, so some may be created while others fail; the response returns `200` with one result per item, in the order the items were sent. The maximum number of items accepted per request depends on the connector.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="accounting.customersBatchAdd" method="post" path="/accounting/customers/batch" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Components;
+use Apideck\Unify\Models\Operations;
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
+    ->build();
+
+$request = new Operations\AccountingCustomersBatchAddRequest(
+    serviceId: 'salesforce',
+    companyId: '12345',
+    batchCustomersRequest: new Components\BatchCustomersRequest(
+        items: [
+            new Components\BatchCustomersRequestItems(
+                ref: 'item-1',
+                data: new Components\CustomerCreateInput(
+                    displayId: 'EMP00101',
+                    displayName: 'Windsurf Shop',
+                    companyName: 'SpaceX',
+                    companyId: '12345',
+                    subsidiary: null,
+                    customerCategory: 'Insurance',
+                    title: 'CEO',
+                    firstName: 'Elon',
+                    middleName: 'D.',
+                    lastName: 'Musk',
+                    suffix: 'Jr.',
+                    individual: true,
+                    project: false,
+                    addresses: [
+                        new Components\Address(
+                            id: '123',
+                            type: Components\Type::Primary,
+                            string: '25 Spring Street, Blackburn, VIC 3130',
+                            name: 'HQ US',
+                            line1: 'Main street',
+                            line2: 'apt #',
+                            line3: 'Suite #',
+                            line4: 'delivery instructions',
+                            line5: 'Attention: Finance Dept',
+                            streetNumber: '25',
+                            city: 'San Francisco',
+                            state: 'CA',
+                            postalCode: '94104',
+                            country: 'US',
+                            latitude: '40.759211',
+                            longitude: '-73.984638',
+                            county: 'Santa Clara',
+                            contactName: 'Elon Musk',
+                            salutation: 'Mr',
+                            phoneNumber: '111-111-1111',
+                            fax: '122-111-1111',
+                            email: 'elon@musk.com',
+                            website: 'https://elonmusk.com',
+                            notes: 'Address notes or delivery instructions.',
+                            rowVersion: '1-12345',
+                        ),
+                    ],
+                    phoneNumbers: [
+                        new Components\PhoneNumber(
+                            id: '12345',
+                            countryCode: '1',
+                            areaCode: '323',
+                            number: '111-111-1111',
+                            extension: '105',
+                            type: Components\PhoneNumberType::Primary,
+                        ),
+                    ],
+                    emails: [
+                        new Components\Email(
+                            id: '123',
+                            email: 'elon@musk.com',
+                            type: Components\EmailType::Primary,
+                        ),
+                    ],
+                    websites: [
+                        new Components\Website(
+                            id: '12345',
+                            url: 'http://example.com',
+                            type: Components\WebsiteType::Primary,
+                        ),
+                    ],
+                    bankAccounts: [
+                        new Components\BankAccount(
+                            bankName: 'Chase Bank',
+                            accountNumber: '123465',
+                            accountName: 'Main Operating Account',
+                            accountType: Components\AccountType::CreditCard,
+                            iban: 'GB33BUKB20201555555555',
+                            bic: 'CHASUS33',
+                            routingNumber: '021000021',
+                            bsbNumber: '062-001',
+                            branchIdentifier: '001',
+                            bankCode: 'BNH',
+                            currency: Components\Currency::Usd,
+                            country: 'US',
+                        ),
+                    ],
+                    notes: 'Some notes about this customer',
+                    taxRate: new Components\LinkedTaxRateInput(
+                        id: '123456',
+                        code: 'N-T',
+                        rate: 10,
+                    ),
+                    taxNumber: 'US123945459',
+                    taxable: true,
+                    currency: Components\Currency::Usd,
+                    account: new Components\LinkedLedgerAccount(
+                        id: '123456',
+                        name: 'Bank account',
+                        nominalCode: 'N091',
+                        code: '453',
+                        parentId: '123456',
+                        displayId: '123456',
+                    ),
+                    parent: new Components\LinkedParentCustomer(
+                        id: '12345',
+                        name: 'Windsurf Shop',
+                    ),
+                    status: Components\CustomerCreateInputStatus::Active,
+                    paymentMethod: 'cash',
+                    terms: 'Net 30 days',
+                    termsId: '12345',
+                    channel: 'email',
+                    customFields: [
+                        new Components\CustomField1(
+                            id: '2389328923893298',
+                            name: 'employee_level',
+                            refName: 'Marketing',
+                            description: 'Employee Level',
+                            value: 'Uses Salesforce and Marketo',
+                        ),
+                    ],
+                    rowVersion: '1-12345',
+                    passThrough: [
+                        new Components\PassThroughBody(
+                            serviceId: '<id>',
+                            extendPaths: [
+                                new Components\ExtendPaths(
+                                    path: '$.nested.property',
+                                    value: [
+                                        'TaxClassificationRef' => [
+                                            'value' => 'EUC-99990201-V1-00020000',
+                                        ],
+                                    ],
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
+            ),
+        ],
+    ),
+);
+
+$response = $sdk->accounting->customers->createBatch(
+    request: $request
+);
+
+if ($response->batchCustomersResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                     | [Operations\AccountingCustomersBatchAddRequest](../../Models/Operations/AccountingCustomersBatchAddRequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
+
+### Response
+
+**[?Operations\AccountingCustomersBatchAddResponse](../../Models/Operations/AccountingCustomersBatchAddResponse.md)**
 
 ### Errors
 

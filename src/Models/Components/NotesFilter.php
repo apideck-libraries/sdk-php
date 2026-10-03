@@ -28,6 +28,30 @@ class NotesFilter
     public ?string $ownerId = null;
 
     /**
+     * Unique identifier of the contact to filter notes on
+     *
+     * @var ?string $contactId
+     */
+    #[SpeakeasyMetadata('queryParam:name=contact_id')]
+    public ?string $contactId = null;
+
+    /**
+     * Unique identifier of the company to filter notes on
+     *
+     * @var ?string $companyId
+     */
+    #[SpeakeasyMetadata('queryParam:name=company_id')]
+    public ?string $companyId = null;
+
+    /**
+     * Unique identifier of the opportunity to filter notes on
+     *
+     * @var ?string $opportunityId
+     */
+    #[SpeakeasyMetadata('queryParam:name=opportunity_id')]
+    public ?string $opportunityId = null;
+
+    /**
      *
      * @var ?\DateTime $updatedSince
      */
@@ -44,14 +68,20 @@ class NotesFilter
     /**
      * @param  ?string  $title
      * @param  ?string  $ownerId
+     * @param  ?string  $contactId
+     * @param  ?string  $companyId
+     * @param  ?string  $opportunityId
      * @param  ?\DateTime  $updatedSince
      * @param  ?\DateTime  $createdSince
      * @phpstan-pure
      */
-    public function __construct(?string $title = null, ?string $ownerId = null, ?\DateTime $updatedSince = null, ?\DateTime $createdSince = null)
+    public function __construct(?string $title = null, ?string $ownerId = null, ?string $contactId = null, ?string $companyId = null, ?string $opportunityId = null, ?\DateTime $updatedSince = null, ?\DateTime $createdSince = null)
     {
         $this->title = $title;
         $this->ownerId = $ownerId;
+        $this->contactId = $contactId;
+        $this->companyId = $companyId;
+        $this->opportunityId = $opportunityId;
         $this->updatedSince = $updatedSince;
         $this->createdSince = $createdSince;
     }

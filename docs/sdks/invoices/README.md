@@ -9,6 +9,7 @@
 * [get](#get) - Get Invoice
 * [update](#update) - Update Invoice
 * [delete](#delete) - Delete Invoice
+* [createBatch](#createbatch) - Create Invoices in batch
 
 ## list
 
@@ -815,6 +816,68 @@ if ($response->deleteInvoiceResponse !== null) {
 ### Response
 
 **[?Operations\AccountingInvoicesDeleteResponse](../../Models/Operations/AccountingInvoicesDeleteResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## createBatch
+
+Create multiple invoices in a single request. Each item is processed independently, so some may be created while others fail; the response returns `200` with one result per item, in the order the items were sent. The maximum number of items accepted per request depends on the connector.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="accounting.invoicesBatchAdd" method="post" path="/accounting/invoices/batch" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Components;
+use Apideck\Unify\Models\Operations;
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
+    ->build();
+
+$request = new Operations\AccountingInvoicesBatchAddRequest(
+    serviceId: 'salesforce',
+    companyId: '12345',
+    batchInvoicesRequest: new Components\BatchInvoicesRequest(
+        items: [],
+    ),
+);
+
+$response = $sdk->accounting->invoices->createBatch(
+    request: $request
+);
+
+if ($response->batchInvoicesResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                                   | [Operations\AccountingInvoicesBatchAddRequest](../../Models/Operations/AccountingInvoicesBatchAddRequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+
+### Response
+
+**[?Operations\AccountingInvoicesBatchAddResponse](../../Models/Operations/AccountingInvoicesBatchAddResponse.md)**
 
 ### Errors
 

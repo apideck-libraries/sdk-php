@@ -1,0 +1,10 @@
+# AccountingLedgerAccountsBatchAddResponse
+
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `httpMeta`                                                                                        | [Components\HTTPMetadata](../../Models/Components/HTTPMetadata.md)                                | :heavy_check_mark:                                                                                | N/A                                                                                               |
+| `batchLedgerAccountsResponse`                                                                     | [?Components\BatchLedgerAccountsResponse](../../Models/Components/BatchLedgerAccountsResponse.md) | :heavy_minus_sign:                                                                                | Ledger Accounts batch processed                                                                   |
+| `unexpectedErrorResponse`                                                                         | [?Components\UnexpectedErrorResponse](../../Models/Components/UnexpectedErrorResponse.md)         | :heavy_minus_sign:                                                                                | Unexpected error                                                                                  |

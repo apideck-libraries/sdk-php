@@ -9,19 +9,43 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 
-/** Error - The error returned if your message status is failed or undelivered. */
+/**
+ * Error - Why this item did not complete. Present when `status` is `failed`, meaning the record was not written, and when `status` is `uncertain`, meaning it is unknown whether it was. Also present, more rarely, alongside `created`/`updated`: the record WAS written and post-write processing failed, so the item reports the error beside its success status.
+ *
+ *
+ * Per-item failures are independent — one item's rejection says nothing about the others. The exception is a failure of the request itself, such as a timeout: where a connector writes the whole batch in one call, every item shares that outcome and carries the same error.
+ */
 class Error
 {
     /**
-     * The error_code provides more information about the failure. If the message was successful, this value is null
+     * HTTP status code
      *
-     * @var ?string $code
+     * @var ?float $statusCode
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('code')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status_code')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $code = null;
+    public ?float $statusCode = null;
 
     /**
+     * Contains an explanation of the status_code as defined in HTTP/1.1 standard (RFC 7231)
+     *
+     * @var ?string $error
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('error')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $error = null;
+
+    /**
+     * The type of error returned
+     *
+     * @var ?string $typeName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $typeName = null;
+
+    /**
+     * A human-readable message providing more details about the error.
      *
      * @var ?string $message
      */
@@ -30,13 +54,40 @@ class Error
     public ?string $message = null;
 
     /**
-     * @param  ?string  $code
+     * Contains parameter or domain specific information related to the error and why it occurred.
+     *
+     * @var string|\Apideck\Unify\Models\Components\Detail2|null $detail
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('detail')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|\Apideck\Unify\Models\Components\Detail2|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public string|Detail2|null $detail = null;
+
+    /**
+     * Link to documentation of error type
+     *
+     * @var ?string $ref
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ref')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $ref = null;
+
+    /**
+     * @param  ?float  $statusCode
+     * @param  ?string  $error
+     * @param  ?string  $typeName
      * @param  ?string  $message
+     * @param  string|\Apideck\Unify\Models\Components\Detail2|null  $detail
+     * @param  ?string  $ref
      * @phpstan-pure
      */
-    public function __construct(?string $code = null, ?string $message = null)
+    public function __construct(?float $statusCode = null, ?string $error = null, ?string $typeName = null, ?string $message = null, string|Detail2|null $detail = null, ?string $ref = null)
     {
-        $this->code = $code;
+        $this->statusCode = $statusCode;
+        $this->error = $error;
+        $this->typeName = $typeName;
         $this->message = $message;
+        $this->detail = $detail;
+        $this->ref = $ref;
     }
 }

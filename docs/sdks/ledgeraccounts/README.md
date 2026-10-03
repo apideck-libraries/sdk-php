@@ -9,6 +9,7 @@
 * [get](#get) - Get Ledger Account
 * [update](#update) - Update Ledger Account
 * [delete](#delete) - Delete Ledger Account
+* [createBatch](#createbatch) - Create Ledger Accounts in batch
 
 ## list
 
@@ -484,6 +485,142 @@ if ($response->deleteLedgerAccountResponse !== null) {
 ### Response
 
 **[?Operations\AccountingLedgerAccountsDeleteResponse](../../Models/Operations/AccountingLedgerAccountsDeleteResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## createBatch
+
+Create multiple ledger accounts in a single request. Each item is processed independently, so some may be created while others fail; the response returns `200` with one result per item, in the order the items were sent. The maximum number of items accepted per request depends on the connector.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="accounting.ledgerAccountsBatchAdd" method="post" path="/accounting/ledger-accounts/batch" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Components;
+use Apideck\Unify\Models\Operations;
+use Brick\DateTime\LocalDate;
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
+    ->build();
+
+$request = new Operations\AccountingLedgerAccountsBatchAddRequest(
+    serviceId: 'salesforce',
+    companyId: '12345',
+    batchLedgerAccountsRequest: new Components\BatchLedgerAccountsRequest(
+        items: [
+            new Components\BatchLedgerAccountsRequestItems(
+                ref: 'item-1',
+                data: new Components\LedgerAccountCreateInput(
+                    displayId: '1-12345',
+                    code: '453',
+                    classification: Components\LedgerAccountCreateInputClassification::Asset,
+                    type: Components\LedgerAccountCreateInputType::Bank,
+                    subType: 'CHECKING_ACCOUNT',
+                    name: 'Bank account',
+                    fullyQualifiedName: 'Asset.Bank.Checking_Account',
+                    description: 'Main checking account',
+                    openingBalance: 75000,
+                    currentBalance: 20000,
+                    currency: Components\Currency::Usd,
+                    taxType: 'NONE',
+                    taxRate: new Components\LinkedTaxRateInput(
+                        id: '123456',
+                        code: 'N-T',
+                        rate: 10,
+                    ),
+                    level: 1,
+                    active: true,
+                    status: Components\LedgerAccountCreateInputAccountStatus::Active,
+                    header: true,
+                    bankAccount: new Components\BankAccount(
+                        bankName: 'Chase Bank',
+                        accountNumber: '123465',
+                        accountName: 'Main Operating Account',
+                        accountType: Components\AccountType::CreditCard,
+                        iban: 'GB33BUKB20201555555555',
+                        bic: 'CHASUS33',
+                        routingNumber: '021000021',
+                        bsbNumber: '062-001',
+                        branchIdentifier: '001',
+                        bankCode: 'BNH',
+                        currency: Components\Currency::Usd,
+                        country: 'US',
+                    ),
+                    parentAccount: new Components\LedgerAccountCreateInputParentAccount(
+                        id: '12345',
+                        name: 'Bank Accounts',
+                        displayId: '1-1100',
+                    ),
+                    subAccount: false,
+                    lastReconciliationDate: LocalDate::parse('2020-09-30'),
+                    customFields: [
+                        new Components\CustomField1(
+                            id: '2389328923893298',
+                            name: 'employee_level',
+                            refName: 'Marketing',
+                            description: 'Employee Level',
+                            value: 'Uses Salesforce and Marketo',
+                        ),
+                    ],
+                    rowVersion: '1-12345',
+                    passThrough: [
+                        new Components\PassThroughBody(
+                            serviceId: '<id>',
+                            extendPaths: [
+                                new Components\ExtendPaths(
+                                    path: '$.nested.property',
+                                    value: [
+                                        'TaxClassificationRef' => [
+                                            'value' => 'EUC-99990201-V1-00020000',
+                                        ],
+                                    ],
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
+            ),
+        ],
+    ),
+);
+
+$response = $sdk->accounting->ledgerAccounts->createBatch(
+    request: $request
+);
+
+if ($response->batchLedgerAccountsResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                                               | [Operations\AccountingLedgerAccountsBatchAddRequest](../../Models/Operations/AccountingLedgerAccountsBatchAddRequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
+
+### Response
+
+**[?Operations\AccountingLedgerAccountsBatchAddResponse](../../Models/Operations/AccountingLedgerAccountsBatchAddResponse.md)**
 
 ### Errors
 

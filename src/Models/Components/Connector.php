@@ -249,6 +249,16 @@ class Connector
     public ?WebhookSupport $webhookSupport = null;
 
     /**
+     * How this connector satisfies a batch write, per resource. Read this before calling a batch endpoint: support, execution mode and the per-request limit all vary by resource on the same connector, and the mode determines both latency and how many requests the call counts against your plan.
+     *
+     * @var ?\Apideck\Unify\Models\Components\BatchSupport $batchSupport
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('batch_support')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BatchSupport|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?BatchSupport $batchSupport = null;
+
+    /**
      * When a connector has schema_support, a call can be made to retrieve a json schema that describes a downstream resource.
      *
      * @var ?\Apideck\Unify\Models\Components\SchemaSupport $schemaSupport
@@ -322,6 +332,7 @@ class Connector
      * @param  ?array<string>  $configurableResources
      * @param  ?array<\Apideck\Unify\Models\Components\ConnectorEvent>  $supportedEvents
      * @param  ?\Apideck\Unify\Models\Components\WebhookSupport  $webhookSupport
+     * @param  ?\Apideck\Unify\Models\Components\BatchSupport  $batchSupport
      * @param  ?\Apideck\Unify\Models\Components\SchemaSupport  $schemaSupport
      * @param  ?array<\Apideck\Unify\Models\Components\ConnectorDoc>  $docs
      * @param  ?\Apideck\Unify\Models\Components\ConnectorOverview  $overview
@@ -329,7 +340,7 @@ class Connector
      * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?ConnectorStatus $status = null, ?string $iconUrl = null, ?string $logoUrl = null, ?string $websiteUrl = null, ?string $signupUrl = null, ?string $partnerSignupUrl = null, ?bool $freeTrialAvailable = null, ?array $migrationTargets = null, ?ConnectorAuthType $authType = null, ?bool $authOnly = null, ?bool $blindMapped = null, ?ConnectorOauthGrantType $oauthGrantType = null, ?OauthCredentialsSource $oauthCredentialsSource = null, ?array $oauthScopes = null, ?bool $customScopes = null, ?bool $hasSandboxCredentials = null, ?array $settings = null, ?string $serviceId = null, ?array $unifiedApis = null, ?array $supportedResources = null, ?array $configurableResources = null, ?array $supportedEvents = null, ?WebhookSupport $webhookSupport = null, ?SchemaSupport $schemaSupport = null, ?array $docs = null, ?ConnectorOverview $overview = null, ?TlsSupport $tlsSupport = null, ?string $description = null)
+    public function __construct(?string $id = null, ?string $name = null, ?ConnectorStatus $status = null, ?string $iconUrl = null, ?string $logoUrl = null, ?string $websiteUrl = null, ?string $signupUrl = null, ?string $partnerSignupUrl = null, ?bool $freeTrialAvailable = null, ?array $migrationTargets = null, ?ConnectorAuthType $authType = null, ?bool $authOnly = null, ?bool $blindMapped = null, ?ConnectorOauthGrantType $oauthGrantType = null, ?OauthCredentialsSource $oauthCredentialsSource = null, ?array $oauthScopes = null, ?bool $customScopes = null, ?bool $hasSandboxCredentials = null, ?array $settings = null, ?string $serviceId = null, ?array $unifiedApis = null, ?array $supportedResources = null, ?array $configurableResources = null, ?array $supportedEvents = null, ?WebhookSupport $webhookSupport = null, ?BatchSupport $batchSupport = null, ?SchemaSupport $schemaSupport = null, ?array $docs = null, ?ConnectorOverview $overview = null, ?TlsSupport $tlsSupport = null, ?string $description = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -356,6 +367,7 @@ class Connector
         $this->configurableResources = $configurableResources;
         $this->supportedEvents = $supportedEvents;
         $this->webhookSupport = $webhookSupport;
+        $this->batchSupport = $batchSupport;
         $this->schemaSupport = $schemaSupport;
         $this->docs = $docs;
         $this->overview = $overview;

@@ -9,6 +9,7 @@
 * [get](#get) - Get Payment
 * [update](#update) - Update Payment
 * [delete](#delete) - Delete Payment
+* [createBatch](#createbatch) - Create Payments in batch
 
 ## list
 
@@ -482,6 +483,68 @@ if ($response->deletePaymentResponse !== null) {
 ### Response
 
 **[?Operations\AccountingPaymentsDeleteResponse](../../Models/Operations/AccountingPaymentsDeleteResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## createBatch
+
+Create multiple payments in a single request. Each item is processed independently, so some may be created while others fail; the response returns `200` with one result per item, in the order the items were sent. The maximum number of items accepted per request depends on the connector.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="accounting.paymentsBatchAdd" method="post" path="/accounting/payments/batch" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Components;
+use Apideck\Unify\Models\Operations;
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
+    ->build();
+
+$request = new Operations\AccountingPaymentsBatchAddRequest(
+    serviceId: 'salesforce',
+    companyId: '12345',
+    batchPaymentsRequest: new Components\BatchPaymentsRequest(
+        items: [],
+    ),
+);
+
+$response = $sdk->accounting->payments->createBatch(
+    request: $request
+);
+
+if ($response->batchPaymentsResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                                   | [Operations\AccountingPaymentsBatchAddRequest](../../Models/Operations/AccountingPaymentsBatchAddRequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+
+### Response
+
+**[?Operations\AccountingPaymentsBatchAddResponse](../../Models/Operations/AccountingPaymentsBatchAddResponse.md)**
 
 ### Errors
 

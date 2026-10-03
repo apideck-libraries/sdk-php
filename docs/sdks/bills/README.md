@@ -9,6 +9,7 @@
 * [get](#get) - Get Bill
 * [update](#update) - Update Bill
 * [delete](#delete) - Delete Bill
+* [createBatch](#createbatch) - Create Bills in batch
 
 ## list
 
@@ -744,6 +745,68 @@ if ($response->deleteBillResponse !== null) {
 ### Response
 
 **[?Operations\AccountingBillsDeleteResponse](../../Models/Operations/AccountingBillsDeleteResponse.md)**
+
+### Errors
+
+| Error Type                     | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequestResponse      | 400                            | application/json               |
+| Errors\UnauthorizedResponse    | 401                            | application/json               |
+| Errors\PaymentRequiredResponse | 402                            | application/json               |
+| Errors\NotFoundResponse        | 404                            | application/json               |
+| Errors\UnprocessableResponse   | 422                            | application/json               |
+| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+
+## createBatch
+
+Create multiple bills in a single request. Each item is processed independently, so some may be created while others fail; the response returns `200` with one result per item, in the order the items were sent. The maximum number of items accepted per request depends on the connector.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="accounting.billsBatchAdd" method="post" path="/accounting/bills/batch" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Components;
+use Apideck\Unify\Models\Operations;
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
+    ->build();
+
+$request = new Operations\AccountingBillsBatchAddRequest(
+    serviceId: 'salesforce',
+    companyId: '12345',
+    batchBillsRequest: new Components\BatchBillsRequest(
+        items: [],
+    ),
+);
+
+$response = $sdk->accounting->bills->createBatch(
+    request: $request
+);
+
+if ($response->batchBillsResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                             | [Operations\AccountingBillsBatchAddRequest](../../Models/Operations/AccountingBillsBatchAddRequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+
+### Response
+
+**[?Operations\AccountingBillsBatchAddResponse](../../Models/Operations/AccountingBillsBatchAddResponse.md)**
 
 ### Errors
 
