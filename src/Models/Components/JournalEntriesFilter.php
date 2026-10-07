@@ -28,6 +28,14 @@ class JournalEntriesFilter
     public ?string $number = null;
 
     /**
+     * Return only journal entries whose source_id equals the given value (the caller-supplied reference, where the connector stores one). Connectors without support reject this filter with UnsupportedFiltersError.
+     *
+     * @var ?string $sourceId
+     */
+    #[SpeakeasyMetadata('queryParam:name=source_id')]
+    public ?string $sourceId = null;
+
+    /**
      * Return journal entries posted on or after this date (posting date, inclusive). Connectors without date-range support reject this filter with UnsupportedFiltersError.
      *
      * @var ?LocalDate $startDate
@@ -69,6 +77,7 @@ class JournalEntriesFilter
     /**
      * @param  ?\DateTime  $updatedSince
      * @param  ?string  $number
+     * @param  ?string  $sourceId
      * @param  ?LocalDate  $startDate
      * @param  ?LocalDate  $endDate
      * @param  ?\Apideck\Unify\Models\Components\JournalEntriesFilterStatus  $status
@@ -76,10 +85,11 @@ class JournalEntriesFilter
      * @param  ?string  $subsidiaryId
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedSince = null, ?string $number = null, ?LocalDate $startDate = null, ?LocalDate $endDate = null, ?JournalEntriesFilterStatus $status = null, ?JournalEntriesFilterScope $scope = null, ?string $subsidiaryId = null)
+    public function __construct(?\DateTime $updatedSince = null, ?string $number = null, ?string $sourceId = null, ?LocalDate $startDate = null, ?LocalDate $endDate = null, ?JournalEntriesFilterStatus $status = null, ?JournalEntriesFilterScope $scope = null, ?string $subsidiaryId = null)
     {
         $this->updatedSince = $updatedSince;
         $this->number = $number;
+        $this->sourceId = $sourceId;
         $this->startDate = $startDate;
         $this->endDate = $endDate;
         $this->status = $status;

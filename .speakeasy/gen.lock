@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 365177867ecb949db1c628eba806046d
-  docVersion: 10.60.1
+  docChecksum: 0a49475cae21ae073b5e8e5d93e8e5a9
+  docVersion: 10.63.0
   speakeasyVersion: 1.800.1
   generationVersion: 2.943.0
-  releaseVersion: 0.28.0
-  configChecksum: 1d90082df12303fe8d111aa99f9da07c
+  releaseVersion: 0.29.0
+  configChecksum: 8e80d3d251d54105e01c8108e0889997
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: b58f416c-93ae-4e7b-8c55-16f619a84d66
-  pristine_commit_hash: 818bc6d8f6e57b959bd169236195657e0b06c2c5
-  pristine_tree_hash: 30de94d7151719915fc0155bc6c58f4bdbadd5eb
+  generation_id: ed9214c9-18cf-4707-9537-3a21b685f312
+  pristine_commit_hash: a18ecff526a2037c4ee56b78c662d8e07bd7f9bb
+  pristine_tree_hash: 50ec4b5f94ba0a5d01557d369351d85963692884
 features:
   php:
     additionalProperties: 0.1.1
@@ -189,8 +189,8 @@ trackedFiles:
     pristine_git_object: a93feee44dc9daffc8bef47cd1f1cfe955dde944
   docs/Models/Components/Addresses.md:
     id: 3080d7063d94
-    last_write_checksum: sha1:a76a6b5ada1a1d259e728ac1b593f5ea1d04a6f2
-    pristine_git_object: fbbfdc274f0d3cf04d44491dc02aa2024d702f28
+    last_write_checksum: sha1:4a03f270339e1251e4dd5e063380acb6ff8e59ef
+    pristine_git_object: 9e1fb5445f23c54f8d52c5b9a21e206f48400559
   docs/Models/Components/AgedCreditors.md:
     id: fe535f367939
     last_write_checksum: sha1:333c589af60e3361dadb22776ac14d5846376dc3
@@ -413,12 +413,16 @@ trackedFiles:
     pristine_git_object: 4c1aa744fa21f05e098d89c867247b4bad915d3c
   docs/Models/Components/BankFeedAccount.md:
     id: f3d5f0f0eb24
-    last_write_checksum: sha1:9eaf33599edf73f7172f84756aa06d7b1041624a
-    pristine_git_object: b6024e1b9990684b2eab776c65d8f291218f0a77
+    last_write_checksum: sha1:2290d66ab82267c1cbe3af17918a116b464f8a61
+    pristine_git_object: 3322327209fd134af158e253b0269b743871f980
+  docs/Models/Components/BankFeedAccountHolder.md:
+    id: 321456488dd6
+    last_write_checksum: sha1:4c66bae2f82ccb98558db2c14f6416f2cd84d593
+    pristine_git_object: b25b45a60a1994ac8a7fe6db0dc7cb0086b8a3f2
   docs/Models/Components/BankFeedAccountInput.md:
     id: 0f7c6a437662
-    last_write_checksum: sha1:9e875c37cad4e94582686e4a7c2545728f6d680f
-    pristine_git_object: 25c4eb4b79dda6f5d877d49116af24e165077770
+    last_write_checksum: sha1:7cb6146dd0ef0639a94777fd310edfe2e1290991
+    pristine_git_object: a49274ef19b9298f634c8949b2418e9d7455365d
   docs/Models/Components/BankFeedStatement.md:
     id: ca8f7001cd23
     last_write_checksum: sha1:518d68e629cbd729b7d6a6da4a320154b1f4df08
@@ -1801,8 +1805,8 @@ trackedFiles:
     pristine_git_object: 44f0c8dbf174ab9f4aff5738269bc0e082c9df1c
   docs/Models/Components/EcommerceCustomer.md:
     id: 4c3be3802d01
-    last_write_checksum: sha1:7d1cf1806505aa5556504e3510118862650b1842
-    pristine_git_object: 148af47398cc3090f258ccf7bf3991579d2d08ce
+    last_write_checksum: sha1:4c52a06a15e618ba6bcb92b19f22d7aecd3a150a
+    pristine_git_object: c7a6d75ffde1c39f09f19a8f85d7f710607e5b0f
   docs/Models/Components/EcommerceCustomerType.md:
     id: a66874095639
     last_write_checksum: sha1:8a6c9222a3a799fd268cbe5a5e05afba2df433f6
@@ -2855,6 +2859,14 @@ trackedFiles:
     id: 91b435d8cb8d
     last_write_checksum: sha1:8a54c215fd89d911179e850a3341cd3956bd516f
     pristine_git_object: d1d3b6a15d47320daa6fc9c9d578608f863ffc19
+  docs/Models/Components/HolderRelationship.md:
+    id: f2544200956d
+    last_write_checksum: sha1:a2ef6c228d0ff97981aeeab682e07e0962ed70b3
+    pristine_git_object: 59b7d7e3936142690def446650d883b7b554f46c
+  docs/Models/Components/HolderType.md:
+    id: 40009c295abf
+    last_write_checksum: sha1:8d5fb7cc7a5af8e64783e6f1ada07a6e4a512962
+    pristine_git_object: 793643380be9e9e2139fa2f672edc5e66e3f7161
   docs/Models/Components/HrisCompany.md:
     id: eb087b54552e
     last_write_checksum: sha1:3fb3e97358521f84bd18b417ed99d3c605a1ece1
@@ -3025,8 +3037,8 @@ trackedFiles:
     pristine_git_object: 2892b6c99114a88dd800e46743f227fbe352e1ab
   docs/Models/Components/JournalEntriesFilter.md:
     id: 850c849a7153
-    last_write_checksum: sha1:c4790d1e34076972a0bd0e1967d26890fef512fb
-    pristine_git_object: e8019fba6d043ba25ae01fef1451e5830efa1548
+    last_write_checksum: sha1:5013cabb18133ef24c4e8cbf0f19b1cde3bf4fb1
+    pristine_git_object: 3f011c593497926eca277ad56f8e411872a3c7a9
   docs/Models/Components/JournalEntriesFilterScope.md:
     id: 03f5b9c95482
     last_write_checksum: sha1:b11fe88d61dc764316dd5ed3115ff070540b34c8
@@ -8601,8 +8613,8 @@ trackedFiles:
     pristine_git_object: cd19c5c19cd451c755f740be1defa403c0cd2028
   src/Models/Components/Addresses.php:
     id: 344609f5c0d4
-    last_write_checksum: sha1:09e669170c7a91f34c798cbf77d9f1ee9b2b00a0
-    pristine_git_object: f1d4076742e76664282aa265dabc54b715880741
+    last_write_checksum: sha1:3162ef17b9366865150d1cfc23df51d6ec0c341b
+    pristine_git_object: b402c68f2b29eb1e2b0b6ef348c2065d61943de3
   src/Models/Components/AgedCreditors.php:
     id: 8f175dc9b470
     last_write_checksum: sha1:85177e4b958042d47d9466fddb1243b5125acf62
@@ -8825,12 +8837,16 @@ trackedFiles:
     pristine_git_object: fd948e395d953ab2b814cda0e3f3c5b2f9cbedbb
   src/Models/Components/BankFeedAccount.php:
     id: efbf102a716c
-    last_write_checksum: sha1:b0ba1b75007afd7cf059bea6d008bc9b07dda054
-    pristine_git_object: 27b4d00ffa86a3464b7d935aa54e277ef4775c9d
+    last_write_checksum: sha1:b83b253d870c5c3943ac06b3946b4bbbd479fe9f
+    pristine_git_object: ba78994e3a952c6e11812ace0c5e339da19f6e78
+  src/Models/Components/BankFeedAccountHolder.php:
+    id: de0864639c28
+    last_write_checksum: sha1:a9a19aa7f0ca99a316cf4d18433fa3af499942d0
+    pristine_git_object: 1bdb77cb7ce243882f03128609d0925d5fc17c62
   src/Models/Components/BankFeedAccountInput.php:
     id: f033f2b23a05
-    last_write_checksum: sha1:d4d24d5b22ba47d865c39fbca334d3b1146ebfe4
-    pristine_git_object: ab988faf45ea5e1efa458b847648ed58255e0533
+    last_write_checksum: sha1:be0c0ea9cbda8bdc10b9094a1fe7e7b2d6b6b016
+    pristine_git_object: 0440b578d83ba8b91ef22d725680351e1f112b50
   src/Models/Components/BankFeedStatement.php:
     id: f2b962b5daf2
     last_write_checksum: sha1:87118ae2de04a4c6db3f80c25d424a783ada2340
@@ -10177,8 +10193,8 @@ trackedFiles:
     pristine_git_object: c6ad6eb8720b0f01951155a437f1c5e5387f70d0
   src/Models/Components/EcommerceCustomer.php:
     id: 659883caac14
-    last_write_checksum: sha1:32f30f4582e4252feafe3ee7d7e6a81f6d610af3
-    pristine_git_object: 0cb4076003c8eacbdc1fd030e13c780aff9268c2
+    last_write_checksum: sha1:21425f4c27eae94ed149fd5f44bb4d65dc4301cb
+    pristine_git_object: 480ea428eb493f7f40ab242e7c5be30d206dbb1c
   src/Models/Components/EcommerceCustomerType.php:
     id: 5e40dbbce113
     last_write_checksum: sha1:725dde6962085dc2dfe2994d2ef66bad01f8edba
@@ -11223,6 +11239,14 @@ trackedFiles:
     id: 85887768c831
     last_write_checksum: sha1:1db4af4abeb1bbb0bc50c1b44dca04e0d0dc1990
     pristine_git_object: deb799e4d252046eea69e4b2497cd4520f73ccea
+  src/Models/Components/HolderRelationship.php:
+    id: 57314cf4db64
+    last_write_checksum: sha1:76be26565b263d2ac7f4d3e92b441395d2887f85
+    pristine_git_object: 8ec16d57b30e58ae4ca765704176619f1db6494c
+  src/Models/Components/HolderType.php:
+    id: 3c51ed391eae
+    last_write_checksum: sha1:609a4ca351ae7d4ab49626a1e087c31df7aa2b38
+    pristine_git_object: 1db21ea757076694382ff32555f418a69d37a725
   src/Models/Components/HrisCompany.php:
     id: 48578827a9a1
     last_write_checksum: sha1:a4754784d3053c935155a43317de07468fa8c488
@@ -11393,8 +11417,8 @@ trackedFiles:
     pristine_git_object: 3ae534100e2a1debd0f309b860daf149f3550028
   src/Models/Components/JournalEntriesFilter.php:
     id: 660ce8b2dbe5
-    last_write_checksum: sha1:90167eefda5da9fa362ab36db4bd8886d4ffb5cb
-    pristine_git_object: 5abae1c64082cf3c1ee890672511987bab39e6ee
+    last_write_checksum: sha1:cc04f484e0ba5933b7bd7aed890ed272ba8d9238
+    pristine_git_object: 1d2b3760149cd5f0b2fafec0e59c43ffda94f20f
   src/Models/Components/JournalEntriesFilterScope.php:
     id: 81415591ba00
     last_write_checksum: sha1:0065df6979db519da7c87aab7ae9f0d098c65b6c
@@ -16073,8 +16097,8 @@ trackedFiles:
     pristine_git_object: 1b84a996bbe4b1742310466f6289fde44ac8a13c
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:8bef113bda6a76b9154289003530cfd59aab5b6a
-    pristine_git_object: b4d856711cf6de95db93c72e8b4987126dae3d4b
+    last_write_checksum: sha1:f514e370367345b03db8b2cea63cb26452e96738
+    pristine_git_object: 7c55d0fced2c6ce64aef0e35b1d7504c051bf79a
   src/SalesReceipts.php:
     id: 671bcf284513
     last_write_checksum: sha1:c593f9a727511a6f194dffbf802d5895081caeb9
@@ -21528,7 +21552,7 @@ examples:
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
           x-apideck-service-id: "salesforce"
       requestBody:
-        application/json: {"bank_account_type": "bank", "source_account_id": "src_456", "source_routing_number": "021000021", "source_account_number": "123465", "target_account_id": "tgt_789", "target_account_name": "Main Company Checking", "target_account_number": "NL91ABNA0417164300", "balance": 25000, "available_balance": 24500, "currency": "USD", "feed_status": "pending", "country": "US", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}]}
+        application/json: {"bank_account_type": "bank", "source_account_id": "src_456", "source_routing_number": "021000021", "source_account_number": "123465", "target_account_id": "tgt_789", "target_account_name": "Main Company Checking", "target_account_number": "NL91ABNA0417164300", "balance": 25000, "available_balance": 24500, "currency": "USD", "feed_status": "pending", "country": "US", "account_holders": [{"type": "consumer", "relationship": "primary", "first_name": "Jane", "middle_name": "Quinn", "last_name": "Doe", "suffix": "Jr", "business_name": "Acme LLC"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "line5": "Attention: Finance Dept", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}]}
       responses:
         "201":
           application/json: {"status_code": 200, "status": "OK", "service": "xero", "resource": "bills", "operation": "add", "data": {"id": "12345"}}
@@ -21585,7 +21609,7 @@ examples:
           x-apideck-company-id: "12345"
       responses:
         "200":
-          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "bank-feed-accounts", "operation": "one", "data": {"id": "12345", "bank_account_type": "bank", "source_account_id": "src_456", "source_routing_number": "021000021", "source_account_number": "123465", "target_account_id": "tgt_789", "target_account_name": "Main Company Checking", "target_account_number": "NL91ABNA0417164300", "balance": 25000, "available_balance": 24500, "currency": "USD", "feed_status": "pending", "country": "US", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "created_at": "2020-09-30T07:43:32.000Z", "updated_at": "2020-09-30T07:43:32.000Z", "updated_by": "12345", "created_by": "12345"}, "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}, "total_count": 1, "warnings": [{"type": "downstream_request_failed", "status_code": 429, "operation": "getManager"}]}}
+          application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "bank-feed-accounts", "operation": "one", "data": {"id": "12345", "bank_account_type": "bank", "source_account_id": "src_456", "source_routing_number": "021000021", "source_account_number": "123465", "target_account_id": "tgt_789", "target_account_name": "Main Company Checking", "target_account_number": "NL91ABNA0417164300", "balance": 25000, "available_balance": 24500, "currency": "USD", "feed_status": "pending", "country": "US", "account_holders": [{"type": "consumer", "relationship": "primary", "first_name": "Jane", "middle_name": "Quinn", "last_name": "Doe", "suffix": "Jr", "business_name": "Acme LLC"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "line5": "Attention: Finance Dept", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}], "created_at": "2020-09-30T07:43:32.000Z", "updated_at": "2020-09-30T07:43:32.000Z", "updated_by": "12345", "created_by": "12345"}, "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}, "total_count": 1, "warnings": [{"type": "downstream_request_failed", "status_code": 429, "operation": "getManager"}]}}
         "400":
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
         "401":
@@ -21637,7 +21661,7 @@ examples:
           x-apideck-app-id: "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
           x-apideck-service-id: "salesforce"
       requestBody:
-        application/json: {"bank_account_type": "bank", "source_account_id": "src_456", "source_routing_number": "021000021", "source_account_number": "123465", "target_account_id": "tgt_789", "target_account_name": "Main Company Checking", "target_account_number": "NL91ABNA0417164300", "balance": 25000, "available_balance": 24500, "currency": "USD", "feed_status": "pending", "country": "US", "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}]}
+        application/json: {"bank_account_type": "bank", "source_account_id": "src_456", "source_routing_number": "021000021", "source_account_number": "123465", "target_account_id": "tgt_789", "target_account_name": "Main Company Checking", "target_account_number": "NL91ABNA0417164300", "balance": 25000, "available_balance": 24500, "currency": "USD", "feed_status": "pending", "country": "US", "account_holders": [{"type": "consumer", "relationship": "primary", "first_name": "Jane", "middle_name": "Quinn", "last_name": "Doe", "suffix": "Jr", "business_name": "Acme LLC"}], "emails": [{"id": "123", "email": "elon@musk.com", "type": "primary"}], "addresses": [{"id": "123", "type": "primary", "string": "25 Spring Street, Blackburn, VIC 3130", "name": "HQ US", "line1": "Main street", "line2": "apt #", "line3": "Suite #", "line4": "delivery instructions", "line5": "Attention: Finance Dept", "street_number": "25", "city": "San Francisco", "state": "CA", "postal_code": "94104", "country": "US", "latitude": "40.759211", "longitude": "-73.984638", "county": "Santa Clara", "contact_name": "Elon Musk", "salutation": "Mr", "phone_number": "111-111-1111", "fax": "122-111-1111", "email": "elon@musk.com", "website": "https://elonmusk.com", "notes": "Address notes or delivery instructions.", "row_version": "1-12345"}], "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "custom_fields": [{"id": "2389328923893298", "name": "employee_level", "description": "Employee Level", "value": "Uses Salesforce and Marketo"}]}
       responses:
         "200":
           application/json: {"status_code": 200, "status": "OK", "service": "quickbooks", "resource": "bank-feed-accounts", "operation": "update", "data": {"id": "12345"}}
@@ -25041,7 +25065,7 @@ examples:
           x-apideck-service-id: "salesforce"
       responses:
         "200":
-          application/json: {"status_code": 200, "status": "OK", "service": "shopify", "resource": "customers", "operation": "one", "data": {"id": "12345", "name": "John Doe", "first_name": "John", "last_name": "Doe", "company_name": "Acme Inc.", "status": "active", "currency": "USD", "emails": null, "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "addresses": [{"type": "billing", "id": "12345", "line1": "Main street", "line2": "apt #", "city": "Anytown", "state": "Ohio", "postal_code": "12345", "country": "US"}], "orders": [{"id": "12345", "total": "199.99", "status": "active"}], "created_at": "2020-09-30T07:43:32.000Z", "updated_at": "2020-09-30T07:43:32.000Z"}, "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}, "total_count": 1, "warnings": null}}
+          application/json: {"status_code": 200, "status": "OK", "service": "shopify", "resource": "customers", "operation": "one", "data": {"id": "12345", "name": "John Doe", "first_name": "John", "last_name": "Doe", "company_name": "Acme Inc.", "status": "active", "tax_number": "BE0689615164", "currency": "USD", "emails": null, "phone_numbers": [{"id": "12345", "country_code": "1", "area_code": "323", "number": "111-111-1111", "extension": "105", "type": "primary"}], "addresses": [{"type": "billing", "id": "12345", "line1": "Main street", "line2": "apt #", "city": "Anytown", "state": "Ohio", "postal_code": "12345", "country": "US"}], "orders": [{"id": "12345", "total": "199.99", "status": "active"}], "created_at": "2020-09-30T07:43:32.000Z", "updated_at": "2020-09-30T07:43:32.000Z"}, "meta": {"items_on_page": 50, "cursors": {"previous": "em9oby1jcm06OnBhZ2U6OjE=", "current": "em9oby1jcm06OnBhZ2U6OjI=", "next": "em9oby1jcm06OnBhZ2U6OjM="}, "total_count": 1, "warnings": null}}
         "400":
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestValidationError", "message": "Invalid Params", "detail": "Missing property foobar", "ref": "https://developers.apideck.com/errors#requestvalidationerror", "downstream_errors": [{"message": "Account code '100' has been archived or deleted", "detail": "Each line item must reference a valid account", "code": "VALIDATION_ERROR"}]}
         "401":
@@ -33770,7 +33794,7 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `apideck->accounting->bills->createBatch()`: **Added**\n* `apideck->accounting->invoices->createBatch()`: **Added**\n* `apideck->accounting->ledgerAccounts->createBatch()`: **Added**\n* `apideck->accounting->creditNotes->createBatch()`: **Added**\n* `apideck->accounting->billCreditNotes->createBatch()`: **Added**\n* `apideck->accounting->customers->createBatch()`: **Added**\n* `apideck->accounting->suppliers->createBatch()`: **Added**\n* `apideck->accounting->payments->createBatch()`: **Added**\n* `apideck->accounting->journalEntries->createBatch()`: **Added**\n* `apideck->accounting->trackingCategories->createBatch()`: **Added**\n* `apideck->accounting->billPayments->createBatch()`: **Added**\n* `apideck->accounting->journals->list()`:  `response.data[]->clearingAccount` **Added**\n* `apideck->accounting->journals->create()`: \n  *  `request->journal->clearingAccount` **Added**\n* `apideck->accounting->journals->get()`:  `response.data->clearingAccount` **Added**\n* `apideck->accounting->journals->update()`: \n  *  `request->journal->clearingAccount` **Added**\n* `apideck->accounting->bankFeedStatements->list()`: \n  *  `request->filter` **Added**\n* `apideck->crm->notes->list()`: \n  *  `request->filter` **Changed**\n* `apideck->connector->connectors->list()`:  `response.data[]->batchSupport` **Added**\n* `apideck->connector->connectors->get()`:  `response.data->batchSupport` **Added**\n"
+releaseNotes: "## Php SDK Changes:\n* `apideck->accounting->journalEntries->list()`: \n  *  `request->filter` **Changed**\n* `apideck->accounting->bankFeedAccounts->list()`:  `response.data[]` **Changed**\n* `apideck->accounting->bankFeedAccounts->create()`: \n  *  `request->bankFeedAccount` **Changed**\n* `apideck->accounting->bankFeedAccounts->get()`:  `response.data` **Changed**\n* `apideck->accounting->bankFeedAccounts->update()`: \n  *  `request->bankFeedAccount` **Changed**\n* `apideck->ecommerce->customers->list()`:  `response.data[]` **Changed**\n* `apideck->ecommerce->customers->get()`:  `response.data` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md

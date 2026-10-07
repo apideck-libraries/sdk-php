@@ -84,6 +84,15 @@ class Addresses
     public ?string $country = null;
 
     /**
+     * Tax or VAT identification number registered on this address
+     *
+     * @var ?string $taxNumber
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_number')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $taxNumber = null;
+
+    /**
      * @param  ?\Apideck\Unify\Models\Components\EcommerceCustomerType  $type
      * @param  ?string  $id
      * @param  ?string  $line1
@@ -92,9 +101,10 @@ class Addresses
      * @param  ?string  $state
      * @param  ?string  $postalCode
      * @param  ?string  $country
+     * @param  ?string  $taxNumber
      * @phpstan-pure
      */
-    public function __construct(?EcommerceCustomerType $type = null, ?string $id = null, ?string $line1 = null, ?string $line2 = null, ?string $city = null, ?string $state = null, ?string $postalCode = null, ?string $country = null)
+    public function __construct(?EcommerceCustomerType $type = null, ?string $id = null, ?string $line1 = null, ?string $line2 = null, ?string $city = null, ?string $state = null, ?string $postalCode = null, ?string $country = null, ?string $taxNumber = null)
     {
         $this->type = $type;
         $this->id = $id;
@@ -104,5 +114,6 @@ class Addresses
         $this->state = $state;
         $this->postalCode = $postalCode;
         $this->country = $country;
+        $this->taxNumber = $taxNumber;
     }
 }
