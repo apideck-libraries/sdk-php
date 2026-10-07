@@ -76,6 +76,46 @@ class BankFeedAccount
     public ?FeedStatus $feedStatus = null;
 
     /**
+     * The people or businesses that hold the source bank account. Optional; `plaid-exchange` requires at least one.
+     *
+     * @var ?array<\Apideck\Unify\Models\Components\BankFeedAccountHolder> $accountHolders
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('account_holders')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\BankFeedAccountHolder>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $accountHolders = null;
+
+    /**
+     * Email addresses of the account holders. Optional; `plaid-exchange` requires at least one.
+     *
+     * @var ?array<\Apideck\Unify\Models\Components\Email> $emails
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('emails')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Email>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $emails = null;
+
+    /**
+     * Addresses of the account holders. Optional; `plaid-exchange` requires at least one.
+     *
+     * @var ?array<\Apideck\Unify\Models\Components\Address> $addresses
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('addresses')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\Address>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $addresses = null;
+
+    /**
+     * Phone numbers of the account holders. Optional; `plaid-exchange` requires at least one.
+     *
+     * @var ?array<\Apideck\Unify\Models\Components\PhoneNumber> $phoneNumbers
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('phone_numbers')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\PhoneNumber>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $phoneNumbers = null;
+
+    /**
      * $customFields
      *
      * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
@@ -194,6 +234,10 @@ class BankFeedAccount
      * @param  ?string  $targetAccountName
      * @param  ?string  $targetAccountNumber
      * @param  ?\Apideck\Unify\Models\Components\FeedStatus  $feedStatus
+     * @param  ?array<\Apideck\Unify\Models\Components\BankFeedAccountHolder>  $accountHolders
+     * @param  ?array<\Apideck\Unify\Models\Components\Email>  $emails
+     * @param  ?array<\Apideck\Unify\Models\Components\Address>  $addresses
+     * @param  ?array<\Apideck\Unify\Models\Components\PhoneNumber>  $phoneNumbers
      * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
      * @param  ?string  $sourceRoutingNumber
      * @param  ?string  $sourceAccountNumber
@@ -208,7 +252,7 @@ class BankFeedAccount
      * @param  ?string  $createdBy
      * @phpstan-pure
      */
-    public function __construct(string $id, ?BankAccountType $bankAccountType = null, ?string $sourceAccountId = null, ?string $targetAccountId = null, ?string $targetAccountName = null, ?string $targetAccountNumber = null, ?FeedStatus $feedStatus = null, ?array $customFields = null, ?string $sourceRoutingNumber = null, ?string $sourceAccountNumber = null, ?float $balance = null, ?float $availableBalance = null, ?Currency $currency = null, ?string $country = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $updatedBy = null, ?string $createdBy = null)
+    public function __construct(string $id, ?BankAccountType $bankAccountType = null, ?string $sourceAccountId = null, ?string $targetAccountId = null, ?string $targetAccountName = null, ?string $targetAccountNumber = null, ?FeedStatus $feedStatus = null, ?array $accountHolders = null, ?array $emails = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $customFields = null, ?string $sourceRoutingNumber = null, ?string $sourceAccountNumber = null, ?float $balance = null, ?float $availableBalance = null, ?Currency $currency = null, ?string $country = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $updatedBy = null, ?string $createdBy = null)
     {
         $this->id = $id;
         $this->bankAccountType = $bankAccountType;
@@ -217,6 +261,10 @@ class BankFeedAccount
         $this->targetAccountName = $targetAccountName;
         $this->targetAccountNumber = $targetAccountNumber;
         $this->feedStatus = $feedStatus;
+        $this->accountHolders = $accountHolders;
+        $this->emails = $emails;
+        $this->addresses = $addresses;
+        $this->phoneNumbers = $phoneNumbers;
         $this->customFields = $customFields;
         $this->sourceRoutingNumber = $sourceRoutingNumber;
         $this->sourceAccountNumber = $sourceAccountNumber;

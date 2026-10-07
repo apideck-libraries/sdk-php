@@ -1069,3 +1069,13 @@ Based on:
 - [php v0.28.0] .
 ### Releases
 - [Composer v0.28.0] https://packagist.org/packages/apideck-libraries/sdk-php#v0.28.0 - .
+
+## 2026-10-07 13:25:08
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.800.1 (2.943.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [php v0.29.0] .
+### Releases
+- [Composer v0.29.0] https://packagist.org/packages/apideck-libraries/sdk-php#v0.29.0 - .

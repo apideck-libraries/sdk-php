@@ -86,6 +86,15 @@ class EcommerceCustomer
     public ?CustomerStatus $status = null;
 
     /**
+     * Tax or VAT identification number of the customer
+     *
+     * @var ?string $taxNumber
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tax_number')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $taxNumber = null;
+
+    /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
      * @var ?\Apideck\Unify\Models\Components\Currency $currency
@@ -152,6 +161,7 @@ class EcommerceCustomer
      * @param  ?string  $lastName
      * @param  ?string  $companyName
      * @param  ?\Apideck\Unify\Models\Components\CustomerStatus  $status
+     * @param  ?string  $taxNumber
      * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?array<\Apideck\Unify\Models\Components\Email>  $emails
      * @param  ?array<\Apideck\Unify\Models\Components\PhoneNumber>  $phoneNumbers
@@ -160,7 +170,7 @@ class EcommerceCustomer
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, ?array $addresses = null, ?array $orders = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $companyName = null, ?CustomerStatus $status = null, ?Currency $currency = null, ?array $emails = null, ?array $phoneNumbers = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(string $id, ?array $addresses = null, ?array $orders = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $companyName = null, ?CustomerStatus $status = null, ?string $taxNumber = null, ?Currency $currency = null, ?array $emails = null, ?array $phoneNumbers = null, ?array $customMappings = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
         $this->addresses = $addresses;
@@ -170,6 +180,7 @@ class EcommerceCustomer
         $this->lastName = $lastName;
         $this->companyName = $companyName;
         $this->status = $status;
+        $this->taxNumber = $taxNumber;
         $this->currency = $currency;
         $this->emails = $emails;
         $this->phoneNumbers = $phoneNumbers;
