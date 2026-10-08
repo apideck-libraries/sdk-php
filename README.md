@@ -418,6 +418,14 @@ foreach ($responses as $response) {
 * [update](docs/sdks/refunds/README.md#update) - Update Refund
 * [delete](docs/sdks/refunds/README.md#delete) - Delete Refund
 
+### [Accounting.SalesOrders](docs/sdks/salesorders/README.md)
+
+* [list](docs/sdks/salesorders/README.md#list) - List Sales Orders
+* [create](docs/sdks/salesorders/README.md#create) - Create Sales Order
+* [get](docs/sdks/salesorders/README.md#get) - Get Sales Order
+* [update](docs/sdks/salesorders/README.md#update) - Update Sales Order
+* [delete](docs/sdks/salesorders/README.md#delete) - Delete Sales Order
+
 ### [Accounting.SalesReceipts](docs/sdks/salesreceipts/README.md)
 
 * [list](docs/sdks/salesreceipts/README.md#list) - List Sales Receipts
