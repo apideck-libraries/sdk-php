@@ -85,6 +85,8 @@ class Accounting
 
     public Projects $projects;
 
+    public SalesOrders $salesOrders;
+
     public Employees $employees;
 
     public ExpenseCategories $expenseCategories;
@@ -135,6 +137,7 @@ class Accounting
         $this->categories = new Categories($this->sdkConfiguration);
         $this->quotes = new Quotes($this->sdkConfiguration);
         $this->projects = new Projects($this->sdkConfiguration);
+        $this->salesOrders = new SalesOrders($this->sdkConfiguration);
         $this->employees = new Employees($this->sdkConfiguration);
         $this->expenseCategories = new ExpenseCategories($this->sdkConfiguration);
         $this->paymentMethods = new PaymentMethods($this->sdkConfiguration);

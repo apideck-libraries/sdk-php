@@ -153,4 +153,10 @@ enum WebhookEventType: string
     case AccountingTrackingCategoryCreated = 'accounting.tracking_category.created';
     case AccountingTrackingCategoryUpdated = 'accounting.tracking_category.updated';
     case AccountingTrackingCategoryDeleted = 'accounting.tracking_category.deleted';
+    case AccountingSalesReceiptCreated = 'accounting.sales_receipt.created';
+    case AccountingSalesReceiptUpdated = 'accounting.sales_receipt.updated';
+    case AccountingSalesReceiptDeleted = 'accounting.sales_receipt.deleted';
+    case AccountingRefundCreated = 'accounting.refund.created';
+    case AccountingRefundUpdated = 'accounting.refund.updated';
+    case AccountingRefundDeleted = 'accounting.refund.deleted';
 }
