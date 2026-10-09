@@ -112,7 +112,7 @@ $sdk = Unify\Apideck::builder()
 
 $request = new Operations\AccountingBillsAddRequest(
     serviceId: 'salesforce',
-    idempotencyKey: '8e03978e-40d5-43e8-bc93-6894a57f9324',
+    idempotencyKey: 'your-unique-key-per-create',
     bill: new Components\BillInput(
         billNumber: '10001',
         supplier: new Components\LinkedSupplierInput(

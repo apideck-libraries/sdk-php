@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 274eaee0a90cc2d0fb03633e591f0a33
-  docVersion: 10.66.1
+  docChecksum: 09a920f418dc59a418753e18f61af402
+  docVersion: 10.66.3
   speakeasyVersion: 1.801.0
   generationVersion: 2.946.0
-  releaseVersion: 0.30.0
-  configChecksum: d05ca8aecd6f352ff576812d88217b15
+  releaseVersion: 0.30.1
+  configChecksum: 44380b16acfdaf0c9cd1be9b7d96efaa
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: 334413ad-d8fd-467c-b241-666ec28dfa51
-  pristine_commit_hash: 1bde240605becf76b0392872a32b29146d1cd0ad
-  pristine_tree_hash: 74a3432e4784e549b5956bd319710cbc94efb37f
+  generation_id: 915d9e24-5701-4454-a6cf-575d0db89823
+  pristine_commit_hash: ab5e534d4f76232df736b4e97914792303008dab
+  pristine_tree_hash: caad0c532b09a8794973d8a441a179f209a2d781
 features:
   php:
     additionalProperties: 0.1.1
@@ -4953,8 +4953,8 @@ trackedFiles:
     pristine_git_object: 41c7487d174877d336f95b08d5278f9c5d629c70
   docs/Models/Operations/AccountingBillsAddRequest.md:
     id: 6a5355c38e4c
-    last_write_checksum: sha1:4b2edcf6153222347a96709d3982a262be2ee2ce
-    pristine_git_object: 5a818abeacc5c3f42b888680ddab0eafad017f7e
+    last_write_checksum: sha1:0b317f8fee50c44e3d5d64a4e558eeed215290b8
+    pristine_git_object: 92c1c3f92f5c0f8a4e2a1b55a2e273d6fbf73bf4
   docs/Models/Operations/AccountingBillsAddResponse.md:
     id: 3dc1f2f2e21f
     last_write_checksum: sha1:110b4a453024f57a02bdf2979d5f94baef809e89
@@ -5401,8 +5401,8 @@ trackedFiles:
     pristine_git_object: ac1772b9c6e2f8c2d09a6ff71feba1f57bd45d2d
   docs/Models/Operations/AccountingInvoicesAddRequest.md:
     id: 4120b72cda8f
-    last_write_checksum: sha1:4a204278e7cc788ebe0cd090b32c3a82f6db1dee
-    pristine_git_object: e514bc0e3d2d6ebbaa40a6039568859c74c39b42
+    last_write_checksum: sha1:5ede7f9280efc8981395fb41e428b3dc69e6f2be
+    pristine_git_object: 3db8c982c40099c5b9b282f43489aaa317699f52
   docs/Models/Operations/AccountingInvoicesAddResponse.md:
     id: ce5601ea2037
     last_write_checksum: sha1:9e2322079c03d7e2736fa356f72768c822d02942
@@ -5449,8 +5449,8 @@ trackedFiles:
     pristine_git_object: 2835fccdf5c79cf2c8f485b90c3a3a4caee9b080
   docs/Models/Operations/AccountingJournalEntriesAddRequest.md:
     id: 4679204844a4
-    last_write_checksum: sha1:e2996ad0b05cf0daaeb9ed594e949fb037925ed8
-    pristine_git_object: 7b4fbb33051f879226ea566cbc24445be2d1676f
+    last_write_checksum: sha1:b4508ff020b023b4089819bc233e9410667af064
+    pristine_git_object: d4c7c31eb1cf99af0ed205017eb99b25413e97c3
   docs/Models/Operations/AccountingJournalEntriesAddResponse.md:
     id: e9885c394ff4
     last_write_checksum: sha1:754005c1fae9c5ec84cde41cc9d067d78309b109
@@ -7821,8 +7821,8 @@ trackedFiles:
     pristine_git_object: 3c90ea6924f38466ce56b00753ae2769f061628d
   docs/sdks/bills/README.md:
     id: 2a9c97966ab7
-    last_write_checksum: sha1:0f79bc1905af132f198cfb046be14ab7ee1debff
-    pristine_git_object: 3a0d824c83e82a210b65beabc9e1d54509fc66dd
+    last_write_checksum: sha1:6966aa752f8b8b9546a41b8b299ad7a5199c388b
+    pristine_git_object: bf11dff1a61a7c0f67fdc0bfeec30d3f42f4b98b
   docs/sdks/categories/README.md:
     id: 2e253d7225b0
     last_write_checksum: sha1:4c271e3940a28bb0ab639f08ec8ee0ce847bdc22
@@ -7989,16 +7989,16 @@ trackedFiles:
     pristine_git_object: ef4321b8c9d670a6292d45e6447745d493383119
   docs/sdks/invoices/README.md:
     id: a3f76a06eded
-    last_write_checksum: sha1:846c5857639908de51a2a7ce3052983bcbc5c526
-    pristine_git_object: 80e502b7558ea6210addaa20a6ed068dd933935f
+    last_write_checksum: sha1:1324bc2b72fc47960bd06615debaa6dcd5cefcd3
+    pristine_git_object: 951064d1b8031682fbb0e241828ae0dae105d7be
   docs/sdks/jobs/README.md:
     id: 7371cdc8b89a
     last_write_checksum: sha1:7c402ffb4c3e7658281049233ef822597c952a15
     pristine_git_object: f28543c7242c38db4f3a1758a7a0089f81ff9926
   docs/sdks/journalentries/README.md:
     id: 7723a6f499f0
-    last_write_checksum: sha1:08fc6d4b34d3064ed1f1211e30e76d6359028abd
-    pristine_git_object: 81b0ce76b61cae1029fd5930cd1a4659d38bd825
+    last_write_checksum: sha1:f7134fe444e0f29c2f495d7720e2c3abf5251b9e
+    pristine_git_object: 30299aeeca24d63bf0fd1536191115c4419412d8
   docs/sdks/journals/README.md:
     id: 255f988e78fc
     last_write_checksum: sha1:fa2ad4b1c07b109541fd90e1761b60132479efde
@@ -16253,8 +16253,8 @@ trackedFiles:
     pristine_git_object: 1b84a996bbe4b1742310466f6289fde44ac8a13c
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:60de3890ac3c5617c00c33c241fa2b54b97fc165
-    pristine_git_object: ab175884e1f422f1e04357847111060e0accddbc
+    last_write_checksum: sha1:966ba290e5ca59f2b7afc0c55f11b3a4315a3429
+    pristine_git_object: fdf992af9007cb78e6cb4586286dd8091a0d146e
   src/SalesOrders.php:
     id: a67e3e60cdb7
     last_write_checksum: sha1:483c030ac4e6f4078007441ff6f03aa36fad7fa2
@@ -34095,7 +34095,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `apideck->webhook->webhooks->list()`:  `response.data[]->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->delete()`:  `response.data->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->update()`: \n  *  `request.updateWebhookRequest->events[]` **Changed**\n  *  `response.data->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->get()`:  `response.data->events[]` **Changed** (Breaking ⚠️)\n* `apideck->webhook->webhooks->create()`: \n  *  `request.createWebhookRequest->events[]` **Changed**\n  *  `response.data->events[]` **Changed** (Breaking ⚠️)\n* `apideck->accounting->salesOrders->update()`: **Added**\n* `apideck->accounting->invoices->create()`: \n  *  `request->idempotencyKey` **Added**\n* `apideck->accounting->journalEntries->create()`: \n  *  `request->idempotencyKey` **Added**\n* `apideck->accounting->bills->create()`: \n  *  `request->idempotencyKey` **Added**\n* `apideck->accounting->salesOrders->delete()`: **Added**\n* `apideck->accounting->salesOrders->list()`: **Added**\n* `apideck->accounting->salesOrders->get()`: **Added**\n* `apideck->accounting->salesOrders->create()`: **Added**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md
