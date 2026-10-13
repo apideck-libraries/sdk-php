@@ -65,6 +65,10 @@ class Accounting
 
     public Journals $journals;
 
+    public FiscalPeriods $fiscalPeriods;
+
+    public TrialBalance $trialBalance;
+
     public TrackingCategories $trackingCategories;
 
     public BillPayments $billPayments;
@@ -127,6 +131,8 @@ class Accounting
         $this->attachments = new Attachments($this->sdkConfiguration);
         $this->bankAccounts = new BankAccounts($this->sdkConfiguration);
         $this->journals = new Journals($this->sdkConfiguration);
+        $this->fiscalPeriods = new FiscalPeriods($this->sdkConfiguration);
+        $this->trialBalance = new TrialBalance($this->sdkConfiguration);
         $this->trackingCategories = new TrackingCategories($this->sdkConfiguration);
         $this->billPayments = new BillPayments($this->sdkConfiguration);
         $this->expenses = new Expenses($this->sdkConfiguration);

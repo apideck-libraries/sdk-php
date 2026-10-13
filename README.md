@@ -304,6 +304,11 @@ foreach ($responses as $response) {
 * [update](docs/sdks/expenses/README.md#update) - Update Expense
 * [delete](docs/sdks/expenses/README.md#delete) - Delete Expense
 
+### [Accounting.FiscalPeriods](docs/sdks/fiscalperiods/README.md)
+
+* [list](docs/sdks/fiscalperiods/README.md#list) - List Fiscal Periods
+* [get](docs/sdks/fiscalperiods/README.md#get) - Get Fiscal Period
+
 ### [Accounting.GeneralLedgerTransactions](docs/sdks/generalledgertransactions/README.md)
 
 * [list](docs/sdks/generalledgertransactions/README.md#list) - List General Ledger Transactions
@@ -467,6 +472,10 @@ foreach ($responses as $response) {
 * [update](docs/sdks/trackingcategories/README.md#update) - Update Tracking Category
 * [delete](docs/sdks/trackingcategories/README.md#delete) - Delete Tracking Category
 * [createBatch](docs/sdks/trackingcategories/README.md#createbatch) - Create Tracking Categories in batch
+
+### [Accounting.TrialBalance](docs/sdks/trialbalance/README.md)
+
+* [get](docs/sdks/trialbalance/README.md#get) - Get Trial Balance
 
 ### [Ats.Applicants](docs/sdks/applicants/README.md)
 
