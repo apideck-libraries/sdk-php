@@ -450,6 +450,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingInvoicesUpdateRequest(
     id: '<id>',
     serviceId: 'salesforce',
+    idempotencyKey: 'your-unique-key-per-create',
     invoice: new Components\InvoiceInput(
         type: Components\InvoiceType::Service,
         number: 'OIT00546',
