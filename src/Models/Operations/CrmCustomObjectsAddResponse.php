@@ -20,6 +20,13 @@ class CrmCustomObjectsAddResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Custom object created
      *
      * @var ?\Apideck\Unify\Models\Components\CreateCustomObjectResponse $createCustomObjectResponse
@@ -35,13 +42,15 @@ class CrmCustomObjectsAddResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\CreateCustomObjectResponse  $createCustomObjectResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateCustomObjectResponse $createCustomObjectResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateCustomObjectResponse $createCustomObjectResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->createCustomObjectResponse = $createCustomObjectResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

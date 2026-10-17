@@ -20,6 +20,13 @@ class AccountingPaymentsDeleteResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Payment deleted
      *
      * @var ?\Apideck\Unify\Models\Components\DeletePaymentResponse $deletePaymentResponse
@@ -35,13 +42,15 @@ class AccountingPaymentsDeleteResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\DeletePaymentResponse  $deletePaymentResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeletePaymentResponse $deletePaymentResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeletePaymentResponse $deletePaymentResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->deletePaymentResponse = $deletePaymentResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

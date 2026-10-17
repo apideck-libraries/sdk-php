@@ -20,6 +20,13 @@ class FileStorageFilesDownloadResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * File Download. When the request includes `x-apideck-follow-redirects: false` and the download would otherwise redirect to a presigned URL, the response body is instead an `application/json` object `{ url, expires_at }` — fetch `url` explicitly (without the Authorization header) to retrieve the file.
      *
      * @var ?string $getFileDownloadResponse
@@ -35,13 +42,15 @@ class FileStorageFilesDownloadResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?string  $getFileDownloadResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?string $getFileDownloadResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?string $getFileDownloadResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->getFileDownloadResponse = $getFileDownloadResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

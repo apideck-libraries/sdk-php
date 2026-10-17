@@ -20,6 +20,13 @@ class AccountingQuotesAllResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Quotes
      *
      * @var ?\Apideck\Unify\Models\Components\GetQuotesResponse $getQuotesResponse
@@ -39,13 +46,15 @@ class AccountingQuotesAllResponse
     public \Closure $next;
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\GetQuotesResponse  $getQuotesResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetQuotesResponse $getQuotesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetQuotesResponse $getQuotesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->getQuotesResponse = $getQuotesResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

@@ -20,6 +20,13 @@ class AccountingBillPaymentsOneResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Bill Payment
      *
      * @var ?\Apideck\Unify\Models\Components\GetBillPaymentResponse $getBillPaymentResponse
@@ -35,13 +42,15 @@ class AccountingBillPaymentsOneResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\GetBillPaymentResponse  $getBillPaymentResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetBillPaymentResponse $getBillPaymentResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetBillPaymentResponse $getBillPaymentResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->getBillPaymentResponse = $getBillPaymentResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

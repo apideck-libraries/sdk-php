@@ -20,6 +20,13 @@ class IssueTrackingCollectionTicketsAddResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Create a Ticket
      *
      * @var ?\Apideck\Unify\Models\Components\CreateTicketResponse $createTicketResponse
@@ -35,13 +42,15 @@ class IssueTrackingCollectionTicketsAddResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\CreateTicketResponse  $createTicketResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateTicketResponse $createTicketResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateTicketResponse $createTicketResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->createTicketResponse = $createTicketResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }
