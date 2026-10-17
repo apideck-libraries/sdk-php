@@ -20,6 +20,13 @@ class FileStorageUploadSessionsOneResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * UploadSessions
      *
      * @var ?\Apideck\Unify\Models\Components\GetUploadSessionResponse $getUploadSessionResponse
@@ -35,13 +42,15 @@ class FileStorageUploadSessionsOneResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\GetUploadSessionResponse  $getUploadSessionResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetUploadSessionResponse $getUploadSessionResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetUploadSessionResponse $getUploadSessionResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->getUploadSessionResponse = $getUploadSessionResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

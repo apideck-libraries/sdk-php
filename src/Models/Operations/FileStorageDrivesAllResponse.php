@@ -20,6 +20,13 @@ class FileStorageDrivesAllResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Drives
      *
      * @var ?\Apideck\Unify\Models\Components\GetDrivesResponse $getDrivesResponse
@@ -39,13 +46,15 @@ class FileStorageDrivesAllResponse
     public \Closure $next;
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\GetDrivesResponse  $getDrivesResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetDrivesResponse $getDrivesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetDrivesResponse $getDrivesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->getDrivesResponse = $getDrivesResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

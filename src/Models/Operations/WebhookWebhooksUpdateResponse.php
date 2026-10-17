@@ -20,6 +20,13 @@ class WebhookWebhooksUpdateResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Webhooks
      *
      * @var ?\Apideck\Unify\Models\Components\UpdateWebhookResponse $updateWebhookResponse
@@ -35,13 +42,15 @@ class WebhookWebhooksUpdateResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\UpdateWebhookResponse  $updateWebhookResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UpdateWebhookResponse $updateWebhookResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UpdateWebhookResponse $updateWebhookResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->updateWebhookResponse = $updateWebhookResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

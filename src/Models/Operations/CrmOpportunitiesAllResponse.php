@@ -20,6 +20,13 @@ class CrmOpportunitiesAllResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Opportunities
      *
      * @var ?\Apideck\Unify\Models\Components\GetOpportunitiesResponse $getOpportunitiesResponse
@@ -39,13 +46,15 @@ class CrmOpportunitiesAllResponse
     public \Closure $next;
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\GetOpportunitiesResponse  $getOpportunitiesResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetOpportunitiesResponse $getOpportunitiesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetOpportunitiesResponse $getOpportunitiesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->getOpportunitiesResponse = $getOpportunitiesResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

@@ -20,6 +20,13 @@ class AccountingJournalEntriesDeleteResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * JournalEntries
      *
      * @var ?\Apideck\Unify\Models\Components\DeleteJournalEntryResponse $deleteJournalEntryResponse
@@ -35,13 +42,15 @@ class AccountingJournalEntriesDeleteResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\DeleteJournalEntryResponse  $deleteJournalEntryResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteJournalEntryResponse $deleteJournalEntryResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteJournalEntryResponse $deleteJournalEntryResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->deleteJournalEntryResponse = $deleteJournalEntryResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

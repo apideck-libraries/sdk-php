@@ -37,14 +37,6 @@ class Transactions
     public CreditOrDebit $creditOrDebit;
 
     /**
-     * The ID of the source transaction.
-     *
-     * @var string $sourceTransactionId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('source_transaction_id')]
-    public string $sourceTransactionId;
-
-    /**
      * A description of the transaction.
      *
      * @var ?string $description
@@ -52,6 +44,15 @@ class Transactions
     #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $description = null;
+
+    /**
+     * The ID of the source transaction.
+     *
+     * @var ?string $sourceTransactionId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source_transaction_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $sourceTransactionId = null;
 
     /**
      * The counterparty of the transaction.
@@ -94,21 +95,21 @@ class Transactions
      * @param  \DateTime  $postedDate
      * @param  float  $amount
      * @param  \Apideck\Unify\Models\Components\CreditOrDebit  $creditOrDebit
-     * @param  string  $sourceTransactionId
      * @param  ?string  $description
+     * @param  ?string  $sourceTransactionId
      * @param  ?string  $counterparty
      * @param  ?string  $reference
      * @param  ?\Apideck\Unify\Models\Components\BankFeedStatementTransactionType  $transactionType
      * @param  ?string  $merchantCategoryCode
      * @phpstan-pure
      */
-    public function __construct(\DateTime $postedDate, float $amount, CreditOrDebit $creditOrDebit, string $sourceTransactionId, ?string $description = null, ?string $counterparty = null, ?string $reference = null, ?BankFeedStatementTransactionType $transactionType = null, ?string $merchantCategoryCode = null)
+    public function __construct(\DateTime $postedDate, float $amount, CreditOrDebit $creditOrDebit, ?string $description = null, ?string $sourceTransactionId = null, ?string $counterparty = null, ?string $reference = null, ?BankFeedStatementTransactionType $transactionType = null, ?string $merchantCategoryCode = null)
     {
         $this->postedDate = $postedDate;
         $this->amount = $amount;
         $this->creditOrDebit = $creditOrDebit;
-        $this->sourceTransactionId = $sourceTransactionId;
         $this->description = $description;
+        $this->sourceTransactionId = $sourceTransactionId;
         $this->counterparty = $counterparty;
         $this->reference = $reference;
         $this->transactionType = $transactionType;

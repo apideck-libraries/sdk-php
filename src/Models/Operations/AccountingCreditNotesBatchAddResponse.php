@@ -20,6 +20,13 @@ class AccountingCreditNotesBatchAddResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Credit Notes batch processed
      *
      * @var ?\Apideck\Unify\Models\Components\BatchCreditNotesResponse $batchCreditNotesResponse
@@ -35,13 +42,15 @@ class AccountingCreditNotesBatchAddResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\BatchCreditNotesResponse  $batchCreditNotesResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\BatchCreditNotesResponse $batchCreditNotesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\BatchCreditNotesResponse $batchCreditNotesResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->batchCreditNotesResponse = $batchCreditNotesResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

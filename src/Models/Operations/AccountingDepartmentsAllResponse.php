@@ -20,6 +20,13 @@ class AccountingDepartmentsAllResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Departments
      *
      * @var ?\Apideck\Unify\Models\Components\GetAccountingDepartmentsResponse $getAccountingDepartmentsResponse
@@ -39,13 +46,15 @@ class AccountingDepartmentsAllResponse
     public \Closure $next;
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\GetAccountingDepartmentsResponse  $getAccountingDepartmentsResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetAccountingDepartmentsResponse $getAccountingDepartmentsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetAccountingDepartmentsResponse $getAccountingDepartmentsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->getAccountingDepartmentsResponse = $getAccountingDepartmentsResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

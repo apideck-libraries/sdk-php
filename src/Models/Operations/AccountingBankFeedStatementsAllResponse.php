@@ -20,6 +20,13 @@ class AccountingBankFeedStatementsAllResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Bank Feed Statements
      *
      * @var ?\Apideck\Unify\Models\Components\GetBankFeedStatementsResponse $getBankFeedStatementsResponse
@@ -39,13 +46,15 @@ class AccountingBankFeedStatementsAllResponse
     public \Closure $next;
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\GetBankFeedStatementsResponse  $getBankFeedStatementsResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetBankFeedStatementsResponse $getBankFeedStatementsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetBankFeedStatementsResponse $getBankFeedStatementsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->getBankFeedStatementsResponse = $getBankFeedStatementsResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }
