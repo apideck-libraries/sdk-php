@@ -20,6 +20,13 @@ class FileStorageSharedLinksUpdateResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Shared Links
      *
      * @var ?\Apideck\Unify\Models\Components\UpdateSharedLinkResponse $updateSharedLinkResponse
@@ -35,13 +42,15 @@ class FileStorageSharedLinksUpdateResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\UpdateSharedLinkResponse  $updateSharedLinkResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UpdateSharedLinkResponse $updateSharedLinkResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UpdateSharedLinkResponse $updateSharedLinkResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->updateSharedLinkResponse = $updateSharedLinkResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

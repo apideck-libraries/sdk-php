@@ -20,6 +20,13 @@ class EcommerceCustomersOneResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Customers
      *
      * @var ?\Apideck\Unify\Models\Components\GetEcommerceCustomerResponse $getEcommerceCustomerResponse
@@ -35,13 +42,15 @@ class EcommerceCustomersOneResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\GetEcommerceCustomerResponse  $getEcommerceCustomerResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetEcommerceCustomerResponse $getEcommerceCustomerResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetEcommerceCustomerResponse $getEcommerceCustomerResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->getEcommerceCustomerResponse = $getEcommerceCustomerResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

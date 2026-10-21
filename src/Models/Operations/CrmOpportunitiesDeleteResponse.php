@@ -20,6 +20,13 @@ class CrmOpportunitiesDeleteResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Opportunity deleted
      *
      * @var ?\Apideck\Unify\Models\Components\DeleteOpportunityResponse $deleteOpportunityResponse
@@ -35,13 +42,15 @@ class CrmOpportunitiesDeleteResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\DeleteOpportunityResponse  $deleteOpportunityResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteOpportunityResponse $deleteOpportunityResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteOpportunityResponse $deleteOpportunityResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->deleteOpportunityResponse = $deleteOpportunityResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

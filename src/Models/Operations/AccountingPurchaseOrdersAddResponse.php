@@ -20,6 +20,13 @@ class AccountingPurchaseOrdersAddResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * PurchaseOrders
      *
      * @var ?\Apideck\Unify\Models\Components\CreatePurchaseOrderResponse $createPurchaseOrderResponse
@@ -35,13 +42,15 @@ class AccountingPurchaseOrdersAddResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\CreatePurchaseOrderResponse  $createPurchaseOrderResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreatePurchaseOrderResponse $createPurchaseOrderResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreatePurchaseOrderResponse $createPurchaseOrderResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->createPurchaseOrderResponse = $createPurchaseOrderResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

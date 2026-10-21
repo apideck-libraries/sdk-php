@@ -20,6 +20,13 @@ class IssueTrackingCollectionTicketCommentsAddResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Create a Comment
      *
      * @var ?\Apideck\Unify\Models\Components\CreateCommentResponse $createCommentResponse
@@ -35,13 +42,15 @@ class IssueTrackingCollectionTicketCommentsAddResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\CreateCommentResponse  $createCommentResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateCommentResponse $createCommentResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateCommentResponse $createCommentResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->createCommentResponse = $createCommentResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

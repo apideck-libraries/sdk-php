@@ -20,6 +20,13 @@ class CrmContactsDeleteResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Contact deleted
      *
      * @var ?\Apideck\Unify\Models\Components\DeleteContactResponse $deleteContactResponse
@@ -35,13 +42,15 @@ class CrmContactsDeleteResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\DeleteContactResponse  $deleteContactResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteContactResponse $deleteContactResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteContactResponse $deleteContactResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->deleteContactResponse = $deleteContactResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

@@ -20,6 +20,13 @@ class AccountingGoodsReceiptsAllResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * GoodsReceipts
      *
      * @var ?\Apideck\Unify\Models\Components\GetGoodsReceiptsResponse $getGoodsReceiptsResponse
@@ -39,13 +46,15 @@ class AccountingGoodsReceiptsAllResponse
     public \Closure $next;
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\GetGoodsReceiptsResponse  $getGoodsReceiptsResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetGoodsReceiptsResponse $getGoodsReceiptsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetGoodsReceiptsResponse $getGoodsReceiptsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->getGoodsReceiptsResponse = $getGoodsReceiptsResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

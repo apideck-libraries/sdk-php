@@ -43,6 +43,16 @@ class WebhookSupport
     public ?ManagedVia $managedVia = null;
 
     /**
+     * Service IDs of connectors that receive events from this connector's webhook URL when the URL's own connector has no connection for the event. Connectors listed here must use the same webhook event mapping.
+     *
+     * @var ?array<string> $sharedWith
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('shared_with')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $sharedWith = null;
+
+    /**
      * Virtual webhook config for the connector.
      *
      * @var ?\Apideck\Unify\Models\Components\VirtualWebhooks $virtualWebhooks
@@ -56,14 +66,16 @@ class WebhookSupport
      * @param  ?\Apideck\Unify\Models\Components\Mode  $mode
      * @param  ?\Apideck\Unify\Models\Components\SubscriptionLevel  $subscriptionLevel
      * @param  ?\Apideck\Unify\Models\Components\ManagedVia  $managedVia
+     * @param  ?array<string>  $sharedWith
      * @param  ?\Apideck\Unify\Models\Components\VirtualWebhooks  $virtualWebhooks
      * @phpstan-pure
      */
-    public function __construct(?Mode $mode = null, ?SubscriptionLevel $subscriptionLevel = null, ?ManagedVia $managedVia = null, ?VirtualWebhooks $virtualWebhooks = null)
+    public function __construct(?Mode $mode = null, ?SubscriptionLevel $subscriptionLevel = null, ?ManagedVia $managedVia = null, ?array $sharedWith = null, ?VirtualWebhooks $virtualWebhooks = null)
     {
         $this->mode = $mode;
         $this->subscriptionLevel = $subscriptionLevel;
         $this->managedVia = $managedVia;
+        $this->sharedWith = $sharedWith;
         $this->virtualWebhooks = $virtualWebhooks;
     }
 }

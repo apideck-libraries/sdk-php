@@ -20,6 +20,13 @@ class HrisPayrollsAllResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Payrolls
      *
      * @var ?\Apideck\Unify\Models\Components\GetPayrollsResponse $getPayrollsResponse
@@ -35,13 +42,15 @@ class HrisPayrollsAllResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\GetPayrollsResponse  $getPayrollsResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetPayrollsResponse $getPayrollsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetPayrollsResponse $getPayrollsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->getPayrollsResponse = $getPayrollsResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

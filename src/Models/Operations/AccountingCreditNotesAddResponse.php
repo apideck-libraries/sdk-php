@@ -20,6 +20,13 @@ class AccountingCreditNotesAddResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Credit Note created
      *
      * @var ?\Apideck\Unify\Models\Components\CreateCreditNoteResponse $createCreditNoteResponse
@@ -35,13 +42,15 @@ class AccountingCreditNotesAddResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\CreateCreditNoteResponse  $createCreditNoteResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateCreditNoteResponse $createCreditNoteResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateCreditNoteResponse $createCreditNoteResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->createCreditNoteResponse = $createCreditNoteResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }
