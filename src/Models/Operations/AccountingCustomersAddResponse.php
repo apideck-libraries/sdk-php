@@ -20,6 +20,13 @@ class AccountingCustomersAddResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Customers
      *
      * @var ?\Apideck\Unify\Models\Components\CreateCustomerResponse $createCustomerResponse
@@ -35,13 +42,15 @@ class AccountingCustomersAddResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\CreateCustomerResponse  $createCustomerResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateCustomerResponse $createCustomerResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\CreateCustomerResponse $createCustomerResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->createCustomerResponse = $createCustomerResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

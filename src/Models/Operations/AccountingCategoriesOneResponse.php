@@ -20,6 +20,13 @@ class AccountingCategoriesOneResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Category
      *
      * @var ?\Apideck\Unify\Models\Components\GetCategoryResponse $getCategoryResponse
@@ -35,13 +42,15 @@ class AccountingCategoriesOneResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\GetCategoryResponse  $getCategoryResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetCategoryResponse $getCategoryResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetCategoryResponse $getCategoryResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->getCategoryResponse = $getCategoryResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

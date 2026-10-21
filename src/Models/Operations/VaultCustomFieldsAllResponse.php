@@ -20,6 +20,13 @@ class VaultCustomFieldsAllResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Custom mapping
      *
      * @var ?\Apideck\Unify\Models\Components\GetCustomFieldsResponse $getCustomFieldsResponse
@@ -35,13 +42,15 @@ class VaultCustomFieldsAllResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\GetCustomFieldsResponse  $getCustomFieldsResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetCustomFieldsResponse $getCustomFieldsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetCustomFieldsResponse $getCustomFieldsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->getCustomFieldsResponse = $getCustomFieldsResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

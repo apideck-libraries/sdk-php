@@ -20,6 +20,13 @@ class VaultConnectionConsentsAllResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Consent records
      *
      * @var ?\Apideck\Unify\Models\Components\GetConsentRecordsResponse $getConsentRecordsResponse
@@ -35,13 +42,15 @@ class VaultConnectionConsentsAllResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\GetConsentRecordsResponse  $getConsentRecordsResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetConsentRecordsResponse $getConsentRecordsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\GetConsentRecordsResponse $getConsentRecordsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->getConsentRecordsResponse = $getConsentRecordsResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

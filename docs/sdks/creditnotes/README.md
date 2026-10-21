@@ -113,6 +113,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingCreditNotesAddRequest(
     serviceId: 'salesforce',
     companyId: '12345',
+    idempotencyKey: 'your-unique-key-per-create',
     creditNote: new Components\CreditNoteInput(
         number: 'OIT00546',
         customer: new Components\LinkedCustomerInput(

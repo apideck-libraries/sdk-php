@@ -20,6 +20,13 @@ class AccountingSubsidiariesUpdateResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Subsidiaries
      *
      * @var ?\Apideck\Unify\Models\Components\UpdateSubsidiaryResponse $updateSubsidiaryResponse
@@ -35,13 +42,15 @@ class AccountingSubsidiariesUpdateResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\UpdateSubsidiaryResponse  $updateSubsidiaryResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UpdateSubsidiaryResponse $updateSubsidiaryResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UpdateSubsidiaryResponse $updateSubsidiaryResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->updateSubsidiaryResponse = $updateSubsidiaryResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

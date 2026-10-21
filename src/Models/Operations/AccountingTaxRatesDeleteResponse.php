@@ -20,6 +20,13 @@ class AccountingTaxRatesDeleteResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * TaxRates deleted
      *
      * @var ?\Apideck\Unify\Models\Components\DeleteTaxRateResponse $deleteTaxRateResponse
@@ -35,13 +42,15 @@ class AccountingTaxRatesDeleteResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\DeleteTaxRateResponse  $deleteTaxRateResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteTaxRateResponse $deleteTaxRateResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\DeleteTaxRateResponse $deleteTaxRateResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->deleteTaxRateResponse = $deleteTaxRateResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

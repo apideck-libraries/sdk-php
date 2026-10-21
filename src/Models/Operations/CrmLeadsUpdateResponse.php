@@ -20,6 +20,13 @@ class CrmLeadsUpdateResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Lead updated
      *
      * @var ?\Apideck\Unify\Models\Components\UpdateLeadResponse $updateLeadResponse
@@ -35,13 +42,15 @@ class CrmLeadsUpdateResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\UpdateLeadResponse  $updateLeadResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UpdateLeadResponse $updateLeadResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\UpdateLeadResponse $updateLeadResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->updateLeadResponse = $updateLeadResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }

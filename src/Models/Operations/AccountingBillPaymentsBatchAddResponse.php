@@ -20,6 +20,13 @@ class AccountingBillPaymentsBatchAddResponse
     public ?Components\HTTPMetadata $httpMeta;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Bill Payments batch processed
      *
      * @var ?\Apideck\Unify\Models\Components\BatchBillPaymentsResponse $batchBillPaymentsResponse
@@ -35,13 +42,15 @@ class AccountingBillPaymentsBatchAddResponse
 
     /**
      * @param  \Apideck\Unify\Models\Components\HTTPMetadata  $httpMeta
+     * @param  array<string, array<string>>  $headers
      * @param  ?\Apideck\Unify\Models\Components\BatchBillPaymentsResponse  $batchBillPaymentsResponse
      * @param  ?\Apideck\Unify\Models\Components\UnexpectedErrorResponse  $unexpectedErrorResponse
      * @phpstan-pure
      */
-    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\BatchBillPaymentsResponse $batchBillPaymentsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null)
+    public function __construct(Components\HTTPMetadata $httpMeta, ?Components\BatchBillPaymentsResponse $batchBillPaymentsResponse = null, ?Components\UnexpectedErrorResponse $unexpectedErrorResponse = null, ?array $headers = [])
     {
         $this->httpMeta = $httpMeta;
+        $this->headers = $headers;
         $this->batchBillPaymentsResponse = $batchBillPaymentsResponse;
         $this->unexpectedErrorResponse = $unexpectedErrorResponse;
     }
