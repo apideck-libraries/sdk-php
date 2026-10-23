@@ -37,15 +37,59 @@ class ConnectorSetting
     public ?ConnectorSettingType $type = null;
 
     /**
+     * Whether a value is required for the connection to work. Required settings are always shown in Vault and cannot be hidden by an application.
+     *
+     * @var ?bool $required
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('required')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $required = null;
+
+    /**
+     * Whether a value is required before the connection can be authorized. These settings are always shown in Vault and cannot be hidden by an application.
+     *
+     * @var ?bool $requiredForAuthorization
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('required_for_authorization')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $requiredForAuthorization = null;
+
+    /**
+     * Whether the connector hides this setting from the Vault connection form for every application.
+     *
+     * @var ?bool $hidden
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('hidden')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $hidden = null;
+
+    /**
+     * Help text shown under the setting in the Vault connection form. May contain `${integrationSettings.<key>}` placeholders that are filled in from the application's integration settings when the Vault form is built.
+     *
+     * @var ?string $description
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $description = null;
+
+    /**
      * @param  ?string  $id
      * @param  ?string  $label
      * @param  ?\Apideck\Unify\Models\Components\ConnectorSettingType  $type
+     * @param  ?bool  $required
+     * @param  ?bool  $requiredForAuthorization
+     * @param  ?bool  $hidden
+     * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $label = null, ?ConnectorSettingType $type = null)
+    public function __construct(?string $id = null, ?string $label = null, ?ConnectorSettingType $type = null, ?bool $required = null, ?bool $requiredForAuthorization = null, ?bool $hidden = null, ?string $description = null)
     {
         $this->id = $id;
         $this->label = $label;
         $this->type = $type;
+        $this->required = $required;
+        $this->requiredForAuthorization = $requiredForAuthorization;
+        $this->hidden = $hidden;
+        $this->description = $description;
     }
 }

@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Apideck\Unify\Models\Components;
 
 use Apideck\Unify\Utils\SpeakeasyMetadata;
+use Brick\DateTime\LocalDate;
 class EmployeesFilter
 {
     /**
@@ -100,6 +101,14 @@ class EmployeesFilter
     public ?string $country = null;
 
     /**
+     * Return employees as of this date (YYYY-MM-DD). Set a future date to include future-dated hires. When omitted, employees are returned as of today.
+     *
+     * @var ?LocalDate $asOfDate
+     */
+    #[SpeakeasyMetadata('queryParam:name=as_of_date,dateTimeFormat=Y-m-d')]
+    public ?LocalDate $asOfDate = null;
+
+    /**
      * @param  ?string  $companyId
      * @param  ?string  $email
      * @param  ?string  $firstName
@@ -111,9 +120,10 @@ class EmployeesFilter
      * @param  ?string  $departmentId
      * @param  ?string  $city
      * @param  ?string  $country
+     * @param  ?LocalDate  $asOfDate
      * @phpstan-pure
      */
-    public function __construct(?string $companyId = null, ?string $email = null, ?string $firstName = null, ?string $title = null, ?string $lastName = null, ?string $managerId = null, ?EmployeesFilterEmploymentStatus $employmentStatus = null, ?string $employeeNumber = null, ?string $departmentId = null, ?string $city = null, ?string $country = null)
+    public function __construct(?string $companyId = null, ?string $email = null, ?string $firstName = null, ?string $title = null, ?string $lastName = null, ?string $managerId = null, ?EmployeesFilterEmploymentStatus $employmentStatus = null, ?string $employeeNumber = null, ?string $departmentId = null, ?string $city = null, ?string $country = null, ?LocalDate $asOfDate = null)
     {
         $this->companyId = $companyId;
         $this->email = $email;
@@ -126,5 +136,6 @@ class EmployeesFilter
         $this->departmentId = $departmentId;
         $this->city = $city;
         $this->country = $country;
+        $this->asOfDate = $asOfDate;
     }
 }
