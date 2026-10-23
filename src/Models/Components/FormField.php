@@ -102,7 +102,7 @@ class FormField
     public ?bool $optionsFetchError = null;
 
     /**
-     * Indicates if the form field is not displayed but the value that is being stored on the connection.
+     * Indicates the form field is not displayed in Vault. A field is hidden when the connector hides it, or when the application hides it in the dashboard (Fields visible in Vault). An application can hide only optional fields that aren't required for authorization. A hidden field's value is still stored on the connection and can still be set through the API.
      *
      * @var ?bool $hidden
      */

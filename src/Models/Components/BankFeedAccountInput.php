@@ -68,6 +68,16 @@ class BankFeedAccountInput
     public ?FeedStatus $feedStatus = null;
 
     /**
+     * Whether the data consumer may see this account. `revoked` hides it from the consumer without deleting it; `active` restores it. Unrelated to `feed_status`. Only connectors that list it support it; others ignore the field, so setting it there changes nothing.
+     *
+     * @var ?\Apideck\Unify\Models\Components\BankFeedAccountStatus $status
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\BankFeedAccountStatus|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?BankFeedAccountStatus $status = null;
+
+    /**
      * The people or businesses that hold the source bank account. Optional; `plaid-exchange` requires at least one.
      *
      * @var ?array<\Apideck\Unify\Models\Components\BankFeedAccountHolder> $accountHolders
@@ -179,6 +189,7 @@ class BankFeedAccountInput
      * @param  ?string  $targetAccountName
      * @param  ?string  $targetAccountNumber
      * @param  ?\Apideck\Unify\Models\Components\FeedStatus  $feedStatus
+     * @param  ?\Apideck\Unify\Models\Components\BankFeedAccountStatus  $status
      * @param  ?array<\Apideck\Unify\Models\Components\BankFeedAccountHolder>  $accountHolders
      * @param  ?array<\Apideck\Unify\Models\Components\Email>  $emails
      * @param  ?array<\Apideck\Unify\Models\Components\Address>  $addresses
@@ -192,7 +203,7 @@ class BankFeedAccountInput
      * @param  ?string  $country
      * @phpstan-pure
      */
-    public function __construct(?BankAccountType $bankAccountType = null, ?string $sourceAccountId = null, ?string $targetAccountId = null, ?string $targetAccountName = null, ?string $targetAccountNumber = null, ?FeedStatus $feedStatus = null, ?array $accountHolders = null, ?array $emails = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $customFields = null, ?string $sourceRoutingNumber = null, ?string $sourceAccountNumber = null, ?float $balance = null, ?float $availableBalance = null, ?Currency $currency = null, ?string $country = null)
+    public function __construct(?BankAccountType $bankAccountType = null, ?string $sourceAccountId = null, ?string $targetAccountId = null, ?string $targetAccountName = null, ?string $targetAccountNumber = null, ?FeedStatus $feedStatus = null, ?BankFeedAccountStatus $status = null, ?array $accountHolders = null, ?array $emails = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $customFields = null, ?string $sourceRoutingNumber = null, ?string $sourceAccountNumber = null, ?float $balance = null, ?float $availableBalance = null, ?Currency $currency = null, ?string $country = null)
     {
         $this->bankAccountType = $bankAccountType;
         $this->sourceAccountId = $sourceAccountId;
@@ -200,6 +211,7 @@ class BankFeedAccountInput
         $this->targetAccountName = $targetAccountName;
         $this->targetAccountNumber = $targetAccountNumber;
         $this->feedStatus = $feedStatus;
+        $this->status = $status;
         $this->accountHolders = $accountHolders;
         $this->emails = $emails;
         $this->addresses = $addresses;
