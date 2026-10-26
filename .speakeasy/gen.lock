@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 435cd1f2692ea7ff623fd33d357deb15
-  docVersion: 10.71.0
-  speakeasyVersion: 1.803.1
-  generationVersion: 2.950.2
-  releaseVersion: 0.33.0
-  configChecksum: 0368012fa4b03490fa2d25b729aae6c2
+  docChecksum: 8e0400bab6165e4dddfeffaf9a322d77
+  docVersion: 10.72.1
+  speakeasyVersion: 1.803.2
+  generationVersion: 2.950.13
+  releaseVersion: 0.34.0
+  configChecksum: 9e465bc7aef0ac4bb48b9e3806b30361
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: 0fb0a919-68e5-4ea5-913a-da6441257d22
-  pristine_commit_hash: 7f240501e93bdc6792108ce85eb7c235a0b1bff2
-  pristine_tree_hash: 5c4fce823b7ff6f46bd0999f2f65bde43b0e7c3e
+  generation_id: 78dd2de1-f707-46d5-81d3-afe0665efc9d
+  pristine_commit_hash: feeaafb499cfe9c9b1644284211e5f36e93a9929
+  pristine_tree_hash: 4a787e78701edb025d058ea2d13e1e3fbc5e79e1
 features:
   php:
     additionalProperties: 0.1.1
@@ -16409,8 +16409,8 @@ trackedFiles:
     pristine_git_object: 1b84a996bbe4b1742310466f6289fde44ac8a13c
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:929e07bb5bca973bb553f60a4ca48729f5931df5
-    pristine_git_object: ad112ec5c13b8b145061084d1c278770ba82fffb
+    last_write_checksum: sha1:9dc0aa48f024951d65a826c306313e1549ebb2d4
+    pristine_git_object: 402d85851d98655989883a61cc9baa23b89587ef
   src/SalesOrders.php:
     id: a67e3e60cdb7
     last_write_checksum: sha1:483c030ac4e6f4078007441ff6f03aa36fad7fa2
@@ -34340,7 +34340,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `apideck->accounting->bankFeedAccounts->list()`:  `response.data[]->status` **Added**\n* `apideck->accounting->bankFeedAccounts->create()`: \n  *  `request->bankFeedAccount->status` **Added**\n* `apideck->accounting->bankFeedAccounts->get()`:  `response.data->status` **Added**\n* `apideck->accounting->bankFeedAccounts->update()`: \n  *  `request->bankFeedAccount->status` **Added**\n* `apideck->hris->employees->list()`: \n  *  `request->filter` **Changed**\n* `apideck->connector->connectors->list()`:  `response.data[]->settings[]` **Changed**\n* `apideck->connector->connectors->get()`:  `response.data->settings[]` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md
