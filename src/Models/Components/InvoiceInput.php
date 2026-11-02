@@ -373,6 +373,16 @@ class InvoiceInput
     public ?array $paymentAllocations = null;
 
     /**
+     * A list of quotes linked to this record.
+     *
+     * @var ?array<\Apideck\Unify\Models\Components\LinkedQuotesInput> $quotes
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('quotes')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\LinkedQuotesInput>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $quotes = null;
+
+    /**
      * Payment method used for the transaction, such as cash, credit card, bank transfer, or check
      *
      * @var ?string $paymentMethod
@@ -466,6 +476,7 @@ class InvoiceInput
      * @param  ?string  $templateId
      * @param  ?string  $sourceDocumentUrl
      * @param  ?array<\Apideck\Unify\Models\Components\PaymentAllocations>  $paymentAllocations
+     * @param  ?array<\Apideck\Unify\Models\Components\LinkedQuotesInput>  $quotes
      * @param  ?string  $paymentMethod
      * @param  ?string  $channel
      * @param  ?string  $language
@@ -474,7 +485,7 @@ class InvoiceInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?bool $invoiceSent = null, ?array $lineItems = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $displayId = null, ?InvoiceType $type = null, ?string $number = null, ?LinkedCustomerInput $customer = null, ?string $companyId = null, ?LinkedSubsidiaryInput $subsidiary = null, ?string $locationId = null, ?string $departmentId = null, ?LocalDate $invoiceDate = null, ?LocalDate $dueDate = null, ?string $terms = null, ?string $termsId = null, ?string $poNumber = null, ?string $reference = null, ?InvoiceStatus $status = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?float $total = null, ?float $balance = null, ?float $deposit = null, ?string $customerMemo = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?string $templateId = null, ?string $sourceDocumentUrl = null, ?array $paymentAllocations = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $rowVersion = null)
+    public function __construct(?bool $invoiceSent = null, ?array $lineItems = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?string $displayId = null, ?InvoiceType $type = null, ?string $number = null, ?LinkedCustomerInput $customer = null, ?string $companyId = null, ?LinkedSubsidiaryInput $subsidiary = null, ?string $locationId = null, ?string $departmentId = null, ?LocalDate $invoiceDate = null, ?LocalDate $dueDate = null, ?string $terms = null, ?string $termsId = null, ?string $poNumber = null, ?string $reference = null, ?InvoiceStatus $status = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?float $total = null, ?float $balance = null, ?float $deposit = null, ?string $customerMemo = null, ?DeprecatedLinkedTrackingCategory $trackingCategory = null, ?array $trackingCategories = null, ?string $templateId = null, ?string $sourceDocumentUrl = null, ?array $paymentAllocations = null, ?array $quotes = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $rowVersion = null)
     {
         $this->invoiceSent = $invoiceSent;
         $this->lineItems = $lineItems;
@@ -515,6 +526,7 @@ class InvoiceInput
         $this->templateId = $templateId;
         $this->sourceDocumentUrl = $sourceDocumentUrl;
         $this->paymentAllocations = $paymentAllocations;
+        $this->quotes = $quotes;
         $this->paymentMethod = $paymentMethod;
         $this->channel = $channel;
         $this->language = $language;
