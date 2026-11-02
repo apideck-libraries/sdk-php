@@ -200,6 +200,16 @@ class LedgerAccount
     public ?float $currentBalance = null;
 
     /**
+     * For an account that holds the cost of fixed assets, the fixed-asset register's figures for the assets recorded in it. Null for other accounts, including accumulated-depreciation accounts, and when the accounting system does not provide them.
+     *
+     * @var ?\Apideck\Unify\Models\Components\FixedAsset $fixedAsset
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('fixed_asset')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\FixedAsset|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?FixedAsset $fixedAsset = null;
+
+    /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
      * @var ?\Apideck\Unify\Models\Components\Currency $currency
@@ -348,6 +358,7 @@ class LedgerAccount
      * @param  ?string  $description
      * @param  ?float  $openingBalance
      * @param  ?float  $currentBalance
+     * @param  ?\Apideck\Unify\Models\Components\FixedAsset  $fixedAsset
      * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?string  $taxType
      * @param  ?float  $level
@@ -364,7 +375,7 @@ class LedgerAccount
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $displayId = null, ?LedgerAccountType $type = null, ?LinkedTaxRate $taxRate = null, ?BankAccount $bankAccount = null, ?array $categories = null, ?ParentAccount $parentAccount = null, ?array $subAccounts = null, ?array $subsidiaries = null, ?array $customFields = null, ?array $passThrough = null, ?string $nominalCode = null, ?string $code = null, ?LedgerAccountClassification $classification = null, ?string $subType = null, ?string $name = null, ?string $fullyQualifiedName = null, ?string $description = null, ?float $openingBalance = null, ?float $currentBalance = null, ?Currency $currency = null, ?string $taxType = null, ?float $level = null, ?bool $active = null, ?AccountStatus $status = null, ?bool $header = null, ?bool $subAccount = null, ?LocalDate $lastReconciliationDate = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?string $displayId = null, ?LedgerAccountType $type = null, ?LinkedTaxRate $taxRate = null, ?BankAccount $bankAccount = null, ?array $categories = null, ?ParentAccount $parentAccount = null, ?array $subAccounts = null, ?array $subsidiaries = null, ?array $customFields = null, ?array $passThrough = null, ?string $nominalCode = null, ?string $code = null, ?LedgerAccountClassification $classification = null, ?string $subType = null, ?string $name = null, ?string $fullyQualifiedName = null, ?string $description = null, ?float $openingBalance = null, ?float $currentBalance = null, ?FixedAsset $fixedAsset = null, ?Currency $currency = null, ?string $taxType = null, ?float $level = null, ?bool $active = null, ?AccountStatus $status = null, ?bool $header = null, ?bool $subAccount = null, ?LocalDate $lastReconciliationDate = null, ?array $customMappings = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->displayId = $displayId;
@@ -386,6 +397,7 @@ class LedgerAccount
         $this->description = $description;
         $this->openingBalance = $openingBalance;
         $this->currentBalance = $currentBalance;
+        $this->fixedAsset = $fixedAsset;
         $this->currency = $currency;
         $this->taxType = $taxType;
         $this->level = $level;
