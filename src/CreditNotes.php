@@ -1034,7 +1034,7 @@ class CreditNotes
         $url = Utils\Utils::generateUrl($baseUrl, '/accounting/credit-notes/{id}', Operations\AccountingCreditNotesUpdateRequest::class, $request, $this->sdkConfiguration->globals);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'creditNote', 'json');
+        $body = Utils\Utils::serializeRequestBody($request, 'creditNoteUpdateInput', 'json');
         if ($body === null) {
             throw new \Exception('Request body is required');
         }

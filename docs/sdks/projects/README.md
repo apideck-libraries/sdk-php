@@ -331,27 +331,27 @@ $request = new Operations\AccountingProjectsUpdateRequest(
     id: '<id>',
     serviceId: 'salesforce',
     companyId: '12345',
-    project: new Components\ProjectInput(
+    projectUpdateInput: new Components\ProjectUpdateInput(
         name: 'Website Redesign Project',
         displayId: 'PROJ-001',
         referenceId: 'WD-REF-2024-001',
         description: 'Complete redesign of the company website including new branding and improved user experience',
-        status: Components\ProjectProjectStatus::Active,
+        status: Components\ProjectUpdateInputProjectStatus::Active,
         active: true,
-        projectType: Components\ProjectType::ClientProject,
-        priority: Components\Priority::High,
+        projectType: Components\ProjectUpdateInputProjectType::ClientProject,
+        priority: Components\ProjectUpdateInputPriority::High,
         completionPercentage: 75.5,
         startDate: LocalDate::parse('2024-01-15'),
         endDate: LocalDate::parse('2024-06-30'),
         completionDate: LocalDate::parse('2024-08-06'),
         customer: null,
-        department: new Components\ProjectDepartment(
+        department: new Components\ProjectUpdateInputDepartment(
             id: 'DEPT-001',
             name: 'Marketing',
         ),
         companyId: '12345',
         ownerId: '12345',
-        parentProject: new Components\ParentProject(
+        parentProject: new Components\ProjectUpdateInputParentProject(
             id: 'PROJ-PARENT-001',
             name: 'Company Website Overhaul',
         ),
@@ -360,8 +360,8 @@ $request = new Operations\AccountingProjectsUpdateRequest(
         approvedAmount: 48000,
         budgetHours: 400,
         hourlyRate: 125,
-        billingMethod: Components\BillingMethod::TimeAndMaterials,
-        phase: Components\ProjectPhase::Execution,
+        billingMethod: Components\ProjectUpdateInputBillingMethod::TimeAndMaterials,
+        phase: Components\ProjectUpdateInputProjectPhase::Execution,
         taxRate: new Components\LinkedTaxRateInput(
             id: '123456',
             code: 'N-T',
@@ -383,7 +383,7 @@ $request = new Operations\AccountingProjectsUpdateRequest(
         notes: 'Client has requested modern design with mobile-first approach',
         contractNumber: 'CNT-2024-001',
         profitMargin: 15.5,
-        scheduleStatus: Components\ScheduleStatus::OnSchedule,
+        scheduleStatus: Components\ProjectUpdateInputScheduleStatus::OnSchedule,
         addresses: [
             new Components\Address(
                 id: '123',

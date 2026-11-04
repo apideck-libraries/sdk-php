@@ -306,15 +306,15 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingExpenseReportsUpdateRequest(
     id: '<id>',
     serviceId: 'salesforce',
-    expenseReport: new Components\ExpenseReportInput(
+    expenseReportUpdateInput: new Components\ExpenseReportUpdateInput(
         displayId: '123456',
         number: 'ER-001',
         title: 'Q1 Business Travel',
-        employee: new Components\ExpenseReportEmployee(
+        employee: new Components\ExpenseReportUpdateInputEmployee(
             id: '12345',
             displayName: 'John Doe',
         ),
-        status: Components\ExpenseReportStatus::Submitted,
+        status: Components\ExpenseReportUpdateInputStatus::Submitted,
         transactionDate: Utils\Utils::parseDateTime('2021-05-01T12:00:00.000Z'),
         postingDate: LocalDate::parse('2024-06-01'),
         dueDate: LocalDate::parse('2024-06-15'),
@@ -342,7 +342,7 @@ $request = new Operations\AccountingExpenseReportsUpdateRequest(
             parentId: '123456',
             displayId: '123456',
         ),
-        accountingPeriod: new Components\AccountingPeriod(
+        accountingPeriod: new Components\ExpenseReportUpdateInputAccountingPeriod(
             id: '12345',
             name: 'Q1 2024',
         ),
@@ -354,7 +354,7 @@ $request = new Operations\AccountingExpenseReportsUpdateRequest(
         ),
         trackingCategories: null,
         taxInclusive: true,
-        approvedBy: new Components\ApprovedBy(
+        approvedBy: new Components\ExpenseReportUpdateInputApprovedBy(
             id: '12345',
             displayName: 'Jane Smith',
         ),

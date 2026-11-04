@@ -1034,7 +1034,7 @@ class Payments
         $url = Utils\Utils::generateUrl($baseUrl, '/accounting/payments/{id}', Operations\AccountingPaymentsUpdateRequest::class, $request, $this->sdkConfiguration->globals);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'payment', 'json');
+        $body = Utils\Utils::serializeRequestBody($request, 'paymentUpdateInput', 'json');
         if ($body === null) {
             throw new \Exception('Request body is required');
         }

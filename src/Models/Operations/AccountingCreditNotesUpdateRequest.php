@@ -22,10 +22,10 @@ class AccountingCreditNotesUpdateRequest
 
     /**
      *
-     * @var \Apideck\Unify\Models\Components\CreditNoteInput $creditNote
+     * @var \Apideck\Unify\Models\Components\CreditNoteUpdateInput $creditNoteUpdateInput
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\CreditNoteInput $creditNote;
+    public Components\CreditNoteUpdateInput $creditNoteUpdateInput;
 
     /**
      * ID of the consumer which you want to get or push data from
@@ -61,17 +61,17 @@ class AccountingCreditNotesUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  \Apideck\Unify\Models\Components\CreditNoteInput  $creditNote
+     * @param  \Apideck\Unify\Models\Components\CreditNoteUpdateInput  $creditNoteUpdateInput
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?bool  $raw
      * @phpstan-pure
      */
-    public function __construct(string $id, Components\CreditNoteInput $creditNote, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?bool $raw = false)
+    public function __construct(string $id, Components\CreditNoteUpdateInput $creditNoteUpdateInput, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?bool $raw = false)
     {
         $this->id = $id;
-        $this->creditNote = $creditNote;
+        $this->creditNoteUpdateInput = $creditNoteUpdateInput;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;

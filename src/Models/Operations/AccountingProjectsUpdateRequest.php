@@ -22,10 +22,10 @@ class AccountingProjectsUpdateRequest
 
     /**
      *
-     * @var \Apideck\Unify\Models\Components\ProjectInput $project
+     * @var \Apideck\Unify\Models\Components\ProjectUpdateInput $projectUpdateInput
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\ProjectInput $project;
+    public Components\ProjectUpdateInput $projectUpdateInput;
 
     /**
      * ID of the consumer which you want to get or push data from
@@ -69,7 +69,7 @@ class AccountingProjectsUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  \Apideck\Unify\Models\Components\ProjectInput  $project
+     * @param  \Apideck\Unify\Models\Components\ProjectUpdateInput  $projectUpdateInput
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId
@@ -77,10 +77,10 @@ class AccountingProjectsUpdateRequest
      * @param  ?bool  $raw
      * @phpstan-pure
      */
-    public function __construct(string $id, Components\ProjectInput $project, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $companyId = null, ?bool $raw = false)
+    public function __construct(string $id, Components\ProjectUpdateInput $projectUpdateInput, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $companyId = null, ?bool $raw = false)
     {
         $this->id = $id;
-        $this->project = $project;
+        $this->projectUpdateInput = $projectUpdateInput;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;

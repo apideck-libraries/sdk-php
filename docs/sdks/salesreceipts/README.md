@@ -431,7 +431,7 @@ $request = new Operations\AccountingSalesReceiptsUpdateRequest(
     id: '<id>',
     serviceId: 'salesforce',
     companyId: '12345',
-    salesReceipt: new Components\SalesReceiptInput(
+    salesReceiptUpdateInput: new Components\SalesReceiptUpdateInput(
         number: 'SR-00001',
         customer: new Components\LinkedCustomerInput(
             id: '12345',

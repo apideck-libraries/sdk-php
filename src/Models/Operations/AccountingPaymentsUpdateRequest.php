@@ -22,10 +22,10 @@ class AccountingPaymentsUpdateRequest
 
     /**
      *
-     * @var \Apideck\Unify\Models\Components\PaymentInput $payment
+     * @var \Apideck\Unify\Models\Components\PaymentUpdateInput $paymentUpdateInput
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\PaymentInput $payment;
+    public Components\PaymentUpdateInput $paymentUpdateInput;
 
     /**
      * ID of the consumer which you want to get or push data from
@@ -69,7 +69,7 @@ class AccountingPaymentsUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  \Apideck\Unify\Models\Components\PaymentInput  $payment
+     * @param  \Apideck\Unify\Models\Components\PaymentUpdateInput  $paymentUpdateInput
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId
@@ -77,10 +77,10 @@ class AccountingPaymentsUpdateRequest
      * @param  ?bool  $raw
      * @phpstan-pure
      */
-    public function __construct(string $id, Components\PaymentInput $payment, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $companyId = null, ?bool $raw = false)
+    public function __construct(string $id, Components\PaymentUpdateInput $paymentUpdateInput, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $companyId = null, ?bool $raw = false)
     {
         $this->id = $id;
-        $this->payment = $payment;
+        $this->paymentUpdateInput = $paymentUpdateInput;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;

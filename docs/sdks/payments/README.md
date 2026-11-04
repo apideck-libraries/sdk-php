@@ -321,7 +321,7 @@ $request = new Operations\AccountingPaymentsUpdateRequest(
     id: '<id>',
     serviceId: 'salesforce',
     companyId: '12345',
-    payment: new Components\PaymentInput(
+    paymentUpdateInput: new Components\PaymentUpdateInput(
         currency: Components\Currency::Usd,
         currencyRate: 0.69,
         totalAmount: 49.99,

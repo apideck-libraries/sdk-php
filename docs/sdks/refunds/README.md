@@ -436,7 +436,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingRefundsUpdateRequest(
     id: '<id>',
     serviceId: 'salesforce',
-    refund: new Components\RefundInput(
+    refundUpdateInput: new Components\RefundUpdateInput(
         number: 'RF-00001',
         customer: new Components\LinkedCustomerInput(
             id: '12345',

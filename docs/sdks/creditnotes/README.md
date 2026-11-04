@@ -417,7 +417,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingCreditNotesUpdateRequest(
     id: '<id>',
     serviceId: 'salesforce',
-    creditNote: new Components\CreditNoteInput(
+    creditNoteUpdateInput: new Components\CreditNoteUpdateInput(
         number: 'OIT00546',
         customer: new Components\LinkedCustomerInput(
             id: '12345',
@@ -434,11 +434,11 @@ $request = new Operations\AccountingCreditNotesUpdateRequest(
         taxCode: '1234',
         balance: 27500,
         remainingCredit: 27500,
-        status: Components\CreditNoteStatus::Authorised,
+        status: Components\CreditNoteUpdateInputCreditNoteStatus::Authorised,
         reference: '123456',
         dateIssued: Utils\Utils::parseDateTime('2021-05-01T12:00:00.000Z'),
         datePaid: Utils\Utils::parseDateTime('2021-05-01T12:00:00.000Z'),
-        type: Components\CreditNoteType::AccountsReceivableCredit,
+        type: Components\CreditNoteUpdateInputCreditNoteType::AccountsReceivableCredit,
         account: new Components\LinkedLedgerAccount(
             id: '123456',
             nominalCode: 'N091',

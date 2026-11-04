@@ -854,7 +854,7 @@ class ExpenseReports
         $url = Utils\Utils::generateUrl($baseUrl, '/accounting/expense-reports/{id}', Operations\AccountingExpenseReportsUpdateRequest::class, $request, $this->sdkConfiguration->globals);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'expenseReport', 'json');
+        $body = Utils\Utils::serializeRequestBody($request, 'expenseReportUpdateInput', 'json');
         if ($body === null) {
             throw new \Exception('Request body is required');
         }
