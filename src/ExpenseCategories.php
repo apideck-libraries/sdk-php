@@ -854,7 +854,7 @@ class ExpenseCategories
         $url = Utils\Utils::generateUrl($baseUrl, '/accounting/expense-categories/{id}', Operations\AccountingExpenseCategoriesUpdateRequest::class, $request, $this->sdkConfiguration->globals);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'expenseCategory', 'json');
+        $body = Utils\Utils::serializeRequestBody($request, 'expenseCategoryUpdateInput', 'json');
         if ($body === null) {
             throw new \Exception('Request body is required');
         }

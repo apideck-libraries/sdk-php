@@ -858,7 +858,7 @@ class SalesReceipts
         $url = Utils\Utils::generateUrl($baseUrl, '/accounting/sales-receipts/{id}', Operations\AccountingSalesReceiptsUpdateRequest::class, $request, $this->sdkConfiguration->globals);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'salesReceipt', 'json');
+        $body = Utils\Utils::serializeRequestBody($request, 'salesReceiptUpdateInput', 'json');
         if ($body === null) {
             throw new \Exception('Request body is required');
         }

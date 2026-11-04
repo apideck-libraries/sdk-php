@@ -270,12 +270,12 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingExpenseCategoriesUpdateRequest(
     id: '<id>',
     serviceId: 'salesforce',
-    expenseCategory: new Components\ExpenseCategoryInput(
+    expenseCategoryUpdateInput: new Components\ExpenseCategoryUpdateInput(
         displayId: '123456',
         name: 'Travel',
         code: 'TRAVEL-001',
         description: 'Travel-related expenses including flights, hotels, and ground transportation.',
-        status: Components\ExpenseCategoryStatus::Active,
+        status: Components\ExpenseCategoryUpdateInputStatus::Active,
         account: new Components\LinkedLedgerAccount(
             id: '123456',
             name: 'Bank account',

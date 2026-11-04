@@ -856,7 +856,7 @@ class Refunds
         $url = Utils\Utils::generateUrl($baseUrl, '/accounting/refunds/{id}', Operations\AccountingRefundsUpdateRequest::class, $request, $this->sdkConfiguration->globals);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'refund', 'json');
+        $body = Utils\Utils::serializeRequestBody($request, 'refundUpdateInput', 'json');
         if ($body === null) {
             throw new \Exception('Request body is required');
         }

@@ -364,7 +364,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingBillPaymentsUpdateRequest(
     id: '<id>',
     serviceId: 'salesforce',
-    billPayment: new Components\BillPaymentInput(
+    billPaymentUpdateInput: new Components\BillPaymentUpdateInput(
         currency: Components\Currency::Usd,
         currencyRate: 0.69,
         totalAmount: 49.99,
@@ -411,23 +411,23 @@ $request = new Operations\AccountingBillPaymentsUpdateRequest(
         companyId: '12345',
         reconciled: true,
         status: Components\PaymentStatus::Authorised,
-        type: Components\BillPaymentType::AccountsPayable,
+        type: Components\BillPaymentUpdateInputBillPaymentType::AccountsPayable,
         allocations: [
-            new Components\BillPaymentAllocations(
+            new Components\BillPaymentUpdateInputAllocations(
                 id: '12345',
-                type: Components\BillPaymentAllocationType::Bill,
+                type: Components\BillPaymentUpdateInputAllocationType::Bill,
                 amount: 49.99,
                 allocationId: '123456',
             ),
-            new Components\BillPaymentAllocations(
+            new Components\BillPaymentUpdateInputAllocations(
                 id: '12345',
-                type: Components\BillPaymentAllocationType::Bill,
+                type: Components\BillPaymentUpdateInputAllocationType::Bill,
                 amount: 49.99,
                 allocationId: '123456',
             ),
-            new Components\BillPaymentAllocations(
+            new Components\BillPaymentUpdateInputAllocations(
                 id: '12345',
-                type: Components\BillPaymentAllocationType::Bill,
+                type: Components\BillPaymentUpdateInputAllocationType::Bill,
                 amount: 49.99,
                 allocationId: '123456',
             ),

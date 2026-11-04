@@ -356,17 +356,17 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingExpensesUpdateRequest(
     id: '<id>',
     serviceId: 'salesforce',
-    expense: new Components\ExpenseInput(
+    expenseUpdateInput: new Components\ExpenseUpdateInput(
         number: 'OIT00546',
         transactionDate: Utils\Utils::parseDateTime('2021-05-01T12:00:00.000Z'),
         accountId: '123456',
         supplierId: '12345',
         companyId: '12345',
         departmentId: '12345',
-        paymentType: Components\ExpensePaymentType::Cash,
+        paymentType: Components\ExpenseUpdateInputPaymentType::Cash,
         currency: Components\Currency::Usd,
         currencyRate: 0.69,
-        type: Components\ExpenseType::Expense,
+        type: Components\ExpenseUpdateInputExpenseType::Expense,
         memo: 'For travel expenses incurred on 2024-05-15',
         taxRate: new Components\LinkedTaxRateInput(
             id: '123456',

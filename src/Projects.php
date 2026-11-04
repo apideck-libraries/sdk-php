@@ -858,7 +858,7 @@ class Projects
         $url = Utils\Utils::generateUrl($baseUrl, '/accounting/projects/{id}', Operations\AccountingProjectsUpdateRequest::class, $request, $this->sdkConfiguration->globals);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'project', 'json');
+        $body = Utils\Utils::serializeRequestBody($request, 'projectUpdateInput', 'json');
         if ($body === null) {
             throw new \Exception('Request body is required');
         }

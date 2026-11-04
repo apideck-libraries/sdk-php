@@ -22,10 +22,10 @@ class AccountingExpenseReportsUpdateRequest
 
     /**
      *
-     * @var \Apideck\Unify\Models\Components\ExpenseReportInput $expenseReport
+     * @var \Apideck\Unify\Models\Components\ExpenseReportUpdateInput $expenseReportUpdateInput
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\ExpenseReportInput $expenseReport;
+    public Components\ExpenseReportUpdateInput $expenseReportUpdateInput;
 
     /**
      * ID of the consumer which you want to get or push data from
@@ -61,17 +61,17 @@ class AccountingExpenseReportsUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  \Apideck\Unify\Models\Components\ExpenseReportInput  $expenseReport
+     * @param  \Apideck\Unify\Models\Components\ExpenseReportUpdateInput  $expenseReportUpdateInput
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?bool  $raw
      * @phpstan-pure
      */
-    public function __construct(string $id, Components\ExpenseReportInput $expenseReport, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?bool $raw = false)
+    public function __construct(string $id, Components\ExpenseReportUpdateInput $expenseReportUpdateInput, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?bool $raw = false)
     {
         $this->id = $id;
-        $this->expenseReport = $expenseReport;
+        $this->expenseReportUpdateInput = $expenseReportUpdateInput;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;

@@ -22,10 +22,10 @@ class AccountingSalesReceiptsUpdateRequest
 
     /**
      *
-     * @var \Apideck\Unify\Models\Components\SalesReceiptInput $salesReceipt
+     * @var \Apideck\Unify\Models\Components\SalesReceiptUpdateInput $salesReceiptUpdateInput
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\SalesReceiptInput $salesReceipt;
+    public Components\SalesReceiptUpdateInput $salesReceiptUpdateInput;
 
     /**
      * ID of the consumer which you want to get or push data from
@@ -69,7 +69,7 @@ class AccountingSalesReceiptsUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  \Apideck\Unify\Models\Components\SalesReceiptInput  $salesReceipt
+     * @param  \Apideck\Unify\Models\Components\SalesReceiptUpdateInput  $salesReceiptUpdateInput
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId
@@ -77,10 +77,10 @@ class AccountingSalesReceiptsUpdateRequest
      * @param  ?string  $companyId
      * @phpstan-pure
      */
-    public function __construct(string $id, Components\SalesReceiptInput $salesReceipt, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $companyId = null, ?bool $raw = false)
+    public function __construct(string $id, Components\SalesReceiptUpdateInput $salesReceiptUpdateInput, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?string $companyId = null, ?bool $raw = false)
     {
         $this->id = $id;
-        $this->salesReceipt = $salesReceipt;
+        $this->salesReceiptUpdateInput = $salesReceiptUpdateInput;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;

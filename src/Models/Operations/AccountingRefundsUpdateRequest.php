@@ -22,10 +22,10 @@ class AccountingRefundsUpdateRequest
 
     /**
      *
-     * @var \Apideck\Unify\Models\Components\RefundInput $refund
+     * @var \Apideck\Unify\Models\Components\RefundUpdateInput $refundUpdateInput
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\RefundInput $refund;
+    public Components\RefundUpdateInput $refundUpdateInput;
 
     /**
      * ID of the consumer which you want to get or push data from
@@ -61,17 +61,17 @@ class AccountingRefundsUpdateRequest
 
     /**
      * @param  string  $id
-     * @param  \Apideck\Unify\Models\Components\RefundInput  $refund
+     * @param  \Apideck\Unify\Models\Components\RefundUpdateInput  $refundUpdateInput
      * @param  ?string  $consumerId
      * @param  ?string  $appId
      * @param  ?string  $serviceId
      * @param  ?bool  $raw
      * @phpstan-pure
      */
-    public function __construct(string $id, Components\RefundInput $refund, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?bool $raw = false)
+    public function __construct(string $id, Components\RefundUpdateInput $refundUpdateInput, ?string $consumerId = null, ?string $appId = null, ?string $serviceId = null, ?bool $raw = false)
     {
         $this->id = $id;
-        $this->refund = $refund;
+        $this->refundUpdateInput = $refundUpdateInput;
         $this->consumerId = $consumerId;
         $this->appId = $appId;
         $this->serviceId = $serviceId;
