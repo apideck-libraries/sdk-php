@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 4df0744ca714a8d3b6bf31216a28fa4a
-  docVersion: 10.77.0
+  docChecksum: 889f449266c935d9f1bce4dd4be9efff
+  docVersion: 10.78.0
   speakeasyVersion: 1.806.0
   generationVersion: 2.956.1
-  releaseVersion: 0.38.0
-  configChecksum: 4f95f75bcd408d9f9559f87bad4a3b21
+  releaseVersion: 0.39.0
+  configChecksum: 7d2beb8c775ed32fba563e23a170afbf
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: d44e34fe-d298-4428-b595-803848489b43
-  pristine_commit_hash: 2b7e30c628acb76f403fc105db907372d4ad0596
-  pristine_tree_hash: b528ba160ac8fd2214e967faaf7bc4678bc0b3ff
+  generation_id: b35f9633-4a15-44d3-8ff0-041c08435250
+  pristine_commit_hash: efe395605b028c349ef33ccbf6db166bdbbe74c5
+  pristine_tree_hash: cb2da19b436d0b6805aa70f59c48ad3e5d34049c
 features:
   php:
     additionalProperties: 0.1.1
@@ -16681,8 +16681,8 @@ trackedFiles:
     pristine_git_object: d43495585118328e441ea298a96768650aaedccb
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:c6b664ec13ef3621ed8dae12a2a6daf3858e5889
-    pristine_git_object: 23742eb8df976e18dc8cc21456e0c98f3d69913e
+    last_write_checksum: sha1:92e3ffa9b3b7e56b4993730aef62ffb79102e280
+    pristine_git_object: da4ac2b4bf3628a4fd800a48a0b24dbd7e47916d
   src/SalesOrders.php:
     id: a67e3e60cdb7
     last_write_checksum: sha1:483c030ac4e6f4078007441ff6f03aa36fad7fa2
@@ -34612,17 +34612,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Php SDK Changes:
-  * `apideck->accounting->creditNotes->update()`:  `request` **Changed** (Breaking ⚠️)
-  * `apideck->accounting->payments->update()`:  `request` **Changed** (Breaking ⚠️)
-  * `apideck->accounting->refunds->update()`:  `request` **Changed** (Breaking ⚠️)
-  * `apideck->accounting->salesReceipts->update()`:  `request` **Changed** (Breaking ⚠️)
-  * `apideck->accounting->billPayments->update()`:  `request` **Changed** (Breaking ⚠️)
-  * `apideck->accounting->expenses->update()`:  `request` **Changed** (Breaking ⚠️)
-  * `apideck->accounting->projects->update()`:  `request` **Changed** (Breaking ⚠️)
-  * `apideck->accounting->expenseCategories->update()`:  `request` **Changed** (Breaking ⚠️)
-  * `apideck->accounting->expenseReports->update()`:  `request` **Changed** (Breaking ⚠️)
 generatedFiles:
   - .gitattributes
   - USAGE.md
