@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 345337fa6d2a3c87fafec3ace26195dd
-  docVersion: 10.78.1
-  speakeasyVersion: 1.806.0
-  generationVersion: 2.956.1
-  releaseVersion: 0.39.1
-  configChecksum: 4ba050d3a5d655a2c93862e70a865686
+  docChecksum: a14a5e84095d070eb6061d46d5628901
+  docVersion: 10.79.0
+  speakeasyVersion: 1.808.0
+  generationVersion: 2.960.7
+  releaseVersion: 0.40.0
+  configChecksum: 7d514eebb25a49feebd5a188982f4eff
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: 39dc8b75-f4ac-4b96-b8cf-3baa87ffffba
-  pristine_commit_hash: c9494d9711705df9a446aeb0dfaa6e52cca67a35
-  pristine_tree_hash: d66a00a1114db56737f2a0e051190bc7af4fe14e
+  generation_id: 7b216d8a-f54e-4837-b538-1689d177533e
+  pristine_commit_hash: b318991a20e525613ddb5fc24615cbc057c06dbd
+  pristine_tree_hash: 3a86651c5ebebbbce82c88cdb9a857ddb9e1d5a0
 features:
   php:
     additionalProperties: 0.1.1
@@ -4745,8 +4745,8 @@ trackedFiles:
     pristine_git_object: 3e911bcb6a6f990fc254de7d40a45d8d44352121
   docs/Models/Components/WebhookSupport.md:
     id: 0aaa8db55889
-    last_write_checksum: sha1:052a46ec9f3d74efb51b18e06731efda4cba8775
-    pristine_git_object: 51c76536d8515847d6bb890d0b4a27b627749464
+    last_write_checksum: sha1:d77f56ad71fc76da171a405a1f8e8b8866e5149f
+    pristine_git_object: 951bcd91815144ab3fb46c6ea22d45551ed4a586
   docs/Models/Components/WebhookSupportResources.md:
     id: 7368e4f77001
     last_write_checksum: sha1:704cf687824cee2e0b0a97fec88b3343833588a4
@@ -13413,8 +13413,8 @@ trackedFiles:
     pristine_git_object: a215bcf4c47013c2eeb0754dedc45f50b13ef07d
   src/Models/Components/WebhookSupport.php:
     id: 01ee8b560863
-    last_write_checksum: sha1:f2ceec1a36472005eef93c5b87b941fe1abe9d97
-    pristine_git_object: 6306e5a114d1f66796a7290230a4cc84d8cb4967
+    last_write_checksum: sha1:df7e939a757ea0a58b433e706ebc7d3e62ccb3b3
+    pristine_git_object: aeccc1b74df5fabf1d389bc025d5c7b990ab1662
   src/Models/Components/WebhookSupportResources.php:
     id: dc053018b926
     last_write_checksum: sha1:920c596297cac7bf1de7ef15465a91fe7ca7e3cd
@@ -16681,8 +16681,8 @@ trackedFiles:
     pristine_git_object: d43495585118328e441ea298a96768650aaedccb
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:982321cb65f25511223bbfaea94456e1681a0fd5
-    pristine_git_object: 0a936a3bb539c9e4921e07563b0d6c535ac28c33
+    last_write_checksum: sha1:4121b9f760d01e98116e5a3a9dd0e203c96c708c
+    pristine_git_object: 76cf961d0f6106025e7a77d828b57f9b00e85d02
   src/SalesOrders.php:
     id: a67e3e60cdb7
     last_write_checksum: sha1:483c030ac4e6f4078007441ff6f03aa36fad7fa2
