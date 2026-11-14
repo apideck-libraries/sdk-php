@@ -65,14 +65,15 @@ foreach ($responses as $response) {
 
 ### Errors
 
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+| Error Type                      | Status Code                     | Content Type                    |
+| ------------------------------- | ------------------------------- | ------------------------------- |
+| Errors\BadRequestResponse       | 400                             | application/json                |
+| Errors\UnauthorizedResponse     | 401                             | application/json                |
+| Errors\PaymentRequiredResponse  | 402                             | application/json                |
+| Errors\NotFoundResponse         | 404                             | application/json                |
+| Errors\MethodNotAllowedResponse | 405                             | application/json                |
+| Errors\UnprocessableResponse    | 422                             | application/json                |
+| Errors\APIException             | 4XX, 5XX                        | \*/\*                           |
 
 ## create
 
@@ -174,14 +175,15 @@ if ($response->createPipelineResponse !== null) {
 
 ### Errors
 
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+| Error Type                      | Status Code                     | Content Type                    |
+| ------------------------------- | ------------------------------- | ------------------------------- |
+| Errors\BadRequestResponse       | 400                             | application/json                |
+| Errors\UnauthorizedResponse     | 401                             | application/json                |
+| Errors\PaymentRequiredResponse  | 402                             | application/json                |
+| Errors\NotFoundResponse         | 404                             | application/json                |
+| Errors\MethodNotAllowedResponse | 405                             | application/json                |
+| Errors\UnprocessableResponse    | 422                             | application/json                |
+| Errors\APIException             | 4XX, 5XX                        | \*/\*                           |
 
 ## get
 
@@ -233,14 +235,15 @@ if ($response->getPipelineResponse !== null) {
 
 ### Errors
 
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+| Error Type                      | Status Code                     | Content Type                    |
+| ------------------------------- | ------------------------------- | ------------------------------- |
+| Errors\BadRequestResponse       | 400                             | application/json                |
+| Errors\UnauthorizedResponse     | 401                             | application/json                |
+| Errors\PaymentRequiredResponse  | 402                             | application/json                |
+| Errors\NotFoundResponse         | 404                             | application/json                |
+| Errors\MethodNotAllowedResponse | 405                             | application/json                |
+| Errors\UnprocessableResponse    | 422                             | application/json                |
+| Errors\APIException             | 4XX, 5XX                        | \*/\*                           |
 
 ## update
 
@@ -375,14 +378,15 @@ if ($response->updatePipelineResponse !== null) {
 
 ### Errors
 
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+| Error Type                      | Status Code                     | Content Type                    |
+| ------------------------------- | ------------------------------- | ------------------------------- |
+| Errors\BadRequestResponse       | 400                             | application/json                |
+| Errors\UnauthorizedResponse     | 401                             | application/json                |
+| Errors\PaymentRequiredResponse  | 402                             | application/json                |
+| Errors\NotFoundResponse         | 404                             | application/json                |
+| Errors\MethodNotAllowedResponse | 405                             | application/json                |
+| Errors\UnprocessableResponse    | 422                             | application/json                |
+| Errors\APIException             | 4XX, 5XX                        | \*/\*                           |
 
 ## delete
 
@@ -433,11 +437,12 @@ if ($response->deletePipelineResponse !== null) {
 
 ### Errors
 
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+| Error Type                      | Status Code                     | Content Type                    |
+| ------------------------------- | ------------------------------- | ------------------------------- |
+| Errors\BadRequestResponse       | 400                             | application/json                |
+| Errors\UnauthorizedResponse     | 401                             | application/json                |
+| Errors\PaymentRequiredResponse  | 402                             | application/json                |
+| Errors\NotFoundResponse         | 404                             | application/json                |
+| Errors\MethodNotAllowedResponse | 405                             | application/json                |
+| Errors\UnprocessableResponse    | 422                             | application/json                |
+| Errors\APIException             | 4XX, 5XX                        | \*/\*                           |

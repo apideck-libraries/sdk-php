@@ -81,14 +81,15 @@ if ($response->createFolderResponse !== null) {
 
 ### Errors
 
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+| Error Type                      | Status Code                     | Content Type                    |
+| ------------------------------- | ------------------------------- | ------------------------------- |
+| Errors\BadRequestResponse       | 400                             | application/json                |
+| Errors\UnauthorizedResponse     | 401                             | application/json                |
+| Errors\PaymentRequiredResponse  | 402                             | application/json                |
+| Errors\NotFoundResponse         | 404                             | application/json                |
+| Errors\MethodNotAllowedResponse | 405                             | application/json                |
+| Errors\UnprocessableResponse    | 422                             | application/json                |
+| Errors\APIException             | 4XX, 5XX                        | \*/\*                           |
 
 ## get
 
@@ -140,14 +141,15 @@ if ($response->getFolderResponse !== null) {
 
 ### Errors
 
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+| Error Type                      | Status Code                     | Content Type                    |
+| ------------------------------- | ------------------------------- | ------------------------------- |
+| Errors\BadRequestResponse       | 400                             | application/json                |
+| Errors\UnauthorizedResponse     | 401                             | application/json                |
+| Errors\PaymentRequiredResponse  | 402                             | application/json                |
+| Errors\NotFoundResponse         | 404                             | application/json                |
+| Errors\MethodNotAllowedResponse | 405                             | application/json                |
+| Errors\UnprocessableResponse    | 422                             | application/json                |
+| Errors\APIException             | 4XX, 5XX                        | \*/\*                           |
 
 ## update
 
@@ -227,14 +229,15 @@ if ($response->updateFolderResponse !== null) {
 
 ### Errors
 
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+| Error Type                      | Status Code                     | Content Type                    |
+| ------------------------------- | ------------------------------- | ------------------------------- |
+| Errors\BadRequestResponse       | 400                             | application/json                |
+| Errors\UnauthorizedResponse     | 401                             | application/json                |
+| Errors\PaymentRequiredResponse  | 402                             | application/json                |
+| Errors\NotFoundResponse         | 404                             | application/json                |
+| Errors\MethodNotAllowedResponse | 405                             | application/json                |
+| Errors\UnprocessableResponse    | 422                             | application/json                |
+| Errors\APIException             | 4XX, 5XX                        | \*/\*                           |
 
 ## delete
 
@@ -285,14 +288,15 @@ if ($response->deleteFolderResponse !== null) {
 
 ### Errors
 
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+| Error Type                      | Status Code                     | Content Type                    |
+| ------------------------------- | ------------------------------- | ------------------------------- |
+| Errors\BadRequestResponse       | 400                             | application/json                |
+| Errors\UnauthorizedResponse     | 401                             | application/json                |
+| Errors\PaymentRequiredResponse  | 402                             | application/json                |
+| Errors\NotFoundResponse         | 404                             | application/json                |
+| Errors\MethodNotAllowedResponse | 405                             | application/json                |
+| Errors\UnprocessableResponse    | 422                             | application/json                |
+| Errors\APIException             | 4XX, 5XX                        | \*/\*                           |
 
 ## copy
 

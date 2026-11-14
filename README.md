@@ -799,6 +799,7 @@ foreach ($responses as $response) {
 * [imports](docs/sdks/connections/README.md#imports) - Import connection
 * [migrate](docs/sdks/connections/README.md#migrate) - Migrate connection
 * [token](docs/sdks/connections/README.md#token) - Authorize Access Token
+* [confirm](docs/sdks/connections/README.md#confirm) - Confirm Connection
 
 ### [Vault.ConnectionSettings](docs/sdks/connectionsettings/README.md)
 
@@ -1041,14 +1042,15 @@ By default an API error will raise a `Errors\APIException` exception, which has 
 
 When custom error responses are specified for an operation, the SDK may also throw their associated exception. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `list` method throws the following exceptions:
 
-| Error Type                     | Status Code | Content Type     |
-| ------------------------------ | ----------- | ---------------- |
-| Errors\BadRequestResponse      | 400         | application/json |
-| Errors\UnauthorizedResponse    | 401         | application/json |
-| Errors\PaymentRequiredResponse | 402         | application/json |
-| Errors\NotFoundResponse        | 404         | application/json |
-| Errors\UnprocessableResponse   | 422         | application/json |
-| Errors\APIException            | 4XX, 5XX    | \*/\*            |
+| Error Type                      | Status Code | Content Type     |
+| ------------------------------- | ----------- | ---------------- |
+| Errors\BadRequestResponse       | 400         | application/json |
+| Errors\UnauthorizedResponse     | 401         | application/json |
+| Errors\PaymentRequiredResponse  | 402         | application/json |
+| Errors\NotFoundResponse         | 404         | application/json |
+| Errors\MethodNotAllowedResponse | 405         | application/json |
+| Errors\UnprocessableResponse    | 422         | application/json |
+| Errors\APIException             | 4XX, 5XX    | \*/\*            |
 
 ### Example
 
@@ -1106,6 +1108,9 @@ try {
     // handle $e->$container data
     throw $e;
 } catch (Errors\NotFoundResponseThrowable $e) {
+    // handle $e->$container data
+    throw $e;
+} catch (Errors\MethodNotAllowedResponseThrowable $e) {
     // handle $e->$container data
     throw $e;
 } catch (Errors\UnprocessableResponseThrowable $e) {

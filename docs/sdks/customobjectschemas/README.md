@@ -64,14 +64,15 @@ foreach ($responses as $response) {
 
 ### Errors
 
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+| Error Type                      | Status Code                     | Content Type                    |
+| ------------------------------- | ------------------------------- | ------------------------------- |
+| Errors\BadRequestResponse       | 400                             | application/json                |
+| Errors\UnauthorizedResponse     | 401                             | application/json                |
+| Errors\PaymentRequiredResponse  | 402                             | application/json                |
+| Errors\NotFoundResponse         | 404                             | application/json                |
+| Errors\MethodNotAllowedResponse | 405                             | application/json                |
+| Errors\UnprocessableResponse    | 422                             | application/json                |
+| Errors\APIException             | 4XX, 5XX                        | \*/\*                           |
 
 ## create
 
@@ -172,14 +173,15 @@ if ($response->createCustomObjectSchemaResponse !== null) {
 
 ### Errors
 
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+| Error Type                      | Status Code                     | Content Type                    |
+| ------------------------------- | ------------------------------- | ------------------------------- |
+| Errors\BadRequestResponse       | 400                             | application/json                |
+| Errors\UnauthorizedResponse     | 401                             | application/json                |
+| Errors\PaymentRequiredResponse  | 402                             | application/json                |
+| Errors\NotFoundResponse         | 404                             | application/json                |
+| Errors\MethodNotAllowedResponse | 405                             | application/json                |
+| Errors\UnprocessableResponse    | 422                             | application/json                |
+| Errors\APIException             | 4XX, 5XX                        | \*/\*                           |
 
 ## get
 
@@ -230,14 +232,15 @@ if ($response->getCustomObjectSchemaResponse !== null) {
 
 ### Errors
 
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+| Error Type                      | Status Code                     | Content Type                    |
+| ------------------------------- | ------------------------------- | ------------------------------- |
+| Errors\BadRequestResponse       | 400                             | application/json                |
+| Errors\UnauthorizedResponse     | 401                             | application/json                |
+| Errors\PaymentRequiredResponse  | 402                             | application/json                |
+| Errors\NotFoundResponse         | 404                             | application/json                |
+| Errors\MethodNotAllowedResponse | 405                             | application/json                |
+| Errors\UnprocessableResponse    | 422                             | application/json                |
+| Errors\APIException             | 4XX, 5XX                        | \*/\*                           |
 
 ## update
 
@@ -440,14 +443,15 @@ if ($response->updateCustomObjectSchemaResponse !== null) {
 
 ### Errors
 
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+| Error Type                      | Status Code                     | Content Type                    |
+| ------------------------------- | ------------------------------- | ------------------------------- |
+| Errors\BadRequestResponse       | 400                             | application/json                |
+| Errors\UnauthorizedResponse     | 401                             | application/json                |
+| Errors\PaymentRequiredResponse  | 402                             | application/json                |
+| Errors\NotFoundResponse         | 404                             | application/json                |
+| Errors\MethodNotAllowedResponse | 405                             | application/json                |
+| Errors\UnprocessableResponse    | 422                             | application/json                |
+| Errors\APIException             | 4XX, 5XX                        | \*/\*                           |
 
 ## delete
 
@@ -498,11 +502,12 @@ if ($response->deleteCustomObjectSchemaResponse !== null) {
 
 ### Errors
 
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+| Error Type                      | Status Code                     | Content Type                    |
+| ------------------------------- | ------------------------------- | ------------------------------- |
+| Errors\BadRequestResponse       | 400                             | application/json                |
+| Errors\UnauthorizedResponse     | 401                             | application/json                |
+| Errors\PaymentRequiredResponse  | 402                             | application/json                |
+| Errors\NotFoundResponse         | 404                             | application/json                |
+| Errors\MethodNotAllowedResponse | 405                             | application/json                |
+| Errors\UnprocessableResponse    | 422                             | application/json                |
+| Errors\APIException             | 4XX, 5XX                        | \*/\*                           |

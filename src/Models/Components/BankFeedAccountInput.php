@@ -78,7 +78,7 @@ class BankFeedAccountInput
     public ?BankFeedAccountStatus $status = null;
 
     /**
-     * The people or businesses that hold the source bank account. Optional; `plaid-exchange` requires at least one.
+     * The people or businesses that hold the source bank account. Optional; `intuit-bank-feeds` and `plaid-exchange` require at least one.
      *
      * @var ?array<\Apideck\Unify\Models\Components\BankFeedAccountHolder> $accountHolders
      */
@@ -88,7 +88,7 @@ class BankFeedAccountInput
     public ?array $accountHolders = null;
 
     /**
-     * Email addresses of the account holders. Optional; `plaid-exchange` requires at least one.
+     * Email addresses of the account holders. Optional; `intuit-bank-feeds` and `plaid-exchange` require at least one.
      *
      * @var ?array<\Apideck\Unify\Models\Components\Email> $emails
      */
@@ -98,7 +98,7 @@ class BankFeedAccountInput
     public ?array $emails = null;
 
     /**
-     * Addresses of the account holders. Optional; `plaid-exchange` requires at least one.
+     * Addresses of the account holders. Optional; `intuit-bank-feeds` and `plaid-exchange` require at least one.
      *
      * @var ?array<\Apideck\Unify\Models\Components\Address> $addresses
      */
@@ -108,7 +108,7 @@ class BankFeedAccountInput
     public ?array $addresses = null;
 
     /**
-     * Phone numbers of the account holders. Optional; `plaid-exchange` requires at least one.
+     * Phone numbers of the account holders. Optional; `intuit-bank-feeds` and `plaid-exchange` require at least one.
      *
      * @var ?array<\Apideck\Unify\Models\Components\PhoneNumber> $phoneNumbers
      */
@@ -164,6 +164,15 @@ class BankFeedAccountInput
     public ?float $availableBalance = null;
 
     /**
+     * When `balance` was true, as an ISO 8601 date-time with a UTC offset. Connectors that record it stamp the time they received the balance when it is omitted.
+     *
+     * @var ?\DateTime $balanceAsOf
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('balance_as_of')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?\DateTime $balanceAsOf = null;
+
+    /**
      * Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
      *
      * @var ?\Apideck\Unify\Models\Components\Currency $currency
@@ -199,11 +208,12 @@ class BankFeedAccountInput
      * @param  ?string  $sourceAccountNumber
      * @param  ?float  $balance
      * @param  ?float  $availableBalance
+     * @param  ?\DateTime  $balanceAsOf
      * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?string  $country
      * @phpstan-pure
      */
-    public function __construct(?BankAccountType $bankAccountType = null, ?string $sourceAccountId = null, ?string $targetAccountId = null, ?string $targetAccountName = null, ?string $targetAccountNumber = null, ?FeedStatus $feedStatus = null, ?BankFeedAccountStatus $status = null, ?array $accountHolders = null, ?array $emails = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $customFields = null, ?string $sourceRoutingNumber = null, ?string $sourceAccountNumber = null, ?float $balance = null, ?float $availableBalance = null, ?Currency $currency = null, ?string $country = null)
+    public function __construct(?BankAccountType $bankAccountType = null, ?string $sourceAccountId = null, ?string $targetAccountId = null, ?string $targetAccountName = null, ?string $targetAccountNumber = null, ?FeedStatus $feedStatus = null, ?BankFeedAccountStatus $status = null, ?array $accountHolders = null, ?array $emails = null, ?array $addresses = null, ?array $phoneNumbers = null, ?array $customFields = null, ?string $sourceRoutingNumber = null, ?string $sourceAccountNumber = null, ?float $balance = null, ?float $availableBalance = null, ?\DateTime $balanceAsOf = null, ?Currency $currency = null, ?string $country = null)
     {
         $this->bankAccountType = $bankAccountType;
         $this->sourceAccountId = $sourceAccountId;
@@ -221,6 +231,7 @@ class BankFeedAccountInput
         $this->sourceAccountNumber = $sourceAccountNumber;
         $this->balance = $balance;
         $this->availableBalance = $availableBalance;
+        $this->balanceAsOf = $balanceAsOf;
         $this->currency = $currency;
         $this->country = $country;
     }
