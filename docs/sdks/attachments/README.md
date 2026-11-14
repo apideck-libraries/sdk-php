@@ -69,14 +69,15 @@ foreach ($responses as $response) {
 
 ### Errors
 
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+| Error Type                      | Status Code                     | Content Type                    |
+| ------------------------------- | ------------------------------- | ------------------------------- |
+| Errors\BadRequestResponse       | 400                             | application/json                |
+| Errors\UnauthorizedResponse     | 401                             | application/json                |
+| Errors\PaymentRequiredResponse  | 402                             | application/json                |
+| Errors\NotFoundResponse         | 404                             | application/json                |
+| Errors\MethodNotAllowedResponse | 405                             | application/json                |
+| Errors\UnprocessableResponse    | 422                             | application/json                |
+| Errors\APIException             | 4XX, 5XX                        | \*/\*                           |
 
 ## upload
 
@@ -132,14 +133,15 @@ if ($response->createAttachmentResponse !== null) {
 
 ### Errors
 
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+| Error Type                      | Status Code                     | Content Type                    |
+| ------------------------------- | ------------------------------- | ------------------------------- |
+| Errors\BadRequestResponse       | 400                             | application/json                |
+| Errors\UnauthorizedResponse     | 401                             | application/json                |
+| Errors\PaymentRequiredResponse  | 402                             | application/json                |
+| Errors\NotFoundResponse         | 404                             | application/json                |
+| Errors\MethodNotAllowedResponse | 405                             | application/json                |
+| Errors\UnprocessableResponse    | 422                             | application/json                |
+| Errors\APIException             | 4XX, 5XX                        | \*/\*                           |
 
 ## get
 
@@ -195,14 +197,15 @@ if ($response->getAttachmentResponse !== null) {
 
 ### Errors
 
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+| Error Type                      | Status Code                     | Content Type                    |
+| ------------------------------- | ------------------------------- | ------------------------------- |
+| Errors\BadRequestResponse       | 400                             | application/json                |
+| Errors\UnauthorizedResponse     | 401                             | application/json                |
+| Errors\PaymentRequiredResponse  | 402                             | application/json                |
+| Errors\NotFoundResponse         | 404                             | application/json                |
+| Errors\MethodNotAllowedResponse | 405                             | application/json                |
+| Errors\UnprocessableResponse    | 422                             | application/json                |
+| Errors\APIException             | 4XX, 5XX                        | \*/\*                           |
 
 ## delete
 
@@ -256,14 +259,15 @@ if ($response->deleteAttachmentResponse !== null) {
 
 ### Errors
 
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+| Error Type                      | Status Code                     | Content Type                    |
+| ------------------------------- | ------------------------------- | ------------------------------- |
+| Errors\BadRequestResponse       | 400                             | application/json                |
+| Errors\UnauthorizedResponse     | 401                             | application/json                |
+| Errors\PaymentRequiredResponse  | 402                             | application/json                |
+| Errors\NotFoundResponse         | 404                             | application/json                |
+| Errors\MethodNotAllowedResponse | 405                             | application/json                |
+| Errors\UnprocessableResponse    | 422                             | application/json                |
+| Errors\APIException             | 4XX, 5XX                        | \*/\*                           |
 
 ## download
 
@@ -320,11 +324,12 @@ if ($response->getAttachmentDownloadResponse !== null) {
 
 ### Errors
 
-| Error Type                     | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequestResponse      | 400                            | application/json               |
-| Errors\UnauthorizedResponse    | 401                            | application/json               |
-| Errors\PaymentRequiredResponse | 402                            | application/json               |
-| Errors\NotFoundResponse        | 404                            | application/json               |
-| Errors\UnprocessableResponse   | 422                            | application/json               |
-| Errors\APIException            | 4XX, 5XX                       | \*/\*                          |
+| Error Type                      | Status Code                     | Content Type                    |
+| ------------------------------- | ------------------------------- | ------------------------------- |
+| Errors\BadRequestResponse       | 400                             | application/json                |
+| Errors\UnauthorizedResponse     | 401                             | application/json                |
+| Errors\PaymentRequiredResponse  | 402                             | application/json                |
+| Errors\NotFoundResponse         | 404                             | application/json                |
+| Errors\MethodNotAllowedResponse | 405                             | application/json                |
+| Errors\UnprocessableResponse    | 422                             | application/json                |
+| Errors\APIException             | 4XX, 5XX                        | \*/\*                           |

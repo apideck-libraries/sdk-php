@@ -53,6 +53,25 @@ class WebhookSupport
     public ?array $sharedWith = null;
 
     /**
+     * Where the vendor stores the webhook target URL. `app` means one URL per vendor developer app, which customers on Apideck's own credentials cannot configure. `tenant` means each customer's vendor account holds its own URL.
+     *
+     * @var ?\Apideck\Unify\Models\Components\TargetURLScope $targetUrlScope
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('target_url_scope')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\TargetURLScope|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?TargetURLScope $targetUrlScope = null;
+
+    /**
+     * Whether Unify accepts webhook URLs scoped to a vendor developer app for this connector, rather than to one Apideck application. Events delivered to such a URL reach every connection that the vendor app authorized.
+     *
+     * @var ?bool $vendorAppUrl
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('vendor_app_url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $vendorAppUrl = null;
+
+    /**
      * Virtual webhook config for the connector.
      *
      * @var ?\Apideck\Unify\Models\Components\VirtualWebhooks $virtualWebhooks
@@ -67,15 +86,19 @@ class WebhookSupport
      * @param  ?\Apideck\Unify\Models\Components\SubscriptionLevel  $subscriptionLevel
      * @param  ?\Apideck\Unify\Models\Components\ManagedVia  $managedVia
      * @param  ?array<string>  $sharedWith
+     * @param  ?\Apideck\Unify\Models\Components\TargetURLScope  $targetUrlScope
+     * @param  ?bool  $vendorAppUrl
      * @param  ?\Apideck\Unify\Models\Components\VirtualWebhooks  $virtualWebhooks
      * @phpstan-pure
      */
-    public function __construct(?Mode $mode = null, ?SubscriptionLevel $subscriptionLevel = null, ?ManagedVia $managedVia = null, ?array $sharedWith = null, ?VirtualWebhooks $virtualWebhooks = null)
+    public function __construct(?Mode $mode = null, ?SubscriptionLevel $subscriptionLevel = null, ?ManagedVia $managedVia = null, ?array $sharedWith = null, ?TargetURLScope $targetUrlScope = null, ?bool $vendorAppUrl = null, ?VirtualWebhooks $virtualWebhooks = null)
     {
         $this->mode = $mode;
         $this->subscriptionLevel = $subscriptionLevel;
         $this->managedVia = $managedVia;
         $this->sharedWith = $sharedWith;
+        $this->targetUrlScope = $targetUrlScope;
+        $this->vendorAppUrl = $vendorAppUrl;
         $this->virtualWebhooks = $virtualWebhooks;
     }
 }
