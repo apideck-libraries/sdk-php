@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 2ab3d9124ed59ece768e35c0370a490f
-  docVersion: 10.84.4
+  docChecksum: dc3c36115049e13588629495f793e66f
+  docVersion: 10.85.0
   speakeasyVersion: 1.810.0
   generationVersion: 2.961.1
-  releaseVersion: 0.43.0
-  configChecksum: 0a03f856ab333484d4a02b7c02fe72ff
+  releaseVersion: 0.44.0
+  configChecksum: 324a53932d07acbd162e5245f51fa050
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: 1a6d692d-dd5a-4df0-8013-5fe102a49f75
-  pristine_commit_hash: ba170fc6454c0ec7f5b2ef1a68406f3713e5a68c
-  pristine_tree_hash: 919f92582f9c2c7907e31966979ad8ced5f1ae3e
+  generation_id: ba2ce59b-db2b-49c8-b514-da2c2d9acc1e
+  pristine_commit_hash: 5fa2364f1fd9d5d6fcf5d734a55be0b4eba3f79b
+  pristine_tree_hash: e3854eca5f1c633f96b05747c1052fb0005ab625
 features:
   php:
     additionalProperties: 0.1.1
@@ -16761,8 +16761,8 @@ trackedFiles:
     pristine_git_object: 8ef8e3e4d3a0bbff2d3fb75ca918bc3565670217
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:c964df09fda420eec775afc705ac887ef357b1dd
-    pristine_git_object: 69f6ca9afb079157e5775ecc9691d9cab5672e89
+    last_write_checksum: sha1:84c43a469a6e8fb386daaf3bdebadfdb11a62831
+    pristine_git_object: 82225dc0291eab151d204bd9d162ed7be8d66a68
   src/SalesOrders.php:
     id: a67e3e60cdb7
     last_write_checksum: sha1:746d92ce4041a1411f678be9f777568a8c9724c8
