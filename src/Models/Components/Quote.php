@@ -187,6 +187,15 @@ class Quote
     public ?string $reference = null;
 
     /**
+     * A PO Number uniquely identifies a purchase order and is generally defined by the buyer. The buyer will match the PO number in the quote to the Purchase Order.
+     *
+     * @var ?string $poNumber
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('po_number')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $poNumber = null;
+
+    /**
      * Quote status
      *
      * @var ?\Apideck\Unify\Models\Components\QuoteStatus $status
@@ -380,6 +389,7 @@ class Quote
      * @param  ?string  $terms
      * @param  ?string  $termsId
      * @param  ?string  $reference
+     * @param  ?string  $poNumber
      * @param  ?\Apideck\Unify\Models\Components\QuoteStatus  $status
      * @param  ?\Apideck\Unify\Models\Components\Currency  $currency
      * @param  ?float  $currencyRate
@@ -401,7 +411,7 @@ class Quote
      * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $invoiceId = null, ?string $projectId = null, ?array $lineItems = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $number = null, ?LinkedCustomer $customer = null, ?string $salesOrderId = null, ?string $companyId = null, ?string $departmentId = null, ?LocalDate $quoteDate = null, ?LocalDate $expiryDate = null, ?string $terms = null, ?string $termsId = null, ?string $reference = null, ?QuoteStatus $status = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?float $total = null, ?string $customerMemo = null, ?array $trackingCategories = null, ?string $templateId = null, ?string $sourceDocumentUrl = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
+    public function __construct(?string $id = null, ?string $invoiceId = null, ?string $projectId = null, ?array $lineItems = null, ?Address $billingAddress = null, ?Address $shippingAddress = null, ?array $customFields = null, ?array $passThrough = null, ?string $downstreamId = null, ?string $number = null, ?LinkedCustomer $customer = null, ?string $salesOrderId = null, ?string $companyId = null, ?string $departmentId = null, ?LocalDate $quoteDate = null, ?LocalDate $expiryDate = null, ?string $terms = null, ?string $termsId = null, ?string $reference = null, ?string $poNumber = null, ?QuoteStatus $status = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?float $subTotal = null, ?float $totalTax = null, ?string $taxCode = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?float $total = null, ?string $customerMemo = null, ?array $trackingCategories = null, ?string $templateId = null, ?string $sourceDocumentUrl = null, ?string $rowVersion = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->invoiceId = $invoiceId;
@@ -422,6 +432,7 @@ class Quote
         $this->terms = $terms;
         $this->termsId = $termsId;
         $this->reference = $reference;
+        $this->poNumber = $poNumber;
         $this->status = $status;
         $this->currency = $currency;
         $this->currencyRate = $currencyRate;

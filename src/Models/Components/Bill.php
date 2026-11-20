@@ -306,6 +306,15 @@ class Bill
     public ?BillStatus $status = null;
 
     /**
+     * Whether the bill is on payment hold. A bill on hold is not ready to pay, whatever its status. Not returned by connectors that do not report a payment hold.
+     *
+     * @var ?bool $paymentHold
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('payment_hold')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $paymentHold = null;
+
+    /**
      *
      * @var ?\Apideck\Unify\Models\Components\LinkedLedgerAccount $ledgerAccount
      */
@@ -531,6 +540,7 @@ class Bill
      * @param  ?string  $taxCode
      * @param  ?string  $notes
      * @param  ?\Apideck\Unify\Models\Components\BillStatus  $status
+     * @param  ?bool  $paymentHold
      * @param  ?\Apideck\Unify\Models\Components\LinkedLedgerAccount  $ledgerAccount
      * @param  ?string  $paymentMethod
      * @param  ?string  $channel
@@ -554,7 +564,7 @@ class Bill
      * @param  ?string  $accountingPeriod
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?array $lineItems = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?array $attachments = null, ?string $downstreamId = null, ?string $displayId = null, ?string $billNumber = null, ?LinkedSupplier $supplier = null, ?string $companyId = null, ?LinkedSubsidiary $subsidiary = null, ?string $locationId = null, ?string $departmentId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?LocalDate $billDate = null, ?LocalDate $dueDate = null, ?LocalDate $paidDate = null, ?string $poNumber = null, ?string $reference = null, ?string $terms = null, ?string $termsId = null, ?float $balance = null, ?float $deposit = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?string $taxCode = null, ?string $notes = null, ?BillStatus $status = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?float $discountPercentage = null, ?string $templateId = null, ?string $approvedBy = null, ?AmortizationType $amortizationType = null, ?string $taxMethod = null, ?bool $documentReceived = null, ?string $sourceDocumentUrl = null, ?array $paymentAllocations = null, ?array $trackingCategories = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null, ?array $customMappings = null, ?string $accountingPeriod = null)
+    public function __construct(?string $id = null, ?array $lineItems = null, ?BankAccount $bankAccount = null, ?array $customFields = null, ?array $passThrough = null, ?array $attachments = null, ?string $downstreamId = null, ?string $displayId = null, ?string $billNumber = null, ?LinkedSupplier $supplier = null, ?string $companyId = null, ?LinkedSubsidiary $subsidiary = null, ?string $locationId = null, ?string $departmentId = null, ?Currency $currency = null, ?float $currencyRate = null, ?bool $taxInclusive = null, ?LocalDate $billDate = null, ?LocalDate $dueDate = null, ?LocalDate $paidDate = null, ?string $poNumber = null, ?string $reference = null, ?string $terms = null, ?string $termsId = null, ?float $balance = null, ?float $deposit = null, ?float $subTotal = null, ?float $totalTax = null, ?float $total = null, ?string $taxCode = null, ?string $notes = null, ?BillStatus $status = null, ?bool $paymentHold = null, ?LinkedLedgerAccount $ledgerAccount = null, ?string $paymentMethod = null, ?string $channel = null, ?string $language = null, ?bool $accountingByRow = null, ?float $discountPercentage = null, ?string $templateId = null, ?string $approvedBy = null, ?AmortizationType $amortizationType = null, ?string $taxMethod = null, ?bool $documentReceived = null, ?string $sourceDocumentUrl = null, ?array $paymentAllocations = null, ?array $trackingCategories = null, ?string $updatedBy = null, ?string $createdBy = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?string $rowVersion = null, ?array $customMappings = null, ?string $accountingPeriod = null)
     {
         $this->id = $id;
         $this->lineItems = $lineItems;
@@ -588,6 +598,7 @@ class Bill
         $this->taxCode = $taxCode;
         $this->notes = $notes;
         $this->status = $status;
+        $this->paymentHold = $paymentHold;
         $this->ledgerAccount = $ledgerAccount;
         $this->paymentMethod = $paymentMethod;
         $this->channel = $channel;
