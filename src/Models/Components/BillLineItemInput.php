@@ -39,6 +39,16 @@ class BillLineItemInput
     public ?LinkedTaxRateInput $taxRate = null;
 
     /**
+     * $customFields
+     *
+     * @var ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2> $customFields
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $customFields = null;
+
+    /**
      * A list of linked worktags. This is only supported for Workday.
      *
      * @var ?array<?\Apideck\Unify\Models\Components\LinkedWorktag> $worktags
@@ -315,6 +325,7 @@ class BillLineItemInput
      * @param  ?string  $rowId
      * @param  ?\Apideck\Unify\Models\Components\LinkedInvoiceItem  $item
      * @param  ?\Apideck\Unify\Models\Components\LinkedTaxRateInput  $taxRate
+     * @param  ?array<\Apideck\Unify\Models\Components\CustomField1|\Apideck\Unify\Models\Components\CustomField2>  $customFields
      * @param  ?array<?\Apideck\Unify\Models\Components\LinkedWorktag>  $worktags
      * @param  ?string  $code
      * @param  ?int  $lineNumber
@@ -347,11 +358,12 @@ class BillLineItemInput
      * @param  ?string  $rowVersion
      * @phpstan-pure
      */
-    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRateInput $taxRate = null, ?array $worktags = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?LineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $locationId = null, ?string $departmentId = null, ?string $subsidiaryId = null, ?string $categoryId = null, ?string $shippingId = null, ?string $memo = null, ?bool $prepaid = null, ?string $taxApplicableOn = null, ?string $taxRecoverability = null, ?string $taxMethod = null, ?float $retentionAmount = null, ?float $paymentAmount = null, ?LinkedLedgerAccount $ledgerAccount = null, ?LinkedPurchaseOrder $purchaseOrder = null, ?array $trackingCategories = null, ?LinkedCustomerInput $customer = null, ?Rebilling $rebilling = null, ?string $rowVersion = null)
+    public function __construct(?string $rowId = null, ?LinkedInvoiceItem $item = null, ?LinkedTaxRateInput $taxRate = null, ?array $customFields = null, ?array $worktags = null, ?string $code = null, ?int $lineNumber = null, ?string $description = null, ?LineItemType $type = null, ?float $taxAmount = null, ?float $totalAmount = null, ?float $quantity = null, ?float $unitPrice = null, ?string $unitOfMeasure = null, ?float $discountPercentage = null, ?float $discountAmount = null, ?string $locationId = null, ?string $departmentId = null, ?string $subsidiaryId = null, ?string $categoryId = null, ?string $shippingId = null, ?string $memo = null, ?bool $prepaid = null, ?string $taxApplicableOn = null, ?string $taxRecoverability = null, ?string $taxMethod = null, ?float $retentionAmount = null, ?float $paymentAmount = null, ?LinkedLedgerAccount $ledgerAccount = null, ?LinkedPurchaseOrder $purchaseOrder = null, ?array $trackingCategories = null, ?LinkedCustomerInput $customer = null, ?Rebilling $rebilling = null, ?string $rowVersion = null)
     {
         $this->rowId = $rowId;
         $this->item = $item;
         $this->taxRate = $taxRate;
+        $this->customFields = $customFields;
         $this->worktags = $worktags;
         $this->code = $code;
         $this->lineNumber = $lineNumber;
