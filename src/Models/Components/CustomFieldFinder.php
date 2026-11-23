@@ -31,6 +31,16 @@ class CustomFieldFinder
     public mixed $value = null;
 
     /**
+     * The declared data type of the custom field. Only returned by connectors that can read the field's definition; omitted otherwise.
+     *
+     * @var ?\Apideck\Unify\Models\Components\CustomFieldFinderType $type
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\CustomFieldFinderType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?CustomFieldFinderType $type = null;
+
+    /**
      * JSONPath finder for retrieving this value when mapping a response payload from downstream
      *
      * @var ?string $finder
@@ -60,15 +70,17 @@ class CustomFieldFinder
     /**
      * @param  ?string  $id
      * @param  mixed  $value
+     * @param  ?\Apideck\Unify\Models\Components\CustomFieldFinderType  $type
      * @param  ?string  $finder
      * @param  ?string  $name
      * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, mixed $value = null, ?string $finder = null, ?string $name = null, ?string $description = null)
+    public function __construct(?string $id = null, mixed $value = null, ?CustomFieldFinderType $type = null, ?string $finder = null, ?string $name = null, ?string $description = null)
     {
         $this->id = $id;
         $this->value = $value;
+        $this->type = $type;
         $this->finder = $finder;
         $this->name = $name;
         $this->description = $description;
