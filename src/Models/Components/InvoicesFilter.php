@@ -74,6 +74,14 @@ class InvoicesFilter
     public ?string $customerId = null;
 
     /**
+     * Filter by the purchase order number (customer reference) set on the invoice. Exact match; more than one invoice can carry the same PO number.
+     *
+     * @var ?string $poNumber
+     */
+    #[SpeakeasyMetadata('queryParam:name=po_number')]
+    public ?string $poNumber = null;
+
+    /**
      * @param  ?string  $ids
      * @param  ?string  $idSince
      * @param  ?\DateTime  $updatedSince
@@ -82,9 +90,10 @@ class InvoicesFilter
      * @param  ?string  $supplierId
      * @param  ?string  $subsidiaryId
      * @param  ?string  $customerId
+     * @param  ?string  $poNumber
      * @phpstan-pure
      */
-    public function __construct(?string $ids = null, ?string $idSince = null, ?\DateTime $updatedSince = null, ?\DateTime $createdSince = null, ?string $number = null, ?string $supplierId = null, ?string $subsidiaryId = null, ?string $customerId = null)
+    public function __construct(?string $ids = null, ?string $idSince = null, ?\DateTime $updatedSince = null, ?\DateTime $createdSince = null, ?string $number = null, ?string $supplierId = null, ?string $subsidiaryId = null, ?string $customerId = null, ?string $poNumber = null)
     {
         $this->ids = $ids;
         $this->idSince = $idSince;
@@ -94,5 +103,6 @@ class InvoicesFilter
         $this->supplierId = $supplierId;
         $this->subsidiaryId = $subsidiaryId;
         $this->customerId = $customerId;
+        $this->poNumber = $poNumber;
     }
 }

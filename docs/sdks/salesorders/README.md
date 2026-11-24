@@ -43,6 +43,7 @@ $request = new Operations\AccountingSalesOrdersAllRequest(
         createdSince: Utils\Utils::parseDateTime('2020-09-30T07:43:32.000Z'),
         number: 'SO000123',
         customerId: '123abc',
+        poNumber: 'PO-4521',
     ),
     passThrough: [
         'search' => 'San Francisco',

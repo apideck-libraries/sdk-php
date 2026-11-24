@@ -114,6 +114,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingLedgerAccountsAddRequest(
     serviceId: 'salesforce',
     companyId: '12345',
+    idempotencyKey: 'your-unique-key-per-create',
     ledgerAccount: new Components\LedgerAccountInput(
         displayId: '1-12345',
         code: '453',

@@ -50,19 +50,29 @@ class SalesOrdersFilter
     public ?string $subsidiaryId = null;
 
     /**
+     * Filter by the purchase order number (customer reference) set on the sales order. Exact match; more than one sales order can carry the same PO number.
+     *
+     * @var ?string $poNumber
+     */
+    #[SpeakeasyMetadata('queryParam:name=po_number')]
+    public ?string $poNumber = null;
+
+    /**
      * @param  ?\DateTime  $updatedSince
      * @param  ?\DateTime  $createdSince
      * @param  ?string  $number
      * @param  ?string  $customerId
      * @param  ?string  $subsidiaryId
+     * @param  ?string  $poNumber
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedSince = null, ?\DateTime $createdSince = null, ?string $number = null, ?string $customerId = null, ?string $subsidiaryId = null)
+    public function __construct(?\DateTime $updatedSince = null, ?\DateTime $createdSince = null, ?string $number = null, ?string $customerId = null, ?string $subsidiaryId = null, ?string $poNumber = null)
     {
         $this->updatedSince = $updatedSince;
         $this->createdSince = $createdSince;
         $this->number = $number;
         $this->customerId = $customerId;
         $this->subsidiaryId = $subsidiaryId;
+        $this->poNumber = $poNumber;
     }
 }
