@@ -120,6 +120,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingCustomersAddRequest(
     serviceId: 'salesforce',
     companyId: '12345',
+    idempotencyKey: 'your-unique-key-per-create',
     customer: new Components\CustomerInput(
         displayId: 'EMP00101',
         displayName: 'Windsurf Shop',

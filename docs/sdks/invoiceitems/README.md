@@ -113,6 +113,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingInvoiceItemsAddRequest(
     serviceId: 'salesforce',
     companyId: '12345',
+    idempotencyKey: 'your-unique-key-per-create',
     invoiceItem: new Components\InvoiceItemInput(
         name: 'Model Y',
         description: 'Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.',

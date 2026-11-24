@@ -115,6 +115,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingPaymentsAddRequest(
     serviceId: 'salesforce',
     companyId: '12345',
+    idempotencyKey: 'your-unique-key-per-create',
     payment: new Components\PaymentInput(
         currency: Components\Currency::Usd,
         currencyRate: 0.69,
