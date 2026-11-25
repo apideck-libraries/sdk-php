@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0e1578f5-5df8-4086-96d6-369ac62fc49d
 management:
-  docChecksum: 6426f951b024d385bb1b8435b6815d40
-  docVersion: 10.90.0
+  docChecksum: 09537de549f6ac525e5a910ffed61cb0
+  docVersion: 10.90.2
   speakeasyVersion: 1.811.0
   generationVersion: 2.968.1
-  releaseVersion: 0.47.0
-  configChecksum: 156d5cbdd9d846fb3b75bc375d6221a9
+  releaseVersion: 0.47.1
+  configChecksum: f92bda9fc455f534df538e4d390954e0
   repoURL: https://github.com/apideck-libraries/sdk-php.git
   installationURL: https://github.com/apideck-libraries/sdk-php.git
   published: true
 persistentEdits:
-  generation_id: 3aca30f2-c2fa-459f-bd1a-f059240dc00b
-  pristine_commit_hash: 7ce7fcfe4641b6d67e5885b69f0c7648a3c461d9
-  pristine_tree_hash: fb7af832dafe9551ac1af24e294ac2e4c1574a8e
+  generation_id: 160f10e8-7803-4a38-ba56-ddc5b553fcdf
+  pristine_commit_hash: 1059180c6be145bf7cef2fecff6bfbf51f23fe69
+  pristine_tree_hash: 79cfa22d303fbd27e6e589197d693acbf904989c
 features:
   php:
     additionalProperties: 0.1.1
@@ -16769,8 +16769,8 @@ trackedFiles:
     pristine_git_object: 8ef8e3e4d3a0bbff2d3fb75ca918bc3565670217
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:3c57d70c0c8fbce1b35b05cff9ace652b5f9a783
-    pristine_git_object: eebbe4060a95320970b48f08e846beb95957dd77
+    last_write_checksum: sha1:fc18b19444e60e2791779678b194d1717eb8144a
+    pristine_git_object: 7946c2c02b7cecb6233f205177ce59aa9232aeed
   src/SalesOrders.php:
     id: a67e3e60cdb7
     last_write_checksum: sha1:746d92ce4041a1411f678be9f777568a8c9724c8
@@ -35406,7 +35406,6 @@ examples:
           application/json: {"status_code": 400, "error": "Bad Request", "type_name": "RequestHeadersValidationError", "message": "Invalid Params", "detail": "Missing Header: x-apideck-consumer-id", "ref": "https://developers.apideck.com/errors#unauthorizederror"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `apideck->accounting->invoices->list()`: \n  *  `request->filter` **Changed**\n* `apideck->accounting->ledgerAccounts->create()`: \n  *  `request->idempotencyKey` **Added**\n* `apideck->accounting->invoiceItems->create()`: \n  *  `request->idempotencyKey` **Added**\n* `apideck->accounting->customers->create()`: \n  *  `request->idempotencyKey` **Added**\n* `apideck->accounting->payments->create()`: \n  *  `request->idempotencyKey` **Added**\n* `apideck->accounting->salesOrders->list()`: \n  *  `request->filter` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md
