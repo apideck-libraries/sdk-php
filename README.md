@@ -317,6 +317,7 @@ foreach ($responses as $response) {
 ### [Accounting.GoodsReceipts](docs/sdks/goodsreceipts/README.md)
 
 * [list](docs/sdks/goodsreceipts/README.md#list) - List Goods Receipts
+* [create](docs/sdks/goodsreceipts/README.md#create) - Create Goods Receipt
 * [get](docs/sdks/goodsreceipts/README.md#get) - Get Goods Receipt
 
 ### [Accounting.InvoiceItems](docs/sdks/invoiceitems/README.md)
