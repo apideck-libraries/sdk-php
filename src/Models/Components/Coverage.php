@@ -30,6 +30,16 @@ class Coverage
     public ?string $downstreamName = null;
 
     /**
+     * Status of the resource. Resources with status live or beta are callable.
+     *
+     * @var ?\Apideck\Unify\Models\Components\ResourceStatus $status
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Apideck\Unify\Models\Components\ResourceStatus|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ResourceStatus $status = null;
+
+    /**
      * Indicates if pagination (cursor and limit parameters) is supported on the list endpoint of the resource.
      *
      * @var ?bool $paginationSupported
@@ -100,6 +110,7 @@ class Coverage
     /**
      * @param  ?string  $downstreamId
      * @param  ?string  $downstreamName
+     * @param  ?\Apideck\Unify\Models\Components\ResourceStatus  $status
      * @param  ?bool  $paginationSupported
      * @param  ?\Apideck\Unify\Models\Components\PaginationCoverage  $pagination
      * @param  ?array<string>  $supportedOperations
@@ -109,10 +120,11 @@ class Coverage
      * @param  ?array<\Apideck\Unify\Models\Components\SupportedProperty>  $supportedListFields
      * @phpstan-pure
      */
-    public function __construct(?string $downstreamId = null, ?string $downstreamName = null, ?bool $paginationSupported = null, ?PaginationCoverage $pagination = null, ?array $supportedOperations = null, ?array $supportedFilters = null, ?array $supportedSortBy = null, ?array $supportedFields = null, ?array $supportedListFields = null)
+    public function __construct(?string $downstreamId = null, ?string $downstreamName = null, ?ResourceStatus $status = null, ?bool $paginationSupported = null, ?PaginationCoverage $pagination = null, ?array $supportedOperations = null, ?array $supportedFilters = null, ?array $supportedSortBy = null, ?array $supportedFields = null, ?array $supportedListFields = null)
     {
         $this->downstreamId = $downstreamId;
         $this->downstreamName = $downstreamName;
+        $this->status = $status;
         $this->paginationSupported = $paginationSupported;
         $this->pagination = $pagination;
         $this->supportedOperations = $supportedOperations;

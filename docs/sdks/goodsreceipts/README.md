@@ -5,6 +5,7 @@
 ### Available Operations
 
 * [list](#list) - List Goods Receipts
+* [create](#create) - Create Goods Receipt
 * [get](#get) - Get Goods Receipt
 
 ## list
@@ -71,6 +72,91 @@ foreach ($responses as $response) {
 ### Response
 
 **[?Operations\AccountingGoodsReceiptsAllResponse](../../Models/Operations/AccountingGoodsReceiptsAllResponse.md)**
+
+### Errors
+
+| Error Type                      | Status Code                     | Content Type                    |
+| ------------------------------- | ------------------------------- | ------------------------------- |
+| Errors\BadRequestResponse       | 400                             | application/json                |
+| Errors\UnauthorizedResponse     | 401                             | application/json                |
+| Errors\PaymentRequiredResponse  | 402                             | application/json                |
+| Errors\NotFoundResponse         | 404                             | application/json                |
+| Errors\MethodNotAllowedResponse | 405                             | application/json                |
+| Errors\UnprocessableResponse    | 422                             | application/json                |
+| Errors\APIException             | 4XX, 5XX                        | \*/\*                           |
+
+## create
+
+Create a Goods Receipt against a purchase order. `purchase_order_id` is required and every line names the purchase order line it receives against; a receipt that is not tied to a purchase order cannot be created. The response returns the `id` of the new receipt only: read it with `GET /accounting/goods-receipts/{id}` to see the posted document.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="accounting.goodsReceiptsAdd" method="post" path="/accounting/goods-receipts" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Apideck\Unify;
+use Apideck\Unify\Models\Components;
+use Apideck\Unify\Models\Operations;
+use Brick\DateTime\LocalDate;
+
+$sdk = Unify\Apideck::builder()
+    ->setConsumerId('test-consumer')
+    ->setAppId('dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX')
+    ->setSecurity(
+        '<YOUR_BEARER_TOKEN_HERE>'
+    )
+    ->build();
+
+$request = new Operations\AccountingGoodsReceiptsAddRequest(
+    serviceId: 'salesforce',
+    companyId: '12345',
+    goodsReceiptCreateInput: new Components\GoodsReceiptCreateInput(
+        purchaseOrderId: '4500000004',
+        receivedDate: LocalDate::parse('2026-09-01'),
+        postedDate: LocalDate::parse('2026-09-01'),
+        reference: 'DN-78910',
+        notes: 'Partial delivery, remainder expected next week.',
+        locationId: '1710/171A',
+        lineItems: [],
+        passThrough: [
+            new Components\PassThroughBody(
+                serviceId: '<id>',
+                extendPaths: [
+                    new Components\ExtendPaths(
+                        path: '$.nested.property',
+                        value: [
+                            'TaxClassificationRef' => [
+                                'value' => 'EUC-99990201-V1-00020000',
+                            ],
+                        ],
+                    ),
+                ],
+            ),
+        ],
+    ),
+);
+
+$response = $sdk->accounting->goodsReceipts->create(
+    request: $request
+);
+
+if ($response->createGoodsReceiptResponse !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                                   | [Operations\AccountingGoodsReceiptsAddRequest](../../Models/Operations/AccountingGoodsReceiptsAddRequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+
+### Response
+
+**[?Operations\AccountingGoodsReceiptsAddResponse](../../Models/Operations/AccountingGoodsReceiptsAddResponse.md)**
 
 ### Errors
 

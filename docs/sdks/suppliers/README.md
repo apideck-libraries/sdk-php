@@ -118,6 +118,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingSuppliersAddRequest(
     serviceId: 'salesforce',
     companyId: '12345',
+    idempotencyKey: 'your-unique-key-per-create',
     supplier: new Components\SupplierInput(
         displayId: 'EMP00101',
         displayName: 'Windsurf Shop',

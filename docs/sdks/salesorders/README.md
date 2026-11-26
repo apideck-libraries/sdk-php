@@ -112,6 +112,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingSalesOrdersAddRequest(
     serviceId: 'salesforce',
     companyId: '12345',
+    idempotencyKey: 'your-unique-key-per-create',
     salesOrder: new Components\SalesOrderInput(
         number: 'SO000123',
         customer: new Components\LinkedCustomerInput(

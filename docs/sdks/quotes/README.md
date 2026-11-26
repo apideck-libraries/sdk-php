@@ -111,6 +111,7 @@ $sdk = Unify\Apideck::builder()
 $request = new Operations\AccountingQuotesAddRequest(
     serviceId: 'salesforce',
     companyId: '12345',
+    idempotencyKey: 'your-unique-key-per-create',
     quote: new Components\QuoteInput(
         number: 'QT00546',
         customer: new Components\LinkedCustomerInput(
