@@ -26,11 +26,11 @@ class SDKConfiguration
 
     public string $openapiDocVersion = '10.97.1';
 
-    public string $sdkVersion = '0.49.0';
+    public string $sdkVersion = '0.49.1';
 
     public string $genVersion = '2.969.4';
 
-    public string $userAgent = 'speakeasy-sdk/php 0.49.0 2.969.4 10.97.1 apideck-libraries/sdk-php';
+    public string $userAgent = 'speakeasy-sdk/php 0.49.1 2.969.4 10.97.1 apideck-libraries/sdk-php';
     /** @var array<string, array<string, array<string, mixed>>> */
     public ?array $globals = [
         'parameters' => [],
