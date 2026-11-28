@@ -14,7 +14,7 @@ targets:
         sourceRevisionDigest: sha256:29875490384fddcb51beb688f4999a2d894ed70cfe78840354144da649c38281
         sourceBlobDigest: sha256:0c039fbf4c842a8479053c6079c2c0783a9bec812507d5f1a7a77c3494e949c1
         codeSamplesNamespace: apideck-php-code-samples
-        codeSamplesRevisionDigest: sha256:eb31511ea3e0285040a8826f142d5f2a1c29a7439a5e89766cd0e434cd212780
+        codeSamplesRevisionDigest: sha256:9675d1ccbf633b1d5c0dfd03abd47fded76349d0f16b37b902762336f592043f
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
